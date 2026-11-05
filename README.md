@@ -15,6 +15,36 @@ No `sorry` anywhere. Every theorem depends only on the three standard axioms `pr
 
 Toolchain: Lean `v4.33.1`, Mathlib `v4.33.1`.
 
+## How to check it and sign off
+
+No Lean and no GitHub account are needed: a web browser is enough, and you can work at your own
+pace.
+
+1. **Download.** Click [Download
+   ZIP](https://github.com/skydancerosel/math_faithful/archive/refs/heads/main.zip) and unzip the
+   file (on a Mac, double-click it).
+2. **Open the sign-off page.** In the unzipped folder, double-click `Exposition/milnor-signoff.html`
+   for *Topology from the Differentiable Viewpoint*, or `Morse/Exposition/morse-signoff.html` for
+   *Morse Theory*. It opens in your browser. Stay online: the formulas are typeset from the
+   internet.
+3. **Check each item.** Each item (110 for the first book, 396 for *Morse Theory*) has a
+   one-sentence summary and a label saying how the formal statement compares with the book's (as in
+   the book, hypotheses explicit, stronger, narrower, restated, …). Click **the full statement,
+   Milnor beside Lean** to see the book's statement, with its page, beside what Lean proves, with
+   every hypothesis it uses. If the formal statement says what the book means, tick **says what
+   Milnor means**; if not, leave it unticked and write your objection or question in the notes box.
+4. **Stop and come back whenever you like.** Ticks and notes are saved in your browser as you go: to
+   continue, open the same file in the same browser. **unsigned only** hides the items you have
+   already ticked.
+5. **Send it back.** When you are done, or want to send what you have so far, click **Export
+   SIGNOFF.md**. This saves a small text file; email it to the person who invited you to review.
+   **Import…** loads such a file again, for example to continue on another computer.
+
+To read rather than sign: the verified editions `Exposition/Verification.pdf` and
+`Morse/Exposition/Verification.pdf` have the same items as documents, and the pages
+`Exposition/milnor-beside-lean.html` and `Morse/Exposition/morse-beside-lean.html` put every
+statement of the book beside its formal version (open them the same way).
+
 ## Why "faithful"
 
 A green `lake build` shows that the formal statements are proved. It does not show that they are
@@ -96,7 +126,8 @@ The reports are checked mechanically against the sources:
   periodicity as group isomorphisms (it is proved as bijections) and integral homology of `ℂPⁿ`.
 - **Reports:** complete for both books.
 - **Sign-off:** the verified editions are written so that a mathematician who does not read Lean
-  can check each statement. That review is in progress, on the sign-off pages
+  can check each statement. That review is in progress (see [How to check it and sign
+  off](#how-to-check-it-and-sign-off)), on the sign-off pages
   `Exposition/milnor-signoff.html` and `Morse/Exposition/morse-signoff.html` (each item with the
   book's statement beside the verified one, a tick box and notes; built by
   `Morse/Exposition/build_signoff.py`), whose state is exported to `Exposition/SIGNOFF.md` and
