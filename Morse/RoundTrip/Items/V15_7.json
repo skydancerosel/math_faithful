@@ -1,0 +1,16 @@
+{
+ "id": "V15_7",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0, arbitrary finite index types) is purely algebraic: for J' ∈ Ω_{k+1}, A = -J_kJ' is a complex structure anticommuting with J_k and commuting with J_1…J_{k-1}, and J_kA = J'; the converse; the circle cos t·J_k + sin t·J' lies in Ω_k for all t; J_k exp(tA) = cos t·J_k + sin t·J' (for any J_k, J' with J_k² = (J_kJ')² = -1); and tr(J'ᵀJ) = 0 for anticommuting complex structures. B (Fin n, k ≥ 1) adds the geometric claim: t ↦ J_k exp(πtA) is a GEODESIC of Ω_k(n) for the metric induced by tr(ABᵀ) (acceleration normal to TanSet Ω_k), from J_k to -J_k with midpoint J. A ⇒ B uses all algebraic conjuncts of A; the geodesic property is not in A and is proved outright (acceleration = -π²γ; Ω_k ⊆ O(n) lies on the sphere tr(XXᵀ) = n, so tangent vectors are frob-orthogonal to γ). B ⇒ A: omega_succ_decomp, mul_mem_omega_succ and semicircle_mem_omega are derived from B after transport from Fin (card ι) to ι (the semicircle for all t from B's geodesic on [0,1], the -J' trick and 2π-periodicity); mul_exp_eq_semicircle (general identity, not restricted to orthogonal J's) and trace_transpose_mul_eq_zero (Milnor's Remark is read differently by the two sides: midpoint in B, orthogonality/great semicircle in A) are not in B and are re-proved outright. Each side has elementary content the other lacks.",
+ "B_issue": null,
+ "overlap": "B_to_A: 6 shared project theorems — Morse.exp_smul_of_mul_self_eq_neg_one and its helper complexLift_continuous (exp(θJ) = cos θ + sin θ J, outside the item, used to identify J_k exp(πsA) with the circle), isComplexStructure_iff, IsComplexStructure.transpose, IsAnticommFamily.cs/.anti; no item theorem.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable"
+}

@@ -1,0 +1,11 @@
+{
+ "id": "V2_7",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "The two sides formalise disjoint halves of Milnor's remark. B is the coordinate fact: in a Morse chart, for small ε, e^λ ∩ M^{c-ε} = ė^λ (on e^λ, η = 0, so f = c - ξ), and e^λ is a closed λ-cell with boundary ė^λ. B is proved outright (B_holds, without A): choose ε with the √ε-disk inside the chart's target; the homeomorphism is q ↦ ε^{-1/2}·(first λ coordinates of y q), with inverse z ↦ y⁻¹(pad(√ε z)). A is the part Milnor 'does not argue' and B deliberately omits: a closed set plus a cell meeting it exactly in its boundary sphere is the adjunction space (pushout in TopCat), with the homotopy-equivalence corollary. So A ⇒ B holds only because B is true. B ⇒ A fails genuinely: B says nothing about pushouts.",
+ "B_issue": null,
+ "overlap": "n/a (B_to_A not proved); A_to_B does not use A"
+}

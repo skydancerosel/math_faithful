@@ -1,0 +1,11 @@
+{
+ "id": "Morse_NonposCurvature",
+ "name": "Morse.NonposCurvature",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "`agree` (↔, outright): the blind tangent space equals Morse.tangentSubspace, and for tangent A, B the blind ⟪R(A,B)A, B⟫ (Gauss equation via LinearMap.adjoint, II = (1 − P_q) ∘ fderivWithin (p ↦ P_p)) and the project's ⟪curvOp A B A, B⟫ both equal ⟪II(A,A), II(B,B)⟫ − ⟪II(A,B), II(B,A)⟫ (Morse.inner_curvOp; second fundamental forms agree on tangent vectors). FiniteDimensional Z, absent from the signature, follows from q ∈ N."
+}

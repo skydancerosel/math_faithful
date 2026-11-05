@@ -1,0 +1,17 @@
+{
+ "id": "V15_19",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universe 0 for the first theorem) is arithmetic on lists of reals: #{i | pi^2 < e_i} <= spectralIndex e, where spectralIndex counts the parameters pi*s/sqrt(e_i) in (0,1) (Theorem 20.5 by definition), and for integers a_j >= 1 with a_{h0} >= 3 the list pi^2(a_{h0}+a_j)^2/4, j != h0, has spectralIndex >= s - 1. B is geometric: for k >= 1, k mod 4 != 2, every non-minimal geodesic from J to -J in Omega_k(n) (induced metric) has Milnor index idxIn with n <= (index + 1) * m_{k+1}. A => B fails genuinely: it needs the normal form of geodesics J exp(pi t A) of Omega_k(n), the splitting of R^n into s = n/m_{k+1} minimal summands with the integers a_h, the spectrum of K_A, Theorem 20.5 and the Index Theorem for Omega_k(n) with the blind idxIn -- none of it is in A (the project never ties the list pi^2(a_{h0}+a_j)^2/4 to an actual geodesic of Omega_k(n)). B => A only vacuously: A is re-proved outright from the project's spectralIndex_eq; B has no spectralIndex.",
+ "B_issue": null,
+ "overlap": "B_to_A: 3 shared project theorems (spectralIndex_eq, conjParams_finite, conjParams_subset, plus spectralIndex.eq_1); the item's theorems avoided (the vacuous re-proof re-runs their proofs).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete subsets Omega_k(n) of M_n(R) with the induced metric (already embedded); A is arithmetic on reals."
+}

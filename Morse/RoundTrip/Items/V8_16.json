@@ -1,0 +1,21 @@
+{
+ "id": "V8_16",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0), for slice submanifolds N ⊆ V only: ⟨R(v,w₁)v,w₂⟩ = ⟨R(v,w₂)v,w₁⟩ for tangent vectors; symmetry of the integral form hessForm on pathTangent for every γ ∈ Ω (geodesic or not); symmetry of energyHessian, a LinearMap.BilinForm DEFINED by Milnor's formula 2·secondVariation. B: for every abstract Riemannian ℝⁿ-manifold and Levi-Civita connection, at a geodesic γ, E_** defined through 2-parameter variations (IsHess, Fréchet mixedD) is well defined (∃!), symmetric and bilinear. A ⇒ B fails genuinely only because of the abstract setting: on embedded manifolds A ⇒ B_emb is now proved (second attempt, through A's second conjunct and project lemmas outside the item: Lemma 11.A, Theorem 13.1, Proposition 13.A). B ⇒ A fails genuinely: A's symmetries hold for every γ ∈ Ω (not only geodesics) and include the pointwise curvature symmetry; A is provable outright and its first two conjuncts are re-proved outright in B_to_A12 (vacuous). Harness: the third conjunct cannot pass #rt_check in ANY proof (energyHessian's definition uses hessForm_comm and inner_curvR_comm); A2_to_B_emb avoids it.",
+ "B_issue": null,
+ "overlap": "B_to_A12 (A's first two conjuncts, proved outright, B unused): 162 shared project theorems — Gauss-equation/second-fundamental-form lemmas, slice-chart internals. A2_to_B_emb: 205 shared — secondVariation_eq_hessForm with its PieceData/hessForm/curvature lemmas (the project's Proposition 13.A, also under energyHessian_isSymm), IsVariation/jump/piecewise lemmas, slice internals.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "B_emb := B at M = Bridge.Sub hN, cov = Bridge.conn (B_to_B_emb). Proved A2_to_B_emb (#rt_check OK; A2 = A's second conjunct hessForm_comm, which does not mention energyHessian) and A_to_B_emb = A2_to_B_emb ∘ A_to_A2: ∃! from Emb.exists_isHess (Lemma 11.A on ↥N, fields matched on all of ℝ) and Emb.hess_eq (every IsHess value is 2·secondVariation of the ambient fields: EnergyC2 + the project's Theorem 13.1 second_variation, not part of A); symmetry and linearity in each argument from secondVariation = hessForm on TΩ (project's secondVariation_eq_hessForm), hessForm_add_right/smul_right and A's hessForm_comm; ambient fields of a•W + b•W' by Bridge.D_tadd/D_tsmul. B_emb ⇒ A fails genuinely (A covers every γ ∈ Ω and the pointwise curvature identity; even A's third conjunct at geodesics would need the reverse TΩ dictionary pathTangent ⇒ InTOmega). Limitations: induced connection only, model ℝⁿ.",
+ "uses_hypothesis_emb": {
+  "A_to_B_emb": true
+ },
+ "second_attempt": "EnergyC2 closed the analytic gap; A ⇒ B_emb now proved (A2_to_B_emb, #rt_check OK). Was 'failed' (not attempted), now A_to_Bemb_only. B_emb ⇒ A fails genuinely (A more general); A ⇔ B still blocked by the abstract setting."
+}

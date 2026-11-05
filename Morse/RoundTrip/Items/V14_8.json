@@ -1,0 +1,17 @@
+{
+ "id": "V14_8",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "Vocabulary: blind specMult/specIndex (finsum over t ∈ (0,1) of #{i | t ∈ conjParams(e i)}) equal the project's conjMult/spectralIndex (finsum over all t, with conjParams already restricted to (0,1)) (specIndex_eq_spectralIndex). A (κ : Type): spectralIndex e = Σ_i #conjParams(e i), and doubling each eigenvalue doubles the index. B: for every finite spectrum, the conjugate parameters in (0,1) form a finite set and specIndex e = Σ_i #(conjParams(e i) ∩ (0,1)). A ⇒ B: the sum formula is A's spectralIndex_eq; the finiteness is the project's conjParams_finite (V14_7's lemma, not part of this item). B ⇒ A: spectralIndex_eq from B; spectralIndex_double then by Fintype.sum_prod_type (it is a corollary of the sum formula). Same statement.",
+ "B_issue": null,
+ "overlap": "B_to_A: only Morse.spectralIndex.eq_1 (equation lemma of the definition). A_to_B: Morse.spectralIndex.eq_1, Morse.conjParams_finite, Morse.conjParams_subset (V14_7's finiteness lemma, used for B's finiteness claim).",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about the §23 matrix-group setting / spectra of K_A (concrete matrices and real numbers); it does not quantify over abstract Riemannian manifolds."
+}

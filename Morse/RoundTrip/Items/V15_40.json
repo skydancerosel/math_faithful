@@ -1,0 +1,16 @@
+{
+ "id": "V15_40",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universe 0; IsAnticommFamily J (k+1), k = 2, 6, and 2 ≤ (n/m_{k+1} − |c|)/4): the finite-stage π_0 correspondence on one class: every path in Ω^{(c)} (project path space of the stratum of J_k) is joined to some φ(J'), and for φ(J') ∈ Ω^{(c)}, J' ~ J'' in Ω_{k+1}(n) iff φ(J') ~ φ(J''). B: (1) for every n > 0 and J_1, …, J_k: ΩΩ_k(n) (B's OmIn) has infinitely many path components and Ω_{k+1}(n) finitely many; (2) in the direct limit over n = 16r (stabilizations J ↦ J ⊕ J'_k, paths w ↦ w ⊕ ψ, direct-limit topologies), the limit map Φ : Ω_{k+1} → ΩΩ_k separates and hits all components and restricts on each component to a homotopy equivalence onto the corresponding component. A ⇒ B fails genuinely: (1) is not in A at all (it needs non-emptiness of infinitely many classes — e.g. the geodesics J exp(π(2m+1)J⁻¹J') — plus class constancy on B's components, cf. V15_35's glue, and finiteness of components of the compact manifold Ω_{k+1}(n), i.e. local path-connectedness, not in A); (2) needs the whole direct-limit apparatus (compatibility of φ and of the classes with the stabilizations, homotopy groups of direct limits, and promoting the resulting weak equivalences to homotopy equivalences on components — Milnor's 'passing to the direct limit'), none of which is in A, which is a single finite stage in a range depending on c. B ⇒ A only vacuously: B's finite-stage claim (1) says nothing about φ, and no finite-stage statement follows from the limit claim (2); A is re-proved outright by copying the project's proof (non-item lemmas: the clopen Theorem 22.1 push-into lemmas, isClopen_omegaComp, omega_hidx_two, φ ≃ minPaths). Each side has content the other lacks.",
+ "B_issue": null,
+ "overlap": "B_to_A: 2899 shared project theorems — essentially the whole proof (Theorem 22.1 machinery, index bound, φ ≃ minPaths); the item theorem itself is avoided by a renamed copy.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable"
+}

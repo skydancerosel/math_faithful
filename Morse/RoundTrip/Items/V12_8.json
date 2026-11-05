@@ -1,0 +1,17 @@
+{
+ "id": "V12_8",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universe 0) = Morse.sectional ∧ sectional_nonneg ∧ sectional_eq_zero_iff ∧ sectional_std: for ANY real Lie algebra L and ad-invariant bilinear B (positive definite for the middle two), B (curv (halfLie L) X Y X) Y = ¼B⁅X,Y⁆⁅X,Y⁆, ≥ 0, = 0 ↔ ⁅X,Y⁆ = 0, and the usual-sign form — pure algebra. B: on a Lie group with bi-invariant metric and Levi-Civita connection, ⟨R(X_u,X_v)X_u, X_v⟩(p) = ¼|[X_u,X_v](p)|², ≥ 0, = 0 iff the field [X_u,X_v] vanishes (R = Milnor's field formula curvF). B ⇒ A only vacuously (A re-proved from Morse.curv_inner). A ⇒ B fails: the passage from the group to the algebra is not formalized. Bridge B_of_core (uses A, #rt_check OK): Core = {X ⊢ X = 0 on left-invariant fields, metric compatibility in derivative form on left-invariant fields} ⇒ B, via the project's IsLeviCivita.conn_eq (giving (d)) and IsLeviCivita.isAdInvariant (21.3(a)), curvF on left-invariant fields = liv (curv (halfLie 𝔤) u v u), ⟨X_a,X_b⟩ ≡ ⟨a,b⟩, positivity of the metric at 1. So A is exactly B's algebraic content; the gap is the two geometric inputs.",
+ "B_issue": null,
+ "overlap": "B_to_A: 10 shared [Morse.curv_inner, Morse.curv_halfLie, Morse.sq_nonneg_of_pos, Morse.halfLie_apply, halfLie._proof_1..5, IsAdInvariant._proof_1] — curv_inner (21.3(c), an item of V12_6) is the formal proof's own route; banned theorems avoided.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "Not applicable: the item's declarations (Morse.sectional, sectional_nonneg, sectional_eq_zero_iff, sectional_std) concern an abstract real Lie algebra L with a bilinear form (Morse/Chapter12/BiInvariant.lean); they are not about a slice submanifold. B quantifies over abstract Mathlib Lie groups (LieGroup 𝓘(ℝ,ℝⁿ) ∞ G) with a RiemannianBundle; Bridge.Sub packages slice submanifolds as Riemannian manifolds but carries no LieGroup structure, and the project's embedded matrix-group results (Morse/Chapter12/GroupGeodesics.lean, e.g. IsMatrixGroup.curvOp_eq_jacobiOp; SUIndex.lean for SU(n)) are not part of this item."
+}

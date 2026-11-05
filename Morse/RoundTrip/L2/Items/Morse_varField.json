@@ -1,0 +1,11 @@
+{
+ "id": "Morse_varField",
+ "name": "Morse.varField",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are deriv (fun u => alpha u t) 0, i.e. W_t = d alpha/du (0, t); definitionally equal (rfl)."
+}

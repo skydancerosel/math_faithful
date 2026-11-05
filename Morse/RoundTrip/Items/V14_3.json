@@ -1,0 +1,17 @@
+{
+ "id": "V14_3",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": false,
+ "why": "A (universes 0) is only the arithmetic step of Milnor's argument: for odd integers k_j on any finite index type, card ≤ Σk_j², with equality iff every k_j = ±1, and if all k_j = ±1, card = 2m and Σk_j = 0 then m of each sign. B is the geometric claim: for A = T·diag(iπk_j)·Tᴴ, t ↦ exp tA (0 ≤ t ≤ 1) is minimal among ALL piecewise smooth paths from I to −I in U(n) (resp. in SU(2m) when Σk_j = 0) iff every k_j = ±1, and then dim_ℂ Eigen(iπ) = m. A ⇒ B fails genuinely: the 'if' directions need the lower bound π√n for the length of every path from I to −I in the group (Hopf–Rinow + Lemma 21.2, or the fact that U(n) lies on the sphere of radius √n with I, −I antipodal), which A does not contain; the 'only if' directions and dim Eigen(iπ) = m would follow from A plus glue (length = π√Σk_j² as in V14_2, the competitor k = (±1), eigenspaces of a conjugated diagonal matrix). The project proves the geometric statement only for SU(2m), outside the item (riemDist_one_neg_one, isMinimalGeodesic_exp_iff, built on this item's lemmas), and nothing for U(n). B ⇒ A only vacuously: A is re-proved outright (elementary arithmetic).",
+ "B_issue": null,
+ "overlap": "B_to_A: 0 shared project theorems (A_to_B not proved).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete matrix groups U(n), SU(n) ⊆ M_n(ℂ) (Mathlib unitaryGroup / specialUnitaryGroup as subsets, lengths as Euclidean lengths of curves in M_n(ℂ)); it does not quantify over abstract Riemannian manifolds."
+}

@@ -1,0 +1,17 @@
+{
+ "id": "V9_1",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0) is pure ODE theory on a Banach space E for x' = A(t)x: global existence on ℝ for continuous A (Grönwall + truncated Picard–Lindelöf), uniqueness on a closed [a,b] by the value at any point through the propagator linSol, and the smoothness bootstrap; no Jacobi fields, curvature or manifolds. B: for every abstract Riemannian ℝⁿ-manifold and Levi-Civita connection, along a geodesic on [a,b] there are 2n linearly independent Jacobi fields (Milnor's axiomatic D/dt, curvature in Milnor's sign), every initial datum (J(a), DJ/dt(a)) is realized on all of [a,b], and Jacobi fields are determined by it. A ⇒ B fails genuinely: besides the setting, the reduction of the Jacobi equation to a linear first-order system along γ (parallel frame, or the project's ambient system jacSys with tangency preservation jacSol_mem_tanAt) and the count 2n are not in A — even on N ⊆ V they are the project's Chapter 9 results (exists_jacobi, finrank_jacobiSpace, IsJacobiField.eqOn_jacSol), outside the item. B ⇒ A is proved only by proving A outright (re-running the project's proofs; linSol's properties re-derived since linSol_spec uses the banned exists_linearODE) — vacuous.",
+ "B_issue": null,
+ "overlap": "B_to_A (A proved outright, B unused): 13 shared project theorems — exists_linearODE_Ioo (the local truncated Picard–Lindelöf step with Grönwall bounds), linearODE_eqOn, linearODE_eq, norm_le_of_norm_deriv_le, radTrunc lemmas, exists_nnnorm_le_Icc, linSol unfoldings; i.e. the project's own proof re-run.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Not attempted beyond diagnosis. B_emb := B at M = Bridge.Sub hN, cov = Bridge.conn. Its content on N ⊆ V is the project's Chapter 9 (exists_jacobi, finrank_jacobiSpace = 2·dim, IsJacobiField.eqOn_jacSol, on [0,1] rather than [a,b]), reached through a Jacobi dictionary (IsJacobi ↔ IsJacobiField via Bridge.hasCovDeriv_iff and isCurvVal_iff, curvature sign check, affine reparametrization [a,b] ↔ [0,1], linear independence via Bridge.D injectivity). Those project theorems depend on A's exists_linearODE (through linSol_spec), so an A ⇒ B_emb passing #rt_check would have to re-run Chapter 9's Jacobi-system construction with A as hypothesis — new work far beyond dictionary glue."
+}

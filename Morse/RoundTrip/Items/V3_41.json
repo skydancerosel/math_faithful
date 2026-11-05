@@ -1,0 +1,16 @@
+{
+ "id": "V3_41",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A (no universe parameters) is about the matrix model ℂPⁿ = grassmannian (Fin (n+1)) 1 ⊆ Mₙ₊₁(ℂ): points are projections f fᴴ, coord k / param k invert each other between U_k = {Re P_kk > 0} and the open unit ball, the U_k cover, ℂPⁿ is a compact 2n-dimensional slice submanifold with slice charts parametrized by z ↦ param k (coord k x + z). B: the quotient S^{2n+1}/S¹ carries a C^∞ structure (model EuclideanSpace) in which Milnor's coordinates map each U_k diffeomorphically onto the ball. A ⇒ B: transport along the homeomorphism z ↦ z zᴴ (continuous bijection from a compact space; surjective by A's exists_vec_of_mem), charts from A's coord_param / nsq_coord_lt_and_param_coord, cover from exists_re_diag_pos; smooth transitions from the project's contDiffOn_coord/contDiffOn_param (outside A). A's slice-submanifold, slice-chart and compactness conjuncts are not needed. B ⇒ A fails genuinely: B says nothing about the matrix model (embedding as a slice submanifold, f fᴴ, compactness); A, being a theorem, follows only by re-proving it outright.",
+ "B_issue": null,
+ "overlap": "n/a (B_to_A not proved)",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable"
+}

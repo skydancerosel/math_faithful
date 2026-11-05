@@ -1,0 +1,21 @@
+{
+ "id": "V7_1",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "Both directions are vacuous. B (definition item, abstract ℝⁿ-manifold): with B's own definitions IsGeodesic ↔ 'acceleration field D/dt(dc/dt) exists and vanishes' ↔ 'velocity parallel' — a tautology, proved outright (B_holds) by unfolding; A is not used and could not be (A is about N ⊆ V). A (universes 0; IsGeodesicOn is a definition: smooth γ on an OPEN s with values in a slice submanifold N ⊆ V and ambient γ'' ⊥ T_γN): velocities of curves in N are tangent, geodesics have P(γ'') = 0, on ℝ this is covDeriv(velocity) = 0, constants are geodesics; re-proved outright from Chapter 8's hasDerivWithinAt_mem_tangentSubspace and tanProj_eq_zero_iff. Content: A's notion lives only on open time sets of embedded N with the induced connection; B's on arbitrary intervals of abstract manifolds with any Levi-Civita connection; neither implies the other's content.",
+ "B_issue": null,
+ "overlap": "B_to_A: 43 shared — hasDerivWithinAt_mem_tangentSubspace (Chapter 8) with its slice-chart tangent-space characterization, tanProj_eq_zero_iff, IsGeodesicOn fields",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Vacuous in both directions, like the A/B result. Items/V7_1.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric, ConnectedSpace) and cov = Bridge.conn (B_to_B_emb). B_emb is a tautology of the blind definitions (B_holds), so A_to_B_emb := B_to_B_emb B_holds does not use A. B_emb_to_A3 (#rt_check OK) gives A's isGeodesicOn_univ_iff_covDeriv for connected N with model ℝⁿ from B_emb's second clause on ℝ — its content is the dictionary, not B_emb: Bridge.isGeodesic_iff_isGeodesicOn and the new Emb.isParallel_vel_iff_covDeriv (Milnor's 'velocity field parallel' for Bridge.conn on ℝ ⇔ the project's ∀ t, covDeriv hN c (velocity c) t = 0). The substantive embedded check is that the definitions agree: Emb.isGeodesic_iff_interior (a blind geodesic of Bridge.conn on ANY interval s ⇔ smooth in V on s and Morse.IsGeodesicOn on interior s) — so Milnor's definition on ↥N matches the project's IsGeodesicOn, the project only restricting to open time sets.",
+ "embedded_uses_hypothesis": {
+  "A_to_B_emb": false,
+  "B_emb_to_A3": true
+ }
+}

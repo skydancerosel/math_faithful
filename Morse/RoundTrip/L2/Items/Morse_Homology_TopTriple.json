@@ -1,0 +1,11 @@
+{
+ "id": "Morse_Homology_TopTriple",
+ "name": "Morse.Homology.TopTriple",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": "This is a representation difference only. The project's structure has an extra field k : Z ⟶ X together with fac : i ≫ j = k (so that the pair (X, Z) can be chosen definitionally), and the blind structure has no such field. Because k is determined by fac, the two types are equivalent.",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "An explicit equivalence TopTriple ≃ T forgets k; its inverse sets k := incZY ≫ incYX with fac := rfl, and left_inv follows by subst fac. The equivalence preserves pairXY and pairYZ by rfl and pairXZ by fac. Both encode Z ⊆ Y ⊆ X as composable embeddings in TopCat."
+}

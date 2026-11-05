@@ -1,0 +1,17 @@
+{
+ "id": "V7_25",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; slice submanifold N ⊆ V): (1) for normal coordinates of ANY radius ε at p and EVERY δ ∈ (0, ε), δ < ρ(p,q) < ∞ ⇒ ∃ w ∈ T_pN, ‖w‖ = δ, ρ(p,q) = δ + ρ(exp_p w, q); (2) broken_geodesic_eq (unit-speed γ on ℝ and σ on s ⊇ [t₀,t₁], joined at t₀, ρ(γ0, σt₁) ≥ t₁ ⇒ σ(t₁) = γ(t₁)). B (abstract connected Riemannian manifold, Levi-Civita cov): (1) ∀ p ∃ δ₀ > 0 such that for δ < δ₀ and ρ(p,q) ≥ δ: ρ(p,s) = δ on the shell S = exp_p{‖w‖ = δ}, ρ(p,q) = min_{s∈S}(ρ(p,s)+ρ(s,q)) and = δ + ρ(p₀,q) for some p₀ ∈ S; (2) a minimal broken geodesic with equal speeds at the break is an unbroken geodesic and coincides with any geodesic γ' extending its first piece. B ⇒ A fails genuinely on (1): A's radius is every δ below any normal radius, B's only some unspecified δ₀ (and A allows non-connected N); but B's (2) gives A's (2): B_to_A_broken : B → broken_geodesic_eq is proved (rt_check OK), applying B to the connected component of γ(0) in N re-modelled on ℝᵐ (RoundTrip.Bridge's induced metric/connection), with γ' = γ, T = t₁, the broken path of length t₁ = ρ. A ⇒ B fails genuinely (abstract setting; no abstract geodesic theory or Nash embedding in the project); B also has content A lacks (ρ(p,s) = δ on S, the minimum formula, the δ = ρ(p,q) case, unbrokenness of the broken path).",
+ "B_issue": null,
+ "overlap": "B_to_A_broken (partial, B → broken_geodesic_eq): 134 shared project theorems — the unit-speed length computation copied from the project's proof (IsPiecewiseSmooth.concat, pathLength_eq_of_norm_deriv, IsGeodesicOn.norm_deriv_eq, riemDist_le_pathLength) and geodesic/slice-chart infrastructure; not corollary_10_7 or minimal_segment (unbrokenness comes from B). No full direction proved.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved_partial",
+ "embedded_special_case_note": "B's part (2) → broken_geodesic_eq proved in Items/V7_25.lean (B_to_A_broken), uses B. Norms in B were checked with pp.explicit: the shell ‖w‖ = δ and both speeds use the RiemannianBundle norm (B does not use nrm/tball). B's part (1) vs A's (1) is a genuine quantifier difference, not attempted further."
+}

@@ -1,0 +1,18 @@
+{
+ "id": "V7_16",
+ "reblind": true,
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B (p. 61 remark): for W, ε as in Lemma 10.3 (blind IsUniformNormal) on an abstract connected Riemannian ℝⁿ-manifold with any Levi-Civita connection, if a piecewise smooth ω : [0,1] → M from q₁ to q₂ has ω([0,1]) ≠ γ([0,1]) (γ the short geodesic) then L(γ) < L(ω). A (universes 0): for N ⊆ V with the induced metric and any normal radius ε at q, an admissible path c from q to exp_q(v), 0 < ‖v‖ < ε, of length exactly ‖v‖ satisfies c(t) = exp_q((L(c|[a,t])/‖v‖)·v) (a monotone reparametrization of the geodesic, sharp form), the arc length t ↦ L(c|[a,t]) is monotone, and c([a,b]) = γ([0,1]). A ⇒ B fails genuinely (abstract manifolds/metrics; no abstract exp theory in the project). B ⇒ A fails genuinely: B's conclusion (equal images at equal length) does not give A's monotone reparametrization, monotoneOn_pathLength is a calculus fact absent from B, and B's hypothesis needs a uniformly normal W containing both endpoints, so it does not reach an arbitrary normal radius. On embedded manifolds A ⇒ B_emb is proved (#rt_check OK).",
+ "B_issue": null,
+ "overlap": "No B_to_A. For A_to_B_emb (informative): 205 shared project theorems, mostly through the project's norm_le_pathLength (V7_15: Gauss lemma, exists_crossing, radius_sub_le_pathLength), which A_to_B_emb uses for the inequality L(γ) ≤ L(ω) that is not part of this item; A itself supplies the equality case (image_eq_of_pathLength_eq).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "Items/V7_16.lean: B_emb := B for M = Bridge.Sub hN with the induced metric and Bridge.conn (B_to_B_emb). A_to_B_emb (uses A's image_eq_of_pathLength_eq): geodesic_data reads the short blind geodesic as t ↦ exp_q(tv) with length ‖v‖; a project normal radius ε' ∈ (‖v‖, ε) comes from W's normal ball (normalCoord_of_isNormBall, dictionary repeated from V7_13); L(γ) ≤ L(ω) from the project's norm_le_pathLength; if L(γ) = L(ω), A's image_eq_of_pathLength_eq (or, for v = 0, constancy) gives equal images, contradicting ω([0,1]) ≠ γ([0,1]). B_emb ⇒ A not attempted beyond diagnosis: B_emb only applies to endpoints in a uniformly normal W (reachable from lemma_10_3, as in V7_15), its conclusion is weaker than the sharp form, and it has no monotonicity of arc length. Limitations as in V7_13 (induced connection only, connected N)."
+}

@@ -1,0 +1,17 @@
+{
+ "id": "V5_18",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (no universe parameters; CP.affinePart, CP.hyperplaneSection, CP.affineHomeomorph are vocabulary): ‖affine coordinates‖ → ∞ at V ∩ P, and Corollary 7.3 over a field for closed V ⊆ ℂPⁿ (trace-one Hermitian projections), P = {Z₀ = 0}, V − P ⊆ ℂⁿ a complex submanifold of complex dimension k, under Hypothesis (N). B (Milnor): V the projective zero set of homogeneous polynomials in ℂPⁿ = S^{2n+1}/S¹, any hyperplane Σ a_j z_j = 0, V − P (as {Σ a_j w_j = 1, F(w) = 0} ⊆ ℂ^{n+1}) a complex submanifold of complex dimension k; integral homology; no (N). A ⇒ B fails on three counts: (1) (N), which Milnor gets from the triangulability of algebraic varieties (not formalized); (2) ℤ vs field coefficients (universal coefficient theorem absent; at r = k − 1 finite generation of H_{k−1}(V, V∩P; ℤ) would also be needed); (3) the model of ℂPⁿ and the hyperplane (a unitary change of coordinates and a bridge to the Grassmannian model). Partial result B_field_of_N (#rt_check OK, does NOT use A): with (N) assumed, B's conclusion with coefficients in any field follows from the project's abstract Morse.corollary_7_3_of_section via glue built here (B's ℂPⁿ compact and Hausdorff through the Gram map, V and V ∩ P closed, the affine chart V − P ≅ affPart, ‖e⁻¹y‖ → ∞ from T2, transfer of pairs). B ⇒ A fails genuinely: A covers closed V that are not algebraic (only V − P must be a complex submanifold) and field coefficients, which B's integral statement gives only through the UCT.",
+ "B_issue": null,
+ "overlap": "no B_to_A proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "Not about Riemannian manifolds or connections: A and B concern complex submanifolds of ℂⁿ / ℂPⁿ, singular homology and relative homotopy; there is nothing to specialise to Bridge.Sub. Nothing added to the .lean file."
+}

@@ -1,0 +1,11 @@
+{
+ "id": "V2_5",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A ⇒ B: take M = ℝ² minus a point as an open subset (Mathlib's Opens charted space, modelled on EuclideanSpace ℝ (Fin 2)) with f = ‖x‖², a = 1/4, b = 4. Non-compactness and the failure of the deformation retraction are transported from A's remark_p13_not_isCompact and remark_p13_not_isStrongDeformationRetract along the isometry ℂ ≃ ℝ² (DefRetract ⟺ IsStrongDeformationRetract). The absence of critical points on the slab is proved directly: A's remark_p13_not_isCriticalPoint is about the whole plane with the vector-space notion, and A never puts a manifold structure on ℂ \\ {i}. B ⇒ A fails: B is a bare existence statement, while A is about a specific example and also asserts that the sublevel sets are not homotopy equivalent and not homeomorphic, and that the theorem holds on the unpunctured plane.",
+ "B_issue": null,
+ "overlap": "n/a (B_to_A not proved)"
+}

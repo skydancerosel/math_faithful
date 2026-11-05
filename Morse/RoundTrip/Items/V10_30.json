@@ -1,0 +1,17 @@
+{
+ "id": "V10_30",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: for every abstract Riemannian n-manifold M isometric to the round Sⁿ (IsRoundSphere ψ), n ≥ 1, and p ∈ M, both the loop space Ω(M;p,p) (blind Om, d-topology) and Ω* are homotopy equivalent to a Mathlib CWComplex with exactly one l-cell for each k with k(n−1) = l. A (no universes): for Sⁿ ⊆ ℝⁿ⁺¹, n ≥ 2, Ω(Sⁿ;p,p) ≃ₕ Ω(Sⁿ;p,q) for some q ≠ ±p, Ω(Sⁿ;p,p) has the project's countable cell complex type with one cell in each dimension k(n−1) (oneCellEach; cell tower + mapping telescope), and for n ≥ 3 its Betti numbers over any field. A ⇒ B fails genuinely: abstract M; the CW-model gap (project cell tower with arbitrary attaching maps vs Mathlib CWComplex: cellular approximation and CW structure on telescopes missing); n = 1 (Ω S¹ ≃ ℤ) and Ω* are not in A. B ⇒ A fails genuinely: setting; a Mathlib CW complex does not give the project's tower; A's Betti numbers would need cellular homology of Mathlib CW complexes; the auxiliary homotopy equivalence with Ω(Sⁿ;p,q) is not in B.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. A_to_B_cell_emb: 908 shared project theorems — essentially all of Theorem 17.1 (theorem_17_1, JoinSystem.isHomotopyEquiv_toPathC, Appendix theoremA_general / mapping-telescope lemmas, normal-coordinate and geodesic-flow infrastructure), because both our transport Ω* ≃ₕ Ω and A's corollary_17_4_loop (through pathSpHomotopyEquiv) use the project's Theorem 17.1 (outside A), plus the path-space metric dictionary infrastructure; none of the proof of 17.3/17.4 itself (no 17_3/17_4/omega_cells/sphere_paths lemma is shared).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V10_30.lean: B_emb := B for M = ↥Sⁿ (Bridge.Sub (Milnor.Sphere.sphSub n), model ℝⁿ, induced metric, ConnectedSpace as an instance hypothesis) and ψ = the inclusion; B_to_B_emb uses the new lemma Emb.isRoundSphere_incl (incl is smooth, injective, onto the unit sphere, isometric: Bridge.inner_eq). Neither A ⇒ B_emb nor B_emb ⇒ A (CW-model gap). Proved instead (#rt_check OK, uses A): A_to_B_cell_emb — for n ≥ 2, the blind Ω(↥Sⁿ;p,p) and Ω*(↥Sⁿ;p,p) have the project's cell type oneCellEach (k ↦ k(n−1)): A's corollary_17_4_loop transported along Emb.heOm (blind Ω ≃ₕ PathSp, dictionary copied from Items/V10_19.lean) and, for Ω*, along Morse.theorem_17_1 (PathSp ≃ₕ PathC, outside A) and Emb.sigma (blind Ω* ≅ PathC). Remaining gaps on the embedded sphere: Mathlib CWComplex vs cell tower, n = 1, and B says nothing about Betti numbers."
+}

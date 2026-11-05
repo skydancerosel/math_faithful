@@ -1,0 +1,11 @@
+{
+ "id": "Morse_flow",
+ "name": "Morse.flow",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "X bounded and globally Lipschitz (Morse.IsBddLipschitz; holds for Milnor's C¹ fields with compact support by Morse.IsBddLipschitz.of_contDiff) and E complete",
+ "difference": "Junk/choice outside the textbook hypotheses: the project needs an integral curve on all of ℝ (else junk x), the blind one only on the interval between 0 and t. differ: X(y) = 1 for y ≥ 0, 0 for y < 0 on ℝ has no global integral curve through 0, so the project's φ_1(0) = 0 while the blind one is 1.",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Under the hypotheses the project's chosen global curve restricts to a blind solution on uIcc 0 t, and integral curves on [0,t] or [t,0] with one-sided derivatives are unique (ODE_solution_unique_of_mem_Icc_right/left, Lipschitz), so both values are the same (agree_of). Without uniqueness/completeness the choices differ, as the discontinuous counterexample shows."
+}

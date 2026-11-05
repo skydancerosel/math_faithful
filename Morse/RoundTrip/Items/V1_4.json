@@ -1,0 +1,11 @@
+{
+ "id": "V1_4",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": true,
+ "why": "A's only theorem is isCriticalPointM_iff_milnor (f_* = 0 ⟺ the companion project's 'df_p not surjective'). It is elementary and is re-proved directly in B_to_A without using B; B itself says nothing about Milnor.IsCriticalPoint. B is about the Hessian, which A does not mention, so A ⇒ B means proving B outright. As a vocabulary check, the file proves B_of_milnorFormula: every clause of B except (a) holds for the project's definitions. Those clauses are symmetry, the second-derivative formula in the preferred chart (whose derivative at p is the identity), and indexM = Milnor's sup-of-dimensions index. Clause (a) is Milnor's f_**(v,w) = ṽ_p(w̃ f) for arbitrary smooth extending vector fields; it needs a computation in tangent-bundle trivialisations (chart at x vs chart at p) and is believed true but was not proved.",
+ "B_issue": null,
+ "overlap": "4 shared items: Morse.surjective_iff_ne_zero (a linear-algebra helper used by the project's proof) and the unfolding equations of Milnor.IsCriticalPoint, Milnor.IsRegularPoint, Morse.IsCriticalPointM; B_to_A is the project's short proof re-done"
+}

@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsFocalPoint",
+ "name": "Morse.IsFocalPoint",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Project: (q, e-q) in normalBundleSet and endpointNullity = finrank ker (mfderiv of E(q,v) = q+v on the normal bundle N, N a slice submanifold of R^n x R^n modelled on R^n) > 0. Blind: velocity tangent spaces for M and N, nullity = finrank ker of (a,b) -> a+b on T_xN. Equal for every slice M (with k+w=n): normal bundles agree (tangent spaces agree), mfderiv E = (fst+snd) o D with D = mfderiv val injective (Milnor.injective_mfderiv_val) and range D = T_xN, so the kernels have equal finrank."
+}

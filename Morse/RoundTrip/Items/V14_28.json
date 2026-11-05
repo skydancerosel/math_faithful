@@ -1,0 +1,17 @@
+{
+ "id": "V14_28",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "A (no universes): at base point 1, π_j U(m) ≃ π_{j+2} U(Fin m ⊕ Fin m) for j+1 ≤ 2m and ≃* for degrees ≥ 1 (j+2 ≤ 2m) — the end-to-end composite of Milnor's chain — and periodicity π_{i−1} U(m) ≃ π_{i+1} U(m) in the SAME U(m) for 1 ≤ i, i+2 ≤ 2m (≃* for j+4 ≤ 2m). B: at all base points, π_k U(m) ≅ π_{k+2} U(m') for ANY m, m' in the stable range (sets; groups in degrees ≥ 1), and each link π_{i−1}U(m) ≅ π_iG_m(ℂ^{2m}) ≅ π_{i+1}SU(2m) ≅ π_{i+1}U(2m) (1 ≤ i ≤ 2m) with G_m = rank-m Hermitian idempotents. B ⇒ A uses only B's two periodicity conjuncts (m' = 2m reindexed to Fin m ⊕ Fin m, and m' = m). A ⇒ B: the composites and periodicity come from A after reindexing Fin m ⊕ Fin m ≃ Fin 2m, left translation of base points, and stability π_i U(a) ≅ π_i U(b) (bijective_homotopyGroupMap_unitaryIncl_complex, outside the item) for m ≠ m'; the individual links are NOT in A (it states only composites) and are supplied by other project theorems (grassmannianPiEquiv / nonempty_mulEquiv_grassmannianPi (V14_26), theorem_23_3_mulEquiv, bijective_homotopyGroupMap_suInclC (V14_27)), with rank = trace for the Grassmannian. Mathematically the same; A by itself is the composite-and-same-m form.",
+ "B_issue": null,
+ "overlap": "B_to_A: 48 shared project theorems, all generic transport (base-point change / homeomorphism invariance: cube/changeBase lemmas, bijective_homotopyGroupMap_homeomorph, nonempty_mulEquiv_of_homeomorph) and the reindexing lemmas of unitaryCongr (mem_stiefel, reindex_mem_stiefel, coe_unitaryGroup_eq_stiefel). A_to_B: 3419 — through the outside chain-link theorems (Theorem 23.3 as groups, Lemma 23.4 for the Grassmannian, SU ⊆ U, stability), which the item's own proofs also use; no banned theorem.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about the concrete matrix groups U(m), SU(m) ⊆ M_m(ℂ) (Mathlib unitaryGroup / specialUnitaryGroup), the circle and the Grassmannian of projections; it does not quantify over abstract Riemannian manifolds."
+}

@@ -1,0 +1,11 @@
+{
+ "id": "Morse_pathLength",
+ "name": "Morse.pathLength",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are the oriented interval integral of ||deriv c t|| from a to b; definitionally equal (rfl)."
+}

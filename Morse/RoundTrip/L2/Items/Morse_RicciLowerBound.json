@@ -1,0 +1,11 @@
+{
+ "id": "Morse_RicciLowerBound",
+ "name": "Morse.RicciLowerBound",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "`agree` (↔, outright, for every r): both use n = finrank Z and leave r unconstrained (r = 0 gives K(U,U) ≥ 0 in both). The tangent spaces (hence unit vectors) agree, the Gauss-equation curvature on Morse.tangentSubspace is Morse.curvTensor (inner-product comparison), and the trace over the blind tangent space is transported to the project's by `subst` of the submodule equality, giving ricci N q U U = Morse.ricci hN q U U."
+}

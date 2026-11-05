@@ -1,0 +1,11 @@
+{
+ "id": "V2_15",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A: for compact slice submanifolds N and regular values a only (no critical point on the level a), N^a is homotopy equivalent to an iterated adjunction space with cells for the critical points below a, in order of critical value (IsFiniteCellComplexType). B: every a, critical values included (Milnor's 'even when a is a critical value'), on any manifold with compact sublevel sets, with a finite Mathlib CWComplex. A ⇒ B fails genuinely: critical a and non-compact M are absent, and adjunction → CW needs cellular approximation. B ⇒ A fails: a CW-complex does not give A's ordered iterated adjunction space.",
+ "B_issue": null,
+ "overlap": "n/a (neither direction proved)"
+}

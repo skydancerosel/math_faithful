@@ -1,0 +1,17 @@
+{
+ "id": "V15_22",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A (universes 0, any finite index type, arbitrary sequence J; tanAlg J k x = Milnor's 𝒯_x = {A skew | Ax = −xA if k ≠ 0, AJ_α = J_αA for α < k}): membership; 𝒯 at k = 0 does not depend on x; Assertions' 'if' halves for EVERY A ∈ 𝒯_x (no smallness); A ∈ 𝒯_{x exp A}; exp injective on an explicit Frobenius ball; 'only if' halves on any injectivity ball (x, x exp C ∈ Ω_k(n), J_1..J_k anticommuting); the local logarithm near x ∈ Ω_k(n). B (Fin n, J ∈ Ω_k(n), J_1..J_{k−1} anticommuting): for small skew A, Assertion 1 iff and Assertion 2 iff (collectively, without assuming Assertion 1's conclusion), T is a subspace, and J exp(T ∩ U) ⊆ Ω_k(n) is a neighbourhood of J in Ω_k(n) for all small U. A ⇒ B: Assertion 1 both ways from A's mul_exp_mem_omega / mem_tanAlg_of_mul_exp_mem for the constant family (J, J, …) at k = 1; Assertion 2 'only if' cannot come from A's mem_tanAlg_of_mul_exp_mem (it assumes J exp A ∈ Ω_k(n), i.e. also Assertion 1's conclusion) and is derived from A's exists_exp_injective (exp(J_αAJ_α⁻¹) = exp A); T = A's tanAlg; the neighbourhood from A's exists_local_log for the family J_1..J_{k−1}, J (B has no J_k). B ⇒ A only vacuously (outright): B holds only on some J-dependent neighbourhood, only at points of Ω_k(n) with an anticommuting family; A has explicit radii and the 'if' halves for all A.",
+ "B_issue": null,
+ "overlap": "B_to_A (vacuous, outright copies): 74 shared project theorems — exp/orthogonal-matrix helpers (exists_hasStrictFDerivAt_exp_zero, exists_log, exp_conj_orth, norm_conj_orth, exp_mul_exp_neg, exp_conjTranspose_mul_exp_of_skew, isComplexStructure_mul_exp, anticomm_mul_exp, mul_exp_eq_exp_neg_mul, omega_orth/omega_sq/omega_anti, Frobenius normed-ring fields); no item theorem.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete real matrices (Mathlib orthogonalGroup as a subset of M_n(ℝ), Ω_k(n) as subsets; the induced-metric notions TanSet/IsGeodOn/IsPathIn/lenM/IsMinGeodIn are already embedded); it does not quantify over abstract Riemannian manifolds."
+}

@@ -1,0 +1,17 @@
+{
+ "id": "VA_17",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A = corollary_appendix (universes 0,0) ∧ corollary_cellComplex (universe 0): for X the homotopy direct limit of {X_n} with X_n ≃ₕ K_n, X ≃ₕ the mapping telescope of a sequence K₀ → K₁ → ⋯ with the given stages; for K_n finite iterated adjunction spaces (IsFiniteCellComplexType, arbitrary attaching maps) this is a mapping telescope of such spaces. B: X ≃ₕ a Hausdorff Mathlib CWComplex whenever every X_n is. A ⇒ B fails genuinely: the step 'a mapping telescope of CW complexes has CW homotopy type' needs cellular approximation and the CW structure of the mapping telescope of cellular maps, absent from Mathlib and the project; the reduction is proved (A_to_B_of_telescope, #rt_check OK: A ∧ TelescopeCW ⇒ B, using A's first clause). B ⇒ A only vacuously: A is re-proved outright from the non-listed nonempty_homotopyEquiv_mappingTelescope; B does not give the mapping-telescope model (A's content), nor anything about iterated adjunction spaces.",
+ "B_issue": null,
+ "overlap": "B_to_A (vacuous) shares 203 project theorems: the whole proof of the Corollary (nonempty_homotopyEquiv_mappingTelescope, isHomotopyEquiv_compareMap, theoremA, Cases 1 and 2, telescope and mapping-telescope infrastructure), because A is re-proved outright by the project's own route minus its last step. A_to_B_of_telescope uses only A's first clause through the hypothesis and the VA_2 glue.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "General topology (homotopy direct limits, CW homotopy types); no Riemannian manifold."
+}

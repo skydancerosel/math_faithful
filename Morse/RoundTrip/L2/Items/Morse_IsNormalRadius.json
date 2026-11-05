@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsNormalRadius",
+ "name": "Morse.IsNormalRadius",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Project: Nonempty NormalCoord (open O, U ⊆ V, smooth ambient F, G extending exp_q|B_ε and its inverse, U ∩ N = exp_q(B_ε)); blind: exp_q defined and C^∞ on B_ε ⊆ T_qN, exp_q(B_ε) open in N ∋ q, with a locally-smoothly-extendable inverse. Equal for all N, q, ε: project ⇒ blind by restriction (ψ = π ∘ G); blind ⇒ project with F = exp_q ∘ π and G obtained by gluing the local extensions with a smooth partition of unity on an open set (glue, from Mathlib's exists_contMDiffMap_forall_mem_convex_of_local)."
+}

@@ -1,0 +1,12 @@
+{
+ "id": "V4_12",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "Both are Theorem 6.6: for a.e. p, L_p|M has only non-degenerate critical points. A ⇒ B is A's volume clause. B ⇒ A: B (dim M ≥ 1, volume) extends to all slice M ⊆ ℝⁿ (dim 0 and empty M trivially) and to any Haar measure (absolutely continuous w.r.t. volume); smoothness of L_p|M is automatic, so 'Morse function' = 'no degenerate critical point'; A's dense-existence clause follows (open sets have positive measure). A's extra clause mem_focalSet_of_not_isMorseFunction (a non-Morse L_p has p focal) is the 'Lemma 6.5' step of Milnor's proof, absent from B; B_to_A re-proves it from the project's isDegenerate_normSq_sub_iff_isFocalPoint (V4_11) without using B. So the measure content is equivalent; A additionally records the proof step via focal points.",
+ "B_issue": null,
+ "overlap": "B_to_A: 217 shared, all through the outside lemma isDegenerate_normSq_sub_iff_isFocalPoint used for the focal-set clause (its Lemma 6.5 proof: endpointNullity_eq_nullity, hessian computations, chart-independence) plus slice-chart infrastructure; the measure clauses share nothing with the project's Sard argument",
+ "uses_hypothesis": {"A_to_B": true, "B_to_A": true}
+}

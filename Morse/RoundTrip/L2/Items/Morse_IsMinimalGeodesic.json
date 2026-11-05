@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsMinimalGeodesic",
+ "name": "Morse.IsMinimalGeodesic",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "a < b and γ is (the restriction of) a geodesic on an open set containing [a, b], i.e. γ itself is geodesic near [a, b]",
+ "difference": "The project requires a ≤ b and γ ITSELF to be a geodesic on some open s ⊇ [a,b], so it depends on the values of γ just outside [a,b]; the blind predicate only sees γ on [a,b]. differ: b < a (blind vacuous, project false); differ_junk: γ = 0 on [0,1] with a corner at 1 in N = ℝ (blind yes, project no). agree_upto: for a < b, blind(γ) ↔ ∃ g = γ on [a,b] with project(g).",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Under the hypotheses both minimality clauses say length(γ) ≤ ρ(γ(a),γ(b)) (lengths and ρ identified by the Morse_riemDist glue: len_eq, riemDist_eq, Morse.riemDist_le_pathLength), and the geodesic clauses agree (restriction to [a,b]). The differences are only junk outside the textbook's γ : [a,b] → N with a < b: agree_upto shows blind = project up to changing γ off [a,b] (extend_closed)."
+}

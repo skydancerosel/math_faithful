@@ -1,0 +1,17 @@
+{
+ "id": "V9_21",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; slice submanifolds, ANY smooth curve γ, finite division set B, validFor = {τ ∈ (0,1] | B is IsFine for [0,τ]}): Hform τ = energyHessian (formula-defined) on brokenSpace B τ transported to Σ = nodeSpace (⊕_{b∈B} T_{γ(b)}N), 0 off validFor; formIndex Hform τ = indexUpTo τ and its nullity = conjMultiplicity 0 τ on validFor; τ ↦ Hform τ x y continuous within validFor for fixed x, y; mem_validFor_of_near (τ' just beyond the last division point are valid). B (abstract connected Riemannian ℝⁿ-manifolds, geodesic γ, Milnor's FineSub of [0,1], τ ∈ (t_i, t_{i+1})): H_τ(x,y) = E_**(W_x, W_y) with Milnor's VARIATIONAL E_** (IsHessT τ) on broken Jacobi fields for t₀ < … < t_i < τ: a value exists for all x, y (so realizing variations exist), lam τ γ = bIndex univ H_τ, and (τ,x) ↦ H_τ(x,x) is jointly continuous on (t_i,t_{i+1}) × Σ. The shapes correspond (index ↔ formIndex_Hform; joint continuity of the quadratic form ↔ separate continuity of the matrix entries, equivalent for symmetric forms on finite-dimensional Σ), but beyond the setting the Hessians differ (identification blocked by the missing joint C² regularity of u ↦ E_0^τ(α(u))), so do λ (lam vs indexUpTo), the fineness notions (FineSub vs IsFine/validFor) and Σ; A has the nullity statement, B the existence of realizing variations.",
+ "B_issue": null,
+ "overlap": "no direction proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V9_21.lean states B_emb (M = Bridge.Sub hN, cov = Bridge.conn) with B_to_B_emb; no direction proved. B_emb ⇔ A would need: the Hessian identification HessT τ / HtauRel ⇔ energyHessian on ↥N (2-parameter variation dictionary, Lemma 11.A with Fréchet regularity, Theorem 13.1, and the absent joint C² regularity of u ↦ E_0^τ(α(u)) — new analysis, the V8_13/V9_5 obstacle); lam ⇔ indexUpTo (see V9_20); a dictionary Sig γ t i (Π_j T_{γ(t_{j+1})}↥N, product topology) ⇔ Morse.nodeSpace (via Bridge.D); FineSub ⇔ IsFine/validFor (unrelated notions; non-conjugacy of minimal GoodNbhd segments unproved); and the linear-algebra step separate ⇔ joint continuity of a symmetric form on a finite-dimensional space (routine). Stopped at the Hessian."
+}

@@ -1,0 +1,22 @@
+{
+ "id": "V8_17",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0), for slice submanifolds N ⊆ V only: for a 1-parameter variation α (U ⊆ ℝ) of an unbroken geodesic γ, HasDerivAt (deriv (u ↦ E(α u))) (2·secondVariation γ W W) 0, and the same value written energyHessian (formula-defined E_**). B: for every abstract Riemannian ℝⁿ-manifold and Levi-Civita connection and a 1-parameter variation (U ⊆ ℝ¹) of a geodesic: an IsHess (α 0) W W r exists, u ↦ dE(α u)/du is Fréchet differentiable at 0, and d²E/du²(0) equals EVERY IsHess value. A ⇒ B and B ⇒ A fail genuinely only because of the abstract setting: on embedded manifolds both A ⇒ B_emb and B ⇒ A_emb are now proved (second attempt), each also using the project's Theorem 13.1 (second_variation, not part of A) to identify the variational E_** of B with the formula E_** of A. B_to_A (main) is proved only by proving A outright (vacuous).",
+ "B_issue": null,
+ "overlap": "B_to_A (A proved outright, B unused): 243 shared — second_variation and its building blocks. Embedded A_to_B_emb and B_to_A_emb: 243 shared each — the same closure, because both use the project's Theorem 13.1 (second_variation, not banned) through Emb.hess_eq; remark_13_5/hasDerivAt_deriv_energy themselves are not used.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "B_emb := B at M = Bridge.Sub hN, cov = Bridge.conn (B_to_B_emb); A_emb := both conjuncts of A for connected ℝⁿ-modelled slice submanifolds (A_to_A_emb). A_to_B_emb (#rt_check OK): DifferentiableAt from EnergyC2; Fréchet d²E/du² = (d/ds)²E(α(s e)) = 2·secondVariation(W,W) by A (hA.1); every IsHess value is 2·secondVariation(W,W) (Emb.hess_eq: EnergyC2 + project's second_variation); existence by Milnor's β(u) = α((u₀+u₁)e), whose fields are W at every t ∈ ℝ (mfderiv_comp_sumL, also in the junk case via a right inverse). B_emb_to_A_emb / B_to_A_emb (#rt_check OK): lift the project variation to a blind one (isVarSub_lift), B_emb's ∀-IsHess clause gives Fréchet d²E/du² = r for the IsHess value it provides, and r = 2·secondVariation(W,W) by Emb.hess_eq; Fréchet ⇒ HasDerivAt (deriv E∘α) via EnergyC2. Caveat: both directions rely on Theorem 13.1 (V8_13's content) to identify B's variational E_** with A's formula; A itself is a 3-line corollary of Theorem 13.1, so the embedded equivalence says 'Remark 13.5 (Fréchet, variational E_**) ⇔ Remark 13.5 (iterated, formula E_**) modulo Theorem 13.1'. Limitations: induced connection only, model ℝⁿ, connected ↥N.",
+ "uses_hypothesis_emb": {
+  "A_to_B_emb": true,
+  "B_emb_to_A_emb": true
+ },
+ "second_attempt": "EnergyC2 closed the analytic gap; built the 1-parameter → 2-parameter (β = α∘σ) and reverse (lift) dictionaries. Embedded special case now proved both ways (A_to_B_emb, B_to_A_emb; #rt_check OK); was 'failed'. A ⇔ B still blocked by the abstract setting."
+}

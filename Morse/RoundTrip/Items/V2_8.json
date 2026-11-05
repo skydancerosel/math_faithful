@@ -1,0 +1,11 @@
+{
+ "id": "V2_8",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A: Theorem 3.2 for F|N with N a slice submanifold of a finite-dimensional V (cell + SDR, and the pushout form), the extension lemma exists_contDiff_comp_val_eq_of_chart, and patch_theorem_3_2. The latter does the in-patch argument on any T2 space but takes Assertion 3 (SDR of M^{c+ε} onto F⁻¹(-∞,c-ε]) as a hypothesis. B: Theorem 3.2 and Assertion 3 on an abstract, possibly non-compact manifold, for every Morse chart, ε and μ satisfying the hypotheses. A ⇒ B fails: Assertion 3 on an abstract manifold is Theorem 3.1 for F there, which the project does not have; patch_theorem_3_2 assumes it. B ⇒ A fails: patch_theorem_3_2 (arbitrary T2 space, hypothetical SDR) and the extension lemma are not consequences of B.",
+ "B_issue": null,
+ "overlap": "n/a (neither direction proved)"
+}

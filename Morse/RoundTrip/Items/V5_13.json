@@ -1,0 +1,16 @@
+{
+ "id": "V5_13",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A (universes 0): two_mul_indexM_normSq_sub_le (any finite-dim inner product space V, any slice submanifold N with J-invariant tangent spaces, every critical point of L_p, degenerate or not: 2·index ≤ dim N) and indexM_normSq_sub_le (V = 𝔼 n, dim N = 2k: index ≤ k). B: on a slice submanifold of ℝ^{K+1} of real dimension 2k with J-invariant tangent spaces (J an isometry, J² = −1), every non-degenerate critical point of L_p has index ≤ k. A ⇒ B genuinely: specialize A's second conjunct (isometry → CLM, fix model dimension d+1 = 2k); B's non-degeneracy is not needed. B ⇒ A only vacuously: A re-proved outright (copy of the project's 'shorter route'). Content A has and B lacks: degenerate critical points, arbitrary V/Z/W and odd dimensions; deriving those from B would need a perturbation argument (move p along the normal line) plus transport of slice submanifolds between models — believed true, not attempted.",
+ "B_issue": null,
+ "overlap": "B_to_A: 127 shared — the project's own proof re-done (indexM_normSq_sub_eq, fderiv_sliceParam_Jc, inner_fderiv_fderiv_sliceParam_Jc, two_mul_index_le_finrank, hessian_normSq_sub_comp, IsSmoothCoord/index infrastructure)",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable"
+}

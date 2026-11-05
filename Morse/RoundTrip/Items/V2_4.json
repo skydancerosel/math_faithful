@@ -1,0 +1,11 @@
+{
+ "id": "V2_4",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A proves Theorem 3.1 for a compact manifold (CompactSpace M), concluding a global diffeomorphism Ψ : M ≃ M with Ψ '' M^a = M^b, SDR and homotopy equivalence. It also contains the embedding of a compact manifold as a slice submanifold of ℝᴷ⁺¹ and the smooth-extension lemma. B assumes only that f⁻¹[a,b] is compact, so A ⇒ B fails (non-compact M is genuinely missing). B ⇒ A fails because B gives no ambient diffeomorphism (only maps between sublevel sets smooth on them) and no embedding theorem.",
+ "B_issue": null,
+ "overlap": "n/a (neither direction proved)"
+}

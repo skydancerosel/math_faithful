@@ -1,0 +1,11 @@
+{
+ "id": "V1_12",
+ "A_to_B": "false",
+ "B_to_A": "proved",
+ "not_B": true,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B is false: clause (d) states, following Milnor's words literally, that the critical set of (x,y) ↦ x² is the x-axis {y = 0}; it is {x = 0}, and (1,0) is not critical (not_B). Hence A ⇒ B is false and B ⇒ A holds vacuously. With (d) corrected the two are incomparable. A is on ℝ and ℝ×ℝ with the vector-space notions and also has the critical sets of x³ and the monkey saddle, plus a general lemma (non-isolated critical points are degenerate). A lacks B's example (b), e^{-1/x²}sin²(1/x) (smoothness, degeneracy, non-isolatedness), and the submanifold / not-a-submanifold claims of (d)/(e).",
+ "B_issue": "Clause (d) takes Milnor's 'x axis' literally: the critical set of x² is the y-axis {x = 0}. As written B is false (not_B), whereas Milnor clearly means the line of critical points of f(x,y) = x².",
+ "overlap": "0 shared project theorems (B_to_A is vacuous: ex falso from not_B)"
+}

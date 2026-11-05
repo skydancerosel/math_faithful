@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsNondegenerateCriticalPoint",
+ "name": "Morse.IsNondegenerateCriticalPoint",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "f differentiable at p (in particular f smooth, as in the textbook)",
+ "difference": "Only in the criticality conjunct (HasFDerivAt f 0 p vs fderiv ℝ f p = 0); Hessian and non-degeneracy are identical. Counterexample f x = if x = 0 then 1 else x² on ℝ at 0: f is discontinuous, so fderiv f 0 = 0 (junk) and fderiv f = fderiv (x ↦ x²) everywhere, giving the non-degenerate Hessian 2vw; the blind notion holds, the project's fails.",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Proved P → T, P ↔ T under DifferentiableAt ℝ f p, and the counterexample. The disagreement needs a non-differentiable f, outside the textbook's hypotheses."
+}

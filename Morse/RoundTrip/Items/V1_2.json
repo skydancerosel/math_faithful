@@ -1,0 +1,9 @@
+{
+ "id": "V1_2",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "relation": "equivalent",
+ "why": "The listed declarations (Morse.AttachCell, Morse.cellDesc) are both definitions, so A is the empty conjunction True; B is then provable outright (identification by Quot.sound, S^{-1} empty, e^0 a point, Y ∪_g e^0 ≃ₜ Y ⊕ Unit since the relation is empty), so the equivalence is vacuous. As a vocabulary check (not part of A), the file also builds a homeomorphism from B's Quot-based Attach g to the project's pushout AttachCell φ, compatible with the inclusions of Y and of the cell. So B's adjunction space and the project's are the same space.",
+ "B_issue": null,
+ "overlap": "0 shared project theorems (B_to_A is trivial)"
+}

@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsUnbrokenGeodesic",
+ "name": "Morse.IsUnbrokenGeodesic",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "c 0 in N and c 1 in N (e.g. c in Omega), with V and Z finite-dimensional (the standing setting); the direction blind => project needs no hypothesis",
+ "difference": "The project asks c in N and c'' normal to N only on the open interval (0,1) (IsGeodesicOn on Ioo 0 1), the blind definition on all of [0,1]. Off Omega an end point may leave N: N = (0, infty) in R, c = id is a project unbroken geodesic but not a blind one (c 0 = 0 not in N). With the end points in N the end-point normality follows by continuity.",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both require c C^infty on [0,1]. On (0,1) the second derivative within [0,1] is deriv (deriv c) and the blind tangent space (span of velocities) is Morse.tangentSubspace (tangentSpace_eq, copied from item Morse_tangentSubspace), so blind => project. Conversely, with c 0, c 1 in N, t -> P_{c(t)}(c''(t)) is continuous on [0,1] (Morse.ContDiffOn.prj_comp) and zero on (0,1), hence zero on the closure [0,1]; that is the blind normality at the end points."
+}

@@ -1,0 +1,16 @@
+{
+ "id": "V3_43",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (matrix model): ℂPⁿ is of the project's IsFiniteCellComplexType (homotopy equivalent to an iterated adjunction space with arbitrary attaching maps) with one cell in each even dimension ≤ 2n, and dim H_l(ℂPⁿ; 𝕜) = 1 or 0 for every field 𝕜. B (quotient model): homotopy equivalent to a Mathlib CWComplex e⁰ ∪ e² ∪ … ∪ e^{2n}, and integral homology ℤ / 0. A ⇒ B fails genuinely: adjunction space → Mathlib CW needs cellular approximation (absent, as in V2_11/V5_11), and field Betti numbers → integral homology needs the universal coefficient theorem plus finite generation (absent; integral homology is not formalized in the project); the change of model is bridgeable (homeomorphism z ↦ z zᴴ, built in V3_41). B ⇒ A holds only vacuously: A re-proved outright from the project's Theorem 3.5 count and lacunary principle; B's ℤ-homology does not give field Betti numbers without UCT, nor its CW complex the project's adjunction-space type.",
+ "B_issue": null,
+ "overlap": "B_to_A: 1371 shared — the project's own proof re-done (theorem_3_5_count', bettiNumber_eq_critCount_of_lacunary, critCount_height, isSliceSubmanifold, isCompact, the Morse-filtration/cell/homology machinery)",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable"
+}

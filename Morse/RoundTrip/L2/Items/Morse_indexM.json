@@ -1,0 +1,11 @@
+{
+ "id": "Morse_indexM",
+ "name": "Morse.indexM",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "model space E finite-dimensional (the textbook's finite-dimensional manifold); no criticality needed",
+ "difference": "Same Hessian at every point; the only difference is the index of a form in infinite dimension (sigNeg = 0 vs the blind sSup). On M = E = ℓ²(ℕ), f x = -x₀² at 0: project index 0, blind index 1.",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Hessians agree outright (preferred chart), indices agree in finite dimension. The counterexample needs an infinite-dimensional model, outside the textbook's hypotheses; the project's theorems about indexM all assume FiniteDimensional ℝ E."
+}

@@ -1,0 +1,18 @@
+{
+ "id": "V6_8",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; IsParallel is a definition): Lemma 8.2 for the induced connection of a slice submanifold N ⊆ V: along a smooth curve, every v ∈ T_{c(t₀)}N (any t₀) extends to exactly one parallel field X : ℝ → V (tangent, differentiable, P X' = 0), and parallel fields are smooth. B: Lemma 8.2 for an ARBITRARY smooth Mathlib connection on an abstract ℝⁿ-manifold: every V₀ ∈ T_{c(0)}M extends to exactly one smooth field along c with DV/dt = 0 for some D obeying Milnor's axioms. A ⇒ B fails genuinely: in the embedded case the parallel-transport equation is one skew-adjoint linear ODE in V (X' = (P'P − PP')X), solved globally by the project's exists_skewLinearODE; for an arbitrary connection one needs the coordinate equations dvᵏ/dt + Σ u̇ⁱΓᵏᵢⱼvʲ = 0 in charts, a general (non-skew) linear existence theorem (absent, cf. V6_7), patching along c, and Lemma 8.1 abstractly (V6_6) — none available. B ⇒ A fails genuinely: B's abstract parallel fields are not the project's; to use B one would have to package the induced connection on N as a Mathlib CovariantDerivative on N's tangent bundle and identify TangentSpace (model space) with tangentSubspace ⊆ V and B's D with covDeriv — a substantial construction not in the project. A also has t₀ arbitrary and smoothness of parallel fields, B only t₀ = 0.",
+ "B_issue": null,
+ "overlap": "no direction proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V6_8.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ) and cov = Bridge.conn (B_to_B_emb via Bridge.conn_contMDiff). Dictionary (namespace Emb; toProj/toMath glue copied from Items/V6_6.lean): every D/dt of B for conn is the project's covDeriv read in V (D_eq_covDeriv, via the project's Lemma 8.1), hence B's parallel fields along a smooth curve are exactly the fields whose ambient image is smooth and Morse.IsParallel (isParallel_iff); isParallel_shift transports project parallel fields along time shifts. Proved B_emb ⇔ A82 (for model ℝⁿ and smooth c: through every v ∈ T_{c(t₀)}N, ANY t₀, there is exactly one SMOOTH project-parallel field), hence A_to_B_emb (uses both theorems of A) and B_to_A82 (uses B; B's initial time 0 gives any t₀ by shifting the curve), both #rt_check OK. What A has beyond B_emb: arbitrary model Z, and uniqueness among merely differentiable parallel fields together with their smoothness (IsParallel.contDiff) — B's parallel fields are smooth by definition. Limitation: only the induced connection, not every smooth connection on ↥N.",
+ "overlap_embedded": "B_to_A82: 110 shared — tangent-projection/dN/slice-chart infrastructure (contDiff_tanProj_comp, hasDerivAt_comp_curve, tanProj_eq_self, IsParallel field accessors), reached through the Bridge and the project's Lemma 8.1; none of the Lemma 8.2 ODE argument (exists_skewLinearODE, linearODE_eq, exists_isParallel, IsParallel.eq) is shared."
+}

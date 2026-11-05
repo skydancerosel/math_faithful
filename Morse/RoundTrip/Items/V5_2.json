@@ -1,0 +1,12 @@
+{
+ "id": "V5_2",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "A (universes at 0): for any complex normed space V and complex bilinear B, Re B(iv, iw) = −Re B(v, w) (the polarized form of Milnor's Q(iz) = −Q(z) for Q' = Re Q), Re⟨iv, iw⟩ = Re⟨v, w⟩ (i is orthogonal for the real inner product), and reBilin_apply; the multiplication-by-i map realMulI and complexStructureEquiv are definitions. B, in coordinates on ℂᵏ: Q(iz) = −Q(z) as complex numbers, and an orthogonal T of ℝ^{2k} with Q'(Tw) = −Q'(w). A ⇒ B uses A for (2): with B the bilinear form of b on ℂᵏ and T = (x, y) ↦ (−y, x) (constructed as a linear isometry), Q'(Tw) = Re B(iz, iz) = −Q'(w). B's (1) is the complex identity, of which A states only the real part; proved directly. B ⇒ A: A is proved outright (one-line computations, valid for every V, infinite-dimensional ones included), so that direction does not use B. Both statements are elementary identities, hence the equivalence is largely vacuous; A's orthogonality of i for Re⟨·,·⟩ corresponds to B's 'orthogonal change of variables'.",
+ "B_issue": null,
+ "overlap": "B_to_A: 26 shared, all auxiliary proof obligations of the definition reBilin (reBilin._proof_*); no theorem",
+ "uses_hypothesis": {"A_to_B": true, "B_to_A": false}
+}

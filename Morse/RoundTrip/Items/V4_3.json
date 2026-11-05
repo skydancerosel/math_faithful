@@ -1,0 +1,11 @@
+{
+ "id": "V4_3",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A is Sard's theorem for SMOOTH maps f : M → F into a finite-dimensional vector space, on an open U ⊆ M or all of M, M second countable, any dimensions, any Haar measure. B is Milnor's Theorem 6.1: f of class C¹ between second-countable manifolds of the SAME dimension n, with 'measure 0 in M₂' read chartwise (extChartAt image of f(C) ∩ chart source is Lebesgue-null). A ⇒ B fails genuinely on regularity: A has nothing below C^∞, and C¹ equal-dimension Sard is not in the project (a manifold target alone would be fine via A's open-set version in charts). B ⇒ A fails genuinely on dimensions: B says nothing when dim M ≠ dim F (dim M > dim F is the harder case of Sard), nor for models other than ℝⁿ.",
+ "B_issue": null,
+ "overlap": "n/a (neither direction proved)"
+}

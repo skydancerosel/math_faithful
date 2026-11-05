@@ -1,0 +1,16 @@
+{
+ "id": "V15_35",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0, any finite index type): IsCentralI for i = J_1 (k = 2) and i = J_1⋯J_5 (k = 6) only; for an ABSTRACT ii with IsCentralI J k ii (any k ≠ 0): |f| = 1 on Ω_k(n), f(p) = 1, f(p exp tV) = e^{−√−1 t tr(V·ii)/2}; the classes omegaComp (paths from J_k to −J_k in the stratum of J_k, the project's path space with its metric) are clopen and disjoint, and a geodesic J_k exp(tV) lies in omegaComp w iff w = −tr(V·ii)/2. B (Fin n, base point J ∈ Ω_k(n) arbitrary): for EVERY k ≡ 2 mod 4, i = J_1⋯J_{k−1} has i² = −1 and commutes with the J_α; J⁻¹J' commutes with i and |f(J')| = 1; for k = 2, 6 membership in Ω^{(c)} (angle πcm_k/2) is constant on path components of B's own path space OmIn (Milnor's d with ℝ-valued inf/sup), and J exp(πtA) ∈ Ω^{(c)} iff tr_ℂ A = icm_k/2. A ⇒ B (uses A's norm_omegaF, omegaF_geo and the non-item IsCentralI.comm_transpose_mul): IsCentralI for i = J_1⋯J_{k−1} for all k ≡ 2 mod 4 is proved outright ((J_1⋯J_m)² = (−1)^{m(m+1)/2}, J_α(J_1⋯J_m) = (−1)^{m+1}(J_1⋯J_m)J_α); f = omegaF (J⁻¹ = Jᵀ, B's det_ℂ = cdet); the geodesic iff from omegaF_geo + uniqueness of angle lifts + tr_ℂ A = −√−1 tr(A·i)/2; the component claim is NOT A's isClopen_omegaComp (different space and metric) but proved directly on OmIn: glue showing ‖w(s) − w'(s)‖ ≤ d(w, w') (a back-and-forth path between w(s), w'(s) built with the project's IsPiecewiseSmooth reverse/translate/concat/rescale, conversion between B's subdivision form and the project's break-point form, B's deriv = the project's by defeq), then the project's IsAngleLift.perturb and |f| = 1 (from A). B ⇒ A only vacuously: A's claims are about an abstract ii and the project's path space; they are re-proved outright from non-item project lemmas (isClopen_windSet, norm_cdet, cdet_exp, disjoint_windSet, IsAngleLift.unique, clifford_simp). Each side has (elementary) content the other lacks: A abstract ii, all k ≠ 0, clopen in the project's space, disjointness; B all k ≡ 2 mod 4 for i, arbitrary base point, B's own topology.",
+ "B_issue": null,
+ "overlap": "B_to_A: 177 shared project theorems (incl. instance proof fields) — the winding machinery (isClopen_windSet, exists_mem_windSet_of_close, disjoint_windSet, IsAngleLift.unique/perturb), cdet lemmas (norm_cdet, cdet_one, cdet_exp, projP/projM, det_exp_smul_cplx), Clifford simp lemmas, isCompact_omega, path-space metric lemmas; no item theorem (the vacuous re-proof re-runs the item proofs).",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable"
+}

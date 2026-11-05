@@ -1,0 +1,11 @@
+{
+ "id": "Morse_closedRiemBall",
+ "name": "Morse.closedRiemBall",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "0 ≤ r",
+ "difference": "For r < 0 the project reads ρ(p,x) ≤ ofReal r = 0, so its ball is {p} (for p ∈ N), while the blind reads ρ(p,x).toReal ≤ r in ℝ and gives ∅ (differ: N = ℝ, p = 0, r = -1).",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "For r ≥ 0, ρ ≤ ofReal r ↔ (ρ ≠ ⊤ ∧ ρ.toReal ≤ r) (ENNReal.le_ofReal_iff_toReal_le), and ρ agrees (riemDist_eq). Negative radii are outside Milnor's use (S = {x : ρ(p,x) ≤ √c})."
+}

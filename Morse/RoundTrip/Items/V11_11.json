@@ -1,0 +1,17 @@
+{
+ "id": "V11_11",
+ "A_to_B": "false",
+ "B_to_A": "proved",
+ "not_B": true,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B is false (not_B): it allows n = 1, where clause (d) claims ∫₀¹ sin²(πt)((n−1)π² − L²K(Pₙ,Pₙ)) < 0 and E**(W_i,W_i) < 0 for some i ≠ n; for n = 1 the integrand vanishes and Fin 1 has no i ≠ n. Counter-model: S¹ ⊆ ℝ² through the Bridge, the great circle of speed L = 4 > π (r = 1), P₁ = γ'/L (blind parallel unit field, vel = L·P₁), Ricci tensor of S¹ = 0 (Emb.ricci_eq + Morse.ricci_sph), so (d)'s hypothesis holds and it asks for an i ≠ n in Fin 1. Hence ¬(A → B) and B ⇒ A only ex falso. Corrected reading (n ≥ 2): A gives E**(sin(πt)P, sin(πt)P) = 2∫(π²cos² − sin²⟨R(V,P)V,P⟩) for a parallel unit P along a smooth ℝ-extension c (energyHessian_sin_parallel; formula-defined energyHessian, cos² form) and, for dim ≥ 2, SOME X ∈ TΩ with E**(X,X) < 0 (exists_energyHessian_neg; X not said to be a W_i); Bcorr has W_i ∈ TΩ, the −∫⟨W, D²W/dt² + R(V,W)V⟩ form for the variation-defined E** (IsHessT), the Ricci sum formula, negativity, and 'E**(W_i,W_i) < 0 for some i ≠ n'. These are believed to follow on ↥N from A plus glue (not attempted, see embedded note).",
+ "B_issue": "As formalized B is false for n = 1 (flagged by the formalizer): Milnor's 'negative ... hence E**(W_i,W_i) < 0 for some i' needs n ≥ 2. Counter-model S¹ in Items/V11_11.lean (not_B).",
+ "overlap": "B_to_A (ex falso via not_B): 257 shared project theorems — slice-chart and curvature-tensor infrastructure, ricci_eq_sum (reached through Morse.ricci_sph, used to show Ricci(S¹) = 0), the Bridge connection/geodesic dictionary infrastructure; none of A's four theorems and none of the test-field computation (energyHessian_eq_integral etc.).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": true
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "B on ↥N (M = Bridge.Sub hN, cov = Bridge.conn) is itself false: the counter-model of not_B is the embedded S¹ (Sph 1 ⊆ ℝ²), so A ⇒ B_emb is false. The corrected n ≥ 2 reading on ↥N was not attempted; it would need (i) TΩ glue for testField (InTOmegaT: continuity in TM, smoothness on [0,1], vanishing outside), (ii) the variational-Hessian dictionary for IsHessT 1 (adapt Emb.hess_eq / Emb.exists_isHess of Items/V8_18.lean with RoundTrip/EnergyC2.lean, plus Morse.second_variation), (iii) uniqueness of blind parallel fields on [0,1] vs the project's parallel fields along the ℝ-extension of Morse.exists_smooth_extension (to apply A's energyHessian_sin_parallel), or a direct computation of secondVariation for sin(πt)P, (iv) the −∫⟨W, D²W + R⟩ form by integration by parts and A's ∫sin² = ∫cos² = 1/2, (v) the Ricci Assertion in the frame P_i(t) (as in Items/V11_9.lean) and continuity of t ↦ K(Pₙ,Pₙ) for the integral. Glue only; no new mathematics. New glue used for not_B: S1.nonposCurvature (1-dim N has ⟨R(A,B)A,B⟩ = 0), S1.not_isConj (no conjugate points via Morse.IsJacobiField.eqOn_zero_of_nonpos), S1.ricci_eq_zero, S1.G / isGeodesic_G / arcLen_G (great circles of any speed), norm_vel_G; copied Emb.isJacobiField_of_isJacobi, isConjugate_of_isConj, isGeodesic_lift, eT, curvR_eq, ricci_eq."
+}

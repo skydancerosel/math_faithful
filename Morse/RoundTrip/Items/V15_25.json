@@ -1,0 +1,17 @@
+{
+ "id": "V15_25",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A (universes 0, any p ∈ Ω_k(n), J_1..J_k anticommuting, ASSUMING minVelO J k p = {A ∈ 𝒯_p | A² = −I} non-empty; project's stratum, path space, energy, riemDist): −p ∈ stratum; dist(p, −p) = π√n in the stratum; energy ≥ π²n for paths p → −p; the semicircles p exp(πtA), A ∈ minVelO, have least energy and every least-energy path is one of them on [0,1]; midpoint pA. B (p = J_k, k ≥ 1, J_1..J_k anticommuting; blind induced-metric notions on Ω_k(n) and O(n)): for a complex structure A anticommuting with J_k and commuting with J_1..J_{k−1}, J_k exp(πtA) is a geodesic of Ω_k(n) from J_k to −J_k, minimal in O(n) and in Ω_k(n), midpoint J_kA; conversely every blind minimal geodesic J_k → −J_k of Ω_k(n) is such a semicircle on [0,1]. A ⇒ B: geodesic property directly (great circle, acceleration −π²γ normal); minimality in O(n) by A's riemDist_omegaStratum at k = 0 (Ω_0 = O(n) is its own stratum) and in Ω_k(n) by A at k (a path from J_k stays in the clopen stratum); midpoint A's omegaGeo_half; converse: the blind minimal geodesic is in the stratum, an unbroken geodesic and a minimal path (path dictionary), hence of least energy (energy_le_of_isMinimalPath), and A's exists_minVelO_of_mem_minPaths applies — its extra hypothesis minVelO ≠ ∅ (not in B) is supplied by γ itself: γ = J_k exp(tV) (IsTotGeo.eqOn_of_isUnbrokenGeodesic), exp V = −I, and exp(V/2) ∈ minVelO. B ⇒ A only vacuously (outright): B is only at the base point J_k, k ≥ 1, Fin n, with blind length-minimality; A is at every p (incl. k = 0) and states distance and energy bounds on the project's path space.",
+ "B_issue": null,
+ "overlap": "B_to_A (vacuous, outright copies): 732 shared project theorems — Hopf–Rinow (theorem_10_9 and its Chapter 7 infrastructure: flows, normal coordinates, slice charts), isUnbrokenGeodesic_of_minimal, IsTotGeo.eqOn_of_isUnbrokenGeodesic, energy/pathLength API, mul_self_eq_of_norm_sq_le / pi_sq_mul_card_le_norm_sq (V15_24's, allowed here); no item theorem.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete real matrices (Mathlib orthogonalGroup as a subset of M_n(ℝ), Ω_k(n) as subsets; the induced-metric notions TanSet/IsGeodOn/IsPathIn/lenM/IsMinGeodIn are already embedded); it does not quantify over abstract Riemannian manifolds."
+}

@@ -1,0 +1,11 @@
+{
+ "id": "Morse_tanProj",
+ "name": "Morse.tanProj",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are Submodule.starProjection of the tangent space; the project's (range of mfderiv of the inclusion) equals the blind one (span of velocities of smooth curves in N), by the layer-2 Morse_tangentSubspace argument repeated in the file; `agree` holds for every slice submanifold and q."
+}

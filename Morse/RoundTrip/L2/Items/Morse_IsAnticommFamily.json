@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsAnticommFamily",
+ "name": "Morse.IsAnticommFamily",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Same two conditions (J 1, …, J k complex structures, pairwise anticommuting for α ≠ β), same indexing from 1 as Milnor (J 0 unused); the project packages them as a structure, the blind file as a conjunction."
+}

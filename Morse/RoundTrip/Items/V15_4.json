@@ -1,0 +1,17 @@
+{
+ "id": "V15_4",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "Vocabulary: B's OmegaK = the project's Omega (anticommutation order flipped; omegaK_eq_omega). A (universes 0, any finite index type, ARBITRARY sequence J, no anticommutation hypothesis): Ω_{k+1} ⊆ Ω_k, Ω_k closed, Ω_k compact, and J_k ∈ Ω_k for an anticommuting family. B (Fin n, under IsACFam Js (k−1)): the two definitional clauses, Ω_k ⊆ Ω_j for j ≤ k, Ω_k compact. A ⇒ B: chain by iterating omega_succ_subset, compactness from isCompact_omega, definitional clauses unfolded (B's hypothesis unused). B ⇒ A: compactness from B at k = 0 (O(n)) and k = 1 (all complex structures), whose hypotheses are vacuous, transported from Fin (card ι) by the continuous reindexing; for k ≥ 2 and arbitrary J, Ω_k = Ω_1 ∩ {closed anticommutation equations}; closedness from compactness (Hausdorff). The chain for arbitrary J and J_k ∈ Ω_k are definitional and proved outright (B states the chain only under its hypothesis and does not state J_k ∈ Ω_k). A's extra generality is trivial.",
+ "B_issue": null,
+ "overlap": "B_to_A: 2 shared project items, Morse.IsAnticommFamily.cs / .anti (structure projections of the hypothesis of mem_omega).",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete real matrices (Mathlib orthogonalGroup as a subset of M_n(ℝ), complex structures, Ω_k(n) as subsets; the induced-metric notions are already embedded); it does not quantify over abstract Riemannian manifolds."
+}

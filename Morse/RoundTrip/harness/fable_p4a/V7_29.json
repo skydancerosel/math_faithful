@@ -1,0 +1,18 @@
+{
+ "id": "V7_29",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): for a connected nonempty slice submanifold N ⊆ V (model Z any finite-dimensional space) the TFAE [(N, ρ) complete; geodesically complete; exp_p total for some p; every ρ-bounded set has compact closure inside N]; for complete N, geodesics extend to ℝ, any two points are joined by a minimal geodesic of length ρ(p, q), closed ρ-bounded subsets are compact; and the Heine–Borel statement for any N with the compact-closure property. B: for an abstract connected Hausdorff ℝⁿ-manifold with a smooth Mathlib RiemannianBundle metric and ANY Mathlib CovariantDerivative satisfying Milnor's Levi-Civita axioms (IsLC), GeodComplete cov ↔ MetricComplete (real-valued ρ = sInf of arcLen; ρ-Cauchy sequences ρ-converge). A ⇒ B fails genuinely: B's manifold is abstract with an arbitrary IsLC connection, while the project has only slice submanifolds with the induced metric and connection (no Nash embedding; Whitney does not preserve the metric). B ⇒ A fails: A also contains Theorem 10.9 (minimal geodesics realising ρ), clauses 3–4 of the TFAE (one-point exp, bounded ⇒ compact closure) and the Heine–Borel statement, none of which is in B. EMBEDDED SPECIAL CASE PROVED (RoundTrip.V7_29.embedded_special_case, #rt_check OK): on a slice submanifold modelled on ℝⁿ (Z = ℝⁿ), B specialises through RoundTrip.Bridge (induced metric/connection are IsLC; expDefined_of_mem_expDom; rho_eq) plus Morse.exists_initial_ray (a geodesic on [0, 1] is the restriction of one on an open interval — the converse that Bridge.expMap_eq noted as missing; mem_expDom_of_expDefined in V7_29.lean) and Morse.riemDist_ne_top (ρ < ∞ on connected N, to pass between ℝ≥0∞ and ℝ) to exactly 1 ↔ 2 of hopf_rinow: IsRiemComplete N ↔ IsGeodesicallyComplete hN. So on embedded manifolds Milnor's equivalence and the project's agree; what A has beyond B is the rest of Hopf–Rinow, what B has beyond A is the abstract setting.",
+ "B_issue": null,
+ "harness_note": "B uses only ExpDefined/IsGeodesic, rho/arcLen and IsPW, which are Riemannian; it does not use nrm/tball/IsNormBall/IsUniformNormal, so the chart-norm defect of the prelude does not affect it. The blind definitions of V7_29 are syntactically those of RoundTrip.BridgePrelude, and the identifications (V7_29.ExpDefined = BridgePrelude.ExpDefined, rho = rho, IsLC = IsLC) are rfl.",
+ "overlap": "no direction proved. The embedded special case shares 429 project theorems with the proofs of the listed theorems: the geodesic-flow / ODE / normal-coordinate / slice-chart infrastructure of Chapter 7 (Morse.Flow.*, NormalCoord.*, LocalSpray.*, IsBddLipschitz.*, IsGeodesicOn.*, Milnor.SliceChart.*) on which both Bridge and exists_initial_ray rest, plus riemDist_ne_top; no Hopf–Rinow-specific lemma (theorem_10_9, corollary_10_10, isGeodesicallyComplete_of_isRiemComplete, isCompact_closure_of_isRiemBounded) is shared.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "For Z = ℝⁿ: B → (IsRiemComplete N ↔ IsGeodesicallyComplete hN) for connected nonempty N; this is 1 ↔ 2 of A's hopf_rinow and nothing more. Glue added in V7_29.lean: mem_expDom_of_expDefined (blind geodesic on [0,1] ⇒ project expDom, via exists_initial_ray), isGeodesicallyComplete_iff_geodComplete, isRiemComplete_iff_metricComplete (via Bridge.rho_eq and riemDist_ne_top), B_sub (B applied to Sub hN with the Bridge instances passed by name)."
+}

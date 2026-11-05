@@ -1,0 +1,17 @@
+{
+ "id": "V11_6",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: on every abstract connected Hausdorff ℝⁿ-manifold with any smooth Mathlib RiemannianBundle metric and any Levi-Civita connection, Milnor-complete: for every p there is q with p, q not conjugate along any geodesic [0,1] → M, and such q are dense. A (universes 0): for slice submanifolds N ⊆ V with the induced metric only, no completeness: the points not conjugate to p are dense (dense_compl_conjLocus), and for such q every geodesic in Ω(N; p, q) is non-degenerate (hessNullity = 0). A ⇒ B fails genuinely (abstract manifolds are not given embedded); B ⇒ A fails genuinely (setting, and B does not assert the non-degeneracy conjunct). On embedded manifolds A ⇒ B_emb is proved (completeness unused) and B_emb gives A's density statement for complete connected N.",
+ "B_issue": "Not a bug: B deliberately omits the item title's 'non-degenerate' claim (hessNullity = 0 at geodesics to non-conjugate q), judging that Milnor's p. 98 sentence does not assert it; A's hessNullity_eq_zero_of_notMem_conjLocus is therefore content B lacks.",
+ "overlap": "No A_to_B/B_to_A. For the embedded theorem B_emb_to_A_cplt: 389 shared project theorems — Hopf–Rinow and the Chapter 7 geodesic-flow infrastructure (used only by the completeness dictionary), slice-chart/tangent-projection lemmas, IsJacobiField/IsSmoothCurveIn basics from the conjugate-locus dictionary. Not shared: corollary_18_2, Sard's theorem, conjLocus_eq, the Haar-measure argument of dense_compl_conjLocus.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V11_6.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric), cov = Bridge.conn (B_to_B_emb via conn_isLC). Dictionary (namespace Emb): conj_iff_mem_conjLocus (as in Items/V11_5.lean, on top of the Jacobi/conjugacy dictionary of Items/V9_10.lean) and nonConj_set_eq ({q | NonConjPQ p q} = {q : N | q ∉ conjLocus hN p}); completeness via Hopf–Rinow (from Items/V7_29.lean). Proved A_to_B_emb (A's dense_compl_conjLocus; existence from density in the nonempty ↥N) and B_emb_to_A_cplt (A's density for complete connected N with model ℝⁿ), both #rt_check OK. Not covered by B_emb: A's hessNullity_eq_zero_of_notMem_conjLocus (non-degeneracy), incomplete or disconnected N. Only the induced connection."
+}

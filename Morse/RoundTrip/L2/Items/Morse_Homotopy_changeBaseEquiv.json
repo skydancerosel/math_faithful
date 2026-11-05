@@ -1,0 +1,11 @@
+{
+ "id": "Morse_Homotopy_changeBaseEquiv",
+ "name": "Morse.Homotopy.changeBaseEquiv",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "The two loops are pointwise equal, not just homotopic. The project puts α on the cube of sup-distance d ≤ 1/4 (via cubeScale (1/4), which is rescaling by 2) and γ(4d − 1) on the collar. The blind version uses the radius r = 2d with the same split r ≤ 1/2 and outer value γ(2r − 1). Both run in the same direction (π_N(Y, y₀) ≃ π_N(Y, y₁) with γ from the inner cube out to ∂I^N), so the Equivs are equal, proved by Equiv.ext and Quotient.inductionOn."
+}

@@ -1,0 +1,17 @@
+{
+ "id": "V13_13",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "Different conclusions. B (Milnor's sentence): on an abstract smooth manifold with g⁻¹[a,b] compact and all critical points there non-degenerate of index ≥ λ₀, there is a relative CW complex (Y, D) without cells of dimension < λ₀, D ≃ g⁻¹(−∞,a], Y ≃ g⁻¹(−∞,b] compatibly. A (universes 0; lemma_D): for f = F|N on a slice submanifold, F smooth on V, N^{a₀} compact, a a REGULAR value, critical points with a < f ≤ a₀ non-degenerate of index ≥ λ₀, b < a₀: N^a pushes maps from any compact P ⊆ ℝ^{<λ₀} out of N^b (homotopy rel the preimage of N^a) — the consequence Milnor draws next ('since r < λ₀, h is homotopic into g⁻¹(−∞,2δ]'). A ⇒ B fails genuinely (a compression property gives no CW model; that needs Theorems 3.1/3.2 assembled into a relative CW complex, not in A; setting). B ⇒ A fails genuinely (cellular approximation / push-off for arbitrary compact P rel an arbitrary closed subset, transport along the compatible homotopy equivalences; setting; B does not need a regular or N^{a₀} compact but A's F is ambient). exists_gap_of_finite is a trivial real-analysis lemma (true outright).",
+ "B_issue": null,
+ "overlap": "n/a (neither direction proved).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "B is about smooth (not Riemannian) manifolds; B at M = Bridge.Sub hN is a special case, but even there the conclusions are of different kinds (CW model vs compression of maps from compact P ⊆ ℝ^{<λ₀}); bridging them is cellular approximation, not dictionary glue. Not attempted."
+}

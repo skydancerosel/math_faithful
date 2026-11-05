@@ -1,0 +1,18 @@
+{
+ "id": "V15_17",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": true,
+ "why": "A (universes 0; cyclicMap is vocabulary): Lemma 24.8 only for k <= 8, k mod 4 != 3, for ABSTRACT spaces with anticommuting square roots of -1 (no inner product), with a LINEAR isomorphism commuting with the J_a; plus three Clifford-algebra lemmas of its proof (orbit map onto, F = V when dim F = m_k, two spaces isomorphic to the same left ideal are isomorphic). B: for EVERY k with k mod 4 != 3, two minimal orthogonal (J_1..J_k)-spaces R^n, R^n' are related by an ISOMETRY (T^T T = T T^T = I) commuting with the J_a. A => B fails only for k > 8: uniqueness of minimal Clifford modules for all k needs the 8-periodicity C_{k+8} = C_k (x) R(16) (Milnor: 'can be shown'; not in the project). For k <= 8 it is proved (A_to_B_le8, rt_check OK): A's linear isomorphism between R^n and R^n' (forcing n = n') is made orthogonal by polar decomposition U = T(T^T T)^{-1/2}, T^T T commuting with the structures because they are orthogonal and skew (CFC.sqrt, Commute.cfc_nnreal) -- so the isometry gap is effort only. B => A: Lemma 24.8 from B after orthogonalizing both abstract spaces (ortho_glue: average the inner product, conjugate by a square root), B's isometry giving the linear isomorphism E'^-1 T E; the three technical lemmas are not in B (they concern C_k) and are re-proved outright with the project's arguments (minimal_of_fixed via the outside lemma milnorM_dvd_finrank).",
+ "B_issue": null,
+ "overlap": "B_to_A: 183 shared project theorems (with auxiliaries), all outside the item: the divisibility chain behind milnorM_dvd_finrank (two/four/eight_dvd_finrank, finrank_chain, theta specs, halving lemmas) used by the outright minimal_of_fixed, plus cyclicMap_{apply,mul}, cliffordLift_*, exists_fixed, IsClifford.*; the item's four theorems avoided.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "uses_hypothesis_note": "A_to_B refers to the partial theorem A_to_B_le8 (B restricted to k <= 8), which uses A's exists_iso_of_isMinimal. B_to_A uses B for the main theorem; the three technical lemmas are outright.",
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "Linear algebra on R^n with matrix structures (B) vs abstract finite-dimensional real vector spaces (A); no manifolds."
+}

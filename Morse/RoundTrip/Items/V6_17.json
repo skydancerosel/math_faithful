@@ -1,0 +1,17 @@
+{
+ "id": "V6_17",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; curvOp, curvTensor definitions): for the induced metric of a slice submanifold N ⊆ V and smooth tangent fields, R(X,Y)Z = II(Y,II(X,Z)) − II(X,II(Y,Z)) at q, equal to the trilinear map curvTensor hN q on X_q, Y_q, Z_q, hence depends only on these values. B: Lemma 9.1 for an arbitrary smooth Mathlib connection on an abstract ℝⁿ-manifold: R(X,Y)Z(p) depends only on X_p,Y_p,Z_p and is given by a trilinear map on T_pM. A ⇒ B fails genuinely: abstract tensoriality needs C^∞-linearity of R in each slot from the connection axioms plus the Poisson-bracket rule for mlieBracket, locality and smooth extension of vectors/frames (bump functions) — absent in project and Mathlib (Connection.lean: 'the tensor property (Lemma 9.1) ... not proved' abstractly); A's proof is specific to the explicit formula of the induced connection. B ⇒ A fails: B does not apply to N ⊆ V (no Mathlib CovariantDerivative/RiemannianBundle packaging of the induced structure), and A's explicit Gauss-type formula is content B lacks.",
+ "B_issue": null,
+ "overlap": "no B_to_A proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V6_17.lean, section 'The embedded special case': B_emb := B's conclusion for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric) and cov = Bridge.conn (B_to_B_emb via Bridge.conn_isGlobalConn). A_to_B_emb (uses A's curvature_eq_curvTensor): the trilinear map is Emb.Tp p = L_p ∘ curvTensor hN p ∘ D_p on T_p↥N, and the 'depends only on values' clause follows from it. B_to_Acongr (uses B): B_emb's tensoriality clause gives A's curvature_congr for model Z = ℝⁿ, via Emb.liftF. Both #rt_check OK (the Bridge's D_curvExpr/isCurvVal_iff use Morse.curvature_eq, one of this item's theorems, so they are avoided; Emb.D_curv is the curvature_eq-free half). Dictionary lemmas (namespace Emb): D_curv, D_tneg, liftF / amb_liftF / isSmoothVF_liftF (as in V6_21), and Dt / Lt / D_Lt / Tp / D_Tp (curvTensor transported to T_p↥N). Not covered by B_emb: A's explicit formula R(X,Y)Z = II(Y,II(X,Z)) − II(X,II(Y,Z)) (curvature_eq) and the identification of B's T with curvTensor (curvature_eq_curvTensor) — B only asserts that some trilinear T exists. Overlap of B_to_Acongr: 93 project theorems, all slice-chart/tanProj infrastructure from the Bridge (no curvature_eq or second-fundamental-form lemmas). Limitation: only the induced connection, not every smooth connection on ↥N (B quantifies over all smooth connections, Levi-Civita or not)."
+}

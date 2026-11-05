@@ -1,0 +1,11 @@
+{
+ "id": "Morse_curv",
+ "name": "Morse.curv",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are −D X (D Y Z) + D Y (D X Z) + D ⁅X, Y⁆ Z (Milnor's sign); `agree` is rfl."
+}

@@ -1,0 +1,18 @@
+{
+ "id": "V15_14",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": true,
+ "why": "A (universes 0) covers only k <= 8: 2 | dim, 4 | dim, 8 | dim, milnorM k | dim for an ABSTRACT space with anticommuting square roots of -1 (no inner product), milnorM k | n for orthogonal families on R^n, existence on R^{milnorM k}, and IsLeast. B (orthogonal families on Fin n -> R, m_k := sInf of dimensions of minimal spaces): m_k | n and m_k = least positive n with a family, for EVERY k, plus the table m_0..m_8. A => B fails only for k > 8: B's general-k divisibility needs that all minimal (J_1..J_k)-spaces have the same dimension for every k (Clifford-module periodicity C_{k+8} = C_k (x) R(16), which Milnor only says 'can be shown' and the project does not formalize -- its milnorM is defined for all k by m_{k+8} = 16 m_k but nothing is proved beyond 8). The restriction of B to k <= 8 is proved from A (A_to_B_le8, rt_check OK: R^{milnorM k} carries a family that is minimal since invariant subspaces inherit families, so B's m_k = milnorM k). B => A proved: B's divisibility on Fin n gives A's abstract divisibility after orthogonalizing (ortho_glue: average the inner product G_{j+1} = G_j + J^T G_j J, conjugate by a square root); infinite-dimensional V has finrank 0; matrix statements by reindexing to Fin (card n); B's table identifies its m_k with milnorM k.",
+ "B_issue": null,
+ "overlap": "B_to_A: 7 shared project theorems (IsClifford.{sq,anti}, IsAnticommFamily.{cs,anti,reindex,of_ringHom}, isComplexStructure_iff); the item's seven theorems avoided.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "uses_hypothesis_note": "A_to_B refers to the partial theorem A_to_B_le8 (A => B restricted to k <= 8), which uses A.",
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "Linear algebra on R^n with matrix structures (B) vs abstract finite-dimensional real vector spaces (A); no manifolds."
+}

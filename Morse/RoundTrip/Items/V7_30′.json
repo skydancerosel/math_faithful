@@ -1,0 +1,17 @@
+{
+ "id": "V7_30′",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: for abstract connected Riemannian n-manifolds M with any Levi-Civita CovariantDerivative and a smooth injective isometric immersion f onto ℝⁿ / Sⁿ / the cylinder x²+y²=1 / a rotation-invariant surface: geodesics on ANY interval are exactly the affine motions / great-circle motions / (cos(at+b), sin(at+b), ct+d); infinitely many minimal geodesics between antipodes (n ≥ 2), otherwise a unique minimal and infinitely many non-minimal ones; infinitely many geodesics between any two points of the cylinder; constant-speed meridians are geodesics. A (sphere lemmas universe-free, unique_geodesic_of_top at 0): for the concrete Sⁿ ⊆ ℝⁿ⁺¹ with the induced connection, great circles are geodesics on ℝ, unbroken geodesics in Ω(Sⁿ;p,q) are great circles from p and (q ≠ ±p) one of the enumerated sphGeod p q k, whose energies strictly increase; and in a codimension-0 slice N ⊆ V a segment lying in N is the unique geodesic. A ⇒ B fails genuinely (abstract M, arbitrary LC connection: needs uniqueness of the LC connection and transport along f, absent; B's cylinder, surfaces of revolution and minimal/non-minimal counts are not in A at all). B ⇒ A fails genuinely: B(a) needs f ONTO ℝⁿ so does not cover A's arbitrary (e.g. non-convex open) codimension-0 N, and the energy monotonicity of sphGeod is not in B; the sphere clauses would follow from B(b) only through the Bridge (M = ↥Sⁿ, f = inclusion) plus endpoint regularity and the trigonometric enumeration.",
+ "B_issue": null,
+ "overlap": "no direction proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_attempted",
+ "embedded_special_case_note": "Only clause (b) of B concerns a manifold the project has (Sⁿ = sphSub n, model ℝⁿ, so Bridge.Sub applies with f = inclusion; IsIsomEmb from Bridge.norm_eq); (a) for proper open N, (c), (d) have no project counterpart. Would need: IsUnbrokenGeodesic ⇒ blind IsGeodesic on the closed [0,1] (acceleration normal at the endpoints by continuity), the sign normalization c ↦ |c|, and a re-proof of the sphGeod enumeration."
+}

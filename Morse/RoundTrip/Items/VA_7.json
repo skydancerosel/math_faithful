@@ -1,0 +1,17 @@
+{
+ "id": "VA_7",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "A = example1 ∧ isHomotopyDirectLimit_sublevel (universes 0). example1 has exactly B's hypotheses (Monotone, interiors cover, ParacompactSpace + T2Space: both sides read Milnor's 'paracompact' with Hausdorff) and B's conclusion IsHDL (glue IsHDL ↔ Monotone ∧ IsHomotopyDirectLimit). B additionally asserts the EXISTENCE of the level function f (f ≥ 0, f ≥ i+1 off X_i), which A does not state (it is inside example1's proof): A ⇒ B builds it outright (Milnor's partition of unity f = Σ i φ_i via PartitionOfUnity.exists_isSubordinate). A additionally contains isHomotopyDirectLimit_sublevel (any space, sublevel sets {E ≤ a_i}, a_i ↗ ∞, no paracompactness), which is not Milnor's Example 1; B ⇒ A gets it by applying B's first clause to the paracompact space ℝ with X_i = (-∞, a_i] and composing the resulting f₀ with E, then the project's Lemma 2.1 (Morse.isHomotopyDirectLimit_of_level, item VA_6, not listed here) — so the substance of that clause comes from Lemma 2.1, not from B. Logically both directions hold; content-wise each side has an extra elementary claim (B: the level function exists; A: the sublevel version for non-paracompact spaces).",
+ "B_issue": null,
+ "overlap": "A_to_B: 1 shared project theorem (telescopeProj._proof_1). B_to_A: 8 shared, all through Morse.isHomotopyDirectLimit_of_level (Lemma 2.1, used for the sublevel clause) and its telescope lemmas (mem_telescope, mem_telescope_iff, mem_telescope_of_le).",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "General topology (paracompact spaces, telescopes); no Riemannian manifold."
+}

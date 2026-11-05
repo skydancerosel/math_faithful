@@ -1,0 +1,17 @@
+{
+ "id": "V8_10",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0), for slice submanifolds N ⊆ V with the induced metric only: (i) c ∈ Ω(N;p,q) is a critical path of E (all variations IsVariation, any open U ⊆ ℝ, any break set) iff the first-variation functional -Σ⟨W,Δ_tV⟩-∫⟨W,A⟩ vanishes on TΩ_c (Theorem 12.2 + Lemma 11.A); (ii) at an unbroken geodesic (IsUnbrokenGeodesic: C^∞ on [0,1], geodesic on (0,1)) the first variation vanishes in every direction. B, for every abstract connected Hausdorff ℝⁿ-manifold with any smooth metric and any Levi-Civita connection: (1) IsGeodesic on [0,1] ⇔ C^∞ on [0,1] with D/dt dω/dt existing and identically 0 — a restatement of B's own definition, proved outright (geodesic_iff_def, no hypothesis); (2) geodesic ⇒ critical path of E. A ⇒ B fails genuinely: abstract manifolds (no first variation formula / variations on abstract M in the project). B ⇒ A fails genuinely: A's characterization of criticality by the first-variation functional (isCriticalPath_iff) is not a consequence of B, which only says geodesics are critical.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. Embedded theorems: B_to_A_geod_crit shares 107 project theorems, A_to_B_emb 101 — all infrastructure: slice-chart/atlas/gram lemmas, the structure fields of IsVariation and IsGeodesicOn, tanProj/tanCoord lemmas, piecewise_induction, continuousOn_of_piecewise, projRep (via Bridge); none of the argument (first_variation, exists_variation_one, hasDerivAt_energy are not shared).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V8_10.lean: B_emb := B's conclusion for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric, ConnectedSpace) and cov = Bridge.conn (B_to_B_emb via conn_isLC). A_geod_crit := 'an unbroken geodesic c ∈ Ω(N;p,q) is a project critical path' for ℝⁿ-modelled N (A_to_A_geod_crit combines A's two theorems). Proved B_emb ⇔ A_geod_crit (hence A_to_B_emb, which uses A for conjunct (2) only — conjunct (1) holds outright — and B_to_A_geod_crit, which uses B; both #rt_check OK). Non-connected N handled by applying B_emb to the component of c(0) (exists_component, copied from V7_28). Dictionary lemmas proved in the Emb namespace: contMDiffWithinAt_map_iff (maps E → ↥N, any normed E), exists_subdiv / exists_piece_of_subdiv (finite break sets ↔ subdivisions), isGeodesic_iff_isUnbrokenGeodesic (blind geodesic on closed [0,1] ⇔ IsUnbrokenGeodesic; endpoints by continuity), isVariation_of_isVar (blind IsVar on U ⊆ ℝ¹ ⇒ IsVariation along s ↦ s e₀), toBlind (project variation ⇒ blind one, values pw off U×[0,1]), isCriticalPath_iff (blind IsCriticalPath Efun ⇔ Morse.IsCriticalPath N, via Bridge.energy_eq and Morse.energy_congr), tangentSubspace_inter, isGeodesicOn_inter, isCriticalPath_of_component. Limitation: only the induced connection, not every IsLC connection on ↥N; only model ℝⁿ. The part of A not covered (isCriticalPath_iff) has no counterpart in B."
+}

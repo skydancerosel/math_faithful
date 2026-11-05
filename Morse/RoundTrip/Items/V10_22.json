@@ -1,0 +1,17 @@
+{
+ "id": "V10_22",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B (abstract connected Hausdorff Riemannian ℝⁿ-manifolds, any Levi-Civita connection, metric-complete, p, q not conjugate along any geodesic): Ω (blind Om) and Ω* are each homotopy equivalent to a countable Hausdorff Mathlib CWComplex whose l-cells are in bijection with the geodesics from p to q of blind (variational) index lam = l. A (universes 0; slice submanifolds N ⊆ V CLOSED in V): theorem_17_3_of_levels / theorem_17_3 / theorem_17_3_nonconj give lists of geodesics (each geodesic equal on [0,1] to exactly one entry, energies increasing) and IsCountableCellComplexType of the project's PathSp: a mapping telescope of iterated adjunction spaces with arbitrary (non-cellular) attaching maps and cells of dimension geodesicIndex = formIndex energyHessian. A ⇒ B fails genuinely: abstract vs embedded manifolds; project cell complex ⇒ Mathlib CWComplex needs cellular approximation (absent from Mathlib and the project, as in V2_11/V2_12/V5_11); blind lam ⇔ formIndex energyHessian is the unproved V9_19/V9_20 dictionary; A needs N closed in V, B only metric completeness (a complete embedded submanifold need not be closed, e.g. an infinitely long spiral). B ⇒ A fails genuinely: a CW complex does not give A's ordered tower, A's lists/energy ordering and the level version are not in B, and the setting.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. For A_to_A_emb (#rt_check OK): 781 shared project theorems — the Appendix mapping-telescope machinery (MappingTelescope.*, theoremA_telescope) reached through Morse.theorem_17_1 (used for Ω* ≃ PathC ≃ PathSp), and the slice-chart / riemDist / path-metric infrastructure of the Ω dictionary; none of the three theorems of the item.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V10_22.lean: B_emb := B at M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric, ConnectedSpace, MetricComplete), cov = Bridge.conn (B_to_B_emb via conn_isLC). Proved (#rt_check OK) A_to_A_emb: A's theorem_17_3_nonconj transported to the BLIND Ω and Ω* of ↥N (N closed, model ℝⁿ, q ∉ conjLocus p): IsCountableCellComplexType (Om n p q) cells ∧ IsCountableCellComplexType (OmStar p q) cells with the same geodesic lists. Glue (namespace Emb, copied from Items/V10_19.lean, lift renamed lft to avoid the blind `lam`): edist_eq (blind d = project edist), omTopology_eq / isInducing_tau (blind d-ball topology is induced by τ = incl ∘ ·), isHomotopyEquiv_tau (lifting inverse; composites pointwise inseparable), sigma (blind Ω* ≅ₜ PathC); new: nonempty_he_om, nonempty_he_omStar (Ω* ≃ₕ PathSp via sigma and the project's theorem_17_1). So the Ω-pitfall (paths agreeing on [0,1]) is harmless here: B only asks for homotopy equivalences. Remaining gaps to B_emb, all genuine: (i) Mathlib CWComplex vs project telescope (cellular approximation); (ii) cells ↔ GeodIdx needs blind lam = formIndex energyHessian (TΩ / 2-parameter variation dictionaries, Theorem 13.1 on ↥N; EnergyC2 has the analysis but not the dictionaries) and geodesics-as-Ω*-points ↔ list entries; (iii) MetricComplete does not give IsClosed N; (iv) NonConjPQ ⇒ q ∉ conjLocus needs the V9_10 isConj_iff dictionary plus geodesic lifting (routine, not done). Only the induced connection."
+}

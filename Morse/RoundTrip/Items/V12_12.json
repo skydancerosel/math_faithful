@@ -1,0 +1,17 @@
+{
+ "id": "V12_12",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universe 0) = jacobiOp_of_lie_lie ∧ lie_lie_of_jacobiOp ∧ lie_mem_eigenspace ∧ eigenJ_comp_self ∧ eigenJ_isometry ∧ even_finrank_of_comp_self_eq_neg_id ∧ even_finrank_eigenspace: for ANY finite-dim real Lie algebra with ad-invariant positive B, (2√μ)⁻¹ad_V is a B-orthogonal complex structure on each eigenspace E_μ (μ>0) of K_V, so dim E_μ is even for μ ≠ 0. B: on a Lie group with bi-invariant metric and LC connection, (1) for every v an ip-orthonormal basis putting ad_v in blocks (0 a_i; −a_i 0) with ad_v² diagonal, and (2) at every p, nonzero eigenvalues of K_V = curvR(V,·)V are > 0 with even-dimensional eigenspaces. B ⇒ A only vacuously. A ⇒ B fails: (a) geometry — Core and Tens (as V12_11); (b) (1), Milnor's orthonormal block normal form, is not in the project (only its consequence for eigenspaces); it is true and derivable from A plus the spectral theorem and an inductive (w, Jw) orthonormal basis — linear-algebra effort, not attempted. Bridge Beig_of_core (uses A, #rt_check_soft OK): Core ∧ Tens ⇒ (2), transporting E_μ along dL_p (K_V at p = dL_p ∘ jacobiOp 𝔤 v ∘ dL_p⁻¹).",
+ "B_issue": null,
+ "overlap": "B_to_A: 15 shared [Morse.jacobiOp_apply, ad_skew, eigenvalue_nonneg, jacobiOp_self, jacobiOp_self_nonneg, sq_nonneg_of_pos, lie_mem_eigenspace (only via eigenJ._proof_1), definition auxiliaries]. #rt_check fails for B_to_A and Beig_of_core only because the vocabulary Morse.eigenJ (in A's statement) uses lie_mem_eigenspace in its proof field; #rt_check_soft OK with review (definitions involved: Morse.eigenJ); lie_mem_eigenspace is re-proved as Re.lie_mem_eigenspace.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "Not applicable: the item's declarations (Morse.jacobiOp_of_lie_lie, lie_lie_of_jacobiOp, lie_mem_eigenspace, eigenJ_comp_self, eigenJ_isometry, even_finrank_of_comp_self_eq_neg_id, even_finrank_eigenspace; vocabulary eigenJ) concern an abstract real Lie algebra L with a bilinear form (Morse/Chapter12/BiInvariant.lean); they are not about a slice submanifold. B quantifies over abstract Mathlib Lie groups (LieGroup 𝓘(ℝ,ℝⁿ) ∞ G) with a RiemannianBundle; Bridge.Sub packages slice submanifolds as Riemannian manifolds but carries no LieGroup structure, and the project's embedded matrix-group results (Morse/Chapter12/GroupGeodesics.lean, e.g. IsMatrixGroup.curvOp_eq_jacobiOp; SUIndex.lean for SU(n)) are not part of this item."
+}

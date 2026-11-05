@@ -1,0 +1,4 @@
+{"id": "V3_24", "A_to_B": "failed", "B_to_A": "failed", "not_B": false, "relation": "incomparable", "effort_only": false,
+ "why": "Same torus and height (B's M^a is the image in ℝ³ of the project's sublevel set, sub_eq). Shared content: (1) M^a = ∅ for a < 0 and (5) M^a = M for a > f(s); A has (5) for a ≥ 2R+2r, slightly more. B additionally asserts the homeomorphism types of the intermediate sublevel sets: a closed 2-disk for 0 < a < 2r, S¹ × [0,1] for 2r < a < 2R, and the torus minus an open embedded disk for 2R < a < 2R+2r. These need explicit topology of the torus that A does not contain, so A ⇒ B is a genuine gap. A has theorem_3_1_torus (between critical levels: an ambient diffeomorphism carrying T^a onto T^b, a strong deformation retraction, a homotopy equivalence), which B does not state, so B ⇒ A fails.",
+ "B_issue": null,
+ "overlap": "n/a (neither direction proved)"}

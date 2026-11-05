@@ -1,0 +1,17 @@
+{
+ "id": "VA_8",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "A = isClosed_example3Set ∧ iUnion_example3Set ∧ example3 (no universe parameters: the space is unitInterval). The blind Xi i = {x | x = 0 ∨ 1/(i+1) ≤ x} equals Morse.example3Set i (x = 0 in unitInterval vs (x : ℝ) = 0, Set.Icc.coe_eq_zero), and IsHDL S ↔ Monotone S ∧ Morse.IsHomotopyDirectLimit S (identity homeomorphism tel S ≃ₜ telescope S, as in VA_4). Both directions are clause-by-clause transports using the hypothesis; the only extra clause, monotonicity of the sets (listed in B, not in A), is the non-listed project lemma Morse.monotone_example3Set in A ⇒ B and is used from B in B ⇒ A to unpack ¬IsHDL. Same indexing (Milnor's [0] ∪ [1/i, 1], i ≥ 1, re-indexed from 0 on both sides).",
+ "B_issue": null,
+ "overlap": "Both directions: 1 shared project theorem (Morse.telescopeProj._proof_1, the continuity field of the projection); nothing from the proof of example3.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "General topology (subsets of the unit interval and their telescope); no Riemannian manifold."
+}

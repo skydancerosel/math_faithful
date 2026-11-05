@@ -1,0 +1,16 @@
+{
+ "id": "V15_8",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0, arbitrary finite index types): J_α ⊕ J'_α of two anticommuting families of length k is anticommuting; and for ANY sequences J, J' (no family hypothesis) and any k including k = 0, P ∈ Ω_k(n), P' ∈ Ω_k(n') ⇒ P ⊕ P' ∈ Ω_k(n+n') for the structures J_α ⊕ J'_α. B (on Fin n ⊕ Fin n', k ≥ 1, J_1…J_{k-1} and J'_1…J'_k anticommuting): (0) the J_α ⊕ J'_α, α < k, are anticommuting, (1) J ↦ J ⊕ J'_k maps Ω_k(n) into Ω_k(n+n'), and (2) it is a topological embedding. A ⇒ B: (0), (1) are A's two conjuncts (with J'_k ∈ Ω_k(n') from the project's IsAnticommFamily.mem_omega); (2) is not in A and is proved outright (continuous left inverse M ↦ M₁₁). B ⇒ A: A's first conjunct really comes from B — B(0) plus B(1) at J = J_k ∈ Ω_k(n) give the family of length k — after transport along Fin (card ι) ≃ ι; A's second conjunct is re-proved outright, since B has family hypotheses, only the second factor J'_k, and no k = 0. Each side has (elementary) content the other lacks.",
+ "B_issue": null,
+ "overlap": "B_to_A: 3 shared project theorems (Morse.IsAnticommFamily.cs, .anti — structure projections — and Morse.isComplexStructure_iff, used through the project's IsAnticommFamily.reindex); no item theorem.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable"
+}

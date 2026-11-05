@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsCriticalPointM",
+ "name": "Morse.IsCriticalPointM",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are `mfderiv 𝓘(ℝ, E) 𝓘(ℝ, ℝ) f p = 0`; `agree` is `Iff.rfl`. Both therefore count a non-differentiable point as critical (Mathlib's junk mfderiv = 0), which only matters outside the textbook's smooth f."
+}

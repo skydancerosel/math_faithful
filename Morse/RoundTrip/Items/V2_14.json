@@ -1,0 +1,9 @@
+{
+ "id": "V2_14",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "relation": "equivalent",
+ "why": "Lemma 3.7: same content (F is f on X and the identity on the cell, and F is a homotopy equivalence), transported along the same Quot ≃ₜ pushout homeomorphism as V2_13. Assertion: A only states RF ≃ id. B also states that F is a homotopy equivalence and that FL ≃ id. Both follow from A in a few lines (L ≃ LFR ≃ R, then FL ≃ FR ≃ id). The universes of A are instantiated at 0.",
+ "B_issue": null,
+ "overlap": "6 shared project theorems, all pushout API glue (attachCell_hom_ext, cellInl_apply_eq, cellDesc_inl/inr, two _proof_1 lemmas)"
+}

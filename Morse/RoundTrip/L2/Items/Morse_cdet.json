@@ -1,0 +1,11 @@
+{
+ "id": "Morse_cdet",
+ "name": "Morse.cdet",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "ii² = −I and ii M = M ii (M complex-linear for the complex structure ii) — Milnor's setting; orthogonality of ii is not needed",
+ "difference": "Junk values only: outside ii² = −I, ii M = M ii the blind value is 0 while the project's polynomial det(M_ℂ P₊ + P₋) is whatever it is (ii = 0, M = 1 gives 1). Conventions agree: in both, √−1 acts as +ii.",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Proved agree_of: ψ(v, w) = P₊v + w is a ℂ-linear isomorphism (ℝ^ι, ii) × ker P₊ ≃ ℂ^ι (since P₊ ii = √−1 P₊) conjugating M_ℂP₊ + P₋ to M × id, so det(M_ℂP₊ + P₋) = det_ℂ(M) by LinearMap.det_conj and det_prodMap. This confirms the project's P₊ = (1 − √−1 ii)/2 sign convention; differ shows the junk difference."
+}

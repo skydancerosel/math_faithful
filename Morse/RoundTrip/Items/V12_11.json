@@ -1,0 +1,17 @@
+{
+ "id": "V12_11",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universe 0) = jacobiOp_apply ∧ ad_skew ∧ jacobiOp_symm ∧ jacobiOp_self ∧ jacobiOp_self_nonneg ∧ jacobiOp_eq_zero_iff ∧ eigenvalue_nonneg ∧ ad_eigenvalue_eq_zero: for ANY real Lie algebra with ad-invariant (positive) B, K_V := −¼ ad_V² (vocabulary) is −¼⁅V,⁅V,·⁆⁆, ad_V is skew, K_V is self-adjoint and ≥ 0 with kernel the centralizer, etc. — pure algebra. B: on a Lie group with bi-invariant metric and LC connection, at every p: (i) K_V(W) = R(V,W)V = ¼[[V,W],V](p) with R the pointwise curvature tensor curvR (defined by choice via IsCurvVal), (ii) K_V = −¼[V,[V,·]], (iii) ad_V skew at p. B ⇒ A only vacuously. A ⇒ B fails: needs Core (for (d) and 21.3(a)) and, for (i)–(ii), tensoriality of the field formula (Tens; otherwise curvR is a junk value). Bridges (#rt_check OK): Biii_of_core (uses A's ad_skew): Core ⇒ (iii); Bi_ii_of_core: Core ∧ Tens ⇒ (i),(ii) (dictionary + project's curv_halfLie); B_of_core (hA): Core → Tens → B. A's remaining conjuncts (self-adjointness, semidefiniteness, kernel, eigenvalue signs) are not asked by B.",
+ "B_issue": null,
+ "overlap": "B_to_A: 7 shared [Morse.sq_nonneg_of_pos, jacobiOp._proof_1/2, halfLie._proof_1..3, IsAdInvariant._proof_1] — definition auxiliaries only.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "Not applicable: the item's declarations (Morse.jacobiOp_apply, ad_skew, jacobiOp_symm, jacobiOp_self, jacobiOp_self_nonneg, jacobiOp_eq_zero_iff, eigenvalue_nonneg, ad_eigenvalue_eq_zero) concern an abstract real Lie algebra L with a bilinear form (Morse/Chapter12/BiInvariant.lean); they are not about a slice submanifold. B quantifies over abstract Mathlib Lie groups (LieGroup 𝓘(ℝ,ℝⁿ) ∞ G) with a RiemannianBundle; Bridge.Sub packages slice submanifolds as Riemannian manifolds but carries no LieGroup structure, and the project's embedded matrix-group results (Morse/Chapter12/GroupGeodesics.lean, e.g. IsMatrixGroup.curvOp_eq_jacobiOp; SUIndex.lean for SU(n)) are not part of this item."
+}

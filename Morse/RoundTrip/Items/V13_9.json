@@ -1,0 +1,17 @@
+{
+ "id": "V13_9",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "Same objects: the project's sphere Milnor.Sphere.Sph n = sphG⁻¹{0} is the blind Metric.sphere 0 1 (equal sets via preimage_eq_sphere, not definitionally; rewriting under the binders suffices), and both use Mathlib's HomotopyGroup.Pi at arbitrary base points. A ⇒ B: corollary_22_3 (bijection, i ≤ 2n−2) and corollary_22_3_mulEquiv (group isomorphism, 1 ≤ i ≤ 2n−2) are exactly B's two clauses; conversely B gives back exactly these two conjuncts (B_to_A_common, #rt_check OK). B ⇒ A fails genuinely: A also contains the second half of Freudenthal (surjection / surjective homomorphism π_i Sⁿ → π_{i+1}Sⁿ⁺¹ for i = 2n−1), the Riemannian index estimate hidx_sph (non-minimal geodesics p → −p on Sⁿ⁺¹ have energy-Hessian index ≥ 2n) and hball_sph (compact closed Riemannian balls), none of which follows from B.",
+ "B_issue": null,
+ "overlap": "n/a (B_to_A not proved). A_to_B and B_to_A_common use only Milnor.Sphere.preimage_eq_sphere and the hypothesis.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B quantifies only over the concrete Euclidean spheres; no Riemannian manifold in B."
+}

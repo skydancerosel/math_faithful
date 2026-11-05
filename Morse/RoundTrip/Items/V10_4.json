@@ -1,0 +1,19 @@
+{
+ "id": "V10_4",
+ "reblind": true,
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B (re-blinded, Ω = maps constant outside [0,1], d a genuine metric): on every abstract connected complete Riemannian ℝⁿ-manifold (any smooth metric, any Levi-Civita connection), for c > 0 with Ω^c ≠ ∅ there is δ > 0 such that for every subdivision of mesh < δ, w ↦ (w(t_1),…,w(t_{k−1})) is an open embedding of B = Int Ω(t₀,…,t_k)^c (d-topology) into M^{k−1}, and B carries a C^∞ manifold structure (model ModelWithCorners.pi) for which this map is a local diffeomorphism. A (universes 0; energy', nodes, path vocabulary): for slice N ⊆ V and ANY Morse.BrokenSetup: formula (∗) E(B.path y) = B.energy' y, Lemma 16.1 as inverse bijections B.nodes ↔ brokenPaths (paths compared on [0,1]), B.nodes = N^m ∩ O with O open, and the slice-submanifold lemma for N^ι ∩ O. A ⇒ B fails only through the setting (abstract manifolds; on embedded manifolds A ⇒ B_emb is proved). B ⇒ A fails genuinely: B is existential in δ and has no counterpart of formula (∗), of the explicit bijection for every BrokenSetup (also those coarser than B's δ), or of isSliceSubmanifold_pi_inter.",
+ "B_issue": null,
+ "overlap": "Only A_to_B_emb is checked (#rt_check OK). #rt_overlap: 502 shared project theorems, essentially the construction of B.path (segPath, joinVec, joinVec_spec, joinVec_vert, path_mem_pathSpace, path_eq_segPath, norm_deriv_path, riemDist_vert_lt, vert_mem_ball, continuousOn_gaps) and the Corollary 10.8 / normal-coordinate / ODE machinery behind them, reached through Emb.continuous_pathP_of (the project's continuous_pathP proof — which uses energy_path, a theorem of this item — re-run with formula (∗) taken from the hypothesis A) and Morse.exists_brokenSetup. The item's own theorems enter only through A.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false,
+  "A_to_B_emb": true
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "Items/V10_4.lean: B_emb := B at M = Bridge.Sub hN (model ℝⁿ, induced metric, ConnectedSpace), cov = Bridge.conn (B_to_B_emb). A_to_B_emb PROVED (#rt_check OK): MetricComplete ⇒ IsRiemComplete (Emb.metricComplete_iff, copied from V10_3) ⇒ S compact (Morse.isCompact_closedRiemBall_of_isRiemComplete); δ := η of Morse.exists_brokenSetup, so every subdivision of mesh < δ carries a Morse.BrokenSetup — since B's δ is existential, the §16 Setup16-vs-BrokenSetup gap of V10_5–V10_11 does not arise. Uses from A: lemma_16_1, exists_isOpen_nodes, energy_path (for continuity of B.pathP); isSliceSubmanifold_pi_inter is not used. New dictionary (namespace Emb): edist_eq etc. (copied from V10_19), tau/isInducing_tau for the NORMALIZED Om, clamp/nlift (normalized lift, at d-distance 0 from the path), om_ext, isGeodesic_Icc_of (project geodesic on (a,b) + smooth on [a,b] ⇒ blind geodesic on [a,b]), subdiv (ℕ-indexed t → Morse.Subdivision), mem_brokenPaths_of_mem_Bset / mem_Bset_of (blind B ↔ BrokenSetup.brokenPaths), iota_evalPts (blind evalPts = nodeVal), isOpenEmbedding_evalPts (the homeomorphism B ≃ₜ {y : iota y ∈ B.nodes}, open), continuous_pathP_of. New manifold glue (not in Mathlib): PiM.isManifold_pi (M^m is a C^∞ manifold for ModelWithCorners.pi), PiM.contMDiff_eval, TransM.transCS/exists_manifold_of_isOpenEmbedding (an open embedding X → M induces a manifold structure on X for which it is a local diffeomorphism). B_emb ⇒ A not attempted (A's content is not in B, see why). Only the induced connection is covered."
+}

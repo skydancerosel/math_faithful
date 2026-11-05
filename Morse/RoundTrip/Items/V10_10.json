@@ -1,0 +1,17 @@
+{
+ "id": "V10_10",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; slice N ⊆ V, induced metric, Morse.BrokenSetup = §16 data with the project's δ: IsShortJoin (unique join vector, ρ = ‖v‖, smooth dependence) AND normal radii ≥ δ on S, c·len < δ²): for break points y with B.path y an unbroken geodesic — no conjugate points on the segments, X ↦ (X(t_j)) a linear bijection brokenSpace ≅ ⊕T_{y_j}N, E_** > 0 on T', and formIndex/nullity of the formula-defined energyHessian on TΩ equal those on brokenSpace; plus comp_affine and E'(nodeVal γ) ≤ E(γ). B (abstract connected complete Riemannian ℝⁿ-manifolds, any Levi-Civita connection, Setup16 = Milnor's ε of Lemma 10.8 only, steps < ε²/c): the same bijection onto Fin (k−1) → ℝⁿ and the equal index/nullity for HessT 1 γ, the choice function of Milnor's VARIATIONAL E_**. Genuine differences beyond the setting: (1) subdivisions — Setup16 (ShortGood: unique short geodesic, smooth initial velocity, nothing on ρ = length or normal radii) does not provide a BrokenSetup for the same t (the project's δ can be smaller than ε, and normal radii at points of S near its boundary are not implied), so A never reaches B's subdivisions; (2) the Hessians (HessT vs energyHessian; EnergyC2 now supplies the analysis, but the 2-parameter variation and TΩ dictionaries are missing); (3) A's extra lemmas.",
+ "B_issue": null,
+ "overlap": "no direction proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V10_10.lean states B_emb (M = Bridge.Sub hN, cov = Bridge.conn, ConnectedSpace, MetricComplete) with B_to_B_emb; no direction proved. Blockers on ↥N: (i) genuine — B_emb's Setup16 subdivisions need not carry a Morse.BrokenSetup (the project's BrokenSetup asks IsShortJoin with ρ = ‖v‖ and normal radii ≥ δ on S, Setup16 only ShortGood), so not_isConjugate_seg / brokenNodeMap_bijective / formIndex_brokenSpace do not apply to B's t (proving non-conjugacy and Lemma 15.3 from ShortGood is new geometry); (ii) HessT 1 γ = energyHessian on the blind TΩ: RoundTrip/EnergyC2.lean (fderiv_fderiv_apply_energy_eq_energyHessian) removes the analytic part, but a shared dictionary is still missing: blind 2-parameter variations IsVarSubT over Rn 2 into ↥N ⇔ Morse.IsVariation (generalizing Items/V8_9.lean's 1-parameter Emb.isVariation_of_isVarSub / D_varField), realizing variations for every pair of TΩ (lift of Morse.exists_variation_two, with fields matched at all t ∈ ℝ), and TOm 1 γ / BrokenSet ⇔ pathTangent / brokenSpace via ambA (Jacobi on subintervals [t_i,t_{i+1}]: Items/V9_10.lean's dictionary is for [0,1] only). The linear algebra (bIndex/setDim of a restricted bilinear form = formIndex/rank ker) is in Items/V9_19.lean. Only the induced connection would be covered in any case."
+}

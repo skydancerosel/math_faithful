@@ -1,0 +1,17 @@
+{
+ "id": "VA_16",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0) = nonempty_homotopyEquiv_telescope ∧ isHomotopyEquiv_compareMap ∧ nonempty_homotopyEquiv_mappingTelescope (compareMap is vocabulary): for ANY X = hdl{X_i}, homotopy equivalences X_i → Y_i onto closed Y_i ⊆ Y (resp. g_n : X_n → K_n with homotopy-commutative squares) give X ≃ₕ the telescope Y_Σ (resp. the mapping telescope of the K_n). B (abstract complete Riemannian manifold, p, q non-conjugate, admissible levels): for every Hausdorff Mathlib CW complex Y with exhausting subcomplexes K_i and strictly commutative homotopy equivalences Ω^{a_i} → K_i, Ω = hdl{Ω^{a_i}} (Example 1), Y = hdl{K_i} (Example 2) and the limit map Ω → Y exists and is a homotopy equivalence (Theorem A). A ⇒ B fails genuinely: Example 2 for CW complexes (Milnor: Whitehead's theorem) is in neither A nor the project — A replaces the union K by the telescope K_Σ precisely to avoid it; Example 1 for the blind Ω and Theorem A for the limit map are in the project (isHomotopyDirectLimit_sublevel, theoremA) but not in A, and A's conclusions are Nonempty (X ≃ₕ K_Σ), not that the limit map is a homotopy equivalence. B ⇒ A only vacuously (A re-proved outright via theoremA_telescope/theoremA); B concerns one space Ω and Mathlib CW complexes.",
+ "B_issue": null,
+ "overlap": "B_to_A (vacuous) shares 201 project theorems: the whole Appendix chain (theoremA, theoremA_telescope, Cases 1 and 2, compareMap_mapsTo/compareMap_mk_zero, levelRetract, homotopic_inverse_square, telescope and mapping-telescope infrastructure), since A is re-proved by the project's own route.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "A's declarations are pure topology (arbitrary spaces and telescopes), with no path space, so there is no embedded special case of A; B is on an abstract Riemannian manifold. At M = Bridge.Sub hN the blocking gap (Example 2 for Mathlib CW complexes) would be unchanged."
+}

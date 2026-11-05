@@ -1,0 +1,12 @@
+{
+ "id": "V4_18",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "The item lists only the definition Morse.eulerNumberM, so A = True and both directions are vacuous (B_to_A trivial; A_to_B by proving B outright). B (formula (3) with homology: Σ(-1)^λ dim H_λ(M;ℚ) = Σ(-1)^λ C_λ for a smooth f with non-degenerate critical points on a compact Hausdorff manifold modelled on ℝⁿ) is the project's sum_bettiNumber_eq_sum_critCount_of_compactSpace (outside the item; Rabs = bettiNumber via finrank_subsetHomology_eq_bettiNumber, Cnum = critCount by rfl). Vocabulary check: eulerNumberM (Rn n) M — defined as Σ(-1)^λ C_λ of one chosen Morse function, i.e. WITHOUT homology — equals B's Betti-number χ(M) on every compact Hausdorff smooth M (eulerNumberM_eq_chiBetti, from B and the existence of a Morse function). So the project's 'Euler number' agrees with Milnor's χ, but only through the Morse-inequality theorem; by definition it is Milnor's right-hand side.",
+ "B_issue": null,
+ "overlap": "not computed (A = True); B_holds rests on eulerNumberM_eq_sum_bettiNumber (Whitney embedding + Morse homology filtration)",
+ "uses_hypothesis": {"A_to_B": false, "B_to_A": false}
+}

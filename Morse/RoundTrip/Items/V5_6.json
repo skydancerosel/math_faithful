@@ -1,0 +1,12 @@
+{
+ "id": "V5_6",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": true,
+ "why": "A (universes 0): for w : V → F complex-C² at q (V, F arbitrary complex normed/inner product spaces) and any p, the real Hessian of z ↦ ‖w z − p‖² at q is 2(Re⟨dw v, dw v'⟩ + Re⟨w q − p, d²w(v, v')⟩) — the project's replacement for Milnor's 'clearly Q' determines the second fundamental form'. B: for an analytic immersion w : ℂᵏ → ℂⁿ at 0 and a unit vector v real-orthogonal to the ∂X/∂ξᵢ (X = realified w), there is a complex b with Re⟨v, w(x+iy)⟩ = const + Re Σ b_hj z^h z^j + o(‖ξ‖²) and B's (v·ℓ_ij) (normal projection of ∂²X/∂ξᵢ∂ξⱼ, paired with v) equals the polar form of Q' = Re Q. A ⇒ B not proved: B needs (i) a second-order Taylor expansion of the holomorphic ⟨v, w⟩ with a COMPLEX quadratic term (power series, as in V5_5), its linear term killed by the real-orthogonality hypothesis, and (ii) the identification of B's realified second derivatives/normal projection with the Hessian of f(ξ) = Re⟨v, w(toCk ξ)⟩ and of that Hessian with the polar form of Q' (power-series uniqueness: 2·p₂ = d²f). A supplies at most the second-derivative computation (Re⟨v, w⟩ = (‖w‖² − ‖w − v‖² + ‖v‖²)/2 gives d²f = Re⟨v, d²w⟩); everything else is realification/Taylor glue not in the project. B is believed true (sketch checked: v ⊥ tangent makes ⟨v, P^⊥ ∂²X⟩ = ∂²f, and d²f is J-anti-invariant since f = Re of a holomorphic function). B ⇒ A holds only vacuously: A re-proved by the project's own computation; B (analytic immersions, normal unit v, finite dimension) cannot give A's formula for arbitrary C² maps and arbitrary p.",
+ "B_issue": null,
+ "overlap": "B_to_A: 7 shared — reInner_self, reInner_comm, reInner_apply and hessian's definitional lemmas (the project's own proof re-done)",
+ "uses_hypothesis": {"A_to_B": false, "B_to_A": false}
+}

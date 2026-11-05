@@ -1,0 +1,17 @@
+{
+ "id": "V15_34",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "Vocabulary: B's cdet i U = det(U_ℂQ + I − Q) with Q = ½(I − √−1·i) is literally the project's cdet = det(U_ℂP₊ + P₋) (Q = P₊, I − Q = P₋; cdet_eq), and B's tr_ℂ A = tr(A_ℂQ) = −√−1·tr(A·i)/2 for tr A = 0 (ctr_eq). A (universes 0, arbitrary finite index type, arbitrary ii with ii² = −1): det_ℂ multiplicative on matrices commuting with ii, det_ℂ 1 = 1, |det_ℂ M| = 1 for orthogonal M (iiᵀ = −ii), det_ℂ exp(tV) = e^{−√−1 t tr(V·ii)/2} for traceless V commuting with ii. B (k ≡ 2 mod 4, J_1..J_{k−1} anticommuting): i = J_1⋯J_{k−1} is a complex structure; |det_ℂ U| = 1 for orthogonal U commuting with i; f(J exp(πtA)) = det_ℂ exp(πtA) = e^{πt tr_ℂ A} for A ∈ T. A ⇒ B: the two det_ℂ claims are A's norm_cdet and cdet_exp (A commutes with i because it commutes with each J_α; skew ⇒ traceless); 'i is a complex structure' ((J_1⋯J_m)² = (−1)^{m(m+1)/2}, = −1 for m ≡ 1 mod 4) and f(J·X) = det_ℂ X (J⁻¹ = −J) are not in A and are proved outright (the project only checks i for k = 2, 6, isCentralI_two/six, outside A). B ⇒ A only vacuously: A is re-proved outright by the project's argument (multiplicativity, det_ℂ 1 and the exponential formula for arbitrary ii and traceless V are not in B). So each side has (elementary) content the other lacks.",
+ "B_issue": null,
+ "overlap": "B_to_A: 50 shared project theorems — the auxiliary lemmas of the item's proofs (projP/projM idempotent and orthogonal, cplx_comm_projP/M, conj_cdet, trace_cplx, cplx_smul, continuous_cplx, eq_mul_exp_smul_of_hasDerivAt_cplx, det_exp_smul_cplx and its Jacobi-formula helpers) plus MatrixInner normed-structure proof fields; the four item theorems avoided (the vacuous re-proof re-runs their proofs).",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete real matrices (complex structures on ℝⁿ, Ω_k(n) as subsets of M_n(ℝ)); it does not quantify over abstract Riemannian manifolds."
+}

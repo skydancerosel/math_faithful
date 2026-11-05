@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsBrokenJacobi",
+ "name": "Morse.IsBrokenJacobi",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "0 < τ ≤ 1 (γ smooth in N is the signature's hc); the blind's guessed reading of the arguments (B = division points, τ = right end of [0, τ]) matches the project's",
+ "difference": "Outside 0 < τ ≤ 1: for τ < 0 the project's condition is vacuous (no [s, s'] ⊆ [0, τ]) while the blind demands a Jacobi field on [τ, 0] (proved: `differ`, V ≠ 0, for every hN, γ, B); for τ > 1 the project uses Jacobi fields of 𝒥(γ), constant past t = 1, the blind the Jacobi equation along γ beyond 1. Formally the project asks, on every interval free of division points, for agreement with a global Jacobi field of 𝒥(γ), the blind for continuity plus the Jacobi equation (one-sided derivatives) on each segment between consecutive points; these agree by ODE uniqueness/extension.",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Dictionary as for Morse.IsJacobiField, localised to [u, v] ⊆ [0, 1] with the project's PieceData (blind equation on [u, v] ⇔ project jacobiExpr = 0 on (u, v), by continuity up to the ends); a blind Jacobi field on [u, v] agrees there with the project's jacSol with the same initial data (Gronwall uniqueness Morse.eqOn_Icc_linSol, the derivative computation adapted from IsJacobiField.eqOn_jacSol), normalised into 𝒥(γ). Continuity comes from continuousOn_of_piecewise, and every division-free [s, s'] lies in a segment between consecutive subdivision points."
+}

@@ -1,0 +1,18 @@
+{
+ "id": "V7_12",
+ "reblind": true,
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B is the Gauss lemma for every abstract connected ℝⁿ-manifold with a smooth Mathlib Riemannian metric and any Levi-Civita connection, for any normal ball (Riemannian ε-ball). It is stated in Milnor's form: ⟨∂f/∂r, ∂f/∂t⟩ = 0 for f(r, t) = exp_q(r v(t)), with v a C^∞ curve of unit vectors on an interval and 0 < r < ε. A (universes 0, slice submanifolds N ⊆ V, induced metric) has two technical lemmas about the chosen smooth extension F of exp_q in NormalCoord (constant speed ‖dF_{ru}(u)‖ = ‖u‖, injectivity of dF_w on T_qN), the Gauss lemma ⟨d exp_w(w), d exp_w(x)⟩ = ⟨w, x⟩ for all x ∈ T_qN, and its orthogonal form. A ⇒ B fails for the setting: abstract manifolds, any Levi-Civita connection. B ⇒ A fails because B does not specialize to N ⊆ V by itself, and the lemmas about F are not in B. On embedded manifolds the Gauss parts coincide: B_emb ⇔ A_gauss, proved both ways under #rt_check. A's stronger-looking general form ⟨d exp_w w, d exp_w x⟩ = ⟨w, x⟩ follows from B's orthogonality together with constant speed of radial geodesics, which comes from the project's geodesic theory, not from A.",
+ "B_issue": null,
+ "overlap": "B_to_A_gauss: 155 shared project theorems. These are the NormalCoord field projections and NormalCoord.hasFDerivAt_F/contDiffAt_F, IsGeodesicFrom.exp_smul/isGeodesicOn_exp_smul, IsGeodesicOn.* (including norm_deriv_eq, constant speed), and slice-chart, tanProj and gram lemmas. Not shared: NormalCoord.inner_fderiv_F (the project's Gauss computation), fderiv_G_fderiv_F, norm_fderiv_F_apply.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "B_emb := B's conclusion at M = Bridge.Sub hN (model ℝⁿ, induced metric), cov = Bridge.conn, [ConnectedSpace ↥N]; B_to_B_emb via conn_isLC. A_gauss := A's gauss_lemma and gauss_lemma_orthogonal for model ℝⁿ and connected N. B_emb_to_A_gauss uses B: Emb.inner_fderiv_expT_eq_zero applies B to the unit curve t ↦ cos t·w/‖w‖ + sin t·x/‖x‖ at t = 0 and r = ‖w‖, giving orthogonality. Emb.norm_fderiv_expT_self gives constant speed from IsGeodesicOn.norm_deriv_eq. Emb.gauss_of_B_emb then decomposes x = a·w + x⊥. A_to_B_emb uses A's gauss_lemma_orthogonal: a blind normal ball is a project normal radius (Emb.isNormalRadius_of_isNormBall, needing the smooth-extension lemma Emb.exists_ambient_ext); ∂f/∂r = d exp_w(v(t)) and ∂f/∂t = d exp_w(r v'(t)) at w = r v(t), read through Bridge.D_mfderiv_curve and hasDerivWithinAt_incl_comp; and ⟨v, v'⟩ = 0 by differentiating ‖v‖² = 1 within the interval. B_emb_iff_A_gauss states the equivalence. Not covered by B: A's NormalCoord lemmas about the extension F (norm_fderiv_F_apply, injective_fderiv_F). Limitations: only the induced connection; model ℝⁿ; connected N."
+}

@@ -1,0 +1,11 @@
+{
+ "id": "Morse_pathSpace",
+ "name": "Morse.pathSpace",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are the maps R -> V that are piecewise smooth on [0,1], with values in N on [0,1], c 0 = p, c 1 = q. The only difference is the formulation of piecewise smoothness (finite break set vs subdivision), equivalent for all paths (isPiecewiseSmooth_iff, copied from item Morse_IsPiecewiseSmooth). Equal sets for all N, p, q."
+}

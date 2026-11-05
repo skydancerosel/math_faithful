@@ -1,0 +1,11 @@
+{
+ "id": "Morse_Homology_spaceHomology",
+ "name": "Morse.Homology.spaceHomology",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are Mathlib's singularHomologyFunctor (ModuleCat 𝕜) i at the coefficient object ModuleCat.of 𝕜 𝕜, evaluated at TopCat.of X. The agreement is rfl."
+}

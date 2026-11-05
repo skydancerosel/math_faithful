@@ -1,0 +1,17 @@
+{
+ "id": "VA_15",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "A = mapsTo_mappingTelescopeMap ∧ theoremA_general (universes 0,0; mappingTelescopeMap is vocabulary). B = Theorem A as Milnor states it (no closedness), with hypothesis ∃ e : X_i ≃ₕ Y_i whose underlying map is f|X_i and conclusion ∃ e : X ≃ₕ Y with underlying map f. Glue: IsHDL S ↔ Monotone S ∧ IsHomotopyDirectLimit S (identity homeomorphism tel S ≃ₜ telescope S, as in VA_2/VA_4) and (∃ e : P ≃ₕ Q, ⇑e = g) ↔ IsHomotopyEquiv g. A ⇒ B is A's second clause; B ⇒ A gives theoremA_general from B (uses the hypothesis), while the first clause of A (the map of mapping telescopes of the inclusions preserves truncations, a two-line bookkeeping lemma not in B) is proved outright. Equivalent on the substance; A's extra clause is trivial.",
+ "B_issue": null,
+ "overlap": "B_to_A: 29 shared project theorems, all from the outright proof of the bookkeeping clause (MappingTelescope.exists_mk and the auxiliary proof fields of MappingTelescope/subspaceFunctor/mappingTelescopeMap/level) plus IsHomotopyEquiv basics; nothing of the proof of theoremA_general (theoremA, telescopeComparison, levelRetract).",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "General topology (homotopy direct limits, mapping telescopes); no Riemannian manifold."
+}

@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsSmoothCurveIn",
+ "name": "Morse.IsSmoothCurveIn",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are ContDiffOn R infty on [0,1] together with values in N on [0,1] (a two-field structure vs a conjunction with MapsTo); equal for all arguments."
+}

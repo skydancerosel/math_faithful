@@ -1,0 +1,18 @@
+{
+ "id": "V6_11",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; IsCompatible is a definition = the Corollary 8.4 formula itself): (a) Cor. 8.4 for the induced connection P(dY(v)) of a slice submanifold N ⊆ V, for fields differentiable at q; (b) for a Mathlib connection on an abstract Riemannian manifold (any model), 'the Cor. 8.4 formula holds for fields differentiable at the point' ↔ Mathlib's IsMetricCompatible. B: on an abstract ℝⁿ-manifold, a smooth connection compatible in MILNOR's sense (parallel fields, defined via ∃ D obeying axioms (a)-(c), have constant inner products) satisfies the Cor. 8.4 formula for smooth Y, Y'. B is exactly 'Milnor-compatible ⇒ IsCompatible (on smooth fields)'; A ⇒ B fails genuinely because that implication is Lemma 8.3 on an abstract manifold (parallel orthonormal frames along a curve with velocity X_p, i.e. abstract Lemmas 8.1/8.2), which the project does not have: it takes the Cor. 8.4 formula as the definition of compatibility (Connection.lean: Milnor's definition 'cannot be stated without parallel transport'). B ⇒ A is vacuous: both clauses re-proved outright (product rule + ⟨Pu,w⟩ = ⟨u,w⟩; Mathlib's isMetricCompatible_iff). B cannot be specialized to N ⊆ V: the induced metric/connection are not packaged as a Mathlib RiemannianBundle/CovariantDerivative on N.",
+ "B_issue": null,
+ "overlap": "B_to_A: 52 shared — dN_inner, inner_tanProj_of_mem, inner_tanProj_left, tanProj_eq_self and slice-chart/dN infrastructure (the project's own proof re-done)",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V6_11.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric) and cov = Bridge.conn; B_to_B_emb is a genuine instance (Bridge.conn_isGlobalConn, Bridge.conn_isCompat — the latter is Milnor-compatibility proved in the Bridge). Dictionary (namespace Emb): dN_D' (mfderiv F p v = dN F p (D_p v), for any target E), liftF/amb_liftF/isSmoothVF_liftF (tangent maps N → V as sections), plus Bridge.D_conn_apply and Bridge.inner_eq. Proved B_emb ⇔ A84 := A's first clause (dN_inner_eq_covAt) for model ℝⁿ and SMOOTH tangent fields Y, Y'; hence A_to_B_emb (uses A) and B_to_A84 (uses B; the product rule comes from B, dN_inner is not shared), both #rt_check OK. Not covered: A's second clause isCompatible_iff_isMetricCompatible (abstract Mathlib connections, any model; B_emb fixes the induced connection), and A's first clause for fields merely MDifferentiableAt q and arbitrary model Z. Missing for the full abstract B on ↥N: Milnor-compatibility ⇒ Cor. 8.4 for an ARBITRARY compatible connection on ↥N (abstract Lemma 8.3), not in the Bridge.",
+ "overlap_embedded": "B_to_A84: 36 shared — inner_tanProj_left, tanProj_eq_self (through Bridge.conn_isCompat, B's compatibility hypothesis) and slice-chart/tanCoord infrastructure; dN_inner (the project's product rule) is not shared."
+}

@@ -1,0 +1,11 @@
+{
+ "id": "Morse_hessianM",
+ "name": "Morse.hessianM",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "The project differentiates f ∘ (extChartAt 𝓘(ℝ, E) p).symm twice at extChartAt 𝓘(ℝ, E) p p; for the model 𝓘(ℝ, E) the extended chart is the preferred chart chartAt E p (project lemmas extChartAt_self_coe(_symm)), which is exactly the blind choice. Equal at every point, critical or not."
+}

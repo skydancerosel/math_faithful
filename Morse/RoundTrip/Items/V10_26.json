@@ -1,0 +1,17 @@
+{
+ "id": "V10_26",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: for every abstract Riemannian ℝⁿ-manifold M isometric to Sⁿ via ψ (n > 2), q ≠ p, p': INTEGRAL singular homology of Ω(M; p, q) (blind Om) and of Ω* is ℤ in degrees k(n−1) and zero otherwise, and both are non-zero in infinitely many degrees. A (bettiNumber_sphere_paths; 𝕜 : Type, no universe parameters): for the embedded Sⁿ ⊆ ℝⁿ⁺¹, n ≥ 3, q ≠ ±p, over every field 𝕜, dim_𝕜 H_i(PathSp; 𝕜) = 1 if n−1 ∣ i else 0; Ω only. B ⇒ A needs the universal coefficient theorem (absent from Mathlib/project), plus transport from abstract M. A ⇒ B fails genuinely: besides the UCT, field Betti numbers do not determine integral homology without finite generation (⟨1/p : p prime⟩ ⊆ ℚ is torsion-free of dimension 1 over every field but not ≅ ℤ); the project computes homology from the energy filtration over fields and explicitly does not formalize the integral statement. Setting differences (abstract M via ψ; Ω* in B) are bridged on the embedded sphere, see below.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. For A_to_A_emb (#rt_check OK): 529 shared project theorems — slice-chart / riemDist / path-metric infrastructure of the Ω dictionary and the sphere's slice structure, the Appendix telescope machinery via theorem_17_1; bettiNumber_sphere_paths itself is used only through the hypothesis.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V10_26.lean: B_emb := B at M = Sⁿ ⊆ ℝⁿ⁺¹ (Bridge.Sub (sphSub n)), ψ = inclusion (Sph.isRoundSphere, Sph.connectedSpace), cov = Bridge.conn (B_to_B_emb). Proved (#rt_check OK) A_to_A_emb: the FIELD-coefficient version of every clause of B_emb — for every field 𝕜 : Type, n ≥ 3, q ≠ ±p, bettiNumber 𝕜 of the BLIND Ω(Sⁿ; p, q) and Ω*(Sⁿ; p, q) is 1 iff n−1 ∣ i (dvd_iff_exists: B's ∃ k, i = k(n−1)), else 0, hence non-zero in infinitely many degrees. Glue: Ω ≃ₕ PathSp and Ω* ≃ₕ PathSp (copied from Items/V10_19.lean + project theorem_17_1, as in V10_22/V10_24) and Morse.Homology.bettiNumber_eq_of_homotopyEquiv. Remaining gap to B_emb: ℤ coefficients (universal coefficient theorem and finite generation of H_i(Ω; ℤ), or a direct integral computation from the filtration) — genuine, not glue."
+}

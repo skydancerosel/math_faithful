@@ -1,0 +1,17 @@
+{
+ "id": "V7_8",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): TN = {(q,v) | v ∈ T_qN} ⊆ V×V is a slice submanifold; exp agrees locally on TN with smooth maps on U × ball 0 ε; there is an open O ⊇ N×{0} with O∩TN ⊆ expDom on which exp is C^∞ (ContMDiffOn for TN's slice structure); d(exp_q)_0 = the inclusion T_qN ↪ V. B: abstract manifold, LC connection: an open V ∋ (p,0) in Mathlib's TangentBundle on which (q,v) ↦ exp_q v is defined and C^∞, and mfderiv of w ↦ exp_p w (w ∈ ℝⁿ ≅ T_pM via chartAt p) at 0 is the identity. A ⇒ B fails genuinely: B is about an abstract Hausdorff ℝⁿ-manifold with a smooth Mathlib RiemannianBundle and an ARBITRARY Mathlib CovariantDerivative that is Levi-Civita in Milnor's sense (IsLC: smooth, symmetric via mlieBracket, compatible = parallel fields, defined through ∃ D obeying axioms (a)–(c), keep inner products); the project has only slice submanifolds N ⊆ V with the induced metric/connection and no abstract geodesic theory (no Christoffel symbols, no D/dt or geodesic ODE in charts), and Whitney does not help since B's metric/connection need not be induced (no Nash embedding). B ⇒ A fails: B does not specialize to N ⊆ V without a bridge (↥N with ChartedSpace ℝⁿ, induced metric as RiemannianBundle, induced connection as CovariantDerivative proved IsLC, and a dictionary IsGeodesic/expMap/arcLen ↔ IsGeodesicOn/exp/pathLength), which the project does not have. A's tangent bundle is the embedded set TN ⊆ V×V, B's is Mathlib's TangentBundle with its chart structure; relating them is part of the missing bridge.",
+ "B_issue": null,
+ "overlap": "no direction proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V7_8.lean: B_emb := B for M = Bridge.Sub hN (model ℝⁿ, connected, induced metric) and cov = Bridge.conn, on Mathlib's TangentBundle of ↥N. A_open := A's exists_isOpen_exp ∧ hasFDerivAt_exp_zero (A itself cannot be the hypothesis of an #rt_check'ed proof: the statement of A's contMDiffOn_exp mentions A's first theorem isSliceSubmanifold_tangentBundle through the charted space of TN). Proved B_emb ↔ A_open, both directions #rt_check OK (A_open_to_B_emb; B_to_A_open = B → A_open). A_open → B_emb: V' = preimage of A's O under TN → V×V, (x,w) ↦ (x, D_x w) (smooth, Emb.contMDiff_amb); smoothness of exp on V' from A's local smooth extensions F and Emb.contMDiffAt_of_incl (a map into ↥N is smooth if it is smooth in V); d(exp_p)_0 = id from hasFDerivAt_exp_zero by the chain rule for ↥N ↪ V (mfderiv_comp, injectivity of D_p). B_emb → A_open, for every slice submanifold via the component of q₀: B's smoothness on TM is moved to an open set of V×V with a smooth retraction r onto the component (Morse.exists_retraction), F(y,u) = exp_{r y}(P_{r y} u) through Ψ(y,u) = (r y, P_{r y} u) ∈ TC (Emb.contMDiffAt_Ψ), giving exists_exp_eq and then exists_isOpen_exp (project's proof); hasFDerivAt_exp_zero from B's mfderiv by the chain rule. Domain glue (B's closed-interval ExpDefined ⇒ project expDom) uses Morse.exists_initial_ray (Emb.mem_expDom_of_expDefined, from V7_13). Not covered: isSliceSubmanifold_tangentBundle (no Riemannian content) and contMDiffOn_exp (stated with the slice structure of TN ⊆ V×V, i.e. with A's first theorem; relating it to Mathlib's TangentBundle would need a diffeomorphism TN ≅ T↥N). Limitation: only the induced connection."
+}

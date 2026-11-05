@@ -1,0 +1,17 @@
+{
+ "id": "VA_19",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universe 0) = isCountableCellComplexType_of_tower ∧ _of_sublevel ∧ _of_sublevel': for ANY space X with X = hdl{X_n} (resp. sublevels {E ≤ a_n} of a continuous E, a_n ↗ ∞), GIVEN homotopy equivalences g_n : X_n → K_n to the stages of a cell tower compatible with the maps K_n → K_{n+1} (up to homotopy, resp. strictly), X ≃ₕ the mapping telescope of the tower (IsCountableCellComplexType). B (abstract complete Riemannian manifold, p, q non-conjugate, admissible levels): there EXIST a Hausdorff Mathlib CW complex Y, exhausting subcomplexes K_i and a strictly commutative diagram of homotopy equivalences Ω^{a_i} → K_i, with Ω = hdl{Ω^{a_i}}, Y = hdl{K_i} (Example 2) and the limit map Ω → Y a homotopy equivalence. A ⇒ B fails genuinely: B's existence of the diagram is Theorems 16.3/17.3 on an abstract manifold (A assumes it), B's Example 2 for Mathlib CW complexes is not in the project (it uses a mapping telescope instead of the union with the weak topology), and turning the project's towers into Mathlib CW complexes needs cellular approximation. B ⇒ A only vacuously: A is re-proved outright via the non-listed nonempty_homotopyEquiv_mappingTelescope and isHomotopyDirectLimit_sublevel. The shared core (Theorem A applied to a commutative ladder) is present on both sides but in different targets (telescope vs CW union).",
+ "B_issue": null,
+ "overlap": "B_to_A (vacuous) shares 212 project theorems: the whole Appendix proof chain (nonempty_homotopyEquiv_mappingTelescope, isHomotopyEquiv_compareMap, theoremA, Cases 1 and 2, isHomotopyDirectLimit_sublevel, CellTower.tmap_ofSequence and telescope/mapping-telescope infrastructure), since A is re-proved by the project's route.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "A's declarations are pure topology (any space X, any continuous E : X → ℝ), not statements about a path space of a slice submanifold; B is on an abstract Riemannian manifold. On ↥N (B_emb) the obstacles would be the same: existence of the diagram (project: theorem_17_3-type results give a CellTower/telescope, not Mathlib CW subcomplexes) and Example 2 for Mathlib CW complexes."
+}

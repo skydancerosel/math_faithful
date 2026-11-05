@@ -1,0 +1,11 @@
+{
+ "id": "Morse_Homology_singularChains",
+ "name": "Morse.Homology.singularChains",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are Mathlib's AlgebraicTopology.singularChainComplexFunctor evaluated at the coefficient object R (alternating face complex of R[Sing X]). The agreement is rfl."
+}

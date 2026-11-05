@@ -1,0 +1,9 @@
+{
+ "id": "V1_15",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "relation": "A_narrower",
+ "why": "A proves Lemma 2.4 only for M = E, a complete normed space (any dimension, where the infinite-dimensional case is degenerate: X = 0). B states it for an abstract finite-dimensional Hausdorff manifold. B ⇒ A: specialize M := E, translate the tangent-bundle section to ContDiff, and translate 'generates' (B tests against all smooth g; A uses HasDerivAt) using dual functionals. The infinite-dimensional case is handled separately by Riesz's theorem (X = 0, so the flow is id). A ⇒ B would need global flows on an arbitrary manifold (patching local flows with charts), which is genuinely missing from A.",
+ "B_issue": null,
+ "overlap": "4 shared project items: IsOneParameterGroup.{diffeo,zero,add} (structure projections and the elementary φ_0 = id lemma) and Generates._proof_1; none carries the content of Lemma 2.4"
+}

@@ -1,0 +1,17 @@
+{
+ "id": "V14_2",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; suDiag is vocabulary, = blind milnorA): for A = diag(iπk_j), any finite index type and ANY integers k_j, tr AA* = π²Σk_j² and tr A = iπΣk_j — only the diagonal trace computations. B: for A = T·diag(iπk_j)·Tᴴ (T unitary, k_j odd), the length ∫₀¹|d/dt exp tA| dt of the geodesic equals |A|, tr AA* = π²Σk_j², |A| = π√Σk_j², and A ∈ 𝔰𝔲(n) ⇔ Σk_j = 0. Both statements are true and elementary, so both directions are proved, but each has content the other lacks: A ⇒ B uses A for the two trace identities (after unitary invariance of the trace) and proves the length claim outright (exp tA = T·diag(e^{iπk_jt})·Tᴴ, derivative via hasDerivAt_pi and a continuous linear map, |T·D·E·Tᴴ| = |A| for E diagonal unitary) — A says nothing about the curve or its length (the project has that separately as pathLength_exp_smul). B ⇒ A is vacuous (A re-proved outright): B only covers odd k_j and gives tr A = 0 ⇔ Σk_j = 0, not the value of tr A.",
+ "B_issue": null,
+ "overlap": "0 shared project theorems in both directions.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete matrix groups U(n), SU(n) ⊆ M_n(ℂ) (Mathlib unitaryGroup / specialUnitaryGroup as subsets, lengths as Euclidean lengths of curves in M_n(ℂ)); it does not quantify over abstract Riemannian manifolds."
+}

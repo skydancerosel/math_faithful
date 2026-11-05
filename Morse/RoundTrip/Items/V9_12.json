@@ -1,0 +1,17 @@
+{
+ "id": "V9_12",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: on every abstract connected Riemannian ℝⁿ-manifold with a Levi-Civita connection, along a geodesic γ on [0,1]: (i) some δ > 0 with no t ∈ (0,δ) ∩ [0,1] conjugate to 0; (ii) the parameters conjugate to 0 have no cluster point in [0,1]. A (universes 0): (i) only, for slice submanifolds and ANY smooth curve γ in N (no geodesic hypothesis); (ii) is Corollary 15.2 (Morse.corollary_15_2), not part of the item. A ⇒ B fails genuinely (setting, and (ii) is absent from A); B ⇒ A fails genuinely (setting; A also covers non-geodesic curves). On embedded manifolds: A ⇒ B_emb proved, with (ii) taken from Morse.corollary_15_2 rather than from A; B_emb ⇒ A_geo proved (first clause).",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. For the embedded theorem B_emb_to_A_geo: 173 shared project theorems, all from the dictionary (tangent projection prj/tanProj, curvAlong/curvR, IsJacobiField.congr/eq, IsSmoothCurveIn.* basics, slice-chart lemmas); none of the project's actual argument (fineMesh, hessForm_ge, eq_zero_of_short, isConjugate_iff) is shared.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V9_12.lean: B_emb := B for M = Bridge.Sub hN, cov = Bridge.conn (B_to_B_emb). The Jacobi/conjugacy dictionary of Items/V9_10.lean is copied (namespace Emb: jacobi_Icc, isJacobiField_of_isJacobi, isJacobi_of_isJacobiField, isConj_iff, isGeodesic_lift, isConjugate_congr). A_to_B_emb: clause (i) from A through isConj_iff; clause (ii) does NOT use A — it is Morse.corollary_15_2 (finitely many conjugate parameters along an unbroken geodesic, via Bridge.isGeodesicOn_Ioo) read through the dictionary. B_emb_to_A_geo: A_geo = A for model ℝⁿ, ConnectedSpace ↥N, γ smooth on [0,1] and IsGeodesicOn (0,1); from B_emb's clause (i). Limitations: induced connection only; A's non-geodesic curves not covered by B."
+}

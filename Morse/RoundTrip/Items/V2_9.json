@@ -1,0 +1,9 @@
+{
+ "id": "V2_9",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "relation": "incomparable",
+ "why": "A's first conjunct proves Remark 3.3 only for f = F|N with N a slice submanifold of a finite-dimensional normed space V. It concludes a strong deformation retraction of N^{c+ε} onto the explicit subspace N^{c-ε} ∪ ⋃ e_p, with explicit pairwise disjoint embedded cells. B is for abstract (Hausdorff, not necessarily second-countable) manifolds and concludes only a homotopy equivalence with some iterated adjunction space. So A ⇒ B fails for lack of an embedding theorem plus the (missing) Lemma D / cell-complex glue. B ⇒ A fails because A's conclusion is much stronger (SDR onto explicit embedded cells). A's second conjunct (isFiniteCellComplexType_union_cells) is a general-topology lemma about arbitrary Hausdorff spaces that B says nothing about. These are genuine differences, not just proof effort.",
+ "B_issue": null,
+ "overlap": "n/a (neither direction proved)"
+}

@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsFiniteCellComplexType",
+ "name": "Morse.IsFiniteCellComplexType",
+ "agreement": "differ",
+ "hypotheses": null,
+ "difference": "Order of the cells: the project attaches them in the listed order, the blind T in some permutation (multiset reading). Exactly: T X cells ⟺ ∃ cells' ~ cells, P X cells' (T_iff). Proved example: P X [1,0] is false for every X, since the first cell attached to ∅ must be a 0-cell, yet T holds for the circle. Blind-file example (not proved here): the interval satisfies T for [0,1,0] but not P.",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "The homeomorphism-closure difference of IsCellAttachment is absorbed by the homotopy equivalence, so the only difference is the order (T_iff, P_imp_T, differ). The listed-order reading is the project's documented convention (\"in this order\"; Theorem 3.5 lists the cells by critical value). It is stronger than the textbook's, and is used in conclusions or consistently in hypothesis and conclusion, so the project's theorems imply the textbook readings. Rearranging any order to non-decreasing dimension up to homotopy (cellular approximation plus Lemmas 3.6/3.7) is not formalized."
+}

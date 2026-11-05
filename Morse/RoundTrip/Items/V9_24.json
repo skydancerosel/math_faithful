@@ -1,0 +1,18 @@
+{
+ "id": "V9_24",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: on every abstract connected Hausdorff ℝⁿ-manifold with any smooth metric and any Levi-Civita connection, for a geodesic γ on [0,1], λ = Σ'_{t∈(0,1)} conjMult(0,t) in ℕ∞ and λ ≠ ⊤, with λ the index of Milnor's VARIATIONAL E_** (HessT 1 γ: Fréchet mixed partial of the energy of 2-parameter variations). A (universes 0): for slice submanifolds N ⊆ V with the induced metric: theorem_15_1 (unbroken geodesic γ ∈ Ω(N;p,q): finitely many conjugate parameters in (0,1) and formIndex(energyHessian) = Σᶠ conjMultiplicity, energyHessian being DEFINED by the second variation formula), indexUpTo_one_eq (the same for ANY smooth curve, with λ(1) = indexUpTo 1) and the real-variable lemma eq_finsum_of_jumps. A ⇒ B fails genuinely (abstract vs embedded; on ↥N, B's variational E_** must be identified with energyHessian, which needs Fréchet-C² regularity of u ↦ E(α(u)) absent from the project). B ⇒ A fails genuinely (setting, same identification, non-geodesic curves of indexUpTo_one_eq, and the counting lemma eq_finsum_of_jumps which B does not state). Finiteness of λ: A has it implicitly (λ is a finite sum in ℕ), B states λ ≠ ⊤. [Third attempt: the λ-identification (LamEq: blind variational lam = the project's indexUpTo / formIndex energyHessian) is now PROVED on ↥N with the induced connection (copy of Items/V9_23.lean's proof); the abstract verdict is unchanged — see embedded_special_case.]",
+ "B_issue": null,
+ "overlap": "Main directions: none proved. Embedded: A_to_B_emb shares 340 and B_to_A_geo 346 project theorems with A's proofs — energyHessian/indexUpTo/fieldsUpTo proof fields, formIndex_le/le_formIndex, Jacobi-space and conjSpace lemmas (through conjMult_eq), and for B_to_A_geo also indexUpTo_one, formIndex_le_of_map, formIndex_restrict_le, isConjugate_iff (which theorem_15_1's own proof uses); none of the item's theorems.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V9_24.lean (third attempt): B_emb := B at M = Bridge.Sub hN (model ℝⁿ, connected), cov = Bridge.conn (B_to_B_emb); A_geo := A's theorem_15_1 for incl ∘ γ, γ a blind geodesic of a connected ↥N (A_to_A_geo). Proved under #rt_check: A_to_B_emb (uses A's indexUpTo_one_eq) and B_emb_to_A_geo / B_to_A_geo. Glue: lam 1 γ = indexUpTo 1 (LamPf.lam_eq_indexUpTo, the proof of Emb.lamEq/lamEqOne of Items/V9_23.lean copied into namespace LamPf (blind vocabulary textually identical; Lemma 11.A and Theorem 13.1 = Morse.second_variation for E_0^τ on ↥N, EnergyC2's C² regularity of u ↦ E(α(u)), the TΩ(γ|[0,τ]) ⇔ fieldsUpTo τ dictionary toFA/φT, index transport bIndex_eq_formIndex_of, then Morse.indexUpTo_one)); conjMult = conjMultiplicity (Emb.conjMult_eq with isJacobi_iff/toFA, copied from Items/V10_23.lean = Items/V9_4.lean); new: summable_enat (every ℕ∞ family is summable, hasSum_of_isLUB), tsum_Ioo_eq (finitely supported ℕ-valued ∑' over Ioo 0 1 in ℕ∞ = cast of ∑ᶠ), finite_of_tsum_ne_top (B's λ ≠ ⊤ forces finitely many conjugate points), tsum_conjMult_eq. B_emb ⇒ A_geo uses Morse.indexUpTo_one and Morse.isConjugate_iff (not theorems of the item). Not reached: A's eq_finsum_of_jumps (a real-variable lemma) and indexUpTo_one_eq for non-geodesic curves; models Z ≠ ℝⁿ; only the induced connection.",
+ "third_attempt": "Index bridge now proved (LamPf copy of Items/V9_23.lean's lamEq proof). Embedded special case: failed → proved: A_to_B_emb and B_emb_to_A_geo/B_to_A_geo (#rt_check OK), with the V9_4 multiplicity dictionary and new ℕ∞-tsum ⇔ ℕ-finsum glue. Abstract A ⇔ B unchanged (setting)."
+}

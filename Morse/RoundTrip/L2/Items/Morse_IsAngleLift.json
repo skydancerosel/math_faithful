@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsAngleLift",
+ "name": "Morse.IsAngleLift",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "|F(ω t)| = 1 for t ∈ [0,1] and F(ω 0) = 1 (a loop in S¹ starting at 1 — Milnor's f(J') = det_ℂ(J⁻¹J'), f(J) = 1); exactly: P ↔ T ∧ (∀ t, ‖F(ω t)‖ = 1) ∧ F(ω 0) = 1",
+ "difference": "The project's predicate (θ 0 = 0, F(ω t) = e^{iθ t}) is the textbook angle (F(ω t) = |F(ω t)| e^{i(arg F(ω 0) + θ t)}) restricted to S¹-valued loops starting at 1: P ⇒ T always, but for paths off the unit circle or not starting at 1 P is false while the textbook angle exists (F ≡ 2, θ = 0).",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Proved the exact characterisation agree_iff, agree_of under the two normalisations, P_imp_T and the counterexample F ≡ 2. The project only applies it to omegaF ii p = cdet ii (pᵀ ·), which has modulus 1 on Ω_k and value 1 at the base point p (existence lemma exists_isAngleLift assumes exactly these), so the restriction is harmless."
+}

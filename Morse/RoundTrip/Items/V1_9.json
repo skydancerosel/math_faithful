@@ -1,0 +1,11 @@
+{
+ "id": "V1_9",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": true,
+ "why": "A ⇒ B: isNondegenerateCriticalPointM_of_morse_chart applied to z read in Fin n → ℝ (z composed with EuclideanSpace.equiv is a project IsSmoothCoord). Note that A needs no smoothness of f and no coordinates vanishing beyond y p = 0. B ⇒ A fails as stated: A allows an arbitrary model space E with coordinates in Fin n → ℝ and f not assumed smooth (it is only smooth near p, by the normal form), plus a vector-space version with f only C² at p. Deriving it from B would mean making y.source a manifold modelled on ℝⁿ with the single chart y and transporting hessianM/indexM between the two charted structures. That is believed true and is pure glue (proof effort), but heavy.",
+ "B_issue": null,
+ "overlap": "n/a (B_to_A not proved)"
+}

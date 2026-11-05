@@ -1,0 +1,18 @@
+{
+ "id": "V7_10",
+ "reblind": true,
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: Lemma 10.3 (1)–(3) for every abstract connected Hausdorff ℝⁿ-manifold with a smooth Mathlib Riemannian metric and any Levi-Civita CovariantDerivative. The lengths and the ε-balls of T_qM are now Riemannian. A (universes 0): for slice submanifolds N ⊆ V with the induced metric, (a) the chart Jacobian of F(q, v) = (q, exp_q v) at (u₀, 0), which is a step of the proof; (b) Lemma 10.3 with W = N ∩ O and the end-point dependence given by a G smooth on an open O₂ ⊆ V × V; (c) its clause (1) for geodesics; (d) every point has a normal radius; (e) exp_q as a PartialDiffeomorph. A ⇒ B fails for the setting: B is about abstract manifolds and arbitrary Levi-Civita connections, and the project has no abstract geodesic theory and no Nash embedding. B ⇒ A fails because B does not specialize to N ⊆ V by itself and says nothing about the chart Jacobian. On embedded manifolds (model ℝⁿ, connected N) they coincide: B_emb ⇔ A_emb, where A_emb is A without the chart-Jacobian step. Both directions are proved under #rt_check; lemma_10_3_geodesic even holds outright.",
+ "B_issue": null,
+ "overlap": "B_to_A_emb (embedded B ⇒ A): 299 shared project theorems. They are the geodesic-flow ODE infrastructure (Flow.*, IsBddLipschitz.*, LocalSpray spray/flow lemmas, IsGeodesicOn.*) and slice-chart, tanProj and gram lemmas, reached through Morse.exists_initial_ray and RoundTrip/Bridge.lean. Not shared: the inverse-function-theorem step, chartExp/chartF/jacobian, and hasFDerivAt_chartF. B_to_A_expDiffeo: 296, the same infrastructure.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "B_emb := B's conclusion at M = Bridge.Sub hN (model ℝⁿ, induced metric), cov = Bridge.conn, [ConnectedSpace ↥N]; B_to_B_emb via conn_isLC. A_to_B_emb uses A's lemma_10_3 through the dictionary Emb.isUniformNormal_of. In that dictionary: unique short geodesics come from the ∃! v with ‖v‖ < ε, using constant speed (IsGeodesicOn.pathLength_eq) and exists_initial_ray; the TM-valued G is built from the ambient G with Bridge.contMDiffWithinAt_tangent_iff; normal balls come from isNormBall_of_normalCoord. B_emb_to_A_emb and B_emb_iff_A_emb use the same hypothesis, B. A_emb = lemma_10_3 + exists_isNormalRadius + exists_expDiffeo, for model ℝⁿ and connected N. The steps: Emb.lemma_10_3_of_isUniformNormal keeps the same ε and takes O = O_W ∩ U_r, where r is a local retraction onto N at p (Morse.exists_retraction); r extends B's smooth G : W × W → TN to an open subset of V × V. Normal radii come from isNormalRadius_of_isNormBall, which needs the new smooth-extension lemma Emb.exists_ambient_ext (copied from Items/V7_9.lean). The PartialDiffeomorph comes from exists_partialDiffeomorph_of_isNormBall. lemma_10_3_geodesic holds outright (lemma_10_3_geodesic_holds). Not covered by B: hasFDerivAt_chartF, a step of the proof. Limitations: only the induced connection, not every Levi-Civita connection on ↥N; model ℝⁿ, while A allows any model Z; connected N, because B assumes ConnectedSpace."
+}

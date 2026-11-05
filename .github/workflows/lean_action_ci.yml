@@ -1,0 +1,30 @@
+name: Lean Action CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read # Read access to repository contents
+  pages: write # Write access to GitHub Pages
+  id-token: write # Write access to ID tokens
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+      - uses: leanprover/lean-action@v1
+      - name: Comparison edition resolves and is up to date
+        run: |
+          mkdir -p "$RUNNER_TEMP/cmp"
+          python3 Exposition/build_comparison.py "$RUNNER_TEMP/cmp"
+          for f in Comparison.md milnor-beside-lean.html; do
+            cmp "$RUNNER_TEMP/cmp/$f" "Exposition/$f" || { echo "::error::Exposition/$f is stale; rerun build_comparison.py"; exit 1; }
+          done
+      - name: Cited declarations use only the standard axioms
+        run: python3 Exposition/check_axioms.py
+      - uses: leanprover-community/docgen-action@v1

@@ -1,0 +1,11 @@
+{
+ "id": "V2_12",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A proves Theorem 3.5 for compact slice submanifolds N of a finite-dimensional V. It concludes IsFiniteCellComplexType: homotopy equivalent to an iterated adjunction space with arbitrary attaching maps and cells attached in order of critical value (listed by ps), with the counts. It also contains the general lemma isCriticalPointM_of_forall_le. B: any manifold with compact sublevel sets (possibly non-compact, so infinitely many cells), homotopy equivalent to a Mathlib CWComplex with one λ-cell per critical point of index λ. A ⇒ B fails genuinely: it needs cellular approximation (adjunction space → CW-complex, not in Mathlib) and the non-compact case (direct limit, Whitehead). B ⇒ A fails: a CW-complex does not give the ordered iterated adjunction space of A.",
+ "B_issue": null,
+ "overlap": "n/a (neither direction proved)"
+}

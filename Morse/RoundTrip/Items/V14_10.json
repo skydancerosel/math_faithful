@@ -1,0 +1,17 @@
+{
+ "id": "V14_10",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "Vocabulary: blind bottFormula k (sum over the filtered ordered pairs of Fin n) = project bottIndex k (double sum with if). A (universes 0, arbitrary finite types): bottIndex ≥ 0 for odd k, invariant under k ↦ −k, under reindexing by any ι' ≃ ι, and 0 when all k_i = ±1. B (Fin n, arbitrary integers): every k can be sorted decreasingly by a permutation, invariance under permutations of Fin n and under k ↦ −k, and vanishing for ±1. A ⇒ B: the three invariance/vanishing claims from A; the existence of a sorting permutation (Milnor's normalization) is not in A and is proved outright (Mathlib's Tuple.sort of −k). B ⇒ A: −k and ±1 from B after reindexing a general type by Fin n; reindexing across two different types is a change of summation variables (outright; B only speaks of permutations of Fin n); nonnegativity for odd k is not in B and is proved outright (each term k_i − k_j − 2 ≥ 0 for odd k_j < k_i). The small extra pieces on each side are elementary.",
+ "B_issue": null,
+ "overlap": "0 shared project theorems in both directions.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about the §23 matrix-group setting / spectra of K_A (concrete matrices and real numbers); it does not quantify over abstract Riemannian manifolds."
+}

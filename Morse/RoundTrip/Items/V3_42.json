@@ -1,0 +1,16 @@
+{
+ "id": "V3_42",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "Same mathematics in two models. A: on the matrix model with its slice structure, height_param (f∘param k = c_k + Σ(c_j−c_k)(x_j²+y_j²) on the closed ball), critical points = param k 0, non-degenerate of index 2#{c_j<c_k}, f Morse, rank bijective, C_λ = 1 for λ = 0,2,…,2n. B: on the quotient model, for EVERY smooth structure in which Milnor's coordinates are diffeomorphisms onto the ball, the same six claims. A ⇒ B: compute in the coordinate system Φ_k (from B's hypothesis, IsSmoothCoord); f∘Φ_k⁻¹ is Milnor's model by A's height_param, then the project's model lemmas (outside A) give critical points/non-degeneracy/index, and the count uses A's bijective_rank. B ⇒ A: B's hypotheses are satisfiable (Milnor atlas built from the project's V3_41 lemmas); B's conclusions are transported to the slice structure through x ↦ x xᴴ, both sides computed in Milnor's coordinates (a slice-side IsSmoothCoord for coord k); bijective_rank is derived from B's count. Only height_param (an algebraic identity, also on the sphere nsq z = 1 outside U_k, beyond Milnor's U_k formula) is re-proved outright.",
+ "B_issue": null,
+ "overlap": "B_to_A: 166 shared — the V3_41 matrix-model lemmas (exists_vec_of_mem, coord_param, nsq_coord_lt_and_param_coord, exists_re_diag_pos, isSliceSubmanifold, exists_sliceChart, contDiffOn_coord/param, param_kk, vec_zero, rank_lt), the IsSmoothCoord change-of-coordinates API and slice-chart API; none of the item's computations (crit_index_of_mem, isCriticalPoint_model_iff, index_hessian_model) are reused",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable"
+}

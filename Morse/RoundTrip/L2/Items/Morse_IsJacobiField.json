@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsJacobiField",
+ "name": "Morse.IsJacobiField",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "γ is a smooth curve in N on [0,1] (Morse.IsSmoothCurveIn hN γ: C^∞ on [0,1] with values in N), e.g. a geodesic as in Milnor",
+ "difference": "The project requires the Jacobi equation (with two-sided derivatives) only on the open interval (0,1); the blind on the closed [0,1] with one-sided derivatives at the ends. For a smooth γ the blind expression is continuous on [0,1] so the two agree; for a γ that is not differentiable at an end they can differ (e.g. γ(t) = c(√t) on a round sphere and J = cos(√t)·e satisfies the equation on (0,1) but not the one-sided one at t = 0; this counterexample is not formalized). The tangency conditions agree for every γ (both force J t = 0 where γ t ∉ N).",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Dictionary proved from scratch: the blind span-of-velocities T_xN is the project's tangentSubspace (⊥ off N), so the blind P is the project's prj everywhere; fderivWithin of P along N on tangent vectors is the project's dN P (chain rule through the velocity curves); hence the blind Gauss-equation R equals the project's curvR = D_Y D_X − D_X D_Y at tangent arguments (self-adjointness of D_v, D_v maps T to T^⊥ and T^⊥ to T). With γ smooth in N, the blind covD within [0,1] is the project's covAlong, the expressions agree on (0,1), and continuity (project lemmas on prj∘γ, covAlong, continuousWithinAt_curvR) extends the vanishing to the endpoints."
+}

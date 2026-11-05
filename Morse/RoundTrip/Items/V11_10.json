@@ -1,0 +1,20 @@
+{
+ "id": "V11_10",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B (abstract M, any Levi-Civita cov, n ≥ 1, blind geodesic γ on [0,1]): (a) parallel fields orthonormal at one t₀ ∈ [0,1] are orthonormal on [0,1]; (b) there are parallel P₁..Pₙ along γ on [0,1], orthonormal everywhere, with dγ/dt = L·Pₙ (L = arc length, L = 0 allowed). A (universes 0): (1) a smooth clamp ℝ → [−a, 1+a] equal to id on [0,1]; (2) a geodesic γ ∈ Ω(N;p,q) agrees on [0,1] with a smooth c : ℝ → N, γ' = Vf on (0,1), ‖Vf‖ ≡ L, L⁻¹Vf parallel along c; (3) for L > 0, parallel UNIT fields P_i (i ∈ u) along c and s ⊆ u with |s| + 1 = n and the Ricci-sum bound Σ_{i∈s}⟨R(Vf,P_i)Vf,P_i⟩ ≥ L²|s|/r² — the statement of (3) records neither orthogonality of the frame nor Pₙ = Vf/L. A ⇒ B fails genuinely: abstract setting (no existence of parallel transport for an abstract Mathlib connection); B's clause (a) is proved outright from IsCompat (B_clause_a). B ⇒ A fails genuinely: B gives frames on [0,1] only, not A's extension of γ to a smooth curve on ℝ with fields parallel on all of ℝ (A(2), A(3)); A(1) is real analysis. So B has Milnor's orthonormality and V = L·Pₙ, which A's statement lacks; A has the ℝ-extension and the Ricci-sum bound.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. A_to_B_emb: 215 shared project theorems — the parallel-transport infrastructure (exists_isParallel / exists_skewLinearODE, parallelField_spec, parallelTransport(L)_apply, surjective_parallelTransportL, IsParallel.eq / inner_eq / hasDerivAt / const_smul) that the proof of exists_parallel_frame also uses: the orthonormal frame is rebuilt because exists_parallel_frame's statement omits orthogonality and Pₙ = Vf/L; plus slice-chart lemmas. Neither exists_smooth_extension's proof (exists_initial_ray etc.; used only through the hypothesis) nor exists_smooth_clamp is shared.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "uses_hypothesis_emb": {
+  "A_to_B_emb": true
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "Items/V11_10.lean: B_emb := B at M = Bridge.Sub hN (model ℝⁿ, induced metric, connected), cov = Bridge.conn (B_to_B_emb). A_to_B_emb proved (#rt_check OK; uses A's exists_smooth_extension): extension c : ℝ → N of γ with L⁻¹Vf parallel; an orthonormal basis of T_{c(0)}N with last vector Vf(0)/L (Orthonormal.exists_orthonormalBasis_extension_of_card_eq; any basis if L = 0) transported by the project's parallelField / parallelTransport (an isometry) along c; Pₙ = Vf/L by IsParallel.eq; read back on [0,1]. New dictionary (namespace Emb): isParallel_toFA (a project parallel field along a smooth c agreeing with γ on [0,1] gives a blind IsParallel field toFA γ X, via Bridge.hasCovDeriv_iff'), derivWithin_eq_of_Ioo (the closed-interval velocity equals Vf at the end points, by continuity), finrank_tangent; copied: toFA/ambA_toFA (Items/V10_23.lean), mem_pathSpace_of_isGeodesic. A's exists_parallel_frame could not be used (statement too weak). B_emb ⇒ A not attempted: A(2), A(3) concern curves and fields on all of ℝ, which B_emb does not provide. Only the induced connection."
+}

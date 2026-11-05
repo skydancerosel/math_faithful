@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsHomotopyDirectLimit",
+ "name": "Morse.IsHomotopyDirectLimit",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "A monotone (Milnor's standing assumption X₀ ⊆ X₁ ⊆ ⋯)",
+ "difference": "The blind T builds Monotone A into the definition. The project's only asks that the projection X_Σ → X be a homotopy equivalence. Counterexample: in a point, A₀ = univ, Aₙ = ∅ (n ≥ 1) is not monotone, but X_Σ = pt × [0,1], so the project's notion holds.",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "With the telescope sets identified (telescope = set-builder), the project's notion is exactly the second conjunct of the blind one (P_iff_proj), so they agree for monotone A (agree_of) and differ only through monotonicity (differ). Every project theorem using it as a hypothesis either carries a separate Monotone A or holds without it (IsHomotopyEquiv.of_telescopeMap); the conclusions are about monotone sequences."
+}

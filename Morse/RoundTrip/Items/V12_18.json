@@ -1,0 +1,18 @@
+{
+ "id": "V12_18",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): for a matrix group G (slice submanifold of Mₙ(𝕜), induced metric), A ∈ 𝔤, γ(t) = exp(tA), h(t) = exp(tA/2), K_A(U) = ¼[[A,U],A]: D/dt(hUh) = hU'h, R(γ',hMh)γ' = hK_A(M)h, hUh is a Jacobi field IF U'' + K_A U = 0, and its covariant derivative at 0 is U'(0). B: Theorem 20.5 on an abstract locally symmetric manifold for any geodesic on an interval and any orthonormal eigenbasis of K_V: (1) conjugate parameters = πk/√e_i, (2) multiplicities = counts of e_i, (3) parallel eigenframe and 'Σw_iP_i Jacobi ⇔ w_i'' + e_iw_i = 0'. A ⇒ B fails genuinely, also for matrix groups: A has no conjugate points or multiplicities (for SU(n) they are in SUJacobi.lean, not this item), only the 'if' half of the frame equation, only along exp(tA) through I, and no identification of the parallel frame (uniqueness of parallel transport) or of the blind K_V's eigenvalues. B ⇒ A fails: nothing about matrices, halfExp, jacK; B's local-symmetry hypothesis is not established for G in the project.",
+ "B_issue": null,
+ "overlap": "A_to_jacobi_blind: 215 shared, all infrastructure (slice charts, covAlong/curvR machinery used by the V9_10 Jacobi dictionary, IsMatrixGroup projections, halfExp_mul_halfExp, halfExp_mem, conj_mem'); none of the item's theorems re-proved.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false,
+  "A_to_jacobi_blind": true
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "B_emb would be B at M = Bridge.Sub hG for a matrix group (with IsLocSymm of the induced connection as hypothesis — not proved in the project). A ⇒ B_emb fails for genuine mathematical content, not glue: conjugate points/multiplicities (dimension of Jacobi fields vanishing at 0 and t), the 'only if' half of the frame ODE, uniqueness of parallel transport (to identify Milnor's P_i with hU_ih) and the blind K_V's eigen-decomposition are all absent from A. Partial bridge proved (A_to_jacobi_blind, uses A, #rt_check OK): for G with model ℝᵐ as Bridge.Sub hG with Bridge.conn, A's isJacobiField_conj read in the blind vocabulary says t ↦ L(h(t)U(t)h(t)) is a blind IsJacobi field on [0,1] along t ↦ exp(tA) when U'' + K_A U = 0 (the 'if' half of B's (3)(b) in the frame hU_ih); Jacobi dictionary (isJacobi_of_isJacobiField, jacobi_Icc) copied from Items/V9_10.lean."
+}

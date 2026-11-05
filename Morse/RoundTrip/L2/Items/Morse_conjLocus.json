@@ -1,0 +1,11 @@
+{
+ "id": "Morse_conjLocus",
+ "name": "Morse.conjLocus",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Equal for every slice submanifold N and p. Geodesics: project = C^∞ on [0,1] in N + geodesic on (0,1), blind = geodesic on [0,1] (extend_closed / restriction). The blind P_x is Morse.prj (P_eq, 0 off N), so blind D/dt is covAlong; the blind II = (1−P)(fderivWithin_N P · ·) equals secondFundForm on tangent vectors (fderivWithin along N agrees with the derivative of Morse.projRep on the tangent cone ⊇ T_xN), so the blind curvature term is ⟨R(V,J)V,u⟩ (Morse.inner_curvOp, Milnor's sign). The Jacobi expression is tangent and continuous on [0,1], so the project's equation on (0,1) ⟺ the blind tested equation on [0,1] (isJacobi_iff)."
+}

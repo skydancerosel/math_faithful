@@ -1,0 +1,11 @@
+{
+ "id": "V2_3",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A proves Theorem 3.1 for f = F|N, with N a slice submanifold of a finite-dimensional V and F smooth on V, concluding an ambient diffeomorphism Φ : N ≃ N with Φ '' N^a = N^b plus SDR and homotopy equivalence. It also has flow_mem_of_tangent. B is for an abstract ChartedSpace manifold. A ⇒ B would need an embedding of M and an extension of f, which A does not contain. B ⇒ A fails because B's 'diffeomorphism' is only a pair of maps between sublevel sets smooth on them, and B has nothing about flows staying in N.",
+ "B_issue": null,
+ "overlap": "n/a (neither direction proved)"
+}

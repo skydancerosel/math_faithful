@@ -1,0 +1,17 @@
+{
+ "id": "V12_2",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universe 0) is Morse.IsLeviCivita.conn_eq: for ANY real Lie algebra L, form B and bilinear D with IsLeviCivita B D, (∀X, D X X = 0) ⇒ D X Y = ½⁅X,Y⁆ — pure algebra; 'X ⊢ X = 0' is a hypothesis. B: on a Lie group with a bi-invariant metric and Levi-Civita connection, (i) integral curves of X_v are left translates of one-parameter subgroups, (ii) they are geodesics, (iii) X ⊢ X = 0, (iv) X ⊢ Y = ½[X,Y] as fields. B ⇒ A only vacuously (A re-proved: Milnor's expansion). A ⇒ B fails genuinely: (i)–(iii) are Lie-group geometry (Lemma 21.2; uniqueness of integral curves; geodesic equation) not in the project. Bridge proved with A as hypothesis (d_of_geod, #rt_check OK): on every Lie group and for every SYMMETRIC connection, (iii) ⇒ (iv): at each p, D u v := (dL_p)⁻¹((X_u ⊢ X_v)(p)) is bilinear on 𝔤 with torsion ⁅u,v⁆ (8.5 + Mathlib's [X_u,X_v] = X_⁅u,v⁆ + C^∞ of X_u), so A applies with B := 0 (A's metric hypothesis is superfluous for (d)). Hence, given A, B ↔ (i)∧(ii)∧(iii) (B_iff_core): A is exactly B's algebraic step.",
+ "B_issue": null,
+ "overlap": "B_to_A: 1 shared [Morse.IsLeviCivita.torsion_free] (structure projection). Bridges d_of_geod and B_iff_core pass #rt_check.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "Not applicable: the item's declarations live in Morse/Chapter12/BiInvariant.lean and concern an abstract real Lie algebra L with a bilinear form and an abstract bilinear 'connection' D : L →ₗ L →ₗ L; they are not about a matrix group as a slice submanifold. (The project's embedded matrix-group version of 21.1–21.3, Morse/Chapter12/GroupGeodesics.lean, e.g. IsMatrixGroup.curvOp_eq_curv_halfLie, is not part of this item.) B quantifies over abstract Lie groups with a Mathlib RiemannianBundle, not over Bridge.Sub."
+}

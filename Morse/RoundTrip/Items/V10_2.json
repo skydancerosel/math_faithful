@@ -1,0 +1,17 @@
+{
+ "id": "V10_2",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: on every abstract connected Hausdorff ℝⁿ-manifold with a smooth metric, E = E_0^1 is ε-δ continuous for Milnor's d (blind dOm: real ⨆_t ρ + L² distance of ds/dt, ds/dt the derivative of the arc length) on Ω(M;p,q), Ω^c is d-closed in Ω and Int Ω^c = E⁻¹[0,c) is d-open. A (universe 0): for ANY set N ⊆ V (inner product space) and the project's pseudo-emetric on PathSp N p q: Lemma 16.A (|√E_a^b(γ) − √E_a^b(γ')| ≤ l2Dist), √E_a^b 1-Lipschitz, E_a^b continuous for all 0 ≤ a ≤ b ≤ 1, {E ≤ c} closed, {E < c} open, and Lemma 16.B (uniformly small energy on short intervals along convergent sequences). A ⇒ B fails genuinely (abstract vs N ⊆ V; the project has no abstract path-space metric). B ⇒ A fails genuinely: setting, and A has more (the quantitative Lemma 16.A/Lipschitz bound, E_a^b for subintervals, Lemma 16.B, arbitrary sets N). On embedded manifolds A ⇒ B_emb and B_emb ⇒ (continuity of E_0^1, hence closed/open sublevels) are proved.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. Embedded theorems A_to_B_emb and B_emb_to_A_cont: 49 shared project theorems each — the proof fields of PathSp.instPseudoEMetricSpace (supDist/l2Dist symmetry and triangle, Minkowski sqrt_integral_add_sq_le, integral_mul_sq_le) and piecewise-smooth/riemDist lemmas used by the metric dictionary; none of the proofs of Lemmas 16.A/16.B themselves (abs_sqrt_energy_sub_le, exists_energy_lt_of_tendsto are not shared).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V10_2.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric, ConnectedSpace), cov = Bridge.conn (B_to_B_emb). Dictionary (namespace Emb) copied from Items/V10_1.lean (hasDerivAt_pathLength, dsdt_eq, integral_dsdt_eq, supDist_ne_top, iSup_rho_eq, edist_eq: blind dOm w w' = (project edist of incl∘w, incl∘w').toReal) plus efun_eq (blind Efun = Morse.energy, via Bridge.energy_eq) and inOmega_lift (a project path of Ω(N;p,q) lifts to a blind one agreeing on [0,1], via Bridge.isPW_lift). A_to_B_emb uses A's continuous_energy (EMetric.continuous_iff + edist_eq), closed/open clauses derived from it. B_emb_to_A_cont: A_cont = continuity of E_0^1 on PathSp N p q for model ℝⁿ and connected ↥N (closed/open sublevels then follow topologically); uses B_emb's ε-δ clause, edist_eq, and PathSp.edist_eq_zero_of_eqOn (theorem of item V10_1) to replace a path by its lift. Not covered by B_emb: Lemma 16.A's inequality, Lipschitz bound, E_a^b on subintervals, Lemma 16.B, non-slice or disconnected N."
+}

@@ -1,0 +1,18 @@
+{
+ "id": "V12_15",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): for a matrix group G ⊆ U(n) as a slice submanifold of Mₙ(𝕜) with the induced metric: g·exp(tX) are geodesics on ℝ; every geodesic on an open preconnected s is γ(t₀)exp((t−t₀)X); lemma_21_2 (geodesics on ℝ through I are exp(tX), one-parameter subgroups); a DIFFERENTIABLE one-parameter subgroup of Mₙ(𝕜) is exp(tθ'(0)) and, in G, a geodesic; exp_g(gX) = g exp X; geodesic completeness. B: for every abstract Lie group with a bi-invariant metric and every Levi-Civita connection, (i) a geodesic on an interval s ∋ 0 through e agrees on s with a C^∞ one-parameter subgroup, (ii) every C^∞ one-parameter subgroup is a geodesic on ℝ. Incomparable for the setting (abstract Lie groups / arbitrary bi-invariant metric and LC connection vs matrix groups with the induced metric); A has more (completeness, exp_g, translates, only differentiable subgroups). Neither direction attempted beyond the embedded case: A ⇒ B would need Milnor's abstract argument (Lemma 21.1 isometries + 20.1), not in the project.",
+ "B_issue": null,
+ "overlap": "A_to_B_emb: 132 shared, all infrastructure (slice-chart/manifold lemmas, IsMatrixGroup projections, exp_smul_mem, contDiff_exp_smul, exp_smul_mul_exp_smul, MatrixInner instance proofs); none of the item's theorems is re-proved.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false,
+  "A_to_B_emb": true
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "B_emb := B for a matrix group G ⊆ Mₖ(𝕜) (model ℝᵐ, IsMatrixGroup hG 𝔤) as Bridge.Sub hG with G's group structure, the induced metric and Bridge.conn. B → B_emb (biInv + Bridge.conn_isLC) and A → B_emb proved (#rt_check OK). (i): geod_eq_exp — a blind geodesic on an interval s ∋ 0 is a project geodesic on interior s (isGeodesicOn_interior, as Bridge.isGeodesicOn_Ioo), A's eqOn_mul_exp_smul there (UniqueDiffOn gives a second point, so interior s ≠ ∅), extended to the closed ends by continuity (closure of the interior of a convex set); then φ(t) = exp(tX) corestricted. (ii): A's isGeodesicOn_of_oneParam + Bridge.isGeodesic_iff_isGeodesicOn. B_emb ⇒ A not attempted (A's completeness/exp_eq/differentiable-subgroup clauses are outside B; the rest would need re-proving eq_exp_of_oneParam). Only the Bridge's induced connection is covered, not every LC connection on ↥G. Shared dictionary built in each file's namespace Emb (no Bridge edits): grp (the group structure of G on Bridge.Sub hG), lieGroup (Mathlib LieGroup: products and ᴴ are smooth ambient maps, corestricted with Milnor.IsSliceSubmanifold.contMDiff_codRestrict), D_mfderiv_lift (the differential of a map induced by an ambient map F, read in V, is dF), biInv (the induced metric is bi-invariant)."
+}

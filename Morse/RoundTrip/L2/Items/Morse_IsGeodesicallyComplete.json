@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsGeodesicallyComplete",
+ "name": "Morse.IsGeodesicallyComplete",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both: for every q ∈ N and v ∈ T_qN the geodesic from (q,v) reaches t = 1. Project: (q,v) ∈ expDom (open interval (-δ,1+δ)); blind: a geodesic on the closed [0,1]. Equal for every slice submanifold via restriction / extend_closed, with tangent spaces identified by tsp_eq."
+}

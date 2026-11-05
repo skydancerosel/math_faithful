@@ -1,0 +1,17 @@
+{
+ "id": "V7_20",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; IsShortJoin a definition): for a slice submanifold N ⊆ V with the induced metric, the local form (around each p ∈ N an open Ω and s > 0 such that IsShortJoin δ y z for y ∈ N ∩ Ω, ρ(y,z) < δ ≤ s) and Corollary 10.8 for compact K ⊆ N: IsShortJoin δ y z = a v ∈ T_yN, ‖v‖ < δ, exp_y v = z, ρ(y,z) = ‖v‖, v the only w ∈ T_yN with ‖w‖ < δ and exp_y w = z, and a smooth G : V × V → V on an open O₂ ∋ (y,z) giving the joining vector of EVERY nearby pair of N at distance < δ (not only pairs in K). B: for every abstract connected Riemannian manifold with its Levi-Civita connection and compact K: δ > 0 with a unique geodesic [0,1] → M of length < δ between points of K at distance < δ, which is minimal, and G : M × M → TM smooth only within the non-open set {K × K, ρ < δ}. A ⇒ B fails genuinely: abstract geodesic theory (geodesic ODE, Lemma 10.3) is absent from the project and A cannot be applied to an abstract manifold. B ⇒ A fails: B gives nothing near pairs outside K or on an open set of V × V, has no local form, and its uniqueness is among geodesics of length < δ, whereas A's is among initial vectors ‖w‖ < δ (with the junk value exp_y w = y off the domain this needs δ below a uniform existence radius on K, which B's δ does not provide); A also allows arbitrary slice models Z and disconnected N. On embedded manifolds A implies B (proved); the converse there is believed true with effort (apply B to a compact neighbourhood of K, shrink δ below a uniform existence radius, push G to V × V through a smooth local retraction onto N) but was not attempted.",
+ "B_issue": "Not a bug, but weak: 'depends differentiably on its end points' is ContMDiffOn within S = {x | x.1 ∈ K ∧ x.2 ∈ K ∧ ρ(x.1,x.2) < δ}, which says little where S is thin (for finite K every G qualifies at isolated points); Milnor's meaning (and A's) is smoothness on a neighbourhood. B does not use nrm/tball (no chart-norm issue).",
+ "overlap": "No main direction proved (no B → A of any kind, so no overlap to report).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "Bemb hN := B's conclusion on Bridge.Sub hN (model ℝⁿ) with the induced Levi-Civita connection Bridge.conn. Proved: A_to_Bemb (A's corollary_10_8 + N connected ⇒ Bemb), #rt_check OK. Ingredients: continuing a blind geodesic on [0,1] past its end points (extend_closed, from Morse.exists_localFlow_exp, outside the item) to read joins as project exp-geodesics; lengths by IsGeodesicOn.pathLength_eq; uniqueness from IsShortJoin's vector uniqueness plus Bridge.eqOn_Icc_of_isGeodesic; minimality from ρ = ‖v‖; G assembled from IsShortJoin's local smooth maps (projected by P_x) and shown smooth within S by eventual equality. Connectedness is needed (for disconnected N the blind ρ is 0 between components and Bemb fails). Bemb ⇒ A on ↥N not attempted (see why). Limitation: only the induced connection Bridge.conn, not every IsLC connection on ↥N (uniqueness of the Levi-Civita connection is not formalized); Z = ℝⁿ only."
+}

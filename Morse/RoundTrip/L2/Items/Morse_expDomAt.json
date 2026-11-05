@@ -1,0 +1,11 @@
+{
+ "id": "Morse_expDomAt",
+ "name": "Morse.expDomAt",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Project: v ∈ T_qN with (q,v) ∈ expDom (geodesic on an open (-δ,1+δ)); blind: a geodesic on the closed [0,1]. Equal for all N, q: restriction one way, extension past the end points the other (extend_closed, copied from RoundTrip/Items/V7_20.lean, built on Morse.exists_localFlow_exp)."
+}

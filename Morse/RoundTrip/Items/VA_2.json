@@ -1,0 +1,17 @@
+{
+ "id": "VA_2",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "Vacuous round trip: A is the single listed theorem Morse.mem_telescope_iff (property (T1): for monotone A, (x,τ) ∈ X_Σ ↔ ∃ n ≤ τ, x ∈ X_n; universe 0), the rest of the item being definitions; B (tel S = ⋃ S_i × [i,i+1], and IsHDL S ↔ monotone ∧ ∃ HomotopyEquiv with underlying map p) is provable outright, and so is A, so both directions are proved without the hypothesis and neither side contains the other's content (A's (T1) is not in B; B's description of tel S for non-monotone S is not in A). The substance is the vocabulary check (isHDL_iff, #rt_check OK): tel S = Morse.telescope S as subsets of X × ℝ (equal, not definitionally), the blind projection is Morse.telescopeProj transported along the identity homeomorphism Homeomorph.setCongr, and IsHDL S ↔ Monotone S ∧ Morse.IsHomotopyDirectLimit S. Only difference: the project's IsHomotopyDirectLimit is defined for arbitrary sequences, the blind one builds in Milnor's standing assumption X₀ ⊂ X₁ ⊂ ⋯.",
+ "B_issue": null,
+ "overlap": "0 shared project theorems (both directions vacuous); isHDL_iff uses only Morse.IsHomotopyEquiv.comp / of_homeomorph.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "General topology (telescopes of subspaces of a topological space); no Riemannian manifold."
+}

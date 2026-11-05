@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsMorseFunction",
+ "name": "Morse.IsMorseFunction",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "The project's structure has exactly the blind conjuncts: C^∞ (ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, ℝ) ∞ f) and every point with mfderiv = 0 has a non-degenerate preferred-chart Hessian. Equivalent outright."
+}

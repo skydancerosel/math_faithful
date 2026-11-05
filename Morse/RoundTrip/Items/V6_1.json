@@ -1,0 +1,17 @@
+{
+ "id": "V6_1",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; tangentSubspace, tanProj, dN, IsTangentField, projField are definitions): for a slice submanifold N ⊆ V, dN F q v = fderiv G q v for any local extension G and tangent v (chain rule for the project's derivative on N); q ↦ P_q = orthogonal projection onto T_qN is a smooth map N → L(V, V); P_q u = u for u ∈ T_qN. B: (1) on an abstract ℝⁿ-manifold, smooth vector fields (smooth sections of Mathlib's TM) are closed under +, real and smooth-function multiples, the directional derivative X f = mfderiv f (X ·) of a smooth function along a smooth field is smooth, and X_p is a derivation; (2) for M ⊆ ℝ^{K+1} a slice submanifold, P_q v ∈ T_qM and v − P_q v ⊥ T_qM (B's P_q is definitionally the project's tanProj, checked by `rfl` in the .lean). A ⇒ B fails: A concerns embedded N and maps N → V, never Mathlib's TangentSpace/TangentBundle sections, so B(1) would have to be proved outright (Mathlib: add_section, smul_section, mfderiv_add, HasMFDerivAt.mul, plus a smoothness argument for p ↦ mfderiv f p (X p) via tangentMap) — not attempted; B(2) is Mathlib's starProjection API and does not involve A. B ⇒ A fails genuinely: B has nothing on the smoothness of q ↦ P_q (A's substantial clause, proved in the project via Gram projections in slice charts) nor on the project's dN. Both are definition-level items whose content barely overlaps: the only common notion is P_q, on which they agree definitionally.",
+ "B_issue": null,
+ "overlap": "no direction proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B does not quantify over Riemannian manifolds or connections: part (1) is calculus of Mathlib sections and functions on a bare smooth ℝⁿ-manifold, part (2) is already stated for slice submanifolds M ⊆ ℝ^{K+1} (and its P_q is definitionally the project's tanProj). Specializing (1) to M = ↥N (Bridge.Sub) would only give smoothness facts for sections of T↥N, i.e. (Bridge.contMDiff_section_iff) for tangent maps N → V, which A (dN_eq_fderiv, contMDiff_tanProj, projField_apply_of_mem) does not mention. Nothing added to the .lean file."
+}

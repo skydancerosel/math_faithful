@@ -1,0 +1,17 @@
+{
+ "id": "V7_19",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): for a slice submanifold N ⊆ V with the induced metric (ρ = Morse.riemDist, ℝ≥0∞-valued, N not assumed connected): ρ(p, exp_p v) = ‖v‖ inside a normal ball, metric balls of radius r ≤ ε are the normal balls exp_p(B_r(0)) (riemDist_exp, riemDist_lt_iff), and the ρ-balls about p form a basis of neighbourhoods of p in N. B: for EVERY abstract connected Hausdorff smooth manifold with a smooth Mathlib RiemannianBundle, a set is open iff it contains a ρ-ball about each of its points (ρ real, inf of arc lengths of piecewise smooth paths). A ⇒ B fails genuinely: A concerns subsets of an inner-product space with the ambient metric, and an abstract Riemannian manifold is not given that way (no Nash embedding), so A cannot be applied; B itself is true and provable outright (Mathlib's riemannianEDist has eventually_riemannianEDist_lt and setOfPred_riemannianEDist_lt_subset_nhds for C¹ paths; moving them to B's piecewise-smooth ρ was not attempted, and the result would not use A). B ⇒ A fails on content: B says nothing about exp or normal balls (the first two conjuncts, which are the substance of 'follows from Theorem 10.4'), and A also covers disconnected N and arbitrary slice models Z. Embedded special case (proved, see embedded_special_case): on ↥N with the induced metric (Bridge.Sub hN, Z = ℝⁿ, N connected), B's conclusion is equivalent to A's third conjunct.",
+ "B_issue": null,
+ "overlap": "No main direction proved. B_hasBasis_embedded (B on ↥N ⇒ hasBasis_nhdsWithin_riemDist): 47 shared project theorems, all infrastructure (riemDist.eq_1, riemDist_le_pathLength, riemDist_eq_top_of_notMem, IsPiecewiseSmooth/pathLength lemmas, slice-chart manifold structure); none of Theorem 10.4 (normal coordinates, the crossing lemma).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Bemb hN := B's conclusion on Bridge.Sub hN (slice model ℝⁿ). Proved: B_hasBasis_embedded (B ∧ N connected ⇒ A's third conjunct for N; finiteness of ρ comes from B itself, since a point at ρ = ∞ has blind ρ = 0 and would lie in every ρ-ball, contradicting T₁) and A_to_Bemb (A ∧ N connected ⇒ Bemb, finiteness re-derived from A's neighbourhood basis by the clopen argument). Both #rt_check OK. Connectedness is needed: for disconnected N, Bemb is false (blind ρ = 0 between components). Connection-free item, so no Levi-Civita uniqueness issue; A's part only for Z = ℝⁿ."
+}

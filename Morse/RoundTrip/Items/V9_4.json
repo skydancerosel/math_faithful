@@ -1,0 +1,17 @@
+{
+ "id": "V9_4",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "Vacuous equivalence: both sides are consistency statements between a definition of conjugate points and a definition of multiplicity, and both are provable outright. A (universes 0, isConjugate_iff): the project's IsConjugate hN γ a b (a, b ∈ [0,1], a ≠ b, a Jacobi field along ANY smooth curve γ vanishing at a, b and nonzero somewhere on [0,1]) ⇔ a, b ∈ [0,1] ∧ a ≠ b ∧ 0 < conjMultiplicity (ℕ-valued finrank of the space of normalized Jacobi fields vanishing at a, b). B: on abstract manifolds, for a geodesic and a ≠ b in [0,1], IsConj ⇔ 0 < conjMult (ℕ∞-valued dimension of the span of the Jacobi fields vanishing at a, b). B_holds proves B by linear algebra (a set spans a nonzero space iff it has a nonzero element); B_to_A re-runs the project's proof of A. The substantive comparison is of the DEFINITIONS (Milnor's text here is definitions only): on embedded manifolds they agree (Emb.isConj_iff, Emb.conjMult_eq), so the parameter-value reading of Milnor's footnote, the vanishing conditions and the dimension are the same; A is stated for any smooth curve, B for geodesics.",
+ "B_issue": null,
+ "overlap": "A_to_B uses nothing of the project (B_holds). B_to_A: 253 shared — mem_conjSpace, comp_projIcc_mem, jacobiSpace_eq_zero (the project's proof of isConjugate_iff re-run), plus the FiniteDimensional instances of jacobiSpace/conjSpace (jacEquiv, jacEval_bijective, IsJacobiField.eqOn_zero) needed for finrank, the proof fields of jacobiSpace (jacSol, eqOn_jacSol, isJacobiField_jacSol), and slice-chart lemmas.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V9_4.lean, namespace Emb: for any smooth curve γ in ↥N (model ℝⁿ, induced metric, cov = Bridge.conn) and a, b ∈ [0,1]: isConj_iff (B's IsConj ⇔ Morse.IsConjugate hN (incl∘γ) a b) and conjMult_eq (B's conjMult = conjMultiplicity as ℕ∞; the span of B's set is the range of the injective linear map toFAₗ ∘ conjSpace.subtype), through the dictionary isJacobi_iff (copied from V9_3); isConj_iff_pos: B's claim on ↥N is literally A's. rt_check OK (avoid isConjugate_iff). Both claims being provable outright, this definitional agreement is the informative part. Only the induced connection."
+}

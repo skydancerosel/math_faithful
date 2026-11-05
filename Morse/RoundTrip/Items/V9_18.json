@@ -1,0 +1,18 @@
+{
+ "id": "V9_18",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; slice submanifolds, ANY smooth curve γ, any 0 < τ ≤ 1, IsFine subdivision = pieces ≤ h₀): Lemma 15.3 for the formula-defined bilinear form energyHessian on fields along γ|[0,τ] — the explicit jump formula E_**(X,Y) = −2 Σ_b ⟨Y(b), PΔ_bX'⟩ for X broken Jacobi; brokenSpace and nodeZero (T') are complementary; E_**(broken, T') = 0; E_** > 0 on T' \\ 0. B (abstract connected Riemannian ℝⁿ-manifolds, geodesic γ, τ = 1, Milnor's FineSub): the unique decomposition W = W₁ + W₂, perpendicularity as IsHessT 1 γ W₁ W₂ 0 and IsHessT 1 γ W₂ W₁ 0, positivity as ∃ r > 0, IsHessT 1 γ W W r — where IsHessT is Milnor's VARIATIONAL E_** (Fréchet mixed partial of E∘α for SOME 2-parameter variation α realizing the pair, so B also asserts that such variations exist). Genuine differences beyond the setting: (1) the Hessians — identifying them needs Lemma 11.A with Fréchet regularity, Theorem 13.1 and the joint C² regularity of u ↦ E(α(u)), absent from the project (V8_13/V8_14/V9_5 obstacle); (2) fineness — FineSub (minimal pieces in GoodNbhds) vs IsFine (pieces ≤ h₀), unrelated; (3) A has the jump formula and all τ, B has existence of realizing variations.",
+ "B_issue": null,
+ "overlap": "no direction proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V9_18.lean states B_emb (M = Bridge.Sub hN, cov = Bridge.conn) with B_to_B_emb; no direction proved. Blocked three times over: (a) the Hessian — B_emb's IsHessT on ↥N vs energyHessian needs a 2-parameter variation dictionary (IsVarSubT over Rn 2 into ↥N, mfderiv varField ⇔ IsVariation and partial fields; V8_9 only has the 1-parameter case), Lemma 11.A lifted to ↥N with fields matched at every t ∈ ℝ, and the missing analysis lemma (u ↦ E(α(u)) Fréchet-C² near 0); (b) fineness — B_emb's FineSub vs A's IsFine, with the non-conjugacy of the end points of minimal GoodNbhd segments unproved (see V9_16/V9_17); (c) a TΩ dictionary (InTOmegaT/BrokenSet/TPrime ⇔ pathTangent/brokenSpace/nodeZero). (a) is new mathematics, so stopped.",
+ "second_attempt": "Still blocked; the remaining blocker is FINENESS, not the Hessian. With EnergyC2 and the shared dictionary, B_emb's E_** on TΩ_γ is identified (IsHessT 1 γ W₁ W₂ r ⇔ r = 2·secondVariation, proved in Items/V9_5.lean, V9_6.lean, V9_15.lean), and B_emb's perpendicularity clause (ii) would follow from V9_15's A_to_B_emb argument plus hessForm_comm. But (i) the unique decomposition TΩ = BrokenSet ⊕ T' and (iii) positivity on T' are, in the project, only proved for IsFine subdivisions (pieces ≤ h₀ = Morse.fineMesh) and B_emb asks them for Milnor's FineSub (each piece a minimal geodesic inside a GoodNbhd); relating the two needs either 'pieces ≤ h₀ are FineSub' or 'FineSub pieces carry no conjugate points and E_** > 0 on T'' — neither is in the project (new mathematics). Also missing: a BrokenSet/TPrime ⇔ brokenSpace/nodeZero dictionary (routine). Stopped as instructed."
+}

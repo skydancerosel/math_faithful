@@ -1,0 +1,16 @@
+{
+ "id": "V5_15",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (Theorem 7.2, project form): a closed slice submanifold M ⊆ 𝔼 n of dimension 2k with J-invariant tangent spaces satisfies IsCountableCellComplexType M cells (homotopy equivalent to a mapping telescope of iterated adjunction spaces, arbitrary attaching maps) with all cells of dimension ≤ k. B: same hypotheses (ℝ^{K+1}, isometric J, d+1 = 2k so k ≥ 1), conclusion: homotopy equivalent to a Mathlib CWComplex with no cells above k. A ⇒ B fails genuinely: A's cell tower is proved in B's setting (A_cells), but converting it into a Mathlib CW complex needs cellular approximation (absent, as in V5_11/V2_12). B ⇒ A holds only vacuously (the project's proof of Theorem 7.2 re-done); a Mathlib CW complex does not give the project's ordered telescope. Minor: A also covers k = 0 and n = 0.",
+ "B_issue": null,
+ "overlap": "B_to_A: 1090 shared — the whole proof of Theorem 7.2 re-done (exists_isMorseFunction_normSq_sub, exists_regular_levels, isRelCellComplexType_sublevel_of_isCompact, isCountableCellComplexType_of_relSublevel, indexM_normSq_sub_le and the Theorem 3.5 machinery)",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable"
+}

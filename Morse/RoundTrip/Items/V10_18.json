@@ -1,0 +1,17 @@
+{
+ "id": "V10_18",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B (Milnor's Lemma 17.C literally): for every abstract Riemannian M with Levi-Civita connection, a continuous A : Ω* → (0,1] and a CONTINUOUS h : Ω* → Ω (d-topology) with h(ω) the broken minimal geodesic through ω(0), ω(A), …, ω(⌊1/A⌋A), ω(1), and h∘i ≃ id, i∘h ≃ id. B is believed FALSE (not formalized): on the round circle with p = q, A must take values → 0 on a path component C of Ω* (paths winding back and forth fast), so for Φ(ω) = ω·c with c a fixed null-homotopic loop approaching q like (1−s)^{1/4}, connectedness of Φ(C) gives ω* with A(ω*) = 1/k and ω_j → ω* with A(ω_j) ↑ 1/k; h(ω_j)'s last segment [kA,1] has energy ≥ ρ(ω_j(kA),q)²/(1−kA) → ∞ while E is d-continuous, so h is discontinuous at ω* (the project's FullPathTheorem.lean docstring makes the same point: 'h is not continuous for d'). A (universe 0) is the project's repair: for a JoinSystem, the sets Y_k of paths whose FIXED dyadic pieces lie in good sets are open, the dyadic broken-geodesic map Y_k → X_k = i⁻¹(Y_k) is d-continuous, and X_k → Y_k is a homotopy equivalence. A ⇒ B fails (B asks for more than is true; setting); B ⇒ A fails (B has no Y_k / join systems, abstract setting).",
+ "B_issue": "Not a formalization bug: B faithfully states Milnor's 'Clearly h is continuous' together with the homotopies, and that claim is (believed) false for Milnor's metric d whenever A cannot be bounded below (e.g. on any compact M). Milnor's Theorem 17.1 survives (the project proves it by fixed dyadic subdivisions on open sets glued by Theorem A of the Appendix), but the lemma as stated does not.",
+ "overlap": "No direction proved; no #rt_check.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V10_18.lean: B_emb := B at M = Bridge.Sub hN, cov = Bridge.conn (B_to_B_emb). B_emb is believed false as well: the counterexample (unit circle in ℝ², a slice submanifold) is embedded. Nothing to transfer: A's content (open Y_k, continuity of the dyadic broken geodesic on Y_k, X_k ≃ Y_k) is a weaker, correct substitute; the dictionary Ω ↔ PathSp, Ω* ↔ PathC of Items/V10_19.lean would carry it over. Proving not_B formally would need d-continuity of E on the blind Ω (Items/V10_2.lean), a concrete bad loop, GoodNbhds on the circle and the connectedness argument — not attempted."
+}

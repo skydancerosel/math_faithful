@@ -1,0 +1,21 @@
+{
+ "id": "VA_11",
+ "A_to_B": "false",
+ "B_to_A": "proved",
+ "not_B": true,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "B is false (not_B, #rt_check OK): it asserts that Milnor's G (Gmap, defined strip by strip with n = ⌊τ⌋) is continuous Y_Σ → X_Σ for arbitrary increasing Y_i, but pasting needs the Y_i closed. Counterexample: X = Y = ℝ, f = id, X_0 = Y_0 = (0,∞), X_n = Y_n = ℝ (n ≥ 1), g_n = id, h^0_s(y) = y + s(1−s)/y (a loop at the inclusion, continuous on (0,∞)), h^n constant for n ≥ 1: G(ε, 1−ε/2) = (h^0_{1−ε}(ε), 1) = (1,1) for ε ∈ (0,1/2] while G(0,1) = (g_1(0),1) = (0,1). So A ⇒ B is false and B ⇒ A only ex falso. With the Y_i closed (Bfix, the project's hypothesis; Milnor's subcomplexes are closed), A ⇔ Bfix, both directions proved and both use the hypothesis: A ⇒ Bfix — (a) G is the project's case2Inv, whose values are Milnor's formula by unfolding (both use ⌊τ⌋; clampI = projIcc), (b) the restriction of G f_Σ to X^n_Σ is homotopic to the identity by the chain F ≃ FιR = ι(g_m f_m)r ≃ ιr ≃ id (re-proved; A only states the HE consequence), (c) is A's isHomotopyEquiv_of_truncation for G f_Σ and f_Σ G, (d) from (c). Bfix ⇒ A — theoremA_telescope is Bfix(d) with h^n from the square lemma; isHomotopyEquiv_of_truncation is Bfix(d) applied to X_Σ with its closed truncations, f = F and g_m = id (Case 1 as a special case of Case 2), then X_Σ = hdl{X^m_Σ} and of_telescopeMap; homotopic_square (in B the h^n are data) is re-proved outright (6 lines). relation 'equivalent' refers to A vs Bfix.",
+ "B_issue": "B (Case2 / its clause (a)) has no closedness hypothesis on the Y_i (T), so Milnor's G need not be continuous; proved false (not_B) with Y_0 = (0,∞) ⊂ Y_1 = ℝ and a homotopy h^0 that is unbounded near (y,s) = (0,1). Milnor never states closedness; his Y_i are subcomplexes, hence closed. With ∀ n, IsClosed (T n) added (Bfix) the claim is correct and equivalent to A. (The VA_11 text does not involve the (4−3t)u misprint, which is in Case 1's h_u.)",
+ "overlap": "B_to_A (ex falso): 13 shared, telescopeMap/stripMap/up auxiliary proof fields used by the counterexample. A_to_Bfix: 57 shared, the telescope pasting infrastructure behind case2Inv (telescopeDesc_stripMap, telescopeLiftFun_*, continuous_of_stripMap), case2Inv_zero/_level/_stripMap, level_le_of_stripMap, truncIncl_comp_truncProj and IsHomotopyEquiv basics; Case 1 (case1Fun, milnorInv, theoremA_case1) enters only through the hypothesis. Bfix_to_A: 35 shared, truncation facts (truncIncl_comp_truncProj, isHomotopyDirectLimit_truncation, isClosed/monotone_truncation), IsHomotopyEquiv.of_telescopeMap and basics; nothing of Case 1 or 2.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": true
+ },
+ "uses_hypothesis_fix": {
+  "A_to_Bfix": true,
+  "Bfix_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "General topology (telescopes, homotopy equivalences); no Riemannian manifold."
+}

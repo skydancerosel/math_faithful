@@ -1,0 +1,19 @@
+{
+ "id": "V10_6",
+ "reblind": true,
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B (re-blinded, normalized Ω): on every abstract connected complete Riemannian ℝⁿ-manifold, for Setup16 data and Ω^c ≠ ∅: (a) some F : M^{k−1} → ℝ, C^∞ for the product model on V = ev(B), with F∘ev = E on B; (b) E(w) = Σ ρ(w(t_i),w(t_{i+1}))²/(t_{i+1}−t_i) on B; (c) for a < c, B^a compact (d-topology), ev|B^a an embedding, ev(B^a) ⊆ S^{k−1} and closed in some compact K. A (universes 0): contMDiffAt_of_locally_eq (smoothness on slice submanifolds from local ambient representatives), and for any Morse.BrokenSetup: local smooth AMBIENT representatives of E' on open sets of V^m, E' smooth on the slice submanifold N^m ∩ O ⊆ B.nodes, {y ∈ B.nodes | E' ≤ a} compact for a < c. A ⇒ B fails genuinely: setting, and A only covers BrokenSetup subdivisions (the §16 gap). B ⇒ A fails genuinely: the general slice lemma, ambient smooth representatives (B's F is smooth only on ev(B) for the abstract product structure), the slice-submanifold smoothness, and BrokenSetup subdivisions outside B's hypotheses are not in B.",
+ "B_issue": "Minor: the last clause (∃ compact K ⊇ ev(B^a), ∃ closed C, ev(B^a) = C ∩ K) follows from compactness of ev(B^a) alone (K = C = ev(B^a)); it does not tie K to S^{k−1} as Milnor's 'closed subset of the compact S × ⋯ × S'. Not a falsity issue (ev(B^a) ⊆ S^{k−1} and compactness are separate conjuncts).",
+ "overlap": "A_to_B_emb_BS and A_to_B_emb_of_gap checked (#rt_check OK). #rt_overlap of A_to_B_emb_BS: 466 shared project theorems — BrokenSetup.join/joinVec_spec/vert_mem_ball/riemDist_vert_lt/continuousOn_gaps (used both by the item's exists_smooth_energy'/isCompact_sublevel and by lemma_16_1/energy_path/continuous_pathP that the round-trip proof uses from outside the item) and the Corollary 10.8 / normal-coordinate machinery behind them.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false,
+  "A_to_B_emb_BS": true
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V10_6.lean: B_emb := B at M = Bridge.Sub hN, cov = Bridge.conn (B_to_B_emb). A ⇒ B_emb NOT proved, reduced exactly to the §16 gap: A_to_B_emb_BS (#rt_check OK) proves all of B's conclusion on ↥N for every subdivision carrying a Morse.BrokenSetup — (a) F = E'∘incl, smooth on ev(B) for ModelWithCorners.pi via A's exists_smooth_energy' and the new PiM.contMDiff_eval/contMDiff_iota; (b) formula (∗) (energy_path, outside the item) with ρ = riemDist (Bridge.rho_eq); (c) B^a = image of A's compact sublevel set under the continuous broken-geodesic map pathOf (continuous_pathP, outside the item), ev a closed embedding on the compact B^a, ev(B^a) ⊆ S^{k−1} via mem_closedRiemBall_of_energy_le, K = C = ev(B^a); A_to_B_emb_of_gap : A → Gap16 → B_emb (#rt_check OK), Gap16 as in V10_5 (Setup16 data carry a BrokenSetup with the same subdivision; not expected from ShortGood). Uses A's exists_smooth_energy' and isCompact_sublevel; contMDiffAt_of_locally_eq and contMDiff_energy' (slice-chart structure on N^m ∩ O) are not needed, since B's smoothness is for the product structure on (↥N)^{k−1}. B_emb ⇒ A not attempted (see why; also a BrokenSetup gives neither completeness nor Setup16)."
+}

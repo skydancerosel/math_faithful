@@ -1,0 +1,18 @@
+{
+ "id": "V6_16",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "A (universes 0; milnorCurvature, nomizuCurvature (abstract Mathlib CovariantDerivative, any model), curvature (embedded) are definitions; B's curv/nomizuCurv are definitionally A's): Nomizu's R = −Milnor's R and R(Y,X)Z = −R(X,Y)Z, for all fields. B: for a smooth connection on an ℝⁿ-manifold and smooth fields, (i) Nomizu = −Milnor; (ii) for the chart coordinate fields of extChartAt p, on its source, R(∂ᵢ,∂ⱼ)Z = −∂ᵢ⊢(∂ⱼ⊢Z) + ∂ⱼ⊢(∂ᵢ⊢Z). Both statements are theorems: A_to_B uses A's milnorCurvature_eq_neg for (i) and proves (ii) outright (B_part_ii: [∂ᵢ,∂ⱼ] = 0 on the chart source, since ∂ᵢ is locally Mathlib's mpullback of a constant field by the chart and mpullback_mlieBracket gives naturality of the bracket; then cov Z x 0 = 0); B_to_A re-proves A by abel and mlieBracket_swap without using B. So the 'equivalence' is vacuous in both directions as far as (ii) and A are concerned: B's (ii) (coordinate-field formula) is content A lacks, and A's swap identity, arbitrary models and non-smooth fields are content B lacks.",
+ "B_issue": null,
+ "overlap": "B_to_A: 3 shared (auxiliary IsSymmetric._proof_i terms only)",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ },
+ "revised": "Previous result: A_to_B failed (effort_only true, 'part (ii) believed true and Mathlib-provable, not attempted'), relation incomparable. Revised in the embedded-case pass: part (ii) is now proved outright for every ℝⁿ-manifold and every connection (Items/V6_16.lean: coordField_eventuallyEq, mlieBracket_coordField, B_part_ii, via Mathlib's VectorField.mpullback_mlieBracket), so A_to_B is proved (#rt_check OK) and the relation becomes 'equivalent' — with the caveat that both A and B are theorems, B_to_A does not use B and A_to_B uses A only for part (i).",
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V6_16.lean, section 'The embedded special case': B_emb := B's conclusion for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric) and cov = Bridge.conn (B_to_B_emb via Bridge.conn_isGlobalConn); A_to_B_emb = A_to_B ∘ B_to_B_emb (#rt_check OK). B_emb → A is as vacuous as B_to_A (A is proved outright and is itself abstract: Mathlib CovariantDerivative, any model, so A is not an embedded-only statement here). Embedded content: the dictionary Emb.D_milnorCurvature — A's abstract milnorCurvature (= B's curv) of the induced connection on ↥N, read in V, equals the project's embedded Morse.curvature hN (a definition of this item) of the ambient fields, for smooth X, Y (via Emb.D_curv, the curvature_eq-free half of Bridge.D_curvExpr). So the project's two curvature definitions agree on embedded manifolds."
+}

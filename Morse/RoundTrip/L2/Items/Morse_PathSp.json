@@ -1,0 +1,11 @@
+{
+ "id": "Morse_PathSp",
+ "name": "Morse.PathSp",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "Agreement modulo the encoding of paths: identify project paths (functions ℝ → V) that agree on [0,1]. No hypothesis on N, p, q.",
+ "difference": "Encoding convention: the project's Ω is a type of functions ℝ → V whose values off [0,1] are free, with Milnor's d as a pseudo-emetric (ℝ≥0∞-valued edist); the blind Ω is a type of functions [0,1] → V with d as a real Dist and the d-ball topology. Hence no bijection: restriction to [0,1] is surjective and identifies exactly the paths agreeing on [0,1] (which are at edist 0). The blind ρ (infimum over paths parametrised by [0,1], real sInf, 0 if none) is the project's riemDist (infimum over all [a,b], in ℝ≥0∞) read by toReal; on Ω all edists are finite, so nothing is lost.",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Proved `agree`: toT (restriction) is surjective (inverse ext = w ∘ projIcc), toT γ = toT γ' ↔ γ = γ' on [0,1], dist (toT γ) (toT γ') = (edist γ γ').toReal with edist ≠ ⊤, and toT is inducing (the project's emetric topology is induced from the blind ball topology). Key steps: blind IsPWS = project IsPiecewiseSmooth on [0,1] (continuity from the pieces); affine reparametrisation [a,b] → [0,1] preserves piecewise smoothness and length, so the blind length set maps onto the project's pathLengths and ρ = riemDist.toReal; sup and L² parts match (ENNReal.toReal_iSup with the finiteness bound from the layer-1 item V10_1; derivatives agree on (0,1))."
+}

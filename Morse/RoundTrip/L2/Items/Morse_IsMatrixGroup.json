@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsMatrixGroup",
+ "name": "Morse.IsMatrixGroup",
+ "agreement": "equal",
+ "hypotheses": "setting hG (G a slice submanifold of M_n(𝕜)) with Z, W finite-dimensional (automatic for G ≠ ∅); the converse direction is proved only given T₁G ⊆ 𝔤 (equivalently dim 𝔤 = dim G), which for a closed subgroup is Cartan's closed-subgroup theorem",
+ "difference": "Different packaging: the project lists consequences (closed under ·, ᴴ; 𝔤 skew, Ad-invariant, exp 𝔤 ⊆ G, dim Z = dim 𝔤) and omits closedness and the characterisation 𝔤 = {X : exp(tX) ∈ G ∀t}; the blind states closed subgroup + that characterisation and omits dim. Mathematically equivalent given hG: P ⇒ T proved (closedness from local closedness of a subgroup, 𝔤 ⊇ via T₁G = 𝔤); T ⇒ P proved except dim G ≤ dim 𝔤.",
+ "harmless": true,
+ "proved": "partial",
+ "T_issue": null,
+ "why": "P_imp_T proved in full (isClosed_of_subgroup: a locally closed subgroup is closed; X with exp(tX) ∈ G lies in T₁G = 𝔤). P_iff: P ↔ T ∧ dim Z = dim 𝔤 (Ad-invariance from Matrix.exp_conj); finrank_le_of_T gives dim 𝔤 ≤ dim Z from T; agree_of assumes T₁G ⊆ 𝔤. The missing inequality is the closed-subgroup theorem (tangent vectors at 1 generate one-parameter subgroups), not in Mathlib — substantial new mathematics, not attempted."
+}

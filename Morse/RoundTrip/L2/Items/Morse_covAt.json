@@ -1,0 +1,11 @@
+{
+ "id": "Morse_covAt",
+ "name": "Morse.covAt",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "v ∈ T_qN (Morse.tangentSubspace hN q), i.e. X_q a tangent vector as in Milnor; any field Y : N → V, smooth or not",
+ "difference": "Only for a non-tangent direction v (outside Milnor's definition): the blind T replaces v by its orthogonal tangential part P_q v, whereas the project evaluates dY on the chart coordinates tanCoord v = (dσ_q v)₁ of the slice chart σ chosen by Classical.choice, i.e. on the tangential part of v along σ's (generally non-orthogonal) normal directions. Which value the project takes there depends on the unspecified chosen chart, so neither equality nor a counterexample is provable for non-tangent v.",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "`agree_of`: for v ∈ T_qN, covAt hN q v Y = T hN q v Y for every Y. The two tangent spaces agree (the layer-2 Morse_tangentSubspace argument, repeated), so P_q v = v and the projections coincide; and `fderivWithin Ỹ N q v = dN Y q v` on tangent vectors (if Y is differentiable at q, both equal the derivative of a local ambient representative, derivatives within N being unique on T_qN by composing with a slice parametrization; if not, Ỹ is not differentiable within N either and both are 0)."
+}

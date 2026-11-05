@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsComplexStructure",
+ "name": "Morse.IsComplexStructure",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are `J ∈ orthogonalGroup n ℝ ∧ J * J = -1` (Milnor p. 133), literally the same formula; agree is Iff.rfl. Neither imposes evenness of n (no J exists for odd n, project's even_card)."
+}

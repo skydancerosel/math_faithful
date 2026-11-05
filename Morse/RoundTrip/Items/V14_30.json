@@ -1,0 +1,17 @@
+{
+ "id": "V14_30",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A (no universes; the def piOneCircleMulEquiv read as Nonempty of its type): at base point 1, π_1(S¹) ≃* Multiplicative ℤ; π_1 U(m) ≃* π_1 S¹ (m ≥ 1); π_{2k+1} U(m) ≃* Multiplicative ℤ for 2k+2 ≤ 2m; π_{2k+1} U(m) ≃* π_1 U(m); and the EVEN degrees π_{2k+2} U(m) ≃* π_2 U(m) for 2k+3 ≤ 2m. B: π_1(S¹, x) ≃* Multiplicative ℤ at every x, and π_{2k+1}(U(m), g) ≃* Multiplicative ℤ in the stable range at every g. A ⇒ B: left translation in S¹ and U(m). B ⇒ A: the odd-degree and S¹ conjuncts are B at base point 1; the even-degree conjunct is not in B (B speaks only of odd degrees, as the item's text does) and is re-proved outright by induction with Morse.periodicity_theorem_mulEquiv (V14_28). So A has the extra even-degree group statement; otherwise identical.",
+ "B_issue": null,
+ "overlap": "A_to_B: 43 shared project theorems, generic base-point transport (nonempty_mulEquiv_of_homeomorph, homotopyGroupHom, cube/changeBase lemmas). B_to_A: 3413 — entirely from the outright even-degree conjunct, which uses Morse.periodicity_theorem_mulEquiv exactly as the project's nonempty_mulEquiv_pi_unitary_even does.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about the concrete matrix groups U(m), SU(m) ⊆ M_m(ℂ) (Mathlib unitaryGroup / specialUnitaryGroup), the circle and the Grassmannian of projections; it does not quantify over abstract Riemannian manifolds."
+}

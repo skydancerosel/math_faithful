@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsNondegenerateCriticalPointM",
+ "name": "Morse.IsNondegenerateCriticalPointM",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Same criticality (mfderiv = 0), same Hessian (preferred chart), and IsNondegenerate ↔ trivial null space. Equivalent outright."
+}

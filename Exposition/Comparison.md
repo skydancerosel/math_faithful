@@ -1,0 +1,2251 @@
+# Milnor beside Lean
+
+*Every result of the book beside the statement the machine actually checked. The left column is Milnor, in his own terms. The right column is the formal statement, with the hypotheses he leaves to the reader written out. Click a declaration to see the Lean it names.*
+
+Left: the statement as the book states it. Right: the statement proved in Lean, with the hypotheses written out. Each declaration is given with its file and line.
+
+## Chapter 1
+
+*Milnor §1, pp. 1–9: smooth manifolds, regular values, the fundamental theorem of algebra*
+
+### V1.1. Inverse function theorem, manifold form
+
+*stronger* · proved, not quoted · any class C^n with n ≥ 1 · complete, not finite-dimensional
+
+**Milnor (§1, Inverse Function Theorem, p. 4).** For a smooth $f : U \to \mathbb R^k$ with $U$ open in $\mathbb R^k$, Milnor states on p. 4 that if the derivative $df_x : \mathbb R^k \to \mathbb R^k$ is nonsingular then $f$ carries every sufficiently small open set $U'$ about $x$ diffeomorphically onto the open set $f(U')$. He gives no proof, referring to Apostol and to Dieudonné, and warns that $f$ may fail to be injective in the large even if $df_x$ is nonsingular everywhere. The manifold version is never stated: on p. 7 he simply says that at a regular point $f$ carries a neighbourhood of $x$ in $M$ diffeomorphically onto an open subset of $N$.
+
+*One of the few results in the book quoted from the literature rather than proved.*
+
+**Proved in Lean.** Let $M$ and $N$ be manifolds without boundary over the real or complex scalars, $x \in M$, and let $f$ be of class $C^n$ with $n \ge 1$ on a neighbourhood of $x$, with $df_x$ invertible as a continuous linear map. Then $f$ is a $C^n$ local diffeomorphism at $x$: it restricts to a $C^n$ diffeomorphism from an open $U \ni x$ onto an open $V \ni f(x)$. The model space of $M$ is assumed complete but not finite-dimensional, and equality of dimensions is replaced by invertibility of $df_x$. A second form assumes $f$ of class $C^n$ everywhere, which is Milnor's hypothesis.
+
+- `Milnor.isLocalDiffeomorphAt_of_isInvertible_mfderiv` — Milnor/Chapter1/InverseFunction.lean, line 119
+- `Milnor.ContMDiff.isLocalDiffeomorphAt_of_isInvertible_mfderiv` — Milnor/Chapter1/InverseFunction.lean, line 254
+
+*What differs.*
+- Milnor quotes the Euclidean case from Apostol and Dieudonné; the formal statement is proved, and it is the manifold case, which he uses from p. 7 on without stating it.
+- Milnor's $f$ is smooth; the formal statement allows real or complex scalars and class $C^n$ for any $n \ge 1$, the local inverse being of the same class.
+- Equal dimensions are replaced by invertibility of $df_x$ as a continuous linear map, and the model space of $M$ need only be complete, not finite-dimensional.
+- The hypothesis is that $f$ is $C^n$ on a neighbourhood of $x$, not merely at $x$: for $n = \infty$ the weaker form gives no single open set on which $f$ is $C^\infty$.
+
+### V1.2. Regular points and regular values
+
+*restated* · surjective, not nonsingular · no dimension hypothesis
+
+**Milnor (§1, p. 7).** For a smooth $f : M \to N$ between manifolds of the same dimension, Milnor calls $x \in M$ a regular point when $df_x$ is nonsingular, and $y \in N$ a regular value when $f^{-1}(y)$ contains only regular points; otherwise $x$ is a critical point and $f(x)$ a critical value, and every $y \in N$ is one or the other according as $f^{-1}(y)$ does or does not meet the critical set. A footnote promises that the equal-dimension restriction will be dropped in §2, where (p. 10) a regular point is one at which $df_x$ is onto.
+
+*The two definitions, §1 by nonsingularity and §2 by surjectivity, agree exactly when $\dim M = \dim N$.*
+
+**Proved in Lean.** The formal definitions take the §2 form from the start: $x$ is a regular point when $df_x : TM_x \to TN_{f(x)}$ is surjective and a critical point otherwise; $y$ is a regular value when every $x$ with $f(x) = y$ is a regular point, and a critical value when it is the image of a critical point. No relation between the dimensions enters. That the two definitions agree is a separate statement, proved when both model spaces are finite-dimensional of the same rank; and a point outside the image of $f$ is recorded as a regular value.
+
+- `Milnor.IsRegularPoint` — Milnor/Chapter1/RegularValue.lean, line 65
+- `Milnor.IsRegularValue` — Milnor/Chapter1/RegularValue.lean, line 74
+- `Milnor.IsRegularPoint.isInvertible_mfderiv` — Milnor/Chapter1/RegularValue.lean, line 103
+- `Milnor.IsRegularValue.of_notMem_range` — Milnor/Chapter1/RegularValue.lean, line 92
+
+*What differs.*
+- The formal definition of a regular point is Milnor's §2 one, used from §1 onward, so no equality of dimensions is built into the definition.
+- The equivalence with Milnor's §1 definition is a theorem, needing both model spaces finite-dimensional of equal rank; it is what turns surjectivity back into invertibility.
+- That a point outside the image of $f$ is vacuously a regular value is stated on its own, because the counting argument of p. 9 applies to such points.
+
+### V1.3. A regular fibre over a compact manifold is finite
+
+*stronger* · points of $N$ closed · any class C^n with n ≥ 1
+
+**Milnor (§1, p. 8).** Milnor observes, in italics and without a label, that if $M$ is compact and $y \in N$ is a regular value then $f^{-1}(y)$ is a finite set, possibly empty. His reason is that $f^{-1}(y)$ is a closed subset of the compact $M$, hence compact, and discrete because $f$ is injective near each of its points.
+
+*He treats it as an immediate consequence of the inverse function theorem, in one sentence of proof.*
+
+**Proved in Lean.** Let $M$ and $N$ be manifolds without boundary over the real or complex scalars, modelled on finite-dimensional spaces of equal dimension, with $M$ compact and points of $N$ closed, and let $f$ be of class $C^n$ for some $n \ge 1$. If $y$ is a regular value of $f$ then $f^{-1}(y)$ is finite. The hypothesis on $N$ is exactly the $T_1$ axiom, needed so that $f^{-1}(y)$ is closed.
+
+- `Milnor.IsRegularValue.finite_preimage` — Milnor/Chapter1/RegularValue.lean, line 133
+
+*What differs.*
+- The formal statement names the hypothesis that points of $N$ are closed; Milnor's manifolds lie in Euclidean space, so this is automatic for him and he uses it silently.
+- Milnor's $f$ is smooth; the formal statement needs only class $C^n$ for some $n \ge 1$, and allows complex as well as real scalars.
+- Neither statement assumes $M$ or $N$ connected, nonempty, or second countable.
+
+### V1.4. Local constancy of the fibre count
+
+*stronger* · no restriction on the nearby $y'$ · $M$ and $N$ Hausdorff
+
+**Milnor (§1, p. 8).** For $f : M \to N$ with $M$ compact and $y$ a regular value, Milnor writes $\#f^{-1}(y)$ for the number of preimages and says it is locally constant as a function of $y$, adding the parenthesis that $y$ is to range only over regular values. The explanation he gives is a neighbourhood $V$ of $y$ with $\#f^{-1}(y') = \#f^{-1}(y)$ for every $y' \in V$, built as the intersection of the images of disjoint neighbourhoods $U_1, \dots, U_k$ of the preimages, minus the image of the rest of $M$.
+
+*His bracketed construction of $V$ puts no condition on $y'$, so his own proof gives the equality at every $y'$ in $V$.*
+
+**Proved in Lean.** With $M$ compact, $M$ and $N$ Hausdorff manifolds without boundary modelled on finite-dimensional spaces of equal dimension, $f$ of class $C^n$ for some $n \ge 1$, and $y$ a regular value, there is a neighbourhood of $y$ on which $\#f^{-1}(y')$ equals $\#f^{-1}(y)$ for every point $y'$, regular or not. A companion statement adds that every such $y'$ is again a regular value, which is what Chapter 4 uses.
+
+- `Milnor.IsRegularValue.eventually_ncard_preimage_eq` — Milnor/Chapter1/RegularValue.lean, line 164
+- `Milnor.IsRegularValue.eventually_isRegularValue_and_ncard` — Milnor/Chapter1/RegularValue.lean, line 242
+
+*What differs.*
+- Milnor's parenthesis restricts the argument of $\#f^{-1}$ to regular values; the formal conclusion holds for every $y'$ in the neighbourhood, which is what his construction of $V$ actually delivers.
+- Hausdorffness of $M$ (to separate the finitely many preimages) and of $N$ (so that the image of the complement of the $U_i$ is closed) are hypotheses here and silent in the book.
+- The companion statement, that the nearby $y'$ are themselves regular values, is not in the book; it is proved from the local inverses that the same argument produces.
+
+### V1.5. The counting principle behind the FTA
+
+*restated* · a proof step made a theorem · arbitrary $M$ and $N$
+
+**Milnor (§1, p. 9).** In the last paragraph of the proof of the fundamental theorem of algebra Milnor argues that the regular values of $f$, being the sphere minus finitely many points, form a connected set, so the locally constant function $\#f^{-1}(y)$ is constant there; since it cannot vanish identically it vanishes nowhere, and $f$ is onto. He states no theorem: the argument is written for the particular map $f : S^2 \to S^2$ coming from the polynomial.
+
+*Nothing in the paragraph uses polynomials or spheres beyond compactness, equal dimension and connectedness of the set of regular values.*
+
+**Proved in Lean.** Let $M$ be compact, $M$ and $N$ Hausdorff manifolds without boundary modelled on finite-dimensional spaces of equal dimension, and $f$ of class $C^n$ for some $n \ge 1$. The fibre count is constant on any preconnected set of regular values; hence if $R$ is a preconnected set of regular values meeting the image of $f$, then $R$ lies in the image. If the whole set of regular values is preconnected and meets the image, $f$ is surjective, critical values being in the image by definition.
+
+- `Milnor.subset_range_of_isPreconnected` — Milnor/Chapter1/Counting.lean, line 60
+- `Milnor.surjective_of_isPreconnected_regularValues` — Milnor/Chapter1/Counting.lean, line 78
+- `Milnor.ncard_preimage_eq_of_isPreconnected` — Milnor/Chapter1/Counting.lean, line 45
+
+*What differs.*
+- Milnor states nothing here: the reasoning is three sentences inside the proof for $f : S^2 \to S^2$, and the formal version isolates it as a theorem about arbitrary $M$ and $N$.
+- The formal statement comes in a local form, for any preconnected set $R$ of regular values meeting the image, and a global form, which is the sentence Milnor uses.
+- The last step, that critical values are in the image by definition, is left implicit in the book and is discharged explicitly in the global form.
+- As in V1.3 and V1.4, $M$ and $N$ are required Hausdorff and $f$ only of class $C^n$ with $n \ge 1$.
+
+### V1.6. The fundamental theorem of algebra
+
+*as in the book*
+
+**Milnor (§1, The fundamental theorem of algebra, p. 8).** Every nonconstant complex polynomial $P(z)$ has a zero. Milnor proves it by passing from the plane to the unit sphere $S^2 \subset \mathbb R^3$: stereographic projection $h_+$ from the north pole turns $P$ into a map $f : S^2 \to S^2$ fixing the north pole, which is smooth there because in the chart $h_-$ it becomes $z^n$ divided by the polynomial with conjugated and reversed coefficients. The critical points are the zeros of $P'$, finite in number, so the regular values form a connected set, and the counting argument makes $f$ onto.
+
+*The proof is offered as the first application of regular values, at the end of §1.*
+
+**Proved in Lean.** Every complex polynomial of positive degree has a root; for polynomials over $\mathbb C$ this is Milnor's nonconstancy hypothesis verbatim. The compact surface is the Riemann sphere $\mathbb C \cup \{\infty\}$ with the charts $z$ and $1/z$, rather than $S^2$ with stereographic projection; the two are diffeomorphic, a fact neither needed nor proved. In that presentation the map read in the chart $1/z$ at both ends is $w^n$ over the reversed polynomial, with the original coefficients and no conjugation, and $\infty$ is simply placed among the critical values instead of being shown regular.
+
+- `Milnor.fundamental_theorem_of_algebra` — Milnor/Chapter1/FTA.lean, line 284
+- `Milnor.RiemannSphere.exists_root` — Milnor/Chapter1/FTA.lean, line 267
+- `Milnor.RiemannSphere.contMDiff_polyMap` — Milnor/Chapter1/FTA.lean, line 153
+- `Milnor.RiemannSphere.instIsManifold` — Milnor/Chapter1/RiemannSphere.lean, line 202
+
+## Chapter 2
+
+*Milnor §2, pp. 10–15: Sard–Brown, manifolds with boundary, the Brouwer fixed point theorem*
+
+### V2.1. Slice submanifolds of an abstract manifold
+
+*not in the book* · replaces subsets of $\mathbb R^k$ · dimension carried by a model space $Z$
+
+**Milnor (§2, p. 11).** The book has no notion of submanifold, because a manifold is by definition a subset of $\mathbb R^k$ that is locally diffeomorphic to an open subset of $\mathbb R^m$. In the proof of Lemma 1 Milnor produces a diffeomorphism $F$ of a neighbourhood of $x$ onto an open set under which $f^{-1}(y)$ becomes a coordinate hyperplane, and concludes at once that $f^{-1}(y)$ is a smooth manifold.
+
+*Being a manifold is a property of a subset of $\mathbb R^k$ for him, so no structure ever has to be built.*
+
+**Proved in Lean.** A slice chart for $S \subseteq M$ is a diffeomorphism $\varphi$ of an open set $U \subseteq M$ onto an open subset of $Z \times W$ with $p \in S \iff \varphi(p) \in Z \times \{0\}$ for $p \in U$; $S$ is a slice submanifold modelled on $Z$ when every point of $S$ lies in such a $U$. The formal statement is that such an $S$, with the subspace topology and the charts $p \mapsto \mathrm{pr}_Z \varphi(p)$ induced by all its slice charts, is a smooth manifold without boundary modelled on $Z$, and that the inclusion $S \to M$ is smooth. Nothing is assumed finite-dimensional: $Z$ and $W$ are arbitrary real normed spaces and the ambient $M$ may itself have boundary.
+
+- `Milnor.IsSliceSubmanifold` — Milnor/Chapter2/Submanifold.lean, line 116
+- `Milnor.SliceChart` — Milnor/Chapter2/Submanifold.lean, line 107
+- `Milnor.IsSliceSubmanifold.isManifold` — Milnor/Chapter2/Submanifold.lean, line 236
+- `Milnor.IsSliceSubmanifold.contMDiff_val` — Milnor/Chapter2/Submanifold.lean, line 247
+
+*What differs.*
+- For a subset of $\mathbb R^k$ the straightening chart of Lemma 1 already is the definition of a manifold, so Milnor's proof ends there; for an abstract $M$ the atlas has to be built.
+- The definition takes exactly what Milnor's proof produces, a subset covered by straightening diffeomorphisms, and every later "is a manifold" in the formal text reduces to exhibiting such charts.
+- Milnor's dimension $m - n$ becomes a hypothesis on the model space $Z$, and the atlas consists of the charts induced by all slice charts, not only the chosen ones.
+
+### V2.2. Lemma 1: the preimage of a regular value
+
+*hypotheses explicit* · dimension carried by a model space $Z$ · $m \ge n$ becomes the existence of $Z$ · boundaryless models named
+
+**Milnor (§2, Lemma 1, p. 11).** If $f : M \to N$ is a smooth map between manifolds of dimensions $m \ge n$ and $y \in N$ is a regular value, then $f^{-1}(y) \subseteq M$ is a smooth manifold of dimension $m - n$. The proof completes $f$ by a linear map $L : \mathbb R^k \to \mathbb R^{m-n}$ nonsingular on the null space of $df_x$, inverts $F = (f, L)$ near $x$, and observes that $f^{-1}(y)$ becomes the hyperplane $y \times \mathbb R^{m-n}$.
+
+*That $M$ and $N$ are finite-dimensional and have no boundary is part of his definition of a manifold, so he states neither.*
+
+**Proved in Lean.** Let $M$, $N$ be $C^\infty$ manifolds without boundary modelled on finite-dimensional real spaces $E$, $F$, let $f : M \to N$ be smooth, and let $y$ be a regular value, meaning $df_x$ is surjective at every $x$ with $f(x) = y$. Let $Z$ be a finite-dimensional real space with $\dim Z + \dim F = \dim E$. Then $f^{-1}(y)$ is a slice submanifold of $M$ modelled on $Z$, hence by V2.1 a manifold of dimension $\dim M - \dim N$ with smooth inclusion. A refined form records that the slice chart at $x$ can be taken with second component $p \mapsto \psi(f(p)) - \psi(y)$, where $\psi$ is the extended chart of $N$ at $y$.
+
+- `Milnor.isSliceSubmanifold_preimage` — Milnor/Chapter2/LevelSet.lean, line 251
+- `Milnor.exists_sliceChart_preimage` — Milnor/Chapter2/LevelSet.lean, line 110
+
+*What differs.*
+- The dimension count $m - n$ is carried by a model space $Z$ with $\dim Z + \dim F = \dim E$; Milnor's hypothesis $m \ge n$ is precisely the existence of such a $Z$.
+- Finite-dimensionality of $E$ and $F$ and boundarylessness of both models are named, being part of Milnor's definition of a manifold rather than of his statement.
+- The conclusion is that $f^{-1}(y)$ is a slice submanifold in the sense of V2.1; the smooth structure and the smooth inclusion come from there.
+- The refined form, which names the second component of the chart, is not in the book; Lemma 3 is proved from it.
+
+### V2.3. Lemma 2: the tangent space of a level set
+
+*restated* · elementwise, not an equality of spaces · second clause is V2.12
+
+**Milnor (§2, Lemma 2, p. 11).** For a regular value $y$ of $f : M \to N$ and $M' = f^{-1}(y)$, the null space of $df_x : TM_x \to TN_y$ is precisely the tangent space $TM'_x \subseteq TM_x$; hence $df_x$ carries the orthogonal complement of $TM'_x$ in $TM_x$ isomorphically onto $TN_y$.
+
+*He proves it from the square $M' \to M \to N$: $df_x$ kills $TM'_x$ because $f$ is constant on $M'$, and a dimension count finishes both claims.*
+
+**Proved in Lean.** In the setting of V2.2, give $f^{-1}(y)$ the structure of V2.1 and let $\iota : f^{-1}(y) \to M$ be the inclusion. For $p \in f^{-1}(y)$ and $v \in T_pM$: $v$ lies in the image of $d\iota_p$ if and only if $df_p(v) = 0$. Two separate statements supply the halves: $df_p \circ d\iota_p = 0$, because $f \circ \iota$ is constant, and $d\iota_p$ is injective for any slice submanifold, because $\mathrm{pr}_Z \circ \varphi \circ \iota$ is the induced chart at $p$ and has derivative the identity there.
+
+- `Milnor.mem_range_mfderiv_val_iff` — Milnor/Chapter2/LevelSet.lean, line 325
+- `Milnor.mfderiv_comp_val_eq_zero` — Milnor/Chapter2/LevelSet.lean, line 262
+- `Milnor.injective_mfderiv_val` — Milnor/Chapter2/LevelSet.lean, line 282
+
+*What differs.*
+- The tangent spaces of $M$ and of $f^{-1}(y)$ are modelled on different spaces, $E$ and $Z$, so the formal statement compares vectors instead of asserting $\operatorname{im} d\iota_p = \ker df_p$.
+- Milnor's second sentence, that $df_x$ maps the orthogonal complement of $TM'_x$ isomorphically onto $TN_y$, is a row of its own, V2.12: it needs an inner product on the model space, which an abstract $M$ does not carry.
+- The injectivity of $d\iota_p$, which Milnor gets free from $TM'_x \subseteq TM_x$, is proved for every slice submanifold and is what makes the dimension count available.
+
+### V2.4. Manifolds with boundary: the definition
+
+*restated* · $B$ prescribed, not derived · well-definedness not proved · $X$ sits in an ambient manifold $M$
+
+**Milnor (§2, Definition, p. 12).** With $\mathbb H^m = \{x \in \mathbb R^m : x_m \ge 0\}$ and $\partial \mathbb H^m = \mathbb R^{m-1} \times 0$, a subset $X \subseteq \mathbb R^k$ is a smooth $m$-manifold with boundary if each of its points has a neighbourhood in $X$ diffeomorphic to an open subset of $\mathbb H^m$; $\partial X$ is the set of points corresponding to $\partial \mathbb H^m$ under such a diffeomorphism. He then records that $\partial X$ is well defined and is a smooth $(m-1)$-manifold, that $X - \partial X$ is an $m$-manifold, and that $TX_x$ is $m$-dimensional even at a boundary point.
+
+*He calls the well-definedness of $\partial X$ "not hard to show" and gives no proof.*
+
+**Proved in Lean.** The half-space is $H(Z) = \{(t,z) \in \mathbb R \times Z : t \ge 0\}$, made into a model with corners whose image has interior $\{t > 0\}$ and frontier $\{t = 0\}$. For subsets $X$, $B$ of an ambient manifold $M$, a half-slice chart is a diffeomorphism $\Phi$ of an open $U \subseteq M$ onto an open subset of $\mathbb R \times Z$ with $p \in X \iff \Phi_1(p) \ge 0$ and $p \in B \iff \Phi_1(p) = 0$ for all $p \in U$, and $X$ is a half-slice submanifold with boundary $B$ when every point of $X$ lies in such a $U$. The formal statement is that such an $X$ is a smooth manifold modelled on $H(Z)$, that its boundary in Mathlib's sense is exactly $X \cap B$, and that the inclusion $X \to M$ is smooth.
+
+- `Milnor.IsHalfSliceSubmanifold` — Milnor/Chapter2/Boundary.lean, line 150
+- `Milnor.HalfSliceChart` — Milnor/Chapter2/Boundary.lean, line 140
+- `Milnor.IsHalfSliceSubmanifold.isManifold` — Milnor/Chapter2/Boundary.lean, line 296
+- `Milnor.IsHalfSliceSubmanifold.boundary_eq` — Milnor/Chapter2/Boundary.lean, line 305
+
+*What differs.*
+- Milnor reads $\partial X$ off the charts and then remarks that it is well defined; the formal definition prescribes $B$ in advance and demands that every chart send exactly $B$ to $\{t = 0\}$.
+- So the invariance argument behind the well-definedness is never carried out; every manifold with boundary in the formal text is built with charts respecting a given $B$, which suffices downstream.
+- The distinguished coordinate is written first, $\{t \ge 0\} \subseteq \mathbb R \times Z$, where Milnor writes it last in $\mathbb H^m$.
+- $X$ is always a subset of an ambient manifold $M$, never an abstract manifold with boundary standing on its own; $M$ itself is allowed to have boundary.
+
+### V2.5. Lemma 3: the region where $g \ge 0$
+
+*hypotheses explicit* · dimension carried by a model space $Z$ · boundary prescribed as in V2.4
+
+**Milnor (§2, Lemma 3, p. 12).** Let $M$ be a manifold without boundary and $g : M \to \mathbb R$ a smooth function with $0$ as a regular value. Then the set of $x \in M$ with $g(x) \ge 0$ is a smooth manifold with boundary equal to $g^{-1}(0)$.
+
+*He gives no proof, saying only that it is just like the proof of Lemma 1.*
+
+**Proved in Lean.** Let $M$ be a $C^\infty$ manifold without boundary modelled on a finite-dimensional real space $E$, let $Z$ be a finite-dimensional real space with $\dim Z + 1 = \dim E$, and let $g : M \to \mathbb R$ be smooth with $0$ a regular value. Then $\{g \ge 0\}$ is a half-slice submanifold over $Z$ with boundary $\{g = 0\}$, hence by V2.4 a manifold with boundary modelled on the half-space over $Z$.
+
+- `Milnor.isHalfSliceSubmanifold_of_regularValue` — Milnor/Chapter2/WithBoundary.lean, line 96
+
+*What differs.*
+- The dimension of the boundary is carried by a model space $Z$ with $\dim Z + 1 = \dim E$, which in particular forces $\dim M \ge 1$; Milnor leaves the count implicit.
+- The conclusion is stated with the half-slice charts of V2.4, with $B = \{g = 0\}$ prescribed in advance rather than read off the charts.
+- Milnor's "just like the proof of Lemma 1" is made literal: at a boundary point the slice chart of V2.2 for $g$ has second component $g$, and swapping the factors puts $g$ first.
+- Regularity of $0$ is used only where $g(x) = 0$; at points with $g(x) > 0$ any chart of $M$, straightened by a linear isomorphism and translated, is a half-slice chart.
+
+### V2.6. Lemma 4: level sets in a manifold with boundary
+
+*narrower* · $X$ presented as $\{g \ge 0\}$ · $y$ regular for $f$ on all of $M$ · transversality replaces $f|\partial X$
+
+**Milnor (§2, Lemma 4, p. 13).** Let $f : X \to N$ be smooth from an $m$-manifold with boundary to an $n$-manifold, with $m > n$. If $y \in N$ is a regular value both of $f$ and of the restriction $f|_{\partial X}$, then $f^{-1}(y) \subseteq X$ is a smooth $(m-n)$-manifold with boundary, and $\partial(f^{-1}(y))$ is exactly $f^{-1}(y) \cap \partial X$.
+
+*In the local model $f : \mathbb H^m \to \mathbb R^n$ he uses the regularity of $f|_{\partial \mathbb H^m}$ only to know that the null space of $df_x$ is not contained in $\mathbb R^{m-1} \times 0$.*
+
+**Proved in Lean.** Let $M$, $N$ be manifolds without boundary modelled on finite-dimensional $E$, $F$; let $Z$, $Z'$ be finite-dimensional with $\dim Z + \dim F = \dim E$ and $\dim Z' + 1 = \dim Z$; let $f : M \to N$ be smooth with $y$ a regular value of $f$ on all of $M$, and $g : M \to \mathbb R$ smooth. Assume that at every $x$ with $f(x) = y$ and $g(x) = 0$ there is a $v \in T_xM$ with $df_x(v) = 0$ and $dg_x(v) \ne 0$. Then, inside the manifold $f^{-1}(y)$ of V2.2, the set $\{g \ge 0\}$ is a half-slice submanifold over $Z'$ with boundary $\{g = 0\}$: that is, $f^{-1}(y) \cap \{g \ge 0\}$ is a manifold with boundary $f^{-1}(y) \cap \{g = 0\}$. No regularity of $0$ for $g$ is assumed anywhere.
+
+- `Milnor.isHalfSliceSubmanifold_levelSet` — Milnor/Chapter2/WithBoundary.lean, line 194
+
+*What differs.*
+- Milnor's $X$ is an arbitrary $m$-manifold with boundary; the formal $X$ is $\{g \ge 0\}$ inside a boundaryless $M$ on which $f$ is defined, which covers every later use but not his statement.
+- His hypothesis that $y$ is regular for $f|_{\partial X}$ becomes the transversality condition $df_x(v) = 0$, $dg_x(v) \ne 0$, which is what his proof extracts from it.
+- $y$ must be a regular value of $f$ on all of $M$, not only on $X$ as in the book; this holds in every application in the formal text.
+- Milnor's $m > n$ is the existence of $Z'$ with $\dim Z' + 1 = \dim Z$; unlike Lemma 3 this statement needs no regular value of $g$, since transversality already forces $dg_x \ne 0$ where it matters.
+
+### V2.7. The unit disk, with boundary the sphere
+
+*hypotheses explicit* · ambient dimension at least $1$ · inner product space, not $\mathbb R^m$
+
+**Milnor (§2, Example, p. 12).** The unit disk $\mathbb D^m$, consisting of the $x \in \mathbb R^m$ with $1 - \sum x_i^2 \ge 0$, is a smooth manifold with boundary equal to $S^{m-1}$.
+
+*It is offered as the example produced by Lemma 3, with no verification of the regular value.*
+
+**Proved in Lean.** For a finite-dimensional real inner product space $E$ and a finite-dimensional $Z$ with $\dim Z + 1 = \dim E$, the closed unit ball of $E$ is a half-slice submanifold over $Z$ with boundary the unit sphere. The case recorded is that for every $m \ge 0$ the closed unit ball of $\mathbb R^{m+1}$ is a manifold with boundary $S^m$, modelled on the half-space over $\mathbb R^m$. Both are Lemma 3 for $g(x) = 1 - \|x\|^2$, whose derivative $v \mapsto -2\langle x, v\rangle$ is shown to be surjective wherever $\|x\| = 1$.
+
+- `Milnor.isHalfSliceSubmanifold_unitDisk` — Milnor/Chapter2/Disk.lean, line 81
+- `Milnor.isHalfSliceSubmanifold_closedBall` — Milnor/Chapter2/Disk.lean, line 52
+- `Milnor.diskFun` — Milnor/Chapter2/Disk.lean, line 25
+- `Milnor.isRegularValue_diskFun` — Milnor/Chapter2/Disk.lean, line 31
+
+*What differs.*
+- The ambient space is written $\mathbb R^{m+1}$ with $m \ge 0$: the half-slice model needs a factor $\mathbb R$, so the statement would fail for the point $\mathbb D^0 \subseteq \mathbb R^0$.
+- The ball is taken in an arbitrary finite-dimensional real inner product space, and the model space $Z$ for the boundary is named; Milnor's $\mathbb D^m$ is the case $Z = \mathbb R^{m-1}$.
+- That $0$ is a regular value of $1 - \|x\|^2$ is proved, by exhibiting $v = -\tfrac t2 x$ with $dg_x(v) = t$ on the sphere, where Milnor simply invokes Lemma 3.
+
+### V2.8. Corestriction to a submanifold
+
+*not in the book* · silent step of Lemma 5 · values in $S$ at every point
+
+**Milnor (§2, p. 13).** The book has no such statement: for subsets of $\mathbb R^k$, a smooth map with values in $S$ is a smooth map into $S$ by definition, so the question never arises. Milnor uses the fact silently in Lemma 5, where a map $f : X \to \partial X$ is treated as a map into the manifold $\partial X$ so that a regular value of it may be chosen.
+
+**Proved in Lean.** Let $S$ be a slice submanifold of $M$ in the sense of V2.1, let $M'$ be a $C^\infty$ manifold, and let $F : M' \to M$ be smooth with $F(x) \in S$ for every $x$. Then $F$ is smooth as a map $M' \to S$. Read in the chart of $S$ at $F(x)$ induced by a slice chart $\varphi$, the map is $\mathrm{pr}_Z \circ \varphi \circ F$, a composite of smooth maps.
+
+- `Milnor.IsSliceSubmanifold.contMDiff_codRestrict` — Milnor/Chapter2/Corestrict.lean, line 41
+- `Milnor.IsSliceSubmanifold.extChartAt_eq` — Milnor/Chapter2/Corestrict.lean, line 33
+
+*What differs.*
+- Smoothness of a map into $S \subseteq \mathbb R^k$ means smoothness into $\mathbb R^k$ for Milnor, so corestriction is invisible; for an abstract $S$ with a constructed atlas it has to be proved.
+- The formal statement requires the values to lie in $S$ at every point of $M'$, and is used in V2.10 to turn the retraction of the ball into a map into the sphere.
+
+### V2.9. Lemma 6: the retraction formula, verified
+
+*stronger* · no finite dimension assumed · stated on the open set $\Omega$ · $g$ need not map the disk to itself
+
+**Milnor (§2, Lemma 6, p. 14).** In the proof of Lemma 6 Milnor writes the retraction explicitly: for a smooth $g : \mathbb D^n \to \mathbb D^n$ without fixed points, $f(x) = x + tu$ with $u = (x - g(x))/\|x - g(x)\|$ and $t = -x \cdot u + \sqrt{1 - x \cdot x + (x \cdot u)^2}$, the expression under the square root being strictly positive, and asserts that $f$ is a smooth map $\mathbb D^n \to S^{n-1}$ with $f(x) = x$ for $x \in S^{n-1}$.
+
+*He calls this an explicit computation and leaves the verification to the reader.*
+
+**Proved in Lean.** Let $E$ be a real inner product space and $g : E \to E$ any map; write $u$, $\Delta = 1 - \|x\|^2 + \langle x, u\rangle^2$, $t = -\langle x, u\rangle + \sqrt{\Delta}$ and $f(x) = x + tu$ as above, and let $\Omega = \{x : x \ne g(x),\ \Delta(x) > 0\}$. Then $\|f(x)\| = 1$ for every $x \in \Omega$; if $x \in \Omega$ with $\|x\| = 1$ and $\|g(x)\| \le 1$ then $f(x) = x$; $f$ is smooth on $\Omega$ whenever $g$ is smooth, and $\Omega$ is open whenever $g$ is continuous. Finally, if $g$ carries the closed unit ball into itself and has no fixed point there, the whole ball lies in $\Omega$.
+
+- `Milnor.Retraction.norm_retr` — Milnor/Chapter2/Retraction.lean, line 50
+- `Milnor.Retraction.retr_eq_self` — Milnor/Chapter2/Retraction.lean, line 67
+- `Milnor.Retraction.closedBall_subset_good` — Milnor/Chapter2/Retraction.lean, line 85
+- `Milnor.Retraction.contDiffOn_retr` — Milnor/Chapter2/Retraction.lean, line 131
+
+*What differs.*
+- The formal statements hold in any real inner product space, with no finite-dimensionality, for an arbitrary $g : E \to E$, and on the whole open set $\Omega$ where the formulas make sense.
+- Positivity of the radicand, which Milnor asserts, is the separate claim that the ball lies in $\Omega$: there $\Delta \le 0$ forces $\|x\| = 1$ and $\langle x, g(x)\rangle = 1$, hence $g(x) = x$.
+- That $f$ fixes the sphere needs only $\|x\| = 1$ and $\|g(x)\| \le 1$, through Cauchy–Schwarz; smoothness of $f$ needs $g$ smooth, and openness of $\Omega$ only $g$ continuous.
+
+### V2.10. Lemmas 5 and 6 for the disk: a smooth fixed point
+
+*narrower* · Lemma 5 only for the disk · $g$ smooth on all of $E$ · cutoff avoids boundary domains
+
+**Milnor (§2, Lemma 6, p. 14).** Any smooth map $g : \mathbb D^n \to \mathbb D^n$ has a fixed point. It follows from Lemma 5 (p. 13), that a compact manifold with boundary admits no smooth map to its boundary leaving the boundary pointwise fixed: a fixed-point-free $g$ would produce the retraction $f$, contradicting the special case that the identity of $S^{n-1}$ extends to no smooth map $\mathbb D^n \to S^{n-1}$.
+
+*Lemma 5 is proved, following Hirsch, by choosing a regular value $y \in \partial X$ of $f$: then $f^{-1}(y)$ is a compact $1$-manifold with the single boundary point $y$, while such a manifold has an even number of boundary points.*
+
+**Proved in Lean.** Let $E$ be a finite-dimensional real inner product space with closed unit ball $\mathbb D$. Every $g : E \to E$ that is smooth on all of $E$ and carries $\mathbb D$ into itself has a fixed point in $\mathbb D$. The proof is Milnor's: the retraction of V2.9, extended over $E$ by a smooth cutoff that is the identity on $\mathbb D$ and takes values in a slightly larger ball still inside $\Omega$, and corestricted to the sphere by V2.8, has a regular value $y$ by Brown's corollary; the transversality condition of V2.6 holds at $y$ because the retraction fixes the sphere; so by V2.6 the level set over $y$ inside $\mathbb D$ is a compact $1$-manifold whose only boundary point is $y$.
+
+- `Milnor.exists_fixedPoint_of_contDiff` — Milnor/Chapter2/Brouwer.lean, line 92
+- `Milnor.cutoff` — Milnor/Chapter2/Brouwer.lean, line 37
+- `Milnor.cutoff_eq_self` — Milnor/Chapter2/Brouwer.lean, line 46
+
+*What differs.*
+- Milnor's Lemma 5 holds for any compact manifold with boundary; only the case of the disk is formalized, inside this proof, and nothing in the book needs more.
+- Milnor's $g$ is smooth on $\mathbb D^n$, which for him means smooth on a neighbourhood; the formal $g$ is assumed smooth on all of $E$, and V2.11 shows that nothing is lost for the book.
+- The retraction is extended over $E$ by a smooth cutoff so that no manifold with boundary is ever a domain, and it is regarded as a map into the sphere through V2.8.
+- $\mathbb R^n$ is replaced by a finite-dimensional real inner product space, and the degenerate case $\dim E = 0$ is disposed of separately, the ball being then a single point.
+
+### V2.11. Brouwer's fixed point theorem
+
+*restated* · $G$ continuous only on $\mathbb D$ · smooth approximation, not polynomial · inner product space, not $\mathbb R^n$
+
+**Milnor (§2, Brouwer Fixed Point Theorem, p. 14).** Any continuous function $G : \mathbb D^n \to \mathbb D^n$ has a fixed point. The theorem is reduced to Lemma 6 by approximation: if $\|G(x) - x\|$ has minimum $\mu > 0$ on $\mathbb D^n$, the Weierstrass theorem supplies a polynomial map $P_1$ with $\|P_1 - G\| < \varepsilon$ there, and $P = P_1/(1 + \varepsilon)$ is a smooth self-map of $\mathbb D^n$ whose fixed point contradicts the minimum once $\varepsilon$ is small.
+
+*He points out that this pattern, proving a statement about continuous maps by approximating them with smooth ones, recurs later (§8, Problem 4).*
+
+**Proved in Lean.** Let $E$ be a finite-dimensional real inner product space with closed unit ball $\mathbb D$. Every $G : E \to E$ that is continuous on $\mathbb D$ and carries $\mathbb D$ into itself has a fixed point in $\mathbb D$. The proof is Milnor's, with $\varepsilon = \mu/2$ and the rescaling by $c = 1 + \mu/2$, except that $P_1$ is smooth rather than polynomial: each coordinate $\langle b_i, G\rangle$ in an orthonormal basis is approximated within $\varepsilon/(N+1)$ by Stone–Weierstrass applied to the subalgebra of continuous functions on $\mathbb D$ that extend to smooth functions on $E$.
+
+- `Milnor.exists_fixedPoint` — Milnor/Chapter2/Brouwer.lean, line 305
+- `Milnor.exists_contDiff_approx` — Milnor/Chapter2/Brouwer.lean, line 268
+- `Milnor.smoothSubalgebra` — Milnor/Chapter2/Brouwer.lean, line 244
+
+*What differs.*
+- Milnor's $G$ is a map $\mathbb D^n \to \mathbb D^n$; the formal $G$ is defined on $E$ and assumed only to be continuous on $\mathbb D$ and to carry it into itself, which is the same statement.
+- $\mathbb R^n$ is replaced by a finite-dimensional real inner product space, of which $\mathbb R^n$ is the case in the book.
+- The polynomial approximation from the Weierstrass theorem is replaced by an approximation by maps smooth on all of $E$; the final estimate and the rescaling by $1 + \mu/2$ are Milnor's.
+
+### V2.12. Lemma 2, second clause: the normal space
+
+*hypotheses explicit* · inner product on the source's model · tangent space realised inside $E$ · bundled as a linear isomorphism
+
+**Milnor (§2, Lemma 2, p. 11).** The second sentence of Lemma 2: for a regular value $y$ of $f : M \to N$ and $M' = f^{-1}(y)$, once the null space of $df_x$ is known to be the tangent space $TM'_x$, it follows that $df_x$ maps the orthogonal complement of $TM'_x$ in $TM_x$ isomorphically onto $TN_y$. Milnor states it in one clause and leaves the dimension count to the reader. "Orthogonal complement" needs no comment from him: his manifolds are subsets of $\mathbb R^k$, so every tangent space is a linear subspace of a Euclidean space and comes with its inner product.
+
+*The first clause is V2.3, and in the book the two are one lemma with one two-line proof.*
+
+**Proved in Lean.** In the situation of V2.2 and V2.3 — $M$ and $N$ smooth manifolds without boundary over boundaryless models with corners, $f$ of class $C^\infty$, $y$ a regular value, and the model spaces satisfying $\dim Z + \dim F = \dim E$ — write $T \subseteq E$ for the tangent space of $f^{-1}(y)$ at $p$, realised inside the model space $E \cong T_pM$ as the range of the derivative of the inclusion. Then $df_p$ is injective on the orthogonal complement $T^\perp$; every vector of $TN_y$ is $df_p(v)$ for some $v \in T^\perp$; and the two halves are bundled into a continuous linear isomorphism $T^\perp \to TN_y$ whose underlying map is $df_p$ itself. The model space $E$ of the source carries an inner product, in which $T^\perp$ is taken; the target needs none.
+
+- `Milnor.tangentSubspace` — Milnor/Chapter2/Normal.lean, line 56
+- `Milnor.mfderiv_injOn_tangent_orthogonal` — Milnor/Chapter2/Normal.lean, line 93
+- `Milnor.mfderiv_surjOn_tangent_orthogonal` — Milnor/Chapter2/Normal.lean, line 102
+- `Milnor.normalEquiv` — Milnor/Chapter2/Normal.lean, line 121
+
+*What differs.*
+- The one hypothesis Milnor does not state is an inner product on the model space $E$ of the source, in place of the bare norm of V2.2 and V2.3. He has it for nothing, his manifolds being subsets of $\mathbb R^k$; the target $N$ needs none.
+- "The orthogonal complement of $TM'_x$ in $TM_x$" becomes the orthogonal complement of the subspace $T \subseteq E$ of V2.3, the range of the derivative of the inclusion read in the model space, because the tangent spaces of $M$ and of $f^{-1}(y)$ are modelled on different spaces.
+- The dimension count is written out: at a regular value $df_p$ is onto, so $T = \ker df_p$ has dimension $\dim E - \dim F$ and $\dim T^\perp = \dim F$; injectivity on $T^\perp$ is the first clause together with $T \cap T^\perp = 0$, and surjectivity follows because an injective map between spaces of equal finite dimension is onto.
+- Injectivity and surjectivity are also available separately and elementwise, which is the form the proofs use; Milnor asserts only the isomorphism.
+
+## Chapter 3
+
+*Milnor §3, pp. 16–19: the proof of Sard’s theorem*
+
+### V3.1. Sard's theorem
+
+*stronger* · abstract spaces, any Haar measure · degenerate dimensions split off
+
+**Milnor (§3, Theorem of Sard, p. 16).** Let $f : U \to \mathbb R^p$ be smooth with $U$ open in $\mathbb R^n$, and let $C$ be the set of $x \in U$ at which the rank of $df_x$ is less than $p$. Then $f(C) \subseteq \mathbb R^p$ has measure zero. Milnor notes that the cases $n \le p$ are comparatively easy but gives one proof covering all of them, by induction on $n$ in three steps, the third by counting cubes.
+
+*He restates the theorem here, having announced it in §2 (p. 10); a footnote credits the proof to Pontryagin, simplified by assuming $f$ infinitely differentiable.*
+
+**Proved in Lean.** Let $E$ and $F$ be finite-dimensional real normed spaces, $U \subseteq E$ open, and $f$ smooth on $U$, and let $C$ be the set of points of $U$ at which $df_x$ fails to be surjective. Then $f(C)$ is null for every Haar measure on $F$, taken with its Borel sets. The two degenerate cases the book passes over are split off: if $\dim F = 0$ then $C$ is empty, and if $\dim E = 0$ and $\dim F > 0$ then $f(C)$ has at most one point.
+
+- `Milnor.sard` — Milnor/Chapter3/Sard.lean, line 112
+- `Milnor.Sard.critSet` — Milnor/Chapter3/Basic.lean, line 51
+- `Milnor.Sard.sardStatement` — Milnor/Chapter3/Sard.lean, line 49
+
+*What differs.*
+- Milnor's $\mathbb R^n \to \mathbb R^p$ with Lebesgue measure becomes arbitrary finite-dimensional real normed spaces with an arbitrary Haar measure on the target.
+- The generality is forced by the proof rather than sought: the induction on $\dim E$ passes to hyperplanes of $E$, which are not literally $\mathbb R^{n-1}$.
+- Milnor's condition $\mathrm{rank}\,df_x < p$ appears as non-surjectivity of $df_x$, the same condition; $E$ and $F$ must lie in one universe of the type theory, a formality.
+- The case $\dim F = 0$ must be excluded by hand, since a Haar measure on a zero-dimensional space is a point mass and not the zero measure; $\dim E = 0$ is handled separately.
+
+### V3.2. Regular values are dense in Euclidean space
+
+*stronger* · abstract target space · no measure in the statement
+
+**Milnor (§2, p. 10).** Immediately after stating Sard's theorem for a smooth $f : U \to \mathbb R^n$ with $U$ open in $\mathbb R^m$, Milnor remarks that a set of measure zero contains no nonempty open set, so the complement $\mathbb R^n \setminus f(C)$ is everywhere dense. A footnote credits the density statement to Arthur B. Brown in 1935, rediscovered by Dubovickiĭ and by Thom.
+
+*A remark, not a numbered result; §3 proves only the measure-zero half.*
+
+**Proved in Lean.** In the same setting as the formal Sard theorem — $E$ and $F$ finite-dimensional real normed spaces, $U \subseteq E$ open, $f$ smooth on $U$, and $C$ the set where $df_x$ is not surjective — the complement of $f(C)$ is dense in $F$. No measure appears in the statement: the proof chooses the Haar measure attached to a basis of $F$ and uses that a null set has empty interior, which is Milnor's one-line reason.
+
+- `Milnor.dense_compl_image_critSet` — Milnor/Chapter3/Sard.lean, line 118
+
+*What differs.*
+- Milnor's remark is about $\mathbb R^n$; the formal statement is about an arbitrary finite-dimensional real normed space $F$, the Haar measure being chosen inside the proof.
+- The conclusion is purely topological, so the target needs no measure structure in the statement, unlike the Sard theorem it is deduced from.
+
+### V3.3. Brown's theorem: regular values are dense
+
+*hypotheses explicit* · second countability of $M$ assumed
+
+**Milnor (§2, Corollary (A. B. Brown), p. 10).** For a smooth $f : M \to N$ from an $m$-manifold to an $n$-manifold, Milnor calls $x$ critical when $df_x : TM_x \to TN_{f(x)}$ has rank less than $n$, and calls $N \setminus f(C)$ the set of regular values. Since $M$ is covered by countably many neighbourhoods each diffeomorphic to an open subset of $\mathbb R^m$, he concludes that the set of regular values of $f$ is everywhere dense in $N$.
+
+*The countable cover is asserted rather than assumed: for his manifolds, subsets of Euclidean space, it comes for free.*
+
+**Proved in Lean.** Let $M$ and $N$ be smooth manifolds without boundary, modelled on finite-dimensional real normed spaces, with $M$ second countable, and let $f : M \to N$ be smooth. Then the set of $y \in N$ all of whose preimages are regular points is dense in $N$. No separation axiom on $M$ or $N$ is needed, and $N$ carries no measure: the proof reads $f$ in countably many charts of $M$ and in one chart of $N$ meeting the given open set, and applies the Euclidean statement there.
+
+- `Milnor.dense_regularValues` — Milnor/Chapter2/Brown.lean, line 134
+
+*What differs.*
+- Milnor's countable cover by chart neighbourhoods becomes a hypothesis: $M$ is assumed second countable, which is automatic for the subsets of $\mathbb R^k$ he works with.
+- The target carries no measure; the measure lives on the model space of a chart of $N$, so the conclusion is stated purely as density of a subset of $N$.
+
+## Chapter 4
+
+*Milnor §4, pp. 20–25: smooth homotopy and isotopy, the degree modulo 2*
+
+### V4.1. Lemma 4 for the cylinder's two ends
+
+*narrower* · $X$ cut out by $g_0 \ge 0, g_1 \ge 0$ · two ends, disjoint zero sets · transversality replaces $f|\partial X$
+
+**Milnor (§2, Lemma 4, p. 13).** Take a smooth $f : X \to N$ from an $m$-manifold with boundary to an $n$-manifold, $m > n$, and let $y$ be regular for $f$ and also for what $f$ does on $\partial X$. Then $f^{-1}(y)$, sitting in $X$, is a smooth $(m-n)$-manifold whose boundary is what $\partial X$ cuts out of it, namely $f^{-1}(y) \cap \partial X$. In §4 this is used on the cylinder $X = M \times [0,1]$.
+
+*He states it for an abstract manifold with boundary and leaves to a footnote on p. 20 the fact that $M \times [0,1]$ is one, bounded by two copies of $M$.*
+
+**Proved in Lean.** Let $M$ and $N$ be smooth manifolds without boundary, $f : M \to N$ smooth, $y$ a regular value, and let $Z$, $Z'$ be finite-dimensional with $\dim Z + \dim N = \dim M$ and $\dim Z' + 1 = \dim Z$. Let $g_0, g_1 : M \to \mathbb R$ be smooth, and suppose that at each point of $f^{-1}(y)$ where $g_i$ vanishes some tangent vector is killed by $df$ but not by $dg_i$, and that $g_0$ and $g_1$ never vanish at the same point of $f^{-1}(y)$. Then, inside the manifold $f^{-1}(y)$, the set $\{g_0 \ge 0,\ g_1 \ge 0\}$ is a manifold with boundary $\{g_0 = 0\} \cup \{g_1 = 0\}$. No compactness is assumed.
+
+- `Milnor.isHalfSliceSubmanifold_levelSet_two` — Milnor/Chapter4/Cylinder.lean, line 46
+- `Milnor.IsHalfSliceSubmanifold.of_local` — Milnor/Chapter4/Cylinder.lean, line 29
+
+*What differs.*
+- Milnor's $X$ is any manifold with boundary; the formal one is $\{g_0 \ge 0\} \cap \{g_1 \ge 0\}$ inside a boundaryless $M$, with $g_0, g_1$ never zero together on $f^{-1}(y)$.
+- Regularity of $y$ for $f|\partial X$ becomes a transversality condition: at each zero of $g_i$ on $f^{-1}(y)$ some vector is killed by $df$ but not by $dg_i$.
+- The dimension hypotheses $\dim Z + \dim N = \dim M$ and $\dim Z' + 1 = \dim Z$ carry Milnor's $m > n$; the cylinder is the case $g_0 = t$, $g_1 = 1 - t$ on $M \times \mathbb R$.
+- Because being a manifold with boundary is local, the two ends are handled one at a time and glued, which is why disjointness of the zero sets is enough.
+
+### V4.2. Regularity at the ends of the cylinder
+
+*not in the book* · step of a proof, not a statement · needs $\dim M = \dim N$ · hypothesis on $F$ goes unused
+
+**Milnor (§4, p. 21).** The book has no statement here. In the proof of the Homotopy Lemma Milnor asserts at once that $F^{-1}(y)$ is a compact $1$-manifold whose boundary is $f^{-1}(y) \times \{0\} \cup g^{-1}(y) \times \{1\}$. The hypothesis of Lemma 4 that $y$ be regular for $F$ restricted to $\partial(M \times [0,1])$, which is where regularity for the two end maps is used, is never checked.
+
+*It is a step inside a proof rather than a statement, and the book does not isolate it.*
+
+**Proved in Lean.** Let $M$ and $N$ be manifolds without boundary of the same dimension, $M$ modelled on $E$, and let $F : M \times \mathbb R \to N$ be smooth. If $y$ is a regular value of $F$ and of the end map $F(\cdot, c)$, then at each $(x, c)$ with $F(x, c) = y$ there is a vector $v = (v_1, v_2) \in E \times \mathbb R$ with $dF_{(x,c)}v = 0$ and $v_2 \ne 0$. This is precisely the transversality hypothesis of V4.1 for $g_0 = t$ at $c = 0$ and for $g_1 = 1 - t$ at $c = 1$.
+
+- `Milnor.cylinder_transversality` — Milnor/Chapter4/Homotopy.lean, line 47
+- `Milnor.hasMFDerivAt_inl` — Milnor/Chapter4/Homotopy.lean, line 37
+
+*What differs.*
+- Nothing in the book corresponds to this: it is the unstated verification that Lemma 4 may be applied to the cylinder, isolated here as a lemma.
+- Equality of dimensions is what makes it work: the kernel of $dF_{(x,c)}$ is nontrivial by counting, and meets $T_xM \times 0$ only in $0$ because $d(F(\cdot,c))_x$ is injective.
+- The formal statement assumes $y$ regular for $F$, but the proof appeals only to regularity of the end map $F(\cdot, c)$; that hypothesis is never used.
+
+### V4.3. The Homotopy Lemma
+
+*restated* · homotopy on $M \times \mathbb R$ · Hausdorff and second countable on $M$ · even sum, not a congruence
+
+**Milnor (§4, Homotopy Lemma, p. 21).** Take two maps $f, g : M \to N$ that are smoothly homotopic, the two manifolds having equal dimension and $M$ being compact with empty boundary. Then at any $y \in N$ that is regular for each of them, the counts $\#f^{-1}(y)$ and $\#g^{-1}(y)$ have the same parity.
+
+*A smooth homotopy for him is a smooth map on $M \times [0,1]$, a manifold with boundary two copies of $M$ by the footnote on p. 20.*
+
+**Proved in Lean.** Let $M$ be a compact, Hausdorff, second countable smooth manifold without boundary and $N$ a Hausdorff smooth manifold without boundary of the same dimension. Let $F : M \times \mathbb R \to N$ be smooth, $f = F(\cdot, 0)$, $g = F(\cdot, 1)$. If $y$ is a regular value of $f$ and of $g$, then $\#f^{-1}(y) + \#g^{-1}(y)$ is even.
+
+- `Milnor.homotopy_lemma` — Milnor/Chapter4/Homotopy.lean, line 199
+- `Milnor.homotopy_lemma_of_isRegularValue` — Milnor/Chapter4/Homotopy.lean, line 88
+
+*What differs.*
+- A smooth homotopy is taken to be a smooth map on $M \times \mathbb R$, not on $M \times [0,1]$, so its domain has no boundary and Lemma 4 and Brown's theorem apply to it directly.
+- Milnor's homotopies extend to this form after reparametrizing $t$, and the level set is cut down to $M \times [0,1]$ by hand, so the two notions of smoothly homotopic agree.
+- $M$ is assumed Hausdorff and second countable and $N$ Hausdorff; second countability is used only for Brown's theorem applied to $F$ on the noncompact $M \times \mathbb R$.
+- The conclusion is the evenness of $\#f^{-1}(y) + \#g^{-1}(y)$ rather than a congruence; both fibres are finite by compactness and regularity.
+
+### V4.4. The Homogeneity Lemma
+
+*narrower* · $N$ boundaryless, all points interior · isotopy over $\mathbb R$, not $[0,1]$ · Hausdorff on $N$
+
+**Milnor (§4, Homogeneity Lemma, p. 22).** Given any two points $y$, $z$ in the interior of a smooth connected manifold $N$, some diffeomorphism $h$ of $N$ takes $y$ to $z$ and is smoothly isotopic to the identity. Smoothly isotopic in the sense defined on p. 21: joined to the identity by a smooth homotopy on $N \times [0,1]$ every stage of which is again a diffeomorphism.
+
+*He proves it by the time-one flow of a compactly supported vector field on a chart ball, remarking that for $N = \mathbb S^n$ a rotation suffices.*
+
+**Proved in Lean.** Let $N$ be a Hausdorff, preconnected smooth manifold without boundary. For any $y, z \in N$ there are a diffeomorphism $h$ of $N$ with $h(y) = z$ and a smooth map $H : N \times \mathbb R \to N$ with $H(\cdot, 0) = \mathrm{id}$, $H(\cdot, 1) = h$, and every stage $H(\cdot, t)$ a diffeomorphism of $N$.
+
+- `Milnor.isotopic_of_preconnected` — Milnor/Chapter4/Homogeneity.lean, line 261
+- `Milnor.Isotopic` — Milnor/Chapter4/Homogeneity.lean, line 142
+- `Milnor.Bump.shift` — Milnor/Chapter4/BumpDiffeo.lean, line 23
+
+*What differs.*
+- Milnor allows $N$ to have a boundary and takes $y, z$ in its interior; the formal $N$ is boundaryless, so the restriction to interior points does not arise.
+- The isotopy is a smooth map on $N \times \mathbb R$ rather than $N \times [0,1]$; that every stage is a diffeomorphism is part of the formal conclusion, as in Milnor's definition.
+- Hausdorff is assumed on $N$, used once to see that the chart image of a closed ball is closed. Preconnected also allows $N$ empty, which the given $y, z$ exclude.
+- In the proof the flow of the field $u \mapsto \varphi(u)c$ is replaced by a single Euler step, the explicit map $u \mapsto u + \varphi(u)c$ of the model space, which changes no hypothesis.
+
+### V4.5. Diffeomorphisms preserve regular values
+
+*not in the book* · unstated step of the Theorem's proof · no compactness or connectedness
+
+**Milnor (§4, p. 24).** The book has no statement here. In the proof of the Theorem Milnor writes down, without argument, that $h \circ f$ has $z$ as a regular value and that $(h \circ f)^{-1}(z) = f^{-1}(y)$, where $h$ is the diffeomorphism supplied by the Homogeneity Lemma with $h(y) = z$.
+
+*Both facts are used in a single line of the proof, and the second is presented as a computation with $h^{-1}$.*
+
+**Proved in Lean.** Let $M$, $N$ be manifolds without boundary, $f : M \to N$ smooth, $h$ a diffeomorphism of $N$, and $y$ a regular value of $f$. Then $h(y)$ is a regular value of $h \circ f$, and $(h \circ f)^{-1}(h(y)) = f^{-1}(y)$. The derivative of a diffeomorphism is surjective: the chain rule on $h^{-1} \circ h = \mathrm{id}$ makes it injective, and it is an endomorphism of the model space.
+
+- `Milnor.IsRegularValue.diffeomorph_comp` — Milnor/Chapter4/Degree.lean, line 56
+- `Milnor.surjective_mfderiv_diffeomorph` — Milnor/Chapter4/Degree.lean, line 34
+- `Milnor.preimage_diffeomorph_comp` — Milnor/Chapter4/Degree.lean, line 72
+
+*What differs.*
+- The book has no such lemma; both assertions occur inside the proof of the Theorem on p. 24 with no justification offered.
+- The formal lemma needs only that $M$ and $N$ are boundaryless and $f$ smooth: compactness of $M$, connectedness of $N$ and equality of dimensions play no part.
+
+### V4.6. Theorem of §4: independence of the value
+
+*hypotheses explicit* · Hausdorff and second countable on $M$ · Hausdorff on $N$ · even sum, not a congruence
+
+**Milnor (§4, Theorem, p. 24).** Under the standing hypotheses of the section — $M$ compact and boundaryless, $N$ connected, the two of equal dimension, $f : M \to N$ smooth — the number of preimages has the same parity at any two regular values $y$, $z$: $\#f^{-1}(y) \equiv \#f^{-1}(z) \pmod 2$.
+
+*The Theorem carries no letter and no number; its standing hypotheses on $M$ and $N$ are set out in the sentence just before it.*
+
+**Proved in Lean.** Let $M$ be a compact, Hausdorff, second countable smooth manifold without boundary, $N$ a Hausdorff, preconnected smooth manifold without boundary of the same dimension, and $f : M \to N$ smooth. If $y$ and $z$ are regular values of $f$, then $\#f^{-1}(y) + \#f^{-1}(z)$ is even.
+
+- `Milnor.even_ncard_add_ncard_of_isRegularValue` — Milnor/Chapter4/Degree.lean, line 80
+
+*What differs.*
+- $M$ is assumed Hausdorff and second countable and $N$ Hausdorff; for Milnor's submanifolds of $\mathbb R^k$ these hold automatically and are never mentioned.
+- Connectedness of $N$ is used in the weaker form of preconnectedness, which also allows $N$ empty, and the conclusion is stated as the evenness of a sum rather than a congruence.
+- Compactness of $N$ is not assumed, matching Milnor's parenthetical on p. 20 that one may as well assume it but need not.
+
+### V4.7. The degree modulo 2
+
+*restated* · chosen regular value, by choice · $0$ when no regular value exists · defined for any $f$, smooth or not
+
+**Milnor (§4, p. 24).** Having shown that the residue class is the same at every regular value, Milnor calls it $\deg_2(f)$; the name is announced already on p. 20. He does not say which regular value computes it, because by the Theorem the choice is immaterial and Sard's theorem supplies one.
+
+*The case of a map with no regular value never arises for him, since his $N$ is nonempty.*
+
+**Proved in Lean.** $\deg_2 f \in \mathbb Z/2$ is defined for an arbitrary map $f : M \to N$ as the parity of $\#f^{-1}(y_0)$ for a regular value $y_0$ picked by the axiom of choice, and as $0$ when $f$ has no regular value at all. Under the hypotheses of V4.6 the choice is immaterial: for every regular value $y$ of $f$, $\deg_2 f = \#f^{-1}(y) \bmod 2$.
+
+- `Milnor.degMod2` — Milnor/Chapter4/Degree.lean, line 109
+- `Milnor.degMod2_eq` — Milnor/Chapter4/Degree.lean, line 113
+
+*What differs.*
+- Milnor names a residue class already known to be well defined; the formal definition must produce a value first, so it chooses a regular value and proves independence afterwards.
+- The definition applies to any map whatever and returns $0$ when there is no regular value; for smooth $f$ on a second countable $M$ that happens only when $N$ is empty.
+- The count $\#f^{-1}(y)$ is the formal cardinality, which is $0$ on an infinite set; at a regular value the fibre is finite, so this never bites.
+
+### V4.8. Theorem of §4: homotopy invariance
+
+*restated* · homotopy on $M \times \mathbb R$ · Hausdorff and second countable on $M$ · empty $N$ handled separately
+
+**Milnor (§4, Theorem, p. 24).** The second assertion of the same unlettered Theorem: the common residue class $\deg_2(f)$ is unchanged when $f$ is replaced by a smoothly homotopic map. Milnor proves it by picking, with Sard's theorem, a value regular for both maps at once and chaining the congruences.
+
+*He draws from it on p. 24 that the identity of a compact boundaryless manifold is not smoothly homotopic to a constant.*
+
+**Proved in Lean.** For $M$ and $N$ as in V4.6 and any smooth $F : M \times \mathbb R \to N$, $\deg_2 F(\cdot, 0) = \deg_2 F(\cdot, 1)$. The proof takes a value regular for both ends: the regular values of the first form an open set, and those of the second are dense by Brown's theorem, so the two meet. If $N$ is empty, neither end has a regular value and both degrees are $0$.
+
+- `Milnor.degMod2_eq_of_homotopy` — Milnor/Chapter4/Degree.lean, line 141
+- `Milnor.exists_common_isRegularValue` — Milnor/Chapter4/Degree.lean, line 131
+- `Milnor.isOpen_isRegularValue` — Milnor/Chapter4/Degree.lean, line 123
+
+*What differs.*
+- The homotopy is a smooth map on $M \times \mathbb R$ rather than $M \times [0,1]$, and the two maps compared are named as its ends $F(\cdot, 0)$ and $F(\cdot, 1)$.
+- $M$ is assumed Hausdorff and second countable and $N$ Hausdorff and preconnected; Milnor's manifolds have these properties by sitting in $\mathbb R^k$.
+- An empty $N$ is a separate case, forced by the convention of V4.7 that a map with no regular value has degree $0$.
+
+### V4.9. Nonzero degree forces surjectivity
+
+*not in the book* · not stated in the book · vacuous regularity off the image
+
+**Milnor (§4, p. 20).** The book states no such corollary. The nearest thing is the parenthetical aside made while the section is being set up, that nothing is lost by taking $N$ compact and boundaryless, because a degree into any other target is forced to vanish. That aside is this fact applied to a point missed by the compact image of $M$.
+
+*The examples he does draw on p. 24 concern the degree of a constant and of the identity, not surjectivity.*
+
+**Proved in Lean.** For $M$, $N$ and $f$ as in V4.6, if $\deg_2 f \ne 0$ then $f$ is surjective. A point outside the image is vacuously a regular value with empty fibre, so it computes $\deg_2 f = 0$.
+
+- `Milnor.surjective_of_degMod2_ne_zero` — Milnor/Chapter4/Degree.lean, line 166
+- `Milnor.degMod2_eq_zero_of_notMem_range` — Milnor/Chapter4/Degree.lean, line 155
+
+*What differs.*
+- No such corollary appears in §4; the closest sentence is the parenthetical on p. 20 that a mod 2 degree into a noncompact $N$ must vanish.
+- The argument is that a point not in the image is a regular value with empty fibre, so V4.7 computes the degree there as $0$.
+
+## Chapter 5
+
+*Milnor §5, pp. 26–31: oriented manifolds and the Brouwer degree*
+
+### V5.0. Orientations and the sign of a derivative
+
+*restated* · orientation as a ray of top forms · compatibility read in the charts · sign defined for every linear map
+
+**Milnor (§5, Definitions, pp. 26–27).** An orientation of a finite-dimensional real vector space is an equivalence class of ordered bases, two of them equivalent when the change-of-basis determinant is positive; for the zero space an orientation is the symbol $+1$ or $-1$. An oriented manifold carries an orientation of each $T_xM$, and for $m \ge 1$ these must fit together: around every point there is a diffeomorphism onto an open subset of $\mathbb R^m$ or $\mathbb H^m$ whose derivative carries each chosen orientation to the standard orientation of $\mathbb R^m$. For $f : M \to N$ between oriented $n$-manifolds and $x$ a regular point, $\operatorname{sign} df_x$ is $+1$ or $-1$ according as $df_x$ preserves or reverses orientation.
+
+*He admits boundary from the start, so a chart may land in the half space $\mathbb H^m$, and he fixes the standard orientation of $\mathbb R^n$ to have something to compare with.*
+
+**Proved in Lean.** An orientation of a finite-dimensional $E$ is a ray of nonzero alternating $n$-forms, the class of the determinant form of a positive basis. For a linear $T : E \to F$ and orientations $a$ of $E$, $b$ of $F$, the sign is the sign of the constant $c$ in $\eta \circ T = c\,\omega$ for representatives $\omega$ of $a$ and $\eta$ of $b$; it is $0$ exactly when $T$ is singular, it is multiplicative under composition and equals $1$ for the identity. An orientation of a manifold $M$ modelled on $E$ is a choice of orientation $o_x$ of $E = T_xM$ at each $x$ such that, for every $x$, the derivative at all nearby $y$ of the extended chart at $x$ carries $o_y$ to $o_x$. The sign of $f$ at $x$ is the sign of $df_x$ for $o_x$ and $o_{f(x)}$, and $M \times \mathbb R$ is oriented by declaring a positive basis of $E$ followed by $(0,1)$ positive.
+
+- `Milnor.Orient` — Milnor/Chapter5/Orient.lean, line 48
+- `Milnor.signAt` — Milnor/Chapter5/Orient.lean, line 55
+- `Milnor.orSign` — Milnor/Chapter5/OrSign.lean, line 133
+- `Milnor.Orient.prodReal` — Milnor/Chapter5/Orient.lean, line 207
+
+*What differs.*
+- Milnor's orientation of a space is a class of ordered bases; the formal one is a ray of nonzero alternating $n$-forms, the class of the determinant form of a positive basis.
+- Milnor asks for charts onto $\mathbb R^m$ or $\mathbb H^m$ carrying the chosen orientations to the standard one; the formal condition compares $o_y$ with $o_x$ through the chart at $x$ alone.
+- Milnor defines the sign only at a regular point, where it is $\pm 1$; the formal sign is defined for every linear map and is $0$ exactly when the map is singular.
+- The dimension $n$ is a parameter of the formal definition, so each theorem carries $\dim E = n$ as a hypothesis; there is no oriented atlas and no standard orientation of a model space.
+
+### V5.1. Local constancy of the sign of the derivative
+
+*not in the book* · stated only in the formalization · variant for f smooth on an open set
+
+**Milnor (§5, p. 27).** The book states nothing here. On p. 27 Milnor asserts that $\deg(f;y)$ is a locally constant function of $y$, and in that assertion the local constancy of $\operatorname{sign} df_x$ in $x$ near a regular point is used without comment.
+
+**Proved in Lean.** Let $M$ and $N$ be smooth manifolds without boundary modelled on $E$ and $F$ with $\dim E = \dim F = n$, both oriented, let $f : M \to N$ be smooth and $x_0$ a regular point. Then $\operatorname{sign} df_x = \operatorname{sign} df_{x_0}$ for all $x$ in a neighbourhood of $x_0$. A variant assumes $f$ smooth only on an open set containing $x_0$.
+
+- `Milnor.eventually_signAt_eq` — Milnor/Chapter5/Orient.lean, line 197
+- `Milnor.eventually_signAt_eq_of_contMDiffOn` — Milnor/Chapter5/Orient.lean, line 113
+- `Milnor.eventually_orSign_eq_of_continuousAt` — Milnor/Chapter5/Orient.lean, line 77
+
+*What differs.*
+- Milnor never states this; it is the step behind his remark that the signed count is locally constant, and its proof is the chain rule in charts with the continuity of a determinant.
+- The open-set variant, where $f$ is smooth only near $x_0$, is what Lemma 1 needs for the pair maps built from a local coordinate along an arc.
+
+### V5.2. The signed count deg(f; y) and its local constancy
+
+*hypotheses explicit* · M and N Hausdorff · count defined at every y · density of regular values not included
+
+**Milnor (§5, p. 27).** For $M$ compact and $N$ connected, oriented $n$-manifolds without boundary, and $y$ a regular value of a smooth $f : M \to N$, the degree at $y$ is $\deg(f;y) = \sum_{x \in f^{-1}(y)} \operatorname{sign} df_x$. As in §1, this integer is a locally constant function of $y$, and it is defined on a dense open subset of $N$.
+
+*He asserts the local constancy in a single sentence, with a reference back to §1 and no proof.*
+
+**Proved in Lean.** $\deg(f;y)$ is defined at every $y$ as the finite sum of $\operatorname{sign} df_x$ over $f^{-1}(y)$, with the convention that a sum having infinitely many nonzero terms is $0$. If $M$ is compact and Hausdorff, $N$ Hausdorff, $\dim E = \dim F = n$, both oriented and without boundary, $f$ smooth and $y$ a regular value, then $\deg(f;y') = \deg(f;y)$ for every $y'$ near $y$, regular or not. Outside the range of $f$ the count is $0$.
+
+- `Milnor.degAt` — Milnor/Chapter5/DegreeAt.lean, line 25
+- `Milnor.IsRegularValue.eventually_degAt_eq` — Milnor/Chapter5/DegreeAt.lean, line 30
+- `Milnor.degAt_of_notMem_range` — Milnor/Chapter5/DegreeAt.lean, line 39
+
+*What differs.*
+- The formal statement names $M$ and $N$ Hausdorff, automatic for Milnor's submanifolds of $\mathbb R^k$; compactness of $M$ he assumes himself, and connectedness of $N$ is not needed here.
+- The formal count is defined at every $y$, not only at a regular value, and the local constancy is asserted for all nearby $y'$ rather than for nearby regular values.
+- Milnor's second claim, that the degree is defined on a dense open subset of $N$, is Sard's theorem and is not part of this item.
+
+### V5.3. Lemma 1 of §5, in ambient form
+
+*restated* · boundary presented as {g ≥ 0} · signs of the ambient pair map (f, g) · y regular for f on all of M′
+
+**Milnor (§5, Lemma 1, p. 28).** Let $X$ be a compact oriented manifold with boundary, $M = \partial X$ oriented as the boundary of $X$, and $N$ an oriented $n$-manifold. If $f : M \to N$ extends to a smooth $F : X \to N$, then $\deg(f;y) = 0$ for every regular value $y$ of $f$.
+
+*He proves it first for a $y$ regular for $F$ as well, then reaches a general regular value of $f$ by the local constancy of the count; the arc $A \subseteq F^{-1}(y)$ is oriented by a rule on positive bases of $TX_x$, after which the two end signs "follow immediately".*
+
+**Proved in Lean.** Let $M'$ be a Hausdorff oriented $(n{+}1)$-manifold without boundary, $N$ a Hausdorff oriented $n$-manifold without boundary, $f : M' \to N$ smooth with $y$ a regular value, and $g : M' \to \mathbb R$ smooth, so that $X = \{g \ge 0\}$ and $\partial X = \{g = 0\}$. Assume $f^{-1}(y) \cap X$ compact and that at each $x \in f^{-1}(y) \cap \{g = 0\}$ some $v$ has $df_x v = 0$ and $dg_x v \ne 0$. Then $f^{-1}(y) \cap \{g = 0\}$ is finite and $$\sum_{x \in f^{-1}(y) \cap \{g = 0\}} \operatorname{sign} d(f,g)_x = 0,$$ the signs taken for the orientation of $M'$ and the product orientation of $N \times \mathbb R$.
+
+- `Milnor.lemmaOne_ambient` — Milnor/Chapter5/LemmaOne.lean, line 136
+- `Milnor.lemmaOne_ambient'` — Milnor/Chapter5/LemmaOne.lean, line 42
+- `Milnor.bdrySign_end_eq_neg` — Milnor/Chapter5/ArcSign.lean, line 192
+
+*What differs.*
+- Milnor's $X$ is an abstract compact oriented manifold with boundary; the formal $X$ is the region $\{g \ge 0\}$ inside a boundaryless $M'$, and only $f^{-1}(y) \cap X$ is assumed compact.
+- The boundary sign is that of the ambient pair map $(f,g)$; it differs from the sign for Milnor's boundary orientation by $(-1)^{n+1}$, which leaves the vanishing intact.
+- The formal $y$ must be a regular value of $f$ on all of $M'$, so this is Milnor's first case; his passage to a $y$ that is critical for $F$ is carried out inside V5.4 instead.
+- $0$ need not be a regular value of $g$: only the transversality at the points of $f^{-1}(y) \cap \{g = 0\}$ is required, which is Milnor's "$y$ is a regular value of $f|\partial X$".
+
+### V5.4. Lemma 2 of §5: homotopy at a common regular value
+
+*hypotheses explicit* · homotopy defined on all of M × ℝ · M second countable, N Hausdorff · N need not be connected
+
+**Milnor (§5, Lemma 2, p. 29).** Let $F : [0,1] \times M \to N$ be a smooth homotopy between $f = F(0,\cdot)$ and $g = F(1,\cdot)$, with $M$ compact and $M$, $N$ oriented $n$-manifolds without boundary. Then $\deg(g;y) = \deg(f;y)$ for any common regular value $y$.
+
+*He deduces it from Lemma 1 for the oriented product $[0,1] \times M$, whose boundary is $1 \times M$ with the right orientation and $0 \times M$ with the wrong one, so that the boundary degree is the difference of the two counts.*
+
+**Proved in Lean.** Let $M$ be compact, Hausdorff and second countable, $N$ Hausdorff, both oriented and without boundary with $\dim E = \dim F = n$ and $E$, $F$ in one universe. Let $F : M \times \mathbb R \to N$ be smooth, $f = F(\cdot,0)$, $g = F(\cdot,1)$, and let $y$ be a regular value of both. Then $\deg(f;y) = \deg(g;y)$.
+
+- `Milnor.degAt_eq_of_homotopy` — Milnor/Chapter5/HomotopyInv.lean, line 158
+- `Milnor.degAt_eq_of_homotopy_of_isRegularValue` — Milnor/Chapter5/HomotopyInv.lean, line 59
+
+*What differs.*
+- The formal homotopy is smooth on $M \times \mathbb R$, not on $[0,1] \times M$; under Milnor's convention his $F$ already extends smoothly to a neighbourhood of the cylinder.
+- Second countability of $M$ is named because the reduction from a common regular value of $f$ and $g$ to a regular value of the homotopy goes through Sard and Brown.
+- Hausdorffness of $M$ and $N$ is named; connectedness of $N$, which Milnor assumes when he introduces the degree, is nowhere used at a fixed regular value.
+- The cylinder is realized as $\{t(1-t) \ge 0\}$ in $M \times \mathbb R$, the sign of $(F, t(1-t))$ being $\operatorname{sign} df_x$ at $t = 0$ and $-\operatorname{sign} dg_x$ at $t = 1$.
+
+### V5.5. An isotopy of the identity preserves orientation
+
+*restated* · asserted without proof in the book · isotopy data repeated in the conclusion · N Hausdorff assumed but unused
+
+**Milnor (§5, p. 29).** In the proof of Theorems A and B he chooses a diffeomorphism $h : N \to N$ carrying the regular value $y$ to the regular value $z$ and isotopic to the identity, and says that $h$ will then preserve orientation.
+
+*The claim occupies half a sentence and is given no argument; it rests on his notion of isotopy as a homotopy through diffeomorphisms.*
+
+**Proved in Lean.** Let $N$ be a Hausdorff smooth manifold without boundary modelled on $F$ with $\dim F = n$ and oriented, and suppose $y$ and $z$ are isotopic, that is, there are a diffeomorphism $h$ of $N$ and a smooth $H : N \times \mathbb R \to N$ with $H(\cdot,0)$ the identity, $H(\cdot,1) = h$, $h(y) = z$ and every stage $H(\cdot,t)$ a diffeomorphism. Then such $h$ and $H$ can be chosen with the further property $\operatorname{sign} dh_x = 1$ at every $x$.
+
+- `Milnor.exists_isotopy_signAt_eq_one` — Milnor/Chapter5/Degree.lean, line 54
+- `Milnor.signAt_prodReal` — Milnor/Chapter5/Orient.lean, line 241
+- `Milnor.signAt_id` — Milnor/Chapter5/Degree.lean, line 33
+
+*What differs.*
+- Milnor's sentence is an aside inside a proof; here it is a theorem, proved by the local constancy in $t$ of the sign of $(x,t) \mapsto (H(x,t),t)$ and its value $1$ at $t = 0$.
+- The formal statement hands back the whole isotopy together with the sign, because the proof of Theorem A reuses $H$ as the homotopy from $f$ to $h \circ f$.
+- That every stage is a diffeomorphism, implicit in Milnor's word "isotopic", is carried explicitly and is what makes the sign nonzero for all $t$.
+- The formal statement assumes $N$ Hausdorff, a hypothesis the proof never uses.
+
+### V5.6. Theorem A: independence of the regular value
+
+*hypotheses explicit* · M Hausdorff and second countable · N preconnected, so possibly empty
+
+**Milnor (§5, Theorem A, p. 27).** For $M$ compact and $N$ connected, oriented $n$-manifolds without boundary, and $f : M \to N$ smooth, the integer $\deg(f;y)$ does not depend on the choice of regular value $y$.
+
+*He proves it as in §4: move $y$ to $z$ by a diffeomorphism isotopic to the identity, note $\deg(f;y) = \deg(h \circ f; h(y))$ "by inspection", then apply Lemma 2.*
+
+**Proved in Lean.** Let $M$ be compact, Hausdorff and second countable, $N$ Hausdorff and preconnected, both oriented and without boundary with $\dim E = \dim F = n$ and $E$, $F$ in one universe, and let $f : M \to N$ be smooth. Then $\deg(f;y) = \deg(f;z)$ for any two regular values $y$ and $z$.
+
+- `Milnor.degAt_eq_of_isRegularValue` — Milnor/Chapter5/Degree.lean, line 113
+- `Milnor.signAt_comp` — Milnor/Chapter5/Degree.lean, line 39
+
+*What differs.*
+- Hausdorffness and second countability of $M$ are named: the first for the finiteness of the fibres, the second for Brown's theorem inside Lemma 2.
+- Connectedness of $N$ is weakened to preconnectedness, so an empty $N$ is allowed and the statement is then vacuous.
+- Milnor's step $\deg(f;y) = \deg(h \circ f; h(y))$, which he calls inspection, is here the multiplicativity of the sign under composition together with V5.5.
+
+### V5.7. The Brouwer degree and Theorem B
+
+*hypotheses explicit* · degree total, 0 when N is empty · regular value picked by choice · surjectivity added, not in the book
+
+**Milnor (§5, Theorem B, p. 27).** The common value of $\deg(f;y)$ over the regular values is the degree of $f$, written $\deg f$. Theorem B: if $f$ is smoothly homotopic to $g$, then $\deg f = \deg g$.
+
+*He illustrates with $z \mapsto z^k$ on the circle, with degree $0$ for a constant map and $\pm 1$ for a diffeomorphism, and concludes that an orientation reversing diffeomorphism is not homotopic to the identity.*
+
+**Proved in Lean.** $\deg f$ is defined for every smooth $f$ as $\deg(f;y)$ at a regular value $y$ chosen by the axiom of choice, and as $0$ when no regular value exists. For $M$ compact, Hausdorff and second countable, $N$ Hausdorff and preconnected, both oriented and without boundary of dimension $n$, it equals $\deg(f;y)$ at every regular value. If $F : M \times \mathbb R \to N$ is smooth then $F(\cdot,0)$ and $F(\cdot,1)$ have the same degree, with no common regular value assumed; a map of nonzero degree is surjective, and the identity has degree $1$.
+
+- `Milnor.deg_eq_of_homotopy` — Milnor/Chapter5/Degree.lean, line 160
+- `Milnor.deg` — Milnor/Chapter5/Degree.lean, line 147
+- `Milnor.deg_eq` — Milnor/Chapter5/Degree.lean, line 151
+- `Milnor.surjective_of_deg_ne_zero` — Milnor/Chapter5/Degree.lean, line 183
+
+*What differs.*
+- The formal $\deg f$ is a total function, defined with no hypotheses by choosing a regular value; the theorems then add compactness, Hausdorffness, second countability and preconnectedness.
+- Its value is $0$ when $f$ has no regular value, which under those hypotheses happens only for $N$ empty, the one case Milnor's connectedness excludes.
+- Homotopy invariance needs no common regular value in the formal statement: one is produced by Sard applied to the two ends of the homotopy.
+- That a map of nonzero degree is surjective has no counterpart in §5; Milnor there only remarks that a constant map has degree $0$.
+
+### V5.8. The boundary orientation of a level set
+
+*narrower* · only level sets in a vector space · outward vector given by a formula · continuity proved, not assumed
+
+**Milnor (§5, p. 26).** An orientation of $X$ induces one on $\partial X$: at $x \in \partial X$ take a positively oriented basis $(v_1,\dots,v_m)$ of $TX_x$ with $v_2,\dots,v_m$ tangent to the boundary and $v_1$ an outward vector; then $(v_2,\dots,v_m)$ is a positive basis of $T(\partial X)_x$. For $m = 1$ a boundary point gets $-1$ or $+1$ according as a positive vector there points inward or outward.
+
+*He leaves unmentioned that the rule is independent of the chosen basis and varies continuously, and gives $\mathbb S^{m-1}$ oriented as $\partial \mathbb D^m$ as his example.*
+
+**Proved in Lean.** Let $E$ be an oriented real space of dimension $n+1$, $g : E \to \mathbb R$ smooth with $0$ a regular value, and $S = g^{-1}(0)$, a submanifold modelled on an $n$-dimensional space $Z$. Put $\nu(q) = -\sum_i dg_q(e_i)\,e_i$ for a reference basis $e$ of $E$, a vector with $dg_q(\nu(q)) < 0$. A basis $z$ of $T_qS$ is declared positive when $(\nu(q), d\iota_q z)$ is a positive basis of $E$; this is proved to be an orientation of $S$ in the sense of V5.0, and it does not depend on the form chosen to represent the orientation of $E$.
+
+- `Milnor.levelOrient` — Milnor/Chapter5/LevelOrient.lean, line 342
+- `Milnor.levelOrient_cont` — Milnor/Chapter5/LevelOrient.lean, line 155
+- `Milnor.contractOr` — Milnor/Chapter5/LevelOrient.lean, line 71
+- `Milnor.outward` — Milnor/Chapter5/LevelOrient.lean, line 116
+
+*What differs.*
+- Milnor orients $\partial X$ for any oriented manifold with boundary; the formal construction covers only $S = g^{-1}(0)$ inside an oriented vector space, that is, the boundary of $\{g \ge 0\}$.
+- Milnor's $v_1$ is any outward vector; the formal one is the fixed $\nu(q) = -\sum_i dg_q(e_i)e_i$, and separate lemmas show that any $w$ with $dg_q(w) < 0$ gives the same orientation.
+- Milnor takes for granted that his rule defines an orientation; the formal item includes the proof that it varies continuously in the sense of V5.0.
+- The regions of $\mathbb R^m$ and the spheres that the book actually orients this way are all level sets in a vector space, so the restriction costs nothing in §§5–8.
+
+### V5.9. The degree of the antipodal map
+
+*stronger* · sign computed at every point · sphere oriented from an arbitrary basis · outward vector points into the ball
+
+**Milnor (§5, p. 30).** The antipodal map of $\mathbb S^n$ has degree $(-1)^{n+1}$, since it is the composition of the $n+1$ coordinate reflections $r_i$, each of degree $-1$. Hence for $n$ even the antipodal map is not smoothly homotopic to the identity, a fact the degree modulo $2$ does not see.
+
+*The sphere carries the orientation fixed on the preceding page, as the boundary of the disk $\mathbb D^{n+1}$.*
+
+**Proved in Lean.** Give $\mathbb S^n \subseteq \mathbb R^{n+1}$ the submanifold structure of the level set $\langle x,x \rangle - 1 = 0$ and the level-set orientation of V5.8 for the orientation of $\mathbb R^{n+1}$ coming from a reference basis. Then $\operatorname{sign} d\alpha_q = (-1)^{n+1}$ at every $q$ and for every $n \ge 0$, where $\alpha(x) = -x$; and for $n \ge 1$, where $\mathbb S^n$ is connected, $\deg \alpha = (-1)^{n+1}$.
+
+- `Milnor.Sphere.deg_antip` — Milnor/Chapter5/HairyBall.lean, line 265
+- `Milnor.Sphere.signAt_antip` — Milnor/Chapter5/HairyBall.lean, line 163
+- `Milnor.Sphere.sphOr` — Milnor/Chapter5/HairyBall.lean, line 114
+
+*What differs.*
+- The formal statement first gives the sign of $d\alpha$ at every point and for every $n \ge 0$; the degree, for $n \ge 1$, then follows because $\alpha^{-1}(y) = \{-y\}$.
+- Milnor factors $\alpha$ into $n+1$ reflections; the formal proof reads the sign off the contracted form, using $\nu(-q) = -\nu(q)$ and $d\iota_{-q} \circ d\alpha_q = -d\iota_q$.
+- The orientation is that of V5.8 for a basis of $\mathbb R^{n+1}$ chosen by the axiom of choice, and $\{\langle x,x \rangle \ge 1\}$ is the exterior of the ball, so its "outward" vector points inward.
+- It is therefore Milnor's orientation of $\mathbb S^n = \partial \mathbb D^{n+1}$ or its opposite, and the text does not decide which; the degree is unaffected, being taken between two copies of it.
+
+### V5.10. The hairy ball theorem and its converse
+
+*narrower* · n > 0 assumed in the even half · field splits the coordinates in halves
+
+**Milnor (§5, p. 30).** Following Brouwer, $\mathbb S^n$ admits a smooth field of nonzero tangent vectors if and only if $n$ is odd; a tangent field on $\mathbb S^n$ is a smooth $v : \mathbb S^n \to \mathbb R^{n+1}$ with $v(x) \cdot x = 0$. For $n$ even a nowhere-zero $v$, normalized to unit length, would give the homotopy $F(x,\theta) = x \cos\theta + v(x) \sin\theta$ from the identity to the antipodal map, which the degree forbids; for $n = 2k-1$ an explicit field pairing the coordinates in twos has no zero.
+
+*He notes in passing that for $n$ odd the antipodal map is therefore homotopic to the identity, and points to Hopf's theorem, proved in §7.*
+
+**Proved in Lean.** For $n$ even and positive, every smooth $v : \mathbb S^n \to \mathbb R^{n+1}$ with $\langle q, v(q) \rangle = 0$ for all $q$ vanishes somewhere: otherwise $(q,t) \mapsto \cos(\pi t)\,q + \sin(\pi t)\,v(q)/|v(q)|$ is a smooth homotopy in $\mathbb S^n$ from the identity to the antipodal map, whose degrees $1$ and $-1$ would have to agree. Conversely, for $n$ odd, writing $n+1 = 2(m+1)$ and $x = (a,b)$ with $a$ and $b$ the two halves of the coordinates, the field $(a,b) \mapsto (b,-a)$ is smooth, tangent and nowhere zero.
+
+- `Milnor.Sphere.hairy_ball` — Milnor/Chapter5/HairyBall.lean, line 282
+- `Milnor.Sphere.exists_nonvanishing_field` — Milnor/Chapter5/HairyBall.lean, line 343
+
+*What differs.*
+- Milnor states the equivalence for every $n$; the formal even half assumes $n > 0$ as well, so $\mathbb S^0$, where every tangent field vanishes for trivial reasons, is not covered.
+- Milnor's field for odd $n$ pairs adjacent coordinates; the formal one splits the coordinates into two halves, $(a,b) \mapsto (b,-a)$, the two differing by a permutation of coordinates.
+- The rotation is parametrized by $t \in \mathbb R$ with angle $\pi t$, so that the homotopy is defined on $\mathbb S^n \times \mathbb R$ rather than on $\mathbb S^n \times [0,\pi]$.
+- Milnor's theorem, like the formal one, is about smooth fields; the continuous case, which follows by approximation, is not formalized.
+
+## Chapter 6
+
+*Milnor §6, pp. 32–40: vector fields, the index, the Euler number*
+
+### V6.0. The index of a zero of a vector field
+
+*restated* · field smooth on the whole space · degree taken on the unit sphere · index 0 at a non-isolated zero
+
+**Milnor (§6, p. 32).** For an open $U \subseteq \mathbb R^m$ and a smooth $v : U \to \mathbb R^m$ with an isolated zero at $z$, the normalized field $\bar v = v/\|v\|$ carries a small sphere about $z$ into the unit sphere, and the degree of that map is the *index* $\iota$ of $v$ at $z$. Each sphere is oriented as the boundary of the corresponding disk. Which small radius is meant is not said; the independence is left to homotopy invariance of the degree.
+
+*He introduces the index through pictures (Figure 12) and through the plane fields $z^k$ and $\bar z^k$, and never states the independence of the radius, or the invariance under a homotopy without zeros on the sphere, as a lemma.*
+
+**Proved in Lean.** Let $m = n+1$ with $n \ge 1$. For a smooth $v : \mathbb R^{n+1} \to \mathbb R^{n+1}$ and a radius $r$ such that $v(z) = 0$ and $v$ has no other zero in the closed $r$-ball, the index at a radius $0 < \varepsilon \le r$ is the degree of $u \mapsto v(z + \varepsilon u)/|v(z + \varepsilon u)|$ from the unit sphere $S^n$ to itself, both copies carrying the orientation of V5.9. This degree is the same for all such $\varepsilon$, so the index of $v$ at $z$ is defined by choosing one admissible radius, and is set to $0$ when none exists. It is unchanged by a smooth homotopy of $v$ that leaves no zero on the $\varepsilon$-sphere, and it depends only on the germ of $v$ at $z$.
+
+- `Milnor.Sphere.indexAt` — Milnor/Chapter6/Index.lean, line 81
+- `Milnor.Sphere.index` — Milnor/Chapter6/Index.lean, line 145
+- `Milnor.Sphere.IsolatedZero` — Milnor/Chapter6/Index.lean, line 86
+- `Milnor.Sphere.indexAt_eq_of_radii` — Milnor/Chapter6/Index.lean, line 106
+
+*What differs.*
+- Milnor's $v$ lives on an open $U \subseteq \mathbb R^m$; the formal $v$ is smooth on all of $\mathbb R^{n+1}$, which loses nothing since a local field agrees with a global one near a compact set.
+- The source of the degree is the unit sphere reparametrized by $u \mapsto z + \varepsilon u$, not the sphere of radius $\varepsilon$ about $z$; the affine identification carries the orientation across.
+- Milnor orients each sphere as the boundary of its disk; the formal spheres carry the opposite convention, but the same one at source and at target, so the integer is his.
+- Independence of the radius is proved and needs $n \ge 1$; the index is defined to be $0$ when $z$ is not an isolated zero, a case Milnor excludes by hypothesis.
+
+### V6.1. Lemma 1 of §5 for a level set in a manifold
+
+*restated* · $X$ presented as $\{g \ge 0\}$ · $f$ smooth only on an open $U$ · transversality assumed, not derived
+
+**Milnor (§5, Lemma 1, p. 28).** Let $M$ be the boundary of a compact oriented manifold $X$, oriented as the boundary of $X$. If $f : M \to N$ extends to a smooth $F : X \to N$, then $\deg(f; y) = 0$ for every regular value $y$.
+
+*This is the lemma on which every degree computation of §6 rests; there it is applied to a region with small balls removed and to $f = v/|v|$, which is defined only where $v \ne 0$.*
+
+**Proved in Lean.** The level-set orientation of V5.8 is carried from a vector space to any oriented $(n+1)$-manifold $M$ with charts in $E$: for a smooth $g : M \to \mathbb R$ with $0$ a regular value, $g^{-1}(0)$ is oriented by an outward vector $w$ with $dg(w) < 0$ first, followed by a positive basis of the tangent space, and this is continuous in charts. At a point of $g^{-1}(0)$ the sign of $f|g^{-1}(0)$ for this orientation is $(-1)^{n+1}$ times the sign of the pair map $(f, g)$. Milnor's lemma then reads: for $M$ and $N$ Hausdorff, $N$ an oriented boundaryless $n$-manifold, $f$ smooth on an open $U \supseteq g^{-1}(0)$, $y$ a regular value of $f|U$, the transversality condition of V2.6 holding at each point of $f^{-1}(y) \cap g^{-1}(0)$, and $f^{-1}(y) \cap \{g \ge 0\} \cap U$ compact, the set $f^{-1}(y) \cap g^{-1}(0)$ is finite and $\deg(f|g^{-1}(0); y) = 0$.
+
+- `Milnor.degAt_level_eq_zero_of_opens` — Milnor/Chapter6/LevelZero.lean, line 179
+- `Milnor.levelOrientM` — Milnor/Chapter6/LevelOrientM.lean, line 393
+- `Milnor.signAt_levelOrientM_eq'` — Milnor/Chapter6/LevelSignM.lean, line 37
+- `Milnor.exists_mfd_eq_zero_of_isRegularPoint_level` — Milnor/Chapter6/LevelZero.lean, line 136
+
+*What differs.*
+- Milnor's $X$ is an abstract compact oriented manifold with boundary; here $X = \{g \ge 0\}$ sits inside a boundaryless $M$ and $\partial X$ is the level set $g^{-1}(0)$.
+- Compactness is required of $f^{-1}(y) \cap \{g \ge 0\} \cap U$ rather than of $X$, because the application has $f = v/|v|$, smooth only on the open set where $v \ne 0$.
+- The hypothesis at the points of $f^{-1}(y) \cap g^{-1}(0)$ is the transversality condition of V2.6; that regularity of $y$ for $f|g^{-1}(0)$ implies it is proved as a separate lemma.
+- The boundary signs are read through the ambient pair map $(f, g)$, which differs from the level-set sign by the factor $(-1)^{n+1}$.
+
+### V6.2. Sign of a map between two level sets
+
+*not in the book* · tool for the sign computations · replaces Milnor's isotopies
+
+**Milnor (no counterpart in the book).** The book has no such lemma. Where a degree has to be moved from one hypersurface to another, Milnor deforms the map instead: in §6 he compares the index before and after a diffeomorphism by an isotopy (Lemma 2), and inside the proof of Lemma 3 he homotopes $\bar v|\partial X$ to the Gauss map.
+
+**Proved in Lean.** Let $M$ and $M'$ be oriented manifolds with charts in $E$, let $G : M \to \mathbb R$ and $G' : M' \to \mathbb R$ be smooth with $0$ a regular value of each, and let $\Phi : M \to M'$ be smooth along $G^{-1}(0)$, differentiable at $q \in G^{-1}(0)$, and carry $G^{-1}(0)$ into $G'^{-1}(0)$. If $dG'_{\Phi(q)} \circ d\Phi_q = c\, dG_q$ for some $c \ne 0$, then the sign at $q$ of the restricted map $G^{-1}(0) \to G'^{-1}(0)$, both level sets carrying the orientation of V6.1, equals $\operatorname{sgn}(c)$ times the sign of $\Phi$ at $q$ for the ambient orientations.
+
+- `Milnor.signAt_levelOrientM_map'` — Milnor/Chapter6/LevelMap.lean, line 231
+
+*What differs.*
+- No counterpart in the book: it is what lets every degree of §6 be transported along an explicit map — the inclusion of a component, the affine map $u \mapsto z + \varepsilon u$, a diffeomorphism.
+- It is used three times in the proof of the region lemma and twice in the proof of Lemma 1 of §6, where it takes the place of Milnor's Lemma 2.
+- Its proof is the contracted-form calculus of V5.8: the pullback of the outward vector is a positive multiple of the outward vector plus a tangent vector, and the tangent part drops out.
+
+### V6.3. Index sum over a region as a boundary degree
+
+*restated* · region presented as $\{G \ge 0\}$ · one common radius for all balls · the $z_i$ need not be zeros
+
+**Milnor (§6, p. 36).** In the proof of Lemma 3 Milnor removes an $\varepsilon$-ball around each zero of $v$, obtaining a manifold with boundary on which $\bar v = v/\|v\|$ is defined. The degrees of $\bar v$ over the boundary components then add to zero; since each small sphere gets the wrong orientation, the degree over $\partial X$ equals the index sum.
+
+*He states this only as a step inside a proof, and leaves implicit the choice of a common regular value of $\bar v$ on the several boundary components.*
+
+**Proved in Lean.** Let $X = \{G \ge 0\}$ be compact for a smooth $G : \mathbb R^{n+1} \to \mathbb R$ with $n \ge 1$ and $0$ a regular value, let $\varepsilon > 0$ and $z_1, \dots, z_k$ satisfy $G > 0$ on every closed ball $\bar B_\varepsilon(z_i)$ and $2\varepsilon < |z_i - z_j|$ for $i \ne j$, and let every zero of the smooth field $v$ in $X$ be one of the $z_i$. Then the sum over $i$ of the indices of $v$ at $z_i$, each taken at the radius $\varepsilon$, equals the degree of $v/|v| : \partial X \to S^n$, where $\partial X = G^{-1}(0)$ carries the orientation of V6.1 reversed.
+
+- `Milnor.Sphere.sum_indexAt_eq_deg` — Milnor/Chapter6/Region.lean, line 273
+- `Milnor.isOpen_regularValues` — Milnor/Chapter6/RegularOpen.lean, line 64
+
+*What differs.*
+- Milnor's $X$ is any compact manifold with boundary in $\mathbb R^m$; the formal $X$ is $\{G \ge 0\}$ for a globally smooth $G$ with $0$ a regular value, and $\partial X$ is $G^{-1}(0)$.
+- All the balls share one radius $\varepsilon$, disjointness is the explicit inequality $2\varepsilon < |z_i - z_j|$, and the indices are all taken at that same radius.
+- The hypothesis is only that every zero of $v$ in $X$ is among the $z_i$, so the $z_i$ themselves need not be zeros; a point where $v \ne 0$ contributes $0$ to the sum.
+- The common regular value of $v/|v|$ on $\partial X$ and on the $k$ spheres exists because regular values of a map with compact domain are open and dense and $S^n$ is a Baire space.
+
+### V6.4. Lemma 3 of §6, Hopf's lemma
+
+*restated* · region presented as $\{G \ge 0\}$ · outward means $dG(v) < 0$ · isolated zeros replaced by $k$ balls
+
+**Milnor (§6, Lemma 3, p. 35).** Let $X \subseteq \mathbb R^m$ be a compact $m$-manifold with boundary and let the Gauss map $g : \partial X \to S^{m-1}$ send a boundary point to the outward unit normal there. If a smooth vector field $v$ on $X$ has isolated zeros and points out of $X$ along the boundary, the index sum $\sum \iota$ equals the degree of $g$; in particular it does not depend on the choice of $v$.
+
+*The proof is one paragraph: remove small balls, apply Lemma 1 of §5, and note that $\bar v|\partial X$ is homotopic to $g$.*
+
+**Proved in Lean.** Under the hypotheses of the region lemma — $X = \{G \ge 0\}$ compact, $0$ a regular value of the smooth $G$, pairwise disjoint closed $\varepsilon$-balls about $z_1, \dots, z_k$ inside $\{G > 0\}$ containing every zero of $v$ in $X$ — suppose in addition that $dG_x(v(x)) < 0$ at every $x$ of $\partial X = G^{-1}(0)$. Then the sum of the indices of $v$ at the $z_i$ equals the degree of the Gauss map $x \mapsto -\nabla G(x)/|\nabla G(x)|$ of $\partial X$, an expression in which $v$ does not occur.
+
+- `Milnor.Sphere.hopf_lemma` — Milnor/Chapter6/Hopf.lean, line 50
+
+*What differs.*
+- Milnor's $X$ is an abstract compact manifold with boundary in $\mathbb R^m$; here it is $\{G \ge 0\}$, and the outward unit normal is the explicit $-\nabla G/|\nabla G|$.
+- "Points out of $X$" becomes the inequality $dG(v) < 0$ on $G^{-1}(0)$, and "isolated zeros" becomes finitely many disjoint closed balls of one radius covering all zeros of $v$ in $X$.
+- The straight-line homotopy from $v$ to $-\nabla G$ over $\partial X$ is reparametrized by a smooth transition function so as to be defined for all times, as elsewhere in the formalization.
+
+### V6.5. Lemma 1 of §6, invariance of the index
+
+*restated* · Lemma 2 proved but not used (V6.12) · fields global, matched on one ball · no orientation hypothesis on $f$
+
+**Milnor (§6, Lemma 1, p. 33).** Suppose the vector field $v$ on $U$ corresponds under a diffeomorphism $f : U \to U'$ to the field $v' = df \circ v \circ f^{-1}$ on $U'$. Then the index of $v$ at an isolated zero $z$ equals the index of $v'$ at $f(z)$.
+
+*He proves it from Lemma 2 (p. 33), that an orientation-preserving diffeomorphism of $\mathbb R^m$ is smoothly isotopic to the identity, and settles the orientation-reversing case by conjugating with a reflection.*
+
+**Proved in Lean.** Let $U, U' \subseteq \mathbb R^{n+1}$ be open with $n \ge 1$, and let $f$ and $g$ be smooth on $U$ and on $U'$ and mutually inverse there. Let $v$ be smooth on all of $\mathbb R^{n+1}$ with $v(z) = 0$ and no other zero in the closed ball $\bar B_r(z) \subseteq U$, and let $w$ be smooth on all of $\mathbb R^{n+1}$ and equal to $df \circ v \circ f^{-1}$ at every point of $f(\bar B_r(z))$. Then the index of $w$ at $f(z)$ equals the index of $v$ at $z$; no orientation hypothesis is placed on $f$.
+
+- `Milnor.Sphere.index_eq_of_diffeo` — Milnor/Chapter6/Invariance.lean, line 36
+- `Milnor.Sphere.signAt_nv0_linear` — Milnor/Chapter6/Radial.lean, line 181
+- `Milnor.det_id_add_smulRight` — Milnor/Chapter6/Radial.lean, line 30
+- `Milnor.sgn_det_fderiv_eq` — Milnor/Chapter6/DetSign.lean, line 36
+
+*What differs.*
+- Milnor's route is his Lemma 2, that an orientation-preserving diffeomorphism of $\mathbb R^m$ is smoothly isotopic to the identity; the formal proof does not take it. Lemma 2 is itself proved, in V6.12, and nothing in the development depends on it.
+- In its place the index of $w$ at $f(z)$ is a boundary degree over $f(S_r(z))$, transported by V6.2 with $c = -r^2$, which produces the factor $-\operatorname{sgn}\det df$, constant on the ball.
+- A second factor $\operatorname{sgn}\det df_z$ is the sign of $u \mapsto Au/|Au|$ on $S^n$ for $A = df_z$, by the matrix determinant lemma; the two cancel, so $f$ need not preserve orientation.
+- The correspondence $w = df \circ v \circ f^{-1}$ is required only on $f(\bar B_r(z))$, and both fields are smooth on all of $\mathbb R^{n+1}$ rather than on $U$ and $U'$.
+
+### V6.6. The ε-neighbourhood theorem
+
+*restated* · an exercise in the book, proved here · no normal bundle in the statement · $r$ defined on all of $\mathbb R^k$
+
+**Milnor (§8, Problems 11–12, p. 52).** Problem 11 asks the reader to show that the normal bundle space of a compact boundaryless $M \subseteq \mathbb R^k$ is a smooth manifold and that $(x, v) \mapsto x + v$ carries the $\varepsilon$-neighbourhood of $M \times 0$ in it diffeomorphically onto the $\varepsilon$-neighbourhood $N_\varepsilon$ of $M$ in $\mathbb R^k$. Problem 12 asks for the retraction $r : N_\varepsilon \to M$ with $r(x + v) = x$, and for the fact that $x + v$ is closer to $x$ than to any other point of $M$.
+
+*In §6 (p. 38) he uses the theorem without proof: for $x \in N_\varepsilon$ he takes $r(x)$ to be the closest point of $M$, notes that $x - r(x)$ must be perpendicular to the tangent space at $r(x)$, and asserts that $r$ is smooth and well defined for $\varepsilon$ small.*
+
+**Proved in Lean.** Let $N \subseteq \mathbb R^k$ be a compact nonempty submanifold, given by slice charts with Euclidean model $\mathbb R^n$ and Euclidean complement. Then there are $\varepsilon > 0$ and a map $r : \mathbb R^k \to N$ with seven properties: $|x - r(x)| = \operatorname{dist}(x, N)$ for every $x$ of $\mathbb R^k$, so the distance to $N$ is attained everywhere and $r$ selects a point attaining it; for $\operatorname{dist}(x, N) < \varepsilon$ any nearest point of $x$ in $N$ equals $r(x)$; $r$ is the identity on $N$; $r$ is $C^\infty$ at each such $x$; $x - r(x)$ is orthogonal to $T_{r(x)}N$ there; $dr_x$ takes values in $T_{r(x)}N$ there; and for $x \in N$ and $v$ orthogonal to $T_xN$ one has $r(x + sv) = x$ for all $s$ near $0$.
+
+- `Milnor.Tub.tubular` — Milnor/Chapter6/Tubular3.lean, line 146
+- `Milnor.Tub.tubr_spec` — Milnor/Chapter6/Tubular4.lean, line 35
+- `Milnor.Tub.tubr` — Milnor/Chapter6/Tubular4.lean, line 33
+- `Milnor.Tub.tubε_pos` — Milnor/Chapter6/Tubular4.lean, line 30
+
+*What differs.*
+- Milnor leaves this to the reader in §8 and quotes it in §6; it is proved here from the inverse function theorem applied to the nearest-point equation $(d\varphi_z)^*(x - \varphi(z)) = 0$.
+- The formal statement says nothing about the normal bundle space, about $(x, v) \mapsto x + v$ being a diffeomorphism, or about $N_\varepsilon$ being a manifold with boundary, which Problem 11 asks.
+- It gives two things the book does not state: $r$ is defined on all of $\mathbb R^k$ and always realizes $\operatorname{dist}(x, N)$, and $dr_x$ maps into $T_{r(x)}N$ on the neighbourhood.
+- Hidden hypotheses: $N$ is nonempty, and its slice charts have Euclidean model and complement so that the adjoint $(d\varphi_z)^*$ is available.
+
+### V6.7. The region N_ε/2 and the extended field
+
+*restated* · region at radius $\varepsilon/2$ · $G$ made global by a cut-off · tangency of $v$ an explicit hypothesis
+
+**Milnor (§6, p. 39).** With $\varphi(x) = \|x - r(x)\|^2$, whose gradient is $2(x - r(x))$, the boundary $\partial N_\varepsilon = \varphi^{-1}(\varepsilon^2)$ has outward unit normal $g(x) = (x - r(x))/\varepsilon$. A vector field $v$ on $M$ is extended over $N_\varepsilon$ by $w(x) = (x - r(x)) + v(r(x))$; then $w \cdot g = \varepsilon > 0$ along the boundary, so $w$ points outward, and $w$ vanishes only at the zeros of $v$, the two summands being orthogonal.
+
+*The gradient computation is called easy and the statement about the zeros clear; both rest on the orthogonality supplied by the $\varepsilon$-neighbourhood theorem.*
+
+**Proved in Lean.** With $\varepsilon$ and $r$ as above, $X = \{x : \operatorname{dist}(x, N) \le \varepsilon/2\}$ is compact and equals $\{G \ge 0\}$ for a smooth $G : \mathbb R^{K+1} \to \mathbb R$ that agrees with $(\varepsilon/2)^2 - |x - r(x)|^2$ on a neighbourhood of $X$, and $0$ is a regular value of $G$. For a smooth $v$ on $N$ all of whose values are tangent to $N$, the field $w(x) = v(r(x)) + (x - r(x))$ is smooth on the tubular neighbourhood, restricts to $v$ on $N$, and its zeros there are exactly the zeros of $v$. Along $\partial X$ one has $dG_x(w(x)) = -2|x - r(x)|^2 < 0$, so $w$ points outward.
+
+- `Milnor.Tub.exists_G` — Milnor/Chapter6/Tubular4.lean, line 130
+- `Milnor.Tub.isRegularValue_G` — Milnor/Chapter6/Tubular4.lean, line 186
+- `Milnor.Tub.w₀_eq_zero` — Milnor/Chapter6/Tubular4.lean, line 252
+- `Milnor.Tub.fderiv_G₀_w₀` — Milnor/Chapter6/Tubular4.lean, line 283
+
+*What differs.*
+- The region is taken at radius $\varepsilon/2$, so that it lies well inside the set where $r$ is smooth, and is presented as $\{G \ge 0\}$ rather than as $\varphi \le \varepsilon^2$.
+- $G$ is only locally the formula $(\varepsilon/2)^2 - |x - r(x)|^2$; a cut-off makes it smooth on all of $\mathbb R^{K+1}$, which is what the region lemma requires of it.
+- Outwardness is recorded as $dG(w) = -2|x - r(x)|^2 < 0$ rather than as $w \cdot g = \varepsilon$; the two say the same thing up to a positive factor.
+- That $v$ takes its values in the tangent spaces of $N$ is an explicit hypothesis of the statements about the zeros and about outwardness; for Milnor it is part of being a vector field on $M$.
+
+### V6.8. The index of a tangent field on a submanifold
+
+*restated* · definition and theorem exchanged · chart definition is V6.14 · depends on the retraction $r$
+
+**Milnor (§6, p. 33).** Granting Lemma 1, Milnor defines the index of a vector field $w$ on an arbitrary manifold $M$ at a zero $z$: take a parametrization $h : U \to M$ of a neighbourhood of $z$ and let $\iota$ be the index of the corresponding field $dh^{-1} \circ w \circ h$ at $h^{-1}(z)$. Lemma 1 is exactly what makes this independent of the parametrization.
+
+*On p. 39 he observes that for $M \subseteq \mathbb R^k$ this index also equals the index of the extended field $(x - r(x)) + v(r(x))$ at $z$, by the derivative computation of Lemma 5 (p. 37).*
+
+**Proved in Lean.** For a compact nonempty submanifold $N \subseteq \mathbb R^{K+1}$ and a smooth tangent field $v$ on $N$, the index of $v$ at $q \in N$ is *defined* to be the index at $q$ of a globally smooth field agreeing with $x \mapsto v(r(x)) + (x - r(x))$ near the region $X$. Since the index of a field depends only on its germ, the value is independent of the extension chosen, and it may be computed from any smooth field that agrees with $v(r(\cdot)) + (\cdot - r(\cdot))$ near $q$ and has $q$ as an isolated zero.
+
+- `Milnor.Tub.indexN` — Milnor/Chapter6/PoincareHopf.lean, line 88
+- `Milnor.Tub.indexN_eq` — Milnor/Chapter6/PoincareHopf.lean, line 95
+- `Milnor.Sphere.index_eq_of_eventuallyEq` — Milnor/Chapter6/PoincareHopf.lean, line 28
+
+*What differs.*
+- Milnor's definition goes through a parametrization and needs Lemma 1 of §6 to be well posed; the formal definition is his p. 39 identity instead, so no invariance lemma is used.
+- Consequently the chart definition is a development of its own, V6.14, where it is formalized together with Milnor's Lemma 5 (V6.13) and shown to agree with this one at a non-degenerate zero; the agreement at an arbitrary isolated zero is not proved.
+- The definition refers to the nearest-point retraction $r$, which is canonical once $N$ is given, and to an arbitrary global smooth extension, which the germ property makes harmless.
+
+### V6.9. The Poincaré–Hopf theorem
+
+*restated* · degenerate zeros allowed · $\chi(N)$ only asserted to exist · Euler characteristic not formalized
+
+**Milnor (§6, Theorem 1, p. 38).** Let $M \subseteq \mathbb R^k$ be a compact boundaryless manifold and $N_\varepsilon$ its closed $\varepsilon$-neighbourhood, a smooth manifold with boundary for $\varepsilon$ small. For any vector field $v$ on $M$ with only nondegenerate zeros, the index sum $\sum \iota$ equals the degree of the Gauss map $g : \partial N_\varepsilon \to S^{k-1}$; in particular it does not depend on the choice of $v$.
+
+*The theorem announced on p. 35 is stronger: for a compact $M$ and a field with isolated zeros the sum is the Euler number $\chi(M) = \sum_i (-1)^i \operatorname{rank} H_i(M)$, and p. 40 sketches the three further steps that would establish it.*
+
+**Proved in Lean.** Let $N \subseteq \mathbb R^{K+1}$ with $K \ge 1$ be a compact nonempty submanifold. There is an integer $\chi(N)$ such that for every smooth tangent field $v$ on $N$ whose zero set is a finite, injectively indexed list $z_1, \dots, z_j$, the sum of the indices of $v$ at the $z_i$, in the sense of V6.8, equals $\chi(N)$. In the proof $\chi(N)$ is the degree of the Gauss map of $\partial N_{\varepsilon/2}$, but the statement only asserts that such an integer exists.
+
+- `Milnor.Tub.poincare_hopf` — Milnor/Chapter6/PoincareHopf.lean, line 114
+
+*What differs.*
+- Milnor's Theorem 1 assumes all zeros nondegenerate; the formal statement assumes only that there are finitely many, which on a compact $N$ is the same as isolated.
+- That gain is bought by defining the index through the extended field (V6.8). Milnor's Lemma 5 (p. 37), which identifies that index with the one computed in a chart at a non-degenerate zero, is proved separately, in V6.13 and V6.14, and is not used here.
+- The Gauss-map degree appears only inside the proof, over $\partial N_{\varepsilon/2}$ rather than $\partial N_\varepsilon$, and the statement quantifies the invariant existentially.
+- Not formalized: the identification of $\chi(N)$ with the Euler number of p. 35 (G.1), and the theorem for a manifold not presented as a submanifold of Euclidean space. The value of $\chi(N)$ for the sphere is computed in V6.15.
+
+### V6.10. Lemma 4 of §6: the index at a non-degenerate zero
+
+*hypotheses explicit* · $n \ge 1$, the index being a degree · field smooth on all of $\mathbb R^{n+1}$ · isolatedness proved, not assumed
+
+**Milnor (§6, Lemma 4, p. 36).** A zero $z$ of $v$ is non-degenerate when $dv_z$ is non-singular, and such a zero is isolated, by the inverse function theorem. Lemma 4: the index of $v$ at a non-degenerate zero is $+1$ or $-1$ according as the determinant of $dv_z$ is positive or negative, that is $\operatorname{sign}\det dv_z$. Milnor shrinks $U$ to a ball on which $v$ is a diffeomorphism, applies the construction of Lemma 2 to $v$ itself to replace $v$ by $dv_z$, connects $dv_z$ to the identity inside $GL^+(m)$ when the determinant is positive, and conjugates with a reflection when it is negative.
+
+*This is what makes an index computable; with Lemma 5 it is how every index of the section is evaluated.*
+
+**Proved in Lean.** Let $n \ge 1$ and let $v$ be a smooth vector field on $\mathbb R^{n+1}$ with $v(z) = 0$ and $dv_z$ bijective. Then the index of $v$ at $z$, in the sense of V6.0, is $\operatorname{sgn}\det dv_z$; Milnor's own form, $+1$ or $-1$ according to the sign of the determinant, stands beside it. That $z$ is an isolated zero is not assumed but proved: one uniform estimate does two jobs, giving a radius $r > 0$ such that on the punctured closed $r$-ball no combination $dv_z(x - z) + b\,(v(x) - dv_z(x - z))$ with $0 \le b \le 1$ vanishes — the case $b = 1$ says that $z$ is isolated, and the whole range says that the straight-line homotopy from $v$ to its linear part leaves the $r$-sphere free of zeros. The degree of the sphere map $u \mapsto dv_z(u)/|dv_z(u)|$ of the linear field is then $\operatorname{sgn}\det dv_z$: that map is a bijection of $S^n$ whose sign is that constant at every point, so every point is a regular value with exactly one preimage.
+
+- `Milnor.Sphere.index_eq_sgn_det` — Milnor/Chapter6/Nondegenerate.lean, line 197
+- `Milnor.Sphere.index_nondegenerate` — Milnor/Chapter6/Nondegenerate.lean, line 252
+- `Milnor.Sphere.deg_nv0_linear` — Milnor/Chapter6/Nondegenerate.lean, line 139
+- `Milnor.Sphere.exists_radius_of_nondegenerate` — Milnor/Chapter6/Nondegenerate.lean, line 69
+
+*What differs.*
+- The dimension condition $n \ge 1$ is named, as everywhere in §6: the index is a degree on $S^n$, so the ambient space has dimension at least two. Milnor's index needs $S^{m-1}$ connected for the same reason, and he does not say so.
+- As in V6.0 the field is smooth on all of $\mathbb R^{n+1}$ rather than on an open $U$; the index depends only on the germ at $z$, and a field on an open set agrees near a compact subset with a global one, so nothing is lost.
+- Milnor deduces the lemma from his Lemma 2 (V6.12), through the isotopy $v(tx)/t$ and the connectedness of $GL^+$; the formal proof is a straight-line homotopy to the linear part, and the single estimate above makes the zero isolated and the homotopy zero-free at once.
+- The step from a constant pointwise sign to a degree is a new lemma: the sphere map of a bijective linear field is a bijection of $S^n$, so its degree is that one sign. Milnor reads the degree off the identity map and a reflection instead.
+- His worked examples at the start of §6 — the source, the sink, the saddle, the centre — are linear fields and so are instances of this formula; the complex examples $v(z) = z^k$ of index $k$ and $v(z) = \bar z^{\,k}$ of index $-k$ have no formal counterpart.
+
+### V6.11. Hadamard's lemma, and a smooth parametric integral
+
+*stronger* · the integral theorem is not in Mathlib · coordinate-free, any normed spaces · target complete, not $\mathbb R^m$
+
+**Milnor (§6, p. 33).** Inside the proof of Lemma 2 Milnor needs the decomposition $f(x) = \sum_i x_i\,g_i(x)$ of a smooth $f$ with $f(0) = 0$, with the $g_i$ smooth and $g_i(0) = \partial f/\partial x_i(0)$. It comes from $f(x) = \int_0^1 \frac{d}{dt} f(tx)\,dt$, and the smoothness of $g_i(x) = \int_0^1 \partial_i f(tx)\,dt$ is settled by the remark that one may differentiate under the integral sign. With it his isotopy $F(x, t) = \sum_i x_i\,g_i(tx)$, which is $f(tx)/t$ for $t > 0$ and $df_0$ at $t = 0$, is smooth up to $t = 0$.
+
+*The whole difficulty of his isotopy is that smoothness at $t = 0$, and the decomposition is what supplies it.*
+
+**Proved in Lean.** Three statements, for real normed spaces $E$ and $F$ with $F$ complete. First: if $h : E \times \mathbb R \to F$ is of class $C^n$, or $C^\infty$, then so is $x \mapsto \int_0^1 h(x, t)\,dt$. Mathlib has no such theorem; the proof is an induction on $n$, differentiating under the integral sign and dominating on a tube around the compact segment $\{x\} \times [0, 1]$, so that neither finite dimension nor local compactness is needed. Secondly, **Hadamard's lemma**, coordinate-free: a smooth $f$ with $f(0) = 0$ factors as $f(x) = L(x)\,x$ for a smooth family $L$ of continuous linear maps, namely $L(x) = \int_0^1 df_{tx}\,dt$, and $L(0) = df_0$. Thirdly, consequently, $t^{-1} f(tx)$ extends to a smooth map on all of $E \times \mathbb R$ with value $df_0(x)$ at $t = 0$, both as an existence statement and for the explicit formula with a case split at $t = 0$ in which the isotopy of V6.12 is written.
+
+- `Milnor.contDiff_intervalIntegral` — Milnor/Chapter6/Hadamard.lean, line 115
+- `Milnor.contDiff_intervalIntegral_infty` — Milnor/Chapter6/Hadamard.lean, line 139
+- `Milnor.exists_hadamard` — Milnor/Chapter6/Hadamard.lean, line 148
+- `Milnor.exists_contDiff_extension` — Milnor/Chapter6/Hadamard.lean, line 170
+- `Milnor.contDiff_ite_smul_inv` — Milnor/Chapter6/Hadamard.lean, line 185
+
+*What differs.*
+- Milnor works in $\mathbb R^m$ and writes the decomposition in coordinates; the formal statement is coordinate-free, $f(x) = L(x)\,x$ with $L$ a smooth family of continuous linear maps between arbitrary real normed spaces.
+- The one hypothesis he would not state is completeness of the target, needed for the Bochner integrals to exist; his spaces being $\mathbb R^m$, it is automatic.
+- His "differentiate under the integral sign" is a theorem Mathlib does not have: that an integral over a fixed interval is $C^n$ in a parameter when the integrand is. It is proved here by induction on $n$, the domination coming from compactness of the segment, and it needs neither finite dimension nor local compactness.
+- The consequence is stated in the form the isotopy needs, including the explicit formula with a case split at $t = 0$, so that no smoothness has to be rechecked when the isotopy of V6.12 is assembled.
+
+### V6.12. Lemma 2 of §6: a diffeomorphism of ℝᵐ is isotopic to the identity
+
+*stronger* · any finite-dimensional space, any $m$ · determinant positive at one point · every real time slice a diffeomorphism
+
+**Milnor (§6, Lemma 2, p. 33).** Any orientation-preserving diffeomorphism $f$ of $\mathbb R^m$ is smoothly isotopic to the identity. Milnor composes with a translation so that $f(0) = 0$, uses the decomposition of p. 33 to see that $F(x, t) = f(tx)/t$, with $F(x, 0) = df_0$, is a smooth isotopy from $df_0$ to $f$, and then joins $df_0$ to the identity through linear isomorphisms, the matrices of positive determinant being path connected. He uses the lemma to prove Lemma 1, that the index is unchanged by a diffeomorphism.
+
+*The connectedness of $GL^+(m)$ is asserted rather than proved, here and again in §7 (V7.3).*
+
+**Proved in Lean.** Let $E$ be a finite-dimensional real normed space and let $f : E \to E$ be a diffeomorphism in the unbundled sense of V6.5: smooth, with a smooth two-sided inverse. If the Jacobian determinant of $f$ is positive at one point — equivalently at every point, the sign being constant, which is proved — then $f$ is smoothly isotopic to the identity. An isotopy is a smooth $H : E \times \mathbb R \to E$ with $H(\cdot, 0) = f$, $H(\cdot, 1) = \mathrm{id}$ and *every* time slice, at every real time, a diffeomorphism of $E$, the notion already used in V4.4. Milnor's own case $E = \mathbb R^m$ is recorded separately, with no condition on $m$. The three steps are his: the translation to a diffeomorphism fixing the origin; the isotopy $f(tx)/t$ from that one to its derivative there, smooth by V6.11; and the $GL^+$ path of V7.3.
+
+- `Milnor.lemma2_of_sec6` — Milnor/Chapter7/Isotopy.lean, line 467
+- `Milnor.smoothIsotopicMap_id` — Milnor/Chapter7/Isotopy.lean, line 442
+- `Milnor.SmoothIsotopicMap` — Milnor/Chapter7/Isotopy.lean, line 189
+- `Milnor.IsDiffeoSelf` — Milnor/Chapter7/Isotopy.lean, line 65
+
+*What differs.*
+- Milnor's $\mathbb R^m$ becomes any finite-dimensional real normed space, and positivity of the dimension is not needed; his own statement is recorded as the case $E = \mathbb R^m$.
+- "Orientation-preserving" is positivity of $\det df$ at a single point, the weakest of the equivalent forms, and that the sign is the same at every point is part of the development rather than an observation.
+- Isotopy is the project's notion (V4.4): every slice, at every real time, is a diffeomorphism, where Milnor's $F$ lives on $\mathbb R^m \times [0, 1]$. Three things he passes over: transitivity of isotopy, which needs the two isotopies made constant near the join before gluing; that the slices at negative times are diffeomorphisms too; and invertibility of $df_0$, which comes from the chain rule on the two-sided inverse.
+- The Lean file sits in Chapter 7, because its last step is the $GL^+$ path proved there (V7.3) and Chapter 6 may not import Chapter 7.
+- Nothing in the development depends on this lemma: §6 replaced Milnor's appeal to it in Lemma 1 by a direct computation of signs (V6.5), so it is formalized only because it is a theorem of the book.
+
+### V6.13. Lemma 5 of §6, and the derivative of the retraction
+
+*hypotheses explicit* · $dr_q$ is the orthogonal projection · two readings of the derivative · $N$ compact, for the retraction
+
+**Milnor (§6, Lemma 5, p. 37).** Regard a field $w$ on $M \subseteq \mathbb R^k$ as a map $M \to \mathbb R^k$, so that $dw_z : TM_z \to \mathbb R^k$ is defined. Lemma 5: at a zero $z$ of $w$ the map $dw_z$ carries $TM_z$ into $TM_z$, and if the resulting endomorphism has determinant $D \ne 0$ then $z$ is an isolated zero of index $\operatorname{sign} D$. He proves it with a parametrization $h$, $h(u_0) = z$: writing $w(h(u)) = \sum_j v_j(u)\,t_j(u)$ in the basis $t_i = \partial h/\partial u_i$ of the tangent spaces and differentiating in $u_i$, the terms with $v_j$ drop out at $u_0$, so the matrix of $dw_z$ in that basis is the Jacobian of $v$ at $u_0$. On p. 39 he applies the lemma to the extended field $w = v \circ r + (\mathrm{id} - r)$ on the tubular neighbourhood, whose derivative is block diagonal with blocks $dv_z|_{TM_z}$ and the identity.
+
+*It is the bridge between the index on the manifold and the index of the extended field, and the place where the derivative of the retraction is used without comment.*
+
+**Proved in Lean.** Let $N \subseteq \mathbb R^{K+1}$ be a compact nonempty submanifold of dimension $n$ and $r$ the nearest-point retraction of V6.6. First, at $q \in N$ the derivative $dr_q$ is the orthogonal projection of $\mathbb R^{K+1}$ onto $T_qN$: it is the identity on $T_qN$, its image is $T_qN$, it is idempotent, and its kernel is exactly $(T_qN)^\perp$. Secondly, Lemma 5 itself, in two readings: if $v$ is a smooth tangent field on $N$ with $v(q) = 0$, then the derivative of $v$ at $q$ carries $T_qN$ into itself, both in the ambient reading — the derivative at $q$ of $x \mapsto v(r(x))$ — and in the intrinsic one, the derivative of $v : N \to \mathbb R^{K+1}$ on the image of the derivative of the inclusion; the two readings are shown to agree. Thirdly, at such a zero the derivative of the extended field $w = v \circ r + (\mathrm{id} - r)$ of V6.7 is $dv_q \circ dr_q + (\mathrm{id} - dr_q)$, which in the splitting $\mathbb R^{K+1} = T_qN \oplus (T_qN)^\perp$ is $dv_q$ on the tangent part and the identity on the normal part; hence $\det dw_q$ is the determinant of the restriction of $dv_q$ to $T_qN$, and $dw_q$ is invertible exactly when that restriction is.
+
+- `Milnor.Tub.dret` — Milnor/Chapter6/ChartIndex.lean, line 151
+- `Milnor.Tub.dvr_mem_tanN` — Milnor/Chapter6/ChartIndex.lean, line 298
+- `Milnor.Tub.mfd_mem_tanN` — Milnor/Chapter6/ChartIndex.lean, line 349
+- `Milnor.Tub.det_fderiv_w₀` — Milnor/Chapter6/ChartIndex.lean, line 439
+- `Milnor.Tub.bijective_fderiv_w₀_iff` — Milnor/Chapter6/ChartIndex.lean, line 462
+
+*What differs.*
+- Compactness and nonemptiness of $N$ are assumed, because the tubular neighbourhood and the retraction $r$ of V6.6 exist here only for a compact submanifold; Milnor's Lemma 5 itself needs no compactness.
+- What "the derivative of a field on a submanifold" means is not left to the reader: the ambient reading, the derivative of $v \circ r$, and the intrinsic one, the derivative of $v$ as a map of manifolds, are both defined and shown to agree on the tangent space.
+- The derivative of the retraction, which Milnor uses without comment on p. 39, is proved to be the orthogonal projection onto the tangent space; the block-diagonal form of $dw_q$ and the determinant identity follow from that.
+- His proof differentiates the field written in a coefficient basis, which presumes the coefficients smooth; the formal proof differentiates the identity $(\mathrm{id} - dr)(v \circ r) = 0$ instead and avoids the point.
+- The hypothesis $v(q) = 0$ is Milnor's and is essential: without it the derivative of $v$ at $q$ has no invariant meaning as an endomorphism of $T_qN$. The index clause of Lemma 5 is V6.14.
+
+### V6.14. The chart definition of the index, and its agreement
+
+*narrower* · agreement only at non-degenerate zeros · $K \ge 1$ ambient, $n \ge 2$ in a chart · $N$ compact, for the retraction
+
+**Milnor (§6, p. 33).** Milnor defines the index of a zero of a field on a manifold through a parametrization (p. 33): a local parametrization $\psi : \Omega \to M$, with $\Omega \subseteq \mathbb R^n$ open and $\psi(u_0) = z$, pulls the field back to a field on $\Omega$, and the index at $z$ is the index of the pull-back at $u_0$; Lemma 1 (V6.5) is what makes the value independent of the parametrization. On p. 39 he identifies that index with the index of the extended field $(x - r(x)) + v(r(x))$ at $z$, by the derivative computation of Lemma 5 (p. 37).
+
+*The identification is what lets him prove the Poincaré–Hopf theorem on the tubular neighbourhood and read the answer on the manifold.*
+
+**Proved in Lean.** Let $N \subseteq \mathbb R^{K+1}$ be a compact nonempty submanifold of dimension $n$ and $v$ a smooth tangent field on $N$. The pull-back of $v$ through a slice-chart parametrization is smooth, and its index at the parameter point is Milnor's chart index. It depends neither on the parametrization nor on the extension: for **any** smooth local parametrization $\psi$ of $N$ at $q$ with a smooth ambient left inverse and with $d\psi_u$ spanning the tangent space, and **any** globally smooth field on $\mathbb R^n$ agreeing near the parameter point with the pull-back and having an isolated zero there, the index is that same number — this is Milnor's Lemma 1 (V6.5) applied to the transition map. At a non-degenerate zero the two definitions agree: the index of the extended field is $\operatorname{sgn}\det(dv_q|T_qN)$ by V6.13 and V6.10, and so is the chart index, because the derivative of the chart conjugates the derivative of the pulled-back field into that restriction. Two dimension conditions are needed, and they differ, the two indices being degrees on spheres of different dimensions: $K \ge 1$ for the ambient index and $n \ge 2$ for the chart index, the index of a field on $\mathbb R^n$ being a degree on $S^{n-1}$.
+
+- `Milnor.Tub.chartIndexN` — Milnor/Chapter6/ChartIndex.lean, line 584
+- `Milnor.Tub.index_eq_chartIndexN` — Milnor/Chapter6/ChartIndex.lean, line 597
+- `Milnor.Tub.indexN_eq_sgn_det` — Milnor/Chapter6/ChartIndex.lean, line 790
+- `Milnor.Tub.chartIndexN_eq_sgn_det` — Milnor/Chapter6/ChartIndex.lean, line 812
+- `Milnor.Tub.chartIndexN_eq_indexN` — Milnor/Chapter6/ChartIndex.lean, line 918
+
+*What differs.*
+- The agreement of the two definitions is proved only at a non-degenerate zero, which is what Lemma 5 gives and what the book uses. At an arbitrary isolated zero the two are degrees of maps of spheres of different dimensions, $S^K$ and $S^{n-1}$, so no appeal to invariance under diffeomorphisms compares them: one would first need a suspension formula, that the index of a field of the shape $(u, y) \mapsto (\tilde v(u), y)$ is the index of $\tilde v$. The project does not have it, and Milnor does not prove it either.
+- Two dimension conditions are carried where Milnor states none, and they are not the same one: $K \ge 1$ for the ambient index, $n \ge 2$ for the chart index, each because a degree is taken on a sphere that has to be connected.
+- Compactness and nonemptiness of $N$ come from the tubular neighbourhood, as in V6.13, and the chart index is defined from the slice-chart parametrizations of Chapter 2 rather than from a parametrization chosen by hand.
+- Independence is proved in the strong form: any smooth local parametrization with a smooth ambient left inverse and spanning derivative, and any global smooth extension of the pull-back with an isolated zero, give the same number. Milnor fixes one parametrization and appeals to Lemma 1.
+- Definition and theorem are exchanged, as V6.8 records: the extended-field index is the definition here and the chart index the theorem, so the Poincaré–Hopf theorem of V6.9 does not rest on this row.
+
+### V6.15. The Euler number of the sphere
+
+*restated* · index sum, not the Euler characteristic · every field with finitely many zeros · the odd case computed twice
+
+**Milnor (§6, Example, p. 39).** On $S^n$ the field $v(x) = p - (p \cdot x)\,x$, with $p$ the north pole, is tangent and vanishes exactly at $\pm p$; near the south pole it is the identity in the chart given by projection to $p^\perp$, of index $+1$, and near the north pole minus the identity, of index $\operatorname{sign}\det(-I_n) = (-1)^n$. So the Euler number of the sphere is $\chi(S^n) = 1 + (-1)^n$, which is $2$ for $n$ even and $0$ for $n$ odd. He observes that this reproves the hairy ball theorem, a field without zeros having index sum $0 \ne 2$, and that for odd $n$ the value also follows from replacing $v$ by $-v$.
+
+*$\chi$ is his name (p. 35) for the common value of the index sum; that it is the Euler characteristic of topology is the step he refers to Hopf and to the literature for.*
+
+**Proved in Lean.** Let $n \ge 1$. For *every* smooth tangent field $v$ on $S^n$ — tangency being $\langle q, v(q)\rangle = 0$ — whose zeros are finitely many distinct points $z_1, \dots, z_j$, the sum of the indices of $v$ at the $z_i$, in the sense of V6.8, is $1 + (-1)^n$; and the integer whose existence V6.9 asserts is pinned down, not merely bounded: any integer with the Poincaré–Hopf property for $S^n$ equals $1 + (-1)^n$. The even case, the odd case and the evenness of the number are stated separately. The field is Milnor's, the gradient on $S^n$ of the height function $x \mapsto \langle e, x\rangle$ for a unit vector $e$: its zeros are exactly $e$ and $-e$, the restriction of its derivative to the tangent space is minus the identity at $e$ and the identity at $-e$ (V6.13), and V6.10 with V6.14 turns those into the indices $(-1)^n$ and $1$. For odd $n$ there is a second and independent computation: the sphere then carries a nowhere-zero smooth tangent field (V5.10), whose index sum is the empty sum $0$, and a third theorem derives $1 + (-1)^n = 0$ from the two, as it must.
+
+- `Milnor.Sphere.indexSum_sph` — Milnor/Chapter6/EulerSphere.lean, line 579
+- `Milnor.Sphere.poincare_hopf_sph` — Milnor/Chapter6/EulerSphere.lean, line 600
+- `Milnor.Sphere.eq_of_indexSum_sph` — Milnor/Chapter6/EulerSphere.lean, line 614
+- `Milnor.Sphere.indexSum_sph_of_nonvanishing` — Milnor/Chapter6/EulerSphere.lean, line 667
+- `Milnor.Sphere.indexSum_sph_odd_agree` — Milnor/Chapter6/EulerSphere.lean, line 686
+
+*What differs.*
+- Milnor writes the value as $\chi(S^n)$; the formal statement is about the integer of V6.9, the common value of the index sum. That this integer is the Euler characteristic is not formalized and cannot even be stated — Mathlib has no Euler characteristic of a space, no Betti numbers and no cellular homology — so the sentence $\chi(S^n) = 1 + (-1)^n$ cannot be written down (G.1).
+- The hypothesis is that the zeros are finitely many, not that they are non-degenerate: Milnor computes with his own field, whose two zeros are non-degenerate, and V6.9 carries the value to every field.
+- The integer is pinned down, not merely computed: any integer with the property V6.9 asserts of $\chi(N)$ for $S^n$ is $1 + (-1)^n$, so the value belongs to the sphere and not to the proof.
+- The odd case is proved a second time with no derivative at all, from the nowhere-zero field of §5, and the two computations are shown to agree; Milnor gets the odd case from $v \mapsto -v$.
+- Three things had to be added for §6's machinery to reach the sphere: the sphere presented again as a level set with a one-dimensional complement model, its tangent space at $q$ identified as $q^\perp$ for that structure, and the derivative through the retraction of a field coming from the ambient space. For the same reason the odd-dimensional field of §5 had to be rebuilt as an ambient linear map, the project having no lemma comparing two slice-submanifold structures on the same set.
+
+## Chapter 7
+
+*Milnor §7, pp. 41–50: framed cobordism, the Pontryagin construction, the Hopf theorem*
+
+### V7.0. Framed submanifolds and framed cobordism
+
+*restated* · cobordism without boundary · product ends built into the definition · independence in place of a basis
+
+**Milnor (§7, pp. 41–42).** Let $N$ and $N'$ be compact $n$-dimensional submanifolds of $M$ with $\partial N = \partial N' = \partial M = \emptyset$; the difference $m - n$ is the codimension. They are cobordant within $M$ if $N \times [0,\varepsilon) \cup N' \times (1-\varepsilon,1]$ extends to a compact manifold $X \subseteq M \times [0,1]$ with $\partial X = N \times 0 \cup N' \times 1$, meeting $M \times 0 \cup M \times 1$ only in $\partial X$. A framing of $N$ is a smooth $\mathfrak v$ assigning to each $x \in N$ a basis of the space $TN_x^\perp \subseteq TM_x$ of normal vectors, and $(N,\mathfrak v)$ is a framed submanifold. Two framed submanifolds are framed cobordant if such an $X$ carries a framing $\mathfrak u$ with $u^i(x,t) = (v^i(x),0)$ near $t = 0$ and $(w^i(x),0)$ near $t = 1$.
+
+*The product structure near the two ends is written into the definition, as the set that $X$ is required to extend.*
+
+**Proved in Lean.** A framed submanifold of dimension $n$ and codimension $p$ of a boundaryless slice submanifold $M \subseteq \mathbb R^k$ of dimension $m$ is a compact slice submanifold $N \subseteq M$ of dimension $n$ with $n + p = m$, together with smooth $v_1,\dots,v_p : N \to \mathbb R^k$ such that $v_i(x) \in T_xM$, $\langle v_i(x), w\rangle = 0$ for $w \in T_xN$, and the $v_i(x)$ are linearly independent. A framed cobordism is a boundaryless $(n+1)$-dimensional slice submanifold $S \subseteq M \times \mathbb R$ together with $0 < \varepsilon < \tfrac12$ such that $(x,t) \in S$ exactly when $x \in N_0$ for $t < \varepsilon$ and exactly when $x \in N_1$ for $t > 1 - \varepsilon$, with $S \cap (M \times [0,1])$ compact, and a framing $u_i : S \to \mathbb R^k \times \mathbb R$ smooth, independent, with first component in $T_xM$, orthogonal to $T_qS$ for the inner product $\langle a,b\rangle + st$, and equal to $(v^0_i,0)$ and $(v^1_i,0)$ on the two ends. Framed cobordant means that such an $S$ exists.
+
+- `Milnor.Framed.FramedSub` — Milnor/Chapter7/Framed.lean, line 55
+- `Milnor.Framed.FramedCob` — Milnor/Chapter7/Framed.lean, line 94
+- `Milnor.Framed.FramedCobordant` — Milnor/Chapter7/Framed.lean, line 115
+
+*What differs.*
+- Milnor's cobordism is a compact $X \subseteq M \times [0,1]$ with boundary $N_0 \times 0 \cup N_1 \times 1$; the formal $S \subseteq M \times \mathbb R$ has no boundary and exists for all $t$.
+- Milnor's collar becomes an equality: $S$ is exactly $N_0 \times (-\infty,\varepsilon)$ and exactly $N_1 \times (1-\varepsilon,\infty)$ at the two ends; his $X$ is $S \cap (M \times [0,1])$.
+- The framing asks only that the $p$ vectors be linearly independent; that they form a basis of $TN_x^\perp$, which is Milnor's requirement, follows from $n + p = m$.
+- The ambient $M$ is a boundaryless slice submanifold of $\mathbb R^k$; its compactness, a standing hypothesis of the book, is not part of the formal definition.
+
+### V7.1. The Pontryagin manifold of a map at a regular value
+
+*restated* · framing written as a pseudo-inverse · basis need not be positive · $M$ compact and nonempty
+
+**Milnor (§7, p. 42).** For $f : M \to S^p$ smooth and $y$ a regular value, choose a positively oriented basis $\mathfrak v = (v_1,\dots,v_p)$ of $T(S^p)_y$. At $x \in f^{-1}(y)$ the map $df_x$ sends $Tf^{-1}(y)_x$ to zero and carries its orthogonal complement in $TM_x$ isomorphically onto $T(S^p)_y$, so there is a unique vector $w^i(x)$ in that complement with $df_x(w^i(x)) = v_i$. The framed manifold $(f^{-1}(y), f^*\mathfrak v)$ is by definition the Pontryagin manifold associated with $f$.
+
+*The framing is pinned down by a uniqueness property, and nothing is said about its smoothness in $x$.*
+
+**Proved in Lean.** Let $M$ be a compact nonempty slice submanifold of $\mathbb R^{K+1}$ of dimension $m = n + p$, $f : M \to S^p$ smooth, $y$ a regular value and $b_1,\dots,b_p$ any linearly independent vectors of $\mathbb R^p$. The Pontryagin manifold is the framed submanifold with underlying set $f^{-1}(y)$ and framing $v_i(x) = A_x^*(A_xA_x^*)^{-1}b_i$, where $A_x = d\tilde F_x$ for the extension $\tilde F = c_y \circ f \circ r$ of $f$ to the $\varepsilon$-neighbourhood of $M$ through the nearest-point retraction $r$ and the chart $c_y$ at $y$. It satisfies $A_xv_i(x) = b_i$, and $b$ is not required to be positively oriented.
+
+- `Milnor.Framed.pontryagin` — Milnor/Chapter7/Pontryagin.lean, line 417
+- `Milnor.Framed.pontV` — Milnor/Chapter7/Pontryagin.lean, line 320
+- `Milnor.Framed.At_pontV` — Milnor/Chapter7/Pontryagin.lean, line 325
+
+*What differs.*
+- Milnor's $w^i(x)$ is the unique normal vector with $df_x(w^i(x)) = v_i$; the formal framing is the explicit minimal-norm solution $A_x^*(A_xA_x^*)^{-1}b_i$, so its smoothness is a formula.
+- $A_x$ is the derivative of an ambient extension through the nearest-point retraction of the $\varepsilon$-neighbourhood theorem, which is why $M$ must be compact and nonempty.
+- A basis of $T_yS^p$ is a basis of the model space $\mathbb R^p$, because derivatives into $S^p$ are read in the chart at $y$.
+- Positivity is not asked here: orientations enter with Lemma 1 and positivity with Theorem A, while the agreement with Milnor's vector is proved separately (V7.8).
+
+### V7.2. The cobordism cut out by a homotopy
+
+*restated* · isolated from two of Milnor's proofs · homotopy defined for all real $t$ · ends assumed regular as well
+
+**Milnor (§7, p. 44 (inside Lemmas 2 and 3)).** The book states no such result. Inside the proofs of Lemmas 2 and 3 Milnor observes that for a homotopy $F : M \times [0,1] \to S^p$ with regular value $z$ the set $F^{-1}(z) \subseteq M \times [0,1]$ is a framed manifold and provides a framed cobordism between the framed manifolds of the two ends. In Lemma 3 he arranges beforehand that $F(x,t) = f(x)$ for $t \le \varepsilon$ and $F(x,t) = g(x)$ for $1 - \varepsilon < t \le 1$.
+
+*The same step is used twice: in Lemma 2 with the rotated homotopy $F(x,t) = r_tf(x)$, and in Lemma 3 with a homotopy already constant near the ends.*
+
+**Proved in Lean.** Let $0 < \varepsilon < \tfrac12$, let $F : M \times \mathbb R \to S^p$ be smooth with $F(x,t) = f(x)$ for $t \le \varepsilon$ and $F(x,t) = g(x)$ for $t \ge 1 - \varepsilon$, and let $z$ be a regular value of $F$, of $f$ and of $g$. Then for any linearly independent $b$ the Pontryagin manifolds $(f^{-1}(z), f^*b)$ and $(g^{-1}(z), g^*b)$ are framed cobordant, the cobordism being $S = F^{-1}(z)$ framed through the extension of $F$ to $\mathbb R^{K+1} \times \mathbb R$. A separate lemma reparametrizes any smooth homotopy whose total map and whose two ends all have $z$ as a regular value into one that is constant for $t \le \varepsilon$ and for $t \ge 1 - \varepsilon$ and still has $z$ regular.
+
+- `Milnor.Framed.framedCobordant_of_homotopy` — Milnor/Chapter7/Cobordism.lean, line 432
+- `Milnor.Framed.exists_reparam` — Milnor/Chapter7/Reparam.lean, line 28
+- `Milnor.exists_timeTransition` — Milnor/Chapter7/Transition.lean, line 54
+
+*What differs.*
+- The book never states this step separately; it carries it out once inside the proof of Lemma 2 and again inside the proof of Lemma 3.
+- The homotopy is a smooth map on $M \times \mathbb R$, constant for $t \le \varepsilon$ and for $t \ge 1 - \varepsilon$, where Milnor's $F$ is defined on $M \times [0,1]$.
+- Regularity of $z$ for $f$ and for $g$ is assumed although it follows from regularity for $F$, because the two Pontryagin manifolds must exist before the statement can be made.
+- Milnor reparametrizes and then chooses the regular value; the formal lemma keeps a value chosen beforehand, so it needs $\rho' > 0$ in the middle and regular end maps.
+
+### V7.3. Lemma 1 of §7: the positive basis does not matter
+
+*stronger* · two maps allowed, not two bases · same orientation, not positivity · connectedness of $GL^+$ proved
+
+**Milnor (§7, Lemma 1, p. 43).** If $\mathfrak v$ and $\mathfrak v'$ are two different positively oriented bases at $y$, then the Pontryagin manifold $(f^{-1}(y), f^*\mathfrak v)$ is framed cobordant to $(f^{-1}(y), f^*\mathfrak v')$. The proof chooses a smooth path from $\mathfrak v$ to $\mathfrak v'$ in the space of positively oriented bases of $T(S^p)_y$, identified with $GL^+(p,\mathbb R)$ and therefore connected, and uses the path to frame the cobordism $f^{-1}(y) \times [0,1]$.
+
+*The connectedness of $GL^+(p,\mathbb R)$ is asserted without proof, here and again at the end of his proof of Lemma 2 of §6.*
+
+**Proved in Lean.** General form: let $f$ and $g$ be smooth with regular values $y$ and $z$, let $b$ and $c$ be linearly independent $p$-tuples in $\mathbb R^p$ and $A$ a $p \times p$ matrix with $\det A > 0$, and suppose $g^{-1}(z) = f^{-1}(y)$ and $g^*c = f^*(A\cdot b)$ at every point of that set. Then $(g^{-1}(z), g^*c)$ and $(f^{-1}(y), f^*b)$ are framed cobordant, the cobordism being $f^{-1}(y) \times \mathbb R$ framed by a smooth path of bases. Taking $g = f$, $z = y$ gives Milnor's Lemma 1 for any two bases of $\mathbb R^p$ that determine the same orientation. That $GL^+(p,\mathbb R)$ is connected by smooth paths is proved rather than quoted.
+
+- `Milnor.Framed.framedCobordant_of_det_pos'` — Milnor/Chapter7/Lemma1.lean, line 124
+- `Milnor.Framed.framedCobordant_of_orientation_eq` — Milnor/Chapter7/Lemma1.lean, line 203
+- `Milnor.GLp.exists_glPath` — Milnor/Chapter7/GLplus.lean, line 391
+
+*What differs.*
+- Milnor assumes both bases positively oriented at $y$; the formal statement assumes only that they determine the same orientation of $\mathbb R^p$, which is all the proof uses.
+- The general form lets the two maps differ, provided the level sets coincide and $g^*c = f^*(A\cdot b)$ with $\det A > 0$; the proof of Theorem A needs exactly this, for $f$ and $r \circ f$.
+- The path in $GL^+(p,\mathbb R)$ is built from transvections, planar rotations by $\pi$ pairing the negative diagonal entries, and a scaling of the diagonal.
+- The cobordism is $f^{-1}(y) \times \mathbb R$, realized as a level set of $(x,t) \mapsto f(x)$, and the path of bases is made constant for $t \le \tfrac14$ and $t \ge \tfrac34$.
+
+### V7.4. Framed cobordism is an equivalence relation
+
+*restated* · asserted in the book, proved here · reflexivity goes through Theorem C · $M$ need not be compact
+
+**Milnor (§7, p. 42).** After defining cobordism Milnor remarks that it is clearly an equivalence relation, and after defining framed cobordism that this again is an equivalence relation. Neither claim is proved; a figure shows two cobordisms pasted together end to end within $M$.
+
+*Transitivity is the pasting drawn in the figure, and the collars of the definition are what make the pasting smooth.*
+
+**Proved in Lean.** For framed submanifolds of dimension $n$ and codimension $p$ of a slice submanifold $M \subseteq \mathbb R^{K+1}$, with no compactness assumed, framed cobordism is symmetric and transitive: symmetry takes the preimage under $(x,t) \mapsto (x,1-t)$ and negates the $t$-component of the framing; transitivity shifts the second cobordism by $1$, glues along the common product strip $N_1 \times (1-\varepsilon_0, 1+\varepsilon_1)$ and halves time, doubling the $t$-component. Reflexivity is not proved directly: Chapter 7 proves it only for framed $0$-manifolds and Chapter 8 in every codimension, both times by writing the framed submanifold as a Pontryagin manifold (Theorem C) and applying the cobordism of a constant homotopy, which needs $M$ compact and nonempty.
+
+- `Milnor.Framed.FramedCobordant.symm` — Milnor/Chapter7/Equiv.lean, line 225
+- `Milnor.Framed.FramedCobordant.trans` — Milnor/Chapter7/Equiv.lean, line 283
+- `Milnor.Framed.FramedCobordant.refl'` — Milnor/Chapter7/Reach.lean, line 47
+- `Milnor.Problems.framedCobordant_refl` — Milnor/Chapter8/FramedOps.lean, line 187
+
+*What differs.*
+- Milnor asserts both equivalence relations without proof; the formal text proves symmetry and transitivity and reaches reflexivity only by a detour.
+- Reflexivity is obtained by realizing a framed submanifold as a Pontryagin manifold (Theorem C) and applying the constant homotopy; in Chapter 7 this is done only for framed $0$-manifolds.
+- Symmetry and transitivity hold for any slice submanifold $M \subseteq \mathbb R^{K+1}$, compact or not; reflexivity needs $M$ compact and nonempty, through the tubular neighbourhood.
+- Three facts about submanifolds of $M \times \mathbb R$ carry the proof: preimages under $(x,t) \mapsto (x, at+c)$, locality of tangent spaces, and gluing along an open strip.
+
+### V7.5. Theorem A of §7: the regular value does not matter
+
+*hypotheses explicit* · $p \ge 1$ is a hypothesis · $M$ compact and nonempty · positive basis read in the chart
+
+**Milnor (§7, Theorem A, p. 42).** If $y'$ is another regular value of $f$ and $\mathfrak v'$ is a positively oriented basis for $T(S^p)_{y'}$, then the framed manifold $(f^{-1}(y'), f^*\mathfrak v')$ is framed cobordant to $(f^{-1}(y), f^*\mathfrak v)$. The proof takes rotations $r_t$ of $S^p$ with $r_0$ the identity and $r_1(y) = y'$, so that $f$ is homotopic to $r_1 \circ f$; Lemma 3 then gives the cobordism, since $(r_1 \circ f)^{-1}(y') = f^{-1} \circ r_1^{-1}(y') = f^{-1}(y)$.
+
+*The half-page proof on p. 45 does not say where Lemma 1 enters, although the two bases are different; the local case, $y'$ near $y$, is Lemma 2 on p. 44.*
+
+**Proved in Lean.** Assume $p \ge 1$ and let $M$ be a compact nonempty slice submanifold of $\mathbb R^{K+1}$ of dimension $m = n + p$. Let $f : M \to S^p$ be smooth, let $y$ and $z$ be regular values, and let $e_0$ and $e$ be bases of $\mathbb R^p$ whose orientations are the orientation of $S^p$ read in the charts at $y$ and at $z$. Then $(f^{-1}(y), f^*e_0)$ and $(f^{-1}(z), f^*e)$ are framed cobordant.
+
+- `Milnor.Framed.framedCobordant_of_regularValues` — Milnor/Chapter7/Lemma2.lean, line 109
+- `Milnor.Framed.isOpen_regularValues_sph` — Milnor/Chapter7/RegOpen.lean, line 167
+- `Milnor.Framed.pontV_comp` — Milnor/Chapter7/Compose.lean, line 207
+- `Milnor.Sphere.signAt_rotS` — Milnor/Chapter7/Rotation.lean, line 272
+
+*What differs.*
+- The formal statement carries $p \ge 1$, which Milnor does not write; the proof rotates one regular value to the other, and for $p = 0$ there is nothing to rotate.
+- $M$ is assumed compact, nonempty and of dimension $n + p$; nonemptiness is needed for the tubular neighbourhood on which every framing is built.
+- Positivity is stated as: the orientation of the basis equals the orientation of $S^p$ at $y$ read in the chart at $y$, since derivatives into the sphere are taken in charts.
+- Milnor moves $y$ to $z$ in one rotation; the formal proof inserts a $z'$ near $z$ regular for $f$, for $r \circ f$ and for the homotopy, and chains four cobordisms, regular values being open.
+
+### V7.6. Theorem B of §7, first half, and Lemma 3
+
+*hypotheses explicit* · $p \ge 1$ is a hypothesis · homotopy given on $M \times \mathbb R$ · ends assumed smooth as well
+
+**Milnor (§7, Theorem B, first half, p. 42).** Two mappings from $M$ to $S^p$ are smoothly homotopic if and only if the associated Pontryagin manifolds are framed cobordant; the first half is the implication from homotopy to framed cobordism. It rests on Lemma 3: if $f$ and $g$ are smoothly homotopic and $y$ is a regular value for both, then $f^{-1}(y)$ is framed cobordant to $g^{-1}(y)$. There Milnor takes a homotopy $F$ equal to $f$ for $0 \le t \le \varepsilon$ and to $g$ for $1 - \varepsilon < t \le 1$, and a regular value $z$ of $F$ close enough to $y$ that Lemma 2 applies at both ends.
+
+*Lemma 3 (p. 44) is the special case of a common regular value; different regular values are reconciled by Theorem A.*
+
+**Proved in Lean.** Assume $p \ge 1$ and the same hypotheses on $M$ as in Theorem A. Let $F : M \times \mathbb R \to S^p$ be smooth and write $f = F(\cdot,0)$, $g = F(\cdot,1)$, whose smoothness is also assumed although it follows. Let $y$ be a regular value of $f$ and $z$ one of $g$, with positive bases $e_0$ at $y$ and $e$ at $z$. Then $(f^{-1}(y), f^*e_0)$ and $(g^{-1}(z), g^*e)$ are framed cobordant; Milnor's Lemma 3 is the case $y = z$, $e_0 = e$.
+
+- `Milnor.Framed.framedCobordant_of_homotopic` — Milnor/Chapter7/ThmA.lean, line 30
+
+*What differs.*
+- The formal statement carries $p \ge 1$, inherited from Theorem A, and assumes $M$ compact, nonempty and of dimension $n + p$.
+- A smooth homotopy is a smooth map on $M \times \mathbb R$ rather than on $M \times [0,1]$, and it is given as data rather than quantified away.
+- Smoothness of the two ends is a hypothesis although it follows from smoothness of the homotopy.
+- Milnor reparametrizes and then picks the common regular value; the formal proof picks $z'$ regular for $F$, $f$ and $g$ first, so it needs the openness of regular values to make three dense sets meet.
+
+### V7.7. The Product Neighborhood Theorem
+
+*restated* · tube over a ball, not over $\mathbb R^p$ · retraction in place of geodesics · abstract form allows noncompact $N$
+
+**Milnor (§7, Product Neighborhood Theorem, p. 45).** Let $N \subseteq M$ be a compact framed submanifold of codimension $p$ with framing $\mathfrak v$ and $\partial N = \partial M = \emptyset$. Then some neighborhood of $N$ in $M$ is diffeomorphic to the product $N \times \mathbb R^p$, by a diffeomorphism under which each $x \in N$ corresponds to $(x,0)$ and each normal frame $\mathfrak v(x)$ to the standard basis of $\mathbb R^p$. For $M = \mathbb R^{n+p}$ he takes $g(x;t_1,\dots,t_p) = x + t_1v^1(x) + \cdots + t_pv^p(x)$ and proves it one-one on $N \times U_\varepsilon$ by a compactness argument with sequences; in general he replaces straight lines by geodesics and leaves the verification to the reader.
+
+*He remarks that product neighborhoods do not exist for arbitrary submanifolds, with a figure of an unframable one.*
+
+**Proved in Lean.** There are a smooth clamp $\lambda : \mathbb R^p \to \mathbb R^p$ equal to the identity for $|t| \le a_0$ and radii $0 < \varepsilon \le a_0$ such that $G(x,t) = r\bigl(x + \sum_i \lambda(t)_iv_i(x)\bigr)$, with $r$ the nearest-point retraction onto $M$, is a smooth map $N \times \mathbb R^p \to M$ with $G(x,0) = x$ and $dG_{(x,0)}(a,s) = a + \sum_i s_iv_i(x)$, injective with bijective derivative on $N \times B_\varepsilon$; hence $V = G(N \times B_\varepsilon)$ is open, and for $N$ nonempty the inverse is smooth on $V$. On $N \times B_\varepsilon$ the clamp is the identity, so there $G(x,s) = r(x + \sum_i s_iv_i(x))$. The injectivity radius is proved abstractly for $N$ first countable, $X$ Hausdorff, boundaryless and finite-dimensional, and a compact $K \subseteq N$ outside which injectivity is already known, so $N$ itself need not be compact.
+
+- `Milnor.Framed.exists_tubeData` — Milnor/Chapter7/TubeData.lean, line 158
+- `Milnor.PN.exists_injOn` — Milnor/Chapter7/ProdNbhd.lean, line 153
+- `Milnor.PN.isOpen_image_tube` — Milnor/Chapter7/ProdNbhd2.lean, line 267
+- `Milnor.PN.contMDiffAt_Ginv` — Milnor/Chapter7/ProdNbhd2.lean, line 294
+
+*What differs.*
+- Milnor's diffeomorphism is defined on all of $N \times \mathbb R^p$; the formal $G$ is smooth everywhere but a diffeomorphism only from the ball $N \times B_\varepsilon$ onto the open set $V$.
+- Geodesics are replaced by the nearest-point retraction of the $\varepsilon$-neighbourhood theorem, so the passage Milnor leaves to the reader is never needed.
+- The clamp $\lambda$, the identity near $0$, keeps $x + \sum_i \lambda(t)_iv_i(x)$ inside the domain of $r$, so that $G$ is defined and smooth on all of $N \times \mathbb R^p$.
+- The abstract injectivity radius allows $N$ noncompact with injectivity known outside a compact $K$, which the cobordism of V7.10 requires; smoothness of the inverse asks $N$ nonempty.
+
+### V7.8. Identifying the Pontryagin framing
+
+*not in the book* · stated for the ambient derivative · kernel found by a dimension count · links the formula to Milnor's vector
+
+**Milnor (§7, p. 42).** The book has no such statement. On p. 42 Milnor defines the framing by the property that $df_x$ carries $Tf^{-1}(y)_x^\perp \subseteq TM_x$ isomorphically onto $T(S^p)_y$, so that $w^i(x)$ is the unique normal vector with $df_x(w^i(x)) = v_i$. The formal item fills the gap between that characterisation and the explicit pseudo-inverse formula of V7.1, which the book never writes.
+
+**Proved in Lean.** At $x \in f^{-1}(y)$ the kernel of the ambient derivative $A_x = d\tilde F_x$ is $T_xN \oplus (T_xM)^\perp$, by a dimension count. Hence a vector $v$ tangent to $M$, orthogonal to $f^{-1}(y)$ and with $A_xv = b_i$ is the framing vector $f^*b_i(x)$. As a corollary, if $k : M \to S^p$ is smooth with $k^{-1}(\mathrm{north}) = N$ and $k(r(x + sv_i(x))) = \pi_c(se_i)$ for all $x \in N$, all $i$ and $|s| < \varepsilon'$, where $\pi_c$ is the collapse map for $b$ and $c > 0$, then the north pole is a regular value of $k$ and the Pontryagin manifold of $k$ there with basis $c\,b$ is exactly $(N,v)$.
+
+- `Milnor.Framed.ker_At_eq` — Milnor/Chapter7/PontFrame.lean, line 105
+- `Milnor.Framed.pontV_eq_of` — Milnor/Chapter7/PontFrame.lean, line 175
+- `Milnor.Framed.pontryagin_eq_of_collapse` — Milnor/Chapter7/Identify.lean, line 29
+
+*What differs.*
+- Milnor needs only that $df_x$ is an isomorphism on the normal space; the formal statement computes the whole kernel of the ambient derivative $A_x$, an object the book does not have.
+- The count: $A_x$ is onto $\mathbb R^p$, so its kernel has dimension $K + 1 - p$, while $T_xN$ and $(T_xM)^\perp$ meet only in $0$ and have dimensions $n$ and $K + 1 - m$.
+- The framing is read off the behaviour of the map along the lines $s \mapsto r(x + sv_i(x))$, which is all that the construction of Theorem C controls.
+- The corollary identifies the Pontryagin manifold of the map built for Theorem C, and is reused unchanged at both ends of a framed cobordism.
+
+### V7.9. Theorem C of §7: every framed submanifold occurs
+
+*restated* · basis realised up to a factor $c > 0$ · collapse map need not be injective · regular value is the north pole
+
+**Milnor (§7, Theorem C, p. 43).** Any compact framed submanifold $(N,\mathfrak w)$ of codimension $p$ in $M$ occurs as the Pontryagin manifold of some smooth mapping $f : M \to S^p$. The proof takes a product representation $g : N \times \mathbb R^p \to V \subseteq M$ and the projection $\pi : V \to \mathbb R^p$ with $\pi(g(x,y)) = y$, for which $0$ is a regular value and $\pi^{-1}(0)$ is precisely $N$ with its given framing. It then chooses a smooth $\varphi : \mathbb R^p \to S^p$ carrying every $x$ with $\|x\| \ge 1$ to a base point $s_0$ and the open unit ball diffeomorphically onto $S^p - s_0$, and sets $f = \varphi \circ \pi$ on $V$ and $f = s_0$ off $V$, with regular value $\varphi(0)$.
+
+*That this $f$ is smooth, and that $f^{-1}(\varphi(0)) = \pi^{-1}(0)$ is the framed manifold $N$, is asserted in a line.*
+
+**Proved in Lean.** For every framed submanifold $(N,v)$ of $M$ of dimension $n$ and codimension $p$ and every linearly independent $b$ in $\mathbb R^p$ there are a smooth $f : M \to S^p$ with the north pole a regular value and a constant $c > 0$ such that $(f^{-1}(\mathrm{north}), f^*(c\,b)) = (N,v)$. The map is $f(G(x,s)) = \pi(cAs)$ on the product neighbourhood and the south pole elsewhere, where $\pi$ is one fixed smooth map $\mathbb R^p \to S^p$, equal to the north pole only at $0$ and to the south pole for $|t| \ge \tfrac12$, with $d\pi_0$ bijective, and $A = (d\pi_0)^{-1}B$ with $Be_i = b_i$. The case $N = \emptyset$ is handled separately by the constant map.
+
+- `Milnor.Framed.exists_map_of_framedSub` — Milnor/Chapter7/ThmB.lean, line 69
+- `Milnor.Sphere.stdMap` — Milnor/Chapter7/StdMap.lean, line 127
+- `Milnor.Sphere.collapse` — Milnor/Chapter7/Collapse.lean, line 86
+
+*What differs.*
+- Milnor's $\varphi$ maps the open unit ball diffeomorphically onto the punctured sphere; the formal $\pi$ is one fixed explicit map which is never required to be injective.
+- The formal conclusion names the basis: the framing is realized for $c\,b$, not for $b$, because the fixed $\pi$ must be rescaled into the ball $B_{\varepsilon/2}$ of the tube.
+- Milnor parametrizes his product neighbourhood by all of $\mathbb R^p$, which removes the factor $c$; since $c\,b$ and $b$ give the same orientation, Lemma 1 absorbs it.
+- Smoothness off the tube is proved by a closed-core argument, $f$ being the south pole outside a compact subset of $V$, where Milnor writes one line.
+
+### V7.10. Lemma 4, and the map of a framed cobordism
+
+*stronger* · framings proportional, not equal · first-order estimate, not Taylor · cobordism map stated separately
+
+**Milnor (§7, Lemma 4, p. 47).** Let $f, g : M \to S^p$ be smooth maps with a common regular value $y$. If the framed manifold $(f^{-1}(y), f^*v)$ is equal to $(g^{-1}(y), g^*v)$, then $f$ is smoothly homotopic to $g$. Milnor first disposes of the case where $f$ and $g$ already agree on a neighbourhood of $N = f^{-1}(y)$, by a straight-line homotopy in stereographic coordinates from the antipode of $y$; then he deforms $f$ until it agrees with $g$ near $N$, using a second-order Taylor bound to keep $F(x,u)$ and $G(x,u)$ in one open half-space so that no new point is carried to $y$.
+
+*The homotopy that realizes a framed cobordism is never stated as a lemma: in the proof of Theorem B (p. 49) Milnor says only that an argument analogous to his proof of Theorem C constructs it.*
+
+**Proved in Lean.** Let $n + p = m$, let $f, g : M \to S^p$ be smooth with a common regular value $y$, let $b$ be a linearly independent $p$-tuple in $\mathbb R^p$ and $c > 0$. If the Pontryagin manifold of $f$ at $y$ for the basis $b$ equals that of $g$ at $y$ for the basis $c\,b$, then $f$ and $g$ are smoothly homotopic. The engine is a deformation lemma: for $N$ nonempty with product neighbourhood $G$ of radius $\varepsilon$, and $k$ smooth with $k^{-1}(y) = N$ and extended derivative carrying every framing vector $v_i(x)$ to $c\,b_i$, there are $0 < \delta \le \varepsilon$ and a smooth $H : M \times \mathbb R \to S^p$ with $H(\cdot, 0) = k$, with $H(G(x,s), 1) = \varphi_y^{-1}(\varphi_y(y) + \sum_i s_i b_i)$ for $|s| < \delta$, and with $H(z, 1) \ne y$ for every $z \notin N$. Separately, for a framed cobordism between $F_0$ and $F_1$ and any linearly independent $b$, there are a smooth $H : M \times \mathbb R \to S^p$ and a $c > 0$ such that the north pole is a regular value of $H(\cdot, 0)$ and of $H(\cdot, 1)$ and their Pontryagin manifolds there, for the common basis $c\,b$, are $F_0$ and $F_1$.
+
+- `Milnor.Framed.smoothHomotopic_of_pontryagin_eq` — Milnor/Chapter7/SamePont.lean, line 35
+- `Milnor.Framed.exists_deform` — Milnor/Chapter7/Deform.lean, line 47
+- `Milnor.Framed.exists_cobMap` — Milnor/Chapter7/CobMap.lean, line 342
+
+*What differs.*
+- Milnor's Lemma 4 asks that the two framed manifolds be equal; the formal statement asks only that $f^*b$ and $g^*(c\,b)$ agree for some $c > 0$, so it contains his case $c = 1$.
+- Milnor deforms $f$ onto $g$ with a second-order Taylor bound; the formal proof deforms each map separately onto the standard map $G(x,s) \mapsto \varphi_y^{-1}(\varphi_y(y) + \sum_i s_i b_i)$.
+- The deformation lemma controls the preimage of $y$ only at time $1$; Milnor's remark that no new point reaches $y$ during the deformation is not in the formal statement and is not used.
+- The map of a cobordism is a separate statement: it is built on $S \cap (M \times (-3,4))$, and time is clamped so that the result is smooth on all of $M \times \mathbb R$.
+
+### V7.11. Theorem B: framed cobordant gives homotopic
+
+*narrower* · $p \ge 1$ assumed · homotopy smooth on $M \times \mathbb R$ · regular values may differ
+
+**Milnor (§7, Theorem B, p. 42).** Two mappings $M \to S^p$ are smoothly homotopic if and only if their associated Pontryagin manifolds are framed cobordant. The half proved on p. 49 is the converse: given a framed cobordism $(X, w)$ between $f^{-1}(y)$ and $g^{-1}(y)$, an argument like the proof of Theorem C produces $F : M \times [0,1] \to S^p$ whose Pontryagin manifold is exactly $(X, w)$; its two ends then have the same Pontryagin manifolds as $f$ and $g$, and Lemma 4 finishes.
+
+*Milnor works with a single regular value $y$ common to $f$ and $g$, which Theorem A lets him arrange, and with a positively oriented basis $v$ of $T(S^p)_y$ fixed once and for all.*
+
+**Proved in Lean.** Let $M \subseteq \mathbb R^{K+1}$ be a compact nonempty submanifold of dimension $m$, let $n + p = m$ and $p \ge 1$. Let $f, g : M \to S^p$ be smooth, let $y$ be a regular value of $f$ and $y'$ one of $g$, and let $e$ and $e'$ be bases of $\mathbb R^p$ whose orientations are those of $S^p$ at $y$ and at $y'$. If $(f^{-1}(y), f^*e)$ and $(g^{-1}(y'), g^*e')$ are framed cobordant, then $f$ and $g$ are smoothly homotopic. Smooth homotopy here means a smooth map $M \times \mathbb R \to S^p$ restricting to $f$ at $t = 0$ and to $g$ at $t = 1$; it is proved reflexive, symmetric and transitive, transitivity by making both homotopies constant near their ends before gluing.
+
+- `Milnor.Framed.smoothHomotopic_of_framedCobordant` — Milnor/Chapter7/ThmAconv.lean, line 109
+- `Milnor.SmoothHomotopic` — Milnor/Chapter7/Homotopy.lean, line 25
+- `Milnor.SmoothHomotopic.trans` — Milnor/Chapter7/Homotopy.lean, line 57
+
+*What differs.*
+- The formal statement assumes $p \ge 1$, used only to rotate a regular value to the north pole, where a unit vector orthogonal to $y$ is needed; the case $p = 0$ is not covered.
+- A smooth homotopy is a smooth map on $M \times \mathbb R$ with the two maps at $t = 0$ and $t = 1$, not a map on $M \times [0,1]$; the relation is proved to be an equivalence relation.
+- The two maps are allowed different regular values $y$ and $y'$, each with its own positive basis; Milnor first arranges a common $y$ by Theorem A.
+- Positivity of the two bases is a named hypothesis, as in Milnor's definition of the Pontryagin manifold, and $M$ is a compact submanifold of $\mathbb R^{K+1}$ given by slice charts.
+
+### V7.12. Framed 0-manifolds: signs and the signed count
+
+*hypotheses explicit* · finiteness of the point set proved · sign read in the chart at $x$ · $m \ge 1$ assumed
+
+**Milnor (§7, p. 50).** Let $M$ be connected and oriented of dimension $m = p$. A framed submanifold of codimension $p$ is then just a finite set of points with a preferred basis at each, and $\operatorname{sgn}(x)$ is $+1$ or $-1$ according as that basis gives the right or the wrong orientation. Milnor says it is clear that $\sum \operatorname{sgn}(x)$ equals the degree of the associated map $M \to S^m$.
+
+*He states this in one sentence, with no proof, and does not say that finiteness of the point set needs an argument.*
+
+**Proved in Lean.** A compact $0$-dimensional slice submanifold of any smooth manifold is finite, so a framed $0$-manifold of $M$ is a finite set $N$ carrying at each $x$ a frame $v(x) = (v_1(x), \dots, v_m(x))$ of $T_xM$. Relative to an orientation $o$ of $M$, the sign of $v(x)$ is the sign of the linear map carrying the standard basis of $\mathbb R^m$ to the chart coordinates of the frame at $x$, read from the standard orientation of $\mathbb R^m$ to $o_x$; for a frame it is $\pm 1$, and the signed count of $(N, v)$ is the sum of these signs. For $m \ge 1$, $f : M \to S^m$ smooth, $y$ a regular value of $f$, and $e$ a basis of $\mathbb R^m$ whose orientation is that of $S^m$ at $y$, the signed count of the Pontryagin manifold $(f^{-1}(y), f^*e)$ is $\deg f$.
+
+- `Milnor.Framed.count_pontryagin` — Milnor/Chapter7/Hopf0.lean, line 249
+- `Milnor.Framed.frameSign` — Milnor/Chapter7/Hopf0.lean, line 106
+- `Milnor.Framed.count` — Milnor/Chapter7/Hopf0.lean, line 112
+- `Milnor.IsSliceSubmanifold.finite_of_dim_zero` — Milnor/Chapter7/Hopf0.lean, line 23
+
+*What differs.*
+- Milnor calls the identity clear; the formal proof shows that $df_x$ carries the Pontryagin frame at $x$ to the positive basis $e$, so the two signs multiply to $+1$, and sums over $f^{-1}(y)$.
+- That a compact framed $0$-manifold is finite is proved, from a slice chart at each point whose domain meets it only there; Milnor takes it for granted.
+- The sign of a frame at $x$ is defined through the chart coordinates of its vectors, compared with $o_x$; Milnor speaks of the basis giving the right or the wrong orientation.
+- $m \ge 1$ is assumed, so that $S^m$ is connected and the degree may be computed at any regular value; Milnor's next clause, on the framed cobordism class, is V7.16.
+
+### V7.13. Moving a framed point inside a chart ball
+
+*not in the book* · no statement in the book · closed $R$-ball inside the chart image · chart signs compared, no orientation
+
+**Milnor (§7, p. 50).** The book has no statement of this kind. Moving a framed point is the first of the steps hidden in Milnor's single clause that the framed cobordism class of a framed $0$-manifold is determined by $\sum \operatorname{sgn}(x)$; the picture he gives, in the non-orientable remark just below, is of a point slid "around $M$ in a closed loop" carrying its basis with it.
+
+*Connectedness of $M$ is the only property he invokes for such motions.*
+
+**Proved in Lean.** Let $m \ge 1$, let $M$ be compact and nonempty, and let $(N, v)$ be a framed $0$-manifold of $M$. **No orientation of $M$ occurs.** Let $x_c \in M$ with chart $\varphi$ centred there, let $R > 0$ be such that the closed ball of radius $R$ about $\varphi(x_c)$ lies in the chart image, and write $U_r$ for the chart ball of radius $r$ about $x_c$. (i) *The move:* let $x_0 \in N$ lie in $U_{R/4}$ and be the only point of $N$ in $\overline{U_R}$, let $x_1 \in U_{R/4}$, and let $v_1$ be a tangent independent frame at $x_1$ whose *chart sign* relative to the hub $x_c$ (V7.20) is that of the frame of $(N, v)$ at $x_0$ — an equality of two determinant signs read in that one chart, in which no orientation appears. Then $(N, v)$ is framed cobordant to the framed $0$-manifold on $(N \setminus \{x_0\}) \cup \{x_1\}$ carrying $v_1$ at $x_1$ and $v$ elsewhere. (ii) *The ball:* around any point $y$ outside $N \setminus \{x_0\}$, inside any open set containing it, there is such an $R$ — the good-ball lemma, itself orientation-free — and then any point of $U_{R/4}$ may be moved to any other with any frame of the same chart sign relative to $y$. (iii) *The oriented readings,* which stand beside these as corollaries: on a ball shrunk so that the chart preserves an orientation $o$ on it, equality of chart signs is equality of the frame signs of V7.12, which gives the move in oriented form; and reach, that every point of the connected component of $x_0$ in $M \setminus (N \setminus \{x_0\})$ is attained with any frame of the same frame sign, which is kept oriented, being the one statement of the local theory whose sign is compared across a whole component.
+
+- `Milnor.Framed.exists_move` — Milnor/Chapter7/Move.lean, line 139
+- `Milnor.Framed.move_in_ball` — Milnor/Chapter7/Reach.lean, line 138
+- `Milnor.Framed.exists_goodBall_free` — Milnor/Chapter7/Reach.lean, line 79
+- `Milnor.Framed.move_in_ball_frameSign` — Milnor/Chapter7/Reach.lean, line 188
+- `Milnor.Framed.exists_reach` — Milnor/Chapter7/Reach.lean, line 225
+
+*What differs.*
+- The book states no move: one clause at the end of §7 covers the whole induction, and the picture it suggests is a point sliding along a path in $M$ carrying its basis.
+- The formal statement needs the chart image at $x_c$ to contain the closed ball of radius $R$ about $\varphi(x_c)$, so that $\overline{U_R}$ stays inside the chart and the glued map is smooth.
+- It no longer needs $\varphi$ to preserve orientation on $U_R$, nor an orientation of $M$ at all, so neither is a difference from the book any more: the two frames are compared by their chart signs at the hub $x_c$, the determinant signs of the frames read in that one chart. All the old positivity hypothesis was ever used for is that $d\varphi_z$ is invertible, and a chart derivative is invertible at every point of its domain.
+- With it went two hypotheses from each of six theorems in the glued-homotopy files, the orientation of $M$ and that positivity, so that those files now mention no orientation at all; and the lemma asserting that the derivative of a glued slice is bijective, whose hypothesis that the chart preserves orientation was spurious, was deleted in favour of the general fact.
+- Both $x_0$ and $x_1$ must lie in $U_{R/4}$, and no point of $N$ other than $x_0$ in $\overline{U_R}$; paths are replaced by an open-and-closed argument on the reachable points.
+
+### V7.14. Cancelling two framed points of opposite sign
+
+*not in the book* · no statement in the book · standard frames of chart signs $\pm 1$ · no orientation, no positivity
+
+**Milnor (§7, p. 50).** The book has no statement of this kind either. Cancelling a pair of points of opposite sign is the second step hidden in Milnor's clause that the framed cobordism class of a framed $0$-manifold is determined by $\sum \operatorname{sgn}(x)$; the geometry behind it is the U-shaped arc of a cobordism whose two ends are preimages of opposite sign, the picture already used for the degree in §5.
+
+**Proved in Lean.** Let $m \ge 1$, let $M$ be compact and nonempty, and let $\varphi$, $x_c$, $R$ and $U_R$ be as in V7.13: the closed $R$-ball about $\varphi(x_c)$ inside the chart image. **No orientation of $M$, and no positivity hypothesis on the chart.** Let $w \in \mathbb R^m$ be a unit vector, $c_0$ a point with $|c_0 - \varphi(x_c)| < R/8$, and $a > 0$ with $8a \le R$; let $x_1, x_2 \in N$ lie in the source of $\varphi$ with $\varphi(x_1) = c_0 + a w$ and $\varphi(x_2) = c_0 - a w$, and let no other point of $N$ lie in $\overline{U_R}$. (i) *The cancellation:* the framed $0$-manifold on $N$ that agrees with $v$ off $\{x_1, x_2\}$ and carries at $x_1$ and $x_2$ the standard frames of the cancelling map, of *chart signs* $1$ and $-1$ relative to the hub $x_c$ (V7.20), is framed cobordant to the framed $0$-manifold on $N \setminus \{x_1, x_2\}$ with the same frames elsewhere. (ii) *The sign at a zero:* at the zero $\varphi^{-1}(c_0 + l w)$ of the slice at time $t$, where $l^2 = a^2 \rho(t)$, that frame has chart sign $\operatorname{sgn} l$ — flatly the sign of the signed distance along $w$, where the oriented version carried a factor read off the orientation. (iii) *The oriented reading,* a corollary beside them, and what the signed cancellation machinery consumes: on a ball on which the chart at $x_c$ preserves an orientation $o$, the two frame signs of V7.12 are $\varepsilon$ and $-\varepsilon$, with $\varepsilon$ the sign of the identity of $\mathbb R^m$ from $o_{x_c}$ to the standard orientation — the orientation factor at the centre of the ball. (iv) A companion, still oriented, cancels an arbitrary pair: if $z \in N$ has the frame sign opposite to that of $x_0 \in N$ and lies in the closure of the component of $x_0$ in $M \setminus (N \setminus \{x_0\})$, then $(N, v)$ is framed cobordant to $N \setminus \{x_0, z\}$ with the frames $v$.
+
+- `Milnor.Framed.exists_cancel_chartSign` — Milnor/Chapter7/Cancel.lean, line 222
+- `Milnor.Framed.chartSign_cancelH_slice` — Milnor/Chapter7/Cancel.lean, line 142
+- `Milnor.Framed.exists_cancel` — Milnor/Chapter7/Cancel.lean, line 413
+- `Milnor.Framed.cancel_step` — Milnor/Chapter7/CancelStep.lean, line 173
+
+*What differs.*
+- The book states nothing here; cancelling a pair of opposite signs is one step of the induction left to the reader at the end of §7.
+- The cobordism is between $(N, v)$ with the standard frames installed at $x_1, x_2$ and $N \setminus \{x_1, x_2\}$, not between $(N, v)$ itself and the two points removed, so two frame changes come first.
+- Those frames no longer have signs $\pm\varepsilon$ for a factor $\varepsilon$ read off an orientation: their chart signs are $1$ and $-1$ on the nose, and the statement carrying the proof needs neither an orientation of $M$ nor the hypothesis that $\varphi$ preserve one on $U_R$, so neither is a difference from the book any more. The factor $\varepsilon$ survives only in the oriented corollary, where it is the orientation factor at the centre of the ball, and the positivity is the one hypothesis that corollary still carries.
+- The positivity was doing no work: regularity of the north pole for the cancelling homotopy and for its slices needs only that a chart derivative be invertible, which holds at every point of the chart's domain. So the lemma whose hypothesis was that the chart preserves orientation was spurious and is gone, and six theorems of the two glued-homotopy files lost two hypotheses each (V7.13).
+- The points must sit at $\varphi^{-1}(c_0 \pm a w)$ with $|c_0 - \varphi(x_c)| < R/8$ and $8a \le R$; the zeros at time $t$ are $\{\lambda w : \lambda^2 = a^2 \rho(t)\}$, with $\rho$ from $1$ to $-1$.
+
+### V7.15. The neighbour lemma and chains of neighbours
+
+*not in the book* · no statement in the book · no sign, no orientation, no compactness · chains needed when $m = 1$
+
+**Milnor (§7, p. 50).** There is no such lemma in the book. On p. 50 Milnor lets $M$ be connected and, having identified $\sum \operatorname{sgn}(x)$ with the degree, remarks in a single clause that the framed cobordism class of the $0$-manifold is determined by that integer; connectedness is all he invokes for moving points about.
+
+*For $m \ge 2$ the complement of a finite set is still connected and any point can be moved onto any other, so nothing more is needed; the difficulty is invisible until $m = 1$.*
+
+**Proved in Lean.** Let $X$ be a connected, locally connected $T_1$ space, let $N \subseteq X$ be finite, and write $C(x)$ for the connected component of $x$ in $X \setminus (N \setminus \{x\})$. Assume every $x \in N$ has an open set $J$ with $x \in J$, $J \cap N \subseteq \{x\}$ and $J \setminus \{x\} \subseteq C(x)$. Then for every $B \subseteq N$ with $B$ and $N \setminus B$ nonempty there are $x \in B$ and $z \in N \setminus B$ with $z \in \overline{C(x)}$, that is, $x$ has a neighbour in the other part. The hypothesis on $J$ holds for small chart balls of $M$, each point of such a ball being joined to the centre by a segment read in the chart, so the lemma applies to every finite subset of a connected $M$, compact or not. **Nothing in it mentions a frame, a sign or an orientation:** it is the one of the three moves of the endgame that the restatement in chart-sign form left untouched, and one statement serves both endgames — the oriented proof sorts the points of $N$ by the sign of their frames before applying it (V7.16), the sign-free proof hands it the partition $\{x\} \sqcup (N \setminus \{x\})$, there being no signs to sort by (V7.24). The same argument gives chains: for $x_0 \in B$ there is a sequence $x_0 = u_0, \dots, u_k$ of consecutive neighbours with $u_0, \dots, u_{k-1} \in B$ and $u_k \in N \setminus B$.
+
+- `Milnor.exists_neighbour` — Milnor/Chapter7/Neighbour.lean, line 56
+- `Milnor.Framed.ballU_diff_subset_compl'` — Milnor/Chapter7/Segment.lean, line 59
+- `Milnor.Framed.exists_neighbour_M` — Milnor/Chapter7/Segment.lean, line 172
+- `Milnor.exists_chainRel` — Milnor/Chapter7/Chain.lean, line 87
+- `Milnor.compl'_eq_compl` — Milnor/Chapter7/Puncture.lean, line 428
+
+*What differs.*
+- This is the formal content of Milnor's appeal to the connectedness of $M$; the book states no lemma of the kind.
+- It is proved for an abstract connected, locally connected $T_1$ space with a segment property at each point of $N$; for $M$ that property comes from a chart ball meeting $N$ only in its centre, and asks nothing of the chart but that the closed ball of the radius lie in its image.
+- Where the two moves of V7.13 and V7.14 had to be restated with the chart sign, this lemma needed no restating, and the row lists no orientation among its differences from the book: it carries no frame, no sign, no orientation, no compactness and no dimension hypothesis. What the sign-free endgame deletes is the sorting of the points by sign that precedes the application (V7.24), not anything in the lemma.
+- Chains are needed because for $m = 1$ points cannot pass each other: a point may reach its target only through points already in place, which are then moved one step each.
+- For $m \ge 2$ every point of $N$ is a neighbour of every other and every chain has length one, the component $C(x)$ being then the whole of $M \setminus (N \setminus \{x\})$ (V7.22); the formal proof is uniform in the dimension and never uses this.
+
+### V7.16. Equal signed counts give framed cobordant 0-manifolds
+
+*hypotheses explicit* · $m \ge 1$ assumed · proof left to the reader in the book · connectedness used via neighbours
+
+**Milnor (§7, p. 50).** With $M$ connected, oriented and of dimension $m = p$, Milnor writes that it is "not difficult to see" that the framed cobordism class of a framed $0$-manifold is uniquely determined by the integer $\sum \operatorname{sgn}(x)$, and passes at once to the Hopf theorem.
+
+*This is the one assertion of §7 for which the book gives no argument at all.*
+
+**Proved in Lean.** Let $m \ge 1$ and let $M \subseteq \mathbb R^{K+1}$ be compact, nonempty, connected and oriented by $o$. Two framed $0$-manifolds of $M$ with the same signed count are framed cobordant. The proof is an induction on the total number of points of the two: while one side carries both signs, the neighbour lemma produces a neighbouring pair of opposite signs and V7.14 removes it, leaving the count unchanged; once each side has a single sign, equal counts force the same sign and the same number of points, the frames at common points are matched by frame changes, and the remaining points of one side are moved onto those of the other along shortest chains of neighbours.
+
+- `Milnor.Framed.framedCobordant_of_count_eq` — Milnor/Chapter7/Main.lean, line 86
+- `Milnor.Framed.exists_opposite_neighbour` — Milnor/Chapter7/Main.lean, line 29
+- `Milnor.Framed.gather` — Milnor/Chapter7/Gather.lean, line 238
+
+*What differs.*
+- Milnor asserts this in a single clause and gives no argument; the formal proof is an induction on the total number of points of the two framed $0$-manifolds.
+- The formal statement names $m \ge 1$ and $M$ compact, nonempty, connected and oriented; all but $m \ge 1$ are already in force in Milnor's paragraph.
+- Connectedness enters only through the neighbour lemma and the chain lemma of V7.15, never as a way of joining two points by a path in $M$.
+- Cancelling a neighbouring pair of opposite signs leaves the count unchanged and drops the point count by two; the points left over are gathered along shortest chains.
+
+### V7.17. The Hopf theorem, and maps of every degree
+
+*restated* · converse is Theorem B of §5 · homotopy means smooth homotopy · degrees realized without connectedness
+
+**Milnor (§7, Theorem of Hopf, p. 50).** If $M$ is connected, oriented and boundaryless, then two maps $M \to S^m$ are smoothly homotopic if and only if they have the same degree. Milnor obtains it by putting together the identity $\sum \operatorname{sgn}(x) = \deg$, the assertion that the framed cobordism class of a framed $0$-manifold is determined by that integer, and Theorem B. He adds that for non-orientable $M$ an easy argument classifies the maps by the degree modulo $2$.
+
+*He states only the classification; that every integer occurs as a degree is not part of it.*
+
+**Proved in Lean.** Let $M \subseteq \mathbb R^{K+1}$ be a compact nonempty submanifold of dimension $m \ge 1$, oriented by $o$, with $S^m$ carrying the orientation of §5. If $M$ is connected, two smooth maps $M \to S^m$ with the same degree are smoothly homotopic, smooth homotopy meaning a smooth map $M \times \mathbb R \to S^m$ restricting to the two maps at $t = 0$ and $t = 1$; the converse is Theorem B of §5. Separately, and without assuming $M$ connected, every integer $d$ is the degree of a smooth map $M \to S^m$: starting from the empty framed $0$-manifold, $|d|$ points with frames of the sign of $d$ are added one at a time, which needs $M$ to be infinite, and Theorem C realizes the result as a Pontryagin manifold.
+
+- `Milnor.Framed.hopf_homotopic` — Milnor/Chapter7/Hopf.lean, line 31
+- `Milnor.Framed.exists_map_of_deg` — Milnor/Chapter7/Hopf.lean, line 198
+- `Milnor.Framed.exists_add_point` — Milnor/Chapter7/AddPoint.lean, line 55
+
+*What differs.*
+- Milnor states one equivalence; the formal statement is the half saying that equal degrees give a homotopy, the other half being Theorem B of §5.
+- Homotopy means smooth homotopy throughout: a smooth map $M \times \mathbb R \to S^m$ restricting to the two maps at $t = 0$ and $t = 1$.
+- $m \ge 1$ is assumed, and $M$ is a compact nonempty oriented submanifold of $\mathbb R^{K+1}$, as everywhere in §§6–7 of the formalization.
+- That every integer is a degree is a second statement, proved without assuming $M$ connected; Milnor's mod 2 classification for non-orientable $M$ is V7.26.
+
+### V7.18. Orientability of a manifold, and transport of an orientation
+
+*not in the book* · no orientability in the book · a hop records which chart it uses · exactly two orientations if connected
+
+**Milnor (§7, p. 50).** The book defines an oriented manifold (§5, p. 26, V5.0) but never asks whether an orientation exists, and orientability itself is nowhere defined: the word appears in the remark at the end of §7, that for a connected *non-orientable* $M$ the maps to $S^m$ are classified by the degree modulo $2$. What Milnor relies on instead is the picture of a frame carried around a closed loop in $M$ and coming back reversed, and the fact that his manifolds are subsets of Euclidean space, where every tangent space is a subspace of one fixed $\mathbb R^k$.
+
+*Nothing in the book compares the orientations at two points along a chain of charts; that comparison is the content of this row.*
+
+**Proved in Lean.** Neither Mathlib nor the project had orientability in any form. Let $M$ be modelled on a finite-dimensional real $E$ with $\dim E = m$. The derivative at $y$ of the chart centred at $x$ is a linear isomorphism, so exactly one orientation of the model space at $y$ is carried by it to a given orientation at $x$: this is the *transport* through that chart, an involution which anticommutes with reversal; and an orientation of $M$ in the sense of V5.0 is exactly a family of orientations which near every point is the transport of its value at that point. A *hop* from $x$ to $y$ is a single chart whose source contains both; a *chain* is a finite sequence of hops; chains compose and reverse, transport along a composite is the composite of the transports, and transport along the reverse undoes the chain; in a connected manifold any two points are joined by a chain, the reachable set being open and closed. A chain-loop *reverses* if its transport carries some orientation at the base point to the opposite one, and which of the two is tested is immaterial. Half of the dichotomy follows: if no chain-loop at a point of a connected $M$ reverses, then $M$ is orientable; contrapositively, a connected non-orientable manifold carries at every point a chain-loop reversing *every* orientation there. Finally, a connected orientable manifold has exactly two orientations, a given one and its pointwise reverse.
+
+- `Milnor.IsOrientable` — Milnor/Chapter7/Orientable.lean, line 77
+- `Milnor.orTransport` — Milnor/Chapter7/OrientTransport.lean, line 113
+- `Milnor.ChartChain` — Milnor/Chapter7/OrientTransport.lean, line 304
+- `Milnor.exists_reverses_of_not_isOrientable` — Milnor/Chapter7/Orientable.lean, line 292
+- `Milnor.Orient.or_eq_or_eq_neg` — Milnor/Chapter7/Orientable.lean, line 314
+
+*What differs.*
+- No counterpart in the book: Milnor's manifolds are subsets of Euclidean space, orientability is never defined for them, and the transport of an orientation along a chain of charts has to be built before the remark of p. 50 can be stated at all.
+- A hop has to record *which* chart it travels through. The naive relation "some chart contains both points" does not induce a symmetric transport, and the obvious symmetric repair is wrong, precisely because two charts can disagree on a disconnected overlap.
+- Only half of the dichotomy is unconditional at this level. The converse is **false** for an orientation in the sense of V5.0, whose compatibility is a condition only near each point; it holds for the stronger notion of an orientation coherent with each chart on the whole of that chart's source, and the counterexample is recorded in the source: on $\mathbb R$ with the atlas made of the identity chart and the chart that is $x$ on $(-1, 0)$ and $3 - x$ on $(1, 2)$, the orientation that is standard except reversed on $(1, 2)$ satisfies V5.0's condition, and the loop out through the second chart and back through the first reverses, although $\mathbb R$ is orientable. V7.19 removes the defect.
+- Nothing is assumed of $M$ beyond what each statement says: no boundarylessness, no Hausdorffness, no second countability, no positive dimension, and $M$ may be empty; connectedness appears as preconnectedness and only where it is stated.
+
+### V7.19. Chart balls, and the exact dichotomy
+
+*not in the book* · round balls, where chart sources fail · every orientation is ball-coherent · the converse holds, with no extra notion
+
+**Milnor (§7, p. 50).** For the remark at the end of §7 Milnor needs one alternative of a dichotomy he does not state: a connected manifold either carries a coherent choice of orientations, or admits a closed loop that brings an orientation back reversed, in which case a framed point slid around the loop returns with the sign of its frame changed. He takes the second alternative as read for a non-orientable $M$, and the loops he has in mind are the paths along which points are slid in the proof of the Hopf theorem.
+
+*The reversing loop is the one geometric input of the mod 2 remark; the rest of §7 is orientation-free.*
+
+**Proved in Lean.** A *chart ball* is the preimage under the chart centred at $c$ of a round ball about the chart image of $c$; when that ball lies in the target of the chart, the chart ball is connected, which is the one property a chart source lacks. A *ball hop* is a hop through such a ball containing both its endpoints, and a *ball chain* a chain of those; the whole transport algebra of V7.18 applies verbatim, only the predicate having to be shown closed under the constructions. The key lemma is that every orientation of $M$ is *ball-coherent*: transport along a ball hop carries the orientation at one end to the orientation at the other. On a chart ball about $c$ the sign of the orientation at $z$ against the one at $c$, read through the chart derivative, takes only the values $\pm 1$, is locally constant by the continuity field of V5.0, and equals $1$ at $c$; a locally constant function on a connected set is constant. Hence the exact dichotomy: for connected $M$ and any base point, $M$ is orientable *if and only if* no loop of ball hops at that point reverses; and a connected non-orientable $M$ carries at every point a loop of ball hops reversing *every* orientation there, which is the form the mod 2 endgame uses.
+
+- `Milnor.chartBall` — Milnor/Chapter7/OrientBall.lean, line 114
+- `Milnor.isPreconnected_chartBall` — Milnor/Chapter7/OrientBall.lean, line 156
+- `Milnor.BallHop.transport_or` — Milnor/Chapter7/OrientBall.lean, line 377
+- `Milnor.isOrientable_iff_forall_not_reverses_isBall` — Milnor/Chapter7/OrientBall.lean, line 613
+- `Milnor.exists_isBall_reverses_of_not_isOrientable` — Milnor/Chapter7/OrientBall.lean, line 625
+
+*What differs.*
+- No statement of this kind in the book: it is what the remark of p. 50 presupposes, and the mod 2 endgame consumes it in the form "at every point outside a finite set there is a reversing loop of balls" (V7.26).
+- Round balls make the dichotomy exact, where chains of charts give only one half (V7.18): for a chart source the key lemma is false, and that is exactly the counterexample recorded there.
+- The key lemma is the one step with no chart-level counterpart, and it is where the continuity field of an orientation (V5.0) earns its keep; it needs a connected chart domain, which a round ball is and a chart source need not be.
+- Ball chains are chart chains together with a predicate, not a second inductive type, so composition, reversal, transport and the notion of a reversing loop are literally the chart-level ones and no algebra is duplicated.
+- Boundarylessness of the model enters twice, in both cases because a chart target must be open: a ball inside the target has to exist at all, which every statement *producing* a ball hop needs, and the sign of a chart derivative has to be locally constant, which the key lemma needs. Everything about a chart ball that is given rather than produced needs it not, and Hausdorffness, second countability and positivity of the dimension are needed nowhere.
+
+### V7.20. The chart sign of a frame, and the bridge to the oriented sign
+
+*not in the book* · a sign with no orientation in it · Milnor's sign, times a point factor · frames of both signs at every point
+
+**Milnor (§7, p. 50).** The remark at the end of §7 is justified in a single clause: a framed point slid around an orientation-reversing loop comes back with *the sign of its frame* changed, so that only the number of points modulo $2$ survives and the rest of the framed-cobordism machinery applies unchanged. This row carries out those five words. The sign Milnor means is the one he defines a few lines earlier (V7.12): $\operatorname{sgn}(x)$ is $+1$ or $-1$ according as the frame at $x$ gives the right or the wrong orientation of $M$. On the manifolds of the remark there is no right orientation, so that sign is not defined, and the book offers no substitute: the clause says the sign changes without saying what it is measured against.
+
+*A sign of a frame that mentions no orientation, and the identity relating it to Milnor's sign where an orientation exists.*
+
+**Proved in Lean.** Let $M \subseteq \mathbb R^{K+1}$ be a slice submanifold of dimension $m$ as in V7.0, let $x_c$ and $x$ be points of it and $v$ a tuple of $m$ ambient vectors. The *chart sign* of $v$ at $x$ relative to the centre $x_c$ is the sign of the determinant of $v$ read in the chart centred at $x_c$ — the derivative at $x$ of that chart composed with the matrix of chart coordinates of the $v_i$; the *self sign* is the case $x_c = x$; the *Jacobian sign* is the sign of the determinant of the derivative at $x$ of the chart centred at $x_c$. None of the three mentions an orientation. For a tangent independent frame each is $1$ or $-1$ and squares to $1$ — the chart sign and the Jacobian sign once $x$ lies in the source of the chart, the self sign with no membership hypothesis at all — and the cocycle formula $\text{chart sign} = \text{Jacobian sign} \cdot \text{self sign}$ holds for all arguments, the Jacobian sign being $1$ at the centre. **The bridge:** for every orientation $o_M$ of $M$ in the sense of V5.0, the sign of V7.12 factors as $\operatorname{frameSign}(o_M, v, x) = \varepsilon(x) \cdot \text{self sign}(v, x)$, where $\varepsilon(x) = \pm 1$ depends only on the point and not on the frame. *The sign of a frame against an orientation of the manifold is thus the determinant sign of the frame read in one chart, times a factor depending only on the point*, and the factor cancels from every comparison of two such signs. On a chart ball, under the positivity hypothesis the oriented lemmas already carried, the same holds with the hub's factor, so equality of frame signs at two points of the ball is exactly equality of their chart signs relative to the hub. Two further statements, with no orientation and no case split on a global reference sign: for $0 < m$ there are tangent independent frames of self sign $1$ and of self sign $-1$ at *every* point of $M$; and given such a frame at $x$ and a second point $y$ in the source of the same chart, there is a frame at $y$ which is the same frame read in that chart, hence of the same chart sign, nothing being needed but the two memberships.
+
+- `Milnor.Framed.chartSign` — Milnor/Chapter7/ChartSign.lean, line 87
+- `Milnor.Framed.selfSign` — Milnor/Chapter7/ChartSign.lean, line 92
+- `Milnor.Framed.chartSign_eq_jacSign_mul_selfSign` — Milnor/Chapter7/ChartSign.lean, line 184
+- `Milnor.Framed.frameSign_eq_orEps_mul_selfSign` — Milnor/Chapter7/ChartSign.lean, line 296
+- `Milnor.Framed.exists_frame_of_selfSign` — Milnor/Chapter7/ChartSign.lean, line 397
+
+*What differs.*
+- No counterpart in the book: the sign of a frame is defined there only against an orientation of $M$ (V7.12), which is exactly what a non-orientable $M$ lacks, so the sign the clause speaks of has to be built before the clause can be stated.
+- The bridge is what makes the rest of the chapter reusable rather than rewritten. Every local proof of §7 compares a *product* of two signs, and the point-dependent factor cancels from such a product; so V7.13 to V7.15 were restated in chart-sign form, six theorems losing two hypotheses each, and the oriented statements sit beside the sign-free ones as short corollaries, no proof being duplicated. A lemma whose hypothesis "the chart preserves orientation" turned out to be spurious was deleted in favour of the general one, and the sign of the frame at a zero of the cancelling map is now flatly the sign of the signed distance, where before it carried a factor depending on the orientation.
+- The self sign is a better primitive than the plan expected: it needs no chart-membership hypothesis at all, which is what makes it usable in the clopen arguments that subdivide a hop (V7.23).
+- Frames of both signs exist at every point with no case split on a global reference sign, where the oriented version had to compare against the orientation; the proof of that statement collapses from sixty-five lines to one.
+
+### V7.21. The sign of a chain, the transition cocycle, and chains that avoid a set
+
+*not in the book* · reversing means chain sign $-1$ · jointly locally constant, singly not · avoidance via the closed chart ball
+
+**Milnor (§7, p. 50).** Milnor's single clause of justification turns on *an orientation-reversing loop*: a framed point carried around one comes back with the sign of its frame changed, so that only the number of points modulo $2$ survives and the rest of the framed-cobordism machinery applies unchanged. This row carries out the loop. What reversing is, Milnor leaves to the picture of a frame taken around a closed loop in $M$ and coming back the other way; and the loop must be one the point can be slid along without ever running into the other points of the framed set, which the clause does not mention, those points not being in the picture.
+
+*Reversal becomes a sign attached to the loop, and the loops can be confined to a region chosen in advance.*
+
+**Proved in Lean.** Let $M$ be a manifold modelled on a finite-dimensional real $E$ with $\dim E = m$. (i) *The dictionary.* The *Jacobian sign* at $z$ of the chart centred at $c$ is the sign of the determinant of the derivative there; it is $\pm 1$ for $z$ in the source of that chart, is $1$ at $c$, and transport of an orientation across the chart (V7.18) is multiplication by it. The sign of a hop is the product of the two Jacobian signs of its chart at the two endpoints, and the sign of a chain the product of the signs of its hops. The sign of a composite is the product of the signs, a chain and its reverse have the same sign, transport along a chain is multiplication by its sign, and **a chain-loop reverses exactly when its sign is $-1$** — so the dichotomy of V7.19 becomes arithmetic: a connected $M$ is orientable if and only if every loop of balls at a base point has sign $1$, and a connected non-orientable $M$ carries a loop of balls of sign $-1$ at every point. All of this holds for arbitrary chart chains, not only ball ones, and none of it needs a boundaryless model. (ii) *The transition cocycle lemma.* For two centres $p$, $q$ and a point $y$ in both their sources, the product of the two Jacobian signs at $z$ is constant for $z$ near $y$. Neither factor is locally constant, each reading a fixed chart through the moving chart at $z$; in the product the moving chart cancels and what is left is the determinant sign of the fixed transition map $\varphi_p \circ \varphi_q^{-1}$, which is smooth on an open set, hence has continuous invertible derivative and locally constant determinant sign. (iii) *Avoidance.* A ball hop *runs inside* a set $C$ when the closed ball of its radius lies in the target of its chart and the resulting closed chart ball is contained in $C$; a chain is a ball chain inside $C$ when each of its hops is, again a predicate on the chains of V7.18 and not a second inductive type. For $C$ open and preconnected, any two points of $C$ are joined by a ball chain inside $C$, by the clopen argument of V7.19 run inside $C$; and if $P$ is disjoint from $C$ such a chain avoids $P$ with room to spare, the closed chart ball of each of its hops missing $P$.
+
+- `Milnor.jacSign` — Milnor/Chapter7/BallChainSign.lean, line 114
+- `Milnor.chainSign` — Milnor/Chapter7/BallChainSign.lean, line 274
+- `Milnor.ChartChain.reverses_iff_chainSign` — Milnor/Chapter7/BallChainSign.lean, line 354
+- `Milnor.eventually_jacSign_mul_jacSign_eq` — Milnor/Chapter7/BallChainSign.lean, line 519
+- `Milnor.exists_isBallIn_avoiding` — Milnor/Chapter7/BallChainSign.lean, line 774
+
+*What differs.*
+- No counterpart in the book: reversal is a picture there, and the dictionary is what makes it a quantity — after it, "this loop reverses" is the arithmetic statement that a product of $\pm 1$'s is $-1$, and the dichotomy of V7.19 can be used by calculation rather than by transporting orientations by hand.
+- The dictionary costs nothing extra in generality: a hop already carries the two membership facts that make its two Jacobian signs $\pm 1$, so everything is proved for arbitrary chart chains and nothing has to be repeated for ball chains, which are chart chains satisfying a predicate.
+- The cocycle lemma is the one genuinely analytic step in the whole orientation theory, and it has no counterpart at any point of the book. It is used twice: to extend a family of orientations across a puncture (V7.22), and to see that the sign of a chain does not notice a hop being subdivided (V7.23).
+- Two hypotheses came out weaker than the plan asked: the avoided set need not be closed, only disjoint from the region, and the region need only be preconnected, not connected. No local connectedness of $M$ and no hypothesis on the dimension is used, and $M$ may be empty.
+- One hypothesis had to be added, and the later rows must supply it: avoidance is phrased through the *closed chart ball* rather than the topological closure of the ball, because on a non-Hausdorff manifold the closure of a chart ball need not even lie in the source of its chart — on the line with two origins the closure of an interval about one origin contains the other. The closure form is given separately under Hausdorffness, which is free in this chapter, where the manifolds are subsets of a Euclidean space.
+- Boundarylessness of the model is assumed exactly where a chart target has to be open: to produce a ball inside that target at all, and to make the transition map smooth on an open set. The sign dictionary is free of it.
+
+### V7.22. The punctured manifold, and the punctured dichotomy
+
+*not in the book* · $2 \le m$, and the hypothesis is sharp · orientations extend over punctures · no separation hypothesis: $T_1$ is free
+
+**Milnor (§7, p. 50).** Milnor's single clause of justification — a framed point slid around an orientation-reversing loop comes back with the sign of its frame changed, so that only the number of points modulo $2$ survives — carries a side condition it never states, and that is this row. The point being slid is one of finitely many, and the loop must miss the others or the sliding would collide with them; Milnor's loop simply goes around $M$. Nothing in the book says that a non-orientable manifold still has a reversing loop once finitely many points have been deleted, and nothing says that the complement of a finite set is connected.
+
+*The dichotomy of V7.19 rerun on a punctured manifold, which is what makes the reversing loop available where the framed set leaves room for it.*
+
+**Proved in Lean.** Let $M$ be a manifold modelled on a finite-dimensional real $E$ with $\dim E = m$ and a boundaryless model. For $2 \le m$: a chart ball minus any one point is path connected, hence connected; and the complement of a finite set $P$ in a connected $M$ is connected, nonempty already for $0 < m$, since a nonempty open subset of a manifold of positive dimension is infinite. Call a family of orientations of the tangent spaces *ball-coherent on* a set $C$ when transport along every ball hop running inside $C$ (V7.21) carries its value at one end of the hop to its value at the other; every orientation of $M$ is ball-coherent on every set (V7.19), and the *extension theorem* is the converse: for $2 \le m$ and $P$ finite, a family ball-coherent on the complement of $P$ agrees off $P$ with a transport section on the whole of $M$, hence with an orientation of $M$ in the sense of V5.0. Its value at a puncture $p$ is the value of the family at a point $y$ near $p$ transported back to $p$, well defined because that assignment is locally constant on a punctured ball about $p$ — which is the transition cocycle lemma of V7.21 — and because the punctured ball is connected. Hence **the punctured dichotomy:** a connected non-orientable $M$ of dimension at least two has, at every point $x_0$ outside a given finite set $P$, a loop of chart balls at $x_0$ each of whose closed chart balls misses $P$ and whose chain sign is $-1$. That is the hypothesis V7.23 to V7.25 take as given, in exactly this shape, and V7.26 discharges it once.
+
+- `Milnor.isConnected_chartBall_diff_singleton` — Milnor/Chapter7/Puncture.lean, line 282
+- `Milnor.isConnected_compl_finite` — Milnor/Chapter7/Puncture.lean, line 407
+- `Milnor.extend_ballCoherent` — Milnor/Chapter7/Puncture.lean, line 624
+- `Milnor.HasReversingBallLoop` — Milnor/Chapter7/Puncture.lean, line 660
+- `Milnor.hasReversingBallLoop_of_not_isOrientable` — Milnor/Chapter7/Puncture.lean, line 684
+
+*What differs.*
+- No counterpart in the book: avoiding the other points is not a matter of drawing the loop more carefully, but of rerunning the dichotomy of V7.19 on the complement of a finite set, which needs the point-set theorem that the complement is still connected and the orientation theorem that it is still non-orientable.
+- The hypothesis $2 \le m$ is **sharp**, not a convenience, and this row is the sole place in the development that needs it: for $m = 1$ a punctured chart ball is an interval minus an interior point, and $\mathbb R \setminus \{0\}$ is a disconnected complement of a finite set in a connected $1$-manifold; for $m = 0$ a punctured chart ball is empty. V7.26 no longer carries the hypothesis, however: since the classification of one-manifolds (V.A2) it is *derived* there from non-orientability, every connected one-manifold being orientable (V.A4). The statements about a chart ball that is given, with its ball inside the chart's target, need no boundarylessness; producing one does.
+- The extension theorem is where the cocycle lemma of V7.21 earns its keep. The value read at a nearby point involves two Jacobian signs which are separately discontinuous in that point and jointly locally constant, and it is the joint constancy, together with the connectedness of the punctured ball, that makes the value independent of the point it is read at.
+- Where the plan turned out wrong, twice and in the same direction. Well-definedness of the extension holds at *every* point, not only at the punctures, so the extension is one total function with no case split and the transport-section condition is checked at every point at once; and no separation hypothesis is needed anywhere, charts giving $T_1$ for free, which is all that the closedness of a finite set asks.
+- Two small facts had to be proved that Mathlib does not supply in usable form: that no point of a manifold of positive dimension is isolated, and that a locally constant function on a connected set is constant — Mathlib's version wants a discrete target, and the two orientations of a vector space carry no topology.
+
+### V7.23. The slide and the flip: Milnor's clause
+
+*not in the book* · Milnor's clause, proved · one hop is many moves · the loop is needed only where it starts
+
+**Milnor (§7, p. 50).** **This row is Milnor's clause**, and the only part of it he asserts outright: on p. 50, in the remark just after the Hopf theorem, a framed point slid around an orientation-reversing loop comes back with the sign of its frame changed, so that only the number of points modulo $2$ survives and the rest of the framed-cobordism machinery applies unchanged. He gives no construction. The sliding is the picture of §7, and its justification in the oriented case is the machinery of V7.13, whose every statement mentions an orientation of $M$.
+
+*The five other rows of this group are what it takes to state this one and to make its hypothesis available.*
+
+**Proved in Lean.** Let $M \subseteq \mathbb R^{K+1}$ be a compact nonempty slice submanifold of dimension $m$ with $0 < m$, and let $(N, v)$ be a framed $0$-manifold of $M$ (V7.0). (i) *The slide:* given a chain of chart balls from a point $x_0$ of $N$ to $y$, the closed chart ball of each of its hops missing every other point of $N$, the framed manifold $(N, v)$ is framed cobordant to one whose point set is $(N \setminus \{x_0\}) \cup \{y\}$, whose frames away from $x_0$ are those of $v$, and whose self sign at $y$ (V7.20) is the chain sign of the chain (V7.21) times the self sign at $x_0$. (ii) *The flip:* if the chain is a *loop* at $x_0$ of chain sign $-1$, the point set and every other frame are literally unchanged and the self sign at $x_0$ is reversed. (iii) Consequently: every point of the component of $x_0$ in $M \setminus (N \setminus \{x_0\})$ is reached with *some* frame, with no loop at all; and with a reversing loop at $x_0$ available, the frame there may be replaced by *any* tangent independent frame, and the point may be moved anywhere in that component carrying any tangent independent frame — which is V7.13 with the orientation and its sign hypothesis simply deleted. No orientation of $M$ occurs anywhere, and no hypothesis on the dimension beyond $0 < m$: connectedness and $2 \le m$ belong to V7.22, which produces the loop. The loop is carried as a hypothesis in exactly the form V7.22 produces it, so the two halves join with no glue, and Hausdorffness is never invoked.
+
+- `Milnor.Framed.exists_slide` — Milnor/Chapter7/Slide.lean, line 379
+- `Milnor.Framed.exists_flip` — Milnor/Chapter7/Slide.lean, line 424
+- `Milnor.Framed.exists_reach_any` — Milnor/Chapter7/Slide.lean, line 399
+- `Milnor.Framed.exists_frame_free` — Milnor/Chapter7/Slide.lean, line 447
+- `Milnor.Framed.exists_reach_free` — Milnor/Chapter7/Slide.lean, line 497
+
+*What differs.*
+- This is the one row of the six with something in the book to compare, and the comparison is one clause against a file: what Milnor asserts is the flip, and the row is the slide of which the flip is the loop case, together with the bookkeeping that says what the sign of the frame does along the way.
+- **Where the plan turned out wrong:** a ball hop is too coarse to be performed by one move. A move (V7.13) needs its two points inside the ball of a quarter of a radius $R$ whose *closed* ball fits in the chart's target, while the endpoints of a ball hop need only lie in the ball itself and can be almost a full diameter apart, the target containing no ball four times as large. So each hop has to be subdivided, and the sign shown not to notice the subdivision: that needs an open-set form of the cocycle lemma of V7.21 and a change-of-hub lemma, and the invariant carried across a hop turns out to be the chart sign at the hop's own hub.
+- An improvement on the plan in the other direction: the sign-free reach lemma needs the reversing loop only at the point that moves, not at its destination. That is what lets the parity induction of V7.25 finish by carrying one point onto one point.
+- What the slide asserts about the frame is a *self sign*, not a sign against an orientation; there being no orientation to be had, the bookkeeping is the dictionary of V7.20 and V7.21 throughout, and the hypothesis relating the two frames that V7.13 carries has no analogue.
+- Hypotheses: $0 < m$, and compactness and nonemptiness of $M$, which the Theorem-B machinery behind the moves needs. No orientation, no connectedness, no $2 \le m$, no Hausdorffness — the closed chart ball of V7.21 is used in place of the closure of a ball, and each move gets the closure condition it needs from its own good ball.
+
+### V7.24. Cancelling any two neighbouring points, with no signs
+
+*not in the book* · no condition on the two frames · shorter than the signed version · the case split disappears
+
+**Milnor (§7, p. 50).** Milnor's single clause of justification ends *and the rest of the framed-cobordism machinery applies unchanged*, and this row is the place where it does not. The oriented endgame cancels a point of sign $+1$ against a point of sign $-1$ (V7.14), sorting the points by sign to find such a pair (V7.15), and that is what makes the signed count the complete invariant; a framed point slid around a reversing loop comes back with its sign changed, so with no signs to be had the step has to become the cancellation of *any* two neighbouring points. Milnor does not remark on the difference.
+
+*In the book this is the sentence that the framed cobordism class is determined by the count; the mod $2$ version needs a different cancellation, not merely a different count.*
+
+**Proved in Lean.** Let $M \subseteq \mathbb R^{K+1}$ be a compact nonempty slice submanifold of dimension $m$ with $0 < m$, let $(N, v)$ be a framed $0$-manifold of $M$ as in V7.23, and let reversing ball loops be available at every point off every finite set — the conclusion of V7.22, carried here as a hypothesis. (i) *Frames are free at two points:* two framed $0$-manifolds with the same point set and the same frames away from two distinct points $u \ne z$ are framed cobordant, with **no** condition relating their frames at $u$ and at $z$. (ii) *The sign-free cancel step:* if $x_0 \ne z$ are points of $N$ and $z$ lies in the closure of the connected component of $x_0$ in $M \setminus (N \setminus \{x_0\})$, then $(N, v)$ is framed cobordant to the framed $0$-manifold with $x_0$ and $z$ deleted and the other frames unchanged — V7.14 with its opposite-sign hypothesis deleted outright. (iii) *A neighbouring pair:* if $N$ has two distinct points and $M$ is connected, then two of its points stand in that relation, which is V7.15 with the signs deleted; this last needs neither the loops nor compactness, only connectedness. No orientation occurs anywhere, and $2 \le m$ does not appear.
+
+- `Milnor.Framed.framedCobordant_of_frames_free` — Milnor/Chapter7/CancelFree.lean, line 96
+- `Milnor.Framed.cancel_step_free` — Milnor/Chapter7/CancelFree.lean, line 150
+- `Milnor.Framed.exists_neighbour_pair` — Milnor/Chapter7/CancelFree.lean, line 253
+
+*What differs.*
+- No counterpart in the book: "the rest applies unchanged" is the claim that this cancellation exists, and it is the one place where dropping the orientation is not a restatement but a different theorem — any two neighbours, rather than a plus and a minus.
+- **Where the plan turned out wrong, and this is the point of Milnor's remark:** it prescribed choosing, on arrival, a frame whose chart sign is the negative of the sign at the point to be cancelled against, and replacing the old case split by a new one. Neither is needed. The cancelling map supplies its own two frames, of chart signs $+1$ and $-1$, and "frames are free at two points" connects any configuration to that one, so the arriving frame may be arbitrary and the case split *disappears* rather than being replaced. The sign-free cancel step is therefore **shorter** than the signed one it replaces.
+- What is deleted is a hypothesis, not a case. V7.14 asks the two signs to be opposite, and the oriented endgame (V7.16) sorts the points of the framed set by sign before applying the neighbour lemma (V7.15), which carries no sign itself; here neither statement mentions a sign, and the neighbour lemma is applied to the partition $\{x\} \sqcup (N \setminus \{x\})$, which exists as soon as there are two points.
+- The reversing loop is carried in the uniform shape "at every point off every finite set", the finite set always being instantiated to the other points of the framed $0$-manifold, so that nothing here depends on how the loop is obtained and V7.26 can discharge the hypothesis once from V7.22.
+
+### V7.25. The count modulo 2, and the classification by parity
+
+*not in the book* · parity is a complete invariant · no gathering step in the induction · the bridge ignores the framing
+
+**Milnor (§7, p. 50).** Milnor's single clause of justification concludes that, a framed point slid around an orientation-reversing loop coming back with the sign of its frame changed, *only the number of points modulo $2$ survives*. This row carries out that conclusion. For an oriented $M$ Milnor writes on p. 50 that it is "not difficult to see" that the framed cobordism class of a framed $0$-manifold is determined by the integer $\sum \operatorname{sgn}(x)$ (V7.16), and that it is clear that this integer is the degree (V7.12); the mod $2$ statements are those two sentences with the integer replaced by the parity of the number of points, and neither is written down.
+
+*The invariant, that it is complete, and the bridge to the degree modulo $2$ of §4 (V4.7).*
+
+**Proved in Lean.** The *count modulo $2$* of a framed $0$-manifold of $M$ is the cardinality of its point set read in $\mathbb Z/2$; no orientation occurs in the definition, in contrast with the signed count of V7.12. Let $M \subseteq \mathbb R^{K+1}$ be a compact nonempty slice submanifold of dimension $m$ with $0 < m$. (i) *The classification:* if $M$ is connected and reversing ball loops are available off every finite set (V7.22), two framed $0$-manifolds of $M$ with the same count modulo $2$ are framed cobordant. This is V7.16 with the signed count replaced by the parity, and it is Milnor's assertion for a non-orientable $M$. (ii) *The bridge:* for a smooth $f : M \to S^m$ with regular value $y$, and *any* linearly independent tuple of $\mathbb R^m$ as frame, the count modulo $2$ of the Pontryagin manifold of $f$ at $y$ (V7.1) is the degree of $f$ modulo $2$ (V4.7). Both sides are the parity of the number of points of $f^{-1}(y)$, so nothing about the framing enters; the bridge needs no loop and no connectedness of $M$, only its compactness and the preconnectedness of the sphere. The hypothesis $2 \le m$ appears in neither statement, being needed only to produce the loops.
+
+- `Milnor.Framed.countMod2` — Milnor/Chapter7/CountMod2.lean, line 87
+- `Milnor.Framed.framedCobordant_of_countMod2_eq` — Milnor/Chapter7/CountMod2.lean, line 122
+- `Milnor.Framed.countMod2_pontryagin` — Milnor/Chapter7/CountMod2.lean, line 220
+
+*What differs.*
+- No counterpart in the book: Milnor states the signed versions and leaves these to "the rest applies unchanged". The count is a different definition, mentioning no orientation, and the classification is a different induction.
+- **Where the plan turned out wrong:** the signed induction of V7.16 can cancel only while both signs occur, and needs a separate gathering argument to bring the remaining points of one sign together when they do not. Here **there is no gathering step at all.** The induction runs on the cruder condition "two or more points", cancels any two neighbours by V7.24, and stops when each side has at most one point, equal counts then forcing equal cardinalities; one point is carried onto one point by the reach lemma of V7.23, which is exactly where that row's improvement — the loop needed only at the point that moves — is used.
+- The bridge asks less than its oriented counterpart. The point set of the Pontryagin manifold *is* $f^{-1}(y)$ and the mod $2$ degree is the parity of its cardinality at any regular value, so the frame may be an arbitrary independent tuple, where the signed identity of V7.12 needs a positively oriented basis of the tangent space of the sphere at $y$.
+- The reversing loop is a hypothesis here as in V7.24, discharged only in V7.26; and the two statements rest on different hypotheses, connectedness of $M$ being used by the classification and not by the bridge.
+
+### V7.26. The mod 2 theorem: maps of a non-orientable manifold
+
+*restated* · no dimension hypothesis · $M \subseteq \mathbb R^{K+1}$, compact · homotopy means smooth homotopy
+
+**Milnor (§7, Theorem, p. 50).** If $M$ is connected but non-orientable, two maps $M \to S^m$ are smoothly homotopic if and only if they have the same degree modulo $2$. Milnor states it in a remark just after the Hopf theorem, and gives the reason in one clause: a framed point slid around an orientation-reversing loop comes back with the sign of its frame changed, so that only the number of points modulo $2$ survives, and the rest of the framed-cobordism machinery applies unchanged.
+
+*The degree modulo $2$ is the one of §4 (V4.7); with no orientation of $M$ there is no signed degree to be had.*
+
+**Proved in Lean.** Let $M \subseteq \mathbb R^{K+1}$ be a closed — compact and nonempty — connected non-orientable submanifold of dimension $m$, in the sense of V7.0 and with the manifold structure of Chapter 2, non-orientable in the sense of V7.18. Then two smooth maps $f, g : M \to S^m$ are smoothly homotopic *if and only if* they have the same degree modulo $2$, smooth homotopy being a smooth map $M \times \mathbb R \to S^m$ restricting to the two maps at $t = 0$ and $t = 1$. **No dimension hypothesis is carried**, and Milnor states none: the $2 \le m$ that the punctured stage needs (V7.22) is now derived from the non-orientability of a connected $M$ through the classification of one-manifolds (V.A2, V.A4). The easy half is Theorem A of §4 (V4.8) transcribed into that relation: it needs no orientation of any kind, no connectedness, and nothing of the dimension beyond $0 < m$, which is only what the mod 2 degree asks of its target. The substantial half is Milnor's remark, and runs through Sard (V3.3) for a regular value of each map; a positively oriented basis of the sphere at each — orientations of the *target sphere*, which the Pontryagin construction and the converse of Theorem B require, and which are the only orientations in the whole argument, the source carrying none and being assumed to have none; the two Pontryagin manifolds (V7.1); the parity bridge and the parity classification (V7.25), whose reversing loops are discharged here in one line from the punctured dichotomy (V7.22); and the converse half of Theorem B (V7.11), which is itself orientation-free.
+
+- `Milnor.Framed.hopf_homotopic_mod2` — Milnor/Chapter7/HopfMod2.lean, line 236
+- `Milnor.Framed.degMod2_eq_of_smoothHomotopic_sph` — Milnor/Chapter7/HopfMod2.lean, line 127
+- `Milnor.Framed.smoothHomotopic_of_degMod2_eq` — Milnor/Chapter7/HopfMod2.lean, line 189
+- `Milnor.Framed.framedCobordant_of_card_parity` — Milnor/Chapter7/HopfMod2.lean, line 153
+
+*What differs.*
+- The formal statement carries **no** dimension hypothesis, and neither does Milnor's. It used to carry $2 \le m$, which the punctured stage needs (V7.22) and which is empty mathematics, a connected $1$-manifold being the circle or an interval and all of those orientable. The hypothesis has now been *removed*, not excused: the classification of one-manifolds (V.A2) and the orientability of every connected one-manifold (V.A4) make non-orientability of a connected $M$ imply $2 \le m$, so it is derived in one line at the single point where it is used. It is gone from the three statements that carried it — the equivalence, its substantial half and the parity classification. The easy half keeps an explicit $0 < m$, as it must: it assumes neither connectedness nor non-orientability, so it has nothing to derive a dimension bound from, and $0 < m$ is only what the mod 2 degree asks of its target.
+- $M$ is a compact nonempty submanifold of a Euclidean space, as in all of §§6–7, and homotopy means smooth homotopy, a smooth map $M \times \mathbb R \to S^m$; Milnor's manifolds are subsets of Euclidean space and his homotopies are smooth, so neither restricts the mathematics.
+- The clause Milnor offers as the reason is the whole of the sign-free machinery, and it is six items long: a sign of a frame that mentions no orientation (V7.20), the sign of a chain and the chains that avoid a finite set (V7.21), the punctured dichotomy that produces the reversing loop (V7.22), the slide and the flip, which are the clause itself (V7.23), the cancellation of any two neighbours (V7.24), and the parity count with its classification (V7.25). What the theorem itself adds is the discharge of the reversing-loop hypothesis and the two halves of the equivalence.
+- The easy half assumes neither connectedness nor non-orientability, and no orientation anywhere, while the classification by parity assumes both; the two directions of the equivalence rest on very different hypotheses.
+
+## Chapter 8
+
+*Milnor §8, pp. 51–53: the seventeen problems*
+
+### V8.0. Tools built for the problems
+
+*not in the book* · local zero sets of submersions · frame-first orientations · degrees with compact preimages
+
+**Milnor (no counterpart in the book).** The book has no counterpart here. Writing the problems "for the reader", Milnor uses without comment that a set cut out near each of its points by a submersion is a manifold with the expected tangent space, that a product of oriented manifolds is oriented by a positive basis of the first factor followed by one of the second, that $S^n$ is oriented as the boundary of the disk, and that the local degree of §5 behaves well as soon as the relevant preimages are compact.
+
+*§2 proves only the global case, that $f^{-1}(y)$ is a manifold for a regular value $y$ of a map defined on all of $M$.*
+
+**Proved in Lean.** Four groups of results. (i) If $M$ is boundaryless and modelled on a finite-dimensional $E$, and $F$, $Z$ are finite-dimensional with $\dim Z + \dim F = \dim E$, a set $S \subseteq M$ such that every $x \in S$ has an open $U \ni x$ and a map $g : M \to F$, smooth on $U$, with $S \cap U = g^{-1}(0) \cap U$ and $dg_y$ onto for $y \in S \cap U$, is a submanifold given by slice charts with model $Z$ and complement $F$, and $TS_x = \ker dg_x$. (ii) For oriented $M$, $N$ of dimensions $m$, $n$ (no boundarylessness needed), $M \times N$ carries the orientation with a positive basis of $TM$ first, a product map has the product of the two signs, and the swap has sign $(-1)^{mn}$ everywhere. (iii) A submanifold of Euclidean space with a continuous complementary frame is oriented by "frame first, then tangent vectors"; this gives Milnor's orientation of $S^n$, the outward normal first for the standard orientation of $\mathbb R^{n+1}$, which for $n \ge 1$ agrees up to one global sign with the orientation of §5, and the orientation of $f^{-1}(y) \subseteq S^{d+p}$ used for the Hopf invariant. (iv) For $M$, $N$ Hausdorff, boundaryless, oriented, of the same finite dimension $n$ and with model spaces in one universe: if a neighbourhood $V$ of a regular value $y$ has compact preimage then nearby values are regular with the same local degree, and if $M$ is in addition second countable and the part of $F^{-1}(V)$ over $[0,1]$ is compact, a smooth homotopy does not change the local degree at $y$. (v) Genericity: the image of a second countable manifold of smaller dimension has dense complement, the complement of the diagonal in $S^p \times S^p$ is connected for $p \ge 1$, and a function locally constant near every point of a preconnected set is constant on a dense subset of it.
+
+- `Milnor.IsSliceSubmanifold.of_locally_preimage` — Milnor/Chapter8/LocalSlice.lean, line 104
+- `Milnor.Orient.prod` — Milnor/Chapter8/OrientProd.lean, line 313
+- `Milnor.Sphere.sphOrStd` — Milnor/Chapter8/OrientFrame.lean, line 404
+- `Milnor.degAt_eq_of_homotopy_of_isCompact` — Milnor/Chapter8/ProperDegree.lean, line 422
+
+*What differs.*
+- §2 makes a global level set a manifold; the local criterion asks only for a defining map near each point, which is what Problems 8 to 11 actually supply.
+- The sphere orientation of §5 was built from a basis chosen by the axiom of choice; for $n \ge 1$ it agrees with Milnor's only up to a global sign, so linking numbers needed a new one.
+- Putting the complementary frame first, rather than the tangent vectors as in §5, changes the orientation of a preimage by $(-1)^{dp}$, which is $+1$ in the case $p = d + 1$ used later.
+- The degree results replace compactness of the source by compactness of $f^{-1}(V)$, and add Hausdorff, second countability and a common universe for the two model spaces.
+
+### V8.1. Problem 1: the degree of a composition
+
+*hypotheses explicit* · $N$ compact, so $\deg g$ exists · $P$ Hausdorff, not compact · preconnected, so possibly empty
+
+**Milnor (§8, Problem 1, p. 51).** The degree of a composition $g \circ f$ is the product $(\deg g)(\deg f)$.
+
+*One line, with no hypotheses named: the degrees are those of §5, so the manifolds are the compact oriented ones of that section.*
+
+**Proved in Lean.** Let $f : M \to N$ and $g : N \to P$ be smooth maps of oriented boundaryless manifolds whose model spaces all have dimension $n$ and lie in a common universe. Assume $M$ and $N$ compact, Hausdorff and second countable, $P$ Hausdorff, and $N$ and $P$ preconnected. Then $\deg(g \circ f) = \deg g \cdot \deg f$. The proof picks a $z$ regular for both $g$ and $g \circ f$, notes that every $y \in g^{-1}(z)$ is then a regular value of $f$, and splits the signed count over $(g \circ f)^{-1}(z)$ along the fibres of $f$.
+
+- `Milnor.Problems.deg_comp` — Milnor/Chapter8/DegComp.lean, line 67
+- `Milnor.Problems.isRegularValue_of_isRegularValue_comp` — Milnor/Chapter8/DegComp.lean, line 46
+
+*What differs.*
+- Milnor names no hypotheses; the formal statement needs $N$ compact for $\deg g$ to exist, and uses that compactness again to make the regular values of $g$ open.
+- $P$ is only assumed Hausdorff and preconnected: it is neither compact nor second countable, and it may be empty, in which case both sides are $0$ by the definition of the degree.
+- Preconnected is weaker than Milnor's connected, so the empty target is covered rather than excluded.
+- The three model spaces must lie in one universe, a condition of the formal degree of §5 and not of the mathematics.
+
+### V8.2. Problem 2: the degree of a polynomial map
+
+*restated* · Riemann sphere, not the Gauss sphere · needs $\deg P \ge 1$
+
+**Milnor (§8, Problem 2, p. 51).** Every complex polynomial of degree $n$ gives rise to a smooth self-map of the Gauss sphere $S^2$ of degree $n$.
+
+*The sphere is $S^2 \subseteq \mathbb R^3$, identified with $\mathbb C \cup \{\infty\}$ by stereographic projection as in §1.*
+
+**Proved in Lean.** The Riemann sphere $\mathbb C \cup \{\infty\}$ is given the orientation that is the standard orientation of $\mathbb C = \mathbb R^2$ in both charts $z$ and $1/z$; this is consistent because the chart change has complex derivative $w \ne 0$, whose real determinant is $|w|^2 > 0$. For a polynomial $P$ of degree at least $1$, the extension of $P$ by $P(\infty) = \infty$ is a smooth self-map of the Riemann sphere, and its degree for that orientation on both sides is the degree of $P$. At a regular value $y \in \mathbb C$ the preimages are the distinct simple roots of $P - y$, at each of which the derivative is multiplication by $P'(z) \ne 0$, of sign $+1$.
+
+- `Milnor.Problems.deg_polyMap` — Milnor/Chapter8/PolyDeg.lean, line 154
+- `Milnor.Problems.riemannOr` — Milnor/Chapter8/PolyDeg.lean, line 123
+- `Milnor.Problems.orSign_complexMul` — Milnor/Chapter8/PolyDeg.lean, line 59
+
+*What differs.*
+- Milnor's $S^2 \subseteq \mathbb R^3$ is replaced throughout by the Riemann sphere with the charts $z$ and $1/z$, as already in §1; no identification of the two is formalized.
+- The hypothesis $\deg P \ge 1$ is named and used: for a constant $P$ the extension by $P(\infty) = \infty$ is not even continuous at $\infty$.
+- The orientation of the Riemann sphere has to be constructed before the statement can be made, since the sphere is not presented as a level set.
+
+### V8.3. Problem 3: maps at distance less than 2
+
+*stronger* · $X$ any topological space · model space may be infinite-dimensional · homotopy on $X \times \mathbb R$
+
+**Milnor (§8, Problem 3, p. 51).** If two maps $f$ and $g$ from $X$ to $S^p$ satisfy $\|f(x) - g(x)\| < 2$ for all $x$, then $f$ is homotopic to $g$, the homotopy being smooth if $f$ and $g$ are.
+
+*He does not say what $X$ is; in the smooth half it must be a manifold.*
+
+**Proved in Lean.** Two statements. For an arbitrary topological space $X$ and continuous $f, g : X \to S^p$ with $\|f(x) - g(x)\| < 2$ everywhere, $f$ and $g$ are homotopic by the normalized chord $((1-t)f + tg)/\|(1-t)f + tg\|$, which never meets the origin. If $X$ is a smooth manifold, modelled on a real normed space that need not be finite-dimensional, with no Hausdorff, countability or boundarylessness hypothesis, and $f$, $g$ are smooth with the same bound, they are smoothly homotopic.
+
+- `Milnor.Problems.homotopic_of_norm_sub_lt_two` — Milnor/Chapter8/NearMaps.lean, line 54
+- `Milnor.Problems.smoothHomotopic_of_norm_sub_lt_two` — Milnor/Chapter8/NearMaps.lean, line 88
+
+*What differs.*
+- The continuous half assumes nothing about $X$ beyond a topology, where Milnor's $X$ is a manifold.
+- The smooth half allows any model space, finite-dimensional or not, with or without boundary, and asks neither that $X$ be Hausdorff nor that it be second countable.
+- Smooth homotopy here means a smooth map on $X \times \mathbb R$, so the chord is reparametrized by a transition function that is $0$ near $t = 0$ and $1$ near $t = 1$.
+
+### V8.4. Problem 4: approximation and smoothing
+
+*hypotheses explicit* · $X$ compact in $\mathbb R^{K+1}$ · homotopy on $X \times \mathbb R$
+
+**Milnor (§8, Problem 4, p. 51).** If $X$ is compact, every continuous map $X \to S^p$ can be uniformly approximated by a smooth map; and two smooth maps $X \to S^p$ that are continuously homotopic are smoothly homotopic.
+
+*Compactness of $X$ is the only hypothesis he names.*
+
+**Proved in Lean.** Let $X \subseteq \mathbb R^{K+1}$ be compact, presented by slice charts with model $\mathbb R^m$ and complement $\mathbb R^w$. For every continuous $G : X \to S^p$ and every $\varepsilon > 0$ there is a smooth $f : X \to S^p$ with $\|f(x) - G(x)\| < \varepsilon$ for all $x$; and two smooth maps $X \to S^p$ that are continuously homotopic are smoothly homotopic, the smooth homotopy being a smooth map on $X \times \mathbb R$. Underneath is a Stone–Weierstrass theorem: a map $E \to F$ of finite-dimensional real normed spaces, continuous on a compact $S \subseteq E$, is uniformly approximated on $S$ by maps smooth on all of $E$.
+
+- `Milnor.Problems.exists_smooth_approx` — Milnor/Chapter8/Smoothing.lean, line 108
+- `Milnor.Problems.smoothHomotopic_of_homotopic` — Milnor/Chapter8/Smoothing.lean, line 144
+- `Milnor.Problems.exists_contDiff_approx_of_isCompact` — Milnor/Chapter8/Approx.lean, line 59
+
+*What differs.*
+- Milnor's $X$ is any compact manifold; the formal $X$ is a compact subset of $\mathbb R^{K+1}$ given by slice charts with model $\mathbb R^m$, the setting of §6 and §7.
+- Smooth homotopy means a smooth map on $X \times \mathbb R$, so the approximated homotopy is composed with a transition function before its ends are compared with $f$ and $g$ by Problem 3.
+- The approximation theorem is stated for a compact subset of a finite-dimensional space, although the exposition records that finite dimensionality of the source is not used in its proof.
+
+### V8.5. Problem 5: maps into a higher sphere
+
+*narrower* · continuous case needs $M$ compact · second countable source · model in the lowest universe
+
+**Milnor (§8, Problem 5, p. 51).** If $m < p$, every map $M^m \to S^p$ is homotopic to a constant.
+
+*One line: he says neither that $M$ is compact nor whether the maps are smooth.*
+
+**Proved in Lean.** Two statements. If $X$ is a second countable boundaryless manifold of dimension $m < p$ whose model space lies in the lowest universe, every smooth map $X \to S^p$ is smoothly homotopic to a constant: a regular value, which Brown's theorem supplies, cannot be attained when $m < p$, and stereographic projection from the missed point contracts the map. If $M \subseteq \mathbb R^{K+1}$ is compact, presented by slice charts with model $\mathbb R^m$, and $m < p$, every continuous map $M \to S^p$ is homotopic to a constant, by Problems 4 and 3.
+
+- `Milnor.Problems.exists_smoothHomotopic_const_of_lt` — Milnor/Chapter8/Smoothing.lean, line 56
+- `Milnor.Problems.exists_homotopic_const_of_lt` — Milnor/Chapter8/Smoothing.lean, line 240
+- `Milnor.Problems.exists_notMem_range_of_lt` — Milnor/Chapter8/Smoothing.lean, line 41
+
+*What differs.*
+- The continuous statement is proved only for a compact $M \subseteq \mathbb R^{K+1}$, because it passes through the approximation of Problem 4; Milnor asks for no compactness.
+- The smooth statement needs $X$ second countable, since Brown's theorem supplies the missed point, but it needs no compactness at all.
+- Because Brown's theorem is applied with $S^p$ as target, the model space of the $m$-manifold is required to lie in the lowest universe: a formal side condition, not a mathematical one.
+
+### V8.6. Problem 6: fixed points of self-maps of $S^n$
+
+*narrower* · smooth maps only · $n \ge 1$
+
+**Milnor (§8, Problem 6, p. 51).** Any map $S^n \to S^n$ whose degree is different from $(-1)^{n+1}$ must have a fixed point.
+
+*He labels the problem "Brouwer" and does not say the map is smooth.*
+
+**Proved in Lean.** For $n \ge 1$, a smooth map $f : S^n \to S^n$ whose degree, taken with one and the same orientation of $S^n$ on source and target, is different from $(-1)^{n+1}$ has a fixed point. If it had none, $f(x)$ would never be antipodal to $-x$, so $\|f(x) - (-x)\| < 2$; Problem 3 then makes $f$ smoothly homotopic to the antipodal map, whose degree is $(-1)^{n+1}$.
+
+- `Milnor.Problems.exists_fixedPoint_of_deg_ne` — Milnor/Chapter8/SphereMaps.lean, line 50
+- `Milnor.Problems.deg_eq_of_smoothHomotopic` — Milnor/Chapter8/SphereMaps.lean, line 38
+
+*What differs.*
+- The formal degree is defined only for smooth maps, so the statement is about smooth $f$, whereas Milnor's "any map" covers continuous ones.
+- The hypothesis $n \ge 1$ is needed so that $S^n$ is connected, as the degree of §5 requires; $S^0$ is excluded.
+- The degree is taken for the orientation of §5 on both sides; reversing that orientation on both sides changes no degree, so the value $(-1)^{n+1}$ is unaffected.
+
+### V8.7. Problem 7: odd degree and antipodal pairs
+
+*narrower* · smooth maps only · $n \ge 1$
+
+**Milnor (§8, Problem 7, p. 51).** Any map $S^n \to S^n$ of odd degree must carry some pair of antipodal points into a pair of antipodal points.
+
+*Stated for maps in general, with no hint of a proof.*
+
+**Proved in Lean.** For $n \ge 1$, a smooth map $f : S^n \to S^n$ of odd degree satisfies $f(-x) = -f(x)$ for some $x$. The lemma underneath: a smooth $h : S^n \to S^n$ with $h(-x) = h(x)$ for all $x$ has even degree, because the preimage of a regular value is carried to itself by the fixed-point-free involution $x \mapsto -x$ and each of its points contributes $\pm 1$, hence $1$ modulo $2$. If $f$ had no antipodal pair, $w(x) = f(x) + f(-x)$ would never vanish and $w/\|w\|$ would be an even map never antipodal to $f$.
+
+- `Milnor.Problems.exists_antipodal_of_odd_deg` — Milnor/Chapter8/SphereMaps.lean, line 103
+- `Milnor.Problems.even_deg_of_even_map` — Milnor/Chapter8/SphereMaps.lean, line 76
+
+*What differs.*
+- As in Problem 6 the statement is confined to smooth maps, the only ones for which the formal degree is defined.
+- $n \ge 1$ is required again, so that $S^n$ is connected and the degree of §5 is defined.
+- The parity lemma counts the preimage modulo $2$; the signs at $x$ and at $-x$ are never compared with each other.
+
+### V8.8. Problem 8: products and their tangent spaces
+
+*stronger* · ambient spaces any finite-dimensional · manifold structure also proved
+
+**Milnor (§8, Problem 8, p. 51).** Given smooth manifolds $M \subseteq \mathbb R^k$ and $N \subseteq \mathbb R^l$, the tangent space $T(M \times N)_{(x,y)}$ is equal to $TM_x \times TN_y$.
+
+*He asks only for the tangent space; that $M \times N$ is a manifold is taken for granted.*
+
+**Proved in Lean.** Let $M \subseteq E_1$ and $N \subseteq E_2$ be given by slice charts in finite-dimensional real normed spaces, with models $Z_1$, $Z_2$ and complements $W_1$, $W_2$, all finite-dimensional. Then $M \times N \subseteq E_1 \times E_2$ is a submanifold with model $Z_1 \times Z_2$ and complement $W_1 \times W_2$, of dimension $\dim M + \dim N$, and at every point $T(M \times N)_{(x,y)} = TM_x \times TN_y$, tangent spaces being the ranges of the derivatives of the inclusions. The dimension identity $\dim Z_i + \dim W_i = \dim E_i$ is recorded separately and holds as soon as the submanifold is nonempty.
+
+- `Milnor.Problems.isSliceSubmanifold_prod` — Milnor/Chapter8/ProdGraph.lean, line 175
+- `Milnor.Problems.range_mfd_val_prod` — Milnor/Chapter8/ProdGraph.lean, line 192
+- `Milnor.Problems.IsSliceSubmanifold.finrank_add` — Milnor/Chapter8/ProdGraph.lean, line 104
+
+*What differs.*
+- Milnor asks only for the tangent space; the formal statement also proves that $M \times N$ is a manifold, which he takes as known.
+- The ambient spaces are arbitrary finite-dimensional real normed spaces, not only $\mathbb R^k$ and $\mathbb R^l$.
+- Near a point $M \times N$ is presented as the common zero set of the normal parts of two slice charts, and both conclusions are read off that one map; no parametrization is built.
+- The identity $\dim Z + \dim W = \dim E$ for a slice presentation needs the submanifold to be nonempty, and is stated with that hypothesis.
+
+### V8.9. Problem 9: the graph of a smooth map
+
+*stronger* · ambient spaces any finite-dimensional · complement $W_1 \times E_2$
+
+**Milnor (§8, Problem 9, p. 51).** The graph $\Gamma$ of a smooth map $f : M \to N$, the set of $(x, y) \in M \times N$ with $f(x) = y$, is a smooth manifold, and the tangent space $T\Gamma_{(x,y)} \subseteq TM_x \times TN_y$ is the graph of the linear map $df_x$.
+
+**Proved in Lean.** With $M \subseteq E_1$ and $N \subseteq E_2$ as in Problem 8 and $f : M \to N$ smooth, the graph $\Gamma = \{(x, f(x))\} \subseteq E_1 \times E_2$ is a submanifold with model $Z_1$, hence of the dimension of $M$, and complement $W_1 \times E_2$; its tangent space at $(x, f(x))$ is the range of $u \mapsto (d\iota_x u,\ d\iota_{f(x)} df_x u)$, that is, the graph of $df_x$. Near a point, $\Gamma$ is the zero set of $(a, b) \mapsto ((\varphi a)_2,\ b - \tilde f(a))$, where $\varphi$ is a slice chart of $M$ and $\tilde f$ the smooth extension of $f$ it provides. Only $E_1$, $E_2$, $Z_1$ and $W_1$ are required to be finite-dimensional.
+
+- `Milnor.Problems.isSliceSubmanifold_graph` — Milnor/Chapter8/ProdGraph.lean, line 344
+- `Milnor.Problems.range_mfd_val_graph` — Milnor/Chapter8/ProdGraph.lean, line 361
+- `Milnor.Problems.graph` — Milnor/Chapter8/ProdGraph.lean, line 221
+
+*What differs.*
+- The ambient spaces are arbitrary finite-dimensional real normed spaces; the model and complement of $N$ are not even required to be finite-dimensional.
+- $\Gamma$ is presented as a subset of $E_1 \times E_2$ with complement $W_1 \times E_2$, rather than as a subset of the product manifold $M \times N$.
+- The tangent space is computed as the kernel of the derivative of one defining function; the formal proof never shows that $x \mapsto (x, f(x))$ is a diffeomorphism onto $\Gamma$.
+
+### V8.10. Problem 10: the tangent bundle and $df$
+
+*stronger* · ambient space any finite-dimensional · $df$ reads $v$ in chart coordinates
+
+**Milnor (§8, Problem 10, p. 52).** Given $M \subseteq \mathbb R^k$, the tangent bundle space $TM = \{(x, v) \in M \times \mathbb R^k : v \in TM_x\}$ is again a smooth manifold; any smooth $f : M \to N$ gives rise to a smooth $df : TM \to TN$, with $d(\mathrm{identity}) = \mathrm{identity}$ and $d(g \circ f) = (dg) \circ (df)$.
+
+**Proved in Lean.** Let $M \subseteq E$ be given by slice charts in a finite-dimensional real normed space, with model $Z$ and complement $W$, both finite-dimensional. Then $TM \subseteq E \times E$ is a submanifold with model $Z \times Z$ and complement $W \times W$, of dimension $2 \dim M$. For $N \subseteq E'$ of the same kind and $f : M \to N$ smooth, $df(x, v) = (f(x),\ d\iota_{f(x)} df_x u)$ is smooth, where $u$ is the chart coordinate of $v$, the unique vector with $d\iota_x u = v$. The rule $d(\mathrm{identity}) = \mathrm{identity}$ is stated with no smoothness hypothesis and without finite dimensionality of $E$, $Z$, $W$; the chain rule $d(g \circ f) = dg \circ df$ is stated for smooth $f$ and $g$.
+
+- `Milnor.Problems.isSliceSubmanifold_tangentBundle` — Milnor/Chapter8/TangentBundle.lean, line 161
+- `Milnor.Problems.contMDiff_tangentMap` — Milnor/Chapter8/TangentBundle.lean, line 254
+- `Milnor.Problems.tangentMap_id` — Milnor/Chapter8/TangentBundle.lean, line 363
+- `Milnor.Problems.tangentMap_comp` — Milnor/Chapter8/TangentBundle.lean, line 380
+
+*What differs.*
+- The ambient space is an arbitrary finite-dimensional real normed space rather than $\mathbb R^k$, and $M$ comes with a named model $Z$ and complement $W$.
+- A tangent vector $v$ lies in $E$ while $df_x$ acts on the model space $Z$, so the formal $df$ first writes $v$ in chart coordinates; this is well defined because $d\iota_x$ is injective.
+- The identity rule carries no smoothness and no finite-dimensionality hypothesis; the chain rule needs both maps smooth.
+
+### V8.11. Problem 11: the normal bundle and its tube
+
+*hypotheses explicit* · $M$ nonempty · dimension identity $m + w = k$ · second part only for $k = K + 1$
+
+**Milnor (§8, Problem 11, p. 52).** The normal bundle space $E = \{(x, v) \in M \times \mathbb R^k : v \perp TM_x\}$ is a smooth manifold; and if $M$ is compact and boundaryless, $(x, v) \mapsto x + v$ carries the $\varepsilon$-neighbourhood of $M \times 0$ in $E$ diffeomorphically onto the $\varepsilon$-neighbourhood $N_\varepsilon$ of $M$ in $\mathbb R^k$.
+
+*He asks the reader to compare the product neighbourhood theorem of §7, and does not say how $\varepsilon$ is found.*
+
+**Proved in Lean.** Let $M \subseteq \mathbb R^k$ be given by slice charts with model $\mathbb R^m$ and complement $\mathbb R^w$, where $m + w = k$. Then $E \subseteq \mathbb R^k \times \mathbb R^k$ is a submanifold with model $\mathbb R^k$ and complement $\mathbb R^w \times \mathbb R^m$, so of dimension $k$; near a point it is the zero set of the normal coordinates of $x$ together with the tangential components of $v$. If in addition $k = K + 1$ and $M$ is compact and nonempty, then for $\varepsilon$ the smaller of a uniform injectivity radius and the tubular radius of §6, the map $(x, v) \mapsto x + v$ is a diffeomorphism of $\{(x, v) \in E : \|v\| < \varepsilon\}$ onto $\{y : \operatorname{dist}(y, M) < \varepsilon\}$, with inverse $y \mapsto (r(y),\ y - r(y))$ for the nearest-point retraction $r$.
+
+- `Milnor.Problems.isSliceSubmanifold_normalBundle` — Milnor/Chapter8/NormalBundle.lean, line 218
+- `Milnor.Problems.exists_normalTube_diffeomorph` — Milnor/Chapter8/NormalBundle.lean, line 567
+- `Milnor.Problems.exists_diffeomorph_normalε` — Milnor/Chapter8/NormalBundle.lean, line 509
+- `Milnor.Problems.normalBundleSet` — Milnor/Chapter8/NormalBundle.lean, line 75
+
+*What differs.*
+- $M$ is assumed nonempty, because the tubular radius of §6 and the minimum over a finite cover of $M$ both need it; for empty $M$ the claim is trivial but is not treated.
+- Boundarylessness, which Milnor states, is automatic here: a submanifold given by slice charts has no boundary by construction.
+- The identity $m + w = k$ must be named, since model and complement are given separately, and the second part is stated for $k = K + 1$, as everywhere in §6 and §7.
+- The order of the argument is reversed: uniform injectivity of $(x, v) \mapsto x + v$ is proved first from compactness, and $r(x + v) = x$ is deduced from it.
+
+### V8.12. Problem 12: the retraction, and maps into $M$
+
+*restated* · $r$ is the nearest-point retraction · $M$ nonempty · strict inequality for every $z \ne x$
+
+**Milnor (§8, Problem 12, p. 52).** Define $r : N_\varepsilon \to M$ by $r(x + v) = x$; then $r(x + v)$ is closer to $x + v$ than any other point of $M$, and using this retraction one proves the analogue of Problem 4 with the sphere $S^p$ replaced by a manifold $M$.
+
+*He defines $r$ by the formula and takes for granted that the formula determines a map.*
+
+**Proved in Lean.** Let $M \subseteq \mathbb R^{K+1}$ be compact and nonempty, with model $\mathbb R^m$, complement $\mathbb R^w$, $m + w = K + 1$, and $\varepsilon$ as in Problem 11. Here $r$ is the nearest-point retraction of §6, and for $(x, v)$ in the normal bundle with $\|v\| < \varepsilon$ one has $r(x + v) = x$ together with $\|(x + v) - x\| < \|(x + v) - z\|$ for every $z \in M$ other than $x$. For a compact $X \subseteq \mathbb R^{L+1}$ given by slice charts with model $\mathbb R^l$, every continuous map $X \to M$ is a uniform limit of smooth maps, and two smooth maps $X \to M$ that are continuously homotopic are smoothly homotopic. The intermediate step, that two smooth maps closer than the tubular radius are joined by $r((1-s)f + sg)$, is stated without compactness of $X$.
+
+- `Milnor.Problems.normalRetraction_nearest` — Milnor/Chapter8/Nearest.lean, line 34
+- `Milnor.Problems.exists_smooth_approx_mfld` — Milnor/Chapter8/Retraction.lean, line 109
+- `Milnor.Problems.smoothHomotopic_of_homotopic_mfld` — Milnor/Chapter8/Retraction.lean, line 212
+- `Milnor.Problems.smoothHomotopic_of_dist_lt_mfld` — Milnor/Chapter8/Retraction.lean, line 150
+
+*What differs.*
+- Milnor defines $r$ by $r(x + v) = x$; the formal $r$ is the nearest-point retraction of §6, and $r(x + v) = x$ is a theorem, got from the uniform injectivity of Problem 11.
+- $M$ is assumed nonempty, as in Problem 11, since the tubular radius of §6 requires it.
+- The nearest-point claim is made as a strict inequality against every $z \in M$ with $z \ne x$, not merely as a statement that $x$ is a nearest point.
+- Compactness of $X$ is used only to approximate on $X \times [0,1]$; the step joining two nearby smooth maps into $M$ is stated without it.
+
+### V8.13. Problem 13: the linking number
+
+*stronger* · smooth maps, not embedded M and N · total dimension k > 0 · bounding in the ambient {g ≥ 0} form
+
+**Milnor (§8, Problem 13, p. 52).** For disjoint manifolds $M, N \subseteq \mathbb R^{k+1}$ the linking map $\lambda : M \times N \to S^k$ is $\lambda(x, y) = (x - y)/\|x - y\|$. When $M$ and $N$ are compact, oriented and boundaryless with $m + n = k$, the degree of $\lambda$ is the linking number $l(M, N)$. Milnor asks for the symmetry $l(N, M) = (-1)^{(m+1)(n+1)} l(M, N)$, and for $l(M, N) = 0$ whenever $M$ bounds an oriented manifold $X$ disjoint from $N$.
+
+*He leaves the orientations of $M \times N$ and of $S^k$ unsaid, does not exclude $k = 0$, and gives no meaning to "bounds" beyond the word.*
+
+**Proved in Lean.** The formal statement replaces Milnor's embedded $M, N$ by smooth maps $\alpha : A \to \mathbb R^{k+1}$ and $\beta : B \to \mathbb R^{k+1}$ with disjoint images, where $A$ and $B$ are compact Hausdorff second countable oriented boundaryless manifolds of dimensions $a$ and $b$ with $a + b = k$; the linking map is $\lambda(x, y) = (\alpha(x) - \beta(y))/\|\alpha(x) - \beta(y)\|$ and $l(\alpha, \beta)$ is its degree, for the product orientation of $A \times B$ and the orientation of $S^k$ as the boundary of the disk. If $k > 0$, then $l(\beta, \alpha) = (-1)^{(a+1)(b+1)} l(\alpha, \beta)$. If $k > 0$ and $A = \{g = 0\}$ is the boundary, with the boundary orientation, of a compact $X = \{g \ge 0\}$ inside a boundaryless oriented $(a+1)$-manifold $W$ with $0$ a regular value of $g$, and if $\alpha$ extends to a smooth $\bar\alpha : W \to \mathbb R^{k+1}$ with $\bar\alpha(X)$ disjoint from $\beta(B)$, then $l(\alpha, \beta) = 0$.
+
+- `Milnor.Problems.linkingNumber` — Milnor/Chapter8/Linking.lean, line 86
+- `Milnor.Problems.linkingNumber_symm` — Milnor/Chapter8/Linking.lean, line 186
+- `Milnor.Problems.linkingNumber_eq_zero_of_bounds` — Milnor/Chapter8/Linking.lean, line 325
+- `Milnor.Problems.linkMap` — Milnor/Chapter8/Linking.lean, line 53
+
+*What differs.*
+- Milnor's disjoint $M, N \subseteq \mathbb R^{k+1}$ are the case in which $\alpha$ and $\beta$ are inclusions; the formal statement allows any two smooth maps with disjoint images.
+- Both the symmetry and the vanishing assume $k > 0$: the degree is independent of the regular value only for a connected target, and $S^0$ is two points.
+- "$A$ bounds" is taken ambiently, as manifolds with boundary are throughout: $A = \{g = 0\}$ bounds the compact region $X = \{g \ge 0\}$ in a boundaryless $W$, and $\alpha$ extends over $W$.
+- The orientations Milnor leaves unsaid are fixed: the product orientation on $A \times B$, and $S^k$ oriented as the boundary of the disk, outward normal first.
+
+### V8.13′. Problem 13: linking numbers in the sphere
+
+*stronger* · the book only asks for a definition · independence of the rotation proved · needs a, b ≥ 1
+
+**Milnor (§8, Problem 13, p. 52).** The last sentence of Problem 13 asks the reader to define the linking number for disjoint manifolds in the sphere $S^{m+n+1}$.
+
+*It asks for a definition and supplies neither a construction nor the hypotheses under which one is well posed.*
+
+**Proved in Lean.** Let $A$ and $B$ be compact oriented boundaryless manifolds of dimensions $a$ and $b$ with $a + b = k$, and $\alpha : A \to S^{k+1}$, $\beta : B \to S^{k+1}$ smooth with disjoint images. A rotation $R$ of $\mathbb R^{k+2}$, that is a linear isometry of positive determinant, is admissible when it carries both images off the north pole; the linking number in the sphere is then the Euclidean linking number of the stereographic projections of $R \circ \alpha$ and $R \circ \beta$ from the north pole onto $\mathbb R^{k+1}$, and is set to $0$ when no admissible rotation exists. Admissible rotations exist as soon as $A$ and $B$ are second countable, since the two images are meagre in $S^{k+1}$; the formal existence statement also carries $a, b \ge 1$, which its proof does not use. If $a, b \ge 1$ and $A$, $B$ are compact Hausdorff and second countable, every admissible rotation gives the same value.
+
+- `Milnor.Problems.linkingNumberSph` — Milnor/Chapter8/LinkingSphere.lean, line 640
+- `Milnor.Problems.linkingNumberSph_eq` — Milnor/Chapter8/LinkingSphere.lean, line 680
+- `Milnor.Problems.exists_admissible_rotation` — Milnor/Chapter8/LinkingSphere.lean, line 649
+
+*What differs.*
+- Milnor asks only that the linking number be defined in $S^{m+n+1}$; the formal item fixes one construction and proves that it does not depend on the choices it makes.
+- The construction is: rotate both images off the north pole, project stereographically onto $\mathbb R^{k+1}$, and take the Euclidean linking number of the projections.
+- Independence of the rotation is proved only for $a, b \ge 1$; for $a = 0$, a point against a great sphere, the value depends on the side of that sphere the projection point lies on.
+- That last example is an informal remark and is not formalized; no counterexample is proved in Lean.
+
+### V8.14. Problem 14: the Hopf invariant
+
+*narrower* · p ≥ 2 · smooth homotopies · mixed form needs disjoint preimages
+
+**Milnor (§8, Problem 14 (The Hopf Invariant), p. 52).** If $y \ne z$ are regular values of a map $f : S^{2p-1} \to S^p$, the preimages $f^{-1}(y)$ and $f^{-1}(z)$ carry the orientations of §5, so their linking number is defined. Milnor asks: a) that $l(f^{-1}(y), f^{-1}(z))$ be locally constant as a function of $y$; b) that if $y$ and $z$ are regular values of $g$ as well and $\|f(x) - g(x)\| < \|y - z\|$ for all $x$, the three numbers $l(f^{-1}(y), f^{-1}(z))$, $l(g^{-1}(y), f^{-1}(z))$ and $l(g^{-1}(y), g^{-1}(z))$ agree; c) that the value depend only on the homotopy class of $f$ and not on the choice of $y$ and $z$. That integer is the Hopf invariant $H(f)$.
+
+*He restricts $p$ nowhere, works with continuous homotopy classes, and states a) for one map $f$.*
+
+**Proved in Lean.** With $p \ge 2$ and $f, g : S^{2p-1} \to S^p$ smooth, $l(g^{-1}(y), f^{-1}(z))$ is the sphere linking number of Problem 13 for the §5 preimage orientations, taken along positive bases of the tangent spaces at $y$ and $z$. a) For $y \ne z$ regular values of $f$, the map $y' \mapsto l(f^{-1}(y'), f^{-1}(z))$ is constant on a neighbourhood of $y$, and likewise in the second value; the two-map form, with $g$ in the first slot, assumes in addition that $g^{-1}(y)$ and $f^{-1}(z)$ are disjoint. b) is exactly the book's statement. c) $H(f)$ is the value at a chosen pair of distinct regular values, and $0$ on maps that are not smooth; every pair of distinct regular values gives that same value, and smoothly homotopic maps have the same invariant.
+
+- `Milnor.Problems.hopfInvariant` — Milnor/Chapter8/HopfInvariant.lean, line 1206
+- `Milnor.Problems.linkPre_self_eventually_eq` — Milnor/Chapter8/HopfInvariant.lean, line 781
+- `Milnor.Problems.linkPre_eq_of_norm_lt` — Milnor/Chapter8/HopfInvariant.lean, line 930
+- `Milnor.Problems.hopfInvariant_eq_of_smoothHomotopic` — Milnor/Chapter8/HopfInvariant.lean, line 1234
+
+*What differs.*
+- The formal statement assumes $p \ge 2$: for $p = 1$ the preimages are finite subsets of $S^1$ and the sphere linking number of Problem 13 is not available.
+- Homotopy invariance is stated for smooth homotopies, the convention of the whole formalization, and $H$ is set to $0$ on maps that are not smooth.
+- Part a) is formalized in Milnor's case $g = f$, where $y \ne z$ already makes the preimages disjoint; the version for two maps adds the hypothesis that $g^{-1}(y)$ and $f^{-1}(z)$ be disjoint.
+- Without it one should not expect local constancy, since moving $y$ can push $g^{-1}(y)$ through $f^{-1}(z)$; that is an informal observation, and no counterexample is formalized.
+
+### V8.15. Problem 15: odd p, compositions, the Hopf map
+
+*value differs* · H(π) = −1, not +1 · p ≥ 2, smooth maps · three conventions flip the sign
+
+**Milnor (§8, Problem 15, p. 53).** If the dimension $p$ is odd then $H(f) = 0$. For a composition $S^{2p-1} \xrightarrow{f} S^p \xrightarrow{g} S^p$, $H(g \circ f)$ is $H(f)$ times the square of the degree of $g$. The Hopf fibration $\pi : S^3 \to S^2$ is given by $\pi(x_1, x_2, x_3, x_4) = h^{-1}\!\left((x_1 + i x_2)/(x_3 + i x_4)\right)$, where $h$ is the stereographic projection to the complex plane, and Milnor asks for $H(\pi) = 1$.
+
+*He specifies $\pi$ only through that formula, and fixes no orientation conventions for $h$, for $S^2$, or for the preimages.*
+
+**Proved in Lean.** With $p \ge 2$ and all maps smooth: $H(f) = 0$ for odd $p$, and $H(g \circ f) = (\deg g)^2\, H(f)$. The Hopf fibration is formalized as the quadratic map $\pi(z_1, z_2) = (2 z_1 \bar z_2,\ |z_1|^2 - |z_2|^2)$ on $S^3 \subseteq \mathbb C^2$ with $z_1 = x_1 + i x_2$ and $z_2 = x_3 + i x_4$; it equals Milnor's $h^{-1}(z_1/z_2)$ wherever $z_2 \ne 0$, for $h$ the stereographic projection from $(0,0,1)$, every point of $S^2$ is a regular value, and $H(\pi) = -1$. The two fibres used are the great circles over $(1,0,0)$ and $(-1,0,0)$, and the value $-1$ is the product of three signs: both fibre directions are negatively oriented as preimages, and the derivative of the linking map sends them to a negatively oriented basis. The comparison with other sign conventions below is an informal consequence of the formal sign lemmas, not itself a formal theorem.
+
+- `Milnor.Problems.hopfInvariant_hopfMap` — Milnor/Chapter8/HopfProps.lean, line 201
+- `Milnor.Problems.hopfMap_eq_milnor` — Milnor/Chapter8/HopfMap.lean, line 116
+- `Milnor.Problems.hopfInvariant_eq_zero_of_odd` — Milnor/Chapter8/HopfProps.lean, line 103
+- `Milnor.Problems.hopfInvariant_comp` — Milnor/Chapter8/HopfProps.lean, line 144
+
+*What differs.*
+- Milnor asks for $H(\pi) = 1$; with his conventions taken literally the formal value is $-1$, a matter of convention rather than an error in the mathematics.
+- Those conventions are: $S^k$ oriented as the boundary of the disk, outward normal first; preimages oriented as in §5; $A \times B$ a product; $\lambda(x, y) = (x - y)/\|x - y\|$.
+- Any one of three equally natural changes restores $+1$: taking $\lambda(x, y) = (y - x)/\|y - x\|$, ordering the product as $B \times A$, or reversing the orientation of the target $S^2$ of $\lambda$.
+- Reversing the orientation of $S^3$, or of the target $S^2$ of $\pi$, changes nothing, since both preimage orientations reverse at once; the other two parts need only $p \ge 2$ and smoothness.
+
+### V8.16. Problem 16: transversality
+
+*stronger* · injective, δ-close deformation · codimension p + p′ and tangent space · needs p + p′ ≤ m; M compact nonempty
+
+**Milnor (§8, Problem 16, p. 53).** Two submanifolds $N$ and $N'$ of $M$ intersect transversally if at each $x \in N \cap N'$ the subspaces $TN_x$ and $TN'_x$ together generate $TM_x$; when $n + n' < m$ this means that $N \cap N' = \emptyset$. Milnor asks that a framed submanifold $N$ be deformable slightly so as to meet a given $N'$ transversally, and that the resulting intersection be a smooth manifold.
+
+*"Deformed slightly" is left imprecise, and he asks only that the intersection be a manifold, not what its codimension or tangent space is.*
+
+**Proved in Lean.** As in §7, $M \subseteq \mathbb R^{K+1}$ is a submanifold modelled on $\mathbb R^m$ and $N, N'$ are submanifolds of $M$ of dimensions $n, n'$ and codimensions $p, p'$, with all tangent spaces read inside $\mathbb R^{K+1}$; transversality is $TN_x + TN'_x = TM_x$ at every common point. If $n + n' < m$, transverse submanifolds are disjoint. If $p + p' \le m$, a transverse intersection is a submanifold of $M$ of codimension $p + p'$ whose tangent space at $x$ is $TN_x \cap TN'_x$. For a framed $N$ with a product neighbourhood $G : N \times B_\varepsilon \to M$, which needs $M$ compact and nonempty, and for any $\delta > 0$, there is $u$ with $\|u\| < \delta$ such that $N_u = G(N \times \{u\})$ is a submanifold, $x \mapsto G(x, u)$ is injective and moves no point of $N$ by as much as $\delta$, and $N_u$ meets $N'$ transversally.
+
+- `Milnor.Problems.Transverse` — Milnor/Chapter8/Transversality.lean, line 313
+- `Milnor.Problems.exists_transverse_deformation` — Milnor/Chapter8/Transversality.lean, line 538
+- `Milnor.Problems.isSliceSubmanifold_inter` — Milnor/Chapter8/Transversality.lean, line 357
+- `Milnor.Problems.tangentN_inter` — Milnor/Chapter8/Transversality.lean, line 396
+
+*What differs.*
+- "Deformed slightly" is made precise: the translate $N_u = G(N \times \{u\})$ inside a product neighbourhood is transverse to $N'$, injectively parametrized, and within any prescribed $\delta$ of $N$.
+- The intersection is not only a manifold: it is a submanifold of $M$ of codimension $p + p'$ with tangent space $TN_x \cap TN'_x$, stated under the hypothesis $p + p' \le m$.
+- The deformation goes through the Product Neighborhood Theorem of §7 and so assumes $M$ compact and nonempty; the statements about intersections assume neither.
+- Transversality is formulated with the tangent spaces read inside the ambient $\mathbb R^{K+1}$, as everywhere in §7, and $M$ itself is a submanifold of Euclidean space.
+
+### V8.17. Problem 17: the intersection product
+
+*narrower* · p, q ≥ 1 and p + q ≤ m · explicit framing of the intersection · uniqueness added, for p ≥ 1
+
+**Milnor (§8, Problem 17, p. 53).** Let $\Pi^p(M)$ be the set of all framed cobordism classes of codimension $p$ in $M$. Milnor asks that the transverse intersection operation be used to define a correspondence $\Pi^p(M) \times \Pi^q(M) \to \Pi^{p+q}(M)$.
+
+*He says nothing about how the intersection is to be framed, and does not mention that transverse representatives have to be found first.*
+
+**Proved in Lean.** $\Pi^p(M)$ is the set of framed cobordism classes of framed submanifolds of the compact nonempty $M \subseteq \mathbb R^{K+1}$, indexed by the dimension $n$ as well as the codimension $p$ and empty unless $n + p = m$. For transverse framed $F$ of codimension $p$ with framing $v$ and $G$ of codimension $q$ with framing $v'$, with $p + q \le m$, the intersection is framed by $w_k = A^*(AA^*)^{-1} e_k$, where $\alpha_F$ is the linear map sending each $v_i$ to $e_i$ and vanishing on the vectors orthogonal to all the $v_i$, $\alpha_G$ is its counterpart for $v'$, and $A = (\alpha_F, \alpha_G)$ is surjective along the intersection by transversality. For $p \ge 1$ every pair of classes has transverse representatives. For $p, q \ge 1$ with $p + q \le m$ there is a map $\Pi^p(M) \times \Pi^q(M) \to \Pi^{p+q}(M)$ carrying the classes of transverse $F, G$ to the class of the framed intersection, and for $p \ge 1$ it is the only such map.
+
+- `Milnor.Problems.exists_intersection_product` — Milnor/Chapter8/CohomotopyProduct.lean, line 1474
+- `Milnor.Framed.FramedSub.inter` — Milnor/Chapter8/CohomotopyProduct.lean, line 418
+- `Milnor.Problems.exists_transverse_rep` — Milnor/Chapter8/CohomotopyProduct.lean, line 1365
+- `Milnor.Problems.intersection_product_unique` — Milnor/Chapter8/CohomotopyProduct.lean, line 1488
+
+*What differs.*
+- The formal product is built for $p, q \ge 1$ and $p + q \le m$; $p, q \ge 1$ comes from the theorems of §7 that the proof uses, whose arguments rotate regular values, and is not claimed necessary.
+- Transverse representatives exist, and the product is determined by its values on them, under $p \ge 1$ alone; the book states neither fact.
+- The framing is written out: $w_k$ is the vector in the span of $v$ and $v'$ for which $(\alpha_F w_k, \alpha_G w_k)$ is the $k$-th standard basis vector of $\mathbb R^p \times \mathbb R^q$.
+- $\Pi^p(M)$ carries the dimension $n$ as a second index and is empty unless $n + p = m$, and $M$ is required to be compact and nonempty, as it already is in §7.
+
+### V8.17′. Problem 17: Πᵖ(M) as an abelian group
+
+*hypotheses explicit* · indexed by n, with n + p = m · zero and inverse named · redundant hypothesis p ≥ 1
+
+**Milnor (§8, Problem 17, p. 53).** If $p \ge \tfrac12 m + 1$, Milnor asks that the disjoint union operation be used to make $\Pi^p(M)$ into an abelian group, comparing with the corresponding discussion on p. 49.
+
+*One line of exercise, with the zero and the inverses left entirely to the reader.*
+
+**Proved in Lean.** Let $M \subseteq \mathbb R^{K+1}$ be compact and nonempty, let $n + p = m$, and let $m + 2 \le 2p$, which is Milnor's condition read over the integers. Then any two classes in $\Pi^p(M)$ have disjoint representatives, and if $F \sim F_1$ and $G \sim G_1$ with $F, G$ disjoint and $F_1, G_1$ disjoint, then $F \sqcup G \sim F_1 \sqcup G_1$, so disjoint union descends to classes. It makes $\Pi^p(M)$ an abelian group whose zero is the class of the empty submanifold and in which $-[F]$ is the class of $F$ with its first framing vector reversed. The formal group structure also takes $p \ge 1$ as a hypothesis, which is redundant, since $m + 2 \le 2p$ implies it.
+
+- `Milnor.Problems.cohomotopyGroup` — Milnor/Chapter8/CohomotopyGroup.lean, line 1936
+- `Milnor.Problems.exists_disjoint_rep` — Milnor/Chapter8/CohomotopyGroup.lean, line 1786
+- `Milnor.Problems.framedCobordant_union_of_framedCobordant` — Milnor/Chapter8/CohomotopyGroup.lean, line 1798
+- `Milnor.Problems.cohomotopyGroup_neg` — Milnor/Chapter8/CohomotopyGroup.lean, line 1964
+
+*What differs.*
+- $\Pi^p(M)$ is a set of classes indexed by the dimension $n$ as well as by the codimension $p$, and $n + p = m$ is needed for the empty submanifold to count as a framed submanifold at all.
+- The zero is the class of the empty submanifold and $-[F]$ the class of $F$ with its first framing vector reversed; the book leaves both to the reader.
+- The formal group structure carries $p \ge 1$ as an extra hypothesis, which is redundant because $m + 2 \le 2p$ already implies it.
+- Milnor's $p \ge \tfrac12 m + 1$ is written $m + 2 \le 2p$, and $M$ is compact, nonempty and embedded in $\mathbb R^{K+1}$.
+
+## Appendix
+
+*Milnor pp. 54–56: classifying one-manifolds*
+
+### V.A. Compact 1-manifold: even number of boundary points
+
+*stronger* · topological, not smooth · classification not used, see V.A2 · every chart sends $B$ to $0$
+
+**Milnor (Appendix, Theorem, p. 54).** Milnor proves that every smooth connected 1-manifold is diffeomorphic to the circle $S^1$ or to an interval of real numbers, so that up to diffeomorphism there are exactly four connected 1-manifolds. The boundary count is nowhere stated in the Appendix: it is used in the text, on p. 14, in the form that a compact 1-manifold is a union of finitely many circles and arcs and so has an even number of boundary points, with a footnote pointing to the Appendix for the proof.
+
+*The proof rests on parametrization by arc length and on Lemma 1 (p. 54), that two such parametrizations overlap in at most two components, two components forcing $S^1$.*
+
+**Proved in Lean.** Let $M$ be a compact Hausdorff space with a charted-space structure over a model $H$ homeomorphic to the half-line $[0,\infty)$, and let $B \subseteq M$ be a set such that every chart of the atlas sends exactly the points of $B$ in its domain to coordinate $0$. Then $B$ is finite and has an even number of points. Nothing beyond the topology is assumed: charts are homeomorphisms, there is no smooth structure, no arc length, and neither connectedness nor second countability is required.
+
+- `Milnor.OneManifold.even_ncard_boundary` — Milnor/Appendix/OneManifold.lean, line 1678
+- `Milnor.OneManifold.BoundaryCompatible` — Milnor/Appendix/OneManifold.lean, line 198
+- `Milnor.OneManifold.Arc` — Milnor/Appendix/OneManifold.lean, line 34
+- `Milnor.OneManifold.exists_closed_arc` — Milnor/Appendix/OneManifold.lean, line 1601
+
+*What differs.*
+- Milnor's 1-manifolds are smooth and his proof uses arc length; the formal theorem assumes only a topological 1-manifold with boundary, which is all the book's applications need.
+- The classification is not used here, and this proof does not state it: what it gives is that the component of a boundary point is the image of an arc whose coordinate interval is closed, and the circle case never arises, the parametrization being always started at a boundary point. The classification itself is now proved, in the smooth setting (V.A2), and the even count derived from it a second time (V.A3); this topological theorem is left untouched and, through V.A′, is still what Chapters 2 and 4 cite.
+- The boundary is given as a set $B$, with the hypothesis that every chart of the atlas, not only the chart at a given point, sends exactly the points of $B$ to coordinate $0$.
+- Compactness and Hausdorffness are used explicitly: the first for finiteness of $B$ and for a finite cover by chart arcs, the second to identify limits in the overlap lemma.
+
+### V.A′. Even boundary count for Chapter 2's manifolds
+
+*stronger* · topological proof underneath · ambient model space arbitrary
+
+**Milnor (§2, p. 14).** In the proof of Lemma 5 Milnor needs that $f^{-1}(y)$, a compact 1-manifold whose boundary is its intersection with $\partial X$, has an even number of boundary points, and gets this from the classification: such a manifold is a union of finitely many circles and arcs. A footnote refers to the Appendix for the proof. The manifolds he applies it to are the level sets produced by his Lemma 4 inside a manifold with boundary.
+
+*He never isolates the parity statement as a lemma; it recurs in the homotopy lemma of §4, in Lemma 1 of §5, and in §6.*
+
+**Proved in Lean.** Let $M$ be a Hausdorff smooth manifold over any model with corners, its model space an arbitrary real normed space, and let $X \subseteq M$ be a compact half-slice submanifold with boundary $B \subseteq X$ modelled on the half-space over a space $Z$ with a single point — that is, a compact 1-manifold with boundary in the sense of Chapter 2. Then $B$ is finite and has an even number of points. It is deduced from the topological theorem by checking that the charted-space structure that $X$ inherits sends the points of $B$ to coordinate $0$ in every chart.
+
+- `Milnor.IsHalfSliceSubmanifold.even_ncard_boundary` — Milnor/Appendix/HalfSpace.lean, line 55
+- `Milnor.IsHalfSliceSubmanifold` — Milnor/Chapter2/Boundary.lean, line 150
+- `Milnor.IsHalfSliceSubmanifold.boundaryCompatible` — Milnor/Appendix/HalfSpace.lean, line 41
+- `Milnor.halfSpaceHomeomorph` — Milnor/Appendix/HalfSpace.lean, line 23
+
+*What differs.*
+- Only $X$ is assumed compact and $M$ merely Hausdorff, and the model space of $M$ is an arbitrary real normed space, not required finite-dimensional or boundaryless.
+- Being a 1-manifold is expressed by the half-space model $\mathbb R \times Z$ having $Z$ a single point; the smooth structure of $X$ is then discarded and the topological theorem applied.
+- As in the topological form, this proof does not go through the classification Milnor proves: it gives only the parity of the boundary count, which is the sole consequence the book uses. The classification is proved separately (V.A2) and yields the same count a second time, with each component identified and the pairing named (V.A3); this theorem is untouched and is the one Chapters 2 and 4 cite.
+
+### V.A1. Appendix Lemma 1: the overlap of two arcs, and the affine transition
+
+*stronger* · no dimension hypothesis, no compactness · topological half: no smoothness at all · the circle case counted, not excluded
+
+**Milnor (Appendix, Lemma 1, p. 54).** Milnor's one lemma of the Appendix (p. 54). Let $f : I \to M$ and $g : J \to M$ be parametrizations by arc length of a smooth 1-manifold $M \subseteq \mathbb R^k$ — diffeomorphisms onto open subsets whose velocity has Euclidean length $1$. Then $f(I) \cap g(J)$ has at most two connected components; if it has one, $f$ extends to a parametrization by arc length of $f(I) \cup g(J)$; and if it has two, $M$ is diffeomorphic to $S^1$. His proof studies the graph $\Gamma = \{(s, t) : f(s) = g(t)\}$: differentiating $g(\tau(s)) = f(s)$ for $\tau = g^{-1} \circ f$ gives $|\tau'| = 1$, so $\tau'$ is continuous with values $\pm 1$ and constant on each component, $\Gamma$ is a union of segments of slope $\pm 1$ running from edge to edge of the rectangle $I \times J$, and the four surviving pictures give the four cases.
+
+*He states the lemma only for arc-length parametrizations, and says so: a merely monotone transition would leave the constant and the shape of the reparametrization free.*
+
+**Proved in Lean.** Let $M$ be a Hausdorff topological space charted on $H$, with $I : \mathrm{ModelWithCorners}\ \mathbb R\ E\ H$ over an arbitrary real normed space $E$; let $L$ be a *length element*, a density indexed not by charts but by local real parameters, so that it can be read along a chart and along an arc with no layer between; and let $A$, $A'$ be $C^\infty$ arcs of unit speed for $L$ — homeomorphisms from open subsets of $M$ onto bounded intervals of $\mathbb R$, smooth in both directions, whose coordinate advances at unit rate. Write $S$ for the overlap, the set of $A$-parameters whose point lies in $A'$ as well, and take the components of $S$ to be its maximal subintervals. Then: on each component the transition $s \mapsto A'(A^{-1}(s))$ is $s \mapsto \varepsilon s + k$ with $\varepsilon = \pm 1$; $S$ has at most two components; and two distinct components reach *opposite* ends of $A$'s interval, one running down to its infimum while the other runs up to its supremum. There is no dimension hypothesis, no manifold instance, no compactness and no boundarylessness: only Hausdorffness, which the overlap API needs to identify two limits. The second and third clauses use no smoothness whatever. The extension clause is separate and strong: the glued arc is again a smooth arc of unit speed, its source is the union of the two sources, and its coordinate *equals* the old one on the whole of the old source.
+
+- `Milnor.OneManifold.Smooth.milnor_appendix_lemma_one` — Milnor/Appendix/Smooth/Affine.lean, line 317
+- `Milnor.OneManifold.Smooth.exists_affine_trans` — Milnor/Appendix/Smooth/Affine.lean, line 242
+- `Milnor.OneManifold.encard_hulls_le_two` — Milnor/Appendix/TwoComponents.lean, line 432
+- `Milnor.OneManifold.sInf_eq_and_sSup_eq_of_hull_ne` — Milnor/Appendix/TwoComponents.lean, line 444
+- `Milnor.OneManifold.IsInnerHull` — Milnor/Appendix/TwoComponents.lean, line 228
+- `Milnor.OneManifold.Smooth.exists_extension_unitSpeed` — Milnor/Appendix/Smooth/Affine.lean, line 855
+
+*What differs.*
+- Milnor's $M$ is a smooth 1-manifold in a Euclidean space and his parametrizations are by Euclidean arc length. The formal statement asks only that $M$ be Hausdorff and charted on a model with corners over an arbitrary real normed space, with unit speed taken against a length element; it carries no dimension hypothesis, no manifold instance, no compactness and no boundarylessness, and it holds for a model whose range is a compact interval, which is a one-manifold *with corners*.
+- The lemma splits, and only one half needs unit speed. That the overlap has at most two components, and that two components reach opposite ends, hold for arcs that are merely homeomorphisms from open subsets of a Hausdorff space onto bounded intervals — no smoothness and no arc length anywhere. What genuinely needs unit speed is the affine form $s \mapsto \pm s + k$ of the transition, which comes in one line from the cocycle rule of the length element: read in a unit-speed parameter the density is $1$, so $1 = 1 \cdot |\tau'|$, and a continuous nowhere-zero $\tau'$ cannot change sign on a component.
+- The two-component case is **counted, not excluded**. The topological Appendix (V.A) avoids it by normalizing the first arc to start at a boundary point, which rules out the circle by fiat; here there is no hypothesis on where either arc starts, and the case that forces the circle appears as one of the alternatives. The device the earlier file lacked is the *inner* component, the one both of whose ends are interior to the first arc's interval: it runs off both ends of the other arc at once, so the transition carries it onto that arc's whole interval, and injectivity then makes it the only component. Two byproducts: the inner case is exactly the case where one arc sits inside the other, and an inner component forces the other arc to contain no boundary point at all.
+- Milnor's normalization turns out to have been doing nothing essential, and his third clause — two components force $S^1$ — is not proved here as a statement about $M$; it is the two-component alternative, and the circle is identified in V.A2 by a different route, through unit-speed curves of the whole line.
+- The extension clause is strong in a way the topological theorem cannot be. Because the transition is $s \mapsto +s + k$ with the constant pinned down from either side, the old parameter *is* the new parameter on the old source, so the glued arc genuinely extends the first rather than merely containing its image up to reparametrization; the topological theorem's conclusion is an existential that forgets the witness's coordinate, from which the transition could be recovered only as an increasing homeomorphism fixing $0$ — it could be $s \mapsto s^2$. About seventy-five lines of the topological proof then *disappear*: both one-sided limit computations at the junction and the trichotomy proofs of continuity there, because with unit-speed arcs the two branches are the same affine function on the whole overlap and there is no seam to be continuous at.
+
+### V.A2. The classification of one-manifolds: Milnor's Appendix theorem
+
+*hypotheses explicit* · Hausdorff and $\sigma$-compact, both needed · exactly one: all six exclusions proved · the long line is the counterexample
+
+**Milnor (Appendix, Theorem, p. 54).** Every smooth connected 1-manifold, with or without boundary, is diffeomorphic to the circle $S^1$ or to an interval of real numbers — open, closed or half-open, bounded or not — so that up to diffeomorphism there are exactly four of them. Milnor proves it by taking a maximal parametrization by arc length, Lemma 1 supplying the overlap picture at each step; the reduction of an arbitrary interval to a normal form he leaves to a parenthesis, an affine map for a bounded interval and $t \mapsto \tanh t$ for an unbounded one; and the distinctness of the four he asserts without proof. No countability hypothesis is stated, his manifolds being subsets of $\mathbb R^k$.
+
+*Chapters 2, 4, 5 and 6 quote only the consequence, the even boundary count, and the footnote on p. 14 points here for the proof.*
+
+**Proved in Lean.** Let $E$ be a real normed space with $\dim E = 1$, let $I : \mathrm{ModelWithCorners}\ \mathbb R\ E\ H$, and let $M$ be a topological space charted on $H$ which is Hausdorff, $\sigma$-compact, connected — hence nonempty — and a $C^\infty$ manifold over $I$. Then $M$ is $C^\infty$-diffeomorphic to the circle, to $[0, 1]$, to $[0, \infty)$ or to $\mathbb R$, each with its own model with corners, and to **exactly one** of them. A sharper form keys the four alternatives to two invariants: compact with empty boundary gives the circle, compact with a boundary point $[0, 1]$, non-compact with a boundary point $[0, \infty)$, non-compact with empty boundary $\mathbb R$. Exclusivity is proved, all six pairs: compactness settles four of them, and the number of boundary points — a diffeomorphism invariant, because a diffeomorphism carries boundary onto boundary — has the values $0$, $2$, $1$, $0$ and settles the remaining one in each compactness class. The boundary is Mathlib's, and no compatibility hypothesis on the charts is assumed: the chart-independence of boundary points is proved. Nothing is assumed about the boundary, about orientability or about second countability. Nine stages and some nine thousand three hundred lines: the one-dimensional setup, with the model classified into the line, a closed half-line and a compact interval, the last a one-manifold with corners kept alive throughout; smooth arcs and their transitions; the length element, which is where Hausdorffness and $\sigma$-compactness are spent, and unit-speed arcs; the affine transition and the extension theorem (V.A1); and the four cases — the compact one with boundary by exhausting a component by arcs, the circle by a unit-speed *curve* of the whole line with a propagation lemma in place of an exhaustion, and the two non-compact ones by explicit parametrizations of the six shapes of open interval and half-line, with no inverse function theorem anywhere.
+
+- `Milnor.OneManifold.Smooth.nonempty_diffeomorph_or` — Milnor/Appendix/Smooth/Main.lean, line 345
+- `Milnor.OneManifold.Smooth.nonempty_diffeomorph_cases` — Milnor/Appendix/Smooth/Main.lean, line 315
+- `Milnor.OneManifold.Smooth.models_pairwise_not_diffeomorph` — Milnor/Appendix/Smooth/Main.lean, line 275
+- `Milnor.OneManifold.Smooth.nonempty_diffeomorphIcc` — Milnor/Appendix/Smooth/Compact.lean, line 383
+- `Milnor.OneManifold.Smooth.nonempty_diffeomorphCircle` — Milnor/Appendix/Smooth/Circle.lean, line 1667
+- `Milnor.OneManifold.Smooth.nonempty_diffeomorphIci` — Milnor/Appendix/Smooth/NonCompact.lean, line 2152
+- `Milnor.OneManifold.Smooth.nonempty_diffeomorphReal` — Milnor/Appendix/Smooth/NonCompact.lean, line 1113
+- `Milnor.OneManifold.Smooth.nonempty_lengthElement` — Milnor/Appendix/Smooth/LengthElement.lean, line 492
+- `Milnor.OneManifold.Smooth.boundaryCompatible` — Milnor/Appendix/Smooth/Setup.lean, line 541
+
+*What differs.*
+- Milnor states no countability hypothesis and the theorem is **false** without one: the long line — two copies of the closed long ray $\omega_1 \times [0, 1)$ glued along their least elements — is a connected Hausdorff smooth one-manifold without boundary diffeomorphic to none of the four, not being second countable. So the formal statement assumes $\sigma$-compactness, which Milnor has for free, his manifolds sitting in $\mathbb R^k$, and which he uses silently: the Euclidean metric he restricts to $M$ is a Riemannian metric, and a manifold carrying one is metrizable. It is spent in exactly one place in the whole development, the existence of the length element, and only the two non-compact cases need it; in the compact cases compact plus Hausdorff plus a finite-dimensional model already gives second countability.
+- "Exactly four" is asserted in the book and proved here. All six exclusions are theorems: four by compactness, two by the number of boundary points, which is a diffeomorphism invariant because a diffeomorphism carries the boundary onto the boundary. The boundary of the model half-line had to be computed by hand, Mathlib having no half-line manifold; $[0, \infty)$ was given its structure here, as a one-chart manifold with boundary whose chart is a homeomorphism onto the whole model half-space.
+- Milnor's "an interval of real numbers" becomes the three normal forms $[0, 1]$, $[0, \infty)$ and $\mathbb R$, which is his own parenthesis carried out, and each model carries its own model with corners. Hausdorffness is assumed rather than inherited from an ambient $\mathbb R^k$, and the model space is an arbitrary real normed space of dimension one rather than $\mathbb R$ itself.
+- Where the design pass was wrong, and this is the substantive correction of the programme: the exhaustion of a manifold by arcs has no boundaryless analogue. Every arc of a boundaryless manifold has an *open* interval for its target, while the extension theorem needs the first arc's target to be half-open, that is, to start at a boundary point. The circle is proved instead with unit-speed *curves* of the whole line — maps agreeing near each time with the arc-length parametrization of some arc — whose engine is a propagation lemma, that two such curves agreeing near one time agree on the whole interval, proved by a connectedness argument run in the parameter of one arc rather than in the time, because the set of times of local agreement need not be closed, and the obstruction is exactly that an overlap can have two components.
+- Three bridges had to be built which the book does not need. The connected components of a smooth one-manifold are **open**, hence manifolds in their own right, which is what lets a theorem about connected manifolds reach a disconnected one, and is the piece the design pass never mentions. The boundary of the half-line model is a single point. And the boundary count for a possibly disconnected compact one-manifold is proved from scratch, its *finiteness* being the harder half, because V.A wants a compatibility hypothesis available only when the model range is a half-line.
+- A byproduct closes a hypothesis of V.A. For a smooth one-manifold whose model range is a half-line, Mathlib's boundary satisfies the compatibility condition that the topological theorem has to assume — every chart of the atlas, not only the chart at a point, sends exactly the boundary points to coordinate $0$ — with no side condition at all, and $C^1$ suffices. So V.A applies to smooth one-manifolds unconditionally.
+
+### V.A3. The even boundary count, derived from the classification
+
+*stronger* · derived from the classification · each interval gives exactly two points · the pairing: the two ends of one arc
+
+**Milnor (Appendix, Theorem, last clause, p. 54).** The last sentence of the Appendix theorem: a compact 1-manifold with boundary has an even number of boundary points. Milnor derives it from the classification — a compact manifold has finitely many components, since the components are open and form a cover with no proper subcover, and each is a circle with no boundary points or a closed interval with two. This is the only consequence of the Appendix the book uses: it is quoted on p. 14 in the proof of Lemma 5, again in the homotopy lemma of §4, in Lemma 1 of §5 and in §6, each time with a footnote pointing to the Appendix.
+
+*The pairing behind the parity is the two ends of one arc; Milnor leaves it in the picture and counts components instead.*
+
+**Proved in Lean.** The hypotheses of V.A′, and four conclusions read off from the classification. Let $M$ be a Hausdorff $C^\infty$ manifold over any model with corners, its model space an arbitrary real normed space; let $Z$ be a normed space with a single point; and let $X \subseteq M$ be a compact half-slice submanifold with boundary $B \subseteq X$ — that is, a compact 1-manifold with boundary in the sense of Chapter 2. Then every connected component of $X$, which is open and so a manifold in its own right, is $C^\infty$-diffeomorphic to the circle or to $[0, 1]$. The components meeting $B$ are *exactly* the ones diffeomorphic to $[0, 1]$, and the ones missing $B$ exactly the circles, both stated as equivalences. Each component that meets $B$ meets it in exactly two points. And every boundary point $p$ has exactly one partner: a boundary point $p' \ne p$ with $B \cap (\text{component of } p) = \{p, p'\}$, which is the pairing, realised by the two ends of one arc-length parametrization of that component. Hence $B$ is finite with an even number of points — the conclusion of V.A′, with a different proof: the old one counts a fixed-point-free involution built from the topological Appendix's arc extension, this one runs the classification on each component. V.A′ is left in place, is still what Chapters 2 and 4 cite, and is not used here; the only thing borrowed from the topological file is the combinatorial lemma that a fixed-point-free involution of a finite set has even cardinality.
+
+- `Milnor.IsHalfSliceSubmanifold.even_ncard_boundary_of_classification` — Milnor/Appendix/Smooth/Main.lean, line 765
+- `Milnor.IsHalfSliceSubmanifold.component_diffeomorph` — Milnor/Appendix/Smooth/Main.lean, line 668
+- `Milnor.IsHalfSliceSubmanifold.nonempty_diffeomorphIcc_component_iff` — Milnor/Appendix/Smooth/Main.lean, line 682
+- `Milnor.IsHalfSliceSubmanifold.ncard_boundary_inter_component` — Milnor/Appendix/Smooth/Main.lean, line 717
+- `Milnor.IsHalfSliceSubmanifold.exists_boundary_partner` — Milnor/Appendix/Smooth/Main.lean, line 737
+- `Milnor.OneManifold.Smooth.isOpen_connectedComponent_of_oneManifold` — Milnor/Appendix/Smooth/Main.lean, line 383
+
+*What differs.*
+- The conclusion is V.A′'s and the proof is the book's, where V.A′ argues by parity alone: the components are identified and counted, rather than an involution being exhibited on the boundary of a topological manifold. Both theorems stand, V.A′ is what Chapters 2 and 4 cite, and this row uses nothing of it beyond the combinatorics of a fixed-point-free involution.
+- More is proved than the book states. Milnor says a compact one-manifold is a union of finitely many circles and arcs; the formal statement says which components are which, by an equivalence in each direction — a component meets the boundary exactly when it is diffeomorphic to $[0, 1]$, and misses it exactly when it is a circle — gives each component of the second kind exactly two boundary points, and names the partner of each boundary point, which is the pairing the parity comes from.
+- Finiteness of the boundary is the harder half for a possibly disconnected compact one-manifold, and it could not be taken over from V.A: that theorem assumes the chart compatibility condition, which is available only when the model range is a half-line. It is proved here for the abstract manifold first and then transported.
+- Hypotheses as in V.A′ and no more: only $X$ is compact, $M$ is merely Hausdorff, its model space is an arbitrary real normed space, and being a one-manifold is expressed by the half-space model $\mathbb R \times Z$ with $Z$ a single point. Unlike V.A′, the smooth structure of $X$ is not discarded — it is what the classification runs on — and $\sigma$-compactness is free, $X$ being compact.
+- That the components of a one-manifold are open, hence manifolds in their own right, is what lets a theorem about connected manifolds reach a disconnected one. It needs only that the model space is one-dimensional: every point lies in the source of an arc, and the source of an arc is preconnected. No compactness, no Hausdorffness and no length element.
+
+### V.A4. Connected one-manifolds are orientable
+
+*not in the book* · the book has no use for the statement · boundaryless model, and only the source · Mathlib's $[0,1]$ has two charts
+
+**Milnor (Appendix, p. 54).** The book never states this and never needs it. Orientability as a property of a manifold is nowhere defined (V7.18), and for one-manifolds the question does not arise: Milnor's one-manifolds are the level sets $f^{-1}(y)$ in a Euclidean space, where a tangent line is a line in one fixed $\mathbb R^k$, and the signs §5 attaches to the two ends of an arc are ambient, read off from the ambient orientation rather than from an orientation of the arc. The classification of the Appendix would make the statement immediate, the circle and every interval being orientable, but Milnor draws no such conclusion, having no use for one: his remark of p. 50 restricts itself to a non-orientable $M$ and says nothing about why such an $M$ cannot be one-dimensional.
+
+*This row exists to remove a hypothesis, not to record a result of the book: it is what makes $2 \le m$ derivable in V7.26.*
+
+**Proved in Lean.** Let $E$ be a finite-dimensional real normed space, $I : \mathrm{ModelWithCorners}\ \mathbb R\ E\ H$ with $I$ **boundaryless**, and $M$ a Hausdorff, $\sigma$-compact, connected $C^\infty$ manifold charted on $H$. If $\dim E = 1$ then $M$ is orientable in the sense of V7.18. The classification (V.A2) makes $M$ diffeomorphic to the circle if it is compact and to $\mathbb R$ if it is not — the two interval models are excluded because the model is boundaryless, so the boundary of $M$ is empty — and orientability travels back along the diffeomorphism. Hence, with $\dim E = m$: a connected non-orientable $M$ has $2 \le m$, dimension $0$ being orientable because in dimension $0$ every linear map preserves every orientation, the only tuple to test being the empty one, and dimension $1$ by the previous statement. The same in the vocabulary of Chapters 7 and 8 — a compact connected non-orientable slice submanifold $M \subseteq \mathbb R^{K+1}$ charted on $\mathbb R^m$ has $2 \le m$ — where every hypothesis comes free: $M$ is Hausdorff as a subspace of a metric space, $\sigma$-compact because compact, and its model is boundaryless, so its boundary is empty. On the way: the pullback of an orientation along an invertible linear map and its uniqueness, a space of dimension $n$ having exactly two orientations; the transport of an orientation along any smooth map of manifolds of the same dimension whose derivative is everywhere invertible, hence in particular along a diffeomorphism; and all four models of the classification oriented. The file sits in Chapter 7, where the statement is used.
+
+- `Milnor.isOrientable_of_finrank_eq_one` — Milnor/Chapter7/OneManifoldOrientable.lean, line 516
+- `Milnor.two_le_of_not_isOrientable` — Milnor/Chapter7/OneManifoldOrientable.lean, line 531
+- `Milnor.two_le_of_not_isOrientable_slice` — Milnor/Chapter7/OneManifoldOrientable.lean, line 550
+- `Milnor.IsOrientable.comap` — Milnor/Chapter7/OneManifoldOrientable.lean, line 318
+- `Milnor.orPull` — Milnor/Chapter7/OneManifoldOrientable.lean, line 135
+- `Milnor.isOrientable_models` — Milnor/Chapter7/OneManifoldOrientable.lean, line 493
+
+*What differs.*
+- No counterpart in the book, and none is wanted there: Milnor's one-manifolds arise as level sets in a Euclidean space and carry no orientation of their own, orientability as a property of a manifold being undefined in the book (V7.18). The row is here to remove a hypothesis, and V7.26 is the only thing that uses it.
+- Transport of an orientation is proved along any smooth map between manifolds of the same dimension whose derivative is everywhere invertible: neither injectivity, nor surjectivity, nor being a local diffeomorphism is needed. It assumes boundarylessness of the **source** only, the target being allowed a boundary, and that single restriction is why the row is stated for boundaryless models — a chart target of the source has to be open in the model space for the map read in charts to have a genuine derivative there, continuous in the point. Transport *into* a manifold whose model has a boundary is not proved, is not needed, and is where the file stops.
+- All four models of the classification are oriented, and one of them is not free. Mathlib's manifold structure on $[0, 1]$ has **two** charts, $z \mapsto z$ on $[0, 1)$ and $z \mapsto 1 - z$ on $(0, 1]$, whose transition reverses orientation, so a constant family is not an orientation there and the orientation has to flip at the right endpoint; that one transition derivative is computed by factoring the chart at $1$ through the chart at an interior point and the reflection of the model space. The circle was oriented not through its own charts but through the unit circle $S^1 \subseteq \mathbb R^2$, which Chapter 8 orients as the boundary of the disk, the classification supplying the diffeomorphism; that is shorter than either direct route, the sphere being oriented already.
+- What the row buys is exactly the deletion of the dimension hypothesis from V7.26: non-orientability of a connected manifold now *implies* $2 \le m$, so the hypothesis the punctured stage needs (V7.22) is derived rather than assumed. Nothing else in the project depends on it.
+
+## Not formalized
+
+*What the book states and the formalization does not prove, and what it does instead*
+
+### G.1. The index sum is the Euler characteristic
+
+*not formalized*
+
+**Milnor (§6, pp. 35 and 40).** Milnor states the Poincaré–Hopf theorem in the form that the index sum equals the Euler number $\chi(M) = \sum_i (-1)^i \operatorname{rank} H_i(M)$, and refers to Hopf and to the literature for the identification; p. 40 sketches the three further steps it would take.
+
+**Proved in Lean.** **What is proved is the integer, not its name.** V6.9 produces an integer that is the index sum of every smooth tangent field with finitely many zeros on a compact submanifold of Euclidean space, and identifies it with the degree of the Gauss map, which is the form Milnor proves. V6.10 and V6.14 make it computable, as a sum of signs of determinants, and V6.15 computes it for the sphere: it is $1 + (-1)^n$, and it is pinned down, any integer with the Poincaré–Hopf property being that one. **What is missing is the name.** The identification of that integer with the Euler characteristic is not formalized, and the statement cannot even be written down: Mathlib has no Euler characteristic of a topological space, no Betti numbers and no singular or cellular homology with ranks to alternate, so $\chi(S^n) = 1 + (-1)^n$ is not a sentence of the library. Supplying it would mean building a homology theory and computing it for manifolds — the work of a library rather than of a chapter — and Milnor does not prove it either, referring to Hopf's theorem. It is therefore not planned, and it is the one place where this edition is further from the book than a count of lines suggests. Out of reach for a related reason: the Poincaré–Hopf theorem for a manifold not presented as a submanifold of Euclidean space, which would need Whitney's embedding theorem, Milnor working with $N \subseteq \mathbb R^k$ as well.
+
+

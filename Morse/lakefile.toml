@@ -1,0 +1,27 @@
+name = "Morse"
+version = "0.1.0"
+keywords = ["math"]
+defaultTargets = ["Morse"]
+
+[leanOptions]
+pp.unicode.fun = true # pretty-prints `fun a ↦ b`
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 3
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.33.1"
+
+[[lean_lib]]
+name = "Morse"
+
+# The Milnor project is the root of this repository (Morse lives in its subfolder `Morse/`).
+[[require]]
+name = "Milnor"
+path = ".."
+
+# Round-trip audit of the comparison's statements (not part of the default target).
+[[lean_lib]]
+name = "RoundTrip"

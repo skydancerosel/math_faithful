@@ -1,0 +1,11 @@
+{
+ "id": "Morse_critCount",
+ "name": "Morse.critCount",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "model space E finite-dimensional (more generally: the two indices agree at every critical point); f need not be Morse",
+ "difference": "Inherited from the index: in infinite dimension the project's index is always 0. On M = E = ℓ²(ℕ), f x = ⟪x, x⟫ - 2x₀² has the single critical point 0, of project index 0 and blind index 1, so C₀ is 1 for the project and 0 for the blind definition.",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both count, with Set.ncard, the points with mfderiv = 0 and index k for the same preferred-chart Hessian, so they agree whenever the indices agree at critical points, in particular in finite dimension. The counterexample needs an infinite-dimensional model, outside the textbook; every project theorem about critCount assumes FiniteDimensional ℝ E."
+}

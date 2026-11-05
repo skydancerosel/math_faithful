@@ -1,0 +1,17 @@
+{
+ "id": "V11_2",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B (definitions-only item; IsCritMap is defined but B only asserts the properties of γ_v): on every abstract connected Hausdorff ℝⁿ-manifold with any smooth Mathlib RiemannianBundle metric and any Levi-Civita connection, Milnor-complete, γ_v(t) = exp_p(tv) is a geodesic on [0,1] with γ_v(0) = p, γ_v(1) = exp_p(v) and initial velocity v. A (universes 0; expDomAt, dExpAt vocabulary): for slice submanifolds N ⊆ V with the induced metric only, no completeness: the domain of exp_q is open, exp_q is C^∞ on it, γ_v is a geodesic on an open interval containing [0,1] and a smooth curve in N on [0,1] for v in the domain, and the domain is T_qN for complete N. A ⇒ B fails genuinely (setting: abstract manifolds are not given embedded, no abstract exp in the project); B ⇒ A fails genuinely (setting; B says nothing about openness/smoothness of exp or incomplete N). On embedded manifolds B_emb follows from A, and in fact holds outright from Chapter 7 (B_emb_holds), so A's content is not needed for it; B_emb gives back A's ray statements for complete N.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. For the embedded theorem B_emb_to_A_cplt: 318 shared project theorems — the Chapter 7 geodesic-flow ODE infrastructure (Flow.*, LocalSpray.*, IsBddLipschitz.*, exists_isGeodesicOn_exp_smul, IsGeodesicFrom.exp_eq/exp_smul) reached through Bridge.expMap_eq and Hopf–Rinow (completeness dictionary), slice-chart and tangent-projection lemmas. Not shared: exists_contDiffOn_exp, raysGoodE_of_isGeodesicOn, exists_contDiffAt_expAt, smul_mem_expDomAt (A's Chapter 11 argument).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V11_2.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric), cov = Bridge.conn (B_to_B_emb via conn_isLC). Glue (namespace Emb): completeness dictionary via Hopf–Rinow (adapted from Items/V7_29.lean), incl_expMap, incl_ray (blind γ_v read in V is t ↦ exp_p(t D_p v)), ray_props (given that the project ray is a geodesic near [0,1], the blind γ_v equals Bridge.lift of it, so Bridge.isGeodesic_lift_of_isGeodesicFrom gives B's four claims). A_to_B_emb uses A's expDomAt_eq_univ and isGeodesicOn_ray; B_emb_holds proves B_emb outright from Chapter 7 (IsGeodesicFrom.isGeodesicOn_exp_smul) — the B claim is definitional in content. B_emb_to_A_cplt: for complete connected N (model ℝⁿ), γ_v is a smooth curve in N on [0,1] and a geodesic on (0,1) (A's isSmoothCurveIn_ray for complete N, and a weakening of isGeodesicOn_ray). All #rt_check OK. Not covered by B_emb: openness of expDomAt, smoothness of exp_q (contDiffOn_expAt), incomplete N. Only the induced connection."
+}

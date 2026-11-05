@@ -1,0 +1,2381 @@
+[
+ {
+  "name": "Milnor.critPoints",
+  "module": "Milnor.Chapter2.Brown",
+  "class": "notion",
+  "textbook": "Critical point of a smooth map f: M → N between smooth manifolds (Milnor §2 / Sard's theorem, p. 10): a point x of M at which the differential df_x: T_xM → T_{f(x)}N is not surjective. The set of all such points is the critical set C.",
+  "priority": "high",
+  "note": "Tangent-map-level notion; manifold version of the same notion as Sard.critSet"
+ },
+ {
+  "name": "Milnor.IsSliceSubmanifold",
+  "module": "Milnor.Chapter2.Submanifold",
+  "class": "notion",
+  "textbook": "Embedded (regular) smooth submanifold of a smooth manifold: a subset S of M such that every point of S has a coordinate (slice) chart of M, i.e. a diffeomorphism from an open neighbourhood in M onto an open subset of ℝ^k × ℝ^l carrying S exactly onto the points of the form (z, 0). (Standard text, e.g. Lee, Introduction to Smooth Manifolds, slice charts; Milnor §2 uses smooth submanifolds.)",
+  "priority": "low",
+  "note": "Project parametrises by model spaces Z, W"
+ },
+ {
+  "name": "Milnor.IsSliceSubmanifold.chartedSpace",
+  "module": "Milnor.Chapter2.Submanifold",
+  "class": "construction",
+  "note": "Charted-space structure induced on the submanifold from the slice charts"
+ },
+ {
+  "name": "Milnor.SliceChart",
+  "module": "Milnor.Chapter2.Submanifold",
+  "class": "notion",
+  "textbook": "Slice (submanifold) chart for a subset S of a smooth manifold M: a diffeomorphism from an open set of M onto an open subset of ℝ^k × ℝ^l under which S ∩ domain corresponds exactly to the points (z, 0). (Lee, Introduction to Smooth Manifolds, ch. 5.)",
+  "priority": "low",
+  "note": "Includes a base point x₀ in S in the domain"
+ },
+ {
+  "name": "Milnor.SliceChart.invChart",
+  "module": "Milnor.Chapter2.Submanifold",
+  "class": "construction",
+  "note": "Inverse of the induced chart with a junk value outside target"
+ },
+ {
+  "name": "Milnor.SliceChart.toChart",
+  "module": "Milnor.Chapter2.Submanifold",
+  "class": "construction",
+  "note": "Chart on S induced by a slice chart (first coordinate projection)"
+ },
+ {
+  "name": "Milnor.SliceChart.x₀",
+  "module": "Milnor.Chapter2.Submanifold",
+  "class": "field",
+  "parent": "Milnor.SliceChart",
+  "note": "base point field"
+ },
+ {
+  "name": "Milnor.SliceChart.φ",
+  "module": "Milnor.Chapter2.Submanifold",
+  "class": "field",
+  "parent": "Milnor.SliceChart",
+  "note": "the chart diffeomorphism field"
+ },
+ {
+  "name": "PartialDiffeomorph.restrOpen",
+  "module": "Milnor.Chapter2.Submanifold",
+  "class": "aux",
+  "note": "restriction of a partial diffeomorphism to an open subset of its source"
+ },
+ {
+  "name": "Milnor.Sard.critSet",
+  "module": "Milnor.Chapter3.Basic",
+  "class": "notion",
+  "textbook": "Critical point and critical set of a smooth map f: U → ℝ^n from an open set U ⊆ ℝ^m (Milnor §3 / Sard's theorem, p. 10): a point x ∈ U is critical if the Jacobian (differential) df_x: ℝ^m → ℝ^n is not surjective (rank < n).",
+  "priority": "high",
+  "note": "Euclidean version of critical set; used in Sard"
+ },
+ {
+  "name": "Milnor.Sphere.Sph",
+  "module": "Milnor.Chapter5.HairyBall",
+  "class": "notion",
+  "textbook": "The unit n-sphere Sⁿ = {x ∈ ℝ^{n+1} : |x| = 1} as a subset of Euclidean space (Milnor §1/§5 etc., standard).",
+  "priority": "high",
+  "note": "As a set only; manifold structure elsewhere"
+ },
+ {
+  "name": "Milnor.Sphere.sphG",
+  "module": "Milnor.Chapter5.HairyBall",
+  "class": "aux",
+  "note": "defining function x ↦ |x|² (-1) of the sphere, bookkeeping for regular value argument"
+ },
+ {
+  "name": "Milnor.mfd",
+  "module": "Milnor.Chapter5.Orient",
+  "class": "aux",
+  "note": "mfderiv typed as a linear map between model vector spaces (coercion/bookkeeping)"
+ },
+ {
+  "name": "Milnor.Problems.normalBundleSet",
+  "module": "Milnor.Chapter8.NormalBundle",
+  "class": "notion",
+  "textbook": "Total space of the normal bundle of a submanifold M ⊆ ℝ^k: pairs (x, v) with x ∈ M and v ∈ ℝ^k orthogonal to the tangent space T_xM (Milnor §6 / tubular neighbourhood, standard text).",
+  "priority": "low",
+  "note": "Lives in ℝ^k × ℝ^k; tangent space = range of derivative of inclusion"
+ },
+ {
+  "name": "Milnor.Problems.normalSum",
+  "module": "Milnor.Chapter8.NormalBundle",
+  "class": "construction",
+  "note": "the map (x, v) ↦ x + v on the normal bundle used for tubular neighbourhood"
+ },
+ {
+  "name": "Morse.MapTelRel",
+  "module": "Morse.Appendix.MappingTelescope",
+  "class": "aux",
+  "note": "gluing relation used to define the quotient mapping telescope"
+ },
+ {
+  "name": "Morse.MappingTelescope",
+  "module": "Morse.Appendix.MappingTelescope",
+  "class": "notion",
+  "textbook": "Mapping telescope of a sequence of continuous maps F₀ → F₁ → F₂ → ⋯: the quotient of the disjoint union of F_n × [0,1] in which (k,1) in the n-th piece is identified with (c_n(k), 0) in the (n+1)-th piece (Milnor, Appendix, p. 149-152; standard text, e.g. Hatcher §4.G, Algebraic Topology).",
+  "priority": "high",
+  "note": "Used to define homotopy type of a countable cell complex"
+ },
+ {
+  "name": "Morse.MappingTelescope.desc",
+  "module": "Morse.Appendix.MappingTelescope",
+  "class": "construction",
+  "note": "maps out of mapping telescope given block by block (universal property)"
+ },
+ {
+  "name": "Morse.MappingTelescope.level",
+  "module": "Morse.Appendix.MappingTelescope",
+  "class": "aux",
+  "note": "real-valued level function n+t on the telescope"
+ },
+ {
+  "name": "Morse.MappingTelescope.mk",
+  "module": "Morse.Appendix.MappingTelescope",
+  "class": "aux",
+  "note": "point inclusion (quotient map) of block n into the telescope"
+ },
+ {
+  "name": "Morse.MappingTelescope.trunc",
+  "module": "Morse.Appendix.MappingTelescope",
+  "class": "construction",
+  "note": "truncation T_n = {level ≤ n} used in proof"
+ },
+ {
+  "name": "Morse.tmap",
+  "module": "Morse.Appendix.MappingTelescope",
+  "class": "aux",
+  "note": "structure map F(m ≤ n) of the sequence, reindexing from the functor"
+ },
+ {
+  "name": "Morse.CellTower",
+  "module": "Morse.Appendix.MonotoneUnion",
+  "class": "notion",
+  "textbook": "Countable CW (cell) complex presented by finite stages: K₀ obtained from a point/empty set by attaching finitely many cells, and K_{n+1} obtained from K_n by attaching finitely many cells along continuous attaching maps, K_n a subcomplex of K_{n+1} (Milnor Appendix / Theorem 17.3; Whitehead, Hatcher Appendix on CW complexes).",
+  "priority": "high",
+  "note": "Project model of countable CW complexes as a tower; dimensions given as lists"
+ },
+ {
+  "name": "Morse.CellTower.K",
+  "module": "Morse.Appendix.MonotoneUnion",
+  "class": "aux",
+  "note": "stages and inclusions bundled as a functor"
+ },
+ {
+  "name": "Morse.IsCountableCellComplexType",
+  "module": "Morse.Appendix.MonotoneUnion",
+  "class": "notion",
+  "textbook": "X has the homotopy type of a CW complex with countably many cells (of given dimensions, attached in a given order) (Milnor §17 Theorem 17.3, Appendix; standard text, e.g. Hatcher ch. 4).",
+  "priority": "high",
+  "note": "Encoded via homotopy equivalence with mapping telescope of a cell tower"
+ },
+ {
+  "name": "Morse.IsRelCellAttachment",
+  "module": "Morse.Appendix.MonotoneUnion",
+  "class": "notion",
+  "textbook": "Relative CW complex obtained from a space L by attaching cells of specified dimensions one at a time: K is an iterated adjunction space L ∪_{φ₁} e^{d₁} ∪_{φ₂} e^{d₂} ∪ ⋯, each along an arbitrary continuous attaching map from the boundary sphere S^{d-1} (Milnor §3 p. 14 and Appendix; Hatcher ch. 0 / ch. 4).",
+  "priority": "high",
+  "note": "Cell attachment along arbitrary continuous map"
+ },
+ {
+  "name": "Morse.compareMap",
+  "module": "Morse.Appendix.MonotoneUnion",
+  "class": "construction",
+  "note": "comparison map from mapping telescope of the K_n to X_Σ, proof device"
+ },
+ {
+  "name": "Morse.compareStrip",
+  "module": "Morse.Appendix.MonotoneUnion",
+  "class": "construction",
+  "note": "block formula for comparison map (Milnor's G, p. 152)"
+ },
+ {
+  "name": "Morse.mappingTelescopeMap",
+  "module": "Morse.Appendix.MonotoneUnion",
+  "class": "construction",
+  "note": "map of mapping telescopes induced by f"
+ },
+ {
+  "name": "Morse.subspaceFunctor",
+  "module": "Morse.Appendix.MonotoneUnion",
+  "class": "aux",
+  "note": "sequence of subspace inclusions as a functor ℕ ⥤ TopCat"
+ },
+ {
+  "name": "Morse.IsHomotopyDirectLimit",
+  "module": "Morse.Appendix.Telescope",
+  "class": "notion",
+  "textbook": "Homotopy direct limit (Milnor Appendix p. 149): a space X is the homotopy direct limit of a sequence of subspaces X₀ ⊆ X₁ ⊆ ⋯ if the projection p: X_Σ → X from the telescope X_Σ = ⋃ X_n × [n, n+1] ⊆ X × ℝ is a homotopy equivalence.",
+  "priority": "high",
+  "note": "Uses telescope as subset of X × ℝ"
+ },
+ {
+  "name": "Morse.IsHomotopyEquiv",
+  "module": "Morse.Appendix.Telescope",
+  "class": "notion",
+  "textbook": "Homotopy equivalence (Milnor §3 p. 12): a continuous map f: X → Y for which there is g: Y → X with g∘f homotopic to id_X and f∘g homotopic to id_Y.",
+  "priority": "high",
+  "note": "Prop-valued; Mathlib has structure"
+ },
+ {
+  "name": "Morse.restrictTo",
+  "module": "Morse.Appendix.Telescope",
+  "class": "aux",
+  "note": "restriction of a map to subsets when it maps one into the other"
+ },
+ {
+  "name": "Morse.stripMap",
+  "module": "Morse.Appendix.Telescope",
+  "class": "aux",
+  "note": "strip parametrisation X_n × [0,1] → X_Σ, (x,t) ↦ (x, n+t)"
+ },
+ {
+  "name": "Morse.telescope",
+  "module": "Morse.Appendix.Telescope",
+  "class": "notion",
+  "textbook": "Telescope X_Σ of a sequence X₀ ⊆ X₁ ⊆ ⋯ of subspaces of X (Milnor Appendix p. 149): X_Σ = X₀ × [0,1] ∪ X₁ × [1,2] ∪ X₂ × [2,3] ∪ ⋯ topologised as a subspace of X × ℝ.",
+  "priority": "high",
+  "note": "Subset of X × ℝ with subspace topology"
+ },
+ {
+  "name": "Morse.telescopeDesc",
+  "module": "Morse.Appendix.Telescope",
+  "class": "construction",
+  "note": "maps out of X_Σ built strip by strip"
+ },
+ {
+  "name": "Morse.telescopeLift",
+  "module": "Morse.Appendix.Telescope",
+  "class": "construction",
+  "note": "maps out of P × X_Σ built strip by strip with parameter space"
+ },
+ {
+  "name": "Morse.telescopeLiftFun",
+  "module": "Morse.Appendix.Telescope",
+  "class": "aux",
+  "note": "underlying function of telescopeLift (selects strip by floor)"
+ },
+ {
+  "name": "Morse.telescopeMap",
+  "module": "Morse.Appendix.Telescope",
+  "class": "construction",
+  "note": "induced map f_Σ of telescopes (x,τ) ↦ (f x, τ)"
+ },
+ {
+  "name": "Morse.telescopeProj",
+  "module": "Morse.Appendix.Telescope",
+  "class": "aux",
+  "note": "projection (x, τ) ↦ x from telescope to X"
+ },
+ {
+  "name": "Morse.truncation",
+  "module": "Morse.Appendix.Telescope",
+  "class": "construction",
+  "note": "truncation X^n_Σ of the telescope, used in proof"
+ },
+ {
+  "name": "Morse.up",
+  "module": "Morse.Appendix.Telescope",
+  "class": "aux",
+  "note": "inclusion X_n ⊆ X_{n+1}"
+ },
+ {
+  "name": "Morse.IsMilnorMap",
+  "module": "Morse.Appendix.TheoremA",
+  "class": "construction",
+  "note": "properties characterising Milnor's h₁, proof device"
+ },
+ {
+  "name": "Morse.case1Family",
+  "module": "Morse.Appendix.TheoremA",
+  "class": "construction",
+  "note": "Milnor's homotopy u ↦ h_u on telescope, proof of Theorem A case 1"
+ },
+ {
+  "name": "Morse.case1Fun",
+  "module": "Morse.Appendix.TheoremA",
+  "class": "construction",
+  "note": "explicit strip formula of h_u"
+ },
+ {
+  "name": "Morse.case1Map",
+  "module": "Morse.Appendix.TheoremA",
+  "class": "construction",
+  "note": "h_u at a fixed time"
+ },
+ {
+  "name": "Morse.case2Inv",
+  "module": "Morse.Appendix.TheoremA",
+  "class": "construction",
+  "note": "Milnor's map G: Y_Σ → X_Σ, proof of Theorem A case 2"
+ },
+ {
+  "name": "Morse.case2InvStrip",
+  "module": "Morse.Appendix.TheoremA",
+  "class": "construction",
+  "note": "strip formula of G"
+ },
+ {
+  "name": "Morse.reparam",
+  "module": "Morse.Appendix.TheoremA",
+  "class": "construction",
+  "note": "reparametrisation (x, n+t) ↦ (x, n+ρ(t)) of telescope"
+ },
+ {
+  "name": "Morse.scaleI",
+  "module": "Morse.Appendix.TheoremA",
+  "class": "aux",
+  "note": "t ↦ min(c t, 1) scaling on unit interval"
+ },
+ {
+  "name": "Morse.scaleMap",
+  "module": "Morse.Appendix.TheoremA",
+  "class": "construction",
+  "note": "Milnor's R_c on the telescope, proof device"
+ },
+ {
+  "name": "Morse.IsCriticalPointM",
+  "module": "Morse.Chapter1.Manifold",
+  "class": "notion",
+  "textbook": "Critical point of a smooth real-valued function f on a smooth manifold M (Milnor §2, p. 4): a point p at which the induced map f_*: TM_p → T ℝ_{f(p)} is zero; equivalently, in any local coordinate system all first partial derivatives of f vanish at p.",
+  "priority": "high",
+  "note": "Manifold version"
+ },
+ {
+  "name": "Morse.IsMorseFunction",
+  "module": "Morse.Chapter1.Manifold",
+  "class": "notion",
+  "textbook": "Morse function (Milnor §2, pp. 4-6): a smooth real-valued function on a smooth manifold all of whose critical points are non-degenerate.",
+  "priority": "high",
+  "note": ""
+ },
+ {
+  "name": "Morse.IsNondegenerateCriticalPointM",
+  "module": "Morse.Chapter1.Manifold",
+  "class": "notion",
+  "textbook": "Non-degenerate critical point (Milnor §2, pp. 4-5): a critical point p of a smooth function f such that the Hessian f_** on the tangent space TM_p is a non-degenerate bilinear form (in local coordinates, the matrix of second partial derivatives (∂²f/∂x^i∂x^j)(p) is non-singular).",
+  "priority": "high",
+  "note": ""
+ },
+ {
+  "name": "Morse.IsSmoothCoord",
+  "module": "Morse.Chapter1.Manifold",
+  "class": "notion",
+  "textbook": "Smooth local coordinate system on a smooth manifold (Milnor §1/§2): a diffeomorphism from an open subset of M onto an open subset of a Euclidean (normed) space, i.e. a smooth chart (y¹,…,yⁿ).",
+  "priority": "low",
+  "note": "Allows values in an arbitrary normed space E'"
+ },
+ {
+  "name": "Morse.hessianM",
+  "module": "Morse.Chapter1.Manifold",
+  "class": "notion",
+  "textbook": "Hessian of a smooth function f at a critical point p of a smooth manifold (Milnor §2, pp. 4-5): the symmetric bilinear form f_** on TM_p given by f_**(v,w) = ṽ(w̃ f)(p) for any extensions ṽ, w̃ of v, w to vector fields; in local coordinates it is the matrix of second partial derivatives, and it is independent of the coordinate system at a critical point.",
+  "priority": "high",
+  "note": "Textbook defines Hessian only at critical points"
+ },
+ {
+  "name": "Morse.indexM",
+  "module": "Morse.Chapter1.Manifold",
+  "class": "notion",
+  "textbook": "Index of a smooth function f at a (non-degenerate) critical point p (Milnor §2, p. 5): the index of the Hessian f_** on TM_p, i.e. the maximal dimension of a subspace of TM_p on which f_** is negative definite.",
+  "priority": "high",
+  "note": ""
+ },
+ {
+  "name": "Morse.localRep",
+  "module": "Morse.Chapter1.Manifold",
+  "class": "aux",
+  "note": "function read in preferred chart at p; bookkeeping for defining the Hessian"
+ },
+ {
+  "name": "Morse.nullityM",
+  "module": "Morse.Chapter1.Manifold",
+  "class": "notion",
+  "textbook": "Nullity of f at a critical point p (Milnor §2, p. 5): the nullity of the Hessian f_** on TM_p, i.e. the dimension of its null space.",
+  "priority": "low",
+  "note": ""
+ },
+ {
+  "name": "Morse.sliceParam",
+  "module": "Morse.Chapter1.ManifoldSubmanifold",
+  "class": "construction",
+  "note": "local parametrisation of submanifold N from a slice chart"
+ },
+ {
+  "name": "Morse.tangentSubspace",
+  "module": "Morse.Chapter1.ManifoldSubmanifold",
+  "class": "notion",
+  "textbook": "Tangent space T_qN of a smooth submanifold N of a vector space V (Milnor §2 / §6; standard text) at q ∈ N: the linear subspace of V of velocity vectors γ'(0) of smooth curves γ in N with γ(0) = q; equivalently the image of the differential of a local parametrisation (or of the inclusion N → V).",
+  "priority": "high",
+  "note": ""
+ },
+ {
+  "name": "Morse.IsCriticalPoint",
+  "module": "Morse.Chapter1.Nondegenerate",
+  "class": "notion",
+  "textbook": "Critical point of a differentiable real function f on a vector space (open subset of a normed space) (Milnor §2, p. 4): a point p at which the derivative df_p = 0 (all partial derivatives vanish).",
+  "priority": "high",
+  "note": "Vector-space version of critical point"
+ },
+ {
+  "name": "Morse.IsNondegenerate",
+  "module": "Morse.Chapter1.Nondegenerate",
+  "class": "notion",
+  "textbook": "Non-degenerate bilinear form (Milnor §2, p. 5): a bilinear form H on a real vector space is non-degenerate if its null space {v : H(v,w) = 0 for all w} is trivial, i.e. nullity 0.",
+  "priority": "high",
+  "note": ""
+ },
+ {
+  "name": "Morse.IsNondegenerateCriticalPoint",
+  "module": "Morse.Chapter1.Nondegenerate",
+  "class": "notion",
+  "textbook": "Non-degenerate critical point of a function f on a vector space (Milnor §2, pp. 4-5): a critical point p where the Hessian bilinear form of f at p is non-degenerate.",
+  "priority": "high",
+  "note": "Vector-space version"
+ },
+ {
+  "name": "Morse.hessian",
+  "module": "Morse.Chapter1.Nondegenerate",
+  "class": "notion",
+  "textbook": "Hessian of a function f at a point p of a vector space (Milnor §2, pp. 4-5): the symmetric bilinear form given by the second derivative d²f_p, with matrix of second partial derivatives (∂²f/∂x^i∂x^j)(p).",
+  "priority": "high",
+  "note": ""
+ },
+ {
+  "name": "Morse.index",
+  "module": "Morse.Chapter1.Nondegenerate",
+  "class": "notion",
+  "textbook": "Index of a symmetric bilinear form H on a real vector space (Milnor §2, p. 5): the maximal dimension of a subspace on which H is negative definite.",
+  "priority": "high",
+  "note": "Project uses signature count of quadratic form"
+ },
+ {
+  "name": "Morse.nullSpace",
+  "module": "Morse.Chapter1.Nondegenerate",
+  "class": "notion",
+  "textbook": "Null space of a symmetric bilinear form H on a vector space (Milnor §2, p. 5): the subspace of all v with H(v,w) = 0 for every w.",
+  "priority": "low",
+  "note": ""
+ },
+ {
+  "name": "Morse.nullity",
+  "module": "Morse.Chapter1.Nondegenerate",
+  "class": "notion",
+  "textbook": "Nullity of a symmetric bilinear form (Milnor §2, p. 5): the dimension of its null space.",
+  "priority": "high",
+  "note": ""
+ },
+ {
+  "name": "Morse.quadForm",
+  "module": "Morse.Chapter1.Nondegenerate",
+  "class": "aux",
+  "note": "quadratic form v ↦ H(v,v) from a bilinear form, bookkeeping"
+ },
+ {
+  "name": "Morse.BrokenSetup",
+  "module": "Morse.Chapter10.Broken",
+  "class": "construction",
+  "note": "bundled choice of data (points, energy bound, epsilon, subdivision) for Milnor's section 16 proof"
+ },
+ {
+  "name": "Morse.BrokenSetup.IsBroken",
+  "module": "Morse.Chapter10.Broken",
+  "class": "notion",
+  "textbook": "Broken geodesic with respect to a subdivision 0=t₀<…<t_k=1 of [0,1] (Milnor §16, p. 88): a piecewise smooth path whose restriction to each [t_{i-1}, t_i] is a geodesic; the set of such paths is Ω(t₀,…,t_k).",
+  "priority": "low",
+  "note": "Relative to BrokenSetup subdivision"
+ },
+ {
+  "name": "Morse.BrokenSetup.energy'",
+  "module": "Morse.Chapter10.Broken",
+  "class": "aux",
+  "note": "finite sum Σ ρ(x_i,x_{i+1})²/(t_{i+1}-t_i) used to state the energy formula"
+ },
+ {
+  "name": "Morse.BrokenSetup.joinVec",
+  "module": "Morse.Chapter10.Broken",
+  "class": "aux",
+  "note": "initial vector of short join geodesic with junk value 0 when none exists"
+ },
+ {
+  "name": "Morse.BrokenSetup.nodeVal",
+  "module": "Morse.Chapter10.Broken",
+  "class": "aux",
+  "note": "break points of a path, reindexing"
+ },
+ {
+  "name": "Morse.BrokenSetup.nodes",
+  "module": "Morse.Chapter10.Broken",
+  "class": "construction",
+  "note": "Milnor's open set of break points with bounded energy, proof setup"
+ },
+ {
+  "name": "Morse.BrokenSetup.path",
+  "module": "Morse.Chapter10.Broken",
+  "class": "construction",
+  "note": "broken geodesic through given break points, proof device"
+ },
+ {
+  "name": "Morse.BrokenSetup.segPath",
+  "module": "Morse.Chapter10.Broken",
+  "class": "aux",
+  "note": "i-th segment of broken geodesic, helper for path"
+ },
+ {
+  "name": "Morse.BrokenSetup.toSubdivision",
+  "module": "Morse.Chapter10.Broken",
+  "class": "aux",
+  "note": "projection BrokenSetup → Subdivision"
+ },
+ {
+  "name": "Morse.BrokenSetup.δ",
+  "module": "Morse.Chapter10.Broken",
+  "class": "field",
+  "parent": "Morse.BrokenSetup",
+  "note": "Milnor's epsilon"
+ },
+ {
+  "name": "Morse.Subdivision",
+  "module": "Morse.Chapter10.Broken",
+  "class": "notion",
+  "textbook": "Subdivision (partition) of the interval [0,1] (Milnor §16, p. 88): a finite sequence 0 = t₀ < t₁ < ⋯ < t_k = 1.",
+  "priority": "low",
+  "note": "Parametrised by number of interior points"
+ },
+ {
+  "name": "Morse.Subdivision.breaks",
+  "module": "Morse.Chapter10.Broken",
+  "class": "aux",
+  "note": "interior break points as a finite set"
+ },
+ {
+  "name": "Morse.Subdivision.len",
+  "module": "Morse.Chapter10.Broken",
+  "class": "aux",
+  "note": "length of i-th segment, helper"
+ },
+ {
+  "name": "Morse.Subdivision.segOf",
+  "module": "Morse.Chapter10.Broken",
+  "class": "aux",
+  "note": "segment containing τ, helper with junk convention at 1"
+ },
+ {
+  "name": "Morse.Subdivision.t",
+  "module": "Morse.Chapter10.Broken",
+  "class": "field",
+  "parent": "Morse.Subdivision",
+  "note": "division points"
+ },
+ {
+  "name": "Morse.closedRiemBall",
+  "module": "Morse.Chapter10.Broken",
+  "class": "notion",
+  "textbook": "Closed ball of radius r about p in a Riemannian (sub)manifold N with respect to its intrinsic distance ρ, ρ(x,y) = infimum of lengths of piecewise smooth paths in N from x to y (Milnor §10 p. 55 and §16 p. 89): {x ∈ N : ρ(p,x) ≤ r}.",
+  "priority": "low",
+  "note": "Depends on ρ"
+ },
+ {
+  "name": "Morse.vert",
+  "module": "Morse.Chapter10.Broken",
+  "class": "aux",
+  "note": "vertices of a broken path, reindexing p, y_0..y_{m-1}, q"
+ },
+ {
+  "name": "Morse.BrokenSetup.chartBrokenEquiv",
+  "module": "Morse.Chapter10.BrokenIndex",
+  "class": "construction",
+  "note": "isomorphism Λ from chart coordinates to broken Jacobi fields, proof device"
+ },
+ {
+  "name": "Morse.chartTangentEquiv",
+  "module": "Morse.Chapter10.BrokenIndex",
+  "class": "construction",
+  "note": "derivative of product-chart parametrisation as isomorphism, proof device"
+ },
+ {
+  "name": "Morse.BrokenSetup.brokenPaths",
+  "module": "Morse.Chapter10.BrokenPaths",
+  "class": "construction",
+  "note": "Milnor's Int Ω(t₀,…,t_k)^c, set of broken geodesics of energy less than c, proof device"
+ },
+ {
+  "name": "Morse.BrokenSetup.brokenEquiv",
+  "module": "Morse.Chapter10.BrokenSplitting",
+  "class": "construction",
+  "note": "identification of broken Jacobi fields with product of tangent spaces, proof device"
+ },
+ {
+  "name": "Morse.BrokenSetup.brokenNodeMap",
+  "module": "Morse.Chapter10.BrokenSplitting",
+  "class": "construction",
+  "note": "evaluation of broken Jacobi fields at break points, proof device"
+ },
+ {
+  "name": "Morse.pathSpHomotopyEquiv",
+  "module": "Morse.Chapter10.CWType",
+  "class": "construction",
+  "note": "homotopy equivalence between path spaces from a path q to q' (Lemma 17.D), proof device"
+ },
+ {
+  "name": "Morse.BrokenSetup.deform",
+  "module": "Morse.Chapter10.Deformation",
+  "class": "construction",
+  "note": "Milnor's deformation r_u of the path space"
+ },
+ {
+  "name": "Morse.BrokenSetup.deformFun",
+  "module": "Morse.Chapter10.Deformation",
+  "class": "aux",
+  "note": "underlying function of deform"
+ },
+ {
+  "name": "Morse.BrokenSetup.homotopyEquivBroken",
+  "module": "Morse.Chapter10.Deformation",
+  "class": "construction",
+  "note": "homotopy equivalence Ω^a ≃ B^a built from the retraction"
+ },
+ {
+  "name": "Morse.BrokenSetup.inclMap",
+  "module": "Morse.Chapter10.Deformation",
+  "class": "aux",
+  "note": "inclusion B^a → Ω^a"
+ },
+ {
+  "name": "Morse.BrokenSetup.retrMap",
+  "module": "Morse.Chapter10.Deformation",
+  "class": "construction",
+  "note": "Milnor's retraction r_1 : Ω^a → B^a"
+ },
+ {
+  "name": "Morse.BrokenSetup.geodIndex",
+  "module": "Morse.Chapter10.Finite",
+  "class": "aux",
+  "note": "natural-number-valued index of E_** at a broken geodesic, junk 0 outside domain"
+ },
+ {
+  "name": "Morse.JoinSystem",
+  "module": "Morse.Chapter10.FullPathDeform",
+  "class": "construction",
+  "note": "abstracted system of minimal joins (Lemma 17.B), proof device"
+ },
+ {
+  "name": "Morse.PathC",
+  "module": "Morse.Chapter10.FullPathSpace",
+  "class": "notion",
+  "textbook": "The space Ω*(M; p, q) of all continuous paths [0,1] → M from p to q, with the compact-open (uniform) topology (Milnor §17, p. 93).",
+  "priority": "high",
+  "note": "Type form of pathCSet"
+ },
+ {
+  "name": "Morse.PathSp.toC",
+  "module": "Morse.Chapter10.FullPathSpace",
+  "class": "aux",
+  "note": "underlying continuous map of a piecewise smooth path, coercion"
+ },
+ {
+  "name": "Morse.PathSp.toPathC",
+  "module": "Morse.Chapter10.FullPathSpace",
+  "class": "aux",
+  "note": "inclusion Ω → Ω* (Milnor p. 93), coercion between path spaces"
+ },
+ {
+  "name": "Morse.pathCSet",
+  "module": "Morse.Chapter10.FullPathSpace",
+  "class": "notion",
+  "textbook": "The space Ω*(M; p, q) of all continuous paths [0,1] → M from p to q, topologised as a subspace of C([0,1], M) with the compact-open topology, which for a metric space agrees with the uniform topology (Milnor §17, p. 93).",
+  "priority": "high",
+  "note": "Set form; M here is submanifold N of V"
+ },
+ {
+  "name": "Morse.pathIncl",
+  "module": "Morse.Chapter10.FullPathTheorem",
+  "class": "construction",
+  "note": "inclusion i: Ω → Ω* as a continuous map (Theorem 17.1 statement)"
+ },
+ {
+  "name": "Morse.geodesicIndex",
+  "module": "Morse.Chapter10.FundamentalTheorem",
+  "class": "notion",
+  "textbook": "Index of a geodesic γ from p to q (Milnor §13 and Theorem 15.1): the index of the Hessian E_** of the energy function E on the path space Ω(M; p, q) at γ, i.e. the maximal dimension of a subspace of the tangent space TΩ_γ on which E_** is negative definite.",
+  "priority": "high",
+  "note": "Natural-number-valued; finite by index theorem"
+ },
+ {
+  "name": "Morse.oneCellEach",
+  "module": "Morse.Chapter10.PathHomology",
+  "class": "aux",
+  "note": "list of cell dimensions from a function, helper"
+ },
+ {
+  "name": "Morse.windowLevels.match_1",
+  "module": "Morse.Chapter10.PathHomology",
+  "class": "aux",
+  "note": "compiler-generated match auxiliary"
+ },
+ {
+  "name": "Morse.PathSp",
+  "module": "Morse.Chapter10.PathMetric",
+  "class": "notion",
+  "textbook": "Path space Ω(M; p, q) (Milnor §13 p. 67 and §16 p. 88): the space of piecewise smooth paths [0,1] → M from p to q, with the metric d(ω, ω') = max_t ρ(ω(t), ω'(t)) + (∫₀¹ (|dω/dt| − |dω'/dt|)² dt)^{1/2}, where ρ is the Riemannian distance on M.",
+  "priority": "high",
+  "note": "Carries Milnor's metric; paths are functions ℝ → V in project"
+ },
+ {
+  "name": "Morse.PathSp.l2Dist",
+  "module": "Morse.Chapter10.PathMetric",
+  "class": "aux",
+  "note": "L² part of Milnor's metric on Ω, component of metric"
+ },
+ {
+  "name": "Morse.PathSp.speed",
+  "module": "Morse.Chapter10.PathMetric",
+  "class": "aux",
+  "note": "speed ‖γ'(t)‖, helper"
+ },
+ {
+  "name": "Morse.PathSp.supDist",
+  "module": "Morse.Chapter10.PathMetric",
+  "class": "aux",
+  "note": "uniform part of Milnor's metric on Ω, component of the metric; check as part of PathSp"
+ },
+ {
+  "name": "Morse.SliceChart.inter",
+  "module": "Morse.Chapter10.Product",
+  "class": "construction",
+  "note": "restriction of slice chart to open set, proof device"
+ },
+ {
+  "name": "Morse.SliceChart.pi",
+  "module": "Morse.Chapter10.Product",
+  "class": "construction",
+  "note": "product of slice charts, proof device"
+ },
+ {
+  "name": "Morse.piInterChart",
+  "module": "Morse.Chapter10.Product",
+  "class": "construction",
+  "note": "product chart at y restricted to O, proof device"
+ },
+ {
+  "name": "Morse.BrokenSetup.retr",
+  "module": "Morse.Chapter10.Retraction",
+  "class": "construction",
+  "note": "Milnor's deformation r_u(γ)"
+ },
+ {
+  "name": "Morse.BrokenSetup.retrSeg",
+  "module": "Morse.Chapter10.Retraction",
+  "class": "construction",
+  "note": "r_u(γ) for u in i-th segment, proof device"
+ },
+ {
+  "name": "Morse.BrokenSetup.sgeoOver",
+  "module": "Morse.Chapter10.Retraction",
+  "class": "construction",
+  "note": "short geodesic run over [a,b], proof device"
+ },
+ {
+  "name": "Morse.greatCircle",
+  "module": "Morse.Chapter10.SphereGeodesics",
+  "class": "construction",
+  "note": "great circle parametrisation, explicit geodesic of the sphere"
+ },
+ {
+  "name": "Morse.sphAngle",
+  "module": "Morse.Chapter10.SphereGeodesics",
+  "class": "aux",
+  "note": "angle between two points of the sphere, helper"
+ },
+ {
+  "name": "Morse.sphDir",
+  "module": "Morse.Chapter10.SphereGeodesics",
+  "class": "aux",
+  "note": "unit vector in plane of p, q, helper"
+ },
+ {
+  "name": "Morse.sphGeod",
+  "module": "Morse.Chapter10.SphereGeodesics",
+  "class": "construction",
+  "note": "Milnor's geodesic γ_k on the sphere (p. 95)"
+ },
+ {
+  "name": "Morse.sphLen",
+  "module": "Morse.Chapter10.SphereGeodesics",
+  "class": "construction",
+  "note": "length L(γ_k) of Milnor's k-th geodesic on the sphere"
+ },
+ {
+  "name": "Morse.expDiffeomorph",
+  "module": "Morse.Chapter11.CartanHadamard",
+  "class": "construction",
+  "note": "exp_p is a diffeomorphism under completeness and non-positive curvature (conclusion of Theorem 19.2 proof)"
+ },
+ {
+  "name": "Morse.NonposCurvature",
+  "module": "Morse.Chapter11.Curvature",
+  "class": "notion",
+  "textbook": "Non-positive curvature of a Riemannian manifold (Milnor §19, p. 100, Lemma 19.1 / Theorem 19.2): every sectional curvature K(σ) of every tangent 2-plane σ is ≤ 0; in Milnor's sign convention ⟨R(A,B)A,B⟩ ≤ 0 for all tangent vectors A, B at every point.",
+  "priority": "high",
+  "note": "Hypothesis of Cartan-Hadamard; project proves equivalence with sectional curvature"
+ },
+ {
+  "name": "Morse.dExpAt",
+  "module": "Morse.Chapter11.ExpSmooth",
+  "class": "aux",
+  "note": "derivative of exp_q at v as linear map into ambient V"
+ },
+ {
+  "name": "Morse.expDomAt",
+  "module": "Morse.Chapter11.ExpSmooth",
+  "class": "notion",
+  "textbook": "Domain of the exponential map exp_q at a point q of a Riemannian manifold (Milnor §10, p. 55; §18): the set of tangent vectors v ∈ T_qN for which the geodesic with initial velocity v is defined on [0,1]; open, and all of T_qN when N is complete.",
+  "priority": "high",
+  "note": "Domain part of exp definition"
+ },
+ {
+  "name": "Morse.expJacobi",
+  "module": "Morse.Chapter11.ExpSmooth",
+  "class": "construction",
+  "note": "Jacobi field of the variation exp_q(t(v+uX)), proof device for Theorem 18.1"
+ },
+ {
+  "name": "Morse.RicciLowerBound",
+  "module": "Morse.Chapter11.Myers",
+  "class": "notion",
+  "textbook": "Ricci curvature lower bound hypothesis of Myers' theorem (Milnor §19, Theorem 19.4, p. 104): Ricci curvature K(U,U) ≥ (n−1)/r² for every unit tangent vector U at every point of an n-dimensional Riemannian manifold N.",
+  "priority": "high",
+  "note": "Real parameter r"
+ },
+ {
+  "name": "Morse.ricci",
+  "module": "Morse.Chapter11.Myers",
+  "class": "notion",
+  "textbook": "Ricci curvature of a Riemannian manifold (Milnor §19, p. 104): the symmetric bilinear form K(U₁,U₂) on T_qN equal to the trace of the linear map W ↦ R(U₁,W)U₂, R the curvature tensor in Milnor's sign convention (§9).",
+  "priority": "high",
+  "note": "Submanifold-of-V setting; K(U,U) is sum of sectional curvatures"
+ },
+ {
+  "name": "Morse.conjLocus",
+  "module": "Morse.Chapter11.NonConjugate",
+  "class": "notion",
+  "textbook": "Conjugate locus of a point p of a Riemannian manifold N (Milnor §15 p. 77 and §19 p. 99): the set of points q conjugate to p along some geodesic from p to q, where q = γ(1) is conjugate to p = γ(0) along γ if there is a non-trivial Jacobi field along γ vanishing at both ends.",
+  "priority": "low",
+  "note": "Depends on conjugate-point notion"
+ },
+ {
+  "name": "Morse.ricciMap",
+  "module": "Morse.Chapter11.PositiveRicci",
+  "class": "aux",
+  "note": "linear map W ↦ R(Pu,PW)Pu whose trace is the Ricci curvature, helper"
+ },
+ {
+  "name": "Morse.IsAdInvariant",
+  "module": "Morse.Chapter12.BiInvariant",
+  "class": "notion",
+  "textbook": "Ad-invariant (bi-invariant) bilinear form on a Lie algebra 𝔤 (Milnor §21.3(a), p. 123): ⟨[X,Y],Z⟩ = ⟨X,[Y,Z]⟩ for all X, Y, Z ∈ 𝔤; corresponds to a bi-invariant metric on the Lie group.",
+  "priority": "low",
+  "note": ""
+ },
+ {
+  "name": "Morse.IsLeviCivita",
+  "module": "Morse.Chapter12.BiInvariant",
+  "class": "notion",
+  "textbook": "Levi-Civita (Riemannian) connection restricted to left-invariant vector fields on a Lie group (Milnor §8, 8.4-8.5 and §21): a connection D which is symmetric (D_X Y − D_Y X = [X,Y]) and compatible with the metric (X⟨Y,Z⟩ = ⟨D_X Y,Z⟩ + ⟨Y,D_X Z⟩).",
+  "priority": "low",
+  "note": "Pointwise on Lie algebra of left-invariant fields"
+ },
+ {
+  "name": "Morse.centerCompl",
+  "module": "Morse.Chapter12.BiInvariant",
+  "class": "construction",
+  "note": "Corollary 21.6: orthogonal complement of the centre is an ideal, proof device"
+ },
+ {
+  "name": "Morse.curv",
+  "module": "Morse.Chapter12.BiInvariant",
+  "class": "notion",
+  "textbook": "Riemann curvature tensor R(X,Y)Z of a connection (Milnor §9, p. 51), in Milnor's sign convention (opposite to R = ∇_X∇_Y − ∇_Y∇_X − ∇_{[X,Y]}), so that the sectional curvature of the plane spanned by orthonormal X, Y is ⟨R(X,Y)X,Y⟩; here evaluated on left-invariant fields of a Lie group.",
+  "priority": "low",
+  "note": "Lie-algebra-level formula"
+ },
+ {
+  "name": "Morse.halfLie",
+  "module": "Morse.Chapter12.BiInvariant",
+  "class": "construction",
+  "note": "connection X ⊢ Y = ½[X,Y] of a bi-invariant metric (21.3(d))"
+ },
+ {
+  "name": "Morse.jacobiOp",
+  "module": "Morse.Chapter12.BiInvariant",
+  "class": "construction",
+  "note": "Jacobi operator K_V(W) = R(V,W)V = −¼(Ad V)²W for Lie groups, formula"
+ },
+ {
+  "name": "Morse.algProj",
+  "module": "Morse.Chapter12.GroupGeodesics",
+  "class": "aux",
+  "note": "orthogonal projection of matrices onto Lie subalgebra"
+ },
+ {
+  "name": "Morse.frobForm",
+  "module": "Morse.Chapter12.GroupGeodesics",
+  "class": "aux",
+  "note": "Frobenius inner product restricted to Lie subalgebra as bilinear form"
+ },
+ {
+  "name": "Morse.halfExp",
+  "module": "Morse.Chapter12.GroupJacobi",
+  "class": "construction",
+  "note": "half exponential exp(tA/2) used to express fields along exp(tA)"
+ },
+ {
+  "name": "Morse.jacK",
+  "module": "Morse.Chapter12.GroupJacobi",
+  "class": "construction",
+  "note": "Milnor's K_A(U) = ¼[[A,U],A] as matrix expression"
+ },
+ {
+  "name": "Morse.IsMatrixGroup",
+  "module": "Morse.Chapter12.MatrixGroups",
+  "class": "notion",
+  "textbook": "Compact Lie group G with its Lie algebra 𝔤 (Milnor §21, p. 121-125 and Part IV): here realised as a closed subgroup G of the unitary group U(n) (a compact matrix group) and its Lie algebra 𝔤 = {X skew-Hermitian: exp(tX) ∈ G for all t}, the tangent space of G at the identity, with dim G = dim 𝔤.",
+  "priority": "high",
+  "note": "Project encodes via closure under product/inverse, Ad-invariance, exp 𝔤 ⊆ G, dims equal"
+ },
+ {
+  "name": "Morse.hermitian",
+  "module": "Morse.Chapter12.MatrixGroups",
+  "class": "aux",
+  "note": "real subspace of Hermitian matrices"
+ },
+ {
+  "name": "Morse.specialSkewHermitian",
+  "module": "Morse.Chapter12.MatrixGroups",
+  "class": "notion",
+  "textbook": "The Lie algebra 𝔰𝔲(n) (Milnor p. 126): the real Lie algebra of skew-Hermitian complex n×n matrices of trace 0, the Lie algebra of the special unitary group SU(n).",
+  "priority": "low",
+  "note": ""
+ },
+ {
+  "name": "Morse.MatrixInner.innerProductSpace",
+  "module": "Morse.Chapter12.MatrixInner",
+  "class": "notion",
+  "textbook": "Frobenius (Hilbert-Schmidt) inner product on the space of n×n matrices (Milnor §21, p. 125): ⟨A,B⟩ = Re tr(AB*), inducing the bi-invariant Riemannian metric on U(n), SU(n), Sp(n).",
+  "priority": "low",
+  "note": "Real inner product on matrices over ℝ, ℂ or ℍ-like fields"
+ },
+ {
+  "name": "Morse.MatrixInner.normedAddCommGroup",
+  "module": "Morse.Chapter12.MatrixInner",
+  "class": "aux",
+  "note": "Frobenius norm instance on Matrix, bookkeeping for typeclass"
+ },
+ {
+  "name": "Morse.MatrixInner.normedRing",
+  "module": "Morse.Chapter12.MatrixInner",
+  "class": "aux",
+  "note": "normed ring instance from Frobenius norm"
+ },
+ {
+  "name": "Morse.MatrixInner.normedSpace",
+  "module": "Morse.Chapter12.MatrixInner",
+  "class": "aux",
+  "note": "normed space instance from Frobenius norm"
+ },
+ {
+  "name": "Morse.hadKer",
+  "module": "Morse.Chapter12.SUIndex",
+  "class": "aux",
+  "note": "subspace of su(n) killed by Hadamard-type product, helper"
+ },
+ {
+  "name": "Morse.diagI",
+  "module": "Morse.Chapter12.SUJacobi",
+  "class": "aux",
+  "note": "diagonal matrix helper"
+ },
+ {
+  "name": "Morse.hadSin",
+  "module": "Morse.Chapter12.SUJacobi",
+  "class": "aux",
+  "note": "entrywise product helper S(t) ⊙ W"
+ },
+ {
+  "name": "Morse.jacSin",
+  "module": "Morse.Chapter12.SUJacobi",
+  "class": "aux",
+  "note": "s(t) = sin(bt)/b, helper function for Jacobi field solution"
+ },
+ {
+  "name": "Morse.suJac",
+  "module": "Morse.Chapter12.SUJacobi",
+  "class": "construction",
+  "note": "explicit Jacobi field along exp(tA) in SU(n)"
+ },
+ {
+  "name": "Morse.suSol",
+  "module": "Morse.Chapter12.SUJacobi",
+  "class": "construction",
+  "note": "explicit solution of Jacobi equation U''+K_A(U)=0"
+ },
+ {
+  "name": "Morse.grassmannian",
+  "module": "Morse.Chapter12.SUMinimal",
+  "class": "notion",
+  "textbook": "Complex Grassmannian G_m(ℂⁿ) (Milnor §23-24, p. 133): the space of m-dimensional complex linear subspaces of ℂⁿ, topologised as a quotient of the unitary group or as a subspace of matrices (here as orthogonal projections of rank/trace m).",
+  "priority": "high",
+  "note": "Encoded as Hermitian projections of trace m"
+ },
+ {
+  "name": "Morse.clopenIncl",
+  "module": "Morse.Chapter13.Componentwise",
+  "class": "aux",
+  "note": "inclusion of a clopen piece into the ambient set, helper"
+ },
+ {
+  "name": "Morse.PushesInto",
+  "module": "Morse.Chapter13.Compression",
+  "class": "construction",
+  "note": "compression property (maps from P pushed off X into A rel preimage of A), proof device"
+ },
+ {
+  "name": "Morse.contractLoop",
+  "module": "Morse.Chapter13.Corollaries",
+  "class": "construction",
+  "note": "loops γ|[0,s]·γ|[0,s]⁻¹, contracting homotopy device"
+ },
+ {
+  "name": "Morse.contractPath",
+  "module": "Morse.Chapter13.Corollaries",
+  "class": "construction",
+  "note": "path in loop space from γγ⁻¹ to constant loop"
+ },
+ {
+  "name": "Morse.pathCHomeomorph",
+  "module": "Morse.Chapter13.Corollaries",
+  "class": "construction",
+  "note": "homeomorphism between Ω* and Mathlib path space"
+ },
+ {
+  "name": "Morse.equatorHomeomorph",
+  "module": "Morse.Chapter13.Freudenthal",
+  "class": "construction",
+  "note": "equator of S^{n+1} is S^n, homeomorphism"
+ },
+ {
+  "name": "Morse.equator",
+  "module": "Morse.Chapter13.SphereMinimal",
+  "class": "construction",
+  "note": "equator of the sphere with respect to a pole, proof device"
+ },
+ {
+  "name": "Morse.minPaths",
+  "module": "Morse.Chapter13.Theorem22",
+  "class": "construction",
+  "note": "Ω^d: space of paths of least energy from p to q (minimal geodesics), Milnor's space in Theorem 22.2 p. 118"
+ },
+ {
+  "name": "Morse.minPathsIncl",
+  "module": "Morse.Chapter13.Theorem22",
+  "class": "aux",
+  "note": "inclusion Ω^d → Ω"
+ },
+ {
+  "name": "Morse.Homotopy.intAddEquivZMultiplesTwoPi",
+  "module": "Morse.Chapter14.CircleGroup",
+  "class": "aux",
+  "note": "ℤ ≃ 2πℤ deck group identification"
+ },
+ {
+  "name": "Morse.Homotopy.piOneCircleMulEquiv",
+  "module": "Morse.Chapter14.CircleGroup",
+  "class": "construction",
+  "note": "π_1(S^1) ≅ ℤ statement as an isomorphism"
+ },
+ {
+  "name": "Morse.conjMult",
+  "module": "Morse.Chapter14.IndexCount",
+  "class": "aux",
+  "note": "multiplicity count formula for conjugate points in the eigenvalue setup (Theorem 20.5)"
+ },
+ {
+  "name": "Morse.conjParams",
+  "module": "Morse.Chapter14.IndexCount",
+  "class": "aux",
+  "note": "set of conjugate parameters for an eigenvalue, formula"
+ },
+ {
+  "name": "Morse.pairSpectrum",
+  "module": "Morse.Chapter14.IndexCount",
+  "class": "aux",
+  "note": "spectrum list indexed by pairs, helper"
+ },
+ {
+  "name": "Morse.suSpectrum",
+  "module": "Morse.Chapter14.IndexCount",
+  "class": "construction",
+  "note": "Milnor's spectrum of K_A for A = diag(iπk), p. 131"
+ },
+ {
+  "name": "Morse.Homotopy.unitaryOneHomeomorph",
+  "module": "Morse.Chapter14.Periodicity",
+  "class": "construction",
+  "note": "U(1) ≅ S^1 homeomorphism via determinant"
+ },
+ {
+  "name": "Morse.milnorM",
+  "module": "Morse.Chapter15.Clifford",
+  "class": "notion",
+  "textbook": "The numbers m_k (Milnor §24, p. 143): m_k is the least dimension of a real vector space carrying k pairwise anticommuting complex structures (equivalently the dimension of an irreducible module over the Clifford algebra), with values 1,2,4,4,8,8,8,8,16 for k=0,…,8 and m_{k+8} = 16 m_k.",
+  "priority": "low",
+  "note": "Unsure: project defines by table; textbook defn recalled from memory"
+ },
+ {
+  "name": "Morse.milnorM.match_1",
+  "module": "Morse.Chapter15.Clifford",
+  "class": "aux",
+  "note": "compiler-generated match auxiliary"
+ },
+ {
+  "name": "Morse.IsAnticommFamily",
+  "module": "Morse.Chapter15.ComplexStructure",
+  "class": "notion",
+  "textbook": "Family of anticommuting complex structures (Milnor §24, p. 136): matrices J₁,…,J_k on ℝⁿ, each a complex structure (orthogonal with J² = −I), with J_iJ_j = −J_jJ_i for i ≠ j.",
+  "priority": "low",
+  "note": "Standing assumption on indexed family"
+ },
+ {
+  "name": "Morse.IsComplexStructure",
+  "module": "Morse.Chapter15.ComplexStructure",
+  "class": "notion",
+  "textbook": "Complex structure on ℝⁿ (Milnor §24, p. 133): an orthogonal linear transformation J of ℝⁿ with J² = −I.",
+  "priority": "high",
+  "note": "Orthogonal complex structure (Milnor's version)"
+ },
+ {
+  "name": "Morse.Omega",
+  "module": "Morse.Chapter15.ComplexStructure",
+  "class": "notion",
+  "textbook": "The space Ω_k(n) (Milnor §24, p. 136): with J₁,…,J_{k-1} fixed anticommuting complex structures on ℝⁿ, Ω_0(n) = O(n) and for k ≥ 1, Ω_k(n) is the space of all complex structures J on ℝⁿ that anticommute with J₁,…,J_{k-1}.",
+  "priority": "high",
+  "note": "Topologised as a subspace of matrices"
+ },
+ {
+  "name": "Morse.Omega.match_1",
+  "module": "Morse.Chapter15.ComplexStructure",
+  "class": "aux",
+  "note": "compiler-generated match auxiliary"
+ },
+ {
+  "name": "Morse.omegaPhi",
+  "module": "Morse.Chapter15.FiniteStage",
+  "class": "construction",
+  "note": "Milnor's φ_r: Ω_{k+1}(n) → Ω(Ω_k(n); J_k, -J_k), semicircle map (p. 138)"
+ },
+ {
+  "name": "Morse.stratumIn",
+  "module": "Morse.Chapter15.FiniteStage",
+  "class": "aux",
+  "note": "stratum viewed inside Ω_k(n), subtype helper"
+ },
+ {
+  "name": "Morse.omegaStratum",
+  "module": "Morse.Chapter15.OmegaManifold",
+  "class": "construction",
+  "note": "stratum (component-wise dimension) of Ω_k(n) through p, bookkeeping for non-constant dimension"
+ },
+ {
+  "name": "Morse.tanAlg",
+  "module": "Morse.Chapter15.OmegaManifold",
+  "class": "construction",
+  "note": "Milnor's 𝒯_J (Lemma 24.4), tangent-space-like subspace"
+ },
+ {
+  "name": "Morse.basePt",
+  "module": "Morse.Chapter15.OmegaMinimal",
+  "class": "aux",
+  "note": "Milnor's base point J_k of Ω_k(n)"
+ },
+ {
+  "name": "Morse.minVelO",
+  "module": "Morse.Chapter15.OmegaMinimal",
+  "class": "construction",
+  "note": "initial directions of minimal geodesics in Ω_k(n)"
+ },
+ {
+  "name": "Morse.minVelOHomeomorph",
+  "module": "Morse.Chapter15.OmegaMinimal",
+  "class": "construction",
+  "note": "homeomorphism A ↦ J_kA of Lemma 24.4 (iii)"
+ },
+ {
+  "name": "Morse.minVelToOmegaPaths",
+  "module": "Morse.Chapter15.OmegaMinimal",
+  "class": "construction",
+  "note": "map A ↦ geodesic t ↦ p exp(πtA)"
+ },
+ {
+  "name": "Morse.omegaGeo",
+  "module": "Morse.Chapter15.OmegaMinimal",
+  "class": "construction",
+  "note": "geodesic t ↦ p exp(πtA)"
+ },
+ {
+  "name": "Morse.omegaMinPathsHomotopyEquiv",
+  "module": "Morse.Chapter15.OmegaMinimal",
+  "class": "construction",
+  "note": "homotopy equivalence of Lemma 24.4 (iii) between initial directions and minimal geodesics"
+ },
+ {
+  "name": "Morse.omegaPath",
+  "module": "Morse.Chapter15.OmegaMinimal",
+  "class": "construction",
+  "note": "geodesic as a point of the path space"
+ },
+ {
+  "name": "Morse.omegaPathsToMinVel",
+  "module": "Morse.Chapter15.OmegaMinimal",
+  "class": "construction",
+  "note": "midpoint map from minimal geodesics to initial directions"
+ },
+ {
+  "name": "Morse.IsCentralI",
+  "module": "Morse.Chapter15.OmegaWinding",
+  "class": "construction",
+  "note": "Milnor's i = J₁⋯J_{k-1}, axiomatised"
+ },
+ {
+  "name": "Morse.iWordM",
+  "module": "Morse.Chapter15.OmegaWinding",
+  "class": "aux",
+  "note": "word J_1⋯J_{k-1}, helper"
+ },
+ {
+  "name": "Morse.omegaComp",
+  "module": "Morse.Chapter15.OmegaWinding",
+  "class": "construction",
+  "note": "Milnor's Ω^{(c)} subspace of the path space of Ω_k(n) by winding angle"
+ },
+ {
+  "name": "Morse.omegaF",
+  "module": "Morse.Chapter15.OmegaWinding",
+  "class": "construction",
+  "note": "Milnor's f(X) = det_ℂ(J^{-1}X), winding function"
+ },
+ {
+  "name": "Morse.IsAngleLift",
+  "module": "Morse.Chapter15.Winding",
+  "class": "notion",
+  "textbook": "Continuous determination of the angle (argument) of a path t ↦ F(ω(t)) in ℂ∖{0} on [0,1], starting at 0: a continuous real-valued function θ with F(ω(t)) = |F(ω(t))| e^{i(arg F(ω(0)) + θ(t))} (Milnor §24, winding argument; lift through covering ℝ → S¹).",
+  "priority": "low",
+  "note": "Predicate form"
+ },
+ {
+  "name": "Morse.cdet",
+  "module": "Morse.Chapter15.Winding",
+  "class": "notion",
+  "textbook": "Complex determinant det_ℂ of a real linear map commuting with a complex structure J on ℝ^{2m}: the determinant of the induced complex-linear map on (ℝ^{2m}, J) ≅ ℂ^m (Milnor §24, p. 140).",
+  "priority": "low",
+  "note": "Encoded via complexification and eigenprojections"
+ },
+ {
+  "name": "Morse.cplx",
+  "module": "Morse.Chapter15.Winding",
+  "class": "aux",
+  "note": "complexification of a real matrix"
+ },
+ {
+  "name": "Morse.projM",
+  "module": "Morse.Chapter15.Winding",
+  "class": "aux",
+  "note": "eigenprojection P₋ of complex structure"
+ },
+ {
+  "name": "Morse.projP",
+  "module": "Morse.Chapter15.Winding",
+  "class": "aux",
+  "note": "eigenprojection P₊ of complex structure"
+ },
+ {
+  "name": "Morse.windSet",
+  "module": "Morse.Chapter15.Winding",
+  "class": "construction",
+  "note": "Milnor's Ω^{(c)}: paths with prescribed angle at end"
+ },
+ {
+  "name": "Morse.AttachCell",
+  "module": "Morse.Chapter2.Attaching",
+  "class": "notion",
+  "textbook": "Adjunction space X ∪_φ e^n obtained by attaching an n-cell to X along a continuous map φ: ∂Dⁿ = S^{n-1} → X (Milnor §3, p. 13; Hatcher ch. 0): the quotient of the disjoint union X ⊔ Dⁿ by the identification x ~ φ(x) for x ∈ ∂Dⁿ.",
+  "priority": "high",
+  "note": "Pushout in TopCat"
+ },
+ {
+  "name": "Morse.cellInl",
+  "module": "Morse.Chapter2.Attaching",
+  "class": "aux",
+  "note": "inclusion X → X ∪_φ e^n"
+ },
+ {
+  "name": "Morse.clampI",
+  "module": "Morse.Chapter2.Attaching",
+  "class": "aux",
+  "note": "clamping real number to [0,1]"
+ },
+ {
+  "name": "Morse.IsCellAttachment",
+  "module": "Morse.Chapter2.CWType",
+  "class": "notion",
+  "textbook": "Space obtained from the empty space by attaching cells of listed dimensions one after another, each along an arbitrary continuous attaching map from the boundary sphere into the space built so far (iterated adjunction space; Milnor §3, p. 14 and Theorem 3.5).",
+  "priority": "high",
+  "note": "Iterated adjunction spaces, dimensions from a list"
+ },
+ {
+  "name": "Morse.IsFiniteCellComplexType",
+  "module": "Morse.Chapter2.CWType",
+  "class": "notion",
+  "textbook": "X has the homotopy type of a finite cell (CW) complex with cells of given dimensions (Milnor §3, Theorem 3.5, p. 20): X is homotopy equivalent to a space built from the empty set by successively attaching cells of those dimensions along continuous attaching maps.",
+  "priority": "high",
+  "note": "Cells in listed order"
+ },
+ {
+  "name": "Morse.IsSplitMorseChart",
+  "module": "Morse.Chapter2.CellAttach",
+  "class": "notion",
+  "textbook": "Morse coordinates (Milnor §2, Lemma 2.2, p. 6): near a non-degenerate critical point p of a smooth function f of index λ, a local coordinate system (u¹,…,uⁿ) centred at p (u^i(p) = 0) on a neighbourhood U with f = f(p) − (u¹)² − ⋯ − (u^λ)² + (u^{λ+1})² + ⋯ + (uⁿ)² throughout U.",
+  "priority": "high",
+  "note": "Coordinates split into (x,y) with ξ=‖x‖², η=‖y‖²"
+ },
+ {
+  "name": "Morse.cellE",
+  "module": "Morse.Chapter2.CellAttach",
+  "class": "construction",
+  "note": "Milnor's cell e^λ = {ξ ≤ ε, η = 0}, proof of Theorem 3.2"
+ },
+ {
+  "name": "Morse.milnorBump",
+  "module": "Morse.Chapter2.CellAttach",
+  "class": "construction",
+  "note": "correction term μ(ξ+2η) transported by chart"
+ },
+ {
+  "name": "Morse.milnorF",
+  "module": "Morse.Chapter2.CellAttach",
+  "class": "construction",
+  "note": "Milnor's modified function F = f − μ(ξ+2η) (p. 16)"
+ },
+ {
+  "name": "Morse.CellModel.cellModel",
+  "module": "Morse.Chapter2.CellModel",
+  "class": "construction",
+  "note": "Milnor's cell e^λ in model coordinates"
+ },
+ {
+  "name": "Morse.CellModel.eta",
+  "module": "Morse.Chapter2.CellModel",
+  "class": "aux",
+  "note": "η = ‖y‖² in model coordinates"
+ },
+ {
+  "name": "Morse.CellModel.morseQuad",
+  "module": "Morse.Chapter2.CellModel",
+  "class": "construction",
+  "note": "model Morse function f = c − ξ + η"
+ },
+ {
+  "name": "Morse.CellModel.retractModel",
+  "module": "Morse.Chapter2.CellModel",
+  "class": "construction",
+  "note": "Milnor's deformation r_t in model coordinates (pp. 18-19)"
+ },
+ {
+  "name": "Morse.CellModel.retractScale",
+  "module": "Morse.Chapter2.CellModel",
+  "class": "construction",
+  "note": "shrinking factor σ_t used in r_t"
+ },
+ {
+  "name": "Morse.CellModel.xi",
+  "module": "Morse.Chapter2.CellModel",
+  "class": "aux",
+  "note": "ξ = ‖x‖² in model coordinates"
+ },
+ {
+  "name": "Morse.IsMilnorMu",
+  "module": "Morse.Chapter2.CellModel",
+  "class": "construction",
+  "note": "conditions on Milnor's bump function μ (p. 16)"
+ },
+ {
+  "name": "Morse.milnorMu",
+  "module": "Morse.Chapter2.CellModel",
+  "class": "construction",
+  "note": "explicit bump μ satisfying Milnor's conditions"
+ },
+ {
+  "name": "Morse.muBump",
+  "module": "Morse.Chapter2.CellModel",
+  "class": "construction",
+  "note": "plateau function β for μ"
+ },
+ {
+  "name": "Morse.IsMorsePatch",
+  "module": "Morse.Chapter2.CellPatch",
+  "class": "notion",
+  "textbook": "Morse coordinates for a function on a topological space (topological version of Morse's lemma chart, Milnor Lemma 2.2 as used on p. 15): a homeomorphism from a neighbourhood of p onto an open subset of X × Y carrying p to 0 with f = f(p) − ‖x‖² + ‖y‖².",
+  "priority": "low",
+  "note": "Topological (non-smooth) version used in cell attachment"
+ },
+ {
+  "name": "Morse.patchBump",
+  "module": "Morse.Chapter2.CellPatch",
+  "class": "construction",
+  "note": "correction term transported by patch"
+ },
+ {
+  "name": "Morse.patchF",
+  "module": "Morse.Chapter2.CellPatch",
+  "class": "construction",
+  "note": "Milnor's F = f − μ(ξ+2η) on a patch"
+ },
+ {
+  "name": "Morse.IsSlabFlow",
+  "module": "Morse.Chapter2.Crossing",
+  "class": "construction",
+  "note": "abstract flow situation of proof of Theorem 3.1"
+ },
+ {
+  "name": "Morse.IsStrongDeformationRetract",
+  "module": "Morse.Chapter2.Crossing",
+  "class": "notion",
+  "textbook": "Strong deformation retract (Milnor §3, p. 13): a subspace A of X is a deformation retract of X if there is a homotopy r_t: X → X, 0 ≤ t ≤ 1, with r_0 = id, r_1(X) ⊆ A and r_t(a) = a for all a ∈ A and all t (r_1 is then a retraction of X onto A).",
+  "priority": "high",
+  "note": "Milnor's 'deformation retract' is this strong version"
+ },
+ {
+  "name": "Morse.sublevel",
+  "module": "Morse.Chapter2.Crossing",
+  "class": "notion",
+  "textbook": "Sublevel set M^c = f^{-1}(−∞, c] = {p ∈ M : f(p) ≤ c} of a real-valued function f on M (Milnor §3, p. 12).",
+  "priority": "high",
+  "note": ""
+ },
+ {
+  "name": "Morse.chartDomain",
+  "module": "Morse.Chapter2.Submanifold",
+  "class": "aux",
+  "note": "union of slice chart domains, helper open set"
+ },
+ {
+  "name": "Morse.critCount",
+  "module": "Morse.Chapter3.EulerChar",
+  "class": "notion",
+  "textbook": "Morse number C_λ (Milnor §5, p. 29): the number of critical points of index λ of a Morse function f on M (when finite).",
+  "priority": "high",
+  "note": ""
+ },
+ {
+  "name": "Morse.FiltrationHomology",
+  "module": "Morse.Chapter3.Inequalities",
+  "class": "construction",
+  "note": "abstract homology-sequence-of-triple data for filtrations"
+ },
+ {
+  "name": "Morse.LongExactSeq",
+  "module": "Morse.Chapter3.Inequalities",
+  "class": "construction",
+  "note": "abstract long exact sequence shape of homology of a triple, proof device for Morse inequalities"
+ },
+ {
+  "name": "Morse.LongExactSeq.f",
+  "module": "Morse.Chapter3.Inequalities",
+  "class": "field",
+  "parent": "Morse.LongExactSeq",
+  "note": "first map of the long exact sequence"
+ },
+ {
+  "name": "Morse.altSum",
+  "module": "Morse.Chapter3.Inequalities",
+  "class": "aux",
+  "note": "truncated alternating sum used to state Morse inequalities"
+ },
+ {
+  "name": "Morse.morseNumber",
+  "module": "Morse.Chapter3.Inequalities",
+  "class": "construction",
+  "note": "Morse numbers of a chain in terms of relative homology dimensions"
+ },
+ {
+  "name": "Morse.Torus.height",
+  "module": "Morse.Chapter3.Torus",
+  "class": "construction",
+  "note": "Milnor's height function on the torus (Diagram 1)"
+ },
+ {
+  "name": "Morse.torus",
+  "module": "Morse.Chapter3.TorusSurface",
+  "class": "notion",
+  "textbook": "Torus of revolution in ℝ³ (Milnor §1, p. 1, Diagram 1): the surface obtained by rotating a circle of radius r about an axis in its plane at distance R > r from its centre, {x : (√(x₁²+x₂²) − R)² + x₃² = r²}.",
+  "priority": "low",
+  "note": "Example"
+ },
+ {
+  "name": "Morse.IsFocalPoint",
+  "module": "Morse.Chapter4.Focal",
+  "class": "notion",
+  "textbook": "Focal point of (M, q) (Milnor §6, p. 32): for a smooth submanifold M ⊂ ℝⁿ, a point e is a focal point of (M, q), q ∈ M, if e = q + v with v a vector normal to M at q such that the endpoint map E: N → ℝⁿ, E(q,v) = q + v, on the normal bundle N of M has Jacobian at (q,v) with positive nullity (of any multiplicity).",
+  "priority": "high",
+  "note": "M a slice submanifold of ℝⁿ with k+w=n"
+ },
+ {
+  "name": "Morse.IsFocalPointMult",
+  "module": "Morse.Chapter4.Focal",
+  "class": "notion",
+  "textbook": "Focal point of (M, q) with multiplicity μ (Milnor §6, p. 32): e = q + v, (q,v) ∈ normal bundle N of M ⊂ ℝⁿ, and the Jacobian of the endpoint map E(q,v) = q + v at (q,v) has nullity μ > 0 (nullity = dimension of the kernel of the differential).",
+  "priority": "high",
+  "note": ""
+ },
+ {
+  "name": "Morse.endpointNullity",
+  "module": "Morse.Chapter4.Focal",
+  "class": "aux",
+  "note": "nullity of the Jacobian of the endpoint map at a normal-bundle point; helper for the focal point definition"
+ },
+ {
+  "name": "Morse.focalSet",
+  "module": "Morse.Chapter4.Focal",
+  "class": "notion",
+  "textbook": "Set of focal points of a submanifold M ⊂ ℝⁿ (Milnor §6, p. 32): the points that are focal points of (M, q) for some q ∈ M.",
+  "priority": "low",
+  "note": ""
+ },
+ {
+  "name": "Morse.ballDiffeo",
+  "module": "Morse.Chapter4.Uniform",
+  "class": "construction",
+  "note": "diffeomorphism ℝⁿ → open unit ball y ↦ y/√(1+|y|²), used in uniform-bound argument"
+ },
+ {
+  "name": "Morse.toBall",
+  "module": "Morse.Chapter4.Uniform",
+  "class": "construction",
+  "note": "restriction of ball diffeomorphism to M"
+ },
+ {
+  "name": "Morse.IsComplexSubmanifold",
+  "module": "Morse.Chapter5.ComplexIndex",
+  "class": "notion",
+  "textbook": "Complex submanifold of a complex vector space ℂᵐ = ℝ^{2m} (Milnor §7, p. 39 ff): a smooth real submanifold N whose tangent spaces are complex subspaces, i.e. J(T_xN) ⊆ T_xN where J is multiplication by i.",
+  "priority": "high",
+  "note": "Complex structure J as real linear map"
+ },
+ {
+  "name": "Morse.IsOrthComplexStructure",
+  "module": "Morse.Chapter5.ComplexIndex",
+  "class": "notion",
+  "textbook": "Complex structure on a Euclidean space as multiplication by i (Milnor §7 / §24 p. 133): an orthogonal linear map J with J² = −1.",
+  "priority": "low",
+  "note": "Linear-map version of IsComplexStructure"
+ },
+ {
+  "name": "Morse.HypothesisN",
+  "module": "Morse.Chapter5.HyperplaneSection",
+  "class": "notion",
+  "textbook": "Hypothesis (N) of Milnor §7 (p. 42): the subspace A of X has a neighbourhood U in X that can be deformed into A within X by a homotopy keeping A pointwise fixed (A is a neighbourhood deformation retract-like subspace).",
+  "priority": "low",
+  "note": "Not a named standard notion"
+ },
+ {
+  "name": "Morse.CP.Cn",
+  "module": "Morse.Chapter5.ProjectiveSection",
+  "class": "aux",
+  "note": "ℂⁿ as real inner product space, typeclass bookkeeping"
+ },
+ {
+  "name": "Morse.CP.aff",
+  "module": "Morse.Chapter5.ProjectiveSection",
+  "class": "construction",
+  "note": "affine chart of projective space minus hyperplane"
+ },
+ {
+  "name": "Morse.CP.affineHomeomorph",
+  "module": "Morse.Chapter5.ProjectiveSection",
+  "class": "construction",
+  "note": "homeomorphism of affine chart"
+ },
+ {
+  "name": "Morse.CP.affinePart",
+  "module": "Morse.Chapter5.ProjectiveSection",
+  "class": "construction",
+  "note": "affine part of a subset of projective space"
+ },
+ {
+  "name": "Morse.CP.cpxJ",
+  "module": "Morse.Chapter5.ProjectiveSection",
+  "class": "aux",
+  "note": "multiplication by i on ℝ^{2n} via isometry"
+ },
+ {
+  "name": "Morse.CP.hyperplaneSection",
+  "module": "Morse.Chapter5.ProjectiveSection",
+  "class": "construction",
+  "note": "hyperplane section V ∩ P of a subset of projective space"
+ },
+ {
+  "name": "Morse.CP.lift",
+  "module": "Morse.Chapter5.ProjectiveSection",
+  "class": "aux",
+  "note": "vector (1,u) in ℂ^{n+1}"
+ },
+ {
+  "name": "Morse.CP.mulI",
+  "module": "Morse.Chapter5.ProjectiveSection",
+  "class": "aux",
+  "note": "multiplication by i as real linear map"
+ },
+ {
+  "name": "Morse.CP.nc",
+  "module": "Morse.Chapter5.ProjectiveSection",
+  "class": "aux",
+  "note": "1+|u|² as complex number"
+ },
+ {
+  "name": "Morse.CP.proj",
+  "module": "Morse.Chapter5.ProjectiveSection",
+  "class": "construction",
+  "note": "inverse of affine chart"
+ },
+ {
+  "name": "Morse.CP.theta",
+  "module": "Morse.Chapter5.ProjectiveSection",
+  "class": "aux",
+  "note": "isometry ℂⁿ ≅ ℝ^{2n}"
+ },
+ {
+  "name": "Morse.IsCompatible",
+  "module": "Morse.Chapter6.Connection",
+  "class": "notion",
+  "textbook": "Compatibility of a connection with a Riemannian metric (Milnor §8, p. 47-48, Cor. 8.4): X⟨Y,Y'⟩ = ⟨D_X Y, Y'⟩ + ⟨Y, D_X Y'⟩ for vector fields X, Y, Y'; equivalently parallel translation preserves inner products.",
+  "priority": "low",
+  "note": "Mathlib CovariantDerivative on tangent bundle"
+ },
+ {
+  "name": "Morse.dN",
+  "module": "Morse.Chapter6.Projection",
+  "class": "aux",
+  "note": "derivative of a map on N applied to ambient tangent vectors; coordinate bookkeeping"
+ },
+ {
+  "name": "Morse.sliceAt",
+  "module": "Morse.Chapter6.Projection",
+  "class": "aux",
+  "note": "chosen slice chart at a point"
+ },
+ {
+  "name": "Morse.tanCoord",
+  "module": "Morse.Chapter6.Projection",
+  "class": "aux",
+  "note": "chart coordinates of an ambient vector, bookkeeping"
+ },
+ {
+  "name": "Morse.tanProj",
+  "module": "Morse.Chapter6.Projection",
+  "class": "notion",
+  "textbook": "Orthogonal projection P_q of the ambient Euclidean space V onto the tangent space T_qN of a submanifold N ⊆ V at q (Milnor §8, p. 43).",
+  "priority": "low",
+  "note": ""
+ },
+ {
+  "name": "Morse.covAt",
+  "module": "Morse.Chapter6.Submanifold",
+  "class": "notion",
+  "textbook": "Covariant derivative X_p ⊢ Y of a vector field Y on a submanifold N ⊆ ℝⁿ in the direction of a tangent vector X_p (Milnor §8, p. 43): the tangential component (orthogonal projection onto TN_p) of the ordinary directional derivative of Y.",
+  "priority": "high",
+  "note": "Induced Riemannian connection"
+ },
+ {
+  "name": "Morse.curvOp",
+  "module": "Morse.Chapter6.Submanifold",
+  "class": "construction",
+  "note": "curvature expressed via derivative of tangent projection, formula"
+ },
+ {
+  "name": "Morse.curvTensor",
+  "module": "Morse.Chapter6.Submanifold",
+  "class": "notion",
+  "textbook": "Riemann curvature tensor R of a submanifold N ⊆ ℝⁿ with induced metric (Milnor §9, p. 51, Lemma 9.1): the trilinear map R(X,Y)Z on T_qN, in Milnor's sign convention (so that the sectional curvature of the plane spanned by orthonormal X, Y is ⟨R(X,Y)X,Y⟩, and the unit sphere has curvature +1); expressible by the second fundamental form via the Gauss equation.",
+  "priority": "high",
+  "note": "Project formula R(x,y)z = II(y,II(x,z)) - II(x,II(y,z))"
+ },
+ {
+  "name": "Morse.secondFundForm",
+  "module": "Morse.Chapter6.Submanifold",
+  "class": "notion",
+  "textbook": "Second fundamental form II of a submanifold N ⊆ ℝⁿ at q (standard text; Milnor §8-9): the normal component of the derivative of a tangent vector field, II(v,w) = (1−P_q)(dW_q(v)) for a tangent field W with W(q)=w, symmetric and normal-valued.",
+  "priority": "low",
+  "note": "Project defines via derivative of the tangent projection"
+ },
+ {
+  "name": "Morse.IsShortJoin",
+  "module": "Morse.Chapter7.Distance",
+  "class": "construction",
+  "note": "conclusion of Corollary 10.8 packaged as a predicate (unique short geodesic depending smoothly on endpoints)"
+ },
+ {
+  "name": "Morse.pathLengths",
+  "module": "Morse.Chapter7.Distance",
+  "class": "aux",
+  "note": "set of lengths of piecewise smooth paths, helper for the distance"
+ },
+ {
+  "name": "Morse.riemDist",
+  "module": "Morse.Chapter7.Distance",
+  "class": "notion",
+  "textbook": "Riemannian distance ρ(p, q) on a connected Riemannian manifold or submanifold N (Milnor §10, p. 62): the greatest lower bound of the lengths of piecewise smooth paths in N from p to q.",
+  "priority": "high",
+  "note": "Extended-real valued, ∞ if none"
+ },
+ {
+  "name": "Morse.IsGeodesicFrom",
+  "module": "Morse.Chapter7.Exp",
+  "class": "aux",
+  "note": "geodesic through q with initial velocity v defined on an open interval around [0,1], helper for exp"
+ },
+ {
+  "name": "Morse.exp",
+  "module": "Morse.Chapter7.Exp",
+  "class": "notion",
+  "textbook": "Exponential map exp_q: for a Riemannian manifold or submanifold N and q ∈ N (Milnor §10, p. 57): exp_q(v) = γ(1), where γ is the geodesic with γ(0) = q and γ'(0) = v, defined for those v ∈ T_qN for which this geodesic exists on [0,1].",
+  "priority": "high",
+  "note": "Total function in project, junk value q outside domain"
+ },
+ {
+  "name": "Morse.expDom",
+  "module": "Morse.Chapter7.Exp",
+  "class": "notion",
+  "textbook": "Domain of the exponential map (Milnor §10, p. 57): the set of pairs (q, v) with v ∈ T_qN such that the geodesic with γ(0) = q, γ'(0) = v is defined on an open interval containing [0, 1].",
+  "priority": "high",
+  "note": ""
+ },
+ {
+  "name": "Morse.IsGeodesicOn",
+  "module": "Morse.Chapter7.Geodesic",
+  "class": "notion",
+  "textbook": "Geodesic of a Riemannian manifold or submanifold N (Milnor §8-§10, p. 55): a smooth curve γ: I → N whose velocity vector field has zero covariant derivative, D/dt(dγ/dt) = 0; for N ⊆ ℝⁿ with the induced metric, equivalently the acceleration γ'' is everywhere orthogonal to N.",
+  "priority": "high",
+  "note": "Defined on an open set of times"
+ },
+ {
+  "name": "Morse.IsGeodesicallyComplete",
+  "module": "Morse.Chapter7.GeodesicFlow",
+  "class": "notion",
+  "textbook": "Geodesic completeness (Milnor §10, pp. 58, 62): a Riemannian manifold N is geodesically complete if exp_q(v) is defined for every q ∈ N and every v ∈ T_qN; equivalently every geodesic extends to all of ℝ.",
+  "priority": "high",
+  "note": ""
+ },
+ {
+  "name": "Morse.IsMinimalGeodesic",
+  "module": "Morse.Chapter7.HopfRinow",
+  "class": "notion",
+  "textbook": "Minimal geodesic (Milnor §10, p. 61): a geodesic segment γ: [a,b] → N whose length is less than or equal to that of every piecewise smooth path in N with the same endpoints.",
+  "priority": "high",
+  "note": ""
+ },
+ {
+  "name": "Morse.IsRiemBounded",
+  "module": "Morse.Chapter7.Metric",
+  "class": "notion",
+  "textbook": "Bounded subset of a Riemannian manifold N (Milnor §10, p. 64): a subset of finite diameter with respect to the Riemannian distance ρ.",
+  "priority": "low",
+  "note": ""
+ },
+ {
+  "name": "Morse.IsRiemComplete",
+  "module": "Morse.Chapter7.Metric",
+  "class": "notion",
+  "textbook": "Completeness of the metric space (N, ρ) (Milnor §10, p. 64, Hopf-Rinow): every Cauchy sequence for the Riemannian distance ρ converges in N.",
+  "priority": "high",
+  "note": ""
+ },
+ {
+  "name": "Morse.IsNormalRadius",
+  "module": "Morse.Chapter7.NormalNbhd",
+  "class": "notion",
+  "textbook": "Normal neighbourhood (Milnor §10, Lemma 10.3, p. 57-58): an ε-ball in the tangent space T_qN on which exp_q is a diffeomorphism onto an open neighbourhood of q in N.",
+  "priority": "low",
+  "note": "Project term 'normal radius'"
+ },
+ {
+  "name": "Morse.NormalCoord",
+  "module": "Morse.Chapter7.NormalNbhd",
+  "class": "notion",
+  "textbook": "Normal coordinates of radius ε at q (Milnor §10, p. 57-58): exp_q restricts to a diffeomorphism from the ball of radius ε in T_qN onto an open neighbourhood of q in N.",
+  "priority": "low",
+  "note": "Bundles smooth extensions F, G"
+ },
+ {
+  "name": "Morse.expToN",
+  "module": "Morse.Chapter7.NormalNbhd",
+  "class": "aux",
+  "note": "exp_q as a map T_qN → N with junk value q outside domain"
+ },
+ {
+  "name": "Morse.IsAdmissible",
+  "module": "Morse.Chapter7.Path",
+  "class": "aux",
+  "note": "auxiliary regularity class of paths (continuous, a.e. differentiable, integrable speed) used to state lemmas; not in textbook"
+ },
+ {
+  "name": "Morse.IsPiecewiseSmooth",
+  "module": "Morse.Chapter7.Path",
+  "class": "notion",
+  "textbook": "Piecewise smooth path (Milnor §10, p. 59, and §13 p. 67): a continuous map c: [a,b] → N for which there is a subdivision a = t₀ < t₁ < ⋯ < t_k = b such that c restricted to each closed subinterval [t_{i-1}, t_i] is smooth (C^∞, with one-sided derivatives at endpoints).",
+  "priority": "high",
+  "note": ""
+ },
+ {
+  "name": "Morse.pathLength",
+  "module": "Morse.Chapter7.Path",
+  "class": "notion",
+  "textbook": "Length of a piecewise smooth path c: [a,b] → N (Milnor §10, p. 59): L(c) = ∫ₐᵇ |dc/dt| dt.",
+  "priority": "high",
+  "note": "Norm from ambient/induced metric"
+ },
+ {
+  "name": "Morse.IsCriticalPath",
+  "module": "Morse.Chapter8.Critical",
+  "class": "notion",
+  "textbook": "Critical path of the energy function E on Ω (Milnor §12, p. 69): a path ω ∈ Ω(M; p, q) is a critical point of E if for every variation α of ω with fixed end points the derivative d/du E(α(u)) at u = 0 exists and equals zero.",
+  "priority": "high",
+  "note": ""
+ },
+ {
+  "name": "Morse.IsUnbrokenGeodesic",
+  "module": "Morse.Chapter8.Critical",
+  "class": "notion",
+  "textbook": "Unbroken geodesic in Ω (Milnor §12, Theorem 12.3, p. 73): a path ω ∈ Ω(M;p,q) which is a (smooth) geodesic on all of [0,1], i.e. smooth with D/dt(dω/dt) = 0 on [0,1].",
+  "priority": "high",
+  "note": "Critical points of E are exactly these"
+ },
+ {
+  "name": "Morse.IsVariation",
+  "module": "Morse.Chapter8.Energy",
+  "class": "notion",
+  "textbook": "Variation of a piecewise smooth path ω with fixed end points (Milnor §11, p. 68): a function α: (−ε,ε) × [0,1] → M (or, §13, a two-parameter version on a neighbourhood of 0 ∈ ℝ²) such that α(0,·) = ω, there is a subdivision of [0,1] such that α is smooth on each strip, and α(u,0) = ω(0), α(u,1) = ω(1) for all u.",
+  "priority": "high",
+  "note": "Open parameter set in a normed space"
+ },
+ {
+  "name": "Morse.energy",
+  "module": "Morse.Chapter8.Energy",
+  "class": "notion",
+  "textbook": "Energy of a piecewise smooth path ω: [a,b] → M (Milnor §12, p. 70): E_a^b(ω) = ∫ₐᵇ |dω/dt|² dt; E(ω) means E_0^1(ω).",
+  "priority": "high",
+  "note": ""
+ },
+ {
+  "name": "Morse.jump",
+  "module": "Morse.Chapter8.Energy",
+  "class": "notion",
+  "textbook": "Jump of the derivative (velocity) at a point t of a piecewise smooth path (Milnor §12, p. 71): Δ_t(dω/dt) = dω/dt(t⁺) − dω/dt(t⁻), the difference of the one-sided derivatives.",
+  "priority": "low",
+  "note": ""
+ },
+ {
+  "name": "Morse.pathSpace",
+  "module": "Morse.Chapter8.Energy",
+  "class": "notion",
+  "textbook": "Path space Ω(M; p, q) (Milnor §12-13, p. 67): the set of piecewise smooth paths ω: [0,1] → M with ω(0) = p and ω(1) = q.",
+  "priority": "high",
+  "note": "Set version, represented by functions ℝ → V"
+ },
+ {
+  "name": "Morse.pathTangent",
+  "module": "Morse.Chapter8.Energy",
+  "class": "notion",
+  "textbook": "Tangent space TΩ_ω of the path space at ω (Milnor §12, p. 67-68): the vector space of piecewise smooth vector fields W along ω, tangent to M, vanishing at t = 0 and t = 1.",
+  "priority": "high",
+  "note": "Defined as a vector space of fields"
+ },
+ {
+  "name": "Morse.prj",
+  "module": "Morse.Chapter8.Energy",
+  "class": "aux",
+  "note": "total version of tangent projection (zero off N), convenient in integrands"
+ },
+ {
+  "name": "Morse.varField",
+  "module": "Morse.Chapter8.Energy",
+  "class": "notion",
+  "textbook": "Variation vector field of a variation α of ω (Milnor §11-12, p. 68): W_t = ∂α/∂u(0, t).",
+  "priority": "low",
+  "note": "1-parameter case"
+ },
+ {
+  "name": "Morse.accel",
+  "module": "Morse.Chapter8.FirstVariation",
+  "class": "notion",
+  "textbook": "Acceleration of a piecewise smooth path ω (Milnor §12, p. 71): A_t = D/dt(dω/dt), the covariant derivative of the velocity field, defined away from break points.",
+  "priority": "low",
+  "note": ""
+ },
+ {
+  "name": "Morse.covD",
+  "module": "Morse.Chapter8.FirstVariation",
+  "class": "notion",
+  "textbook": "Covariant derivative D X/dt of a vector field X along a path ω in a Riemannian manifold or submanifold (Milnor §8, p. 46): in a submanifold of ℝⁿ, the tangential component of the ordinary derivative dX/dt.",
+  "priority": "high",
+  "note": ""
+ },
+ {
+  "name": "Morse.firstVariation",
+  "module": "Morse.Chapter8.FirstVariation",
+  "class": "aux",
+  "note": "right-hand side of first variation formula (Theorem 12.2), formula used to state the theorem"
+ },
+ {
+  "name": "Morse.IsMinimalPath",
+  "module": "Morse.Chapter8.Hessian",
+  "class": "notion",
+  "textbook": "Path of least length in Ω(M; p, q) (Milnor §10, p. 61): a path in Ω(M;p,q) whose length is at most that of every other path in Ω(M;p,q).",
+  "priority": "low",
+  "note": ""
+ },
+ {
+  "name": "Morse.energyHessian",
+  "module": "Morse.Chapter8.Hessian",
+  "class": "notion",
+  "textbook": "Hessian E_** of the energy function E at a geodesic γ ∈ Ω(M; p, q) (Milnor §13, p. 74): the symmetric bilinear form E_**: TΩ_γ × TΩ_γ → ℝ given by E_**(W₁,W₂) = ∂²E(α(u₁,u₂))/∂u₁∂u₂ at (0,0) for any 2-parameter variation α of γ with variation fields W₁, W₂.",
+  "priority": "high",
+  "note": "Project defines via integral form (Thm 13.1/Prop 13.A) and proves equivalence"
+ },
+ {
+  "name": "Morse.hessForm",
+  "module": "Morse.Chapter8.Hessian",
+  "class": "aux",
+  "note": "Hessian in integral form, half of E_**, formula used to state Prop 13.A"
+ },
+ {
+  "name": "Morse.IsJacobiField",
+  "module": "Morse.Chapter8.Jacobi",
+  "class": "notion",
+  "textbook": "Jacobi field along a geodesic γ (Milnor §14, p. 77): a smooth vector field J along γ satisfying the Jacobi equation D²J/dt² + R(V, J)V = 0, where V = dγ/dt and R is the curvature tensor.",
+  "priority": "high",
+  "note": ""
+ },
+ {
+  "name": "Morse.jacobiExpr",
+  "module": "Morse.Chapter8.Jacobi",
+  "class": "aux",
+  "note": "Jacobi operator expression D²J/dt² + R(V,J)V, helper"
+ },
+ {
+  "name": "Morse.curvR",
+  "module": "Morse.Chapter8.SecondVariation",
+  "class": "aux",
+  "note": "total version of curvature tensor (zero off N) used in Jacobi and second variation formulas"
+ },
+ {
+  "name": "Morse.secondVariation",
+  "module": "Morse.Chapter8.SecondVariation",
+  "class": "aux",
+  "note": "right-hand side of the second variation formula (Theorem 13.1), formula"
+ },
+ {
+  "name": "Morse.IsBrokenJacobi",
+  "module": "Morse.Chapter9.BrokenJacobi",
+  "class": "notion",
+  "textbook": "Broken Jacobi field along γ with respect to a subdivision (Milnor §15, p. 83): a continuous piecewise smooth vector field along γ that on each segment [t_{i-1}, t_i] is a Jacobi field.",
+  "priority": "low",
+  "note": ""
+ },
+ {
+  "name": "Morse.brokenSpace",
+  "module": "Morse.Chapter9.BrokenJacobi",
+  "class": "construction",
+  "note": "space TΩ_γ(t₀,…,t_k) of broken Jacobi fields along γ|[0,τ], proof device"
+ },
+ {
+  "name": "Morse.fieldsUpTo",
+  "module": "Morse.Chapter9.BrokenJacobi",
+  "class": "construction",
+  "note": "fields along γ|[0,τ] vanishing at ends, extended by zero"
+ },
+ {
+  "name": "Morse.IsNegDefOn",
+  "module": "Morse.Chapter9.FormIndex",
+  "class": "notion",
+  "textbook": "Bilinear form negative definite on a subspace S: B(v,v) < 0 for every nonzero v ∈ S.",
+  "priority": "low",
+  "note": ""
+ },
+ {
+  "name": "Morse.formIndex",
+  "module": "Morse.Chapter9.FormIndex",
+  "class": "notion",
+  "textbook": "Index of a symmetric bilinear form H on a (possibly infinite-dimensional) real vector space (Milnor §2 p. 5, §15 p. 83): the maximal dimension (supremum of dimensions) of a subspace on which H is negative definite.",
+  "priority": "high",
+  "note": "Extended-natural valued"
+ },
+ {
+  "name": "Morse.indexUpTo",
+  "module": "Morse.Chapter9.IndexReduction",
+  "class": "construction",
+  "note": "Milnor's λ(τ): index of the Hessian along γ|[0,τ], proof device in §15"
+ },
+ {
+  "name": "Morse.IsConjugate",
+  "module": "Morse.Chapter9.JacobiSpace",
+  "class": "notion",
+  "textbook": "Conjugate points along a geodesic (Milnor §14, p. 77): γ(a) and γ(b), a ≠ b, are conjugate along γ if there is a Jacobi field along γ, not identically zero, vanishing at t = a and t = b.",
+  "priority": "high",
+  "note": "Stated at parameter level"
+ },
+ {
+  "name": "Morse.conjMultiplicity",
+  "module": "Morse.Chapter9.JacobiSpace",
+  "class": "notion",
+  "textbook": "Multiplicity of conjugate points (Milnor §14, p. 77): the dimension of the vector space of Jacobi fields along γ vanishing at t = a and t = b.",
+  "priority": "high",
+  "note": ""
+ },
+ {
+  "name": "Morse.conjSpace",
+  "module": "Morse.Chapter9.JacobiSpace",
+  "class": "aux",
+  "note": "space of Jacobi fields vanishing at a and b"
+ },
+ {
+  "name": "Morse.hessNullSpace",
+  "module": "Morse.Chapter9.JacobiSpace",
+  "class": "notion",
+  "textbook": "Null space of the Hessian E_** at a geodesic γ (Milnor §14, p. 77): the set of W₁ ∈ TΩ_γ with E_**(W₁, W₂) = 0 for all W₂ ∈ TΩ_γ.",
+  "priority": "low",
+  "note": "Realised as fields on [0,1]"
+ },
+ {
+  "name": "Morse.hessNullity",
+  "module": "Morse.Chapter9.JacobiSpace",
+  "class": "notion",
+  "textbook": "Nullity of the Hessian E_** at a geodesic γ (Milnor §14, p. 77): the dimension of the null space of E_**.",
+  "priority": "high",
+  "note": ""
+ },
+ {
+  "name": "Morse.jacobiSpace",
+  "module": "Morse.Chapter9.JacobiSpace",
+  "class": "aux",
+  "note": "space of Jacobi fields along γ normalised to be constant off [0,1]"
+ },
+ {
+  "name": "Morse.restrictIcc",
+  "module": "Morse.Chapter9.JacobiSpace",
+  "class": "aux",
+  "note": "restriction to [0,1] extended by constants"
+ },
+ {
+  "name": "Morse.IsSmoothCurveIn",
+  "module": "Morse.Chapter9.JacobiSystem",
+  "class": "notion",
+  "textbook": "Smooth curve γ: [0,1] → N in a submanifold, C^∞ on the closed interval with values in N.",
+  "priority": "low",
+  "note": ""
+ },
+ {
+  "name": "Morse.covAlong",
+  "module": "Morse.Chapter9.JacobiSystem",
+  "class": "aux",
+  "note": "covariant derivative along a path computed within [0,1], duplicate of covD with one-sided endpoints"
+ },
+ {
+  "name": "Morse.flow",
+  "module": "Morse.Flow.Global",
+  "class": "notion",
+  "textbook": "Flow of a vector field X on a vector space/manifold (Milnor §3, proof of Theorem 3.1, p. 12-13): the family φ_t of diffeomorphisms with φ_0 = id and d/dt φ_t(x) = X(φ_t(x)), the integral curves of X.",
+  "priority": "low",
+  "note": "Chosen integral curve, junk value otherwise"
+ },
+ {
+  "name": "Morse.Homology.bettiNumber",
+  "module": "Morse.Homology.MorseHomologyBasic",
+  "class": "notion",
+  "textbook": "Betti number b_i(X) = dim_𝕜 H_i(X; 𝕜) of a space X over a field 𝕜 (Milnor §5, p. 28: rank R_i(X) of the i-th homology vector space).",
+  "priority": "high",
+  "note": "Finrank, 0 if infinite-dimensional"
+ },
+ {
+  "name": "Morse.Homology.spaceHomology",
+  "module": "Morse.Homology.MorseHomologyBasic",
+  "class": "notion",
+  "textbook": "Singular homology H_i(X; 𝕜) of a topological space X with coefficients in a field 𝕜 (Milnor §5, p. 27; Hatcher ch. 2).",
+  "priority": "high",
+  "note": ""
+ },
+ {
+  "name": "Morse.Homology.cokernelSequence",
+  "module": "Morse.Homology.Relative",
+  "class": "aux",
+  "note": "functor Arrow ⥤ ShortComplex, category-theory plumbing"
+ },
+ {
+  "name": "Morse.Homology.relChains",
+  "module": "Morse.Homology.Relative",
+  "class": "notion",
+  "textbook": "Relative singular chain complex C(X, A; R) = C(X; R)/C(A; R) of a pair (X, A) of spaces (Hatcher ch. 2).",
+  "priority": "high",
+  "note": "Functor on pairs"
+ },
+ {
+  "name": "Morse.Homology.relHomology",
+  "module": "Morse.Homology.Relative",
+  "class": "notion",
+  "textbook": "Relative singular homology H_n(X, A; R) of a pair of spaces (X, A) (Milnor §3/§5, pp. 27-28; Hatcher ch. 2): homology of the quotient chain complex C(X; R)/C(A; R).",
+  "priority": "high",
+  "note": "Functor on pairs"
+ },
+ {
+  "name": "Morse.Homology.relShortComplex",
+  "module": "Morse.Homology.Relative",
+  "class": "aux",
+  "note": "short exact sequence C(A) → C(X) → C(X,A), plumbing"
+ },
+ {
+  "name": "Morse.Homology.singularChains",
+  "module": "Morse.Homology.Relative",
+  "class": "notion",
+  "textbook": "Singular chain complex C_*(X; R) of a topological space with coefficients in R (Hatcher ch. 2).",
+  "priority": "high",
+  "note": "Functor to chain complexes"
+ },
+ {
+  "name": "Morse.Homology.subsetInclusion",
+  "module": "Morse.Homology.Relative",
+  "class": "aux",
+  "note": "inclusion of subsets as morphism of TopCat"
+ },
+ {
+  "name": "Morse.Homology.subsetPair",
+  "module": "Morse.Homology.Relative",
+  "class": "aux",
+  "note": "pair (B, A) from a subset inclusion, bookkeeping"
+ },
+ {
+  "name": "Morse.Homology.TopTriple",
+  "module": "Morse.Homology.Triple",
+  "class": "notion",
+  "textbook": "Triple of spaces Z ⊆ Y ⊆ X (Milnor §5, p. 30; Hatcher ch. 2): inclusions Z → Y → X.",
+  "priority": "low",
+  "note": "Bundles i, j and composite k"
+ },
+ {
+  "name": "Morse.Homology.TopTriple.X",
+  "module": "Morse.Homology.Triple",
+  "class": "field",
+  "parent": "Morse.Homology.TopTriple",
+  "note": "big space X"
+ },
+ {
+  "name": "Morse.Homology.TopTriple.Y",
+  "module": "Morse.Homology.Triple",
+  "class": "field",
+  "parent": "Morse.Homology.TopTriple",
+  "note": "middle space Y"
+ },
+ {
+  "name": "Morse.Homology.TopTriple.Z",
+  "module": "Morse.Homology.Triple",
+  "class": "field",
+  "parent": "Morse.Homology.TopTriple",
+  "note": "small space Z"
+ },
+ {
+  "name": "Morse.Homology.TopTriple.i",
+  "module": "Morse.Homology.Triple",
+  "class": "field",
+  "parent": "Morse.Homology.TopTriple",
+  "note": "inclusion Z → Y"
+ },
+ {
+  "name": "Morse.Homology.TopTriple.j",
+  "module": "Morse.Homology.Triple",
+  "class": "field",
+  "parent": "Morse.Homology.TopTriple",
+  "note": "inclusion Y → X"
+ },
+ {
+  "name": "Morse.Homology.TopTriple.k",
+  "module": "Morse.Homology.Triple",
+  "class": "field",
+  "parent": "Morse.Homology.TopTriple",
+  "note": "inclusion Z → X (composite)"
+ },
+ {
+  "name": "Morse.Homology.TopTriple.map₁",
+  "module": "Morse.Homology.Triple",
+  "class": "aux",
+  "note": "inclusion of pairs (Y,Z) → (X,Z)"
+ },
+ {
+  "name": "Morse.Homology.TopTriple.map₂",
+  "module": "Morse.Homology.Triple",
+  "class": "aux",
+  "note": "inclusion of pairs (X,Z) → (X,Y)"
+ },
+ {
+  "name": "Morse.Homology.TopTriple.ofSubsets",
+  "module": "Morse.Homology.Triple",
+  "class": "aux",
+  "note": "triple from a chain of subsets"
+ },
+ {
+  "name": "Morse.Homology.TopTriple.pairXY",
+  "module": "Morse.Homology.Triple",
+  "class": "aux",
+  "note": "pair (X,Y) of a triple, projection"
+ },
+ {
+  "name": "Morse.Homology.TopTriple.pairXZ",
+  "module": "Morse.Homology.Triple",
+  "class": "aux",
+  "note": "pair (X,Z) of a triple, projection"
+ },
+ {
+  "name": "Morse.Homology.TopTriple.pairYZ",
+  "module": "Morse.Homology.Triple",
+  "class": "aux",
+  "note": "pair (Y,Z) of a triple, projection"
+ },
+ {
+  "name": "Morse.Homology.TopTriple.shortComplex",
+  "module": "Morse.Homology.Triple",
+  "class": "aux",
+  "note": "short complex of relative chains of a triple, plumbing"
+ },
+ {
+  "name": "Morse.Homology.TopTriple.δ",
+  "module": "Morse.Homology.Triple",
+  "class": "notion",
+  "textbook": "Connecting homomorphism ∂: H_{n+1}(X, Y) → H_n(Y, Z) of the long exact homology sequence of a triple Z ⊆ Y ⊆ X (Milnor §5, p. 30; Hatcher ch. 2).",
+  "priority": "low",
+  "note": ""
+ },
+ {
+  "name": "Morse.Homology.TopTriple.longExactSeq",
+  "module": "Morse.Homology.TripleFiltration",
+  "class": "construction",
+  "note": "long exact homology sequence of a triple packaged as an abstract long exact sequence, proof device for Morse inequalities"
+ },
+ {
+  "name": "Morse.Homology.subsetHomology",
+  "module": "Morse.Homology.TripleFiltration",
+  "class": "aux",
+  "note": "singular homology of a pair of subsets, wrapper"
+ },
+ {
+  "name": "Morse.Homology.subsetTripleLongExactSeq",
+  "module": "Morse.Homology.TripleFiltration",
+  "class": "construction",
+  "note": "long exact homology sequence of a triple of subsets, proof device"
+ },
+ {
+  "name": "Morse.Homotopy.Compresses",
+  "module": "Morse.Homotopy.Basic",
+  "class": "construction",
+  "note": "compression property (every map from P is homotopic rel preimage of the range of j to a map into range of j), proof device"
+ },
+ {
+  "name": "Morse.Homotopy.genLoopMap",
+  "module": "Morse.Homotopy.Basic",
+  "class": "aux",
+  "note": "composite f∘γ of a generalized loop, representative-level"
+ },
+ {
+  "name": "Morse.Homotopy.homotopyGroupMap",
+  "module": "Morse.Homotopy.Basic",
+  "class": "notion",
+  "textbook": "Homomorphism induced on homotopy groups by a based continuous map f: (X,x) → (Y, f(x)) (Hatcher ch. 4; Milnor §17): f_*: π_n(X,x) → π_n(Y,f(x)), [γ] ↦ [f∘γ].",
+  "priority": "low",
+  "note": "Functoriality"
+ },
+ {
+  "name": "Morse.Homotopy.detCircle",
+  "module": "Morse.Homotopy.BundlesUnitary",
+  "class": "construction",
+  "note": "determinant map U(n) → S¹, used in bundle argument"
+ },
+ {
+  "name": "Morse.Homotopy.diagCircle",
+  "module": "Morse.Homotopy.BundlesUnitary",
+  "class": "construction",
+  "note": "section D(z) = diag(z,1,…,1) of det: U(n) → S¹"
+ },
+ {
+  "name": "Morse.Homotopy.changeBase",
+  "module": "Morse.Homotopy.ChangeOfBase",
+  "class": "construction",
+  "note": "change-of-basepoint construction on representative generalized loops (cube frame construction)"
+ },
+ {
+  "name": "Morse.Homotopy.changeBaseEquiv",
+  "module": "Morse.Homotopy.ChangeOfBase",
+  "class": "notion",
+  "textbook": "Change-of-basepoint isomorphism along a path γ from y₀ to y₁: π_n(Y, y₀) → π_n(Y, y₁) (Hatcher Prop. 4.1; Milnor §17): obtained by conjugating a representing map with the path γ on a collar of the boundary.",
+  "priority": "low",
+  "note": "Bijection with inverse along reversed path"
+ },
+ {
+  "name": "Morse.Homotopy.changeBaseMap",
+  "module": "Morse.Homotopy.ChangeOfBase",
+  "class": "aux",
+  "note": "change-of-basepoint map on homotopy classes"
+ },
+ {
+  "name": "Morse.Homotopy.cubeDist",
+  "module": "Morse.Homotopy.ChangeOfBase",
+  "class": "aux",
+  "note": "sup-distance from the centre of the cube"
+ },
+ {
+  "name": "Morse.Homotopy.cubeScale",
+  "module": "Morse.Homotopy.ChangeOfBase",
+  "class": "aux",
+  "note": "affine rescaling of cube, clamped"
+ },
+ {
+  "name": "Morse.Homotopy.frame",
+  "module": "Morse.Homotopy.ChangeOfBase",
+  "class": "construction",
+  "note": "frame construction rescaling inner map into a smaller cube and gluing outer map"
+ },
+ {
+  "name": "Morse.Homotopy.changeBaseMulEquiv",
+  "module": "Morse.Homotopy.ChangeOfBaseGroup",
+  "class": "construction",
+  "note": "change-of-basepoint as group isomorphism (same notion as changeBaseEquiv)"
+ },
+ {
+  "name": "Morse.Homotopy.constPath",
+  "module": "Morse.Homotopy.ChangeOfBaseGroup",
+  "class": "aux",
+  "note": "constant paths map Y → C(I,Y)"
+ },
+ {
+  "name": "Morse.Homotopy.evalPath",
+  "module": "Morse.Homotopy.ChangeOfBaseGroup",
+  "class": "aux",
+  "note": "evaluation of a path at s"
+ },
+ {
+  "name": "Morse.Homotopy.evalZeroHomotopyEquiv",
+  "module": "Morse.Homotopy.ChangeOfBaseGroup",
+  "class": "construction",
+  "note": "free path space homotopy equivalent to Y via evaluation at 0"
+ },
+ {
+  "name": "Morse.Homotopy.pathTransHomotopyEquiv",
+  "module": "Morse.Homotopy.LoopSpace",
+  "class": "construction",
+  "note": "homotopy equivalence of path spaces Ω(X;a,b) ≃ Ω(X;a,c) by concatenation with a path"
+ }
+]

@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsFocalPointMult",
+ "name": "Morse.IsFocalPointMult",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Same comparison as for IsFocalPoint, with the multiplicity: project 'exists h : (q, e-q) in N, endpointNullity = mu and 0 < mu', blind '(q, e-q) in N and 0 < mu and nullity = mu'. Normal bundles and nullities agree (velocity tangent spaces = ranges of mfderiv val; ker((fst+snd) o D) ~ ker((fst+snd)|range D) for injective D), so equal for every slice M with k+w=n."
+}

@@ -1,0 +1,17 @@
+{
+ "id": "V14_13",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0, any RCLike 𝕜 incl. ℝ, any finite ι; SU parts need n ≥ 1): U(n) (and O(n)) is a Milnor.IsSliceSubmanifold as a regular level set of A ↦ AᴴA − I (with the regular-value statement), an IsMatrixGroup (unitary, closed under ·, ᴴ, Ad-invariant 𝔲, exp 𝔲 ⊆ U, dim), compact; SU(n) likewise via (AᴴA − I, Im det) on Re det > 0; Jacobi's formula d det_A(AX) = det A·tr X; det exp(tX) = 1 for tr X = 0. B (ℂ only, all n ≥ 0, entrywise norm): exp slice charts A ↦ g·exp A at every g ∈ U(n) / SU(n) (C^∞ diffeos with g exp A ∈ G ↔ A ∈ 𝔤), tangent spaces at I via curves = 𝔲, 𝔰𝔲, group axioms and smoothness of · and ᴴ, left-invariant fields with Lie bracket = commutator, Re tr(AB*) symmetric/bilinear/positive/bi-invariant, det exp X = e^{tr X} for all X, compactness. A ⇒ B fails: Milnor's exp chart (5),(6) is not in A (the project uses level sets instead) and would need the inverse function theorem for exp, local injectivity of exp on an Aᴴ/neg-invariant ball, and (for SU) smallness of tr A, plus norm transport to the entrywise norm; the Lie-bracket and metric claims are absent from A. Partial bridges are proved: compactness (compact_of_A) and det exp = e^{tr} for all X from A's traceless case (det_exp_of_A). B ⇒ A fails genuinely: B is silent on real matrices (O(n)), on the defining maps and their regular values, the Hermitian complement and project slice charts, Ad-invariance, and Jacobi's formula at general A. Harness note: no full direction can pass #rt_check, because A's statement itself mentions banned theorems (the type of isMatrixGroup_unitaryGroup is IsMatrixGroup isSliceSubmanifold_unitaryGroup …; same for SU).",
+ "B_issue": null,
+ "overlap": "n/a (neither direction proved). Partial lemmas compact_of_A and det_exp_of_A pass #rt_check (each takes only the conjunct it uses as hypothesis).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete matrix groups U(n), SU(n) ⊆ M_n(ℂ) (Mathlib unitaryGroup / specialUnitaryGroup as subsets of the ambient space); it does not quantify over abstract Riemannian manifolds. A is about slice submanifolds, but the addendum (abstract-manifold B) does not apply."
+}

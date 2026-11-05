@@ -1,0 +1,17 @@
+{
+ "id": "V11_1",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: on every abstract connected Hausdorff ℝⁿ-manifold with any smooth Mathlib RiemannianBundle metric and any Levi-Civita connection, Milnor-complete (ρ-Cauchy sequences converge): for every p, exp_p(v) is defined for all v (a geodesic on [0,1] with initial data (p, v)) and w ↦ exp_p(w) is C^∞ on ℝⁿ ≅ T_pM. A (universes 0): for slice submanifolds N ⊆ V with the induced metric only, and without completeness: multi-parameter smooth dependence of radial geodesics (raysGoodE_of_isGeodesicOn), a smooth local retraction onto N, a membership lemma for expDom, exp smooth near every point of its domain JOINTLY in (p, v) (local smooth extension to V × V), openness of the domain in TN, and C^∞ on the domain for the manifold structure of TN. A ⇒ B fails genuinely (abstract manifolds are not given embedded; no abstract exp in the project); B ⇒ A fails genuinely (setting; B is per base point and assumes completeness, A is joint in (p, v) on the open domain and has auxiliary lemmas). On embedded manifolds A ⇒ B_emb is proved; B_emb is exactly the per-point smoothness of exp_q on T_qN for complete connected N (A_pt), a consequence of A but not one of its conjuncts.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. For the embedded theorem B_emb_to_A_pt: 322 shared project theorems — the Chapter 7 local geodesic-flow ODE infrastructure (Flow.*, LocalSpray.*, IsBddLipschitz.*, exists_localFlow_exp, IsGeodesicFrom.exp_eq/exp_smul) reached through Bridge.expMap_eq and Hopf–Rinow (hopf_rinow, used for the completeness dictionary), slice-chart and tangent-projection lemmas. Not shared: raysGoodE_of_isGeodesicOn, RaysGoodE.step, exists_contDiffOn_exp, exists_retraction (the global smooth-dependence argument of A).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "Items/V11_1.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric), cov = Bridge.conn (B_to_B_emb via conn_isLC). Glue (namespace Emb): Milnor completeness of (↥N, ρ) ⇔ Morse.IsGeodesicallyComplete via Hopf–Rinow (adapted from Items/V7_29.lean), incl_expMap (blind exp = project exp, Bridge.expMap_eq), Dt/DtE (D_q : ℝⁿ ≃L T_qN), contMDiff_map_iff (a map ℝⁿ → ↥N is C^∞ iff it is C^∞ in V). Proved A_to_A_pt (from A's exists_contDiffOn_exp), B_emb_iff_A_pt (B_emb ⇔ A_pt := for complete connected N with model ℝⁿ, y ↦ exp_q(y) is C^∞ on all of T_qN), hence A_to_B_emb (#rt_check OK) and B_emb_to_A_pt (#rt_check OK). B_emb does not give any of A's conjuncts: joint smoothness in (p, v), openness of the domain, incomplete N, the retraction and membership lemmas. Only the induced connection."
+}

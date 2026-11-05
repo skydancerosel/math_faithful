@@ -1,0 +1,17 @@
+{
+ "id": "V10_13",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; BrokenSetup on a slice N ⊆ V, a < c): theorem_16_3_Omega/_count — if NO geodesic of Ω(N;p,q) has energy exactly a and every geodesic with E ≤ a has hessNullity 0, then {γ : PathSp N p q // E ≤ a} has Morse.IsFiniteCellComplexType with cells geodIndex (formula-defined energyHessian), sorted by energy, finitely many geodesics and counts. B (abstract complete Riemannian ℝⁿ-manifolds, any a): non-conjugacy along geodesics of length ≤ √a ⇒ finitely many geodesics in Ω* with E ≤ a, and Ω^a (blind OmLe, Milnor's d-topology) ≃ a finite Mathlib CWComplex with l-cells ↔ geodesics of variational index lam = l and E ≤ a. Differences beyond the setting: A assumes a is not a critical value (Milnor/B do not — A narrower there); the cell-complex notions (iterated adjunction vs CW: cellular approximation, V2_12 obstacle — genuine both ways); the index (lam of HessT vs formIndex energyHessian: analysis now in EnergyC2, dictionaries missing). Glue-only differences: nullity 0 ⇔ non-conjugacy (Thm 14.1/15.1, E = L² for geodesics), OmLe ⇔ PathSp subtype (metrics agree on ↥N, Items/V10_1.lean), geodesics in Ω* ⇔ break-point tuples (Lemma 16.1).",
+ "B_issue": null,
+ "overlap": "no direction proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V10_13.lean states B_emb (M = Bridge.Sub hN, cov = Bridge.conn) with B_to_B_emb; no direction proved. Even on ↥N: A ⇒ B_emb needs (genuine) IsFiniteCellComplexType ⇒ Mathlib CWComplex and the case of a critical value a (A has no conclusion there); plus lam 1 g = formIndex energyHessian (EnergyC2 + 2-parameter variation and TΩ dictionaries), OmLe ≃ {γ : PathSp // E ≤ a} (V10_1's edist_eq + lift), and geodesics in Ω* ↔ B.nodes via lemma_16_1. B_emb ⇒ A fails on the cell-complex notion (ordered adjunction) and A's arbitrary model Z / non-connected N / non-complete N (a BrokenSetup only needs S compact). Only the induced connection would be covered."
+}

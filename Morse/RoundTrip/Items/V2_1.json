@@ -1,0 +1,11 @@
+{
+ "id": "V2_1",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "Milnor's r_t (the blind DefRetract: a continuous family r_t with r₀ = id, r₁ into A, each r_t fixing A) is exactly the project's IsStrongDeformationRetract (a retraction r with a HomotopyRel from id to r rel A); both directions of this vocabulary match are proved. A ⇒ B: apply A with T = X, B = univ and transport through Set.univ ≃ₜ X. B ⇒ A: apply B to the subspace B with the set val⁻¹' A and transport through A ≃ₜ val⁻¹' A. B's set-identity clause {f ≤ a} = f⁻¹(-∞,a] holds by rfl (Morse.sublevel is the same set).",
+ "B_issue": null,
+ "overlap": "0 shared project theorems"
+}

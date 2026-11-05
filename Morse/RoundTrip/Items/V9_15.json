@@ -1,0 +1,21 @@
+{
+ "id": "V9_15",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B (abstract connected Riemannian ℝⁿ-manifolds, γ a geodesic): for a broken Jacobi field W₁ (pieces' DW₁/dt = D1 i) and W₂ ∈ TΩ_γ, the variational E_** IsHessT 1 γ W₁ W₂ has the value −2 Σ ⟨W₂(t_i), Δ_{t_i} DW₁/dt⟩ (and 0 when W₂ vanishes at the t_i) — so B contains Lemma 11.A and Theorem 13.1. A (universes 0, slice submanifolds, ANY γ ∈ Ω, no geodesic hypothesis): locality of the Jacobi operator, 0 is a Jacobi field, and the jump formula for the formula-defined energyHessian under a flexible hypothesis (X agrees near each non-break point with some Jacobi field). A ⇒ B and B ⇒ A fail genuinely: the setting; and A is more general (non-geodesic paths, locality lemmas without counterpart in B). On embedded manifolds B_emb is now PROVED OUTRIGHT (second attempt), so A ⇒ B_emb holds without using A.",
+ "B_issue": null,
+ "overlap": "Main directions: none proved. Embedded: A_to_B_emb shares 216 project theorems with A's proofs — energyHessian proof fields (secondVariation_eq_hessForm, hessForm_comm), jump/covD/curvR lemmas, piecewise lemmas; none of A's theorems is used.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "B_emb := B at M = Bridge.Sub hN, cov = Bridge.conn (stated in the first attempt, B_to_B_emb). A_to_B_emb proved (#rt_check OK) but WITHOUT using A: B_emb holds outright in the project — Emb.isHessT_iff (Lemma 11.A = Morse.exists_variation, EnergyC2, Theorem 13.1 = Morse.second_variation: every IsHessT 1 value is 2·secondVariation and one exists) and the formula dictionary Emb.sv_eq_rhs of Items/V8_13.lean (blind jumps D1 i(t_i) − D1 (i−1)(t_i) and piece integrals = the project's secondVariation); the piece integrals vanish by the blind Jacobi equation on each piece (D1 i = the piece's J', curvature value identified via Bridge.isCurvVal_iff and the velocity within a piece = within [0,1]). B_emb ⇒ A fails genuinely: A is about every path γ ∈ Ω (not only geodesics) and contains jacobiExpr_congr and isJacobiField_zero; B_emb ⇒ A restricted to geodesics would need the conversion of A's 'agrees near t with a Jacobi field' hypothesis into blind broken Jacobi pieces (not attempted).",
+ "uses_hypothesis_emb": {
+  "A_to_B_emb": false
+ },
+ "second_attempt": "EnergyC2 + the V8_13 Hessian and formula dictionaries: B_emb is now proved (outright, so A ⇒ B_emb holds vacuously w.r.t. A; flagged); was 'failed'. B_emb ⇒ A fails genuinely (A more general). A ⇔ B still blocked by the abstract setting."
+}

@@ -1,0 +1,22 @@
+{
+ "id": "V7_2",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): for a geodesic of a slice submanifold N ⊆ V on an OPEN set s: d/dt‖γ'‖² = 0, constant speed on preconnected s, length of γ on [a,b] ⊆ s is ‖γ'(t₀)‖(b − a), and t ↦ γ(at + b) is a geodesic on the preimage (affine reparametrization). B: for a geodesic of a Levi-Civita connection on an abstract ℝⁿ-manifold on any interval: constant speed r, signed arc length r(t − t₀), and t ↦ c(kt) a geodesic on {t | kt ∈ s}. A ⇒ B fails genuinely: the abstract proof needs abstract Lemma 8.3 (d/dt⟨V,W⟩ = ⟨DV/dt,W⟩ + ⟨V,DW/dt⟩ from Milnor-compatibility) and the chain rule for D/dt along reparametrized curves on abstract manifolds — absent (A's proofs use the ambient V). B ⇒ A fails: B does not specialize to N ⊆ V (no packaging of the induced connection as a Mathlib CovariantDerivative/RiemannianBundle); A's affine reparametrization t ↦ at+b and open-set (non-interval) domains are also beyond B.",
+ "B_issue": null,
+ "overlap": "no B_to_A proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V7_2.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric, ConnectedSpace) and cov = Bridge.conn (B_to_B_emb). A_to_B_emb proved (#rt_check OK, uses A's norm_deriv_eq and comp_mul_add): via the new dictionary lemma Emb.isGeodesic_iff_interior (blind geodesic on an interval s ⇔ smooth on s and Morse.IsGeodesicOn on interior s; endpoints by continuity, Emb.eqOn_of_interior) and Bridge.norm_eq/D_vel (blind speed = ‖derivWithin γ s‖): constant speed on interior s from A, extended to s by continuity; arc length by integrating it; homogeneity from A's comp_mul_add on interior s (k ≠ 0; interior commutes with the homeomorphism t ↦ kt) and constant curves (k = 0). B_emb_to_A_part proved (#rt_check OK): A's hasDerivAt_norm_sq, norm_deriv_eq, pathLength_eq in full (any model Z via ℝ^{dim Z}, non-connected N via the component N ∩ O of the geodesic, glue copied from Items/V7_28.lean), and comp_mul_add for b = 0 (with V, Z, W finite-dimensional). Not covered by B_emb: the translation t ↦ γ(t + b) in comp_mul_add (not in Milnor's statement). Limitation: only the induced connection.",
+ "embedded_uses_hypothesis": {
+  "A_to_B_emb": true,
+  "B_emb_to_A_part": true
+ },
+ "revised": "No verdict changed (A_to_B failed, B_to_A failed, incomparable). Added B_to_A_part : B → A_part (B_to_B_emb then B_emb_to_A_part, #rt_check OK): with RoundTrip/Bridge.lean, B does imply A's constant-speed, length and homogeneity (b = 0) clauses; B ⇒ A still fails only on the translation b in comp_mul_add (and comp_mul_add's lack of finite-dimensionality assumptions), which B does not state. The old 'why' sentence 'B does not specialize to N ⊆ V' is superseded."
+}

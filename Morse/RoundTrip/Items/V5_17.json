@@ -1,0 +1,17 @@
+{
+ "id": "V5_17",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A (no universe parameters; HypothesisN is vocabulary): (i) le_indexM_neg_normSq_sub: at a non-degenerate critical point of L_p on a complex submanifold of real dimension 2k, index(−L_p) ≥ k; (ii) for X compact, A ⊆ X closed, e : M ≃ₜ X − A (M a closed complex submanifold), ‖e⁻¹y‖ → ∞ at A and Hypothesis (N) (an open U ⊇ A deforming into A within X, A fixed pointwise): H_r(X, A; 𝕜) = 0 for r < k; (iii) Corollary 7.3 over a field for that pair. B: (B1) for any X, A with X − A ≅ M and a Lefschetz-duality isomorphism H_r(X, A; F) ≅ H_{2k−r}(X − A; F)^* (r ≤ 2k), H_r(A) → H_r(X) is bijective for r + 1 < k and onto for r + 1 = k; (B2) for X compact Hausdorff, A closed, X − A ≅ M and a neighbourhood U of A deforming into A within X with A only PRESERVED: π_r(X, A) = 0 for 1 ≤ r < k (compression criterion). A ⇒ B proved (#rt_check OK): B1 outright (A not used) from the duality, Morse.theorem_7_1 and the exact sequence of the pair; B2 from A's index bound (i) by re-running the Morse part of the project's proof of Theorem 7.4 (lemma_D_slab for −L_p, Milnor's 1/(1 + L_p), pushesInto_univ_of_isClosed), with ‖e⁻¹y‖ → ∞ derived from T2 + M closed (hinf_of_t2) and a collar reparametrisation G(s,c) = H(f(c/max(‖c‖, 1−s/2)), min(s, 2(1−‖c‖))) replacing (N)'s 'A fixed' by B's 'A preserved' — so the project's (N) is stronger than needed. B ⇒ A fails genuinely: B's homology statement (B1) is conditional on the duality isomorphism that A does without, B2 is about homotopy (no relative Hurewicz in Mathlib or the project) and assumes X Hausdorff, which A does not, and B says nothing about indices (i).",
+ "B_issue": null,
+ "overlap": "no B_to_A proved (A_to_B re-uses the project's Morse/homology infrastructure, e.g. exists_isMorseFunction_normSq_sub, exists_regular_levels, lemma_D_slab, sectionFun, theorem_7_1, subsetTripleLongExactSeq; #rt_overlap A_to_B lists 1264 shared declarations)",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "Not about Riemannian manifolds or connections: A and B concern complex submanifolds of ℂⁿ / ℂPⁿ, singular homology and relative homotopy; there is nothing to specialise to Bridge.Sub. Nothing added to the .lean file."
+}

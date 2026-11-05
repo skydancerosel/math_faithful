@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsHomotopyEquiv",
+ "name": "Morse.IsHomotopyEquiv",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Identical formulas: there exists a continuous g with g ∘ f ≃ id and f ∘ g ≃ id (Mathlib's ContinuousMap.Homotopic). agree is Iff.rfl, at universe 0."
+}

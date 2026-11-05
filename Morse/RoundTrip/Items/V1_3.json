@@ -1,0 +1,11 @@
+{
+ "id": "V1_3",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A ⇒ B: 'fderiv = 0 ⟺ all partials vanish' is linear algebra on the coordinate basis. For the second clause, the blind nested-partials matrix hmat equals the matrix of Morse.hessian = fderiv (fderiv f) (fderiv_clm_apply). Then isNondegenerate_hessian_iff_det_ne_zero and isNondegenerate_iff_nullity_eq_zero from A finish, together with the identity v ⬝ (H w) = H(v,w), which shows that B's nul is the project's nullity. B ⇒ A fails: A holds for an arbitrary normed space E (hessian_symm, index_isGreatest, and the nullity criterion for any finite-dimensional E), while B speaks only of ℝⁿ = Fin n → ℝ. B also makes no claim about the index (index_isGreatest has no counterpart).",
+ "B_issue": "B defines idx (Milnor's index) but asserts nothing about it, so the index part of Milnor's text is not formalized in B.",
+ "overlap": "n/a (B_to_A not proved)"
+}

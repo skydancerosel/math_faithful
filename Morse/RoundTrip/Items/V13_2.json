@@ -1,0 +1,17 @@
+{
+ "id": "V13_2",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: on every abstract connected complete Riemannian ℝⁿ-manifold with any Levi-Civita connection, if (i) Ω^d = E⁻¹[0, ρ(p,q)²] (its SeparationQuotient, i.e. paths on [0,1]) is a topological manifold and (ii) every non-minimal geodesic from p to q has blind index lam 1 γ ≥ λ₀, then π_i(Ω, Ω^d) = 0 for i < λ₀ (compression criterion RelPiTrivial on the blind Ω). A (universes 0): for slice submanifolds N ⊆ V with compact closed balls, (i') Ω^d = least-energy paths a RETRACT OF AN OPEN NEIGHBOURHOOD in Ω (Milnor's manifold hypothesis replaced by its Hanner consequence) and (ii') every unbroken geodesic not of least energy with formIndex(energyHessian) ≥ λ₀, every map from a compact P embedded in ℝ^{<λ₀} into Ω is homotopic rel h⁻¹(Ω^d) into Ω^d (and the same as compression of the inclusion). A ⇒ B fails genuinely: abstract manifolds; (i) ⇒ (i') is Hanner's theorem (metrizable manifold ⇒ ANR), not formalized; (ii) ⇒ (ii') needs blind lam (index of Milnor's variational E_**, choice function on TΩ) = formIndex(energyHessian), the unbuilt 2-parameter-variation/TΩ dictionary. B ⇒ A fails genuinely: A's hypothesis (i') is weaker than 'manifold', so B cannot be applied under A's hypotheses; A's conclusion covers arbitrary compact P ⊆ ℝ^{<λ₀} rel h⁻¹(Ω^d), not only cubes rel ∂; setting.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. A_to_B_emb': 584 shared project theorems — slice-chart, geodesic-flow/exp and Hopf–Rinow infrastructure (our proof uses hopf_rinow_of_isRiemComplete and isCompact_closedRiemBall_of_isRiemComplete; A's proof of 22.1 uses BrokenSetup/Corollary 10.8 built on the same flows), path-space metric lemmas, and proof fields of the vocabulary in the statement (energyHessian._proof_*, minPathsIncl._proof_1); #rt_check OK, none of 22.1's own argument (lemma_22_5, deform, exists_pushesInto_nodes) is shared.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V13_2.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric, ConnectedSpace), cov = Bridge.conn (B_to_B_emb via conn_isLC). A ⇒ B_emb is NOT dictionary glue: its hypotheses need Hanner's theorem and the index dictionary (see why). Proved instead (#rt_check OK, uses A's theorem_22_1): A_to_B_emb' — B_emb with (i), (ii) replaced by A's hypotheses (i') retract of an open neighbourhood in Morse.PathSp, (ii') project index, gives B's CONCLUSION RelPiTrivial (Om n p q) (OmD n p q) i for all i < λ₀ on the blind Ω. Glue: P = Iⁱ ⊆ ℝⁱ in theorem_22_1; MetricComplete ⇒ IsRiemComplete (Emb.isRiemComplete_of, from V7_29) ⇒ compact balls; minPaths ⊆ E⁻¹[0, ρ²] via a Hopf–Rinow minimal geodesic of energy ρ² (Emb.energy_le_of_mem_minPaths) and OmD ⊆ τ⁻¹(minPaths) by Schwarz (Emb.tau_mem_minPaths); the new transport lemma Emb.relPiTrivial_of_pushes moves maps Iⁱ → Ω to PathSp along τ and lifts A's homotopy back, defining G(t,x) = f x when H(t,x) is inseparable from τ(f x) and λ(H(t,x)) otherwise — continuous because τ∘G is pointwise inseparable from H and τ is inducing, fixed on ∂Iⁱ, energies preserved (Emb.energy_eq_of_inseparable). Ω ≃ₕ PathSp dictionary copied from Items/V10_19.lean. So on ↥N the conclusions match exactly; the gaps are only in the hypotheses (Hanner, index)."
+}

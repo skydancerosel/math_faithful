@@ -1,0 +1,18 @@
+{
+ "id": "V9_20",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; slice submanifolds, ANY smooth curve γ): with λ(τ) = indexUpTo τ = formIndex of the formula-defined energyHessian (of E_0^1) on fields of TΩ_γ vanishing outside [0,τ]: λ(1) = formIndex energyHessian; λ monotone for all real τ ≤ τ'; λ(τ) = 0 for 0 < τ ≤ h₀ = fineMesh (explicit). B (abstract connected Riemannian ℝⁿ-manifolds, geodesic γ): with λ(τ) = lam τ γ = bIndex (TOm τ γ) (HessT τ γ), the index of the choice function of Milnor's VARIATIONAL (E_0^τ)_** on the blind TΩ of γ|[0,τ]: monotone on (0,1], and = 0 on (0,δ) for some δ > 0. Same shape; the difference beyond the setting is the meaning of λ: identifying lam with indexUpTo needs a TΩ dictionary on [0,τ], Lemma 11.A and Theorem 13.1 for E_0^τ, and the joint C² regularity of u ↦ E_0^τ(α(u)) absent from the project (it is also what makes HessT τ well defined; without it even B's monotonicity does not follow, HessT τ' being a choice among realized values). Proved: A ⇒ B on ↥N under the bridge hypothesis LamEq (lam = indexUpTo on (0,1]), with δ = h₀. The converse fails even under LamEq: B lacks indexUpTo_one (definitional in B), the explicit h₀, τ outside (0,1] and non-geodesic curves. [Third attempt: the λ-identification (LamEq: blind variational lam = the project's indexUpTo / formIndex energyHessian) is now PROVED on ↥N with the induced connection (copy of Items/V9_23.lean's proof); the abstract verdict is unchanged — see embedded_special_case.]",
+ "B_issue": null,
+ "overlap": "A_to_B_emb (#rt_check OK): #rt_overlap lists 251 shared project theorems — the 245 of the conditional A_to_B_emb_of_lamEq (proof fields of indexUpTo/energyHessian/fieldsUpTo, slice-chart and jacBound/fineMesh lemmas) plus energyHessian_apply, secondVariation_congr, formIndex_le, le_formIndex, jump_congr and IsPiecewiseSmooth.intervalIntegrable_norm_deriv_sq used by the LamEq proof; none of the item's theorems.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "Items/V9_20.lean states B_emb (M = Bridge.Sub hN, cov = Bridge.conn) with B_to_B_emb. Proved under #rt_check: A_to_B_emb (unconditional, third attempt) and the earlier A_to_B_emb_of_lamEq (kept). LamEq (∀ τ ∈ (0,1], lam τ γ = Morse.indexUpTo hN (incl ∘ γ) hc τ) is now the theorem lamEq_holds, by the proof of Emb.lamEq of Items/V9_23.lean copied into namespace LamPf (Lemma 11.A and Theorem 13.1 = Morse.second_variation for E_0^τ on ↥N via extension of a variation of γ|[0,τ] by γ, EnergyC2's C² regularity of u ↦ E(α(u)), the TΩ(γ|[0,τ]) ⇔ fieldsUpTo τ dictionary toFA/φT, index transport bIndex_eq_formIndex_of); then Assertion (1) from indexUpTo_mono and Assertion (2) with δ = fineMesh from indexUpTo_eq_zero. B_emb ⇒ A still fails: B has no counterpart of indexUpTo_one (definitional in B), of the explicit h₀, of τ outside (0,1] or of non-geodesic curves. Only the induced connection is covered.",
+ "third_attempt": "LamEq proved (copy of Items/V9_23.lean's Emb.lamEq proof in namespace LamPf, blind vocabulary textually identical): new lamEq_holds and unconditional A_to_B_emb (#rt_check OK). Embedded special case: failed → A_to_Bemb_only. Abstract A ⇔ B unchanged (setting)."
+}

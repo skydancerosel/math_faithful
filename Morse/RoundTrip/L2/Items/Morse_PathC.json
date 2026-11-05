@@ -1,0 +1,11 @@
+{
+ "id": "Morse_PathC",
+ "name": "Morse.PathC",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are the subtype of C([0,1], V) of continuous paths in N from p to q, with the subspace topology of the compact-open topology; the types are definitionally equal and `agree : Morse.PathC N p q ≃ₜ T N p q` is `Homeomorph.refl`."
+}

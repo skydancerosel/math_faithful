@@ -1,0 +1,17 @@
+{
+ "id": "V7_18",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (riemDist: ℝ≥0∞-valued infimum of pathLength over piecewise smooth paths in N; riemDist_le_pathLength and riemDist_triangle at universe 0 for ANY subset N ⊆ V): riemDist ≤ pathLength, triangle inequality, points outside the normal ball of radius s are at distance ≥ s, and for slice submanifolds riemDist p q = 0 ⇒ p = q. B: for a CONNECTED abstract Riemannian manifold, any two points are joined by a piecewise smooth path and the real-valued ρ (sInf of arcLen) is a metric (≥ 0, ρ = 0 ↔ p = q, symmetric, triangle). A ⇒ B fails genuinely: A concerns subsets of an inner-product space with the ambient norm; an abstract Riemannian manifold is not given as such (Whitney does not preserve the metric, Nash isometric embedding is not available), and B's existence of joining paths in a connected manifold is not in A. B ⇒ A fails: B does not specialize to N ⊆ V without identifying ↥N's induced RiemannianBundle and B's arcLen of paths in ↥N with pathLength in V (missing bridge); A's triangle inequality and ≤ pathLength hold for arbitrary N (no manifold), and A allows disconnected N (riemDist = ⊤), where B's real ρ and ConnectedSpace do not apply; A has no symmetry claim.",
+ "B_issue": null,
+ "overlap": "no direction proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V7_18.lean: B does not involve a connection; B_emb := B for M = Bridge.Sub hN (model ℝⁿ, connected) with the induced metric (B_to_B_emb). A_metric := the triangle inequality for slice submanifolds (any model) ∧ A's eq_of_riemDist_eq_zero. Proved B_emb ↔ A_metric; A_metric_to_B_emb, A_to_B_emb and B_to_A_metric all #rt_check OK. A_metric → B_emb: B's joining paths need finiteness of riemDist on a connected N, re-proved from A's triangle inequality and straight segments in slice charts (Emb.local_path, Emb.fin; the project's riemDist_ne_top cannot be used, it rests on A's riemDist_triangle and riemDist_le_pathLength), then ρ = (riemDist).toReal (Bridge.rho_eq) gives ρ ≥ 0, ρ = 0 ↔ p = q (A's positivity; riemDist p p = 0 from a constant path), symmetry (Morse.riemDist_comm, outside the item) and the triangle inequality. B_emb → A_metric: for any slice submanifold via the component of the first point (paths in N from it stay in it, so its riemDist is N's: riemDist_eq_of_closed, mem_of_riemDist_ne_top from V7_28); finiteness from B's own joining paths. Not covered by B: riemDist_le_pathLength and the triangle inequality for arbitrary subsets N ⊆ V (no Riemannian content), and NormalCoord.ofReal_le_riemDist (the quantitative lower bound of Theorem 10.4). Overlap of B_to_A_metric: 59 project theorems, slice-chart infrastructure only."
+}

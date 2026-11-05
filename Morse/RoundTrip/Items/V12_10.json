@@ -1,0 +1,17 @@
+{
+ "id": "V12_10",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universe 0) = mem_centerCompl ∧ isCompl_center_centerCompl ∧ eq_zero_of_mem_centerCompl: for ANY finite-dim real Lie algebra with ad-invariant symmetric positive definite B, centerCompl hB (Mathlib's InvariantForm.orthogonal of the centre, a Lie ideal) is {X | ∀C∈𝔠, B C X = 0}, complements 𝔠, and has trivial centre — pure algebra. B: for a simply connected Lie group with bi-invariant metric, in 𝔤 with the metric at 1: (i) ⟨[X,Y],C⟩ = ⟨X,[Y,C]⟩ = 0, (ii) 𝔤' = 𝔠^⊥ closed under brackets, (iii) 𝔤 = 𝔤' ⊕ 𝔠 uniquely, (iv) G ≅ G'×ℝᵏ as Lie groups with G' compact and Lie(G') centre-free. B ⇒ A only vacuously. A ⇒ B fails genuinely: (iv) is Lie theory (simply connected groups ↔ algebras, compactness via 21.5/Myers) absent from the project. Bridge Balg_of_adInv (uses A, #rt_check OK): 21.3(a) for the metric at 1 (AdInv) ⇒ (i)–(iii); adInv_of_core: AdInv follows from Core plus existence of a Levi-Civita connection. A's third conjunct (𝔤' centre-free) corresponds only to part of (iv).",
+ "B_issue": null,
+ "overlap": "B_to_A: 4 shared [Morse.isAdInvariant_iff_lieInvariant, centerCompl.eq_1, centerCompl._proof_1, IsAdInvariant._proof_1] — unfolding of the vocabulary centerCompl only.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "Not applicable: the item's declarations (Morse.mem_centerCompl, isCompl_center_centerCompl, eq_zero_of_mem_centerCompl; vocabulary centerCompl) concern an abstract real Lie algebra L with a bilinear form (Morse/Chapter12/BiInvariant.lean); they are not about a slice submanifold. B quantifies over abstract Mathlib Lie groups (LieGroup 𝓘(ℝ,ℝⁿ) ∞ G) with a RiemannianBundle; Bridge.Sub packages slice submanifolds as Riemannian manifolds but carries no LieGroup structure, and the project's embedded matrix-group results (Morse/Chapter12/GroupGeodesics.lean, e.g. IsMatrixGroup.curvOp_eq_jacobiOp; SUIndex.lean for SU(n)) are not part of this item."
+}

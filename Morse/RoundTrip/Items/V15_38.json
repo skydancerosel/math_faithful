@@ -1,0 +1,16 @@
+{
+ "id": "V15_38",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): the intertwiner algebra (IsInterRelI.commute_exp; exists_killing_spaces_two: from intertwiners D_i between ONE piece with a₀ and pieces with b_i < a₀, Killing fields in isoAlg at parameters τ ∈ (0,1) of total multiplicity Σ_i((a₀ − b_i)/2 − 1)) and the index bound for an unbroken geodesic γ from J_k to −J_k in the stratum, NOT of least energy, lying in omegaComp(π m_{k+1} c/2): ⌊(ν − |c|)/4⌋ ≤ formIndex(energyHessian γ), ν m_{k+1} = n (two forms). B (k = 2, 6, any J ∈ Ω_k(n), the geodesic J exp(πtA) with a given splitting and integers a_h): 2·idxIn ≥ Σ_{a_h>a_j}(a_h − a_j − 2) for EVERY such geodesic, 4·idxIn ≥ r + Σa_h when some a_h = −3, and n = r m_k, with idxIn the blind Milnor index (sup of dimensions of spaces of variation fields each admitting a variation in Ω_k(n) with d²E/du² < 0). A ⇒ B fails genuinely: (i) no dictionary between B's idxIn and the project's formIndex(energyHessian) on the stratum's path space (the second-variation formula and the Index Theorem in B's hand-built setting would have to be proved); (ii) even with it, B's first claim is Milnor's full pair count over all ordered pairs and all geodesics (minimal ones included), which A never states: A only gives the coarser consequence (ν − |c|)/4 ≤ λ for non-minimal geodesics, and its Killing-field lemma handles a single a₀ at a time; (iii) A's geodesics are abstract unbroken geodesics of the stratum, B's are given in the normal form J exp(πtA) with a splitting. B ⇒ A only vacuously: B has neither formIndex nor Killing fields; A is re-proved outright by copying the project's chain commute_exp → exists_killing_spaces_two → killing_of_twoPieceData → le_formIndex_of_not_minimal_omega_two → omega_hidx_two (renamed; otherwise non-item lemmas). Each side has content the other lacks.",
+ "B_issue": null,
+ "overlap": "B_to_A: 1599 shared project theorems — essentially the whole proof of the index bound (exists_killing_spaces_gen, exists_decomp_two, exists_twoPieceData_of_decomp, the index theorem for formIndex/energyHessian, Jacobi-field and slice-submanifold machinery); the four item theorems themselves are avoided by renamed copies.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable"
+}

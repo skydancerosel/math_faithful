@@ -1,0 +1,17 @@
+{
+ "id": "VA_4",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A = telescopeProj_comp_telescopeMap ∧ IsHomotopyEquiv.of_telescopeMap (universes 0). A ⇒ B uses A's second clause after transporting along the identity homeomorphism tel S ≃ₜ telescope S (Homeomorph.setCongr; the sets are equal but not definitionally): fSig = telescopeMap and telProj = telescopeProj up to it, IsHE ↔ IsHomotopyEquiv, IsHDL S ↔ Monotone S ∧ IsHomotopyDirectLimit S; B's formula for f_Σ and p_Y ∘ f_Σ = f ∘ p_X are rfl. B ⇒ A holds on the common domain of increasing sequences (B_to_A_mono, uses B), but A's of_telescopeMap is stated for arbitrary (non-monotone) sequences, which B (whose IsHDL includes monotonicity) does not cover; the general case is Milnor's 2-out-of-3 argument (f ≃ f∘p_X∘s = p_Y∘f_Σ∘s), proved outright in B_to_A without using B. So A is formally slightly more general, by a hypothesis-free argument; on Milnor's setting they are equivalent.",
+ "B_issue": null,
+ "overlap": "B_to_A / B_to_A_mono share only basic telescope lemmas (mem_telescope, mem_telescope_map, telescopeMap/telescopeProj proof fields) and the generic IsHomotopyEquiv.comp / of_homotopyEquiv / exists_homotopyEquiv / of_homotopic with the formal proofs.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "General topology (telescopes, homotopy equivalences); no Riemannian manifold."
+}

@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsCriticalPath",
+ "name": "Morse.IsCriticalPath",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "c in Morse.pathSpace N p q for some p, q (Milnor: a critical path is an element of Omega)",
+ "difference": "The project does not require c in Omega: for c not in Omega there is no variation of c (every path of a variation lies in Omega) and the project condition holds vacuously, while the blind one (which requires c in Omega(N; c 0, c 1)) fails; proved with N = empty, c = 0.",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both quantify over fixed-end-point variations of c and ask HasDerivAt (u -> E(alpha u)) 0 0 with E = integral over [0,1] of ||deriv||^2. Project variations live on an open U containing 0, blind ones on (-eps, eps): a variation on U restricts to one on some (-eps, eps) in U and u -> E(alpha u) is the same function, so the derivative condition transfers; the strip-smoothness formulations (break set vs consecutive points of {0,1} u (B n (0,1))) and the two path spaces are equivalent (strips_iff, isPiecewiseSmooth_iff). Hence agree_of on Omega and differ off Omega."
+}

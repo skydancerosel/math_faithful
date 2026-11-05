@@ -1,0 +1,11 @@
+{
+ "id": "Morse_nullity",
+ "name": "Morse.nullity",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "The two null-space submodules are equal (ker of v ↦ H v vs {v | ∀ w, H v w = 0}), so the finranks are equal, with the same 0 encoding for an infinite-dimensional null space."
+}

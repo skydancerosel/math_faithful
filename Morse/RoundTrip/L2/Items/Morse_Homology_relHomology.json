@@ -1,0 +1,11 @@
+{
+ "id": "Morse_Homology_relHomology",
+ "name": "Morse.Homology.relHomology",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are relChains R ⋙ homologyFunctor C (down ℕ) n, and the two relChains are definitionally equal (Morse_Homology_relChains). The equality of functors TopPair ⥤ C is rfl."
+}

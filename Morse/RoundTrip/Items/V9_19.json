@@ -1,0 +1,18 @@
+{
+ "id": "V9_19",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; slice submanifolds, ANY smooth curve γ, any 0 < τ ≤ 1, IsFine subdivision = pieces ≤ h₀): Lemma 15.4 for the formula-defined energyHessian — equal index on fieldsUpTo τ and on brokenSpace (lemma_15_4), null space on fieldsUpTo τ = image of the null space on brokenSpace (lemma_15_4_ker), finiteness (indexUpTo_lt_top) — plus eq_jacobi_of_jumps_zero (a broken Jacobi field without jumps is a Jacobi field) and finrank_ker_broken (nullity on brokenSpace = conjMultiplicity 0 τ). B (abstract connected Riemannian ℝⁿ-manifolds, geodesic γ, τ = 1, Milnor's FineSub): bIndex and nullity setDim(bNullSet) of HessT 1 γ — the CHOICE FUNCTION of the variational relation IsHessT (junk 0 when no variation realizes a pair) — agree on TOm 1 γ and on BrokenSet, and the index is ≠ ⊤. Genuine differences beyond the setting: the two Hessians (identification needs the missing joint C² regularity of u ↦ E(α(u)), the V8_13/V8_14/V9_5 obstacle), the two fineness notions (unrelated), and A's extra conjuncts (jumps, nullity = multiplicity, all τ). The linear algebra does match: proved in the file that for a bilinear form H and a subspace T, bIndex T H = formIndex (H.restrict T) and setDim (bNullSet T H) = rank (ker (H.restrict T)).",
+ "B_issue": null,
+ "overlap": "no direction proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V9_19.lean states B_emb (M = Bridge.Sub hN, cov = Bridge.conn) with B_to_B_emb; no direction proved. Proved generic glue (namespace-level section LinAlg): bIndex_eq_formIndex_restrict (B's index on the carrier of a subspace T = Morse.formIndex of the restricted bilinear form), bNullSet_eq_image_ker and setDim_bNullSet_eq (B's nullity = rank of the kernel of the restriction) — so B's two equalities have exactly the shape of lemma_15_4 / lemma_15_4_ker once HessT 1 γ is a bilinear form on the blind TΩ matching energyHessian under a TΩ dictionary. That identification is the blocker: 2-parameter variation dictionary, Lemma 11.A on ↥N, Theorem 13.1, and the absent joint C² regularity of u ↦ E(α(u)) (new analysis); also FineSub vs IsFine (non-conjugacy of minimal GoodNbhd segments, unproved).",
+ "second_attempt": "Still blocked; the remaining blocker is FINENESS, not the Hessian. The TΩ side is now identified on ↥N: B's index of HessT 1 on TOm 1 γ is the project's formIndex of energyHessian (Emb.lamEqOne in Items/V9_23.lean) and B's nullity there is the rank of hessNullSpace = conjMultiplicity (Emb.setDim_bNullSet in Items/V9_6.lean); generic transport lemmas for index/nullity under an injective linear map onto the blind set are in Items/V9_23.lean (bIndex_eq_formIndex_of, setDim_bNullSet_eq_rank). The BrokenSet side is not: B_emb's BrokenSet is for Milnor's FineSub subdivision (minimal pieces in GoodNbhds), whereas lemma_15_4 / lemma_15_4_ker / finrank_ker_broken are for IsFine (pieces ≤ h₀ = Morse.fineMesh); neither implies the other in the project, and Lemma 15.4 for FineSub subdivisions (no conjugate points on minimal pieces, positivity on T') would be new mathematics. Stopped as instructed."
+}

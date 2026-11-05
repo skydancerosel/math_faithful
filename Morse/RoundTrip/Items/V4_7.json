@@ -1,0 +1,11 @@
+{
+ "id": "V4_7",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "Same lemma, different objects. A (in the project's parametrization xParam, no normalization, any v ⊥ T_qM, nullity of dE in the canonical structure on N): focalMult(q + t v) is 0 for t = 0 and dim eigenspace(S_v, 1/t) otherwise; focal points on the line are q + K⁻¹v with K ≠ 0 an eigenvalue of the shape operator; multiplicities over any finite set of t sum to ≤ k; dx maps null(g − tℓ_v) onto eigenspace(S_v, 1/t). B: for an ARBITRARY coordinate patch x with g(u₀) = I, unit normal v, K_i the eigenvalues of (v·ℓ_ij) computed in x, and nullity of dE in an ARBITRARY slice structure hNN on N. A ⇒ B fails: it needs (1) that the second fundamental form, hence the shape operator, does not depend on the parametrization (the project says explicitly this is not proved), and (2) that the nullity of dE does not depend on the smooth structure chosen on N. Both are true standard facts but are real content absent from A, not glue. B ⇒ A fails: B says nothing about the project's canonical objects, non-unit v, the eigenspace identification, or k = 0. (One link is proved in V4_6: with g = I in xParam, principalCurvatures are B's K_i.)",
+ "B_issue": null,
+ "overlap": "n/a (neither direction proved)"
+}

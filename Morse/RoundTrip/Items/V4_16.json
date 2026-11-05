@@ -1,0 +1,12 @@
+{
+ "id": "V4_16",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": false,
+ "why": "A (universes at 0) is Whitney for COMPACT Hausdorff manifolds (any finite-dimensional model E) into SOME ℝᴺ: a smooth closed embedding with injective differential whose image is a slice submanifold; an embedding into ℝ^{K+1}, K ≥ 1, with room n + m = K + 1 for any prescribed n; and a diffeomorphism onto a compact slice submanifold. B is Whitney as Milnor quotes it: every second-countable smooth n-manifold (non-compact allowed) embeds into exactly ℝ^{2n+1} as a closed smooth embedding (Mathlib IsSmoothEmbedding). A ⇒ B fails genuinely: neither the non-compact case nor the dimension bound 2n+1 is in A (nor in Mathlib/the project). B ⇒ A is proved only vacuously: A is re-proved outright from Mathlib's weak compact Whitney theorem exists_embedding_euclidean_of_compact and the project's isSliceSubmanifold_range / diffeomorphRange (outside the item); B is not used (its model ℝⁿ and Mathlib-immersion conclusion would need a model change and an immersion-to-slice bridge). Content: B is much stronger mathematically than A; A only has the slice-submanifold packaging, which is glue.",
+ "B_issue": "The item title says 'compact' but B formalizes the general statement; harmless (B contains the compact case).",
+ "overlap": "B_to_A: 38 shared: the slice-submanifold-from-embedding infrastructure (isSliceSubmanifold_range, exists_sliceChart_range, diffeomorphRange, contMDiff_ofInjective_symm) — i.e. B_to_A is the project's own proof",
+ "uses_hypothesis": {"A_to_B": false, "B_to_A": false}
+}

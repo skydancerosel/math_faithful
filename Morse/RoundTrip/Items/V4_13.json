@@ -1,0 +1,12 @@
+{
+ "id": "V4_13",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "B (Corollary 6.7 for a closed slice M ⊆ ℝ^{K+1}, dim ≥ 1): some smooth f on M has no degenerate critical point and compact sublevel sets. A ⇒ B is A's exists_isMorseFunction_isCompact_sublevel. B ⇒ A is proved, but only partly from B: the existence clauses (Morse f with compact sublevels; with finitely many critical points per sublevel; finitely many critical points on compact M) follow from B (dim 0 / empty M by L_p) plus the project's IsMorseFunction.finite_inter_setOf_isCriticalPointM (critical points of a Morse function are isolated). A's other two clauses carry Milnor's proof, not his statement: compactness of sublevels of L_p on closed M (elementary, re-proved) and 'a.e. p gives a Morse L_p with compact sublevels', which B_to_A takes from the project's ae_isMorseFunction_normSq_sub (V4_12) without using B. As propositions they are equivalent given the project; in content A additionally contains the a.e.-p form of the construction (Theorem 6.6 for closed M) and finiteness of critical points per sublevel.",
+ "B_issue": null,
+ "overlap": "B_to_A: 292 shared, essentially all through the outside theorem ae_isMorseFunction_normSq_sub (Sard, focal points, Lemma 6.5 machinery) used for the a.e. clause, plus the isolated-critical-point lemma; the B-derived existence clauses share only infrastructure",
+ "uses_hypothesis": {"A_to_B": true, "B_to_A": true}
+}

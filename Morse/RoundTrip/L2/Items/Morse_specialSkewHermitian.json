@@ -1,0 +1,11 @@
+{
+ "id": "Morse_specialSkewHermitian",
+ "name": "Morse.specialSkewHermitian",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are the real Lie subalgebra of M_n(ℂ) (commutator bracket) with carrier {X | Xᴴ = −X ∧ tr X = 0}; same carrier and same instances, so equal by LieSubalgebra.ext (needs `open scoped Morse.MatrixInner` to find the commutator Lie ring)."
+}

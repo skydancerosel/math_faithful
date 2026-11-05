@@ -1,0 +1,18 @@
+{
+ "id": "V15_5",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": false,
+ "why": "A (universe 0, arbitrary sequence J, k+1 ≥ 1): P, J' ∈ Ω_{k+1} ⇒ −(PJ'P) ∈ Ω_{k+1}. B: (1) for p, X ∈ Ω_k (any k ≥ 0) Milnor's reflection pX⁻¹p ∈ Ω_k; (2) every component of Ω_k is a symmetric space for the induced metric (connected; at each q an isometry of the component fixing q and reversing every geodesic of the component through q). A ⇒ B (1) is proved (A_to_B1, rt_check OK): X⁻¹ = −X for a complex structure, and k = 0 (Ω_0 = O(n), outside A) is closure of O(n) under products and transposes. A ⇒ B (2) fails genuinely: A is only the algebraic invariance; (2) needs that the reflection maps the component onto itself and is an isometry (elementary) and, crucially, that it reverses geodesics, i.e. uniqueness of geodesics of Ω_k (a smooth submanifold) for the blind induced-metric notion IsGeodOn — not in A. B ⇒ A: the complex-structure part from B (1) at k = 1 (empty hypothesis) after reindexing to Fin (card ι), using pX⁻¹p = −(pXp); the anticommutation with J_1..J_k is checked by word algebra (B cannot be applied at k ≥ 2 because A's sequence J need not be an anticommuting family).",
+ "B_issue": null,
+ "overlap": "B_to_A: 1 shared project theorem, Morse.mul_assoc_of_eq (internal lemma of the project's word_simp tactic).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": true,
+  "A_to_B1": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete real matrices (Mathlib orthogonalGroup as a subset of M_n(ℝ), complex structures, Ω_k(n) as subsets; the induced-metric notions are already embedded); it does not quantify over abstract Riemannian manifolds."
+}

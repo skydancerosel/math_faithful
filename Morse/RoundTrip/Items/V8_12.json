@@ -1,0 +1,17 @@
+{
+ "id": "V8_12",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0), for slice submanifolds N ⊆ V: curvR_of_mem (unfolding of the definition curvR); curvature_identity, (13.3) for ANY smooth surface F in N on an open O ⊆ ℝ² (P ∂_u(P ∂²_tF) = P ∂_t(P ∂_t∂_uF) + R(∂_tF, ∂_uF)∂_tF at p₀); IsVariation.hasDerivAt_jump, d/du Δ_x(∂α/∂t) = Δ_x(∂/∂t ∂α/∂u) for 1-parameter variations, as AMBIENT vectors (normal component included). B, for abstract connected ℝⁿ-manifolds with any Levi-Civita connection and 2-parameter variations (U ⊆ ℝ²): on open pieces D/∂u₁ of the accelerations at u = 0 is D²W₁/dt² + R(V,W₁)V (covariant derivative along r ↦ α(r e₀, s) on (-δ, δ)), and at interior break points D/∂u₁ Δ_tV = Δ_t(DW₁/dt). A ⇒ B fails genuinely (abstract manifolds). B ⇒ A fails genuinely: B is intrinsic, so it says nothing about the normal component of d/du Δ_x(∂α/∂t) contained in A's hasDerivAt_jump, and it gives (13.3) only for surfaces that are variations of paths (A's curvature_identity is for arbitrary local surfaces; recovering it from B would need cut-off/chart constructions of variations). curvR_of_mem is provable outright.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. Embedded theorem A_to_B_emb: 150 shared project theorems — slice-chart lemmas, the strip API (contDiffOn_pdT, piece_derivWithin_Ici/Iic, derivWithin_Ici/Iic_eq_pdT, hasDerivWithinAt_pdT, uniqueDiffOn_strip), contDiffOn_partialX/Y, prj/tanProj lemmas, and the second-fundamental-form/dN lemmas (secondFundForm_comm, curvOp_apply, dN_*) reached through Bridge.D_curvExpr; the arguments of curvature_identity and hasDerivAt_jump themselves are used only through the hypothesis A.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "Items/V8_12.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric, ConnectedSpace), cov = Bridge.conn (B_to_B_emb via conn_isLC). A_to_B_emb proved (#rt_check OK): the first claim from A's curvature_identity applied to F(r,τ) = α(r e₀, τ) on (U₁ × open piece) (Emb.curv_part), the second from A's hasDerivAt_jump applied to the 1-parameter variation r ↦ α(r e₀, ·) (Emb.jump_part); A's curvR_of_mem is used through the hypothesis (Bridge.isCurvVal_iff uses Morse.curvR_of_mem in its proof, so its forward half is re-proved here as Emb.D_of_isCurvVal). New dictionary lemmas (Emb): contMDiffWithinAt_map_iff (maps E → ↥N), D_mfderiv_map (mfderiv of maps into ↥N read in V), D_mfderivWithin_curve (one-sided velocities Vplus/Vminus read in V), D_varField (blind varField α 0 ↔ deriv along r ↦ α(r e₀, τ)), isVariation_line (blind 2-parameter IsVarSub ⇒ project IsVariation along e₀), P_eq_prj. B_emb ⇒ A not attempted: A's ambient jump derivative (normal part) has no intrinsic counterpart, and A's curvature identity for arbitrary local surfaces would need building variations through charts/cut-offs (new constructions, not dictionary glue). Limitation: only the induced connection, only model ℝⁿ."
+}

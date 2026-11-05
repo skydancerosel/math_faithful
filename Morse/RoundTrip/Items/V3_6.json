@@ -1,0 +1,11 @@
+{
+ "id": "V3_6",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "A states Reeb's theorem only for compact slice submanifolds N ⊆ V (modelled on some Z: for f = F|N with F smooth on V, the dim-0 case, and f smooth on N ⊆ ℝᴷ⁺¹). B states it for an abstract compact smooth manifold modelled on ℝⁿ. Both directions go through the project's Whitney embedding (exists_diffeomorph_sliceSubmanifold, a separate item), transporting f, its critical points and their non-degeneracy along the diffeomorphism (WhitneyInvariance lemmas). A ⇒ B: embed M as a slice submanifold of ℝᴷ⁺¹ and apply reeb_of_contMDiff, or reeb_of_finrank_eq_zero in dimension 0. B ⇒ A: re-embed N as a slice submanifold modelled on ℝⁿ, which avoids changing the model space Z by hand, and apply B. The dimension-0 conjunct (f arbitrary, no compactness) needs a short check: all points are critical, so N is finite hence compact, f is smooth and every Hessian is non-degenerate. Up to the embedding theorem, the formal and the abstract statements are the same.",
+ "B_issue": null,
+ "overlap": "B_to_A: 63 shared project theorems, all chart/slice-submanifold/Hessian infrastructure (IsSmoothCoord.*, SliceChart.*, IsSliceSubmanifold.chartedSpace/isManifold/contMDiff_val, contMDiff_comp_val, localRep lemmas, isNondegenerate_iff), pulled in through the invariance lemmas and the embedding theorem; none of Reeb's proof (Morse charts at extrema, Theorem 3.1, the gluing lemma) is reused"
+}

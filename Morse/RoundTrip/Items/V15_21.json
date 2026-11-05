@@ -1,0 +1,17 @@
+{
+ "id": "V15_21",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A (universes 0) is a generic theory and never mentions Ω_k(n): the slice-submanifold criterion isSliceSubmanifold_of_param (local parametrizations ⇒ slice submanifold, any normed spaces) and, for any IsTotGeo set N of orthogonal matrices (slice submanifold with skew spaces T x, dim T x = dim N, x exp A ∈ N, A ∈ T(x exp A)): T_xN = x·T x, t ↦ x exp(tA) is a geodesic of N on ℝ, unbroken geodesics [0,1] → N from p are p exp(tV), exp_x(xA) = x exp A, geodesic completeness. B: Ω_k(n) ⊆ O(n) is a smooth embedded submanifold (blind slice charts, components of varying dimension) and totally geodesic in Milnor's footnote sense (every blind induced-metric geodesic of Ω_k(n), on every [a,b], is one of O(n)). A ⇒ B: the submanifold part uses A's isSliceSubmanifold_of_param on the project's parametrization (a,w) ↦ x(exp a + w) of each stratum (with project lemmas outside A: Assertions 1–2, local logarithm, stratum open in Ω_k(n)) and converts slice charts to blind charts; Milnor's comparison with O(n) is not in A (IsTotGeo lists N's own geodesics) and is proved directly: X = γᵀγ' and X' lie in 𝒯_γ, the Ω_k-geodesic equation against γX' gives X' = 0, so γᵀγ'' is symmetric, i.e. normal to O(n). B ⇒ A only vacuously (A re-proved outright; it is generic, B is about Ω_k(n)). So A's role in A ⇒ B is limited to the inverse-function-theorem criterion.",
+ "B_issue": null,
+ "overlap": "B_to_A (vacuous, outright copies): 201 shared project theorems — slice-submanifold/tangent-space infrastructure (Milnor.ContMDiff.isLocalDiffeomorphAt_of_isInvertible_mfderiv, tangentSubspace/finrank_tanAt, hasDerivAt_mem_tangentSubspace, IsGeodesicOn API incl. uniqueness IsGeodesicOn.eqOn/ode_eventuallyEq, IsGeodesicFrom.exp_eq, mulLeftIso, inner_mul_left_of_unitary); no item theorem.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete real matrices (Mathlib orthogonalGroup as a subset of M_n(ℝ), Ω_k(n) as subsets; the induced-metric notions TanSet/IsGeodOn/IsPathIn/lenM/IsMinGeodIn are already embedded); it does not quantify over abstract Riemannian manifolds."
+}

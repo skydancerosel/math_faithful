@@ -1,0 +1,12 @@
+{
+ "id": "V4_17",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "Both are Corollary 6.7 for a compact manifold (universes of A at 0). A: every compact Hausdorff smooth manifold with any finite-dimensional model E (no second countability assumed) has a Morse function with finitely many critical points. B: compact, Hausdorff, second countable, model ℝⁿ: a smooth f with no degenerate critical points and compact sublevel sets (automatic by compactness). A ⇒ B: E = ℝⁿ, sublevels closed in a compact space. B ⇒ A: move M to a compact slice submanifold N ⊆ ℝ^{K+1} by the project's Whitney theorem exists_diffeomorph_sliceSubmanifold (V4_16; N is second countable, so B's extra hypothesis costs nothing), apply B there, pull back by IsMorseFunction.comp_diffeomorph_symm; the finiteness of critical points (in A, not in B) is the project's IsMorseFunction.finite_setOf_isCriticalPointM. Content is the same; A's 'finitely many critical points' is a standard consequence on compact M.",
+ "B_issue": null,
+ "overlap": "B_to_A: 113 shared: Whitney embedding (exists_embedding_euclidean, exists_sliceChart_range, diffeomorphism-onto-image), diffeomorphism invariance of Hessians (hessianM_comp_symm_eq, diffeoCoord) and finiteness of critical points; not the a.e.-L_p argument (Theorem 6.6), which is replaced by B",
+ "uses_hypothesis": {"A_to_B": true, "B_to_A": true}
+}

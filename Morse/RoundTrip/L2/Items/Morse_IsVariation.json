@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsVariation",
+ "name": "Morse.IsVariation",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Same data (U open containing 0, alpha u t in N on U x [0,1], end points alpha u 0 = alpha 0 0 and alpha u 1 = alpha 0 1). Smoothness: the project asks C^infty on every closed strip U x [s,t] in U x [0,1] with no break point inside, the blind file on the strips between consecutive points of {0,1} u (B n (0,1)); equivalent (strips_iff: a break-free [s,t] lies between the last point <= s and the first point >= t, which are consecutive). Equal for all arguments."
+}

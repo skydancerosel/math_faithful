@@ -1,0 +1,18 @@
+{
+ "id": "V6_13",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; IsSymmetric, bracket are definitions): abstract Mathlib connections (any model): Milnor-symmetric (X⊢Y − Y⊢X = mlieBracket X Y, for fields differentiable at the point) ↔ torsion = 0; embedded N ⊆ V: the ambient bracket dY(X) − dX(Y) of tangent fields is tangent, acts on functions as the Poisson bracket, and the induced connection is symmetric. B: on an abstract ℝⁿ-manifold, (i) Mathlib's mlieBracket acts on smooth functions as the Poisson bracket [X,Y]f = X(Yf) − Y(Xf); (ii) for a smooth connection, IsSymm (smooth fields) ↔ Γᵏᵢⱼ = Γᵏⱼᵢ in every chart extChartAt p. A ⇒ B fails genuinely: (i) is in A only for embedded N (dN_bracket), not for Mathlib's mlieBracket; (ii) needs Christoffel symbols, vanishing brackets of chart coordinate fields and tensoriality/locality of an abstract connection — none in the project ('no Christoffel symbols'). B ⇒ A vacuous: A re-proved outright (Mathlib torsion_eq_zero_iff; embedded clauses re-done from secondFundForm_comm and symmetry of second derivatives, outside the item).",
+ "B_issue": null,
+ "overlap": "B_to_A: 142 shared — secondFundForm_comm/secondFundForm_eq_sub_tanProj, dN_clm_apply, dN_comp_val, exists_contDiffOn_rep and slice-chart/Gram-projection infrastructure (the project's own proof re-done)",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V6_13.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric), clause (ii) for cov = Bridge.conn (B_to_B_emb via Bridge.conn_isGlobalConn). Dictionary (namespace Emb): dN_D' (mfderiv = dN ∘ D), dirDeriv_eq (B's X f = dN f (amb X)), D_mlieBracket' (Mathlib's mlieBracket read in V = Morse.bracket of the ambient fields, from Bridge.D_mlieBracket), liftF; for clause (ii): coordField_eventuallyEq (B's ∂ᵢ of extChartAt p = Mathlib's mpullback of the constant field eᵢ near each point of the source), mdifferentiableAt_coordField (Mathlib's MDifferentiableAt.mpullback_vectorField), mlieBracket_coordField (∂ᵢ, ∂ⱼ commute: Mathlib's mpullback_mlieBracket + bracket of constant fields = 0). A_to_B_emb (uses A): clause (i) ⇔ A's dN_bracket for model ℝⁿ (poisson_iff_A813); clause (ii) for conn: Γ-symmetry from A's leviCivita_sub_leviCivita applied to the (locally smooth) coordinate fields + vanishing coordinate brackets (gam_symm); the other side IsSymm conn is Bridge.conn_isSymm. B_to_A813 (uses B's clause (i)): A's dN_bracket for model ℝⁿ. Both #rt_check OK. Not covered by B_emb: A's isSymmetric_iff_torsion_eq_zero (abstract Mathlib connections, any model), bracket_mem and leviCivita_sub_leviCivita (B's clause (ii) at conn would give IsSymm conn only from an independent proof of Γ-symmetry of the induced connection, e.g. symmetry of second derivatives of the chart parametrization — not done), and arbitrary model Z. Limitation: clause (ii) only for the induced connection, not every smooth connection on ↥N (B quantifies over all; the Γ ⇔ symmetric equivalence for arbitrary cov needs locality/tensoriality of abstract connections).",
+ "overlap_embedded": "B_to_A813: 93 shared — tangent-projection/tanCoord/slice-chart infrastructure only; none of dN_bracket's proof (exists_contDiffOn_rep, dN_clm_apply, dN_comp_val, isSymmSndFDerivAt) or the second fundamental form is shared."
+}

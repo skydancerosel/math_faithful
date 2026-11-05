@@ -1,0 +1,20 @@
+{
+ "id": "V6_22",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; sectionalCurvature is a definition): pure algebra for any trilinear R on a real inner product space satisfying (1)–(3): sectional curvature ⟨R(X,Y)X,Y⟩/(‖X‖²‖Y‖²−⟨X,Y⟩²) is invariant under (X,Y) ↦ (aX+bY, cX+dY), ad−bc ≠ 0; −R also satisfies (1)–(3); sign conversion. B: for the Levi-Civita connection of an abstract ℝⁿ-manifold, ⟨R(X,Y)X,Y⟩_p for orthonormal X_p, Y_p depends only on the plane span{X_p,Y_p} (any smooth extensions). Proved here: A_and_tensor_to_B — A ∧ TensorHyp ⇒ B, where TensorHyp says the curvature at p is a trilinear map T on T_pM with IsCurvatureTensor T (abstract Lemma 9.1 + Lemma 9.3 (1)–(3)); the proof is A's sectionalCurvature_smul_add after writing an orthonormal pair of the same plane as an invertible combination (exists_coeffs). So A ⇒ B fails exactly on the differential geometry (tensoriality and (1)–(3) for abstract manifolds; the project has them only for N ⊆ V). B ⇒ A fails: A is outright-provable algebra about arbitrary tensors; B says nothing about them. Neither side formalizes Milnor's identification with the Gaussian curvature of the geodesic surface.",
+ "B_issue": null,
+ "overlap": "no B_to_A proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "Items/V6_22.lean, section 'The embedded special case'. B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric) and cov = Bridge.conn (B_to_B_emb: a genuine instance via Bridge.conn_isLC). A_to_B_emb proved (#rt_check OK, uses A's sectionalCurvature_smul_add): on ↥N the hypothesis TensorHyp that A lacks for abstract manifolds holds — the blind curvature of Bridge.conn read in V is Morse.curvOp (new lemma Emb.D_curv, rearranging the blind `curv` into Bridge.D_curvExpr), i.e. the trilinear Morse.curvTensor hN p with IsCurvatureTensor (Morse.isCurvatureTensor_curvTensor); K := sectionalCurvature (curvTensor hN p) (D_p A, D_p B), and exists_coeffs + sectionalCurvature_smul_add transport it to any orthonormal pair of the same plane. B_emb ⇒ A not proved and not expected: A is algebra on arbitrary tensors of arbitrary inner product spaces (invariance under GL₂, −R satisfies (1)–(3), sign conversion); B_emb only asserts that ⟨R(A,B)A,B⟩ of the induced connection depends on the plane. Limitation: only the induced connection, not every Levi-Civita connection on ↥N (uniqueness of the Levi-Civita connection is not in the Bridge). Neither side formalizes the Gaussian-curvature identification.",
+ "embedded_uses_hypothesis": {
+  "A_to_B_emb": true
+ }
+}

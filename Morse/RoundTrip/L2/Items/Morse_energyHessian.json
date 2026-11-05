@@ -1,0 +1,11 @@
+{
+ "id": "Morse_energyHessian",
+ "name": "Morse.energyHessian",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Project: E_** = 2·secondVariation (Milnor's Theorem 13.1 right side, with jump terms) as a bilinear form on pathTangent, for any γ ∈ Ω (no geodesic hypothesis, as in the blind). Blind: bilinOf of 2∫₀¹(⟨P W₁', P W₂'⟩ − ⟨R(γ',W₁)γ',W₂⟩). Equal for every γ ∈ Ω: the project's Proposition 13.A (secondVariation_eq_hessForm, integration by parts) turns secondVariation into ∫(⟨covD W₁, covD W₂⟩ − ⟨curvR(γ',W₁)γ',W₂⟩), whose integrand agrees a.e. with the blind one via the dictionary (P = prj everywhere; R = curvR at tangent arguments, γ' tangent wherever γ is differentiable); hence the blind formula is bilinear and bilinOf takes the mk₂ branch. Factor 2 matches (Milnor's E has no ½)."
+}

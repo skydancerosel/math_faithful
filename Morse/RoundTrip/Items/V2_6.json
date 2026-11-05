@@ -1,0 +1,11 @@
+{
+ "id": "V2_6",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A proves Theorem 3.2 only for f : E → ℝ, E a finite-dimensional inner-product space: an embedded cell χ, an SDR onto M^{c-ε} ∪ χ(e^λ), the homotopy equivalence, and the pushout form. B is Theorem 3.2 (homotopy equivalence with an adjunction space) plus the final assertion (SDR onto M^{c-ε} ∪ e^λ for some Morse chart) on an abstract, possibly non-compact manifold. A ⇒ B fails: the manifold case is genuinely absent (no embedding of non-compact manifolds, no Theorem 3.1 on abstract manifolds). B ⇒ A fails: A also states that the concrete milnorMu is a Milnor function, and the handle lemma for every split Morse chart with large target and every μ. B only asserts existence of one chart and small ε, and says nothing about μ.",
+ "B_issue": null,
+ "overlap": "n/a (neither direction proved)"
+}

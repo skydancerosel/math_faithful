@@ -1,0 +1,18 @@
+{
+ "id": "V7_7",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": false,
+ "why": "A (universes 0; IsGeodesicFrom/expDom/exp definitions: exp_q v = γ(1) for a chosen geodesic γ on an open (-δ,1+δ) with γ0=q, γ'0=v, junk q): exp_q v = γ(1) for every such γ, exp_q 0 = q (q ∈ N), exp_q(tv) = γ(t) on (-δ,1+δ), a geodesic on (0,1) that is a smooth curve in N is the ray t ↦ exp_{γ0}(tγ'0) on [0,1], and a membership criterion for expDom. B: abstract manifold, LC connection, exp via geodesics on the CLOSED [0,1] (velocity within [0,1], HEq): (i) exp_q v = γ(1) and exp_q(tv) = γ(t) on [0,1], (ii) uniqueness of such γ on [0,1], (iii) exp_q defined for ‖v‖ small. A ⇒ B fails genuinely: B is about an abstract Hausdorff ℝⁿ-manifold with an arbitrary smooth RiemannianBundle and an arbitrary Levi-Civita CovariantDerivative (Milnor's sense), which the project's slice submanifolds with the induced metric do not cover (no Nash embedding, no abstract geodesic theory). B ⇒ A is proved (B_to_A, via RoundTrip/Bridge.lean on the connected components of N, re-modelled on ℝᵐ): B's (ii) gives exp_eq (hence exp_zero, exp_smul); exists_initial_ray and mem_expDom_of_isGeodesicOn add the project's Lemma 10.2 (item V7_6) for extending closed geodesics and for local existence near 0.",
+ "B_issue": null,
+ "overlap": "B_to_A: 302 shared project theorems — the local geodesic ODE (Flow.*, LocalSpray.*, IsBddLipschitz.*, lemma_10_2, via the rescaled uniform local existence Emb.localFlow'), isGeodesicOn_of_locally, IsGeodesicOn.eqOn/comp_mul_add, isGeodesicFrom_of_isGeodesicOn/const, slice-chart infrastructure: used to extend a closed-interval geodesic past its ends and for local existence near 0. None of the item's theorems; exp's well-definedness (exp_eq, hence exp_zero, exp_smul) comes from B's uniqueness (ii).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": true
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V7_7.lean: B_emb := B for M = Bridge.Sub hN (model ℝⁿ, connected, induced metric) and cov = Bridge.conn. A_to_B_emb (#rt_check OK): (i)/(ii) from A's exists_initial_ray (a blind geodesic on [0,1] read in V is the ray t ↦ exp_q(t D v)), exp_smul (rays in expDom) and exp_eq (Emb.expMap_eq': Bridge.expMap_eq re-proved with exp_eq as a hypothesis, since Bridge.expMap_eq uses the banned exp_eq); (iii) (exp_q defined for small v) is not in A and is proved outright from Morse.lemma_10_2. B_emb_to_A (#rt_check OK as B_to_A): B's uniqueness on [0,1] on the component of q gives exp_eq/exp_zero/exp_smul for every slice submanifold (B_emb_to_A_exp), and exists_initial_ray / mem_expDom_of_isGeodesicOn follow with Emb.extend_closed' (V7_20's extend_closed with the uniform local existence taken from lemma_10_2 instead of exists_localFlow_exp, which uses exp_eq). So B_emb ↔ A. Limitation: only the induced connection on ↥N.",
+ "revised": "B_to_A changed from failed to proved (relation incomparable → A_narrower): with RoundTrip/Bridge.lean, B specializes to the connected components of every slice submanifold (re-modelled on ℝᵐ). B's (ii) (uniqueness of geodesics on the closed [0,1]) gives A's exp_eq, hence exp_zero and exp_smul (the project's proofs); A's exists_initial_ray then follows from the extension of a closed geodesic past its ends (from Morse.lemma_10_2 rescaled, item V7_6) plus exp_smul, and mem_expDom_of_isGeodesicOn from Lemma 10.2 plus exp_eq. The earlier verdict 'B ⇒ A fails' was for lack of the bridge. A ⇒ B still fails genuinely (abstract manifolds, arbitrary metric/LC connection; no Nash embedding)."
+}

@@ -1,0 +1,17 @@
+{
+ "id": "V14_29",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "A (no universes; the def unitaryOneHomeomorph read as ∃ U(1) ≃ₜ S¹ with g ↦ det g): π_1(S¹, 1) ≃ ℤ; U(1) ≃ₜ S¹ by det; π_i(U(m), 1) ≃ π_i(S¹, 1) for i < 2, m ≥ 1; Theorem 23.5 at base point 1 for j+1 ≤ 2m: Subsingleton for even j, ≃ ℤ for odd j. B: U(1) ≃ₜ S¹ by g ↦ g₀₀, and for j+1 ≤ 2m at every base point, π_j U(m) ≃ Unit (even) / ≃ ℤ (odd). A ⇒ B: det of a 1×1 matrix is its entry; left translation moves base points; subsingleton + inhabited ≃ Unit. B ⇒ A: π_1(S¹) ≃ ℤ and π_0(S¹) = * are B at m = 1 transported along B's U(1) ≃ₜ S¹; the rest is B at base point 1. Same content (sets only, as both state).",
+ "B_issue": null,
+ "overlap": "Both directions: 39 shared project theorems, all generic transport infrastructure behind piEquivOfHomeomorph (homotopy-equivalence invariance, change of base point: cubeDist/changeBase/frame lemmas, bijective_homotopyGroupMap_of_homotopyEquiv); no theorem of the item's mathematical proof.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about the concrete matrix groups U(m), SU(m) ⊆ M_m(ℂ) (Mathlib unitaryGroup / specialUnitaryGroup), the circle and the Grassmannian of projections; it does not quantify over abstract Riemannian manifolds."
+}

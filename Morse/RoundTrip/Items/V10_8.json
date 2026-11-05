@@ -1,0 +1,17 @@
+{
+ "id": "V10_8",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: on every abstract connected complete Riemannian ℝⁿ-manifold, for Milnor's data (Setup16), B^a is a strong deformation retract of Ω^a for every a < c and B of Int Ω^c (IsDefRetract: some homotopy H continuous on [0,1] × X for the d-topology, H_0 = id, H_1(X) ⊆ A, H_s(X) ⊆ X, H_s|A = id). A (universe 0; deform is vocabulary; homotopyEquivBroken, a def, read as Nonempty of its type): for slice submanifolds N ⊆ V and a Morse.BrokenSetup, the project's deform satisfies r_0 = id, E(r_u γ) ≤ E(γ), r_1(Int Ω^c) ⊆ B, the Theorem 16.2 package for Ω^a (continuity on [0,1] × Ω^a, r_1(Ω^a) ⊆ B, r_u fixes B), and Ω^a ≃ₕ B^a. A ⇒ B fails genuinely (abstract manifolds; and A states only the Ω^a ⊇ B^a case, not B ⊆ Int Ω^c, although continuousOn_deform outside this item covers it). B ⇒ A fails genuinely: four of A's five conjuncts are about the specific map deform; only Ω^a ≃ₕ B^a is comparable.",
+ "B_issue": null,
+ "overlap": "No direction proved; no #rt_check.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V10_8.lean: B_emb := B for M = Bridge.Sub hN, cov = Bridge.conn (B_to_B_emb). A ⇒ B_emb would be H(s, ω) := deform s ω transported to the blind Ω — and H_s|B^a = id holds exactly because deform is γ off [0,1] (deform_of_mem_brokenPaths, conjunct 5 of theorem_16_2_deformationRetract) — but only for data coming from a Morse.BrokenSetup: B's Setup16 does not provide one (normal-radius condition BrokenSetup.normal not implied by ShortGood; IsShortJoin on an open set; compact S), so in general this needs new geometry. For BrokenSetup data it is dictionary glue, not done (estimated several hundred lines): (i) blind Ω ↔ Morse.PathSp, the blind topology being induced by ω ↦ incl ∘ ω (from Items/V10_1.lean Emb.edist_eq) and lifting back via Bridge.lift/isPW_lift; (ii) blind B (blind geodesic on each closed [tᵢ,tᵢ₊₁]) ↔ BrokenSetup.brokenPaths (endpoint condition by continuity, as V8_10's isGeodesic_iff_isUnbrokenGeodesic does on [0,1]); (iii) ℕ- vs Fin-indexed subdivisions; energy via Bridge.energy_eq. B_emb ⇒ A cannot give A's statements about deform."
+}

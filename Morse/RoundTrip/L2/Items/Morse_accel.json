@@ -1,0 +1,11 @@
+{
+ "id": "Morse_accel",
+ "name": "Morse.accel",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Project: covD c (deriv c) t = prj (c t) (deriv (deriv c) t); blind: P_{c(t)}(deriv (deriv c) t) with P the projection onto the span of velocities. As for covD: the projections agree at c t in N (tangentSpace_eq) and both are 0 at c t not in N. Equal for all arguments, including the break-point and end-point junk values (two-sided deriv on both sides)."
+}

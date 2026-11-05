@@ -1,0 +1,17 @@
+{
+ "id": "V6_15",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; velX, velY, covDerivX, covDerivY definitions): for a slice submanifold N ⊆ V and a smooth surface s : ℝ² → N, D/∂x := P ∘ ∂/∂x (computed in V), D/∂x W = P(∂W/∂x) for differentiable W, and D/∂x ∂s/∂y = D/∂y ∂s/∂x (from the symmetry of ambient second derivatives). B: Lemma 8.7 for a smooth symmetric Mathlib connection on an abstract ℝⁿ-manifold, where D/∂x is any operation obeying Milnor's axioms (a)-(c) along x ↦ s(x,y) (∃ D); B asserts both covariant derivatives exist at (x₀,y₀) and agree. A ⇒ B fails genuinely: needs abstract Lemma 8.1 (existence of D along curves via Christoffel symbols and patching) and the coordinate computation with Γᵏᵢⱼ = Γᵏⱼᵢ — absent from the project. B ⇒ A fails: B's abstract objects do not specialize to the embedded covDerivX (no bridge packaging N with the induced connection as a Mathlib CovariantDerivative).",
+ "B_issue": null,
+ "overlap": "no B_to_A proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V6_15.lean, section 'The embedded special case': B_emb := B's conclusion for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric) and cov = Bridge.conn (B_to_B_emb via Bridge.conn_isGlobalConn, Bridge.conn_isSymm). Proved B_emb ↔ A87n, where A87n = A's covDerivX_velY (Lemma 8.7) for model Z = ℝⁿ; hence A_to_B_emb (uses A's covDerivX_velY) and B_to_A87n (uses B), both #rt_check OK. Dictionary lemmas (namespace Emb; candidates for Bridge.lean): contMDiffWithinAt_map_iff / D_mfderiv_map (from Items/V8_12.lean), contMDiff_surf_iff (smooth s : ℝ² → ↥N ⇔ smooth in V), D_sx / D_sy (blind ∂s/∂x, ∂s/∂y read in V = Morse.velX / velY), contMDiff_lineX/Y, isIntv_univ, contDiff_velX/Y, and covDerivAt_x_iff / covDerivAt_y_iff (B's CovDerivAt — existence of an operation with Milnor's axioms along the coordinate line with value u at the point — ⇔ D u = Morse.covDerivX hN s (velY s) p, resp. covDerivY hN s (velX s) p, via Bridge.hasCovDeriv_iff/hasCovDeriv_iff'). Not covered by B_emb: A's covDerivX_eq (DW/∂x = P(∂W/∂x) for differentiable W), a definitional unfolding. Overlap of B_to_A87n: 20 project theorems (contDiff_partialX/Y and slice-chart lemmas), not the Schwarz step partialY_partialX. Limitation: only the induced connection, not every smooth symmetric connection on ↥N (B quantifies over all of them)."
+}

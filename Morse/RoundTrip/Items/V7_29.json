@@ -1,0 +1,17 @@
+{
+ "id": "V7_29",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: for every abstract connected Hausdorff ℝⁿ-manifold with ANY smooth Mathlib RiemannianBundle metric and ANY Levi-Civita CovariantDerivative (Milnor's sense), geodesic completeness (exp_q defined on all of T_qM via geodesics on [0,1]) ⇔ (M, ρ) Cauchy-complete (real-valued ρ = inf of Riemannian arc lengths). A (universes 0): for slice submanifolds N ⊆ V with the induced metric only, the TFAE of metric completeness, geodesic completeness, 'exp_p total for one p' and 'ρ-bounded sets have compact closure in N', plus (complete case) extension of geodesics to ℝ, Theorem 10.9 (minimal geodesics of length ρ) and Heine–Borel. A ⇒ B fails genuinely: abstract Riemannian manifolds are not given as isometrically embedded submanifolds (no Nash embedding) and the project has no abstract geodesic theory. B ⇒ A fails genuinely: A's Theorem 10.9, compact-closure/Heine–Borel, one-point criterion and geodesic extension are not consequences of B's two-way implication. On embedded manifolds the core claims coincide: proved B_emb ⇔ A12 (B for M = ↥N with induced metric and the induced connection Bridge.conn ⇔ A's (1)⇔(2) for model ℝⁿ), hence A ⇒ B_emb and B ⇒ A12, both #rt_check OK.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. For the embedded-case theorem B_to_A12: 429 shared project theorems — the exp/geodesic-flow ODE infrastructure (Flow.*, LocalSpray.*, IsGeodesicFrom.*, IsGeodesicOn.eqOn), slice-chart lemmas, riemDist_ne_top and path-length lemmas, reached through exists_initial_ray and RoundTrip/Bridge.lean; none of the Hopf–Rinow argument itself (theorem_10_9, isGeodesicallyComplete_of_isRiemComplete, corollary_10_10, isRiemComplete_of_forall_isCompact_closure are not shared).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V7_29.lean: B_emb := B's conclusion for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric) and cov = Bridge.conn (B_to_B_emb: a genuine instance of B via conn_isLC). Dictionary lemmas Emb.geodComplete_iff (GeodComplete conn ↔ IsGeodesicallyComplete hN; the direction 'geodesic on closed [0,1] ⇒ expDom' uses exists_initial_ray, which the Bridge's expMap_eq docstring says is missing) and Emb.metricComplete_iff (via Bridge.rho_eq and riemDist_ne_top on preconnected N). B_emb_iff_A12, A_to_B_emb (uses A's hopf_rinow), B_to_A12 (uses B). Limitation: only the induced connection, not every IsLC connection on ↥N (uniqueness of the Levi-Civita connection is not in the Bridge); A12 only for Z = ℝⁿ."
+}

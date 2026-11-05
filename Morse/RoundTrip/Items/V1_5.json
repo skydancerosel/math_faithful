@@ -1,0 +1,11 @@
+{
+ "id": "V1_5",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A ⇒ B: (1) the blind hmat is the matrix of Morse.hessian. hessian_comp (from A) gives H_{f∘φ}(v,w) = H_f(Dφ v, Dφ w), and with Dφ bijective non-degeneracy transfers; det ≠ 0 ⟺ non-degenerate comes from the project lemma isNondegenerate_hessian_iff_det_ne_zero. (2) chartAt p is a smooth coordinate (via A's isSmoothCoord_iff_mem_maximalAtlas), and the derivative at p of the preferred chart is the identity when the model is ℝⁿ. B's matrix identity then reduces to hessianM_eq_chartAt plus v⬝(Hw) = H(v,w). B ⇒ A fails: A covers arbitrary coordinate systems y into any normed E' (index, nullity, non-degeneracy, critical points all invariant), arbitrary model spaces, and the maximal-atlas characterisation. B has only (1) for ℝⁿ and (2) for the preferred chart.",
+ "B_issue": "Clause (2) only uses the preferred chart extChartAt p, whose derivative at p is the identity for a manifold modelled on ℝⁿ. Against the project's chart-based hessianM it is close to definitional and does not express 'in any local coordinate system'.",
+ "overlap": "n/a (B_to_A not proved)"
+}

@@ -1,0 +1,11 @@
+{
+ "id": "V4_6",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "A: the shape operator S_v on T_qM = range dx (⟪S_v a, b⟫ = ℓ_v(dx⁻¹a, dx⁻¹b)) is self-adjoint, and the multiplicity of K among principalCurvatures (Mathlib's sorted eigenvalues of S_v) is dim eigenspace(S_v, K). B: for any C² immersion x with g(u) = I and unit normal v, an eigenvalue list K of (v·ℓ_ij) exists (charpoly = ∏(X − K_i)) and is unique up to permutation; radii are reciprocals. Neither direction transfers anything: B holds outright (Mathlib's Hermitian charpoly_eq and roots of ∏(X − C a)); A is re-proved in B_to_A' from the project's d2Param_symm and inner_shapeOp_dParamEquiv plus Mathlib's card_filter_eigenvalues_eq. Vocabulary check (not part of A): if g = I in the project's parametrization xParam and v ⊥ T_qM, then principalCurvatures hM q v satisfies B's IsPrincCurv (the matrix of S_v in the orthonormal basis dx(e_i) is B's (v·ℓ_ij)). B's notion in an arbitrary parametrization agrees with the project's only via parametrization-independence of ℓ, which the project does not prove (cf. V4_7). Technical: principalCurvatures contains the proof isSymmetric_shapeOp, so checks run on A'_to_B / B_to_A' (A ↔ A' by proof irrelevance).",
+ "B_issue": "B's existence/uniqueness does not use g = I or ‖v‖ = 1; Milnor's normalization only matters for comparing with an invariant notion, which B does not state.",
+ "overlap": "B_to_A': 55 shared: d2Param_symm, inner_shapeOp_dParamEquiv, finrank_tanSpace and slice-chart/parametrization infrastructure (Tub.*, secondFF/shapeOp definitional proofs), i.e. the project's own short proof of isSymmetric_shapeOp"
+}

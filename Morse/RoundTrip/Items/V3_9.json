@@ -1,0 +1,11 @@
+{
+ "id": "V3_9",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "All listed declarations (LongExactSeq, FiltrationHomology, morseNumber, altSum, FiltrationHomology.ofSteps) are definitions, so A = True. B holds outright: the rank clause is Module.finrank_eq_rank, and exactness of the singular-homology sequence of a triple of subsets, with its final → 0, comes from the project's TopTriple.exact₁/₂/₃ and epi_map₂_zero. These are proved without Morse.LongExactSeq. Vocabulary check: B's range = ker conditions (plus surjectivity of H₀(X,Z) → H₀(X,Y)) are exactly the fields of Morse.LongExactSeq (bExact_of_les, lesOfBExact). The project's FiltrationHomology abstracts the homology of a filtration to any such family of finite-dimensional groups. B's R_λ = finrank of relHomology, and C_λ (an ncard of critical points of index λ) are not project notions: the project's morseNumber is the sum of slab dimensions Σ_k dim H_i(X_{k+1},X_k), identified with a critical-point count only under a cell hypothesis (morseNumber_eq_card).",
+ "B_issue": null,
+ "overlap": "0 shared project theorems (B_to_A is trivial); A_to_B uses the project's TopTriple exactness lemmas, which are not among the item's declarations"
+}

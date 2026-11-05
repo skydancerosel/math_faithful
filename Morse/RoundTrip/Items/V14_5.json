@@ -1,0 +1,17 @@
+{
+ "id": "V14_5",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "Same computation. A (universes 0; jacobiMat = ¼[[A,W],A] with scalar (1/4 : ℂ), suDiag = diag(iπk_j), both vocabulary and equal to the blind Kop / milnorA): for any finite index type, ANY integers k_j and ANY complex matrix W, K_A(W)_{jl} = (π²/4)(k_j − k_l)²w_{jl}, plus the commutator formula [diag d, W]_{jl} = (d_j − d_l)w_{jl}. B: the same entry formula for n×n matrices, only for W ∈ 𝔰𝔲(n) and odd k_j with Σk_j = 0. A ⇒ B: rewrite Kop = jacobiMat, milnorA = suDiag, and apply A entrywise. B ⇒ A only vacuously (A re-proved outright, it is a two-line computation): B's restrictions cannot be removed from B itself — with k_j odd, k_j − k_l is always even, so the formula for odd differences is not an instance of B, and the general commutator formula is not in B.",
+ "B_issue": null,
+ "overlap": "1 shared project item, Morse.jacobiMat._proof_1 (an auxiliary term of the definition jacobiMat, vocabulary); no theorem shared.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete matrix groups U(n), SU(n) ⊆ M_n(ℂ) (Mathlib unitaryGroup / specialUnitaryGroup as subsets, lengths as Euclidean lengths of curves in M_n(ℂ)); it does not quantify over abstract Riemannian manifolds."
+}

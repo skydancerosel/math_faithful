@@ -1,0 +1,11 @@
+{
+ "id": "Milnor_SliceChart",
+ "name": "Milnor.SliceChart",
+ "agreement": "differ",
+ "hypotheses": null,
+ "difference": "The project's SliceChart carries extra data: a base point x0 in S n source (documented in its docstring). So it is the type of pointed slice charts: Milnor.SliceChart I Z W S ≃ Σ φ : T, ↥(φ.source ∩ S) (proved, `equiv`); the forgetful map to T has range the charts whose domain meets S (`range_toT`). For S = ∅ the project type is empty while T contains the empty chart, so no equivalence exists (`differ`). The chart data themselves agree (PartialDiffeomorph = OPH + ContMDiffOn both ways; pointwise slice condition ⇔ image condition).",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Beyond the chart, the project structure records a base point x0 ∈ S in the domain, so the two types differ in cardinality (e.g. both empty vs nonempty for S = ∅). This is a documented packaging convention: the base point never constrains the chart, it is only used to define the junk value of the inverse chart, and IsSliceSubmanifold (proved equal to the blind notion) asks for charts around a point of S, which supplies it."
+}

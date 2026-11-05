@@ -1,0 +1,12 @@
+{
+ "id": "V4_19",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "A (universes at 0) is formula (3) 'without homology' for abstract compact manifolds: Σ(-1)^λ C_λ(f) is the same for all Morse f and equals eulerNumberM (defined from one Morse function), = #M in dim 0, is a diffeomorphism invariant, and equals the Poincaré–Hopf number (IsEulerNumber) of any embedded copy N ⊆ ℝ^{K+1}, which exists. B is stated on a compact slice submanifold N with homology: χ(N;ℚ) = Σ(-1)^λ C_λ(Φ|N), ind(grad f) = (-1)^λ at a non-degenerate critical point, and some/every tangent field with finitely many zeros has index sum χ(N;ℚ). Both directions are proved (so equivalent given the project), but each imports content the other lacks from outside the item. A ⇒ B needs homology (sum_bettiNumber_eq_sum_critCount', to identify eulerNumberM with χ(N;ℚ)), the Poincaré–Hopf existence theorem exists_isEulerNumber, and the gradient-index lemma indexN_tangentialGradient — none is in A (A is used for IsEulerNumber = eulerNumberM = Σ C_λ). B ⇒ A needs Whitney (exists_diffeomorph_sliceSubmanifold), the extension lemma exists_contDiff_comp_val_eq, existence of Morse functions, diffeomorphism invariance of C_λ, and re-proves the dim-0 clause; B supplies the identification of all alternating counts with χ(N;ℚ) and of Euler numbers with χ(N;ℚ). Content: B has homology and the gradient index; A has abstract manifolds, dim 0, diffeomorphism invariance.",
+ "B_issue": "B's χ(N) sums Betti numbers only up to dim N (correct for a manifold) and uses finrank, so it does not assert finite-dimensionality of H_λ(N;ℚ).",
+ "overlap": "B_to_A: 494 shared, all through outside lemmas: Whitney embedding, existence of Morse functions (Sard/L_p chain), tubular-neighbourhood extension (exists_contDiff_comp_val_eq), tangential-gradient finiteness used in Glue.eq_of_isEulerNumber; not poincare_hopf, indexN_tangentialGradient or the homology comparison",
+ "uses_hypothesis": {"A_to_B": true, "B_to_A": true}
+}

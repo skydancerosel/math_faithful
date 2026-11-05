@@ -1,0 +1,11 @@
+{
+ "id": "Morse_telescope",
+ "name": "Morse.telescope",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "⋃ n, A n ×ˢ Icc n (n+1) and {z | ∃ n, z.1 ∈ A n ∧ n ≤ z.2 ≤ n+1} are the same subset of X × ℝ for every sequence A, monotone or not (Morse.mem_telescope)."
+}

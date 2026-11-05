@@ -1,0 +1,17 @@
+{
+ "id": "V12_5",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universe 0) is Morse.curv_halfLie: for ANY real Lie algebra L, curv (halfLie L) X Y Z = ¼⁅⁅X,Y⁆,Z⁆ with curv D X Y Z = −D X (D Y Z) + D Y (D X Z) + D ⁅X,Y⁆ Z — the Jacobi-identity computation with D = ½[ , ] built in. B: on a Lie group with a bi-invariant metric and Levi-Civita connection, Milnor's field curvature curvF cov X_u X_v X_w = ¼[[X_u,X_v],X_w] as fields. B ⇒ A only vacuously (Jacobi). A ⇒ B fails: B needs (d) X ⊢ Y = ½[X,Y] on the group, i.e. X ⊢ X = 0 (geodesics, V12_2), absent from the project. Dictionary proved: under (d), curvF cov X_u X_v X_w = liv (Morse.curv (Morse.halfLie 𝔤) u v w) (curvF_liv_of_d; the project's curv is exactly Milnor's field formula on left-invariant fields); bridge B_of_d (uses A, #rt_check OK): (d) on every bi-invariant group ⇒ B. So A is exactly B's algebraic part; the gap is the geometric input (d).",
+ "B_issue": null,
+ "overlap": "B_to_A and B_of_d: 6 shared [Morse.halfLie_apply, Morse.halfLie._proof_1..5] (the definition of halfLie and its unfolding lemma; curv_halfLie itself avoided).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "Not applicable: the item's declarations live in Morse/Chapter12/BiInvariant.lean and concern an abstract real Lie algebra L with a bilinear form and an abstract bilinear 'connection' D : L →ₗ L →ₗ L; they are not about a matrix group as a slice submanifold. (The project's embedded matrix-group version of 21.1–21.3, Morse/Chapter12/GroupGeodesics.lean, e.g. IsMatrixGroup.curvOp_eq_curv_halfLie, is not part of this item.) B quantifies over abstract Lie groups with a Mathlib RiemannianBundle, not over Bridge.Sub."
+}

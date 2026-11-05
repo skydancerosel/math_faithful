@@ -1,0 +1,17 @@
+{
+ "id": "V15_41",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": true,
+ "why": "A (no universes; the proof terms isAnticommFamily_bottJ / stab_mem_omega occurring inside the types of omegaPhi_stab and omegaPhi_bottJ_mem_omegaComp replaced by definitionally equal non-item proofs, checked by A_holds) is FINITE-STAGE algebra for Milnor's explicit J'_α = bott16 α: J_α = J'_α ⊕ ⋯ ⊕ J'_α anticommute; J ↦ J ⊕ J'_k maps Ω_k(16r) → Ω_k(16r+16) and fixes J_k; φ_{r+1}(J' ⊕ J'_{k+1})(t) = φ_r(J')(t) ⊕ (cos πt J'_k + sin πt J'_{k+1}) for all t; and, for k = 2, 6, the component label is stabilization-invariant and J_{k+1} ∈ Ω_{k+1}(16r)^{(0)}. B is for EVERY family J'_1..J'_8 on ℝ¹⁶: the J_α anticommute and J^{(r+1)} = J^{(r)} ⊕ J'; J ↦ J ⊕ J'_k is a topological EMBEDDING Ω_k(16r) → Ω_k(16(r+1)); and the stage inclusions Ω_{k+1}(16r) → ΩΩ_k(16r) induce a continuous injective map of the DIRECT LIMITS Ω_{k+1} → lim ΩΩ_k(16r) (direct-limit topologies, Milnor's d-topology on the path spaces). B ⇒ A: B at bott16 (transported along I16 ≃ Fin 16) gives the anticommuting family, the membership J ⊕ J'_k ∈ Ω_k and J_k ⊕ J'_k = J_k (k ≠ 0); the φ-identity (for all real t, while B only compares on [0,1]), the label invariance and Ω^{(0)} membership are not in B and are re-proved outright. A ⇒ B fails: A is for one family and has no embedding, no direct limits, no continuity. B(1), (2) hold for every family by generic project lemmas (blockDiagonal, fromBlocks_mem_omega) plus an outright continuous left inverse; B(3) is believed true (stage maps continuous in the d-topology — the speed term is constant, the sup-term needs short paths in Ω_k(16r) — compatible with the bonding maps by A's φ-identity, injective by evaluating at t = 1/2), but needs the colimit construction and the d-topology glue, not formalized in the project.",
+ "B_issue": null,
+ "overlap": "B_to_A: 921 shared project theorems — through omegaPhi_mem_omegaComp/isCentralI_iWordM (used by the copied proof of omegaPhi_bottJ_mem_omegaComp), omegaPhi_apply (the semicircle formula, behind which lie the minimal-geodesic and path-space lemmas of the definition of omegaPhi), trace_bott16_two/six, reindex_fromBlocks_bottJ, mem_omega_reindex, fromBlocks_mem_omega; no banned theorem.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": true
+ },
+ "uses_hypothesis_note": "B_to_A uses B for the first three conjuncts (anticommuting family, stabilization into Ω_k, base point preserved for k ≠ 0); the other three are re-proved outright.",
+ "embedded_special_case": "not_applicable"
+}

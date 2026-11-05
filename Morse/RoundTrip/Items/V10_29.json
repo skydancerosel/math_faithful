@@ -1,0 +1,17 @@
+{
+ "id": "V10_29",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: for EVERY abstract connected Hausdorff ℝⁿ-manifold with a smooth Riemannian metric (no completeness) and all p, q, both Ω* (continuous paths, compact-open) and Ω (blind Om, d-topology) are homotopy equivalent to a Mathlib CWComplex on a Hausdorff type. A (universes 0): for slice submanifolds N ⊆ V CLOSED in V (so complete) and p, q ∈ N, Ω(N;p,q) and Ω*(N;p,q) have the project's countable cell complex type (Morse.IsCountableCellComplexType: homotopy equivalent to the mapping telescope of a tower of iterated cell attachments along arbitrary continuous maps). A ⇒ B fails genuinely: (i) abstract vs embedded manifolds; (ii) A needs N closed, B (Milnor's route via his 1959 theorem) none; (iii) a cell tower with non-cellular attaching maps and its mapping telescope is not a Mathlib CWComplex — the conversion needs cellular approximation and the CW structure of mapping telescopes, absent from Mathlib and the project. B ⇒ A fails genuinely: setting, and a Mathlib CW complex (possibly uncountable, weak topology) does not yield the project's countable tower + telescope (needs a cell-by-cell pushout decomposition and Whitehead's telescope comparison).",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. A_to_B_cell_emb: 98 shared project theorems — the path-space metric infrastructure (PathSp supDist/l2Dist lemmas and proof fields of the pseudo-emetric instance, Minkowski sqrt_integral_add_sq_le, integral_mul_sq_le, riemDist_le_pathLength/triangle/comm, PathSp.edist_eq_zero_of_eqOn) and piecewise-smooth/slice-chart lemmas used by the blind-Ω ↔ PathSp dictionary; nothing of Theorems 17.1/17.3 or Corollary 18.2.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V10_29.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric, ConnectedSpace); B_to_B_emb. Neither A ⇒ B_emb nor B_emb ⇒ A: the CW-model gap persists on embedded manifolds. Proved instead (#rt_check OK, uses A): A_to_B_cell_emb — for N closed, B on ↥N with 'Mathlib CWComplex' replaced by the project's IsCountableCellComplexType, for both Ω (via Emb.heOm: the blind Ω is homotopy equivalent to Morse.PathSp N p q by τ = incl∘· and the lifting inverse, the composites being pointwise inseparable) and Ω* (via Emb.sigma: blind Ω* ≅ Morse.PathC). Dictionary copied from Items/V10_19.lean (hasDerivAt_pathLength, dsdt_eq, integral_dsdt_eq, supDist_ne_top, iSup_rho_eq, edist_eq, omTopology_eq, isInducing_tau, sigma, homotopic_of_inseparable, tauC/lamC, isHomotopyEquiv_tau) plus heOm (the HomotopyEquiv structure) and cellType_of_he (cell type is homotopy invariant). So on closed embedded manifolds the ONLY missing ingredient between A and B is cell tower/telescope ↔ Mathlib CWComplex; non-closed N (B covers it) is a second, genuine gap."
+}

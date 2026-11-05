@@ -1,0 +1,17 @@
+{
+ "id": "V7_6",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): for a slice submanifold N ⊆ V with the induced connection, local sprays exist in slice charts, their curves are geodesics on the OPEN interval (-2,2) depending smoothly on (u,w,t), and Lemma 10.2: around q₀ an open U, ε and Γ smooth on U × ball 0 ε × (-2,2) such that t ↦ Γ(p,v,t) is THE geodesic with γ(0)=p, γ'(0)=v (p ∈ U∩N, v ∈ T_pN, ‖v‖<ε). B: on an abstract manifold with a Levi-Civita connection, around p₀ a neighbourhood U and ε with existence and uniqueness of a geodesic on (-2,2) with given initial data, ‖v‖ < ε (Riemannian norm). A ⇒ B fails genuinely: B is about an abstract Hausdorff ℝⁿ-manifold with a smooth Mathlib RiemannianBundle and an ARBITRARY Mathlib CovariantDerivative that is Levi-Civita in Milnor's sense (IsLC: smooth, symmetric via mlieBracket, compatible = parallel fields, defined through ∃ D obeying axioms (a)–(c), keep inner products); the project has only slice submanifolds N ⊆ V with the induced metric/connection and no abstract geodesic theory (no Christoffel symbols, no D/dt or geodesic ODE in charts), and Whitney does not help since B's metric/connection need not be induced (no Nash embedding). B ⇒ A fails: B does not specialize to N ⊆ V without a bridge (↥N with ChartedSpace ℝⁿ, induced metric as RiemannianBundle, induced connection as CovariantDerivative proved IsLC, and a dictionary IsGeodesic/expMap/arcLen ↔ IsGeodesicOn/exp/pathLength), which the project does not have. Even specialized, B lacks A's smooth dependence on (p,v,t) and the local-spray statements; A lacks the abstract setting.",
+ "B_issue": null,
+ "overlap": "no direction proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V7_6.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, connected, induced metric) and cov = Bridge.conn (B_to_B_emb via conn_isLC). A_core := A's lemma_10_2 without the smooth dependence of Γ on (p, v, t): around q₀ ∈ N an open U ⊆ V and ε with existence and uniqueness of the geodesic on (-2,2) with initial data (p, v), p ∈ U ∩ N, v ∈ T_pN, ‖v‖ < ε, for EVERY slice submanifold (any model Z, N not assumed connected). Proved B_emb ↔ A_core (dictionary: blind IsGeodesic on the open (-2,2) = IsGeodesicOn, InitData = value and deriv at 0, Riemannian norm = ambient norm of D_p v; B_emb → A_core applies B to the connected component of q₀, an open part N ∩ O re-modelled on ℝᵐ), hence A_to_B_emb (uses A's lemma_10_2) and B_to_A_core (uses B), both #rt_check OK. Not covered by B: the smooth dependence of Γ on (p, v, t) and A's local-spray statements (nonempty_localSpray, isGeodesicOn_geo, contDiffOn_geo). Limitation: only the induced connection, not every Levi-Civita connection on ↥N (uniqueness of the Levi-Civita connection is not formalized). Overlap of B_to_A_core: 98 project theorems, all slice-chart / tangent-projection infrastructure and IsGeodesicOn fields; none of the geodesic ODE (LocalSpray, flows, lemma_10_2)."
+}

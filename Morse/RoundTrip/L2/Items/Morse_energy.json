@@ -1,0 +1,11 @@
+{
+ "id": "Morse_energy",
+ "name": "Morse.energy",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are the oriented interval integral of ||deriv c t||^2 from a to b (no factor 1/2, Milnor's convention); definitionally equal (rfl)."
+}

@@ -1,0 +1,17 @@
+{
+ "id": "V11_5",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: on every abstract connected Hausdorff ℝⁿ-manifold with any smooth Mathlib RiemannianBundle metric and any Levi-Civita connection, Milnor-complete: for every p, the set of q joined to p by a geodesic [0,1] → M along which 0, 1 are conjugate has measure zero in M (MfdNull: its image under every preferred chart extChartAt x has Lebesgue measure 0). A (universes 0): Corollary 18.2 for slice submanifolds N ⊆ V with the induced metric only, without completeness: the image of Morse.conjLocus hN p under every slice chart is null for every Haar measure on Z; plus Sard's theorem (Milnor.sard) for C^∞ maps between finite-dimensional spaces. A ⇒ B fails genuinely (abstract manifolds are not given embedded; no abstract exp/conjugate-point theory in the project); B ⇒ A fails genuinely (setting; Sard's theorem is not a consequence of B, and A drops completeness and covers all slice charts and Haar measures). On embedded manifolds A ⇒ B_emb is proved (completeness unused) and B_emb gives Corollary 18.2 for complete connected N on the charts of ↥N with Lebesgue measure.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. For the embedded theorem B_emb_to_A_cplt: 388 shared project theorems — Hopf–Rinow and the Chapter 7 geodesic-flow infrastructure (used only by the completeness dictionary Emb.metricComplete_of_complete), slice-chart/tangent-projection lemmas, IsJacobiField/IsSmoothCurveIn basics from the Jacobi and conjugate-locus dictionaries. Not shared: Sard's theorem (Milnor.Sard.*), theorem_18_1_of_geodesic, conjLocus_eq, exists_contDiffOn_exp, the chart computation of corollary_18_2.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V11_5.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric), cov = Bridge.conn (B_to_B_emb via conn_isLC). New dictionary lemmas (namespace Emb): conj_iff_mem_conjLocus (∃ blind geodesic γ from p to q with IsConj γ 0 1 ⇔ q ∈ Morse.conjLocus hN p; via the Jacobi/conjugacy dictionary of Items/V9_10.lean and its isGeodesic_lift) and image_extChartAt_eq (chart images of the blind set under extChartAt x = images of conjLocus under the slice chart sliceAt hN x, Bridge.chartAt_apply / mem_chart_source_iff); completeness dictionary via Hopf–Rinow (from Items/V7_29.lean). Proved A_to_B_emb (A's corollary_18_2 with σ = sliceAt hN x, μ = volume) and B_emb_to_A_cplt (A_cplt = corollary_18_2 for complete connected N with model ℝⁿ, the charts sliceAt hN x and Lebesgue measure), both #rt_check OK. Not covered by B_emb: arbitrary slice charts σ (would need invariance of null sets under the smooth chart changes), arbitrary Haar measures (routine via absolute continuity), incomplete or disconnected N, and Sard's theorem itself. Only the induced connection."
+}

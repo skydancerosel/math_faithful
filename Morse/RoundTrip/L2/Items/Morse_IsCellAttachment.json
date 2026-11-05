@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsCellAttachment",
+ "name": "Morse.IsCellAttachment",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "Up to homeomorphism of K: T K cells ⟺ ∃ K', P K' cells ∧ Nonempty (K' ≅ K). P ⇒ T outright.",
+ "difference": "The project's predicate depends on the literal TopCat object (iterated pushouts from PEmpty); the blind one is closed under homeomorphism. No separating K can be exhibited in Lean, since that would require refuting an equality between types of the same cardinality. Order conventions agree: the listed order, head first, each cell along any continuous map into the space built so far.",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Proved P_imp_T, and agree identifies the blind notion as the homeomorphism closure of the project's, using the shared glue (Quot adjunction space ≅ pushout, base-change of pushouts, snoc/unsnoc). The project uses IsCellAttachment only inside ∃ K, IsCellAttachment K cells ∧ (X ≃ₕ K) and in conclusions, where the rigidity costs nothing."
+}

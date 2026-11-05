@@ -1,0 +1,10 @@
+% Preamble for Exposition/ProofByProof.pdf.
+% Written by Exposition/build_proofbyproof.py; edit the script, not this file.
+\usepackage{xcolor}
+\definecolor{tracegrey}{gray}{0.42}
+% A trace tag: the file and the declaration that proves the sentence, inline, small, grey, monospaced.
+\newcommand{\trace}[2]{{\footnotesize\ttfamily\color{tracegrey}#1\,·\,#2}}
+% Declaration names are long and unbreakable; let the paragraph stretch rather than overflow.
+\setlength{\emergencystretch}{4em}
+\tolerance=1800
+\hbadness=1800

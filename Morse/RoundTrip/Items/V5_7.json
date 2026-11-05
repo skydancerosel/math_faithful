@@ -1,0 +1,12 @@
+{
+ "id": "V5_7",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "Both directions are vacuous (each conclusion proved outright). A (universes 0): for any w : V → F complex-C² at q, any n and t, the real Hessians at q of ‖w(·) − (w q + t n)‖² and ‖w(·) − (w q − t n)‖² have equal nullity (Assertion 2 in a holomorphic chart). B: on a slice submanifold M ⊆ ℝ^{K+1} with J-invariant tangent spaces, for (q,v) in the normal bundle, q + tv is a focal point of multiplicity μ (nullity of d(E|N) for any slice structure on N) iff q − tv is. A ⇒ B: proved WITHOUT A, from project theorems outside the item: B's nullity = nullity(g − ℓ_{tv}) (Glue.endpointNullity_eq_of_slice + endpointNullity_eq_nullity, Assertion 6.4), and the new lemma nullity_firstFF_sub_secondFF_neg: the complex structure J' = Jc read in xParam preserves g and reverses ℓ_w (ComplexIndex.inner_fderiv_fderiv_sliceParam_Jc, d2Param_symm), so g − ℓ_w and g + ℓ_w are congruent. A cannot be used: the project has no bridge from J-invariant tangent spaces to holomorphic charts (nor from A's chart Hessian nullity to focal multiplicity of a complex submanifold), so A as stated never reaches B's objects. B ⇒ A: A re-proved from hessian_normSq_sub_holomorphic and nullity_bilinearComp; B (submanifolds, normal n) does not cover A's arbitrary holomorphic maps (non-immersive w, non-normal n). So Milnor's Assertion 2 (B) IS a consequence of project theorems, but not of the listed one.",
+ "B_issue": null,
+ "overlap": "B_to_A: 19 shared — hessian_normSq_sub_holomorphic, complexStructureEquiv/realMulI, reInner lemmas, nullity (the project's own proof re-done)",
+ "uses_hypothesis": {"A_to_B": false, "B_to_A": false}
+}

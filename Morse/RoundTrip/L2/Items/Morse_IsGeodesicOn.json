@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsGeodesicOn",
+ "name": "Morse.IsGeodesicOn",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "s open (Milnor's geodesics on open intervals)",
+ "difference": "The project's predicate contains IsOpen s, so it is false on non-open s (e.g. a closed interval [0,1]), where the blind one (derivatives within s) can hold (differ: a constant curve in N = ℝ on [0,1]).",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "On open s: ContDiffOn and values in N coincide, derivWithin on an open set is deriv, the project tangent space is the span of velocities (tsp_eq), and a ∈ Kᗮ ↔ ∀ w ∈ K, ⟪a,w⟫ = 0 (agree_of). The closed-interval case is a documented encoding choice: the project expresses Milnor's segments [a,b] as restrictions of geodesics on open sets (IsGeodesicFrom, IsMinimalGeodesic), and any blind geodesic on [a,b] does extend (extend_closed)."
+}

@@ -1,0 +1,17 @@
+{
+ "id": "V13_1",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: on every abstract connected complete Riemannian ℝⁿ-manifold (any smooth metric, any Levi-Civita connection), for all p, q, a path w ∈ Ω (blind Om) lies in Ω^d = E⁻¹[0, ρ(p,q)²] iff w is a minimal geodesic on [0,1] (both inclusions). A (universes 0; Morse.minPaths, the least-energy paths, is vocabulary): for ANY slice submanifold N ⊆ V (any model Z, no completeness, no connectedness), a path of least energy in Ω(N;p,q) is an unbroken geodesic — one inclusion only, and with the project's definition of Ω^d (least energy, no ρ²). A ⇒ B fails genuinely: abstract manifolds (no embedding theorem in the project); also B's other inclusion (minimal geodesics have E = L² ≤ ρ²) and the identification d = ρ² are not in A. B ⇒ A fails genuinely: setting, and A holds without completeness and for any model Z, while B assumes completeness. On embedded manifolds the two match exactly (both directions proved, see embedded note).",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. A_to_B_emb: 122 shared project theorems — slice-chart/tangent-projection infrastructure (tanProj, gramL, IsSmoothCoord), IsGeodesicOn accessors, piecewise-smooth lemmas used by the Bridge's geodesic dictionary. B_emb_to_A_emb: 317 shared — the same plus the exp/geodesic-flow infrastructure (IsGeodesicFrom.*, exp_eq_of_mem_expDom, Flow.*) reached through Hopf–Rinow on our side and through corollary_12_3's variations on A's side; none of A's actual argument (corollary_12_3, first variation, hasDerivAt_energy) and no Hopf–Rinow theorem is shared.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V13_1.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric, ConnectedSpace), cov = Bridge.conn (B_to_B_emb via conn_isLC). A_to_B_emb (#rt_check OK, uses A): Ω^d ⊆ minimal geodesics — E(w) ≤ ρ² ≤ E(γ') for every project path γ' (Morse.riemDist_sq_le_energy) so incl∘w has least energy, A makes it an unbroken geodesic, hence a blind geodesic on [0,1] (Emb.isGeodesic_of_isUnbrokenGeodesic, copied from V8_10), and L(w)² ≤ E(w) ≤ ρ² ≤ arcLen of any competitor gives minimality; minimal geodesics ⊆ Ω^d is NOT from A but from the project's constant-speed lemma energy_eq_pathLength_sq_of_geodesic (E = L² ≤ ρ², ρ = inf of blind lengths). Completeness is not used. A_emb := A for connected, complete (IsRiemComplete) N modelled on ℝⁿ; B_emb_to_A_emb (#rt_check OK, uses B): lift the least-energy γ to ↥N (Bridge.lift), its energy is ≤ that of a minimal geodesic of length ρ (Morse.hopf_rinow_of_isRiemComplete, outside A, + energy = L²), so it lies in Ω^d, B makes it a blind minimal geodesic, hence an unbroken geodesic (congruence on [0,1]). New dictionary lemmas (namespace Emb): rho_le_arcLen, arcLen_le_rho, rho_sq_le_energy, mem_OmD_of_isMinimal, leastEnergy_of_mem_OmD, isMinimal_of_mem_OmD, metricComplete_of (IsRiemComplete ⇒ blind MetricComplete, from V7_29). Limitations: only the induced connection (no uniqueness of Levi-Civita), A_emb only for model ℝⁿ, connected, complete N (A itself needs neither)."
+}

@@ -1,0 +1,11 @@
+{
+ "id": "Morse_pathTangent",
+ "name": "Morse.pathTangent",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Project: the submodule of fields X piecewise smooth on [0,1], with prj (c t) (X t) = X t on [0,1], X 0 = X 1 = 0. Blind: the span of the fields piecewise smooth (subdivision form) with X t in the span-of-velocities tangent space at c t, vanishing at 0 and 1. At c t in N, prj x v = v iff v in tangentSubspace = blind tangent space; at c t not in N both force X t = 0 (prj = 0, blind space = bot). So the generating set is the project's carrier and its span is itself; equal for every c (no c in Omega needed)."
+}

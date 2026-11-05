@@ -1,0 +1,16 @@
+{
+ "id": "V15_13",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": true,
+ "why": "The listed declarations (Morse.IsMinimalCliffordModule, Morse.milnorM) are definitions, so A = True and B ⇒ A is trivial (vacuous). A ⇒ B means proving B outright; B is true but its k > 8 part (minimal spaces exist for every k, all have the same dimension, m_k = 16 m_{k-8}) needs Clifford periodicity (C_{k+8} ≅ C_k ⊗ ℝ(16) and its consequence for irreducible modules), which neither Mathlib nor the project has — in the project milnorM (k+8) = 16·milnorM k is the DEFINITION, with no theorem linking it to minimal spaces for k > 8 (its docstring: 'Not formalized: … the case k > 8'). Vocabulary check (proved): on ℝⁿ, the blind IsMinACSp Js k ⇔ IsAnticommFamily Js k ∧ IsMinimalCliffordModule (toLinAlgEquiv' ∘ Js) k (the project's notion is for abstract spaces and has no family hypothesis built in; 'nonzero' is Nontrivial V vs Nonempty (Fin n)); the blind m_k (sInf of dimensions of minimal ℝⁿ) equals milnorM k for k ≤ 8; and all of B restricted to k ≤ 8 (existence, uniqueness of the dimension, the table 1,2,4,4,8,8,8,8,16) holds, from the project's exists_isAnticommFamily_fin, isMinimal_of_finrank_eq_milnorM, finrank_eq_milnorM_of_isMinimal.",
+ "B_issue": null,
+ "overlap": "0 shared project theorems (B_to_A is trivial). The vocabulary check B_le_eight uses the project's exists_isAnticommFamily_fin, isMinimal_of_finrank_eq_milnorM, finrank_eq_milnorM_of_isMinimal, IsAnticommFamily.isClifford_toLin'.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable"
+}

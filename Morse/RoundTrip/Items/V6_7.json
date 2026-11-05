@@ -1,0 +1,17 @@
+{
+ "id": "V6_7",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": true,
+ "why": "A (universe 0): for continuous A : ℝ → (E →L E), E any real normed space, two solutions of x' = A(t)x agreeing at one time agree on an open interval / on ℝ; and if ⟨A(t)x, x⟩ = 0 (E a complete inner product space) a global solution through any initial value exists. B: for smooth Γ on an open Ω ⊆ ℝⁿ and a smooth curve u with u([a,b]) ⊆ Ω, Milnor's coordinate equation dv/dt = -Σ u̇ⁱ Γᵏᵢⱼ(u) vʲ has, for every t₀ ∈ [a,b] and v₀, a solution on [a,b] (one-sided derivatives at the ends), unique on [a,b]. A ⇒ B fails genuinely at existence: A has existence only for skew-adjoint coefficients (the project needs only parallel transport in an embedded N ⊆ ℝᴷ, where the equation is skew), while B's coefficients are arbitrary; general linear existence (Picard–Lindelöf plus a Grönwall bound) is in neither A nor Mathlib, and no reduction of a non-skew equation to a skew one is available. (Uniqueness on [a,b] would follow from Mathlib's Icc uniqueness; A's open-interval version does not directly handle t₀ at an endpoint.) B ⇒ A fails genuinely: B only speaks about smooth coefficients of the special form on ℝⁿ (finite dimension), while A's uniqueness is for merely continuous coefficients on arbitrary (possibly infinite-dimensional) normed spaces and its existence clause is for arbitrary complete inner product spaces. B is a true standard theorem; A ⇒ B would be provable only by proving B outright.",
+ "B_issue": null,
+ "overlap": "no direction proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is a statement about linear ODEs in coordinates (Christoffel-type coefficients on an open Ω ⊆ ℝⁿ along a curve u); it involves no manifold, metric or connection. Nothing added to the .lean file."
+}

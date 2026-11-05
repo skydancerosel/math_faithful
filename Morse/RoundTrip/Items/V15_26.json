@@ -1,0 +1,17 @@
+{
+ "id": "V15_26",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": false,
+ "why": "A (universes 0) = the theorems only: A ∈ minVelO J k J_k ↔ J_kA ∈ Ω_{k+1}(n) (J_1..J_k anticommuting); the geodesic J_k exp(πt J_kᴴJ') is the semicircle cos(πt)J_k + sin(πt)J'; omegaPhi J' is that semicircle; and, for J_1..J_{k+1} anticommuting, omegaPhi factors through a HOMOTOPY EQUIVALENCE Ω_{k+1}(n) ≃ₕ (energy-minimal paths J_k → −J_k in the stratum, the project's path space of functions ℝ → Mₙ(ℝ) with the stratum's distance). The homeomorphisms minVelOHomeomorph and omegaMinPathsHomeomorph (onto a SeparationQuotient) are definitions, not part of A. B: Milnor's spaces of minimal geodesics (blind: paths normalized outside [0,1], topology of Milnor's metric d with the intrinsic distance of Ω_ℓ(n)) are HOMEOMORPHIC to Ω_1(n) (from I in O(n), every n) and to Ω_{ℓ+1}(n) for 0 ≤ ℓ < k with only J_1..J_{k−1} given (so for ℓ = k−1 no J_k, Ω_k may be empty). A ⇒ B fails genuinely: a homotopy equivalence does not give a homeomorphism; even with the project's definitions one would need a bridge between the project's path space and Milnor's normalized one (triangle inequality and local estimates for the blind intrinsic distance, its agreement with the stratum's riemDist, the generated topology), plus the case Ω_{ℓ+1} = ∅. B ⇒ A only vacuously (A re-proved outright; B's homeomorphisms are bare existence statements on a different path-space model and cannot yield A's explicit maps).",
+ "B_issue": null,
+ "overlap": "B_to_A2 (the conjuncts mem_minVelO_iff, omegaGeo_eq_semicircle; outright): 25 shared project theorems (omega_succ_decomp, mul_mem_omega_succ, isComplexStructure_iff, exp_smul_of_mul_self_eq_neg_one, basePt_mem_omega, IsAnticommFamily API). #rt_check cannot run on any term mentioning A: the definition omegaPhi (in the statements of omegaPhi_apply and isHomotopyEquiv_omegaPhi_minPaths) applies Morse.minVel_base, proved with the banned mem_minVelO_iff; B_to_A (full A) is proved from B_to_A2 plus those two definitional conjuncts.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete real matrices (Mathlib orthogonalGroup as a subset of M_n(ℝ), Ω_k(n) as subsets; the induced-metric notions TanSet/IsGeodOn/IsPathIn/lenM/IsMinGeodIn are already embedded); it does not quantify over abstract Riemannian manifolds."
+}

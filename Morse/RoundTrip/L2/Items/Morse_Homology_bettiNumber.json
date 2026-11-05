@@ -1,0 +1,11 @@
+{
+ "id": "Morse_Homology_bettiNumber",
+ "name": "Morse.Homology.bettiNumber",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": "Both use the same junk value: when H_i(X; 𝕜) is infinite-dimensional, finrank gives 0 (the textbook's b_i would be infinite there). The project's docstring records this convention.",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are Module.finrank 𝕜 of Mathlib's singular homology H_i(X; 𝕜), and the agreement is rfl. The value 0 for infinite-dimensional homology is shared by both, is documented, and lies outside Milnor's use of b_i, where it is finite."
+}

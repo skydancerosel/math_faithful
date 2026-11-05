@@ -1,0 +1,17 @@
+{
+ "id": "VA_18",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A = IsCountableCellComplexType.of_homotopyEquiv (universe 0): the project's notion (X ≃ₕ mapping telescope of a tower of iterated adjunction spaces, cells attached along arbitrary maps; IsRelCellAttachment, CellTower are vocabulary) is invariant under homotopy equivalence. B (abstract complete Riemannian manifold, p, q non-conjugate, admissible levels a_i): each Ω^{a_i} and Ω have the homotopy type of a Hausdorff Mathlib CWComplex, and one CW complex Y with exhausting subcomplexes K_i ⊆ K_{i+1} carries a strictly commutative diagram of homotopy equivalences Ω^{a_i} → K_i. B ⇒ A only vacuously (A is a three-line transport lemma, proved outright). A ⇒ B fails genuinely: A contains no path-space statement at all (B is the existence part of Theorems 16.3/17.3 on an abstract manifold), and even the project's Theorem 17.3 in this vocabulary would not give B, since passing from IsCountableCellComplexType (telescope of non-cellular adjunction spaces) to Mathlib CWComplex with nested subcomplexes needs cellular approximation and the CW structure of a telescope (V2_12/VA_17 obstacle). No dictionary between IsCountableCellComplexType and the blind HasCWType is provable without that.",
+ "B_issue": null,
+ "overlap": "B_to_A (vacuous): 3 shared project theorems, the auxiliary proof fields of the MappingTelescope topology instance.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "A's declarations are pure topology (towers of adjunction spaces, mapping telescopes), with no manifold or path space, so there is no embedded special case of A to compare with B at M = Bridge.Sub hN. B itself is stated on an abstract Riemannian manifold; on ↥N the blocking gap (Mathlib CWComplex vs the project's telescope of iterated adjunction spaces) would be unchanged."
+}

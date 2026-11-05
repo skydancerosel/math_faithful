@@ -1,0 +1,11 @@
+{
+ "id": "V3_39",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "Same setting on both sides: abstract compact Hausdorff manifold M (Type), smooth f with non-degenerate critical points, any field. A: finiteness of H_i for compact submanifolds (and spaces homeomorphic to them) and for M, b_i(M) = 0 above dim M, (2), (4_λ), (3) and the lacunary principle. B: (2), (3), (4_λ) and Corollary 5.4. A ⇒ B: direct, Corollary 5.4 by the project's arithmetic eq_of_altSum_le_succ/zero on (4_λ). B ⇒ A: (2), (3), (4_λ) direct; lacunary principle by eq_of_altSum_le_of_lacunary on (4_λ); b_i = 0 above the dimension from b_i ≤ C_i = 0 (L_p on a Whitney copy). The two finiteness clauses have no counterpart in B (R_λ is finrank, 0 for infinite-dimensional homology) and are proved from the project's finiteDimensional_spaceHomology + exists_isMorseFunction_normSq_sub + exists_whitney_normSq, i.e. A's own proof, outside the item: finiteness is genuine content of A that B lacks.",
+ "B_issue": "As in V3_35: B's finrank-based R_λ does not assert finite-dimensionality of H_λ(M;F).",
+ "overlap": "B_to_A: 1316 shared, through the finiteness clauses (finiteDimensional_spaceHomology → exists_cells_filtration and the whole Morse-filtration/cell-homology machinery); the inequality clauses use only B and the arithmetic of Morse/Chapter3/Inequalities.lean"
+}

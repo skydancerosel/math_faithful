@@ -1,0 +1,11 @@
+{
+ "id": "V3_2",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A ⇒ B: p and q are the strict minimum and maximum, since another extremum would be a third critical point (A's isCriticalPointM_of_isLocalMin, applied to f and to -f). A's Morse charts at a local min/max (f = f(p) ± ‖y‖²), fed to exists_image_closedBall_eq_sublevel (for f, and for -f at q), give for small ε an injective map of the closed ball, continuous on it, onto {f ≤ ε} = f⁻¹[0,ε] and onto {f ≥ 1-ε} = f⁻¹[1-ε,1]. Compactness then makes these homeomorphisms. The chart's target is ℝ^{finrank E}, transported to ℝⁿ. B ⇒ A fails: A is a set of general lemmas (any manifold over any finite-dimensional E; index 0 at a nondegenerate local min and n at a local max; Morse charts at extrema; the sublevel-ball lemma on any compact space for any chart of the form f(p) + ‖y‖²). B, a statement about the two-critical-point situation concluding only a homeomorphism type, implies none of these.",
+ "B_issue": null,
+ "overlap": "n/a (B_to_A not proved)"
+}

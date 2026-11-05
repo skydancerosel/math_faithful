@@ -1,0 +1,18 @@
+{
+ "id": "V7_17",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": false,
+ "why": "A (universes 0): being a geodesic on an open set is local; a minimizing unit-speed piecewise smooth path c on [0,ℓ] in N agrees on each subinterval inside a uniformly normal O with a geodesic; Corollary 10.7: c is a geodesic on the OPEN interval (0,ℓ) and extends to a geodesic on (-δ, ℓ+δ). B: abstract manifold, LC connection: a piecewise smooth path parametrized by arc length (arcLen pth 0 t = t) and minimizing among all piecewise smooth paths is a geodesic on the CLOSED [0,ℓ]. A ⇒ B fails genuinely: B is about an abstract Hausdorff ℝⁿ-manifold with an arbitrary smooth RiemannianBundle and an arbitrary Levi-Civita CovariantDerivative (Milnor's sense), not covered by slice submanifolds with the induced metric (no Nash embedding). B ⇒ A is proved (B_to_A, via RoundTrip/Bridge.lean on the connected component of c(0), re-modelled on ℝᵐ): A's unit speed gives B's arc-length parametrization, B's closed-interval geodesic is A's geodesic on (0,ℓ) and extends past the ends (project's local geodesic flow), which also gives minimal_segment; isGeodesicOn_of_locally is pure locality. On embedded manifolds B_emb ↔ A.",
+ "B_issue": null,
+ "overlap": "B_to_A: 316 shared project theorems — the local geodesic flow behind Morse.exists_localFlow_exp (Flow.*, LocalSpray.*, IsBddLipschitz.*, lemma_10_2), exp_zero/exp_eq/isGeodesicFrom_*, IsGeodesicOn API (eqOn, comp_mul_add), pathLength_eq_of_norm_deriv and IsAdmissible lemmas, slice-chart infrastructure: used to extend a closed geodesic past its ends and to turn unit speed into arc-length parametrization. None of Lemma 10.3 / Theorem 10.4 / NormalCoord (the proof of minimality ⇒ geodesic comes from B).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": true
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V7_17.lean: B_emb := B for M = Bridge.Sub hN (model ℝⁿ, connected, induced metric) and cov = Bridge.conn. Proved B_emb ↔ A: A_to_B_emb (#rt_check OK, uses A's corollary_10_7_extend; new glue Emb.norm_deriv_eq_one: a piecewise smooth path with L(c|[0,t]) = t has ‖c'(t₀)‖ = 1 wherever differentiable — one-sided FTC on the smooth piece to the right of t₀; Emb.isGeodesic_of_eqOn: agreement on [a,b] with a project geodesic on an open superset gives a blind geodesic on [a,b]) and B_emb_to_A (all of A for every slice submanifold, via components; B_to_A #rt_check OK). Limitation: only the induced connection on ↥N.",
+ "revised": "B_to_A changed from failed to proved (relation incomparable → A_narrower): with RoundTrip/Bridge.lean, B specializes to the connected component of c(0) in every slice submanifold (any model, re-modelled on ℝᵐ): piecewise smooth paths/arc length/minimality transfer through isPW_lift, isPiecewiseSmooth_of_isPW, arcLen_eq, pathLength_congr; unit speed gives arcLen = t (pathLength_eq_of_norm_deriv); B's geodesic on the closed [0,ℓ] is A's corollary_10_7 on (0,ℓ), and extends past the ends (V7_20's extend_closed, with the locality lemma re-proved because Morse.exists_initial_ray depends on the banned isGeodesicOn_of_locally), giving corollary_10_7_extend and minimal_segment; isGeodesicOn_of_locally (pure locality) is re-proved. The earlier verdict was for lack of the bridge. A ⇒ B still fails genuinely (abstract manifolds)."
+}

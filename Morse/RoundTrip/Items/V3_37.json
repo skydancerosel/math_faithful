@@ -1,0 +1,11 @@
+{
+ "id": "V3_37",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "A: Corollary 5.4 for f = F|N on a compact slice submanifold (λ = l+1 and λ = 0 versions, homology in any T ≃ₜ N) and the lacunary principle (b_i = C_i for all i if no two consecutive C_i are nonzero). B: Corollary 5.4 for an abstract compact manifold with the λ = 0 convention 'l = 0 ∨ …'. A ⇒ B: Whitney copy (Glue.exists_ambient_any_dim) and A's of_succ / of_zero. B ⇒ A: N with F|N is a compact manifold; the lacunary principle, which B omits, follows from Corollary 5.4 alone by pure arithmetic (lacunary_of_cor: for C_i = 0 apply the corollary at i-1, i or i+1). So the lacunary clause is not extra content.",
+ "B_issue": null,
+ "overlap": "B_to_A: ~60 shared, infrastructure only (slice charts, contMDiff_comp_val, H(E,∅) = H(E)); no Morse-filtration or altSum lemma"
+}

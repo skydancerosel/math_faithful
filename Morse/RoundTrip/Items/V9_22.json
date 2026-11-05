@@ -1,0 +1,18 @@
+{
+ "id": "V9_22",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; slice submanifolds, ANY smooth curve γ): Assertion (3) as ∀ τ ∈ (0,1], ∀ᶠ τ' in 𝓝[<] τ, indexUpTo τ' = indexUpTo τ, with λ = index of the formula-defined energyHessian on fields supported in [0,τ]. B (abstract connected Riemannian ℝⁿ-manifolds, geodesic γ): ∀ τ ∈ (0,1], ∃ δ > 0, ∀ ε ∈ (0,δ), ε < τ → lam(τ−ε) = lam(τ), with lam the index of the choice function HessT τ of Milnor's VARIATIONAL (E_0^τ)_** on the blind TΩ of γ|[0,τ]. The logical shapes agree exactly (proved: eventually_nhdsLT_iff, and clause_iff_of_lamEq: for a blind geodesic γ of ↥N, given LamEq — lam τ γ = indexUpTo (incl ∘ γ) τ on (0,1] — B's clause for γ ⇔ A's clause for incl ∘ γ). The remaining difference is genuine: the setting, and the meaning of λ — LamEq needs a TΩ dictionary, Lemma 11.A/Theorem 13.1 for E_0^τ and the joint C² regularity of u ↦ E_0^τ(α(u)), absent from the project (V8_13/V8_14/V9_5 obstacle); A also covers non-geodesic curves. [Third attempt: the λ-identification (LamEq: blind variational lam = the project's indexUpTo / formIndex energyHessian) is now PROVED on ↥N with the induced connection (copy of Items/V9_23.lean's proof); the abstract verdict is unchanged — see embedded_special_case.]",
+ "B_issue": null,
+ "overlap": "A_to_B_emb and B_to_A_geo (#rt_check OK): #rt_overlap lists 233 shared project theorems each — the 223 of the conditional versions (proof fields of indexUpTo/formIndex/energyHessian/fieldsUpTo, slice-chart lemmas) plus energyHessian_apply, secondVariation_congr, formIndex_le, le_formIndex and a few piecewise-smoothness lemmas used by the LamEq proof; none of the item's theorem (assertion_3).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V9_22.lean states B_emb (M = Bridge.Sub hN, cov = Bridge.conn) with B_to_B_emb, and A_geo := A's clause for the curves B_emb sees (incl ∘ γ, γ a blind geodesic of a connected ↥N modelled on ℝⁿ; A_to_A_geo). Proved under #rt_check (third attempt, unconditional): A_to_B_emb and B_emb_to_A_geo / B_to_A_geo; the earlier conditional A_to_B_emb_of_lamEq and B_emb_to_A_inst_of_lamEq are kept. LamEq (lam τ γ = indexUpTo (incl ∘ γ) τ on (0,1]) is now the theorem lamEq_holds, by the proof of Emb.lamEq of Items/V9_23.lean copied into namespace LamPf (Lemma 11.A and Theorem 13.1 = Morse.second_variation for E_0^τ on ↥N via extension of a variation of γ|[0,τ] by γ, EnergyC2's C² regularity of u ↦ E(α(u)), the TΩ(γ|[0,τ]) ⇔ fieldsUpTo τ dictionary toFA/φT, index transport bIndex_eq_formIndex_of); the shapes then match by eventually_nhdsLT_iff / clause_iff_of_lamEq. Limitations: induced connection only, model ℝⁿ, connected ↥N; A's non-geodesic curves are not reached by B_emb.",
+ "third_attempt": "LamEq proved (copy of Items/V9_23.lean's Emb.lamEq proof in namespace LamPf, blind vocabulary textually identical): new lamEq_holds, unconditional A_to_B_emb and B_emb_to_A_geo/B_to_A_geo (#rt_check OK). Embedded special case: failed → proved (both ways, for geodesics of connected ↥N). Abstract A ⇔ B unchanged (setting)."
+}

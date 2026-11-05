@@ -1,0 +1,18 @@
+{
+ "id": "V7_10′",
+ "reblind": true,
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: on every abstract connected ℝⁿ-manifold with a smooth Mathlib Riemannian metric and any Levi-Civita connection, each p has an open W and ε > 0 such that W, ε satisfy Lemma 10.3 (1)–(3) (Riemannian normal balls U_q ⊇ W and Riemannian lengths) and the short geodesics between points of W (length < ε, on [0,1]) stay in W. A (universes 0, slice submanifolds N ⊆ V): all ambient balls B(x, r) with r ≤ r₀ are good balls (Lemma 17.B), plus Lebesgue numbers for good balls on compact K ⊆ N. In a good ball, any two points are at distance < δ and are joined by a unique geodesic of length < δ, which is minimal (ρ = ‖v‖), depends smoothly on its end points, and stays in the ball. A ⇒ B fails for the setting (abstract manifolds, arbitrary Levi-Civita connection). B ⇒ A fails genuinely: B gives one convex neighbourhood, not arbitrarily small ones and not ambient balls, and says nothing about minimality or ρ. Conversely, A's good balls do not state Lemma 10.3 (3) (normal balls containing W). On embedded manifolds A together with the project's Lemma 10.3 (item V7_10) gives B: A_to_B_emb proved.",
+ "B_issue": null,
+ "overlap": "No B_to_A, nothing to compare. A_to_B_emb uses Morse.lemma_10_3 (item V7_10's theorem) for clauses (1)–(3), and the IsGoodBall API (join, isGeodesicOn_minGeo, minGeo_one, convex), minGeo_zero, hasDerivAt_minGeo_zero, minJoin_mem_tangentSubspace and riemDist_le_pathLength for convexity. It uses exists_isGoodBall_ball only through the hypothesis (#rt_check OK).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "B_emb := B's conclusion at M = Bridge.Sub hN (model ℝⁿ, induced metric), cov = Bridge.conn, [ConnectedSpace ↥N]; B_to_B_emb via conn_isLC. A_to_B_emb uses A's exists_isGoodBall_ball and Morse.lemma_10_3: W = N ∩ B(p, r) for a good ball inside Lemma 10.3's O. The short geodesic of (1) between two points of W is the good ball's minimal geodesic: its length ‖minJoin‖ = ρ ≤ length of the given geodesic < ε, and then uniqueness in (1) applies. That minimal geodesic stays in W by A's convexity. B_emb ⇒ A was not proved and is not expected. B_emb gives neither arbitrarily small convex neighbourhoods, nor the ambient-ball shape, nor minimality/ρ; getting A's good balls would need Whitehead's theorem or the project's ambient-convexity argument, which is new Riemannian geometry, not glue. Dictionary: copied from Items/V7_10.lean, plus Emb.exists_joinsShort_of_isGeodesicFrom and Emb.riemDist_le_arcLen. Limitations: only the induced connection; model ℝⁿ."
+}

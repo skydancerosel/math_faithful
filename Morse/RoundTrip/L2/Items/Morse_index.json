@@ -1,0 +1,11 @@
+{
+ "id": "Morse_index",
+ "name": "Morse.index",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "E finite-dimensional (§2's setting)",
+ "difference": "Infinite-dimension encoding: the project's index is Mathlib's sigNeg, bounded by finrank ℝ E, hence 0 for every infinite-dimensional E; the blind sSup over finite-dimensional negative-definite subspaces is the true (finite) index when that is bounded. On ℓ²(ℕ), H(x, y) = -(x₀y₀) has project index 0 and blind index 1.",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "In finite dimension, the project's Morse.index_isGreatest plus csSup gives equality. The infinite-dimensional difference is a convention, documented for sigNeg, and lies outside §2; the project uses a separate ℕ∞-valued formIndex for the infinite-dimensional path-space Hessians of Part III, so Morse.index is never applied there."
+}

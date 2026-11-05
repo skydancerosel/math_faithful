@@ -1,0 +1,17 @@
+{
+ "id": "V10_12",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): exists_contDiff_eq_of_locally (smooth extension from a compact set), isFiniteCellComplexType_sublevel_of_isCompact (Theorem 3.5 for a sublevel {F ≤ a₀} of an ambient smooth F on a slice N ⊆ V, compact, non-degenerate, a₀ a REGULAR value: Morse.IsFiniteCellComplexType, i.e. an iterated adjunction space along arbitrary maps, cells in order of critical value) and theorem_16_3/_count (the same for E' on B^a of a BrokenSetup, a < c regular, nullity 0, cells = geodIndex = formIndex energyHessian, with counts). B: Theorem 3.5 on ABSTRACT Hausdorff manifolds (model any finite-dimensional E) with Mathlib CWComplex: (1) all sublevels compact ⇒ M ≃ a (possibly infinite) CW complex with λ-cells ↔ index-λ critical points; (2) sublevels compact for a < c ⇒ for every a < c (critical or not) {f ≤ a} ≃ a finite CW complex with cells ↔ critical points in it. A ⇒ B fails genuinely: cellular approximation needed to turn iterated adjunction spaces into CW complexes (the V2_12 obstacle), abstract M vs embedded N with ambient F, regular-value hypothesis, and no infinite case. B ⇒ A fails genuinely: a CW complex does not give A's ordered adjunction (order of critical values), and A's extension lemma and E'/geodIndex specialization are not in B.",
+ "B_issue": null,
+ "overlap": "no direction proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B quantifies over smooth manifolds carrying a function, not over Riemannian manifolds; the embedded instantiation would not remove the cell-complex mismatch (IsFiniteCellComplexType vs Mathlib CWComplex), which is the blocker."
+}

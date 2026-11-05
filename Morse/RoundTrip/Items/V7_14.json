@@ -1,0 +1,18 @@
+{
+ "id": "V7_14",
+ "reblind": true,
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B (p. 61, proof of Thm 10.4): for any blind normal ball (Riemannian radius ε) at q of an abstract connected Riemannian ℝⁿ-manifold with any Levi-Civita connection, 0 < r < ε, and any piecewise smooth ω : [0,1] → M from q to the shell S_r (ω may leave U_q): for every 0 < δ < r a segment [a', b'] with ω(a') ∈ S_δ, ω(b') ∈ S_r, lying in the closed region between the shells, of length ≥ r − δ; and L(ω) ≥ r. A (universes 0; ballSet, closedBallSet definitions): for N ⊆ V with the induced metric and a NormalCoord, closed normal balls of radius s < ε are compact, and exists_crossing: an admissible path from q to a point outside ballSet s has t₁ < t₂ (last visit of q before the first exit) with c on U − {q} on (t₁, t₂], inside the ball on [t₁, t₂), on the sphere at t₂, and L(c|[t₁,t₂]) ≥ s. A ⇒ B fails genuinely (abstract manifolds/metrics vs embedded N; no abstract exp theory in the project). B ⇒ A fails genuinely: B has no compactness statement, its segment is existential (between shells δ and r) rather than A's last-visit/first-exit segment, and it covers only piecewise smooth paths on connected M. On embedded manifolds: B_emb ⇔ A_pw (A's crossing lemma for piecewise smooth paths, connected N, model ℝⁿ), both #rt_check OK; A_pw ⇒ B_emb additionally uses the project's Lemma 10.6 (radius_sub_le_pathLength, V7_13) for the δ-segments, and B_emb ⇒ A_pw re-does the project's topological choice of t₁, t₂ and takes only the length bound from B.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. For B_emb_to_A_pw: 167 shared project theorems (130 without _proof_ constants) — NormalCoord projections and the topological helpers that exists_crossing also uses (mem_ballSet, isOpen_ballSet, mem_closedBallSet, G_self, mem_U_self, continuousOn_G), IsAdmissible basics, and the geodesic/exp/slice-chart infrastructure through the Bridge; not radius_sub_le_pathLength, the Gauss lemma, isCompact_closedBallSet or exists_crossing.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V7_14.lean: B_emb := B for M = Bridge.Sub hN with the induced metric and Bridge.conn (B_to_B_emb). Proved B_emb_iff_A_pw. A_pw_to_B_emb: in a project normal ball of radius ε' ∈ (r, ε) (Emb.normalCoord_of_isNormBall), A's crossing segment [t₁, t₂] gives (ii); for (i), a' := last time in [t₁, t₂] with radius ≤ δ (the IVT gives radius(a') = δ), so [a', t₂] lies in the closed annulus and has length ≥ r − δ by radius_sub_le_pathLength; points are read in B's shells with eq_expMap_G. B_emb_to_A_pw: t₂ = first exit and t₁ = last visit of q chosen as in the project (compactness of the closed normal ball proved inline, since isCompact_closedBallSet is banned), and s ≤ L(c|[t₁, t₂]) is B's conclusion (ii) for the segment reparametrized to [0,1] (new glue isPiecewiseSmooth_reparam, pathLength_reparam, image_reparam). The normal-ball dictionary of V7_13 is repeated in this file. isCompact_closedBallSet is not a consequence of B (provable outright, which would be vacuous). Limitations: induced connection only, connected N, piecewise smooth paths."
+}

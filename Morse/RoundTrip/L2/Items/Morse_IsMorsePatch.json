@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsMorsePatch",
+ "name": "Morse.IsMorsePatch",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Same three conditions (p in source, phi p = 0, f = f(p) - ||x||^2 + ||y||^2 throughout the source) for an open partial homeomorphism M -> X x Y; morseQuad unfolds to the blind formula. Equal for all arguments, no smoothness on either side."
+}

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "exposition-preview",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8766", "--directory", "/Users/yongzhongxu/faithful_math/Morse/Exposition/web"],
+      "port": 8766
+    }
+  ]
+}

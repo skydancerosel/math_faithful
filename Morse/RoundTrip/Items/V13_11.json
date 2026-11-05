@@ -1,0 +1,17 @@
+{
+ "id": "V13_11",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): for a slice submanifold N ⊆ V (any normed V, any finite-dimensional model Z) and F smooth on V, only LINEAR perturbations are controlled: ∃ δ, every critical point in K of (F + a)|N with a ∈ V* linear, ‖a‖ < δ, has index ≥ λ₀ (globally, and per slice chart near z₀). B (Milnor: 'g with first and second derivatives so close that Lemma 22.4 applies in a coordinate neighbourhood'): on an abstract smooth ℝᵐ-manifold, for any finite cover of K by compacts in charts, ∃ ε such that EVERY smooth g whose first and second chart partials are ε-close to f's has its critical points in K of index ≥ λ₀. A ⇒ B fails genuinely: linear perturbations of an ambient function are a small subclass of B's g (and abstract manifolds vs slice submanifolds). B ⇒ A fails only by the setting (A allows any model Z and any normed V): on the Bridge's ↥N (finite-dimensional inner-product V, Z = ℝⁿ) B gives A's global conjunct, proved (B_emb_to_A_emb). So on embedded manifolds A is the special case g = (F + a)|N of B.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. B_emb_to_A_emb (#rt_check OK): 39 shared project theorems — slice-chart infrastructure (SliceChart.toChart*, IsSliceSubmanifold.chartAt_eq, contDiffOn_trans, contMDiff_val, isManifold), index lemmas (index_isGreatest, finrank_le_index_of_negDef, exists_negDef_finrank_eq_index) and Morse.fderiv_hessian_add (a helper of Perturbation.lean also used by A's lemma_22_4_add); none of A's argument (exists_perturb_slice, lemma_22_4_submanifold, lemma_22_4).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "Bemb_to_A_only",
+ "embedded_special_case_note": "B is about smooth (not Riemannian) manifolds; B_emb := B at M = Bridge.Sub hN as a smooth manifold (B_to_B_emb). A_emb := A's global conjunct lemma_22_4_submanifold for finite-dimensional inner-product V and Z = ℝⁿ (A_to_A_emb). B_emb ⇒ A_emb proved (#rt_check OK, uses B_emb): cover K by finitely many chart balls (exists_cover), Kc i = K ∩ e_i.symm '' closedBall, apply B to F|N, and bound the chart partials of the perturbation a∘incl∘e.symm by ‖a‖·‖D^j(incl∘e.symm)‖ (pd_pd2_bound, via fderiv_hessian_add and iteratedFDeriv_comp_left) with bounds on the compact closed balls; blind IsCritM = IsCriticalPointM definitionally, idxM = indexM via bIndex_univ_eq_index. A_emb ⇒ B_emb fails genuinely (only linear perturbations). Not done: the per-slice-chart conjunct exists_perturb_slice (charts σ not of the form chartAt)."
+}

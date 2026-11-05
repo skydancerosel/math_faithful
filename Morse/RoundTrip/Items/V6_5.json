@@ -1,0 +1,17 @@
+{
+ "id": "V6_5",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; velocity, IsFieldAlong, covDeriv are definitions): for a smooth curve c in a slice submanifold N ⊆ V, the velocity c'(t) ∈ T_{c(t)}N, and the project's DX/dt := P_{c(t)} X'(t) satisfies Milnor's axioms (a), (b) (X tangent at t) and (c) (DX/dt of Y∘c is covAt c'(t) Y). B: on an abstract ℝⁿ-manifold, for a smooth curve c, the velocity field mfderiv c t 1 is a smooth field along c, Y∘c is smooth along c for smooth Y, and smooth fields along c are closed under + and multiplication by smooth f : ℝ → ℝ (that the objects of Milnor's definition make sense; existence of D is V6_6). A ⇒ B fails: A's fields along c are maps ℝ → V with an embedded tangency condition, B's are sections of Mathlib's tangent bundle over c; B would have to be proved outright from Mathlib (ContMDiff.contMDiff_tangentMap for the velocity, composition, and fibrewise linearity in trivializations for + and f•) — not attempted. B ⇒ A fails genuinely: B contains no covariant derivative and nothing about the project's covDeriv, tangentSubspace or tanProj; A's axioms (a)-(c) for the induced connection are content B lacks. (A vacuous B ⇒ A would also need re-proving deriv_mem_tangentSubspace, which the project's chain rule hasDerivAt_comp_curve behind covDeriv_comp uses.)",
+ "B_issue": null,
+ "overlap": "no direction proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B does not quantify over Riemannian manifolds or connections: it states that, on a bare smooth ℝⁿ-manifold, the velocity of a smooth curve and Y∘c are smooth fields along c and that smooth fields along c are closed under + and f• (Mathlib sections of TM over c). At M = ↥N these become, via Bridge.contMDiffOn_along_iff and Bridge.D_mfderiv_curve, smoothness of t ↦ deriv (incl∘c) t, of amb Y ∘ c and of sums/products in V — none of which is in A (velocity tangent to N, and the covariant-derivative axioms (a)-(c) for P(X')). Nothing added to the .lean file."
+}

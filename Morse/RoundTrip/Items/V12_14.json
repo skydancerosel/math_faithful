@@ -1,0 +1,20 @@
+{
+ "id": "V12_14",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0) is the project's Euclidean model of matrix groups: ⟪A,B⟫ = Re tr(AᴴB) on Mₙ(𝕜), its invariance under unitary left/right multiplication, exp of skew-Hermitian is unitary, T_gG = g·𝔤 for a matrix group (IsMatrixGroup: slice submanifold G ⊆ U(n) closed under products/ᴴ, exp 𝔤 ⊆ G, dim G = dim 𝔤), translations are isometries of Mₙ(𝕜) preserving G, frobForm ad-invariant and positive. B: (1) EVERY compact abstract Lie group (Mathlib LieGroup) carries a smooth bi-invariant Riemannian metric; (2) velocities at 0 of C^∞ curves in U(k) through I (entrywise norm) = skew-Hermitian matrices. A ⇒ B fails genuinely: (1) needs Haar averaging on an arbitrary compact Lie group (A only has matrix groups with the metric induced from Mₙ(𝕜); a compact Lie group need not be given as one). B ⇒ A fails: B says nothing about the Frobenius product, frobForm or matrix groups as submanifolds. Bridge A_to_B2 (uses A, rt_check_soft OK): A ⇒ B's (2), via the project's hasDerivAt_mem_tangentSubspace + A's tangentSubspace_eq for U(k) (IsMatrixGroup for U(k) re-proved with A's exp lemma, isMatrixGroup_U) and the curves exp(tX); the blind entrywise-norm derivatives are transported (HasDerivAt depends only on the topology, which is the same; ContDiff via the identity CLM, contDiff_elem_of_frob). (2) alone is also elementary (differentiate cᴴc = 1).",
+ "B_issue": null,
+ "overlap": "A_to_B_emb: 99 shared, all infrastructure/auxiliary: IsMatrixGroup field projections, mem_leftAlg_iff, mul_conjTranspose_eq_one, slice-chart lemmas, MatrixInner instance proofs; inner_def / inner_mul_left_of_unitary / inner_mul_right_of_unitary appear only through the proof fields of mulLeftIso/mulRightIso, which A's own statement mentions (leftAlg, mulLeftIso_image).",
+ "rt_check_soft": "A_to_B2 and A_to_B_emb: Morse.inner_def, Morse.inner_mul_left_of_unitary, Morse.inner_mul_right_of_unitary reached only through the proof fields (norm_map') of Morse.mulLeftIso / Morse.mulRightIso, which occur in A's statement (IsMatrixGroup.leftAlg in tangentSubspace_eq, mulLeftIso_image, mulRightIso_image); the proofs use the hypothesis for these facts. B_to_B_emb: plain rt_check OK.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false,
+  "A_to_B2": true,
+  "A_to_B_emb": true
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "B_emb := B's (1) specialized to a matrix group G ⊆ Mₖ(𝕜) with model ℝᵐ (IsMatrixGroup hG 𝔤) as Bridge.Sub hG with G's group structure (CompactSpace → ∃ smooth bi-invariant RiemannianBundle) ∧ B's (2). B → B_emb (instantiation) and A → B_emb are proved: witness Bridge.metric, bi-invariant by biInv with A's inner_mul_left/right_of_unitary; (2) by A_to_B2. B_emb ⇒ A not attempted (B_emb has no Frobenius-specific content). Shared dictionary built in each file's namespace Emb (no Bridge edits): grp (the group structure of G on Bridge.Sub hG), lieGroup (Mathlib LieGroup: products and ᴴ are smooth ambient maps, corestricted with Milnor.IsSliceSubmanifold.contMDiff_codRestrict), D_mfderiv_lift (the differential of a map induced by an ambient map F, read in V, is dF), biInv (the induced metric is bi-invariant)."
+}

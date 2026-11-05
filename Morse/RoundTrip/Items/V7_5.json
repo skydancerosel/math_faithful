@@ -1,0 +1,22 @@
+{
+ "id": "V7_5",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": false,
+ "why": "A (universes 0; projRep a definition): for a slice submanifold N ⊆ V, two geodesics (on open sets) with the same position and velocity at t₀ agree near t₀, and on all of an open preconnected s. B: uniqueness in the large for geodesics of a Levi-Civita connection on an abstract Hausdorff ℝⁿ-manifold, on any interval, velocities compared by HEq. A ⇒ B fails genuinely: the abstract proof needs the geodesic equation in charts with Christoffel symbols, chart-switching and the Hausdorff connectedness argument — absent. B ⇒ A is proved (revised): specialize B to ↥N with the induced metric and connection (RoundTrip/Bridge.lean), lift the project geodesics to ↥N; any model Z via ℝ^{dim Z}; eventuallyEq from eqOn on a small ball.",
+ "B_issue": null,
+ "overlap": "B_to_A (= B_emb_to_A ∘ B_to_B_emb): 98 shared project theorems — slice-chart/charted-space infrastructure (sliceAt, toChart, IsSmoothCoord, gram machinery, tangentSubspace_eq_range_fderiv_sliceParam, tanProj_eq_zero_iff, projRep_eq/contDiffAt_projRep reached through the Bridge's connection) and the IsGeodesicOn fields; none of the uniqueness argument itself (ode_eventuallyEq, eqOn_of_eventuallyEq, hasDerivAt_projRep_comp, IsGeodesicOn.deriv_deriv_eq are not shared).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": true
+ },
+ "revised": "B_to_A was 'failed' ('no bridge from abstract to embedded objects'); with RoundTrip/Bridge.lean it is proved (B_to_A := B_emb_to_A ∘ B_to_B_emb, #rt_check OK), so relation incomparable → A_narrower.",
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V7_5.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric) and cov = Bridge.conn (B_to_B_emb). A_to_B_emb proved (#rt_check OK, uses A's eqOn): Emb.isGeodesic_iff_interior turns both blind geodesics into project geodesics on interior s; if t₀ is an endpoint of s the data are carried to an interior time by one-sided ODE uniqueness in a slice chart (Emb.loc_right / Emb.loc_left, adapted from the first half of Bridge.eqOn_Icc_of_isGeodesic — that Bridge lemma itself calls IsGeodesicOn.eqOn, so it cannot be used under #rt_check here), then A's eqOn on interior s and continuity to the endpoints. B_emb_to_A proved (#rt_check OK): all of A, any model Z (through ℝ^{dim Z}, glue from Items/V7_28.lean), by lifting project geodesics to ↥N (Bridge.lift, isGeodesic_iff_isGeodesicOn) and comparing velocities via D_vel / HEq. Limitation: only the induced connection.",
+ "embedded_uses_hypothesis": {
+  "A_to_B_emb": true,
+  "B_emb_to_A": true
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "id": "V15_45",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": false,
+ "why": "A (theorem_24_7, no universes): for i ≥ 0, n ≥ i + 2, n' ≥ i + 10, π_i(O(n), I) ≃ π_{i+8}(O(n'), I) as SETS at the base point I. B: the same at all base points (same ranges), GROUP isomorphisms π_{i+1}O(m) ≃* π_{i+9}O(m') (i + 3 ≤ m, i + 11 ≤ m'), and the loop-space form π_iO(m) ≅ π_i(Ω⁸O(m')) (sets, and groups in positive degree). B ⇒ A is B's first conjunct at I. A ⇒ B: A gives the set-level conjuncts (left translation of base points; π_iΩ⁸X ≃ π_{i+8}X by the project's homotopyGroupPiLoopEquiv eight times) — A_to_B_of_groups shows that the group-level periodicity G is the ONLY missing piece. A, a bijection of sets, cannot give G; G_holds proves it outright by re-assembling the project's proof of theorem_24_7 at the group level: every step is a homotopyGroupMap of a continuous map shown bijective by the project (omegaPhi_bijective, omegaPhi_bijective_two, the clopen stratum inclusion, stabilization U(m) → U(m+k) over ℝ) or already a MulEquiv (nonempty_mulEquiv_pathSp, homeomorphisms incl. omegaEightHomeomorph), so MulEquiv.ofBijective (homotopyGroupHom …) upgrades each link (linkM, linkM_two, chainM). So A is the set-level, base-point-I part of Milnor's statement; the group structure is B's extra content — true, and (contrary to the project's remark that this 'is not done here') obtainable from the project's per-step lemmas in ~100 lines of glue.",
+ "B_issue": null,
+ "overlap": "B_to_A: 0 shared project theorems. A_to_B: 3904 shared — through G_holds, which reuses the per-step lemmas of the item's own proof (omegaPhi_bijective(_two), nonempty_mulEquiv_pathSp, isSliceSubmanifold_omegaStratum, omegaPhi_bottJ_mem_omegaComp, isCentralI_iWordM, bijective_homotopyGroupMap_unitaryIncl, omegaEightHomeomorph(_basePt), card_bottJ, the Theorem 22.1/Morse-theory infrastructure behind them); A_to_B_of_groups alone: 67 (loop-space and base-point transport). theorem_24_7 itself is not used.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "uses_hypothesis_note": "A_to_B uses A for the set-level conjuncts only; the group-level conjuncts come from G_holds (outright, from project lemmas outside the item).",
+ "embedded_special_case": "not_applicable"
+}

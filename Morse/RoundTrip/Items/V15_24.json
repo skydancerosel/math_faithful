@@ -1,0 +1,17 @@
+{
+ "id": "V15_24",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A (universes 0, any finite index type, no normal form): for skew V with exp V = −I every eigenvalue λ of −V² is ≥ π², hence ‖V‖² ≥ π²n (Frobenius; ‖V‖ = length of t ↦ x exp(tV)), with equality only if V² = −π²I. B (normal form PᵀAP = diag(a_jσ), a_j ≥ 0, on ℝ^{2m}): exp(πA) = −I iff all a_j are odd integers; ⟨A,A⟩ = 2Σa_j²; if exp(πA) = −I, t ↦ exp(πtA) is a minimal geodesic of O(2m) (blind induced metric) iff all a_j = 1; all a_j = 1 ⇒ A² = −I. A ⇒ B: the normal-form computations (exp of the block diagonal, the odd-integer criterion via cos(πa) = −1, the trace, A² = −I) and 'minimal ⇒ all a_j = 1' (compare with exp(πtA₁), A₁ = P·diag(σ)·Pᵀ, length π√(2m): Σa_j² ≤ m with odd a_j ≥ 1) are elementary and do not use A; 'all a_j = 1 ⇒ minimal' needs the global lower bound π√(2m) for every path I → −I in O(2m): the project's Hopf–Rinow argument (proof of riemDist_omegaStratum at k = 0) run with A's pi_sq_mul_card_le_norm_sq. B ⇒ A only vacuously (outright): deriving A's statements for arbitrary skew V from B would need the normal form theorem (absent from the project and Mathlib, cf. V15_2) and B never mentions eigenvalues of −V².",
+ "B_issue": null,
+ "overlap": "B_to_A (vacuous, outright copies): 37 shared project theorems — eq_exp_smul_mul_of_hasDerivAt, inner_mul_left_adj, inner_self_mul_skew, norm_sq_eq_trace, exp_mul_exp_neg, exp_smul_mul_self, mul_conjTranspose_eq_one, Frobenius instance fields; no item theorem.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete real matrices (Mathlib orthogonalGroup as a subset of M_n(ℝ), Ω_k(n) as subsets; the induced-metric notions TanSet/IsGeodOn/IsPathIn/lenM/IsMinGeodIn are already embedded); it does not quantify over abstract Riemannian manifolds."
+}

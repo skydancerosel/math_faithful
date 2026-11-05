@@ -1,0 +1,17 @@
+{
+ "id": "V8_7",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universe 0) is the only listed theorem, Morse.finsum_jump_eq_sum: for c, X : ℝ → V (inner product space) and a finite B such that c is differentiable on (0,1) off B, Σᶠ_{t∈(0,1)} ⟨X t, Δ_t c'⟩ = Σ_{x∈B∩(0,1)} ⟨X x, Δ_x c'⟩ (jump, covD, accel, firstVariation are definitions). B: on abstract connected Riemannian ℝⁿ-manifolds with a Levi-Civita connection, for a piecewise smooth pw: (1) on every subdivision with smooth pieces the acceleration D/dt(dpw/dt) exists on each closed piece, (2) Δ_tV ≠ 0 for only finitely many t ∈ (0,1). A ⇒ B fails genuinely: (1) needs the existence of D/dt along curves for an abstract connection (not formalized for abstract M); (2) is provable outright on abstract M but A (about V-valued c) does not give it. B ⇒ A fails genuinely: B gives finiteness of the jump set of piecewise smooth paths, not that the jumps sit in B, and A is about arbitrary c differentiable off B (A itself is immediate from jump_eq_zero).",
+ "B_issue": null,
+ "overlap": "no direction proved (A_to_B_emb only, rt_check OK)",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "B_emb := B for M = Bridge.Sub hN, cov = Bridge.conn (B_to_B_emb via conn_isLC). A_to_B_emb (rt_check OK): clause (1) from the Bridge alone (hasCovDeriv_iff: the acceleration is covA = P(dV/dt); A not used); clause (2) uses A with a test field supported at one point (jump_eq_zero_of_A: Δ_x c' = 0 at x ∈ (0,1) off B) and new dictionary lemmas D_mfderivWithin_curve / D_Vjump (blind one-sided velocities and Vjump read in V = Morse.jump of incl ∘ pw). B_emb ⇒ A fails for the same genuine reason as B ⇒ A (finiteness does not locate the jumps; A covers non-piecewise-smooth c in V)."
+}

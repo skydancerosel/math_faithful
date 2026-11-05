@@ -1,0 +1,17 @@
+{
+ "id": "V12_7",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universe 0) is cartan_form_swap₁₂ ∧ cartan_form_swap₂₃: for ANY real Lie algebra L and bilinear B, B ⁅Y,X⁆ Z = −B ⁅X,Y⁆ Z, and for ad-invariant B, B ⁅X,Z⁆ Y = −B ⁅X,Y⁆ Z. B: (A) for a bi-invariant metric, (i) ⟨[X,Y],Z⟩ on left-invariant fields changes sign under all three transpositions at every point, (ii) there is a smooth left-invariant alternating 3-form (Mathlib AlternatingMap, Fin 3) extending it; (B) Cartan: H₃(G;ℝ) ≠ 0 (Mathlib singular homology) for every compact connected non-abelian Lie group. B ⇒ A only vacuously. A ⇒ B fails genuinely: (B) — which Milnor's footnote only cites — needs cohomology of Lie groups/de Rham theory, absent from the project and Mathlib; (A)(ii) needs the construction of the form and smoothness of the left trivialization of TG (glue-level but not attempted: it would not close the gap left by (B)); (A)(i) needs 21.3(a) on the group (V12_3). Bridge Bi_of_A (uses A, #rt_check OK): with ad-invariance at 1 (B of V12_1 (6)) and left invariance, A on 𝔤 = GroupLieAlgebra with ipForm gives (A)(i); the (13) transposition is a composite of A's two.",
+ "B_issue": null,
+ "overlap": "B_to_A: 1 shared [Morse.IsAdInvariant._proof_1]. Bridge Bi_of_A passes #rt_check.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "Not applicable: the item's declarations live in Morse/Chapter12/BiInvariant.lean and concern an abstract real Lie algebra L with a bilinear form and an abstract bilinear 'connection' D : L →ₗ L →ₗ L; they are not about a matrix group as a slice submanifold. (The project's embedded matrix-group version of 21.1–21.3, Morse/Chapter12/GroupGeodesics.lean, e.g. IsMatrixGroup.curvOp_eq_curv_halfLie, is not part of this item.) B quantifies over abstract Lie groups with a Mathlib RiemannianBundle, not over Bridge.Sub."
+}

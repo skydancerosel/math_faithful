@@ -1,0 +1,15 @@
+{
+ "id": "V14_23",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A (universes 0; Stiefel vocabulary, the def stiefelSphere read as Nonempty of its type) is the general machinery: (1) Steenrod's argument for ANY equivariant p : E → B of G-spaces with a local section of the orbit map near b₀ and G transitive on B (local trivializations p⁻¹U ≃ₜ U × p⁻¹(b₀) over U); (2,3) the explicit section secMat and its unitarity; (4) transitivity of U(ι₁ ⊕ κ) on orthonormal κ-frames; (5,6) local triviality of the frame restriction V_{κ₁⊕κ₂} → V_{κ₂} and of the orbit map U(ι₁ ⊕ κ₂) → V_{κ₂} (fibre U(ι₁)); (7) V₁ ≅ sphere; (8) U(m) → U(m⊕1) → S local trivial — all for any RCLike 𝕜 and any index types, on concrete Stiefel manifolds/spheres (no coset spaces), with the project's IsLocallyTrivial (∃ open U ∋ b, p⁻¹U ≃ₜ U × F over U). B: Steenrod's statement for coset maps G → G/H of any topological group, U(m+1)/U(m) ≃ₜ S^{2m+1} by gU(m) ↦ g e_{m+1}, local sections and Mathlib-Trivialization bundles for U(m+1) → U(m+1)/U(m), U(2m) → U(2m)/U(m) and g ↦ g e_{m+1}, for ℂ only. A ⇒ B (uses A's (1), (4), (6); A_core_to_B): Steenrod from (1) with E = G, B = G/H, fibre mk⁻¹(mk 1) = H; U(n)/U(a) ≃ₜ V_b(ℂ^{a⊕b}) by the last b columns (compactness of U(n), stabilizer = fixSub n a, transitivity (4)); local triviality (6) transported along homeomorphisms; Mathlib Trivialization built from IsLocallyTrivial (adapted from IsEvenlyCovered.toTrivialization'); local sections from trivializations; V₁(ℂ^{m⊕1}) ≃ₜ Sph m. B ⇒ A fails genuinely: the general Steenrod lemma for arbitrary G-spaces, the explicit section formula, the real case, arbitrary index types and the restriction bundles V_{k} → V_j are not consequences of B's complex coset-space statements. On the common special case B does give A back: B ⇒ A's (6) for ℂ, ι₁ = Fin m, κ₂ = Fin 1 (the bundle U(m) → U(m⊕1) → V₁ = S^{2m+1}) is proved (B_to_A6C1: B's Mathlib-trivialization bundle g ↦ g e_{m+1} converted with the project's isLocallyTrivial_of_trivializations and reindexed); for κ₂ = Fin m it would also need transitivity of U(2m) on m-frames, which B (a statement about the abstract coset space U(2m)/U(m)) does not contain.",
+ "B_issue": null,
+ "overlap": "A_core_to_B: 16 shared project theorems, all Stiefel basics (mem_stiefel, mul_mem_stiefel, baseFrame_mem, coe_unitaryOrbit, continuous_unitaryOrbit, coe_unitaryGroup_eq_stiefel, mem_stiefel_fin_one, IsLocallyTrivial.homeomorph_comp, instance proofs); none of the local-section construction (secMat, gsFrame) or of exists_triv_of_orbitSection's proof. Harness note: A_to_B itself fails #rt_check if the DEF stiefelSphere is banned, because A's statement mentions sphereOrbit, defined with stiefelSphere; so the proof is A_core_to_B (A without conjuncts (7), (8)), which passes #rt_check with all eight decls banned, and A_to_B := A_core_to_B ∘ A_core_of_A passes with the seven theorem names. B_to_A6C1: 12 shared (Stiefel basics, coe_unitaryOrbit, IsLocallyTrivial.homeomorph_comp).",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ }
+}

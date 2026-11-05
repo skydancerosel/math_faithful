@@ -1,0 +1,17 @@
+{
+ "id": "V5_16",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (Morse.theorem_7_1, no universe parameters, 𝕜 : Type): for a closed slice submanifold M ⊆ 𝔼 n of real dimension 2k with J-invariant tangent spaces (J orthogonal, J² = −1), H_i(M; 𝕜) = 0 for i > k, every field 𝕜. B (Milnor): for M the common zero set in ℂⁿ of a set of polynomials which is a complex submanifold of complex dimension k, H_i(M; ℤ) = 0 for i > k. A ⇒ B: everything except the coefficients is glue and is proved (A_to_B_field, uses A, #rt_check OK: the zero set is closed, θ carries it to a closed complex submanifold of ℝ^{K+1}, homology transported along θ), giving B with ℤ replaced by an arbitrary field. Passing to ℤ needs the universal coefficient theorem (vanishing over ℚ and every 𝔽_p in all degrees > k forces H_i(M; ℤ) to be torsion and torsion-free), which neither Mathlib nor the project has: true mathematically, but new homological algebra, not glue. B ⇒ A fails genuinely: A covers every closed complex submanifold (e.g. the graph of exp in ℂ², not algebraic), and integral vanishing above k does not give H_{k+1}(M; 𝕜) = 0 without torsion-freeness of H_k(M; ℤ).",
+ "B_issue": null,
+ "overlap": "no B_to_A proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "Not about Riemannian manifolds or connections: A and B concern complex submanifolds of ℂⁿ / ℂPⁿ, singular homology and relative homotopy; there is nothing to specialise to Bridge.Sub. Nothing added to the .lean file."
+}

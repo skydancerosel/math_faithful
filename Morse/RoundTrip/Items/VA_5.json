@@ -1,0 +1,17 @@
+{
+ "id": "VA_5",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "A = isClosed_truncation ∧ isHomotopyEquiv_truncIncl ∧ isHomotopyEquiv_truncProj ∧ level_le_of_stripMap (universes 0; level_le_of_stripMap at .{0,0}). B = (a) X_Σ^n = X₀×[0,1] ∪ … ∪ X_{n-1}×[n-1,n] ∪ X_n×[n]; (b) X_n×[n] is a STRONG deformation retract of X_Σ^n in X × ℝ; (c) Milnor's G f_Σ carries X_Σ^n into itself. A ⇒ B: (c) is A's level_le_of_stripMap applied to F = G ∘ f_Σ transported along tel S ≃ₜ telescope S (strip bounds from level(G w) ≤ ⌈τ(w)⌉); (a) and (b) are proved outright — A states only that x ↦ (x, n) and (x, τ) ↦ x are homotopy equivalences, not the strong deformation retraction (it is inside the proof truncIncl_comp_truncProj) and not the set description (a docstring). B ⇒ A: both homotopy equivalences follow from B(b) (the end H₁ of the deformation gives ρ : X_Σ^n → X_n with ρ ∘ ι = id, ι ∘ ρ ≃ id); closedness of X_Σ^n (not in B) and the GENERAL level lemma (B(c) is a single instance of it, for Milnor's G) are re-proved outright (elementary). So both directions hold; the extra content on each side (B: set shape, strong DR; A: closedness, general level lemma) is elementary.",
+ "B_issue": null,
+ "overlap": "A_to_B: 15 shared project theorems, all basic telescope/truncation facts (mem_telescope*, mem_telescope_of_le, mem_of_mem_telescope, stripMap/truncIncl/truncProj proof fields). B_to_A: 17 shared, the same plus exists_stripMap_lt_one and IsHomotopyEquiv.of_inverse (level_le is a copy of the project proof of level_le_of_stripMap; nothing from the homotopy truncIncl_comp_truncProj, which comes from B(b)).",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "General topology (telescopes and their truncations); no Riemannian manifold."
+}

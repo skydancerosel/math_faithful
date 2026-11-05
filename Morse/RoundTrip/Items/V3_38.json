@@ -1,0 +1,11 @@
+{
+ "id": "V3_38",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "A: (i) a Poincaré–Hopf integer χN (Morse.IsEulerNumber) of a compact N ⊆ ℝ^{K+1}, K > 0, dim d+1, equals Σ_{i≤d+1}(-1)^i b_i(T;𝕜) for any T ≃ₜ N; (ii) eulerNumberM E M (Σ(-1)^λ C_λ of a chosen Morse function) = Σ(-1)^i b_i(M;𝕜) for every compact manifold, any dimension. B: for nonempty compact N of dim d+1 ≥ 1 and every field, the index sum of every tangent field with finitely many zeros and Σ(-1)^λ C_λ(Φ|N) both equal Σ(-1)^λ R_λ(N;F). A ⇒ B: K = 0 is vacuous (Glue.no_sliceSubmanifold_R1); χN exists by the project's exists_isEulerNumber (Poincaré–Hopf, outside A) and is χ(N;F) by (i); formula (3) is (ii) for N with the project's sum_critCount_eq_eulerNumberM. B ⇒ A: (i) by Glue.eq_of_isEulerNumber (compare on grad L_p); (ii) for nonempty M of dim ≥ 1 from B's (3) on a Whitney copy with L_p. B has no content for dim M = 0 or M = ∅; there (ii) is the project's Morse inequality sum_bettiNumber_eq_sum_critCount (outside A). Field-independence is implicit in both.",
+ "B_issue": "B's manifolds are nonempty, of dimension ≥ 1 and embedded (forced by the signature of Milnor.Tub.indexN); the 0-dimensional / empty case of χ(M) = Σ(-1)^λ C_λ is not covered.",
+ "overlap": "B_to_A: 2034 shared: the dim-0/empty branch reuses the project's Morse filtration (sum_bettiNumber_eq_sum_critCount: cell homology, excision, sublevel steps), and both statements reach Milnor.Tub.* (indexN, tubular neighbourhood) through IsEulerNumber; the Poincaré–Hopf proof itself (poincare_hopf) is not used by B_to_A"
+}

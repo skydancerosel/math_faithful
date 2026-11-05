@@ -1,0 +1,17 @@
+{
+ "id": "V11_21",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B (Corollary 19.3, both halves): on every abstract connected Hausdorff Riemannian ℝⁿ-manifold with any Levi-Civita connection, Milnor-complete, ⟨R(A,B)A,B⟩ ≤ 0: πᵢ(M,x) = 0 for i ≥ 2 (Mathlib HomotopyGroup.Pi) and π₁(M,x) has no non-trivial element of finite order. A (universes 0): only the first half, only for slice submanifolds N ⊆ V with the induced metric (genLoop_homotopic_const, corollary_19_3, via the covering exp_x), plus two cube lemmas (contractibleSpace_cube, isPreconnected_cube_face). A ⇒ B fails genuinely twice: setting (abstract manifolds), and A has no counterpart of the π₁-torsion-freeness half (the project explicitly leaves it out: it needs group cohomology, Hu's theorem and the cohomology of finite cyclic groups, or a Cartan fixed-point argument — real mathematics, not glue). B ⇒ A fails for the setting; on embedded manifolds B covers A only for connected N (B assumes ConnectedSpace) with model ℝⁿ.",
+ "B_issue": null,
+ "overlap": "B_emb_to_A_conn: 384 shared project theorems, all generic geodesic/exp/slice-chart infrastructure (LocalSpray, Flow, NormalCoord, sliceAt, exp_zero, IsGeodesicOn.*) and curvR_of_mem, entering through the Hopf–Rinow completeness dictionary and the curvature dictionary; none of the Cartan–Hadamard proof (no covering-map, lifting or Lemma 19.1 lemmas). A_to_B_emb_pi uses A's corollary_19_3 (hypothesis).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "Bemb_to_A_only",
+ "embedded_special_case_note": "Items/V11_21.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric, connected), cov = Bridge.conn (B_to_B_emb via conn_isLC). Glue copied from Items/V11_17.lean: Milnor completeness of (↥N, ρ) ⇔ Morse.IsGeodesicallyComplete (Hopf–Rinow) and Emb.nonPosCurv_iff (blind NonPosCurv ⇔ Morse.NonposCurvature). Proved (#rt_check OK): A_to_B_emb_pi (A's corollary_19_3 ⇒ the πᵢ half of B_emb) and B_emb_to_A_conn (B_emb ⇒ all of A for connected N with model ℝⁿ: genLoop_homotopic_const from Subsingleton πᵢ by Quotient.exact; the two cube lemmas re-proved outright). A ⇒ B_emb fails genuinely: the π₁ half is not formalized in the project. Not covered by B_emb: A for non-connected N (would need restriction to the component of x, itself a slice submanifold — not done)."
+}

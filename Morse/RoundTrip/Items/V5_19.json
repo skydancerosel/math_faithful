@@ -1,0 +1,17 @@
+{
+ "id": "V5_19",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): theorem_7_4_of_section — for compact X, closed A, X − A ≅ M a closed complex submanifold with ‖e⁻¹y‖ → ∞ at A, and Hypothesis (N), every map from a compact P embedded in a space of dimension < k is homotopic rel its preimage of A to a map into A; theorem_7_4 / _of_embedding — the same for closed V ⊆ ℂPⁿ (Grassmannian model, P = {Z₀ = 0}) under (N); _bijective / _surjective — π_i(V ∩ P, x) → π_i(V, x) bijective for i < k − 1, onto for i = k − 1. B (Milnor): for projective zero sets of homogeneous polynomials in ℂPⁿ = S^{2n+1}/S¹, any hyperplane, V − P a complex submanifold of complex dimension k: π_r(V, V ∩ P) = 0 for 1 ≤ r < k (compression criterion), WITHOUT (N). A ⇒ B fails only on (N): A_to_B_of_N (#rt_check OK, uses A's abstract clause) proves B for every such V once (N) holds for (V, V ∩ P), with the glue built here (B's ℂPⁿ compact and Hausdorff via the Gram map, V and V ∩ P closed, the affine chart V − P ≅ affPart, ‖e⁻¹y‖ → ∞ from T2). Milnor obtains (N) from the triangulability of algebraic varieties (Łojasiewicz), not formalized: a genuine missing hypothesis, not glue. B ⇒ A fails genuinely: A covers abstract pairs, non-algebraic closed V, arbitrary compact P and r = 0, and the homotopy-group consequences; B only algebraic V and cells.",
+ "B_issue": null,
+ "overlap": "no B_to_A proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "Not about Riemannian manifolds or connections: A and B concern complex submanifolds of ℂⁿ / ℂPⁿ, singular homology and relative homotopy; there is nothing to specialise to Bridge.Sub. Nothing added to the .lean file."
+}

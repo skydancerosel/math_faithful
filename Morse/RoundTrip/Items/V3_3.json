@@ -1,0 +1,9 @@
+{
+ "id": "V3_3",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "relation": "A_stronger",
+ "why": "A (dim ≥ 1, exactly two critical points, both non-degenerate, M compact, no T2) gives p, q with f p < f q, strict min/max elsewhere, and indices 0 and n. B only says the two given critical points are a min and a max point (non-strict), and it also covers dim 0, which A excludes but which is trivial (M = {p, q}), so A ⇒ B holds. B ⇒ A fails: the strict inequalities and the indices 0 and n (Hessian arguments via indexM_eq_zero_of_isLocalMin / ..._isLocalMax) are extra content beyond B, and A also drops T2. Deriving them would be re-proving A.",
+ "B_issue": "Minor: B drops Milnor's normalization f(p)=0, f(q)=1. Its docstring justifies this by noting the dim-0 case; the consequence is that B does not assert f(min) < f(max).",
+ "overlap": "n/a (B_to_A not proved)"
+}

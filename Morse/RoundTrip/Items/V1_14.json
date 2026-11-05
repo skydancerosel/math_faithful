@@ -1,0 +1,11 @@
+{
+ "id": "V1_14",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A builds the global flow Morse.flow of a bounded Lipschitz field on a Banach space E directly: integral curves, uniqueness, the group law, and C^n dependence on (t, x) for C^n compactly supported fields. B is about an abstract finite-dimensional Hausdorff manifold: Graves' local existence with smooth dependence, local uniqueness of integral curves, and for compactly supported fields a uniform local flow and a global smooth 1-parameter group. A ⇒ B needs charts, patching and manifold uniqueness, none of which is in A. B ⇒ A fails because B says nothing about Lipschitz fields, infinite-dimensional E, or the specific function Morse.flow.",
+ "B_issue": null,
+ "overlap": "n/a (neither direction proved)"
+}

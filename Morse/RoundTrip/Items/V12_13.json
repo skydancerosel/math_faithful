@@ -1,0 +1,17 @@
+{
+ "id": "V12_13",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universe 0) = Morse.even_spectralIndex: for any finite family e : κ → ℝ whose positive values have even multiplicity, spectralIndex e (vocabulary: Σᶠ_t #{i | t ∈ conjParams (e i)}, conjParams = the conjugate parameters 20.5 attaches to an eigenvalue) is even — pure combinatorics; the project's 'index' here is a definition on spectra, not the index of a geodesic. B: on a Lie group with bi-invariant metric and LC connection, for every geodesic γ:[0,1]→G, (i) every γ(t), 0<t≤1, has even conjugate multiplicity (Jacobi fields), (ii) the index λ (index of the blind E_** on TΩ_γ) is even. B ⇒ A only vacuously. A ⇒ B fails genuinely: B needs Theorem 20.5 (conjugate points of a locally symmetric space from K_V's spectrum) and the Index Theorem 15.1 for abstract manifolds, and the spectrum-with-multiplicity bookkeeping — none in the project for Mathlib manifolds (embedded / SU(n) only). Bridge B_of_inputs (uses A, #rt_check OK): Paired e ∧ Thm20_5 (conjMult γ 0 t = #{i | e_i>0, t∈(π/√e_i)ℤ}, 0<t≤1) ∧ IndexThm (λ = Σᶠ_{0<t<1} conjMult) ⇒ B; (ii) is A after identifying the blind ℕ∞-sum with spectralIndex e (lam_eq_spectralIndex), (i) is a fibrewise count from Paired alone (not part of A).",
+ "B_issue": null,
+ "overlap": "B_to_A: 17 shared [Morse.spectralIndex_eq (+ its simp auxiliaries), conjParams_finite, conjParams_subset, spectralIndex.eq_1] — the formal proof's interchange-of-summation lemma; even_spectralIndex avoided.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "Not applicable: the item's declaration (Morse.even_spectralIndex; vocabulary spectralIndex, conjParams in Morse/Chapter14/IndexCount.lean) is combinatorics on a finite family of reals, not about a slice submanifold. B quantifies over abstract Mathlib Lie groups with a RiemannianBundle; Bridge.Sub carries no LieGroup structure. (The project's embedded use of this lemma, Morse/Chapter12/SUIndex.lean for SU(n) ⊆ Mₙ(ℂ), is not part of this item.)"
+}

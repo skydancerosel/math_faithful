@@ -1,0 +1,17 @@
+{
+ "id": "V10_24",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: for every abstract Riemannian ℝⁿ-manifold M with ψ : M → ℝⁿ⁺¹ a smooth injective isometric map onto the unit sphere (n ≥ 1), any Levi-Civita connection, and q ≠ p, p' (via ψ): both Ω(M; p, q) (blind Om) and Ω* are homotopy equivalent to a Hausdorff Mathlib CWComplex with exactly one cell in each dimension k(n−1). A (universes 0): corollary_17_4 for the embedded Sⁿ ⊆ ℝⁿ⁺¹, n ≥ 2, Ω only: IsCountableCellComplexType (PathSp (Sph n) p q) (oneCellEach (k ↦ k(n−1))), i.e. homotopy equivalent to a mapping telescope of iterated adjunction spaces with non-cellular attaching maps, one cell of dimension k(n−1) at stage k+1; plus the general omega_cells_of_unique (any closed N with one non-degenerate geodesic per energy window) and strictMono_energy_sphGeod. A ⇒ B fails genuinely: project cell complex ⇒ Mathlib CWComplex needs cellular approximation (absent, as in V2_11/V2_12/V5_11); the case n = 1 (countably many 0-cells) is not in A; abstract M isometric to Sⁿ would need transport of Ω along ψ (inverse-function theorem on manifolds). B ⇒ A fails genuinely: a CW complex does not give the ordered tower; omega_cells_of_unique (general N) and the energy monotonicity are not in B.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. For A_to_A_emb (#rt_check OK): 802 shared project theorems — the Appendix mapping-telescope machinery reached through Morse.theorem_17_1 (Ω* ≃ PathC ≃ PathSp), slice-chart / riemDist / path-metric infrastructure of the Ω dictionary, and the sphere lemmas behind corollary_17_4's statement; none of the three theorems of the item.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V10_24.lean: B_emb := B at M = Sⁿ ⊆ ℝⁿ⁺¹ (Bridge.Sub (sphSub n), model ℝⁿ, induced metric), ψ = inclusion, cov = Bridge.conn; B_to_B_emb uses new glue Sph.isRoundSphere (the inclusion is a blind IsRoundSphere: Bridge.contMDiff_incl, Subtype.range_coe + preimage_eq_sphere, Bridge.inner_eq) and Sph.connectedSpace (isConnected_sphere, n ≥ 1). Proved (#rt_check OK) A_to_A_emb: for n ≥ 2, q ≠ ±p, the BLIND Ω(Sⁿ; p, q) and Ω*(Sⁿ; p, q) satisfy IsCountableCellComplexType … (oneCellEach (k ↦ k(n−1))) — i.e. A ⇒ B_emb except for the Mathlib-CWComplex requirement (and n = 1). Glue (namespace Emb) copied from Items/V10_19.lean: edist_eq, omTopology_eq/isInducing_tau, isHomotopyEquiv_tau (lift renamed lft), sigma; new nonempty_he_om / nonempty_he_omStar (Ω ≃ₕ PathSp, Ω* ≃ₕ PathSp via sigma and the project's theorem_17_1). The single remaining gap on Sⁿ, n ≥ 2, is cellular approximation (project telescope → Mathlib CWComplex with the same cell counts), absent from Mathlib and the project."
+}

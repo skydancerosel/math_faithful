@@ -1,0 +1,11 @@
+{
+ "id": "Milnor_Sard_critSet",
+ "name": "Milnor.Sard.critSet",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are {x ∈ U | ¬ Surjective (fderiv ℝ f x)} (set-builder `{x ∈ U | p x}` unfolds to `{x | x ∈ U ∧ p x}`); `agree` is `rfl`. Both use the full fderiv and the same junk convention at non-differentiable points."
+}

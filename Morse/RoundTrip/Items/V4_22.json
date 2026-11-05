@@ -1,0 +1,12 @@
+{
+ "id": "V4_22",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "B is Corollary 6.8 on a compact (Hausdorff, second countable) manifold modelled on ℝⁿ: a bounded smooth f is approximated uniformly within ε by smooth g without degenerate critical points whose derivatives of order ≤ k, measured in finitely many maximal-atlas charts on compact pieces, are ε-close to those of f. A ⇒ B: A's approximation clause (any model E, any smooth coordinate systems y_j into any E', compact K_j ⊆ target) with E = E' = ℝⁿ, y_j = φ_j, K_j = φ_j(C_j); A bounds the derivatives of (g − f)∘y⁻¹, B those differences (new Glue.iteratedFDeriv_sub_comp_symm). B ⇒ A fails genuinely: A's first clause ae_isMorseFunction_add_inner_comp (for any, possibly non-compact, M and any embedding e with injective differential, f + ⟪a, e⟫ is Morse for a.e. a) is the engine of Milnor's proof and is not a consequence of an existence statement on compact M. A's boundedness hypothesis is absent (automatic on compact M).",
+ "B_issue": null,
+ "overlap": "n/a (B_to_A not proved)",
+ "uses_hypothesis": {"A_to_B": true, "B_to_A": false}
+}

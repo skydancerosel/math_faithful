@@ -1,0 +1,11 @@
+{
+ "id": "Morse_curvTensor",
+ "name": "Morse.curvTensor",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "`agree`: Morse.curvTensor hN q = T hN q for every slice submanifold and q. Both are trilinear maps of T_qN, compared through inner products with every U ∈ T_qN: the project side is Morse.inner_curvOp (Gauss equation, Milnor's sign, via self-adjointness of D_v), the blind side the defining property of LinearMap.adjoint; the blind II = (1 − P_q) ∘ fderivWithin (p ↦ P_p) equals Morse.secondFundForm on tangent vectors (derivative within N = dN on T_qN; D_v w is normal for tangent w)."
+}

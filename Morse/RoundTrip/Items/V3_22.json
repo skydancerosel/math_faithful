@@ -1,0 +1,4 @@
+{"id": "V3_22", "A_to_B": "proved", "B_to_A": "failed", "not_B": false, "relation": "A_stronger", "effort_only": false,
+ "why": "Both use the same torus of revolution: B's torus R r is Morse.torus R r by rfl. A ⇒ B: compactness and the slice-submanifold structure (modelled on ℝ², complement ℝ¹) are A's isCompact_torus and isSliceSubmanifold_torus. B's extra clause, that x₀ ≥ -(R+r) on the torus with equality only at p (Milnor's 'tangent to the plane V'), is not in A but is elementary; it is proved directly (lowest). B ⇒ A fails for lack of content: A also gives the algebraic presentation (torus = {poly = 0}, dpoly ≠ 0 on it, 0 a regular value of poly1) and dim T_qT = 2, which B never mentions. Technical note: A's statement contains the proof term isSliceSubmanifold_torus hr hrR (inside finrank_tangentSubspace_torus), so #rt_check is run on A'_to_B with that proof generalized (A ↔ A' by proof irrelevance).",
+ "B_issue": null,
+ "overlap": "n/a (B_to_A not proved)"}

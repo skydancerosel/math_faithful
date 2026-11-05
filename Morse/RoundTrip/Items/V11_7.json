@@ -1,0 +1,17 @@
+{
+ "id": "V11_7",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: on every abstract connected Hausdorff ℝⁿ-manifold with any smooth Mathlib RiemannianBundle metric and any Levi-Civita connection (Milnor's axioms), if ⟨R(A,B)A,B⟩ ≤ 0 for all A, B (Milnor's sign, IsCurvVal) then no a, b ∈ [0,1] are conjugate along any geodesic γ : [0,1] → M (no completeness). A (universes 0): for slice submanifolds N ⊆ V with the induced metric only: NonposCurvature ⇔ all sectional curvatures ≤ 0; the derivative formula d/dt⟨DJ/dt,J⟩ = ‖DJ/dt‖² − ⟨R(V,J)V,J⟩; the key step (a Jacobi field vanishing at a < b vanishes on [0,1]); Lemma 19.1. A ⇒ B fails genuinely (abstract manifolds are not given embedded; the project has no abstract Jacobi/curvature theory); B ⇒ A fails genuinely (setting, and A's sectional-curvature equivalence and derivative formula are not consequences of B). On embedded manifolds the core claims coincide (proved both ways, see the embedded note).",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. For the embedded theorem B_emb_to_A_geo: 175 shared project theorems — tangent-projection / second-fundamental-form / curvOp lemmas (curvOp_mem, curvR_of_mem, tanProj_*, dN_*), slice-chart and Gram-projection lemmas, IsSmoothCurveIn/IsJacobiField basics, all reached through RoundTrip/Bridge.lean (isCurvVal_iff, hasCovDeriv_iff') and the Jacobi dictionary; none of the argument of Lemma 19.1 (hasDerivAt_inner_covAlong, the monotonicity of ⟨DJ/dt, J⟩, IsJacobiField.eqOn_zero) is shared.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V11_7.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric), cov = Bridge.conn (B_to_B_emb via conn_isLC). New dictionary lemma Emb.nonPosCurv_iff (blind NonPosCurv conn ⇔ Morse.NonposCurvature hN, via Bridge.isCurvVal_iff, Bridge.inner_eq, curvOp_mem); Jacobi/conjugacy dictionary copied from Items/V9_10.lean (isJacobiField_of_isJacobi, isJacobi_of_isJacobiField, isConj_iff, isGeodesic_lift, isConjugate_congr). Proved A_to_B_emb (uses A's lemma_19_1) and B_emb_to_A_geo, where A_geo = A's lemma_19_1 and IsJacobiField.eqOn_zero_of_nonpos for model ℝⁿ and connected ↥N (curves smooth on [0,1], geodesic on (0,1)); both #rt_check OK. Not covered by B_emb: A's nonposCurvature_iff_sectionalCurvature and hasDerivAt_inner_covAlong (auxiliary statements, not consequences of B), and non-connected N. Only the induced connection (uniqueness of the Levi-Civita connection on ↥N is not in the Bridge)."
+}

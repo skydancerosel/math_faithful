@@ -1,0 +1,17 @@
+{
+ "id": "V8_1",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0) is only the unfolding of the project's DEFINITION pathTangent hN c (a Submodule of ℝ → V: piecewise smooth X, tangent to N along c on [0,1], X 0 = X 1 = 0) — mem_pathTangent is Iff.rfl — and its dependence on c|[0,1]; so B ⇒ A is proved only by proving A outright (vacuous). B: for every abstract connected Riemannian ℝⁿ-manifold, Ω(M;p,q) ≠ ∅ for all p, q (piecewise smooth paths on [0,1]) and TΩ_ω (fields along ω, continuous in TM on [0,1], smooth along each piece of some subdivision, vanishing at 0, 1) contains 0 and is closed under sums and scalar multiples. A ⇒ B fails genuinely: B is about abstract manifolds (not embedded), and its content — piecewise-smooth path-connectedness of connected manifolds and the vector-space structure of TΩ — is not stated by A; in the project the vector-space structure is built into the definition (Submodule), and nonemptiness of Ω for connected N is only implicit in riemDist_ne_top. B is provable outright (common refinement of subdivisions, smoothness of fibrewise sums, chart-segment path-connectedness) but that is abstract-manifold work unrelated to A.",
+ "B_issue": null,
+ "overlap": "B_to_A: 27 shared, all auxiliary: the Submodule proof obligations of pathTangent (pathTangent._proof_1..3, IsPiecewiseSmooth.add/const_smul/smul/of_contDiff/map₂) and slice-chart internals; nothing of an argument (A has none).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_attempted",
+ "embedded_special_case_note": "Would compare definitions on ↥N: InOmega ↔ pathSpace (the Bridge has isPiecewiseSmooth_of_isPW / isPW_lift, but on the same [a,b]) and InTOmega ↔ pathTangent (missing: continuity in TM ↔ continuity of the ambient field, and IsSmoothAlong on a common refinement of the path's and the field's subdivisions)."
+}

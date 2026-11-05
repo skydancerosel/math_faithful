@@ -1,0 +1,17 @@
+{
+ "id": "V7_27",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; slice submanifold N ⊆ V): (1) N preconnected and exp_p defined on T_pN for ONE p ⇒ ρ-bounded sets have compact closure ⊆ N; (2) bounded sets have compact closure in N ⇒ (N, ρ) complete, with no geodesic hypothesis; (3) Corollary 10.10 (preconnected + geodesically complete ⇒ (1)'s conclusion and completeness). B: abstract connected Riemannian manifold, Levi-Civita cov, GeodComplete ⇒ ρ-bounded sets have compact closure and MetricComplete. B ⇒ A fails genuinely on (1) (one-point completeness, a strengthening) and (2) (an implication between the two conclusions that B never states); but B_to_A_milnor : B → corollary_10_10 is proved (rt_check OK): B applied to N re-modelled on ℝᵐ with RoundTrip.Bridge's induced metric/connection, ρ = riemDist (Bridge.rho_eq, finite on connected N), compactness of closures transported by the inclusion, empty N handled separately. A ⇒ B fails genuinely (abstract setting, no abstract geodesic theory or Nash embedding in the project).",
+ "B_issue": null,
+ "overlap": "B_to_A_milnor (partial, B → corollary_10_10): 415 shared project theorems — riemDist_ne_top (normal coordinates, exists_crossing), riemDist_eq_top_of_notMem, riemDist_le_pathLength, the exp/geodesic infrastructure under Bridge.expDefined_of_mem_expDom; not theorem_10_9, continuousOn_exp or isCompact_closure_of_isRiemBounded (the compactness argument comes from B). No full direction proved.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved_partial",
+ "embedded_special_case_note": "B → corollary_10_10 proved in Items/V7_27.lean (B_to_A_milnor), uses B; same glue as V7_26."
+}

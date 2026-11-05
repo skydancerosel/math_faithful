@@ -1,0 +1,17 @@
+{
+ "id": "V9_25",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: on every abstract connected Hausdorff ℝⁿ-manifold with any smooth metric and any Levi-Civita connection (Milnor's axioms), for a geodesic γ on [0,1], {t ∈ (0,1] | IsConj γ 0 t} is finite. A (universes 0, corollary_15_2): for slice submanifolds N ⊆ V with the induced metric and an unbroken geodesic γ ∈ Ω(N;p,q), {t | IsConjugate hN γ 0 t} is finite (IsConjugate forces t ∈ [0,1], t ≠ 0, so the sets have the same shape). The only difference is the setting: A ⇒ B fails genuinely (abstract Riemannian manifolds are not given embedded; the project has no abstract Jacobi theory), B ⇒ A fails genuinely (A covers non-connected N and any model Z). On embedded manifolds the statements coincide: A ⇒ B_emb and B_emb ⇒ A_conn are proved (#rt_check OK).",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. Embedded theorems: A_to_B_emb 175 and B_emb_to_A_conn 173 shared project theorems, all from the Jacobi/conjugacy dictionary (slice-chart and tangent-projection lemmas, curvature, IsJacobiField.contDiffOn/eq/congr/tangent, jacobiExpr); nothing of the index theorem (theorem_15_1, indexUpTo, assertions) is shared.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V9_25.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric, ConnectedSpace) and cov = Bridge.conn (B_to_B_emb via conn_isLC). Dictionary copied from Items/V9_10.lean into namespace Emb (jacobi_Icc, isJacobiField_of_isJacobi, isJacobi_of_isJacobiField, isConj_iff, isGeodesic_lift, isConjugate_congr, prj_incl, derivWithin_eventuallyEq). A_to_B_emb: a blind geodesic γ gives the unbroken geodesic incl∘γ ∈ Ω(N; γ0, γ1) (Bridge.isGeodesicOn_Ioo, IsSmoothCurveIn.mem_pathSpace), and the blind conjugate set is contained in A's via isConj_iff. B_emb_to_A_conn: A for model ℝⁿ and connected ↥N; lift γ to ↥N (isGeodesic_lift), A's conjugate set is contained in B's via isConjugate_congr and isConj_iff. Limitations: only the induced connection (uniqueness of the Levi-Civita connection is not formalized), A_conn only for connected N and Z = ℝⁿ."
+}

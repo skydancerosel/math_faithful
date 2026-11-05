@@ -1,0 +1,16 @@
+{
+ "id": "V15_11",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": true,
+ "why": "A (universes 0, any n, any k, any 1 ≤ a < b ≤ k) is the algebraic bijection J ↦ θ = J_aJ_bJ from Ω_{k+1}(n) onto the symmetric orthogonal involutions commuting with J_a, J_b and anticommuting with the other J_c, c ≤ k, with inverse θ ↦ J_bJ_aθ. B (ℝ^{16r}, 7 structures) asserts the four homeomorphisms of Lemma 24.6 onto spaces of SUBSPACES (as orthogonal projections): Ω_3 ≅ quaternionic Grassmannian, Ω_5 ≅ {W' ⊆ V₁, J₁-closed, V₁ = W' ⊕ J₂W'}, Ω_6 ≅ {X' ⊆ W, W = X' ⊕ J₁X'}, Ω_7 ≅ Grassmannian of X, each sending J to the +1-eigenspace of the triple product inside the previous space, plus dim X = 2r. A ⇒ B is proved only partly (A_to_B_partial): step (3) in full from A (θ ↦ (1+θ)/2; a projection with J-invariant range commutes with skew J; continuity, inverses from A's mem_omega_of_theta / mul_theta_mul), and dim X = 2r from the project's halving lemmas. Steps (5), (6), (7) need the inverse map — reconstructing θ on all of ℝ^{16r} from its +1-eigenspace in V₁, W, X by transport with J₄ (resp. J₂, J₄; J₁, J₂, J₄) and checking every commutation relation, plus translating the subspace conditions (⊥, ⊕) into projection identities — i.e. Milnor's 'J₅/J₇ is uniquely determined', which the project explicitly does not formalize; B is true there (checked on paper), so this is proof effort, but substantial. B ⇒ A only vacuously: A's general n, k, a, b are not instances of B; A is re-proved outright (word_simp).",
+ "B_issue": null,
+ "overlap": "B_to_A: 5 shared project theorems (isComplexStructure_iff, IsComplexStructure.transpose, IsAnticommFamily.cs/.anti, mul_assoc_of_eq — the word_simp helper); no item theorem. A_to_B_partial (rt_check OK) uses A's three theorems plus the project's finrank_eq_two_mul_eigV₁ / finrank_eigV₁_eq / finrank_eigW_eq (outside the item) for dim X.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable"
+}

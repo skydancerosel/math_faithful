@@ -1,0 +1,22 @@
+{
+ "id": "V8_13",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0), for slice submanifolds N ⊆ V: Theorem 13.1 for every 2-parameter variation (IsVariation, U ⊆ ℝ² open, any break set) of an unbroken geodesic — the iterated LINE derivative ∂/∂u₁(∂E(α(u₁,u₂))/∂u₂|_{u₂=0}) at u₁ = 0 exists and equals 2·secondVariation γ W₁ W₂ — and its corollary second_variation_eq (well-definedness). B, for abstract connected ℝⁿ-manifolds with any Levi-Civita connection: for a 2-parameter blind variation of a geodesic, u ↦ fderiv(E∘α) u e₀ is FRÉCHET differentiable at 0 and ½·mixedD(E∘α) equals Milnor's formula with W₁ inside (jumps of DW₁/dt on the pieces, piece integrals, R via IsCurvVal). A ⇒ B and B ⇒ A fail genuinely, now ONLY because of the setting (abstract manifolds and every Levi-Civita connection vs slice submanifolds with the induced one): on embedded manifolds the two are equivalent (A ⇒ B_emb and B ⇒ A_emb proved, second attempt with RoundTrip/EnergyC2). Note (not a B bug): B differentiates in the other order and asserts more regularity than A; both harmless since E∘α is C^∞ (EnergyC2).",
+ "B_issue": null,
+ "overlap": "Main directions: none proved. Embedded: A_to_B_emb 183 and B_to_A_emb 188 shared project theorems — IsVariation basics (comp, smooth, varField_mem, prj_varDeriv), jump/covD/finsum lemmas, piecewise/subdivision lemmas (piecewise_induction, exists_piece_*, intervalIntegrable_of_piecewise), curvR_of_mem/curvOp (through Bridge.isCurvVal_iff), pdU lemmas, slice-chart internals; none of second_variation's own argument (curvature_identity, hasDerivAt_jump are not used).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "B_emb := B at M = Bridge.Sub hN, cov = Bridge.conn (B_to_B_emb). A_emb := both conjuncts of A for connected slice submanifolds modelled on ℝⁿ (A_to_A_emb: A's special case). Proved A_to_B_emb (A's second_variation used as the hypothesis Emb.SV; #rt_check OK) and B_emb_to_A_emb, hence B_to_A_emb (B_emb gives the value; #rt_check OK). Dictionary built in the file (namespace Emb): blind 2-parameter IsVarSub ⇒ IsVariation (isVariation_of_isVarSub) and back (isVarSub_lift along a subdivision avoiding the break set); D_varField (blind fields = line derivatives along eᵢ); efun_eq + EnergyC2 (hess_data: B's DifferentiableAt clause and mixedD = iterated derivative; mixedD_eq = 2·secondVariation); sv_eq_rhs (blind right side — D1/D2 on closed pieces via Bridge.hasCovDeriv_iff', jumps D1 i(tᵢ) − D1(i−1)(tᵢ) = P(Δ W₁') via derivWithin_Ici/Iic_eq_of_piece, Σ over interior subdivision points = finsum over (0,1) via finsum_mem_Ioo_eq_sum, piece integrals = ∫₀¹ with integrability from continuousWithinAt_curvR, IsCurvVal ⇔ curvR via Bridge.isCurvVal_iff — equals the project's secondVariation); for B_emb ⇒ A: induced D1/D2 = Bridge.covA, Rv = L(curvR …) (tangent by curvOp_mem), geodesic congruence on [0,1], sv_congr_path, contDiffOn_varField, Fréchet ⇒ HasDerivAt of u₁ ↦ ∂F/∂u₂(u₁,0) from C². Limitations: only the induced connection (uniqueness of the Levi-Civita connection is not formalized), model ℝⁿ, connected ↥N.",
+ "uses_hypothesis_emb": {
+  "A_to_B_emb": true,
+  "B_emb_to_A_emb": true
+ },
+ "second_attempt": "EnergyC2 closed the analytic gap (E∘α is C^∞ in the parameters, so B's Fréchet mixedD/DifferentiableAt clause is the project's iterated derivative). With the formula dictionary sv_eq_rhs and a reverse variation dictionary, the embedded special case is now proved in both directions (A_to_B_emb, B_to_A_emb, both #rt_check OK); was 'failed'. A ⇔ B themselves remain blocked only by the abstract setting."
+}

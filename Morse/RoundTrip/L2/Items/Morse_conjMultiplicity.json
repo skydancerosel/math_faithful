@@ -1,0 +1,11 @@
+{
+ "id": "Morse_conjMultiplicity",
+ "name": "Morse.conjMultiplicity",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "a, b ∈ [0,1] (γ smooth in N is already the signature's hc)",
+ "difference": "Junk values outside [0,1]: the project's Jacobi space 𝒥(γ) is normalised to be constant off [0,1] (J t = J(projIcc t)), so for a ∉ [0,1] 'J a = 0' means J vanishes at the nearer endpoint; in the blind definition the values of J off [0,1] are free, so 'J a = 0' constrains nothing. Proved: for a geodesic with dim N = n > 0, at (a,b) = (2,0) the project gives ν(1,0) = nullity < n (Remark 14.2) and the blind gives n.",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Restriction to [0,1] (LinearMap.funLeft val) maps the project's conjSpace a b injectively (elements are determined by [0,1]) onto the blind set, which is already a subspace; Jacobi fields agree via the Morse.IsJacobiField dictionary (blind T_xN/P/R/covD = project's for γ smooth in N), and a blind Jacobi field is normalised by J ∘ projIcc (IsJacobiField.comp_projIcc_mem). `differ` uses remark_14_2, theorem_14_1_nullity and finrank_jacobiSpace_zero."
+}

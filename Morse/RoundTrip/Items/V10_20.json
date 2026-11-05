@@ -1,0 +1,17 @@
+{
+ "id": "V10_20",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: for abstract complete M, p, q non-conjugate, levels a_0 < a_1 < … → ∞ (none critical, Ω^{a_0} = ∅, exactly one critical value in each (a_i, a_{i+1})), there are Mathlib CW complexes K_0 = ∅ ⊆ K_1 ⊆ … (each a subcomplex of the next) in one space Y, with cells of dimension λ ↔ geodesics of index λ and energy < a_i, and homotopy equivalences f_i : Ω^{a_i} → K_i with f_{i+1}|Ω^{a_i} = f_i STRICTLY. A (universe 0) contains nothing about Ω, geodesics or indices: it is the assembly machinery — transport of relative cell attachments along homotopy equivalences, invariance under homotopy-commutative squares, the finite-dimensional relative Theorem 3.5 (isRelCellComplexType_sublevel_of_isCompact) and tower ⇒ countable cell-complex type up to homotopy (mapping telescope of a CellTower). A ⇒ B fails genuinely (setting; A lacks the path-space step, which is V10_21's theorem, and works with the project's own iterated adjunction spaces and homotopy-commutative diagrams, not Mathlib CWComplex with strict commutation); B ⇒ A fails genuinely (A's lemmas are general topology / finite-dimensional Morse theory that B does not mention).",
+ "B_issue": "Faithful but literal: 'precisely one critical value in each (a_i, a_{i+1})' (∃!) makes B vacuous unless there are infinitely many critical values (as in Milnor's text, where the finite case is treated separately). Cell counts use energy < a_i (Milnor only says 'cells of the required description').",
+ "overlap": "No direction proved; no #rt_check.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V10_20.lean: B_emb := B at M = Bridge.Sub hN, cov = Bridge.conn (B_to_B_emb). Not attempted: even on ↥N, A ⇒ B_emb would need V10_21's step (BrokenSetup.isRelCellComplexType_Omega, with BrokenSetup existence from exists_brokenSetup and Hopf–Rinow), an index dictionary (blind lam/bIndex on TOm vs Morse.formIndex of energyHessian; RoundTrip/EnergyC2.lean now supplies the Hessian-value part), turning the project's IsRelCellAttachment pushouts into Mathlib RelCWComplex/CWComplex structures (not in Mathlib or the project), and strictifying homotopy-commutative squares to strict extensions (homotopy extension property / mapping cylinders). This is new mathematics, not glue."
+}

@@ -1,0 +1,17 @@
+{
+ "id": "V15_28",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": true,
+ "why": "A (universes 0; any k ≥ 0, any V ∈ tanAlg, any Killing space 𝒳 ⊆ isoAlg) is in the project's slice-submanifold vocabulary: the Killing field t ↦ Xγ − γX of X ∈ isoAlg is an IsJacobiField of omegaStratum along γ = p exp(tV); dim 𝒳 ≤ conjMultiplicity at τ when 𝒳 commutes with exp(τV) and ad_V is injective on it; Σ_τ dim 𝒳_τ ≤ formIndex(energyHessian). B (k ≥ 1, γ = J exp(πtA), A ∈ T, exp(πA) = −I) is in the blind subset vocabulary: K_A = −¼[A,[A,·]] preserves T; conjDim (spaces of variation fields of variations through blind IsGeodOn geodesics of the subset Ω_k(n)) at j/√μ ≥ mult(μ); idxIn ≥ Σ_μ mult(μ)·#{j ≥ 1 | j² < μ}. A ⇒ B fails for lack of the dictionary between the two vocabularies (conjMultiplicity ≤ conjDim, formIndex ≤ idxIn on subsets of M_n(ℝ): the subset analogue of LamEq of V9_23, not built); modulo it the rest is elementary Lie algebra not in A (an eigenvector B of K_A with eigenvalue μ gives X = [A,B] ∈ isoAlg with ad_A X = −4μB, ad_A²X = −4μX, so X commutes with exp(τπA) at τ = j/√μ; different μ give independent pieces; plus 'K_A preserves T'). B ⇒ A fails genuinely: A's statements are general (arbitrary V and Killing spaces, Jacobi-field property itself) and in the project's vocabulary; B only bounds blind invariants by eigenvalue counts; A could only be re-proved outright (vacuously, not done).",
+ "B_issue": null,
+ "overlap": "No direction proved; no #rt_overlap.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete real matrices (Ω_k(n) ⊆ M_n(ℝ) with the induced-metric notions defined by hand on subsets; the geometry is already embedded); it does not quantify over abstract Riemannian manifolds."
+}

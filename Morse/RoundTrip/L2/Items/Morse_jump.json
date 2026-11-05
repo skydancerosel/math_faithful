@@ -1,0 +1,11 @@
+{
+ "id": "Morse_jump",
+ "name": "Morse.jump",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are derivWithin f (Ici t) t - derivWithin f (Iic t) t (right minus left one-sided derivative); definitionally equal (rfl)."
+}

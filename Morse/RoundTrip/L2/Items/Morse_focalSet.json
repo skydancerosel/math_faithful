@@ -1,0 +1,11 @@
+{
+ "id": "Morse_focalSet",
+ "name": "Morse.focalSet",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Project {e | exists q : M, exists mu, IsFocalPointMult q e mu}; blind {e | exists q in M, (q, e-q) in N and 0 < nullity}. With the normal-bundle and nullity agreements (as in the IsFocalPoint item, re-proved in the file) the sets are equal for every slice M with k+w=n."
+}

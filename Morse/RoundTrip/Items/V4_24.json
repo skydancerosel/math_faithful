@@ -1,0 +1,12 @@
+{
+ "id": "V4_24",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "Both are Reeb's theorem for a compact Hausdorff smooth manifold (universes of A at 0): a smooth f with exactly two critical points (ncard = 2), both non-degenerate, forces M ≃ₜ S^n ⊆ ℝ^{n+1}. A allows any finite-dimensional model E (n = finrank E); B uses ℝⁿ. A ⇒ B: E = ℝⁿ. B ⇒ A: move M to a slice submanifold N ⊆ ℝ^{K+1} modelled on ℝⁿ by the project's Whitney theorem exists_diffeomorph_sliceSubmanifold (V4_16), transport f along the diffeomorphism (diffeomorphism invariance of critical points and non-degeneracy from WhitneyInvariance), apply B to N and compose homeomorphisms. No mathematical difference.",
+ "B_issue": null,
+ "overlap": "B_to_A: 97 shared: Whitney embedding and diffeomorphism-invariance lemmas (hessianM_comp_symm_eq, diffeoCoord, setOf_isCriticalPointM_comp_symm), i.e. the same reduction the project's proof makes; none of the Reeb argument itself (sublevel discs, gluing)",
+ "uses_hypothesis": {"A_to_B": true, "B_to_A": true}
+}

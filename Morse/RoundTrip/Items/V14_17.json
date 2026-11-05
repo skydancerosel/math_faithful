@@ -1,0 +1,17 @@
+{
+ "id": "V14_17",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; the defs minPathsHomotopyEquiv / minVelHomeomorph read as Nonempty of their types) lives on the project's embedded SU(2m) ⊆ M_{2m}(ℂ) with Ω = PathSp (Milnor's metric d) and Ω^d = minPaths (paths of least energy): exp(A/2) = A/π on minVel, E ≥ (π√(2m))² on Ω(I, −I), the exp tA (A ∈ minVel) are least-energy paths and every least-energy path is one of them on [0,1], A ↦ exp tA is continuous, minVel ≃ Ω^d up to homotopy and ≃ₜ its separation quotient (the Grassmannian enters only through lemma_23_1, outside the item). B: on every abstract M isometric to SU(2m) via ψ, Ω^d = {w ∈ Ω | E(w) ≤ ρ(p,q)²} with the blind d-topology admits continuous Φ : Ω^d → G_m(ℂ^{2m}) (rank-m Hermitian idempotents) and Ψ back with ΦΨ = id and ΨΦ = id on [0,1]. A ⇒ B fails genuinely only through the abstract setting (transport along ψ of ρ, Ω, E and the d-topology; uniqueness questions), and holds on the embedded SU(2m) (A_to_B_emb, proved). B ⇒ A fails genuinely: B is only an abstract homeomorphism statement; A's identification of the least-energy paths (exp tA, A² = −π²I), the energy bound, exp(A/2) = A/π and the continuity of the specific map A ↦ exp tA are not consequences of it.",
+ "B_issue": null,
+ "overlap": "No A_to_B / B_to_A. A_to_B_emb: 700 shared project theorems — the Bridge/slice infrastructure, PathSp metric lemmas (edist_def, continuous_toPathC, edist_eq_zero_of_eqOn), Hopf–Rinow (theorem_10_9, through riemDist_one_neg_one, which pi_sq_le_energy also uses), energy_expPath / norm_of_mem_minVel (used by expPath_mem_minPaths and continuous_expPath too).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "Items/V14_17.lean: B_emb := B at M = Bridge.Sub (isSliceRn isSliceSubmanifold_specialUnitaryGroup) (SU(2m), m ≥ 1, model ℝᵈ, induced metric), ψ = inclusion, with ConnectedSpace SU(2m) as a hypothesis (not formalized anywhere); B_to_B_emb (#rt_check OK) via isSUModel_ψ (copied from Items/V14_14.lean). A_to_B_emb (#rt_check OK, uses A's exp_half_smul_of_mem_minVel, pi_sq_le_energy, exists_minVel_of_mem_minPaths, continuous_expPath): ρ(p,q) = π√(2m) (Bridge.rho_eq + riemDist_one_neg_one, outside the item); w ∈ Ω^d ⇒ E(incl∘w) ≤ (π√(2m))² ≤ every energy, so incl∘w ∈ minPaths, = exp tA_w on [0,1] with A_w ∈ minVel and A_w = π w(1/2); Φ w = lemma_23_1(π w(1/2)) (continuous through the blind-Ω → PathSp map τ, Emb.isInducing_tau, and evaluation at 1/2), Ψ P = λ(exp(t·lemma_23_1⁻¹ P)) lifted to SU(2m) (continuous_expPath, Emb.continuous_lam; in Ω^d by energy_expPath), Grass = grassmannian by rank = trace. Dictionary copied: Items/V13_6.lean's Emb (dsdt_eq, edist_eq, tau, omTopology_eq, isInducing_tau, lam, continuous_lam, inOmega_lift, efun_eq), Items/V14_14.lean's SU model, Items/V14_16.lean's grass_eq; new: castP (re-reading PathSp endpoints), continuous_apply_half', velW. B_emb → A not attempted: B_emb needs connectedness of SU(2m), and B carries none of A's identification content. Only the induced metric (no connection needed)."
+}

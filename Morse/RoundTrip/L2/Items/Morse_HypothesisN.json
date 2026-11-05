@@ -1,0 +1,11 @@
+{
+ "id": "Morse_HypothesisN",
+ "name": "Morse.HypothesisN",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Identical formulas: an open U ⊇ A and H : C(I × U, X) with H₀ the inclusion, H₁(U) ⊆ A, and H_t fixing A. agree is Iff.rfl."
+}

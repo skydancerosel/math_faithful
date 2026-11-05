@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsOrthComplexStructure",
+ "name": "Morse.IsOrthComplexStructure",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are: J preserves the inner product and J (J x) = −x, on any real inner product space (no finite-dimensionality, no separate surjectivity); the project's structure lists the fields in the other order."
+}

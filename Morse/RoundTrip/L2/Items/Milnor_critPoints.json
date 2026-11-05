@@ -1,0 +1,11 @@
+{
+ "id": "Milnor_critPoints",
+ "name": "Milnor.critPoints",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are literally {x | ¬ Surjective (mfderiv I J f x)}; `agree` is `rfl`. The section variables of the project's file (finite dimension, smooth manifolds, Borel target) do not enter the definition's signature, so the comparison is over the full signature."
+}

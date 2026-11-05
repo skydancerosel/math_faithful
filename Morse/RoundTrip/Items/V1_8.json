@@ -1,0 +1,11 @@
+{
+ "id": "V1_8",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A ⇒ B: morse_lemmaM with U = univ gives a project smooth coordinate y : M → (Fin (finrank E) → ℝ) with y p = 0 and the normal form. Transporting along finrank (EuclideanSpace ℝ (Fin n)) = n and the linear equivalence Fin n → ℝ ≃ EuclideanSpace gives the blind PartialDiffeomorph. B ⇒ A fails: A is the Morse lemma for an arbitrary finite-dimensional model space E and f only smooth on an open U ∋ p (plus the vector-space versions with control of the derivative of the chart). It also contains the auxiliary results exists_sqrt_family (smooth square root of a family of forms) and exists_linearEquiv_diagForm (Sylvester diagonalisation), none of which is in B.",
+ "B_issue": null,
+ "overlap": "n/a (B_to_A not proved)"
+}

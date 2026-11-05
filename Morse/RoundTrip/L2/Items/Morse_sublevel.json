@@ -1,0 +1,11 @@
+{
+ "id": "Morse_sublevel",
+ "name": "Morse.sublevel",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are {x | F x <= c} for an arbitrary function F : X -> R; definitionally equal (rfl)."
+}

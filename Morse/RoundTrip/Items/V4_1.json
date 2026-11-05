@@ -1,0 +1,11 @@
+{
+ "id": "V4_1",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "B's NSet is the project's normalBundleSet by rfl (tanN is the range of mfd val). A: the normal bundle of ANY slice submanifold M ⊆ ℝᵏ of dimension m (complement w, m + w = k) is a slice submanifold of ℝᵏ × ℝᵏ modelled on ℝᵏ with complement ℝʷ × ℝᵐ; nonempty slice submanifolds have m + w = k; membership restated with tangentSubspace; normalEnd id = normalSum (rfl). B: for M ⊆ ℝ^{K+1} of dimension d+1 with d < K, N has SOME slice structure with complement ℝ^{K+1}, for which E|N is smooth. A ⇒ B: for nonempty M use A's dimension count and isSliceSubmanifold_normalBundle, then change the complement ℝᵐ × ℝ^{d+1} ≅ ℝ^{K+1} (new Glue.isSliceSubmanifold_congr_complement); empty M gives empty N; smoothness of E|N holds for any slice structure (E linear, val smooth). B ⇒ A fails genuinely: B covers only dimension ≥ 1 and codimension ≥ 1 (d < K) and fixes the complement, so it gives nothing for points/open subsets, and nothing for the dimension count m + w = k.",
+ "B_issue": "B omits the vector-bundle structure (stated in its header) and adds d < K; neither affects the manifold claim.",
+ "overlap": "n/a (B_to_A not proved)"
+}

@@ -1,0 +1,11 @@
+{
+ "id": "Morse_Homotopy_homotopyGroupMap",
+ "name": "Morse.Homotopy.homotopyGroupMap",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both send [γ] to [f ∘ γ]: the project uses Quotient.map and the blind version Quotient.map', with the same underlying loop f.comp γ. The agreement is rfl for every N, including N empty."
+}

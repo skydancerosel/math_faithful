@@ -1,0 +1,17 @@
+{
+ "id": "V9_7",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B (Remark 14.2): for every abstract connected Hausdorff ℝⁿ-manifold with any smooth metric and any Levi-Civita connection and every geodesic γ : [0,1] → M with γ'(0) ≠ 0: the nullity of the blind E_** (HessT via 2-parameter variations) on TΩ_γ is < n; the Jacobi fields (normalized to vanish off [0,1]) vanishing at 0 span an n-dimensional space; t V_t is a Jacobi field vanishing at 0 and not at 1. A (universes 0), for slice submanifolds N ⊆ V (model Z, n = dim Z): finrank of the Jacobi fields vanishing at 0 is n along ANY smooth curve (not only geodesics); t V_t is a Jacobi field along any geodesic; t·y is a Jacobi field along a constant curve; Remark 14.2 hessNullity < n for every geodesic in Ω(N;p,q) including constant ones (n ≥ 1). A ⇒ B fails genuinely (setting: abstract vs embedded; no Nash embedding). B ⇒ A fails genuinely: B excludes constant geodesics and speaks only of geodesics, while A's dimension count covers arbitrary smooth curves and A's Remark 14.2 includes constant geodesics (via isJacobiField_const_curve); plus the setting. On embedded manifolds, clauses (2),(3) of B coincide with A's (1),(2) for non-constant geodesics (proved both ways); the nullity clause could not be compared (no dictionary for the blind HessT).",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. For the embedded-case theorem B_to_A_emb: 240 shared project theorems — slice-chart/tanProj/curvature infrastructure via RoundTrip/Bridge.lean, and the proof fields of the Submodule Morse.jacobiSpace (jacSol/linSol, isJacobiField_iff: vocabulary of A); the dimension count itself (jacEval_bijective, finrank_jacobiSpace, the FiniteDimensional instance) is NOT used by B_to_A_emb (the rank is transported through an explicit linear isomorphism).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "PARTIAL (clauses (2),(3) of B only). Items/V9_7.lean: B_emb23 := clauses (2),(3) of B for M = Bridge.Sub hN (↥N, model ℝⁿ, connected, induced metric), cov = Bridge.conn (B_to_B_emb23); A_emb := A's finrank_jacobiSpace_zero and isJacobiField_smul_vel for geodesics γ (smooth on [0,1], geodesic on (0,1)) with velAlong γ 0 ≠ 0 in connected N with model ℝⁿ. A_to_B_emb23 (uses hA.finrank_jacobiSpace_zero, hA.isJacobiField_smul_vel, and the project lemma eq_const_of_velAlong_one_eq_zero for J_1 ≠ 0) and B_to_A_emb (uses B) pass #rt_check and use their hypotheses. Dictionary (namespace Emb): the Jacobi-field dictionary of V9_8, plus Φ (J ↦ D(J ∘ projIcc)), Zsub, Ssub, the linear isomorphism Ψ between the blind set {J ∈ JacOn | J 0 = 0} and jacobiSpace ⊓ ker(eval 0), setDim_eq_rank/setDim_eq. Not covered: clause (1) / remark_14_2 (needs a Bridge dictionary for TΩ, piecewise-smooth 2-parameter variations and the blind HessT ↔ Morse.energyHessian, via the project's second-variation formula), isJacobiField_const_curve and finrank_jacobiSpace_zero for non-geodesic curves (B has no counterpart). Only the induced connection."
+}

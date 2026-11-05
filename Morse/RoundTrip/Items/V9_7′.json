@@ -1,0 +1,17 @@
+{
+ "id": "V9_7′",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B (Example 1): for every abstract connected Hausdorff ℝⁿ-manifold with a Levi-Civita connection whose curvature vanishes identically (flat) and every geodesic γ on [0,1]: Jacobi ⇔ D²J/dt² = 0, a non-zero Jacobi field has at most one zero in [0,1], no conjugate parameters, nullity of E_** = 0. A (universes 0): only for slice submanifolds of CODIMENSION 0 (every tangent space = V, i.e. open subsets of V): open sets are slice submanifolds; curvature = 0; along any curve in N on (0,1) (not only geodesics) Jacobi fields are affine and there are no conjugate points; hessNullity = 0 along geodesics. A ⇒ B fails genuinely, even on embedded manifolds: A only treats codimension-0 submanifolds, while flat manifolds include e.g. flat cylinders/tori and every 1-manifold, which are not open subsets of their ambient space (and the abstract setting). B ⇒ A fails genuinely: A's 'codimension 0 ⇒ flat' and its statements along arbitrary (non-geodesic) curves are not in B. Restricted to codimension-0 embedded manifolds, A ⇒ B's clauses (1)–(3) and B ⇒ A's 'no conjugate points' along geodesics are proved.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. For the embedded-case theorem B_to_A_emb: 158 shared project theorems — slice-chart/tanProj/curvature infrastructure via RoundTrip/Bridge.lean, and tanProj_eq_id_of_top / secondFundForm_eq_zero_of_top (used to re-derive B's flatness hypothesis from codimension 0; the project's curvR_eq_zero_of_top rests on the same lemma); not shared: eqOn_affine_of_top, not_isConjugate_of_top, the nullity computation.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "PARTIAL (codimension-0 submanifolds, clauses (1)–(3)). Items/V9_7′.lean: B_emb_top := clauses (1)–(3) of B for M = Bridge.Sub hN (model ℝⁿ, connected) with htop (all tangent spaces = V), cov = Bridge.conn, B's flatness hypothesis kept (B_to_B_emb_top); A_to_B_emb_top uses hA.curvR_eq_zero_of_top (clause (1) ⇐) and hA.not_isConjugate_of_top (clauses (2),(3)). A_emb := not_isConjugate_of_top along geodesics smooth on [0,1] in connected codim-0 N with model ℝⁿ; B_to_A_emb uses B (flatness re-derived via Morse.secondFundForm_eq_zero_of_top). Both pass #rt_check and use their hypotheses. Dictionary: V9_8's Jacobi dictionary, isGeodesic_lift_of, congr_curve', isConjugate_of_blind / blind_of_isConjugate (blind IsConj ⇔ Morse.IsConjugate). Not covered: flat non-open embedded manifolds (A says nothing about them: a genuine difference), clause (4)/hessNullity_eq_zero_of_top (no dictionary for the blind HessT), A's eqOn_affine_of_top and statements along non-geodesic curves, isSliceSubmanifold_of_isOpen (model V, not ℝⁿ)."
+}

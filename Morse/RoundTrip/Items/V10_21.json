@@ -1,0 +1,17 @@
+{
+ "id": "V10_21",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: for abstract complete M, p, q non-conjugate, a < b non-critical: a space Y with a Mathlib relative CW structure rel D, φ : Ω^a → Y a homotopy equivalence onto D, f : Ω^b → Y one onto Y, f|Ω^a = φ STRICTLY, and the relative λ-cells ↔ geodesics of index λ with energy in (a, b). A (universes 0), on a slice submanifold: given Milnor's §16 data B : BrokenSetup (a fine subdivision for Ω^c), a ≤ b < c, no geodesic energy equal to a or b and all geodesics of energy ≤ b nondegenerate, the inclusion Ω^a → Ω^b is of IsRelCellComplexType: Ω^b ≃ K with K obtained from Ω^a by attaching, in increasing energy order, one cell of dimension geodIndex y per broken-geodesic node y that is an unbroken geodesic with energy in (a,b), compatible only up to homotopy (e∘ι ≃ j); plus finiteness of geodesics below b, finiteness of geodesic energies (N closed in V), and geodesicIndex = formIndex. A ⇒ B fails: setting; and even on ↥N it needs strict compatibility (HEP), Mathlib CW structures on iterated adjunction spaces, BrokenSetup existence, node ↔ geodesic and index dictionaries. B ⇒ A fails genuinely: A's finiteness statements, the energy-sorted list and the closed-N / BrokenSetup forms are not in B, and B is abstract.",
+ "B_issue": null,
+ "overlap": "No direction proved; no #rt_check.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V10_21.lean: B_emb := B at M = Bridge.Sub hN, cov = Bridge.conn (B_to_B_emb). Believed true on ↥N but not glue: from A one would need (i) a BrokenSetup with c > b (exists_brokenSetup, item V10_3, plus Hopf–Rinow compactness of S), (ii) NonConjPQ ⇒ hessNullity = 0 (blind IsConj ↔ Morse.IsConjugate in Items/V9_10.lean, plus the project's nullity = conjugate multiplicity), (iii) unbroken-geodesic nodes ↔ blind geodesics as elements of Ω* (lemma_16_1-type glue as in Items/V10_4.lean), (iv) blind index lam 1 g = geodIndex (EnergyC2 identifies the Hessian values; the blind bIndex over piecewise-smooth TOm must still be matched with formIndex), (v) a Mathlib RelCWComplex structure on the project's iterated pushouts AttachCell, and (vi) strictifying e∘ι ≃ j to f|Ω^a = φ (homotopy extension). (v)–(vi) are missing mathematics in both the project and Mathlib."
+}

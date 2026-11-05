@@ -1,0 +1,18 @@
+{
+ "id": "V8_1",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": true,
+ "why": "A (universes 0; pathSpace, prj, pathTangent are definitions): mem_pathTangent, the unfolding of the project's TΩ_c (X : ℝ → V piecewise smooth on [0, 1] with P_{c(t)} X(t) = X(t) on [0, 1] and X(0) = X(1) = 0), and mem_pathTangent_congr (TΩ_c depends only on c|[0,1]); both are provable outright (Iff.rfl and a one-line rewrite), so B ⇒ A is proved but vacuous — the hypothesis B is not used. B: for an abstract connected Riemannian manifold, (1) any two points are joined by a path of Ω (a piecewise smooth pw : ℝ → M on [0, 1]), and (2) TΩ_pw (fields along pw, continuous on [0, 1] into TM, smooth along on the pieces of some subdivision, vanishing at 0 and 1) contains 0 and is closed under sums and scalar multiples. A ⇒ B fails: B's clause (1) is a real theorem (connected manifolds are piecewise-smoothly path connected), which the project proves only for slice submanifolds (riemDist_ne_top / joined_of_riemDist_lt_top) and which A does not contain at all; clause (2) is believed true and routine but needs glue not in the project (common refinement of two subdivisions; sums of sections along a curve are ContMDiffOn into TM; continuity of pw on [0, 1] from piecewise smoothness) — effort only, but effort on mathematics that is not in A. Vocabulary: the project's pathSpace / pathTangent are the ambient-space versions of B's InOmega / InTOmega (fields are V-valued with an explicit tangency condition instead of sections of TM; break points are a finite set with smoothness on every piece avoiding it, instead of an ordered subdivision); a dictionary for paths exists in RoundTrip/Bridge.lean (isPW_lift, isPiecewiseSmooth_of_isPW) but none for fields along paths.",
+ "B_issue": null,
+ "harness_note": "B does not use nrm/tball/IsNormBall/IsUniformNormal (nor any norm at all), so the chart-norm defect of the prelude does not affect it.",
+ "overlap": "B_to_A (vacuous): 27 shared project theorems, all glue of the definitions — IsPiecewiseSmooth.add/const_smul/smul/of_contDiff/of_contDiffOn/map₂, the pathTangent._proof_i obligations, tanProj._proof_1, tangentSubspace._proof_1 and the slice-chart proof terms; no mathematical content.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_attempted",
+ "embedded_special_case_note": "For a connected slice submanifold, B(1) follows from Morse.riemDist_ne_top (ρ < ∞ ⇒ a joining piecewise smooth path) lifted through Bridge.isPW_lift; B(2) is the same routine glue as in the abstract case. Not attempted since A has no content to compare with."
+}

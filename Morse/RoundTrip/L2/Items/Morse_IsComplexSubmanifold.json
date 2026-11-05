@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsComplexSubmanifold",
+ "name": "Morse.IsComplexSubmanifold",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both say every tangent space of N is J-invariant, for an arbitrary continuous linear J (neither imposes J^2 = -1); the project's tangent space is Morse.tangentSubspace (range of mfderiv val), the blind one the span of velocities, and these are equal for every slice submanifold. 'forall x : N' vs 'forall x in N' is cosmetic. Both use the J-invariance characterisation of complex submanifolds rather than holomorphic charts (the description's own definition)."
+}

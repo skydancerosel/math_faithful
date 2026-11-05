@@ -1,0 +1,17 @@
+{
+ "id": "V9_2",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): for slice submanifolds N ⊆ V with the induced metric and ANY smooth curve γ in N on [0,1] (not only geodesics), the Jacobi equation is encoded WITHOUT a frame as the first-order linear system jacSys in V×V for (J, DJ/dt) (coefficients S = P'P − PP', K = R(V,P·)V); A asserts existence (the first component of the solution jacSol with tangent data at any s ∈ [0,1] is a Jacobi field, the second is its covariant derivative), that every Jacobi field is given by jacSol from its data at any s, and uniqueness from (J(s), DJ/dt(s)) for any s. B: for abstract connected Riemannian ℝⁿ-manifolds with a Levi-Civita connection and a geodesic γ on [0,1]: (i) orthonormal parallel frames along γ exist, (ii) in any such frame J = Σ fⁱPᵢ is a Jacobi field iff the fⁱ are smooth with f''ⁱ + Σⱼ c_ij fʲ = 0, c_ij = ⟨R(V,Pⱼ)V,Pᵢ⟩, (iii) Jacobi fields with the same J(0), DJ/dt(0) agree. A ⇒ B fails genuinely: abstract vs embedded setting, and even on ↥N A has no parallel frames (i) and no frame form of the equation (ii). B ⇒ A fails genuinely: setting; B has no existence statement (A's isJacobiField_jacSol), only s = 0, only geodesics, and nothing about the project's jacSol.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. Embedded B_to_A3_0 (B ⇒ A's uniqueness clause at s = 0 for blind geodesics of ↥N): 168 shared — slice-chart/tanProj lemmas and the smoothness of the curvature coefficient (IsSmoothCurveIn.contDiffOn_curvAlong, curvAlong_apply, velAlong_eq) used by the dictionary Emb.isJacobi_iff; none of the Jacobi-system ODE theory (jacSol, linSol, jacSol_mem_tanAt) behind A's proofs.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Partial. Items/V9_2.lean: dictionary Emb.isJacobi_iff (for a smooth curve γ in ↥N, B's IsJacobi of Bridge.conn on [0,1] ⇔ Morse.IsJacobiField hN (incl∘γ) (ambA γ J); new here, from hasCovDeriv_iff', isCurvVal_iff, D_vel, and contDiffOn_curvAlong + closure of (0,1) for the end points, where B's equation uses derivatives within [0,1] and A's only holds on (0,1)). B_emb := B at M = ↥N, cov = Bridge.conn (B_to_B_emb). Proved: A ⇒ clause (iii) of B_emb (A_to_B_emb_iii, via A's eqOn_jacSol at s = 0) and B_emb (iii) ⇒ A3_0, hence B ⇒ A3_0 (A3_0 = A's eqOn_zero at s = 0 for curves incl∘γ, γ a blind geodesic of connected ↥N with model ℝⁿ); all rt_check OK. Not covered: B_emb (i) (orthonormal parallel frames along γ|[0,1]: needs a parallel-transport ODE on [0,1], which neither A nor the Bridge provides) and (ii) (the frame computation) — new geometry on the B side, not attempted; A's existence clause (isJacobiField_jacSol), s ≠ 0, non-geodesic curves and general model Z are not reachable from B_emb. Only the induced connection (not every IsLC connection on ↥N)."
+}

@@ -1,0 +1,12 @@
+{
+ "id": "V4_23",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "B is Lemma 6.9 as stated: at a non-degenerate critical point of L_p (dim M ≥ 1), index = Σ_{s∈[0,1]} nullity of dE at (q, s(p−q)), with the nullity computed in an ARBITRARY slice structure hNN on N, plus finiteness of the focal parameters. A ⇒ B: B's nullities are the project's focalMult (new Glue.endpointNullity_eq_of_slice: nullity of d(E|N) is independent of the slice structure), so the formula is A's third clause; the finiteness is not in A and comes from the project's isFocalPoint_add_smul_iff (V4_7: focal points on the normal line are q + K⁻¹v, K an eigenvalue of the shape operator) with Mathlib's finite_hasEigenvalue, plus isCriticalPointM_normSq_sub_iff_mem_normalBundleSet (V4_10). B ⇒ A fails genuinely: A also has index(g − ℓ_v) = #{principal curvatures > 1} for every v (Milnor's proof step, pure linear algebra, no critical point) and indexM L_p = #{K_i(p−q) > 1} at every critical point, degenerate ones included, and covers dim M = 0; B has no principal curvatures and says nothing at degenerate points.",
+ "B_issue": null,
+ "overlap": "n/a (B_to_A not proved)",
+ "uses_hypothesis": {"A_to_B": true, "B_to_A": false}
+}

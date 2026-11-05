@@ -1,0 +1,11 @@
+{
+ "id": "Morse_formIndex",
+ "name": "Morse.formIndex",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Project: ⨆ over finite-dimensional negative definite subspaces of finrank (ℕ∞). Blind: ⨆ over all negative definite subspaces of (rank).toENat. Equal for every bilinear form on every real module: finite-dimensional subspaces contribute the same value, and an infinite-dimensional negative definite subspace contains linearly independent n-families for all n, whose spans are finite-dimensional negative definite subspaces of dimension n, so the project's supremum is ⊤ as well."
+}

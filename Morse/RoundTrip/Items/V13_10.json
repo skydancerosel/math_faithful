@@ -1,0 +1,17 @@
+{
+ "id": "V13_10",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A ⇒ B: Morse.lemma_22_4 at E = ℝⁿ with ε_B = ε_A/(n²+n+1). Dictionary in the file: blind bIndex univ of a continuous bilinear form = Morse.index (finrank_le_index_of_negDef / exists_negDef_finrank_eq_index), so the blind idx (degenerate points included) is the project's index of the Hessian; blind pd2 = Morse.hessian on coordinate vectors where g is C² (fderiv_clm_apply); operator norm on ℝⁿ ≤ sum over coordinate vectors, so entrywise ε-closeness gives operator-norm closeness; blind critical point fderiv g x = 0 ⇔ Morse.IsCriticalPoint for differentiable g. B ⇒ A fails genuinely: A holds in any finite-dimensional normed space, for f only C² on U and an arbitrary g (no regularity), while B needs f and g C^∞ on U; A also contains the linear-algebra lemmas exists_negDef_margin and le_index_of_norm_sub_lt (true outright, not consequences of B). On the common domain (E = ℝⁿ, f, g smooth) they are equivalent: B_to_A_smooth (#rt_check OK, uses B; |L eᵢ| ≤ ‖L‖).",
+ "B_issue": null,
+ "overlap": "n/a (B_to_A not proved). A_to_B / B_to_A_smooth use only generic Chapter 1 lemmas (finrank_le_index_of_negDef, exists_negDef_finrank_eq_index, isCriticalPoint_iff) besides the hypothesis.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about functions on open subsets of ℝⁿ; no manifold."
+}

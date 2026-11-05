@@ -1,0 +1,17 @@
+{
+ "id": "V15_46",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": false,
+ "why": "A (periodicity_theorem_stable, no universes): for i < 2n and i + 2 < 2n', π_i(U(n), I) ≃ π_{i+2}(U(n'), I) as SETS at the base point I. B (= the first two conjuncts of V14_28's B): the same for every base point (same ranges, k + 1 ≤ 2m, k + 3 ≤ 2m'), and in positive degrees GROUP isomorphisms π_{k+1}U(m) ≃* π_{k+3}U(m') (k + 2 ≤ 2m, k + 4 ≤ 2m'). B ⇒ A is B's first conjunct at base point 1. A ⇒ B: the set conjunct is A plus left translation of base points; the group conjunct is not in A at all and is supplied outright by the project's group-level chain nonempty_mulEquiv_pi_unitary_two_mul (item V14_28), reindexing Fin m ⊕ Fin m ≃ Fin 2m and stability as groups (bijective_homotopyGroupMap_unitaryIncl_complex). So A is the set-level, base-point-I part of Milnor's statement; the group structure (and the trivial base-point generality) is B's extra content, true and available elsewhere in the project.",
+ "B_issue": null,
+ "overlap": "B_to_A: 0 shared project theorems. A_to_B: 3378 shared — through nonempty_mulEquiv_pi_unitary_two_mul and the stability/fibration lemmas (Lemma 23.4, Theorem 23.3 chain), which the item's own proof (periodicity_theorem_stable) also uses; no banned theorem.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "uses_hypothesis_note": "A_to_B uses A only for the set conjunct; the group conjunct is proved outright from other project theorems.",
+ "embedded_special_case": "not_applicable"
+}

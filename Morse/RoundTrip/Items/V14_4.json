@@ -1,0 +1,17 @@
+{
+ "id": "V14_4",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0) is matrix algebra: a skew-Hermitian A (any finite index type) has A² = −π²I iff A = iπ(2P − I) for a Hermitian idempotent P, and tr(iπ(2P − I)) = iπ(2 tr P − n). B is Lemma 23.1 as Milnor states it: on minVelIn (A ∈ 𝔤, exp A = −I, t ↦ exp tA minimal among all piecewise smooth paths from I to −I in the group) the map A ↦ Eigen(iπ) is injective, onto all complex subspaces of ℂⁿ for U(n), and onto exactly the m-dimensional subspaces for SU(2m). A ⇒ B fails genuinely: identifying minVelIn with {A² = −π²I} needs the length lower bound π√n for every path from I to −I in U(n)/SU(2m) (Hopf–Rinow or the sphere-of-radius-√n argument), absent from A (the project has it only for SU(2m), outside the item: riemDist_one_neg_one/isMinimalGeodesic_exp_iff/lemma_23_1, and nothing for U(n)); further missing glue: P is the orthogonal projection onto Eigen(iπ), every subspace has a Hermitian projection, tr P = dim. B ⇒ A only vacuously (A re-proved outright): B never mentions A² = −π²I for non-minimal or arbitrary skew-Hermitian matrices, so A's algebraic equivalence and the trace formula are not consequences of B.",
+ "B_issue": null,
+ "overlap": "B_to_A: 0 shared project theorems (A_to_B not proved).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete matrix groups U(n), SU(n) ⊆ M_n(ℂ) (Mathlib unitaryGroup / specialUnitaryGroup as subsets, lengths as Euclidean lengths of curves in M_n(ℂ)); it does not quantify over abstract Riemannian manifolds."
+}

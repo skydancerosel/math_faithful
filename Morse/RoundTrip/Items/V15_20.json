@@ -1,0 +1,18 @@
+{
+ "id": "V15_20",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "Both sides are integer arithmetic (vocabulary: B's gapSum = the project's bottIndex, gapSum_eq_bottIndex). A (universes 0, any finite index type): odd a with some |a_i| >= 3 gives r - |c| <= 2 bottIndex(a) and r - |c| <= 4 spectralIndex(pairSpectrum a) (c = sum a) -- Milnor's combined conclusion of both cases. B: only Milnor's example case 'some a_h = -3', but with the sharper r + c <= 4 lambda for any lambda with gapSum <= 2 lambda. A => B: for c <= 0 it is A's bound; for c > 0 B is strictly sharper than A and was proved outright (card_add_sum_le, from the project's exists_pos_neg_data: bottIndex >= p + P). B => A: B (and B applied to -a, bottIndex_neg) gives A whenever some a_h = +-3 (lambda := spectralIndex(pairSpectrum a), since 2 spectralIndex = bottIndex); when the large entries are all >= 5 in absolute value B does not apply and A is re-proved outright. So each side has (elementary) content the other lacks: A the general |a_h| >= 3 case, B the sharp r + c in the -3 case.",
+ "B_issue": null,
+ "overlap": "B_to_A: 13 shared project theorems (beyond auxiliaries) -- the counting infrastructure of IndexCount.lean: exists_pos_neg_data, sum_pos_neg_eq, sum_pos_neg_le_bottIndex, bottIndex_term_nonneg, two_le_sub_of_odd, two_mul_spectralIndex_pairSpectrum, spectralIndex_eq, two_mul_ncard_conjParams, conjParams_*, ncard_conjParams_sq, bottIndex_eq_sum_subtype; the item's two theorems avoided.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "uses_hypothesis_note": "Both directions use the hypothesis only on part of the domain: A_to_B uses A when sum a <= 0 and is outright when sum a > 0; B_to_A uses B when some a_h = +-3 and is outright otherwise.",
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "Pure integer arithmetic on finite sequences; no manifolds."
+}

@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsSmoothCoord",
+ "name": "Morse.IsSmoothCoord",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both say y : OpenPartialHomeomorph M E' is ContMDiffOn C^infty on its source and its inverse on its target, for the models I(R,E) and I(R,E'). Same two fields; equal for all arguments, neither side needs an IsManifold instance."
+}

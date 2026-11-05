@@ -1,0 +1,17 @@
+{
+ "id": "V11_17",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B (Cartan–Hadamard): on every abstract connected Hausdorff ℝⁿ-manifold with any smooth Mathlib RiemannianBundle metric and any Levi-Civita connection, Milnor-complete, simply connected (Mathlib SimplyConnectedSpace) with ⟨R(A,B)A,B⟩ ≤ 0: any p, q are joined by a geodesic [0,1] → M unique on [0,1], and M is diffeomorphic to ℝⁿ (Mathlib Diffeomorph). A (universes 0): for slice submanifolds N ⊆ V with the induced metric only: closed ⇒ complete; a covering exp_p of a simply connected N is injective; exp_p onto for complete connected N; and Theorem 19.2 (unique unbroken geodesic in Ω(N; p, q), N ≅ ℝ^{dim N} as Mathlib Diffeomorph). A ⇒ B fails genuinely (abstract manifolds are not given embedded; no Nash embedding, no abstract exp/covering theory); B ⇒ A fails genuinely (setting; A's auxiliary statements about closed N and coverings are not consequences of B). On embedded manifolds A ⇒ B_emb and B_emb ⇒ Theorem 19.2 (model ℝⁿ) are both proved. B is fine for n = 0, 1.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. For the embedded theorem B_emb_to_A_cplt: 498 shared project theorems — Hopf–Rinow (theorem_10_9, isGeodesicallyComplete_of_isRiemComplete, riemDist lemmas, normal coordinates) and the geodesic-flow infrastructure, used only by the completeness dictionary Emb.metricComplete_of_complete; curvature (curvOp_mem, curvR_of_mem), slice-chart and tangent-projection lemmas from the Bridge. Not shared: the covering-map argument (isCoveringMap_expToN, injective_expToN_of_simplyConnected, isLocalDiffeomorph_expToN, expDiffeomorph, lemma_19_1, theorem_18_1).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V11_17.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric), cov = Bridge.conn (B_to_B_emb via conn_isLC). Dictionary (namespace Emb): unbroken_of_geodPQ / geodPQ_of_unbroken (blind geodesic [0,1] → ↥N from p to q ⇔ unbroken geodesic in Morse.pathSpace, via Bridge.isGeodesic_iff/isGeodesicOn_Ioo and the lift isGeodesic_lift of Items/V9_10.lean), nonPosCurv_iff (from Items/V11_7.lean), completeness via Hopf–Rinow (from Items/V7_29.lean), eucl (ℝ^{finrank ℝⁿ} ≅ ℝⁿ as a Diffeomorph); SimplyConnectedSpace and the manifold structure transfer definitionally (Bridge.Sub hN = ↥N with hN.chartedSpace). Proved A_to_B_emb (A's theorem_19_2) and B_emb_to_A_cplt (A_cplt = A's theorem_19_2 for model ℝⁿ), both #rt_check OK. Not covered by B_emb: isGeodesicallyComplete_of_isClosed, injective_expToN_of_simplyConnected, surjective_expToN (auxiliary lemmas), general model Z. Only the induced connection."
+}

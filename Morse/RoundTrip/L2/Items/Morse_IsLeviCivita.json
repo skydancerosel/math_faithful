@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsLeviCivita",
+ "name": "Morse.IsLeviCivita",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "The project's structure has exactly the two fields torsion_free (D X Y − D Y X = ⁅X, Y⁆) and metric (B (D X Y) Z + B Y (D X Z) = 0) of the blind conjunction; `agree` is the constructor/projections."
+}

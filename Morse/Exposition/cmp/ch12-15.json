@@ -1,0 +1,3079 @@
+{
+ "_note": "Comparison data for Milnor §§20–24 (Exposition chapters 12–15). The items V15.x (§24) follow the V14 block, and their notFormalized entries follow those of §§20–23 (the G-numbering follows file order).",
+ "items": [
+  {
+   "id": "V12.1",
+   "title": "The algebraic model of a bi-invariant metric",
+   "milnor": {
+    "label": "§21, p. 113",
+    "page": 113,
+    "statement": "Milnor works with the Lie algebra $\\mathfrak g$ of left-invariant vector fields on a Lie group $G$ with a left and right invariant metric, the bracket of vector fields, and the connection $X \\vdash Y$ of the metric; Theorem 21.3 (a) is the identity $\\langle[X, Y], Z\\rangle = \\langle X, [Y, Z]\\rangle$."
+   },
+   "lean": {
+    "statement": "For a real Lie algebra $L$ (standing for Milnor's $\\mathfrak g$ of left-invariant fields) with a bilinear form $B$ (his inner product on $\\mathfrak g$): $B$ is ad-invariant if $B([X, Y], Z) = B(X, [Y, Z])$ for all $X, Y, Z$, which is Mathlib's Lie invariance. A bilinear $D : L \\times L \\to L$, standing for $X \\vdash Y$, is Levi-Civita for $B$ if $D(X, Y) - D(Y, X) = [X, Y]$ and $B(D(X, Y), Z) + B(Y, D(X, Z)) = 0$.",
+    "decls": [
+     "Chapter12/BiInvariant · Morse.IsAdInvariant",
+     "Chapter12/BiInvariant · Morse.isAdInvariant_iff_lieInvariant",
+     "Chapter12/BiInvariant · Morse.IsLeviCivita"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "an abstract Lie algebra with a form"
+   ],
+   "diff": [
+    "The group, its left-invariant fields and its metric are replaced by an abstract Lie algebra with a bilinear form. That $X \\vdash Y$ is again left-invariant, which Milnor uses without comment when he applies (d) twice, is built into the definition. For matrix groups the model is derived from the geometry (V12.17)."
+   ]
+  },
+  {
+   "id": "V12.2",
+   "title": "Theorem 21.3 (d): $X \\vdash Y = \\frac12[X, Y]$",
+   "milnor": {
+    "label": "§21, proof of Theorem 21.3, pp. 113–114",
+    "page": 113,
+    "statement": "In the proof of Theorem 21.3: the integral curves of a left-invariant $X$ are left translates of one-parameter subgroups, hence geodesics, so $X \\vdash X = 0$; expanding $(X + Y) \\vdash (X + Y) = 0$ and adding $X \\vdash Y - Y \\vdash X = [X, Y]$ gives (d), $X \\vdash Y = \\frac12[X, Y]$."
+   },
+   "lean": {
+    "statement": "For a real Lie algebra $L$ (standing for Milnor's $\\mathfrak g$ of left-invariant fields) with a bilinear form $B$ (his inner product on $\\mathfrak g$): if $D$ is Levi-Civita for $B$ (no condition on $B$) and $D(X, X) = 0$ for every $X$, then $D(X, Y) = \\frac12[X, Y]$ for all $X, Y$.",
+    "decls": [
+     "Chapter12/BiInvariant · Morse.IsLeviCivita.conn_eq"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "$X \\vdash X = 0$ is a hypothesis"
+   ],
+   "diff": [
+    "$X \\vdash X = 0$ rests on Lemma 21.2 and on left translations being isometries; here it is a hypothesis. For matrix groups it is proved (V12.15, V12.17)."
+   ]
+  },
+  {
+   "id": "V12.3",
+   "title": "Theorem 21.3 (a): the metric is ad-invariant",
+   "milnor": {
+    "label": "§21, Theorem 21.3 (a)",
+    "page": 113,
+    "statement": "Let $G$ have a bi-invariant metric and $X, Y, Z \\in \\mathfrak g$. Then $\\langle[X, Y], Z\\rangle = \\langle X, [Y, Z]\\rangle$. Proof (p. 114): $Y\\langle X, Z\\rangle = \\langle Y \\vdash X, Z\\rangle + \\langle X, Y \\vdash Z\\rangle$, the left side vanishes since $\\langle X, Z\\rangle$ is constant, and (d) is substituted."
+   },
+   "lean": {
+    "statement": "For a real Lie algebra $L$ (standing for Milnor's $\\mathfrak g$ of left-invariant fields) with a bilinear form $B$ (his inner product on $\\mathfrak g$): if $D$ is Levi-Civita for $B$ and $D(X, X) = 0$ for every $X$, then $B$ is ad-invariant.",
+    "decls": [
+     "Chapter12/BiInvariant · Morse.IsLeviCivita.isAdInvariant"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "geometric inputs as hypotheses"
+   ],
+   "diff": [
+    "The constancy of $\\langle X, Z\\rangle$ for left-invariant fields is built into the compatibility condition of V12.1, and $X \\vdash X = 0$ is a hypothesis."
+   ]
+  },
+  {
+   "id": "V12.4",
+   "title": "The Koszul formula: the connection is forced to be $\\frac12[\\,,\\,]$",
+   "milnor": {
+    "label": "§21, cf. Theorem 21.3, p. 113",
+    "page": 113,
+    "statement": "The book has no such statement. Milnor derives (d) from $X \\vdash X = 0$; that the Levi-Civita connection of a bi-invariant metric must be $\\frac12[\\,,\\,]$ on left-invariant fields is the uniqueness of Lemma 8.6 in this setting."
+   },
+   "lean": {
+    "statement": "For a real Lie algebra $L$ (standing for Milnor's $\\mathfrak g$ of left-invariant fields) with a bilinear form $B$ (his inner product on $\\mathfrak g$): if $B$ is symmetric and $D$ Levi-Civita for $B$, then $2B(D(X, Y), Z) = B([X, Y], Z) - B([Y, Z], X) + B([Z, X], Y)$; if moreover $B$ is ad-invariant and non-degenerate, $D(X, Y) = \\frac12[X, Y]$. Conversely, for every ad-invariant $B$, $\\frac12[\\,,\\,]$ is Levi-Civita for $B$.",
+    "decls": [
+     "Chapter12/BiInvariant · Morse.IsLeviCivita.koszul",
+     "Chapter12/BiInvariant · Morse.IsLeviCivita.conn_eq_of_isAdInvariant",
+     "Chapter12/BiInvariant · Morse.halfLie",
+     "Chapter12/BiInvariant · Morse.halfLie_apply",
+     "Chapter12/BiInvariant · Morse.isLeviCivita_halfLie"
+    ]
+   },
+   "verdict": "extra",
+   "chips": [
+    "the converse route, from ad-invariance"
+   ],
+   "diff": [
+    "Derives (d) from the ad-invariance of the metric instead of from $X \\vdash X = 0$."
+   ]
+  },
+  {
+   "id": "V12.5",
+   "title": "Theorem 21.3 (b): $R(X, Y)Z = \\frac14[[X, Y], Z]$",
+   "milnor": {
+    "label": "§21, Theorem 21.3 (b)",
+    "page": 113,
+    "statement": "Let $G$ have a bi-invariant metric and $X, Y, Z \\in \\mathfrak g$. Then $R(X, Y)Z = \\frac14[[X, Y], Z]$. Proof (p. 114): substitute (d) in $R(X, Y)Z = -X \\vdash (Y \\vdash Z) + Y \\vdash (X \\vdash Z) + [X, Y] \\vdash Z$ and use the Jacobi identity."
+   },
+   "lean": {
+    "statement": "In any real Lie algebra, with Milnor's sign $R(X, Y)Z = -D(X, D(Y, Z)) + D(Y, D(X, Z)) + D([X, Y], Z)$ and $D = \\frac12[\\,,\\,]$: $R(X, Y)Z = \\frac14[[X, Y], Z]$.",
+    "decls": [
+     "Chapter12/BiInvariant · Morse.curv",
+     "Chapter12/BiInvariant · Morse.curv_halfLie"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "the curvature of $D = \\frac12[\\,,\\,]$"
+   ],
+   "diff": [
+    "A computation in the Lie algebra; that it is the curvature of the group is V12.17 for matrix groups."
+   ]
+  },
+  {
+   "id": "V12.6",
+   "title": "Theorem 21.3 (c)",
+   "milnor": {
+    "label": "§21, Theorem 21.3 (c)",
+    "page": 113,
+    "statement": "$\\langle R(X, Y)Z, W\\rangle = \\frac14\\langle[X, Y], [Z, W]\\rangle$; it \"follows from (a) and (b)\" (p. 114)."
+   },
+   "lean": {
+    "statement": "For a real Lie algebra $L$ (standing for Milnor's $\\mathfrak g$ of left-invariant fields) with a bilinear form $B$ (his inner product on $\\mathfrak g$): if $B$ is ad-invariant, then $B(R(X, Y)Z, W) = \\frac14B([X, Y], [Z, W])$ for $D = \\frac12[\\,,\\,]$.",
+    "decls": [
+     "Chapter12/BiInvariant · Morse.curv_inner"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "for the algebraic curvature"
+   ],
+   "diff": [
+    "As in V12.5."
+   ]
+  },
+  {
+   "id": "V12.7",
+   "title": "Cartan's 3-form",
+   "milnor": {
+    "label": "§21, footnote, p. 114",
+    "page": 114,
+    "statement": "The trilinear function $\\langle[X, Y], Z\\rangle$ is skew-symmetric in all three variables, so it defines a left-invariant 3-form; Cartan used it to prove $H^3(G) \\neq 0$ for a compact connected non-abelian Lie group."
+   },
+   "lean": {
+    "statement": "For a real Lie algebra $L$ (standing for Milnor's $\\mathfrak g$ of left-invariant fields) with a bilinear form $B$ (his inner product on $\\mathfrak g$): $B([Y, X], Z) = -B([X, Y], Z)$ for every $B$, and $B([X, Z], Y) = -B([X, Y], Z)$ if $B$ is ad-invariant; so $(X, Y, Z) \\mapsto B([X, Y], Z)$ is alternating.",
+    "decls": [
+     "Chapter12/BiInvariant · Morse.cartan_form_swap₁₂",
+     "Chapter12/BiInvariant · Morse.cartan_form_swap₂₃"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "only the skew-symmetry"
+   ],
+   "diff": [
+    "The differential form, its de Rham class and Cartan's theorem are not formalized."
+   ]
+  },
+  {
+   "id": "V12.8",
+   "title": "Corollary 21.4: the sectional curvature",
+   "milnor": {
+    "label": "§21, Corollary 21.4",
+    "page": 115,
+    "statement": "The sectional curvature $\\langle R(X, Y)X, Y\\rangle = \\frac14\\langle[X, Y], [X, Y]\\rangle$ is always $\\ge 0$, with equality iff $[X, Y] = 0$."
+   },
+   "lean": {
+    "statement": "For a real Lie algebra $L$ (standing for Milnor's $\\mathfrak g$ of left-invariant fields) with a bilinear form $B$ (his inner product on $\\mathfrak g$): if $B$ is ad-invariant, $B(R(X, Y)X, Y) = \\frac14B([X, Y], [X, Y])$ for all $X, Y$; if $B$ is also positive definite this is $\\ge 0$, and $0$ iff $[X, Y] = 0$. With the standard sign, $B(-R(X, Y)Y, X) = \\frac14B([X, Y], [X, Y])$.",
+    "decls": [
+     "Chapter12/BiInvariant · Morse.sectional",
+     "Chapter12/BiInvariant · Morse.sectional_nonneg",
+     "Chapter12/BiInvariant · Morse.sectional_eq_zero_iff",
+     "Chapter12/BiInvariant · Morse.sectional_std"
+    ]
+   },
+   "verdict": "stronger",
+   "chips": [
+    "for all $X, Y$, not only orthonormal pairs"
+   ],
+   "diff": []
+  },
+  {
+   "id": "V12.9",
+   "title": "Corollary 21.5, the algebraic step: positive Ricci curvature",
+   "milnor": {
+    "label": "§21, Corollary 21.5",
+    "page": 115,
+    "statement": "If the Lie algebra $\\mathfrak g$ of a Lie group $G$ with a bi-invariant metric has trivial centre, then $G$ is compact with finite fundamental group. Proof: the Ricci curvature $K(X_1, X_1) = \\sum_i\\langle R(X_1, X_i)X_1, X_i\\rangle$ is strictly positive and bounded away from zero, and Myers' theorem (Corollary 19.5) applies."
+   },
+   "lean": {
+    "statement": "Let $K_V = -\\frac14\\operatorname{ad}_V^2$, so that $K_V(W) = R(V, W)V$ for $D = \\frac12[\\,,\\,]$. In every real Lie algebra $\\operatorname{tr}K_V = -\\frac14\\kappa(V, V)$, $\\kappa$ the Killing form. If $L$ is finite-dimensional, $B$ symmetric, positive definite and ad-invariant and the centre of $L$ is $0$, then $\\operatorname{tr}K_V > 0$ for $V \\neq 0$; equivalently $\\kappa$ is negative definite.",
+    "decls": [
+     "Chapter12/BiInvariant · Morse.jacobiOp",
+     "Chapter12/BiInvariant · Morse.curv_halfLie_eq_jacobiOp",
+     "Chapter12/BiInvariant · Morse.trace_jacobiOp",
+     "Chapter12/BiInvariant · Morse.trace_eq_sum_of_isOrtho",
+     "Chapter12/BiInvariant · Morse.trace_jacobiOp_pos",
+     "Chapter12/BiInvariant · Morse.killingForm_neg"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "only the positivity of the Ricci curvature",
+    "$G$ must be connected"
+   ],
+   "diff": [
+    "The uniform bound, Myers' theorem for $G$, compactness and the finiteness of $\\pi_1$ are not formalized. Milnor omits \"connected\", which cannot be dropped ($SO(3) \\times \\mathbb Z$)."
+   ]
+  },
+  {
+   "id": "V12.10",
+   "title": "Corollary 21.6, the algebraic step: splitting off the centre",
+   "milnor": {
+    "label": "§21, Corollary 21.6",
+    "page": 115,
+    "statement": "A simply connected Lie group $G$ with a bi-invariant metric splits as $G' \\times \\mathbb R^k$, $G'$ compact with Lie algebra of trivial centre. Proof (pp. 115–116): the orthogonal complement $\\mathfrak g'$ of the centre $\\mathfrak c$ is a subalgebra, since $\\langle[X, Y], C\\rangle = \\langle X, [Y, C]\\rangle = 0$, and $\\mathfrak g = \\mathfrak g' \\oplus \\mathfrak c$."
+   },
+   "lean": {
+    "statement": "For a real Lie algebra $L$ (standing for Milnor's $\\mathfrak g$ of left-invariant fields) with a bilinear form $B$ (his inner product on $\\mathfrak g$): for ad-invariant $B$, $\\mathfrak g' = \\{X : B(C, X) = 0 \\text{ for } C \\in \\mathfrak c\\}$ is a Lie ideal; if $L$ is finite-dimensional and $B$ symmetric, positive definite and ad-invariant, $L = \\mathfrak c \\oplus \\mathfrak g'$ and $\\mathfrak g'$ has trivial centre.",
+    "decls": [
+     "Chapter12/BiInvariant · Morse.centerCompl",
+     "Chapter12/BiInvariant · Morse.mem_centerCompl",
+     "Chapter12/BiInvariant · Morse.isCompl_center_centerCompl",
+     "Chapter12/BiInvariant · Morse.eq_zero_of_mem_centerCompl"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "an ideal, not only a subalgebra",
+    "the group is not split"
+   ],
+   "diff": [
+    "The splitting of the simply connected group and the compactness of $G'$ are not formalized. $\\mathfrak g'$ is shown to be an ideal, which is what the splitting uses."
+   ]
+  },
+  {
+   "id": "V12.11",
+   "title": "The operator $K_V$ in the proof of Theorem 21.7",
+   "milnor": {
+    "label": "§21, proof of Theorem 21.7, pp. 116–117",
+    "page": 116,
+    "statement": "$K_V(W) = R(V, W)V = \\frac14[[V, W], V]$, so $K_V = -\\frac14(\\operatorname{Ad}V)\\circ(\\operatorname{Ad}V)$, and $\\operatorname{Ad}V$ is skew-symmetric by 21.3 (a)."
+   },
+   "lean": {
+    "statement": "For a real Lie algebra $L$ (standing for Milnor's $\\mathfrak g$ of left-invariant fields) with a bilinear form $B$ (his inner product on $\\mathfrak g$) ad-invariant: $\\operatorname{ad}_V$ is skew, $K_V$ is self-adjoint and $B(K_VW, W) = \\frac14B([V, W], [V, W])$. If $B$ is also positive definite, $K_V$ is positive semi-definite, $K_VW = 0$ iff $[V, W] = 0$, every eigenvalue of $K_V$ is $\\ge 0$, and the only real eigenvalue of $\\operatorname{ad}_V$ is $0$.",
+    "decls": [
+     "Chapter12/BiInvariant · Morse.jacobiOp_apply",
+     "Chapter12/BiInvariant · Morse.ad_skew",
+     "Chapter12/BiInvariant · Morse.jacobiOp_symm",
+     "Chapter12/BiInvariant · Morse.jacobiOp_self",
+     "Chapter12/BiInvariant · Morse.jacobiOp_self_nonneg",
+     "Chapter12/BiInvariant · Morse.jacobiOp_eq_zero_iff",
+     "Chapter12/BiInvariant · Morse.eigenvalue_nonneg",
+     "Chapter12/BiInvariant · Morse.ad_eigenvalue_eq_zero"
+    ]
+   },
+   "verdict": "stronger",
+   "chips": [
+    "the kernel of $K_V$ is the centralizer"
+   ],
+   "diff": []
+  },
+  {
+   "id": "V12.12",
+   "title": "The non-zero eigenvalues of $K_V$ occur in pairs",
+   "milnor": {
+    "label": "§21, proof of Theorem 21.7, p. 117",
+    "page": 117,
+    "statement": "Choosing an orthonormal basis that puts $\\operatorname{Ad}V$ in block form with blocks $\\begin{pmatrix}0 & a_i\\\\ -a_i & 0\\end{pmatrix}$, $(\\operatorname{Ad}V)^2$ is diagonal with entries $-a_1^2, -a_1^2, -a_2^2, \\dots$; so the non-zero eigenvalues of $K_V$ are positive and occur in pairs."
+   },
+   "lean": {
+    "statement": "For a real Lie algebra $L$ (standing for Milnor's $\\mathfrak g$ of left-invariant fields) with a bilinear form $B$ (his inner product on $\\mathfrak g$) ad-invariant and positive definite, $L$ finite-dimensional: $K_VW = \\mu W$ iff $[V, [V, W]] = -4\\mu W$; $\\operatorname{ad}_V$ preserves each eigenspace $E_\\mu$; for $\\mu > 0$, $J = (2\\sqrt\\mu)^{-1}\\operatorname{ad}_V$ satisfies $J^2 = -1$ on $E_\\mu$ and preserves $B$; so every eigenspace of $K_V$ for $\\mu \\neq 0$ has even dimension.",
+    "decls": [
+     "Chapter12/BiInvariant · Morse.jacobiOp_of_lie_lie",
+     "Chapter12/BiInvariant · Morse.lie_lie_of_jacobiOp",
+     "Chapter12/BiInvariant · Morse.lie_mem_eigenspace",
+     "Chapter12/BiInvariant · Morse.eigenJ",
+     "Chapter12/BiInvariant · Morse.eigenJ_comp_self",
+     "Chapter12/BiInvariant · Morse.eigenJ_isometry",
+     "Chapter12/BiInvariant · Morse.even_finrank_of_comp_self_eq_neg_id",
+     "Chapter12/BiInvariant · Morse.even_finrank_eigenspace"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "a complex structure, not the normal form"
+   ],
+   "diff": [
+    "The normal form of a skew-symmetric map, quoted without proof, is replaced by the complex structure $J$ on each eigenspace, which is what \"occur in pairs\" needs."
+   ]
+  },
+  {
+   "id": "V12.13",
+   "title": "Even index from paired eigenvalues",
+   "milnor": {
+    "label": "§21, proof of Theorem 21.7, p. 117",
+    "page": 117,
+    "statement": "By 20.5 the conjugate points occur in pairs, every conjugate point has even multiplicity, and with the Index Theorem the index of every geodesic from $p$ to $q$ is even."
+   },
+   "lean": {
+    "statement": "For real numbers $e_1, \\dots, e_N$ (a spectrum of $K_V$ with multiplicity), the index of the spectrum is $\\sum_{0 < t < 1}\\#\\{i : e_i > 0,\\ t \\in \\pi\\mathbb Z/\\sqrt{e_i}\\}$ (Theorems 20.5 and 15.1 written as a definition, V14.7–V14.8). If every positive value occurs an even number of times, the index is even.",
+    "decls": [
+     "Chapter14/IndexCount · Morse.even_spectralIndex",
+     "Chapter14/IndexCount · Morse.spectralIndex",
+     "Chapter14/IndexCount · Morse.conjParams"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "the index of a spectrum",
+    "not joined to V12.12"
+   ],
+   "diff": [
+    "Theorems 20.5 and 15.1 enter as a definition here; for $SU(n)$ they are proved (V14.18, V14.19). Passing from even-dimensional eigenspaces (V12.12) to even multiplicities in a list needs the spectral theorem for $K_V$, which is not formalized in this form, so Theorem 21.7 is not assembled."
+   ]
+  },
+  {
+   "id": "V12.14",
+   "title": "Matrix groups and their bi-invariant metric",
+   "milnor": {
+    "label": "§21, p. 112; §23, p. 125",
+    "page": 112,
+    "statement": "A Lie group $G$ with a metric invariant under left and right translations; if $G$ is compact such a metric exists, by averaging any metric with the Haar measure (p. 112). For $U(n)$ the tangent space at $I$ is the space of skew-Hermitian matrices (p. 125, (6))."
+   },
+   "lean": {
+    "statement": "Multiplication by a unitary matrix is a linear isometry of $M_n(\\mathbb K)$. A matrix group is a slice submanifold $G \\subseteq M_n(\\mathbb K)$ with a real Lie subalgebra $\\mathfrak g$ such that every $g \\in G$ is unitary, $G$ is closed under products and adjoints, $\\mathfrak g$ consists of skew-Hermitian matrices and is invariant under $X \\mapsto gXg^*$, $\\exp\\mathfrak g \\subseteq G$, and $\\dim G = \\dim\\mathfrak g$. Then $T_gG = g\\mathfrak g$, left and right translations by elements of $G$ are isometries of $M_n(\\mathbb K)$ preserving $G$ (the metric is bi-invariant), and the inner product on $\\mathfrak g$ is ad-invariant and positive definite.",
+    "decls": [
+     "Chapter12/MatrixInner · Morse.MatrixInner.innerProductSpace",
+     "Chapter12/MatrixInner · Morse.inner_def",
+     "Chapter12/MatrixInner · Morse.inner_mul_left_of_unitary",
+     "Chapter12/MatrixInner · Morse.inner_mul_right_of_unitary",
+     "Chapter12/MatrixInner · Morse.exp_conjTranspose_mul_exp_of_skew",
+     "Chapter12/MatrixGroups · Morse.IsMatrixGroup",
+     "Chapter12/MatrixGroups · Morse.IsMatrixGroup.tangentSubspace_eq",
+     "Chapter12/MatrixGroups · Morse.IsMatrixGroup.mulLeftIso_image",
+     "Chapter12/MatrixGroups · Morse.IsMatrixGroup.mulRightIso_image",
+     "Chapter12/GroupGeodesics · Morse.frobForm",
+     "Chapter12/GroupGeodesics · Morse.isAdInvariant_frobForm",
+     "Chapter12/GroupGeodesics · Morse.frobForm_pos"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "groups given as matrices only",
+    "no Haar averaging"
+   ],
+   "diff": [
+    "Milnor's abstract Lie groups and left-invariant fields are replaced by groups of matrices with the induced metric; every compact Lie group is one (Peter–Weyl), which is not needed for §§23–24. The algebra of V12.1–V12.13 applies to $(\\mathfrak g, \\langle\\,,\\rangle)$."
+   ]
+  },
+  {
+   "id": "V12.15",
+   "title": "Lemma 21.2: the geodesics are the one-parameter subgroups",
+   "milnor": {
+    "label": "§21, Lemma 21.2",
+    "page": 113,
+    "statement": "The geodesics $\\gamma$ with $\\gamma(0) = e$ are precisely the one-parameter subgroups of $G$. (By Corollary 20.2, p. 110, a symmetric space is complete.)"
+   },
+   "lean": {
+    "statement": "For a matrix group $(G, \\mathfrak g)$ — a slice submanifold $G$ of the space $M_n(\\mathbb K)$ of matrices ($\\mathbb K = \\mathbb R$ or $\\mathbb C$), with the induced metric of $\\langle A, B\\rangle = \\operatorname{Re}\\operatorname{tr}(A^*B)$, and a Lie algebra $\\mathfrak g$ of skew-Hermitian matrices (V12.14): $t \\mapsto g\\exp(tX)$, $g \\in G$, $X \\in \\mathfrak g$, is a geodesic on $\\mathbb R$; a geodesic on a preconnected open set $s \\ni t_0$ is $\\gamma(t_0)\\exp((t - t_0)X)$ with $X = \\gamma(t_0)^*\\gamma'(t_0) \\in \\mathfrak g$. (i) A geodesic $\\gamma : \\mathbb R \\to G$ with $\\gamma(0) = I$ is $t \\mapsto \\exp(t\\gamma'(0))$ and satisfies $\\gamma(s + t) = \\gamma(s)\\gamma(t)$. (ii) A differentiable $\\theta : \\mathbb R \\to G$ with $\\theta(0) = I$ and $\\theta(s + t) = \\theta(s)\\theta(t)$ is a geodesic. $\\exp_g(gX) = g\\exp X$, and $G$ is geodesically complete.",
+    "decls": [
+     "Chapter12/GroupGeodesics · Morse.IsMatrixGroup.isGeodesicOn_mul_exp_smul",
+     "Chapter12/GroupGeodesics · Morse.IsMatrixGroup.eqOn_mul_exp_smul",
+     "Chapter12/GroupGeodesics · Morse.IsMatrixGroup.lemma_21_2",
+     "Chapter12/GroupGeodesics · Morse.IsMatrixGroup.eq_exp_of_oneParam",
+     "Chapter12/GroupGeodesics · Morse.IsMatrixGroup.isGeodesicOn_of_oneParam",
+     "Chapter12/GroupGeodesics · Morse.IsMatrixGroup.exp_eq",
+     "Chapter12/GroupGeodesics · Morse.IsMatrixGroup.isGeodesicallyComplete"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "matrix groups",
+    "acceleration computed, no Lemma 20.1"
+   ],
+   "diff": [
+    "For matrix groups only. Milnor's proof of (i) uses 20.1 and passes from commensurable parameters to all of $\\mathbb R$ \"by continuity\"; here the acceleration $g\\exp(tX)X^2$ is normal ($X^2$ is Hermitian), and uniqueness of geodesics gives the converse."
+   ]
+  },
+  {
+   "id": "V12.16",
+   "title": "Lemma 21.1: the reflection $\\sigma \\mapsto \\tau\\sigma^{-1}\\tau$",
+   "milnor": {
+    "label": "§21, Lemma 21.1",
+    "page": 112,
+    "statement": "If $G$ has a bi-invariant metric, then for each $\\tau$ the map $I_\\tau(\\sigma) = \\tau\\sigma^{-1}\\tau$ is an isometry which fixes $\\tau$ and reverses geodesics through $\\tau$; so $G$ is a symmetric space."
+   },
+   "lean": {
+    "statement": "For a matrix group $(G, \\mathfrak g)$ — a slice submanifold $G$ of the space $M_n(\\mathbb K)$ of matrices ($\\mathbb K = \\mathbb R$ or $\\mathbb C$), with the induced metric of $\\langle A, B\\rangle = \\operatorname{Re}\\operatorname{tr}(A^*B)$, and a Lie algebra $\\mathfrak g$ of skew-Hermitian matrices (V12.14): for unitary $\\tau$, $A \\mapsto \\tau A^*\\tau$ is an involutive linear isometry of $M_n(\\mathbb K)$, equal to $\\sigma \\mapsto \\tau\\sigma^{-1}\\tau$ on $G$; for $\\tau \\in G$ it maps $G$ into $G$, fixes $\\tau$, and $I_\\tau(\\tau\\exp(tX)) = \\tau\\exp(-tX)$ for $X \\in \\mathfrak g$.",
+    "decls": [
+     "Chapter12/GroupGeodesics · Morse.IsMatrixGroup.symmIso",
+     "Chapter12/GroupGeodesics · Morse.IsMatrixGroup.symmIso_mem",
+     "Chapter12/GroupGeodesics · Morse.IsMatrixGroup.symmIso_self",
+     "Chapter12/GroupGeodesics · Morse.IsMatrixGroup.symmIso_mul_exp_smul"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "matrix groups",
+    "\"symmetric space\" not defined"
+   ],
+   "diff": [
+    "By V12.15 the curves $\\tau\\exp(tX)$ are all the geodesics through $\\tau$. A symmetric space is not defined, so the last clause is not a formal statement; it would also need $G$ connected."
+   ]
+  },
+  {
+   "id": "V12.17",
+   "title": "Theorem 21.3 and Corollary 21.4 for matrix groups",
+   "milnor": {
+    "label": "§21, Theorem 21.3 and Corollary 21.4",
+    "page": 113,
+    "statement": "Let $G$ have a bi-invariant metric and $X, Y, Z, W \\in \\mathfrak g$. Then (a) $\\langle[X, Y], Z\\rangle = \\langle X, [Y, Z]\\rangle$, (b) $R(X, Y)Z = \\frac14[[X, Y], Z]$, (c) $\\langle R(X, Y)Z, W\\rangle = \\frac14\\langle[X, Y], [Z, W]\\rangle$; in the proof, (d) $X \\vdash Y = \\frac12[X, Y]$. Corollary 21.4 (p. 115): $\\langle R(X, Y)X, Y\\rangle = \\frac14\\langle[X, Y], [X, Y]\\rangle \\ge 0$."
+   },
+   "lean": {
+    "statement": "For a matrix group $(G, \\mathfrak g)$ — a slice submanifold $G$ of the space $M_n(\\mathbb K)$ of matrices ($\\mathbb K = \\mathbb R$ or $\\mathbb C$), with the induced metric of $\\langle A, B\\rangle = \\operatorname{Re}\\operatorname{tr}(A^*B)$, and a Lie algebra $\\mathfrak g$ of skew-Hermitian matrices (V12.14), $g \\in G$, $X, Y, Z, W \\in \\mathfrak g$: (a) holds; (d) the covariant derivative of $q \\mapsto qY$ in the direction $gX$ is $g\\cdot\\frac12[X, Y]$; the second fundamental form is $\\mathrm{II}_g(gX, gY) = \\frac12g(XY + YX)$; (b) $R(gX, gY)gZ = \\frac14g[[X, Y], Z]$ (Milnor's sign), which is $g$ times the algebraic curvature of V12.5, and $R(gA, gW)gA = g\\,K_A(W)$; (c) $\\langle R(gX, gY)gZ, gW\\rangle = \\frac14\\langle[X, Y], [Z, W]\\rangle$; and $\\langle R(gX, gY)gX, gY\\rangle = \\frac14\\|[X, Y]\\|^2 \\ge 0$, zero iff $XY = YX$.",
+    "decls": [
+     "Chapter12/GroupGeodesics · Morse.inner_lie_left",
+     "Chapter12/GroupGeodesics · Morse.inner_gauss_identity",
+     "Chapter12/GroupGeodesics · Morse.IsMatrixGroup.tanProj_eq",
+     "Chapter12/GroupGeodesics · Morse.IsMatrixGroup.secondFundForm_mul",
+     "Chapter12/GroupGeodesics · Morse.IsMatrixGroup.covAt_mul_right",
+     "Chapter12/GroupGeodesics · Morse.IsMatrixGroup.curvOp_mul",
+     "Chapter12/GroupGeodesics · Morse.IsMatrixGroup.inner_curvOp_mul",
+     "Chapter12/GroupGeodesics · Morse.IsMatrixGroup.sectional_mul",
+     "Chapter12/GroupGeodesics · Morse.IsMatrixGroup.sectional_mul_nonneg",
+     "Chapter12/GroupGeodesics · Morse.IsMatrixGroup.curvOp_eq_curv_halfLie",
+     "Chapter12/GroupGeodesics · Morse.IsMatrixGroup.curvOp_eq_jacobiOp"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "matrix groups",
+    "by the Gauss equation"
+   ],
+   "diff": [
+    "For matrix groups. (b) is proved by the Gauss equation of the submanifold $G$ (V6.18) and a trace identity, not by substituting (d) into the definition of $R$; this removes, for matrix groups, the hypotheses of V12.1–V12.3."
+   ]
+  },
+  {
+   "id": "V12.18",
+   "title": "Theorem 20.5 for matrix groups: the Jacobi equation along $\\exp(tA)$",
+   "milnor": {
+    "label": "§20, Theorem 20.5",
+    "page": 110,
+    "statement": "Let $\\gamma$ be a geodesic in a locally symmetric manifold with $\\gamma(0) = p$, $\\gamma'(0) = V$, and $e_1, \\dots, e_n$ the eigenvalues of $K_V(W) = R(V, W)V$. The conjugate points to $p$ along $\\gamma$ are the $\\gamma(\\pi k/\\sqrt{e_i})$, $k$ a non-zero integer, $e_i > 0$; the multiplicity of $\\gamma(t)$ is the number of $e_i$ such that $t$ is a multiple of $\\pi/\\sqrt{e_i}$. Proof (p. 111): in a parallel orthonormal eigenframe the Jacobi equation is $w_i'' + e_iw_i = 0$."
+   },
+   "lean": {
+    "statement": "For a matrix group $(G, \\mathfrak g)$ — a slice submanifold $G$ of the space $M_n(\\mathbb K)$ of matrices ($\\mathbb K = \\mathbb R$ or $\\mathbb C$), with the induced metric of $\\langle A, B\\rangle = \\operatorname{Re}\\operatorname{tr}(A^*B)$, and a Lie algebra $\\mathfrak g$ of skew-Hermitian matrices (V12.14), $A \\in \\mathfrak g$, $\\gamma(t) = \\exp(tA)$, $h(t) = \\exp(tA/2)$: the covariant derivative of $hUh$ along $\\gamma$ is $hU'h$ for $\\mathfrak g$-valued $U$, and $R(\\gamma', hMh)\\gamma' = h\\,K_A(M)\\,h$ with $K_A(M) = \\frac14[[A, M], A]$. Hence if $U$ is smooth with $U'' + K_A(U) = 0$, $hUh$ is a Jacobi field along $\\gamma$ with covariant derivative $U'(0)$ at $0$.",
+    "decls": [
+     "Chapter12/GroupJacobi · Morse.halfExp",
+     "Chapter12/GroupJacobi · Morse.jacK",
+     "Chapter12/GroupJacobi · Morse.IsMatrixGroup.covD_conj",
+     "Chapter12/GroupJacobi · Morse.IsMatrixGroup.curvR_conj",
+     "Chapter12/GroupJacobi · Morse.IsMatrixGroup.isJacobiField_conj",
+     "Chapter12/GroupJacobi · Morse.IsMatrixGroup.covAlong_conj_zero"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "one-parameter subgroups of matrix groups",
+    "no eigenbasis",
+    "multiplicities: $SU(n)$ only (V14.18)"
+   ],
+   "diff": [
+    "Only along one-parameter subgroups of matrix groups, and only the implication from the constant-coefficient equation $U'' + K_A(U) = 0$ to Jacobi fields. The frame $U \\mapsto hUh$ replaces the parallel eigenframe. The count of conjugate points with multiplicities is proved for $SU(n)$ (V14.18); locally symmetric spaces are not defined."
+   ]
+  },
+  {
+   "id": "V13.1",
+   "title": "The space $\\Omega^d$ of minimal geodesics",
+   "milnor": {
+    "label": "§22, p. 118",
+    "page": 118,
+    "statement": "$\\Omega^d$ denotes the space of minimal geodesics from $p$ to $q$, where $d = \\rho(p, q)^2$ and $M$ is complete."
+   },
+   "lean": {
+    "statement": "For a slice submanifold $N$ of a finite-dimensional inner product space $V$, with the induced metric, $p, q \\in N$ and $\\Omega = \\Omega(N; p, q)$ with Milnor's metric (V10.1): $\\Omega^d$ is the set of paths whose energy is at most that of every path of $\\Omega$; a path of least energy is an unbroken geodesic.",
+    "decls": [
+     "Chapter13/Theorem22 · Morse.minPaths",
+     "Chapter13/MinimalDeform · Morse.isUnbrokenGeodesic_of_minimal"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "defined by least energy"
+   ],
+   "diff": [
+    "By Lemma 12.1 (V8.6) the paths of least energy are the minimal geodesics parametrized proportionally to arc length, and $d = \\rho(p, q)^2$; here $d$ is not named."
+   ]
+  },
+  {
+   "id": "V13.2",
+   "title": "Theorem 22.1",
+   "milnor": {
+    "label": "§22, Theorem 22.1",
+    "page": 118,
+    "statement": "If the space $\\Omega^d$ of minimal geodesics from $p$ to $q$ is a topological manifold, and if every non-minimal geodesic from $p$ to $q$ has index $\\ge \\lambda_0$, then $\\pi_i(\\Omega, \\Omega^d) = 0$ for $0 \\le i < \\lambda_0$. ($M$ is complete throughout §22; proof pp. 122–123.)"
+   },
+   "lean": {
+    "statement": "For a slice submanifold $N$ of a finite-dimensional inner product space $V$, with the induced metric, $p, q \\in N$ and $\\Omega = \\Omega(N; p, q)$ with Milnor's metric (V10.1): let the closed balls about $p$ be compact, let every geodesic of $\\Omega$ not of least energy have index $\\ge \\lambda_0$, and let $\\Omega^d$ be a retract of an open neighbourhood in $\\Omega$ (an open $O \\supseteq \\Omega^d$ and $\\rho : O \\to \\Omega^d$, continuous on $O$, the identity on $\\Omega^d$). Let $P$ be compact with a continuous injection into a real vector space of dimension $< \\lambda_0$ (e.g. $I^i$, $i < \\lambda_0$). Then every map $h : P \\to \\Omega$ is homotopic, relative to $h^{-1}(\\Omega^d)$, to a map into $\\Omega^d$; equivalently the inclusion $\\Omega^d \\to \\Omega$ compresses maps from $P$.",
+    "decls": [
+     "Chapter13/Theorem22 · Morse.theorem_22_1",
+     "Chapter13/Theorem22 · Morse.minPathsIncl",
+     "Chapter13/Theorem22 · Morse.compresses_minPaths"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "neighbourhood retract assumed (no Hanner)",
+    "relative form, every compact $P$",
+    "compact balls for completeness"
+   ],
+   "diff": [
+    "The hypothesis \"$\\Omega^d$ is a topological manifold\" is replaced by its consequence that $\\Omega^d$ is a retract of an open neighbourhood, which is all the proof uses: Milnor gets it from Hanner's theorem, which is not formalized. For the sphere and for $SU(2m)$ the retraction is constructed (V13.8, V14.21).",
+    "The conclusion is stronger than \"$\\pi_i(\\Omega, \\Omega^d) = 0$\": homotopies relative to the whole part already in $\\Omega^d$, at all base points, for every compact $P$ of small dimension.",
+    "No reparametrization $F \\circ E$ is needed: Lemma 22.5 is used below a level (V13.14). Paths are functions on $\\mathbb R$, so the final homotopy is corrected on paths at distance $0$."
+   ]
+  },
+  {
+   "id": "V13.3",
+   "title": "The inclusion $\\Omega^d \\to \\Omega$ on homotopy groups",
+   "milnor": {
+    "label": "§22, p. 118",
+    "page": 118,
+    "statement": "It follows (from the exact sequence of the pair) that the inclusion homomorphism $\\pi_i\\Omega^d \\to \\pi_i\\Omega$ is an isomorphism for $i \\le \\lambda_0 - 2$; it is onto for $i = \\lambda_0 - 1$."
+   },
+   "lean": {
+    "statement": "For a slice submanifold $N$ of a finite-dimensional inner product space $V$, with the induced metric, $p, q \\in N$ and $\\Omega = \\Omega(N; p, q)$ with Milnor's metric (V10.1), under the hypotheses of V13.2: at every $\\gamma \\in \\Omega^d$ the inclusion induces a bijection $\\pi_i(\\Omega^d, \\gamma) \\to \\pi_i(\\Omega, \\gamma)$ for $i \\le \\lambda_0 - 2$ and a surjection for $i \\le \\lambda_0 - 1$, $\\pi_0$ included; for $i \\ge 1$ the induced map is a homomorphism, hence an isomorphism.",
+    "decls": [
+     "Chapter13/Theorem22 · Morse.theorem_22_1_bijective",
+     "Chapter13/Theorem22 · Morse.theorem_22_1_surjective"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "under the retract hypothesis of V13.2",
+    "$\\pi_0$ treated like the rest"
+   ],
+   "diff": [
+    "Inherits the hypothesis of V13.2. No exact sequence of the pair: compressing cubes gives surjectivity and compressing cylinders $I \\times I^i$ injectivity."
+   ]
+  },
+  {
+   "id": "V13.4",
+   "title": "Corollary 22.2",
+   "milnor": {
+    "label": "§22, Corollary 22.2",
+    "page": 118,
+    "statement": "With the hypotheses of Theorem 22.1, $\\pi_i\\Omega^d$ is isomorphic to $\\pi_{i+1}M$ for $0 \\le i \\le \\lambda_0 - 2$. Proof: $\\pi_i\\Omega^d \\cong \\pi_i\\Omega$, and $\\pi_i\\Omega \\cong \\pi_{i+1}M$."
+   },
+   "lean": {
+    "statement": "For a slice submanifold $N$ of a finite-dimensional inner product space $V$, with the induced metric, $p, q \\in N$ and $\\Omega = \\Omega(N; p, q)$ with Milnor's metric (V10.1), under the hypotheses of V13.2: for every $\\gamma \\in \\Omega^d$ there is a bijection $\\pi_i(\\Omega^d, \\gamma) \\cong \\pi_{i+1}(N, p)$ for $i \\le \\lambda_0 - 2$, and a surjection $\\pi_i(\\Omega^d, \\gamma) \\to \\pi_{i+1}(N, p)$ for $i \\le \\lambda_0 - 1$.",
+    "decls": [
+     "Chapter13/Corollaries · Morse.pathCHomeomorph",
+     "Chapter13/Corollaries · Morse.contractLoop",
+     "Chapter13/Corollaries · Morse.contractPath",
+     "Chapter13/Corollaries · Morse.corollary_22_2",
+     "Chapter13/Freudenthal · Morse.corollary_22_2_surjective"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "under the retract hypothesis of V13.2",
+    "no connectedness of $N$",
+    "the base point made explicit"
+   ],
+   "diff": [
+    "$\\pi_i(\\Omega, \\gamma)$ is at a minimal geodesic while $\\pi_i(\\Omega M) \\cong \\pi_{i+1}M$ concerns the constant loop: the bijection passes through Theorem 17.1 (V10.19), $\\delta \\mapsto \\delta\\cdot\\gamma^{-1}$, and a change of basepoint from $\\gamma\\cdot\\gamma^{-1}$ to the constant loop. Using $\\gamma$ itself, no connectedness of $N$ is needed.",
+    "The surjection one degree higher is not in Milnor's 22.2; it follows from the surjectivity in V13.3."
+   ]
+  },
+  {
+   "id": "V13.5",
+   "title": "Corollary 22.2 as groups; change of basepoint is a homomorphism",
+   "milnor": {
+    "label": "§22, Corollary 22.2",
+    "page": 118,
+    "statement": "The isomorphisms of Corollary 22.2 are isomorphisms of groups for $i \\ge 1$."
+   },
+   "lean": {
+    "statement": "For a path $\\omega$ from $y_0$ to $y_1$ in any space and $i \\ge 1$, change of basepoint along $\\omega$ is a group isomorphism $\\pi_i(Y, y_0) \\cong \\pi_i(Y, y_1)$. For a slice submanifold $N$ of a finite-dimensional inner product space $V$, with the induced metric, $p, q \\in N$ and $\\Omega = \\Omega(N; p, q)$ with Milnor's metric (V10.1): $\\pi_{j+1}(\\Omega, \\gamma) \\cong \\pi_{j+2}(N, p)$ as groups for every $\\gamma \\in \\Omega$; under the hypotheses of V13.2, $\\pi_i(\\Omega^d, \\gamma) \\cong \\pi_{i+1}(N, p)$ as groups for $1 \\le i \\le \\lambda_0 - 2$, with a surjective homomorphism for $1 \\le i \\le \\lambda_0 - 1$.",
+    "decls": [
+     "Homotopy/ChangeOfBaseGroup · Morse.Homotopy.evalZeroHomotopyEquiv",
+     "Homotopy/ChangeOfBaseGroup · Morse.Homotopy.changeBaseMap_mul",
+     "Homotopy/ChangeOfBaseGroup · Morse.Homotopy.changeBaseMulEquiv",
+     "Chapter13/CorollaryGroups · Morse.nonempty_mulEquiv_pathSp",
+     "Chapter13/CorollaryGroups · Morse.corollary_22_2_mulEquiv",
+     "Chapter13/CorollaryGroups · Morse.corollary_22_2_surjective_hom"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "under the retract hypothesis of V13.2",
+    "change of basepoint proved multiplicative"
+   ],
+   "diff": [
+    "That the change of basepoint hidden in \"$\\pi_i\\Omega \\cong \\pi_{i+1}M$\" is a homomorphism is proved through the free path space: $(\\mathrm{ev}_1)_* = c_\\omega\\circ(\\mathrm{ev}_0)_*$ with $(\\mathrm{ev}_0)_*$ onto and both evaluations homomorphisms."
+   ]
+  },
+  {
+   "id": "V13.6",
+   "title": "Lemma A: the minimal geodesics between antipodes are the equator",
+   "milnor": {
+    "label": "§22, proof of Corollary 22.3, p. 119",
+    "page": 119,
+    "statement": "Let $p, q = -p$ be antipodal on $S^{n+1}$. Then the space $\\Omega^{\\pi^2}$ of minimal geodesics from $p$ to $q$ \"can be identified with\" the equator $S^n$. (The exposition states this as Lemma A, with the list of all geodesics from $p$ to $-p$.)"
+   },
+   "lean": {
+    "statement": "On the unit sphere $S^{n+1} \\subseteq \\mathbb R^{n+2}$: every geodesic from $p$ to $-p$ agrees on $[0, 1]$ with $t \\mapsto \\cos(Lt)p + \\sin(Lt)u$, $u \\perp p$ a unit vector, $L = (2m + 1)\\pi$, and each of these is one; every path from $p$ to $-p$ has energy $\\ge \\pi^2$; the paths of least energy are the semicircles $\\gamma_u$ ($L = \\pi$), $u$ in the equator. $u \\mapsto \\gamma_u$ is continuous for Milnor's metric, a homotopy equivalence from the equator to $\\Omega^d$ with homotopy inverse $\\gamma \\mapsto \\gamma(\\frac12)$, and a homeomorphism of the equator onto the separation quotient of $\\Omega^d$.",
+    "decls": [
+     "Chapter13/SphereMinimal · Morse.exists_eqOn_greatCircle_antipode",
+     "Chapter13/SphereMinimal · Morse.greatCircle_mem_pathSpace_antipode",
+     "Chapter13/SphereMinimal · Morse.pi_sq_le_energy_sph",
+     "Chapter13/SphereMinimal · Morse.equator",
+     "Chapter13/SphereMinimal · Morse.semicircle",
+     "Chapter13/SphereMinimal · Morse.exists_eqOn_semicircle",
+     "Chapter13/SphereMinimal · Morse.continuous_semicircle",
+     "Chapter13/SphereMinimal · Morse.sphMinPathsHomotopyEquiv",
+     "Chapter13/SphereMinimal · Morse.sphMinPathsHomeomorph"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "homeomorphic only after separation quotient",
+    "a homotopy equivalence on the nose"
+   ],
+   "diff": [
+    "Paths are functions on $\\mathbb R$ and Milnor's metric does not see their values off $[0, 1]$, so $\\Omega^d$ is homeomorphic to the equator only after identifying paths at distance $0$; the homotopy equivalence is what the homotopy groups need.",
+    "Continuity: all semicircles have speed $\\pi$, so the $L^2$ part of Milnor's metric vanishes on them."
+   ]
+  },
+  {
+   "id": "V13.7",
+   "title": "Lemma B: the index of a geodesic between antipodes",
+   "milnor": {
+    "label": "§22, proof of Corollary 22.3, p. 119",
+    "page": 119,
+    "statement": "Every non-minimal geodesic from $p$ to $-p$ must wind one and a half times around $S^{n+1}$, and therefore has index $\\ge 2n$ (it passes through two conjugate points of multiplicity $n$ in its interior)."
+   },
+   "lean": {
+    "statement": "The geodesic $t \\mapsto \\cos((2m + 1)\\pi t)p + \\sin((2m + 1)\\pi t)u$ from $p$ to $-p$ on $S^{n+1}$ has index $2mn$; every geodesic from $p$ to $-p$ not of least energy has index $\\ge 2n$.",
+    "decls": [
+     "Chapter13/SphereMinimal · Morse.formIndex_greatCircle_antipode",
+     "Chapter13/SphereMinimal · Morse.le_formIndex_of_not_minimal_sph"
+    ]
+   },
+   "verdict": "same",
+   "chips": [
+    "the index computed exactly"
+   ],
+   "diff": [
+    "By the index theorem (V9.24): the parameters $j/(2m + 1)$, $1 \\le j \\le 2m$, each of multiplicity $n$ (V10.23); the end point $t = 1$ is conjugate but does not count."
+   ]
+  },
+  {
+   "id": "V13.8",
+   "title": "The neighbourhood retraction for the sphere",
+   "milnor": {
+    "label": "§22, proof of Corollary 22.3, p. 119",
+    "page": 119,
+    "statement": "\"Evidently the hypotheses of Theorem 22.1 are satisfied with $\\lambda_0 = 2n$\": $\\Omega^d \\cong S^n$ is a manifold. No retraction is written down."
+   },
+   "lean": {
+    "statement": "In $\\Omega(S^{n+1}; p, -p)$, the set $O$ of paths with $\\omega(\\frac12) \\neq \\pm p$ is open and contains $\\Omega^d$; $\\omega \\mapsto$ the semicircle through the normalized component of $\\omega(\\frac12)$ orthogonal to $p$, changed to the identity on $\\Omega^d$, is a retraction of $O$ onto $\\Omega^d$, continuous on $O$.",
+    "decls": [
+     "Chapter13/Freudenthal · Morse.eqComp",
+     "Chapter13/Freudenthal · Morse.sphNbhd",
+     "Chapter13/Freudenthal · Morse.isOpen_sphNbhd",
+     "Chapter13/Freudenthal · Morse.sphRetrPath",
+     "Chapter13/Freudenthal · Morse.continuousOn_sphRetrPath",
+     "Chapter13/Freudenthal · Morse.exists_retraction_minPaths_sph"
+    ]
+   },
+   "verdict": "extra",
+   "chips": [
+    "Hanner replaced by a formula"
+   ],
+   "diff": [
+    "This proves the hypothesis of V13.2 for the sphere, so Corollary 22.3 does not depend on Hanner's theorem."
+   ]
+  },
+  {
+   "id": "V13.9",
+   "title": "Corollary 22.3 (Freudenthal)",
+   "milnor": {
+    "label": "§22, Corollary 22.3",
+    "page": 119,
+    "statement": "$\\pi_iS^n \\cong \\pi_{i+1}S^{n+1}$ for $i \\le 2n - 2$."
+   },
+   "lean": {
+    "statement": "For all $x \\in S^n$, $y \\in S^{n+1}$: $\\pi_i(S^n, x) \\cong \\pi_{i+1}(S^{n+1}, y)$ for $i \\le 2n - 2$ (a bijection), as groups for $1 \\le i \\le 2n - 2$; and for $i \\le 2n - 1$ a surjection $\\pi_i(S^n, x) \\to \\pi_{i+1}(S^{n+1}, y)$, a homomorphism for $i \\ge 1$.",
+    "decls": [
+     "Chapter13/Freudenthal · Morse.equatorHomeomorph",
+     "Chapter13/Freudenthal · Morse.hidx_sph",
+     "Chapter13/Freudenthal · Morse.hball_sph",
+     "Chapter13/Freudenthal · Morse.corollary_22_3",
+     "Chapter13/Freudenthal · Morse.corollary_22_3_surjective",
+     "Chapter13/CorollaryGroups · Morse.corollary_22_3_mulEquiv",
+     "Chapter13/CorollaryGroups · Morse.corollary_22_3_surjective_hom"
+    ]
+   },
+   "verdict": "stronger",
+   "chips": [
+    "plus onto for $i = 2n - 1$",
+    "all base points",
+    "unconditional"
+   ],
+   "diff": [
+    "The second half of Freudenthal's theorem, the surjection for $i = 2n - 1$, is not in Milnor's 22.3; it follows from the surjectivity in V13.3 (his remark on $\\pi_{\\lambda_0 - 1}$).",
+    "Unconditional: the retraction is V13.8, and the equator is $S^n$ by an isometry of $p^\\perp$ with $\\mathbb R^{n+1}$. That the isomorphism is the suspension homomorphism is not formalized."
+   ]
+  },
+  {
+   "id": "V13.10",
+   "title": "Lemma 22.4",
+   "milnor": {
+    "label": "§22, Lemma 22.4",
+    "page": 119,
+    "statement": "Let $K$ be a compact subset of an open $U \\subseteq \\mathbb R^n$ and $f : U \\to \\mathbb R$ smooth, all of whose critical points in $K$ have index $\\ge \\lambda_0$. If $g : U \\to \\mathbb R$ is smooth and its first and second partial derivatives are within $\\varepsilon$ of those of $f$ uniformly on $K$, $\\varepsilon$ small, then every critical point of $g$ in $K$ has index $\\ge \\lambda_0$. Proof (pp. 120–121): the $\\lambda$-th eigenvalue of the Hessian is continuous, and \"a uniform continuity argument which will be left to the reader\"."
+   },
+   "lean": {
+    "statement": "Let $E$ be a finite-dimensional real normed space, $K \\subseteq U \\subseteq E$ with $K$ compact and $U$ open, and $f : E \\to \\mathbb R$ of class $C^2$ on $U$ with every critical point in $K$ of index $\\ge \\lambda_0$. There is $\\varepsilon > 0$ such that every $g$ with $\\|dg_x - df_x\\| < \\varepsilon$ and $\\|d^2g_x - d^2f_x\\| < \\varepsilon$ (operator norms) at each $x \\in K$ has all its critical points in $K$ of index $\\ge \\lambda_0$; likewise for $g = f + h$ with the first two derivatives of $h$ smaller than $\\varepsilon$ on $K$.",
+    "decls": [
+     "Chapter13/Perturbation · Morse.exists_negDef_margin",
+     "Chapter13/Perturbation · Morse.le_index_of_norm_sub_lt",
+     "Chapter13/Perturbation · Morse.lemma_22_4",
+     "Chapter13/Perturbation · Morse.lemma_22_4_add"
+    ]
+   },
+   "verdict": "stronger",
+   "chips": [
+    "$f$ only $C^2$",
+    "operator norms for partials",
+    "no eigenvalues"
+   ],
+   "diff": [
+    "Closeness is measured by operator norms of $dg - df$ and $d^2g - d^2f$, equivalent to Milnor's partial derivatives up to constants; $f$ need only be $C^2$ and may have degenerate critical points, as Theorem 22.1 needs.",
+    "The proof uses no eigenvalues: a negative definite subspace keeps a margin $\\mu$ and stays negative definite under perturbations smaller than $\\mu$; compactness of $K$ is the \"uniform continuity argument\"."
+   ]
+  },
+  {
+   "id": "V13.11",
+   "title": "Lemma 22.4 on a submanifold, for linear perturbations",
+   "milnor": {
+    "label": "§22, proof of Lemma 22.5, p. 122",
+    "page": 122,
+    "statement": "In the proof of Lemma 22.5: $g$ is chosen with first and second derivatives so close to those of $f$ that Lemma 22.4 applies \"in a coordinate neighbourhood\" of each point of a compact set."
+   },
+   "lean": {
+    "statement": "Let $N \\subseteq V$ be a slice submanifold, $F : V \\to \\mathbb R$ smooth and $K \\subseteq N$ compact, with every critical point of $F|N$ in $K$ of index $\\ge \\lambda_0$. There is $\\delta > 0$ such that for every linear form $a$ on $V$ with $\\|a\\| < \\delta$, every critical point of $(F + a)|N$ in $K$ has index $\\ge \\lambda_0$.",
+    "decls": [
+     "Chapter13/Perturbation · Morse.exists_perturb_slice",
+     "Chapter13/Perturbation · Morse.lemma_22_4_submanifold"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "linear perturbations only"
+   ],
+   "diff": [
+    "Only linear perturbations: those by which Corollary 6.8 (V4.22) produces Morse functions, which is what Lemma 22.5 needs. Finitely many slice charts cover $K$."
+   ]
+  },
+  {
+   "id": "V13.12",
+   "title": "Pushing maps, and pushing off cells",
+   "milnor": {
+    "label": "§22, proof of Lemma 22.5, p. 122",
+    "page": 122,
+    "statement": "\"Since $r < \\lambda_0$ it follows that $h$ is homotopic within $(M^c, M^0)$ to a map $h'$ into $g^{-1}(-\\infty, 2\\delta]$\": maps of dimension below $\\lambda_0$ can be pushed off cells of dimension $\\ge \\lambda_0$."
+   },
+   "lean": {
+    "statement": "$A$ pushes maps from $P$ out of $X$ ($A, X \\subseteq T$) if every map $P \\to T$ with values in $X$ is homotopic in $T$, relative to the preimage of $A$, to a map into $A$. This is transitive and monotone; a strong deformation retract pushes maps from every $P$; and if $T$ is Hausdorff, $A$ closed, $P$ compact with a continuous injection into a real vector space of dimension $d$, and $e_1, \\dots, e_k$ are disjoint embedded closed cells of dimensions $> d$ meeting $A$ exactly in their boundary spheres, then $A$ pushes maps from $P$ out of $A \\cup e_1 \\cup \\dots \\cup e_k$.",
+    "decls": [
+     "Chapter13/Compression · Morse.PushesInto",
+     "Chapter13/Compression · Morse.PushesInto.trans",
+     "Chapter13/Compression · Morse.PushesInto.mono",
+     "Chapter13/Compression · Morse.pushesInto_of_isStrongDeformationRetract",
+     "Chapter13/Compression · Morse.pushesInto_union_cell",
+     "Chapter13/Compression · Morse.pushesInto_union_cells"
+    ]
+   },
+   "verdict": "extra",
+   "chips": [
+    "replaces $\\pi_r(X, A) = 0$",
+    "push-off lemma of cellular approximation"
+   ],
+   "diff": [
+    "The notion replaces relative homotopy groups throughout §22. One cell is the compression lemma for attaching a cell (Hatcher, Lemma 4.10), which Milnor uses without comment."
+   ]
+  },
+  {
+   "id": "V13.13",
+   "title": "Lemma D: passing critical levels of high index",
+   "milnor": {
+    "label": "§22, proof of Lemma 22.5, p. 122",
+    "page": 122,
+    "statement": "$g$ has only non-degenerate critical points, of index $\\ge \\lambda_0$, in $g^{-1}[2\\delta, c + \\delta]$; so $g^{-1}(-\\infty, c + \\delta]$ has the homotopy type of $g^{-1}(-\\infty, 2\\delta]$ with cells of dimension $\\ge \\lambda_0$ attached."
+   },
+   "lean": {
+    "statement": "Let $N \\subseteq V$ be a slice submanifold, $F : V \\to \\mathbb R$ smooth, $f = F|N$, $f^{-1}(-\\infty, a_0]$ compact, $a$ a regular value, and every critical point $q$ with $a < f(q) \\le a_0$ non-degenerate of index $\\ge \\lambda_0$. For $P$ compact injected into a real vector space of dimension $< \\lambda_0$ and $a \\le b < a_0$, $N^a$ pushes maps from $P$ out of $N^b$.",
+    "decls": [
+     "Chapter13/Compression · Morse.exists_gap_of_finite",
+     "Chapter13/Compression · Morse.lemma_D"
+    ]
+   },
+   "verdict": "explicit",
+   "chips": [
+    "deformations fixing the lower level",
+    "finitely many critical points, said"
+   ],
+   "diff": [
+    "A homotopy type alone would not do: the argument needs the deformations of Theorem 3.1 and Remark 3.3 (V2.3, V2.9), which fix the lower level, and V13.12 for the cells.",
+    "The critical points above $a$ are finitely many: isolated in a compact set, and not accumulating at the regular level $a$. Milnor does not say so."
+   ]
+  },
+  {
+   "id": "V13.14",
+   "title": "Lemma 22.5",
+   "milnor": {
+    "label": "§22, Lemma 22.5",
+    "page": 121,
+    "statement": "Let $f : M \\to \\mathbb R$ be smooth with minimum $0$ and each $M^c = f^{-1}[0, c]$ compact. If the set $M^0$ of minimal points is a manifold and every critical point in $M - M^0$ has index $\\ge \\lambda_0$, then $\\pi_r(M, M^0) = 0$ for $0 \\le r < \\lambda_0$. Proof (pp. 121–122): by Hanner, $M^0$ is a retract of a neighbourhood $U$ which deforms into $M^0$; a smooth approximation $g$ of $f$ pushes $h$ into $U$."
+   },
+   "lean": {
+    "statement": "Let $N \\subseteq V$ be a slice submanifold, $F$ smooth, $f = F|N \\ge d$, $M^0 = f^{-1}(d)$, $P$ compact injected into a real vector space of dimension $< \\lambda_0$, and $U \\supseteq M^0$ open with $M^0$ pushing maps from $P$ out of $U$ (e.g. $U$ deforms into $M^0$ fixing it). (i) If $f^{-1}(-\\infty, a_0]$ is compact and the critical points with $d < f < a_0$ have index $\\ge \\lambda_0$, $M^0$ pushes maps from $P$ out of $f^{-1}(-\\infty, b]$ for every $b < a_0$. (ii) With all sublevel sets compact and every critical point off $M^0$ of index $\\ge \\lambda_0$, $M^0$ pushes maps from $P$ out of $N$.",
+    "decls": [
+     "Chapter13/ManifoldOfMinima · Morse.pushesInto_of_deformation",
+     "Chapter13/ManifoldOfMinima · Morse.criticalPoint_hessianM_congr",
+     "Chapter13/ManifoldOfMinima · Morse.lemma_22_5_sublevel",
+     "Chapter13/ManifoldOfMinima · Morse.lemma_22_5"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "the neighbourhood $U$ assumed (no Hanner)",
+    "one compact sublevel set suffices"
+   ],
+   "diff": [
+    "The conclusion of Milnor's first step (Hanner's theorem plus short geodesics) is a hypothesis.",
+    "Milnor's $g$ lives on the compact $M^{c + 2\\delta}$, too little for Theorems 3.1 and 3.2; here $g = F + \\rho\\ell$ with $\\ell$ a small linear form making $(F + \\ell)|N$ Morse and $\\rho$ a bump function, and the lower level is chosen regular ($2\\delta$ might be critical). $M^0$ compact is implicit in the book."
+   ]
+  },
+  {
+   "id": "V13.15",
+   "title": "Deforming a neighbourhood of the minimal geodesics",
+   "milnor": {
+    "label": "§22, proof of Lemma 22.5, p. 121",
+    "page": 121,
+    "statement": "\"$M^0$ is a retract of some neighborhood $U$ … taking $U$ small, we may assume that each point of $U$ is joined to its image under the retraction by a unique minimal geodesic; hence $U$ can be deformed into $M^0$ within $M$.\""
+   },
+   "lean": {
+    "statement": "In the finite-dimensional model of Chapter 10 (a broken-geodesic setup with energy bound $c$), let $N^m \\cap O$, $O$ open, consist of admissible break points, and $d < c$. If $\\{\\gamma : E(\\gamma) \\le d\\}$ is a retract of an open set of $\\Omega$ containing it, then $\\{y \\in N^m \\cap O : E'(y) \\le d\\}$ has an open neighbourhood in $N^m \\cap O$ from which it pushes maps from every $P$.",
+    "decls": [
+     "Chapter13/MinimalDeform · Morse.BrokenSetup.mem_ball_of_mem_nodes",
+     "Chapter13/MinimalDeform · Morse.BrokenSetup.joinVec_self",
+     "Chapter13/MinimalDeform · Morse.BrokenSetup.exists_pushesInto_nodes"
+    ]
+   },
+   "verdict": "explicit",
+   "chips": [
+    "the tube lemma, said",
+    "the retraction transported to break points"
+   ],
+   "diff": [
+    "Each break point moves to that of the retracted path along the short geodesic of Corollary 10.8; the deformation stays in the open manifold $N^m \\cap O$ near $M^0$ by the tube lemma; the retraction in $\\Omega$ is transported to break points."
+   ]
+  },
+  {
+   "id": "V13.16",
+   "title": "Theorem 22.1 for an open and closed set of paths",
+   "milnor": {
+    "label": "§24, p. 147",
+    "page": 147,
+    "statement": "In the case $k \\equiv 2 \\pmod 4$ of §24: \"we will need a variant of Theorem 22.1 for the component $\\Omega^{(c)}$ of the path space\". (The exposition states it as Lemma 6.2 of its Chapter 15.)"
+   },
+   "lean": {
+    "statement": "For a slice submanifold $N$ of a finite-dimensional inner product space $V$, with the induced metric, $p, q \\in N$ and $\\Omega = \\Omega(N; p, q)$ with Milnor's metric (V10.1), under the compact-ball and retract hypotheses of V13.2, let $\\Omega' \\subseteq \\Omega$ be open and closed with every geodesic in $\\Omega'$ not of least energy of index $\\ge \\lambda_0$. Then every map $h : P \\to \\Omega'$ is homotopic, relative to $h^{-1}(\\Omega^d)$, to a map into $\\Omega^d \\cap \\Omega'$; the inclusion $\\Omega^d \\cap \\Omega' \\to \\Omega'$ is bijective on $\\pi_i$, $i \\le \\lambda_0 - 2$, and $\\Omega^d \\to \\Omega$ is bijective on $\\pi_i$, $1 \\le i \\le \\lambda_0 - 2$, at the points of $\\Omega^d \\cap \\Omega'$.",
+    "decls": [
+     "Chapter13/Componentwise · Morse.PathSp.mem_of_edist_eq_zero",
+     "Chapter13/Componentwise · Morse.theorem_22_1_clopen",
+     "Chapter13/Componentwise · Morse.compresses_clopenIncl",
+     "Chapter13/Componentwise · Morse.theorem_22_1_clopen_bijective",
+     "Chapter13/Componentwise · Morse.theorem_22_1_clopen_bijective_minPathsIncl",
+     "Homotopy/BundlesUnitary · Morse.Homotopy.bijective_homotopyGroupMap_clopen"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "under the retract hypothesis of V13.2",
+    "any open and closed set"
+   ],
+   "diff": [
+    "Where the proof of 22.1 must see $\\Omega'$ is made explicit: $r_u$ keeps a path in its component, the manifold of break points is cut down to the paths in $\\Omega'$, and the last homotopy stays there. $d$ is the least energy on all of $\\Omega$, and $\\Omega'$ need not contain a minimal geodesic."
+   ]
+  },
+  {
+   "id": "V14.1",
+   "title": "$\\exp A = -I$ for diagonal $A$",
+   "milnor": {
+    "label": "§23, p. 127",
+    "page": 127,
+    "statement": "For $A = \\operatorname{diag}(ia_1, \\dots, ia_n)$, $\\exp A = \\operatorname{diag}(e^{ia_1}, \\dots, e^{ia_n})$, so $\\exp A = -I$ iff $A = \\operatorname{diag}(k_1i\\pi, \\dots, k_ni\\pi)$ with odd integers $k_j$; a general skew-Hermitian $A$ is first conjugated to diagonal form (pp. 126–127)."
+   },
+   "lean": {
+    "statement": "For real $a$, $e^{ia} = -1$ iff $a$ is $\\pi$ times an odd integer; so $\\exp\\operatorname{diag}(ia_1, \\dots, ia_n) = -I$ iff every $a_j$ is an odd multiple of $\\pi$.",
+    "decls": [
+     "Chapter14/SUMatrices · Morse.exp_ofReal_mul_I_eq_neg_one_iff",
+     "Chapter14/SUMatrices · Morse.exp_diagonal_eq_neg_one_iff"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "diagonal $A$ (general $A$: V14.14)"
+   ],
+   "diff": []
+  },
+  {
+   "id": "V14.2",
+   "title": "Length and trace of the velocity",
+   "milnor": {
+    "label": "§23, pp. 127, 130",
+    "page": 127,
+    "statement": "The geodesic $t \\mapsto \\exp tA$ has length $|A| = \\sqrt{\\operatorname{tr}AA^*} = \\pi\\sqrt{k_1^2 + \\dots + k_n^2}$; $A$ lies in the Lie algebra of $SU(n)$ iff the odd $k_j$ have sum zero."
+   },
+   "lean": {
+    "statement": "For integers $k_j$ and $A = \\operatorname{diag}(i\\pi k_j)$: $\\operatorname{tr}(AA^*) = \\pi^2\\sum k_j^2$ and $\\operatorname{tr}A = i\\pi\\sum k_j$.",
+    "decls": [
+     "Chapter14/SUMatrices · Morse.suDiag",
+     "Chapter14/SUMatrices · Morse.trace_suDiag_mul_conjTranspose",
+     "Chapter14/SUMatrices · Morse.trace_suDiag"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "trace identities (length: V14.15)"
+   ],
+   "diff": []
+  },
+  {
+   "id": "V14.3",
+   "title": "Minimal geodesics, arithmetically",
+   "milnor": {
+    "label": "§23, p. 127",
+    "page": 127,
+    "statement": "$A$ determines a minimal geodesic iff each $k_j = \\pm1$; in $SU(2m)$ the condition $\\operatorname{tr}A = 0$ makes $\\operatorname{Eigen}(i\\pi)$ $m$-dimensional."
+   },
+   "lean": {
+    "statement": "For odd $k_1, \\dots, k_n$, $\\sum k_j^2 \\ge n$, with equality iff every $k_j = \\pm1$; if $n = 2m$, all $k_j = \\pm1$ and $\\sum k_j = 0$, then $m$ of them are $1$ and $m$ are $-1$.",
+    "decls": [
+     "Chapter14/IndexCount · Morse.card_le_sum_sq",
+     "Chapter14/IndexCount · Morse.sum_sq_eq_card_iff",
+     "Chapter14/IndexCount · Morse.card_eq_of_minimal"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "minimal = least $\\sum k_j^2$ (see V14.15)"
+   ],
+   "diff": []
+  },
+  {
+   "id": "V14.4",
+   "title": "Lemma 23.1 as a statement about projections",
+   "milnor": {
+    "label": "§23, pp. 127–128",
+    "page": 127,
+    "statement": "A minimal $A$ is completely determined by $\\operatorname{Eigen}(i\\pi)$, an arbitrary subspace, of dimension $m$ in $SU(2m)$."
+   },
+   "lean": {
+    "statement": "A skew-Hermitian $A$ has $A^2 = -\\pi^2I$ iff $A = i\\pi(2P - I)$ for a Hermitian projection $P$; $\\operatorname{tr}(i\\pi(2P - I)) = i\\pi(2\\operatorname{tr}P - n)$.",
+    "decls": [
+     "Chapter14/SUMatrices · Morse.sq_eq_neg_pi_sq_iff",
+     "Chapter14/SUMatrices · Morse.trace_pi_smul_projection"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "sets of matrices (topology: V14.16–V14.17)"
+   ],
+   "diff": [
+    "\"Completely determined by $\\operatorname{Eigen}(i\\pi)$\" uses that $A$ is normal; the identity gives the projection without the spectral theorem."
+   ]
+  },
+  {
+   "id": "V14.5",
+   "title": "The operator $K_A$ for diagonal $A$",
+   "milnor": {
+    "label": "§23, pp. 130–131",
+    "page": 130,
+    "statement": "By Theorem 20.5 the conjugate points are determined by $K_A(W) = R(A, W)A = \\frac14[[A, W], A]$; a short computation gives $K_A(W) = (\\frac{\\pi^2}4(k_j - k_l)^2w_{jl})$."
+   },
+   "lean": {
+    "statement": "With $K_A(W) = \\frac14[[A, W], A]$: for $A = \\operatorname{diag}(i\\pi k_j)$ the $(j, l)$ entry of $K_A(W)$ is $\\frac{\\pi^2}4(k_j - k_l)^2w_{jl}$.",
+    "decls": [
+     "Chapter14/SUMatrices · Morse.jacobiMat",
+     "Chapter14/SUMatrices · Morse.commutator_diagonal_apply",
+     "Chapter14/SUMatrices · Morse.jacobiMat_suDiag_apply"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "$K_A$ defined by the matrix formula"
+   ],
+   "diff": [
+    "That it is $W \\mapsto R(A, W)A$ for $SU(n)$ is V12.17."
+   ]
+  },
+  {
+   "id": "V14.6",
+   "title": "Milnor's eigenvectors, and that they span",
+   "milnor": {
+    "label": "§23, p. 131",
+    "page": 131,
+    "statement": "A basis of the Lie algebra of $SU(n)$ of eigenvectors of $K_A$: $E_{jl}$ and $E'_{jl}$, $j < l$, with eigenvalue $\\frac{\\pi^2}4(k_j - k_l)^2$, and the diagonal matrices, with eigenvalue $0$."
+   },
+   "lean": {
+    "statement": "$E_{jl}$ ($1$ at $(j, l)$, $-1$ at $(l, j)$) and $E'_{jl}$ ($i$ at both) are skew-Hermitian, traceless for $j \\neq l$, and eigenvectors of $K_A$ with eigenvalue $\\frac{\\pi^2}4(k_j - k_l)^2$; diagonal matrices are in the kernel; every skew-Hermitian $W$ is its diagonal part plus $\\sum_{j<l}(\\operatorname{Re}w_{jl}E_{jl} + \\operatorname{Im}w_{jl}E'_{jl})$.",
+    "decls": [
+     "Chapter14/SUMatrices · Morse.eReal",
+     "Chapter14/SUMatrices · Morse.eImag",
+     "Chapter14/SUMatrices · Morse.jacobiMat_eReal",
+     "Chapter14/SUMatrices · Morse.jacobiMat_eImag",
+     "Chapter14/SUMatrices · Morse.jacobiMat_diagonal",
+     "Chapter14/SUMatrices · Morse.eq_diagonal_add_sum_eReal_eImag"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "spanning, not independence"
+   ],
+   "diff": [
+    "Milnor does not say why these vectors span; linear independence is not formalized. The formal index computation (V14.18–V14.19) needs no eigenbasis."
+   ]
+  },
+  {
+   "id": "V14.7",
+   "title": "Conjugate parameters of an eigenvalue: Theorem 20.5 as a definition",
+   "milnor": {
+    "label": "§20, Theorem 20.5, p. 110; §23, p. 131",
+    "page": 131,
+    "statement": "Each eigenvalue $e > 0$ gives conjugate points at $t = \\pi/\\sqrt e, 2\\pi/\\sqrt e, \\dots$; here $t = 2/(k_j - k_l), 4/(k_j - k_l), \\dots$, and the number in $(0, 1)$ is \"evidently\" $(k_j - k_l)/2 - 1$."
+   },
+   "lean": {
+    "statement": "The conjugate parameters of $e$ are the $t \\in (0, 1)$ of the form $\\pi s/\\sqrt e$, $s \\in \\mathbb Z$ (none if $e \\le 0$); a finite set, equal to $\\{1/d, \\dots, (d - 1)/d\\}$ for $e = (\\pi d)^2$, $d \\ge 1$.",
+    "decls": [
+     "Chapter14/IndexCount · Morse.conjParams",
+     "Chapter14/IndexCount · Morse.conjParams_finite",
+     "Chapter14/IndexCount · Morse.conjParams_sq",
+     "Chapter14/IndexCount · Morse.ncard_conjParams_sq"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "a definition",
+    "$k_j - k_l$ even, said"
+   ],
+   "diff": [
+    "Theorem 20.5 is its conclusion taken as a definition; for $SU(n)$ the theorem is V14.18. \"Evidently\" needs $k_j - k_l$ even."
+   ]
+  },
+  {
+   "id": "V14.8",
+   "title": "The index of a spectrum: Theorems 20.5 and 15.1 as a definition",
+   "milnor": {
+    "label": "§23, p. 131",
+    "page": 131,
+    "statement": "Applying the Index Theorem and \"adding over all $j, l$\"."
+   },
+   "lean": {
+    "statement": "For a finite family $e = (e_i)$ of reals, the multiplicity of $t$ is the number of $i$ with $t$ a conjugate parameter of $e_i$, and the index of $e$ is the sum of the multiplicities; it equals $\\sum_i\\#\\{\\text{conjugate parameters of } e_i\\}$; doubling every value doubles it.",
+    "decls": [
+     "Chapter14/IndexCount · Morse.conjMult",
+     "Chapter14/IndexCount · Morse.spectralIndex",
+     "Chapter14/IndexCount · Morse.spectralIndex_eq",
+     "Chapter14/IndexCount · Morse.spectralIndex_double"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "a definition (theorem for $SU(n)$: V14.19)"
+   ],
+   "diff": [
+    "\"Adding over all $j, l$\" exchanges two finite sums."
+   ]
+  },
+  {
+   "id": "V14.9",
+   "title": "The index formula from Milnor's spectrum",
+   "milnor": {
+    "label": "§23, p. 131",
+    "page": 131,
+    "statement": "$\\lambda = \\sum_{k_j > k_l}(k_j - k_l - 2)$: each pair $k_j > k_l$ gives two copies of $\\frac{\\pi^2}4(k_j - k_l)^2$, contributing $2((k_j - k_l)/2 - 1)$."
+   },
+   "lean": {
+    "statement": "Put $\\operatorname{bott}(k) = \\sum_{k_i > k_j}(k_i - k_j - 2)$. For odd $k_j$, the index (V14.8) of the spectrum consisting of $\\frac{\\pi^2}4(k_i - k_j)^2$ for each pair $k_i > k_j$, each twice, is $\\operatorname{bott}(k)$.",
+    "decls": [
+     "Chapter14/IndexCount · Morse.bottIndex",
+     "Chapter14/IndexCount · Morse.pairSpectrum",
+     "Chapter14/IndexCount · Morse.suSpectrum",
+     "Chapter14/IndexCount · Morse.two_mul_ncard_conjParams",
+     "Chapter14/IndexCount · Morse.spectralIndex_suSpectrum"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "index of the spectrum (geodesic: V14.19)"
+   ],
+   "diff": []
+  },
+  {
+   "id": "V14.10",
+   "title": "Elementary properties of the index formula",
+   "milnor": {
+    "label": "§23, pp. 130–132",
+    "page": 130,
+    "statement": "Milnor normalizes $k_1 \\ge \\dots \\ge k_n$, treats \"(say) negative\" by symmetry, and notes that a minimal geodesic (all $k_j = \\pm1$) has index $0$."
+   },
+   "lean": {
+    "statement": "For odd $k_j$, $\\operatorname{bott}(k) \\ge 0$; $\\operatorname{bott}(-k) = \\operatorname{bott}(k)$; $\\operatorname{bott}$ does not depend on the order; and it is $0$ if every $k_j = \\pm1$.",
+    "decls": [
+     "Chapter14/IndexCount · Morse.bottIndex_nonneg",
+     "Chapter14/IndexCount · Morse.bottIndex_neg",
+     "Chapter14/IndexCount · Morse.bottIndex_comp_equiv",
+     "Chapter14/IndexCount · Morse.bottIndex_eq_zero_of_minimal"
+    ]
+   },
+   "verdict": "same",
+   "chips": [],
+   "diff": []
+  },
+  {
+   "id": "V14.11",
+   "title": "Lemma 23.2, combinatorially",
+   "milnor": {
+    "label": "§23, Lemma 23.2, p. 128; proof p. 132",
+    "page": 128,
+    "statement": "Every non-minimal geodesic from $I$ to $-I$ in $SU(2m)$ has index $\\ge 2m + 2$. Proof (p. 132): Case 1, at least $m + 1$ of the $k_j$ (say) negative; Case 2, $m$ of each sign, not all $\\pm1$."
+   },
+   "lean": {
+    "statement": "For odd $k_1, \\dots, k_{2m}$ with $\\sum k_j = 0$, not all $\\pm1$: $\\operatorname{bott}(k) \\ge 2m + 2$.",
+    "decls": [
+     "Chapter14/IndexCount · Morse.bottIndex_ge",
+     "Chapter14/IndexCount · Morse.exists_pos_neg_data",
+     "Chapter14/IndexCount · Morse.sum_pos_neg_le_bottIndex"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "about the formula (geodesics: V14.20)"
+   ],
+   "diff": [
+    "Both cases through the sum over pairs (positive $k_i$, negative $k_j$), reproducing Milnor's bounds $2N$ and $4m$; his \"one is $\\ge 3$\" uses $\\sum k_j = 0$."
+   ]
+  },
+  {
+   "id": "V14.12",
+   "title": "Why $SU(2m)$ and not $U(n)$",
+   "milnor": {
+    "label": "§23, p. 127",
+    "page": 127,
+    "statement": "The space of minimal geodesics in $U(n)$ is \"rather inconvenient\", having components of varying dimensions; so Milnor passes to $SU(2m)$."
+   },
+   "lean": {
+    "statement": "For $k = (3, 1, \\dots, 1) \\in \\mathbb Z^{n+1}$: $\\operatorname{bott}(k) = 0$, not every $k_j = \\pm1$, and $\\sum k_j = n + 3$, whereas every family of entries $\\pm1$ has $|\\sum k_j|$ at most the number of entries.",
+    "decls": [
+     "Chapter14/IndexCount · Morse.remarkK",
+     "Chapter14/IndexCount · Morse.bottIndex_remarkK",
+     "Chapter14/IndexCount · Morse.not_minimal_remarkK",
+     "Chapter14/IndexCount · Morse.sum_remarkK",
+     "Chapter14/IndexCount · Morse.abs_sum_le_card_of_minimal"
+    ]
+   },
+   "verdict": "extra",
+   "chips": [
+    "the hypothesis of 22.1 fails in $U(n)$"
+   ],
+   "diff": [
+    "The exposition's stronger reason: this non-minimal geodesic has index $0$ in a component of the path space without minimal geodesics. That $\\sum k_j$ is constant on components is not formalized."
+   ]
+  },
+  {
+   "id": "V14.13",
+   "title": "$U(n)$ and $SU(n)$ as compact matrix groups",
+   "milnor": {
+    "label": "§23, pp. 124–126",
+    "page": 124,
+    "statement": "$U(n)$ is a compact smooth submanifold of $M_n(\\mathbb C)$ and a Lie group, with tangent space $\\mathfrak u(n)$ (skew-Hermitian matrices) at $I$ (Milnor's (5), (6), using $\\exp$ near $0$ as a chart); its Lie bracket is the commutator and $\\operatorname{Re}\\operatorname{tr}(AB^*)$ gives a bi-invariant metric; $\\det\\exp A = e^{\\operatorname{tr}A}$, and $SU(n)$ has Lie algebra $\\mathfrak{su}(n)$."
+   },
+   "lean": {
+    "statement": "$U(n)$ is a compact slice submanifold of $M_n(\\mathbb C)$ modelled on $\\mathfrak u(n)$, a regular level set of $A \\mapsto A^*A - I$, and a matrix group (V12.14) with $\\mathfrak u(n)$; for $n \\ge 1$, $SU(n)$ is a compact slice submanifold modelled on $\\mathfrak{su}(n)$ and a matrix group with $\\mathfrak{su}(n)$. Jacobi's formula $d(\\det)_A(AX) = \\det A\\operatorname{tr}X$, and $\\det\\exp(tX) = 1$ for $\\operatorname{tr}X = 0$.",
+    "decls": [
+     "Chapter12/MatrixGroups · Morse.isRegularValue_unitaryMap",
+     "Chapter12/MatrixGroups · Morse.isSliceSubmanifold_unitaryGroup",
+     "Chapter12/MatrixGroups · Morse.isMatrixGroup_unitaryGroup",
+     "Chapter12/MatrixGroups · Morse.isCompact_unitaryGroup",
+     "Chapter12/MatrixGroups · Morse.isRegularValue_suMap",
+     "Chapter12/MatrixGroups · Morse.isSliceSubmanifold_specialUnitaryGroup",
+     "Chapter12/MatrixGroups · Morse.isMatrixGroup_specialUnitaryGroup",
+     "Chapter12/MatrixGroups · Morse.isCompact_specialUnitaryGroup",
+     "Chapter12/MatrixInner · Morse.fderiv_det_mul",
+     "Chapter12/MatrixInner · Morse.det_exp_smul_of_trace_eq_zero"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "regular level sets, not $\\exp$ charts",
+    "$SU(n)$ via $\\operatorname{Im}\\det$"
+   ],
+   "diff": [
+    "$SU(n)$ is not a regular level set of $(A^*A - I, \\det A - 1)$; it is the open piece $\\operatorname{Re}\\det > 0$ of the regular level set $\\{A^*A = I, \\operatorname{Im}\\det A = 0\\}$.",
+    "Only the traceless case of $\\det\\exp A = e^{\\operatorname{tr}A}$ is proved. That $\\exp$ is onto and $SU(n)$ connected is not formalized (not needed)."
+   ]
+  },
+  {
+   "id": "V14.14",
+   "title": "The geodesics from $I$ to $-I$ in $SU(n)$",
+   "milnor": {
+    "label": "§23, pp. 126–127, 130",
+    "page": 126,
+    "statement": "A geodesic from $I$ to $-I$ is $t \\mapsto \\exp tA$ with $\\exp A = -I$; after conjugation by a unitary $T$, $A = \\operatorname{diag}(i\\pi k_j)$ with odd $k_j$, and in $SU(n)$ with $\\sum k_j = 0$."
+   },
+   "lean": {
+    "statement": "Every geodesic of $SU(n)$ on $[0, 1]$ starting at $I$ agrees there with $t \\mapsto \\exp(tA)$, $A \\in \\mathfrak{su}(n)$. If $A \\in \\mathfrak{su}(n)$ and $\\exp A = -I$, then $A = T\\operatorname{diag}(i\\pi k_j)T^*$ with $T$ unitary, $k_j$ odd and $\\sum k_j = 0$; conversely such $A$ lies in $\\mathfrak{su}(n)$, $\\exp A = -I$, and $t \\mapsto \\exp(tA)$ is a geodesic from $I$ to $-I$.",
+    "decls": [
+     "Chapter13/SUInstance · Morse.eqOn_exp_smul_of_isUnbrokenGeodesic_su",
+     "Chapter12/SUIndex · Morse.exists_unitary_suDiag",
+     "Chapter12/SUIndex · Morse.exp_conj_suDiag",
+     "Chapter12/SUIndex · Morse.conj_suDiag_mem",
+     "Chapter12/SUIndex · Morse.mem_pathSpace_exp",
+     "Chapter12/SUIndex · Morse.isUnbrokenGeodesic_exp"
+    ]
+   },
+   "verdict": "same",
+   "chips": [
+    "Mathlib's spectral theorem"
+   ],
+   "diff": []
+  },
+  {
+   "id": "V14.15",
+   "title": "The distance from $I$ to $-I$, and the minimal geodesics",
+   "milnor": {
+    "label": "§23, p. 127",
+    "page": 127,
+    "statement": "The geodesic $t \\mapsto \\exp tA$ has length $\\pi(\\sum k_j^2)^{1/2}$; it is minimal iff every $k_j = \\pm1$."
+   },
+   "lean": {
+    "statement": "For skew-Hermitian $A$ the length of $t \\mapsto \\exp(tA)$ on $[0, 1]$ is $\\|A\\|$, which is $\\pi(\\sum k_j^2)^{1/2} \\ge \\pi\\sqrt n$ for $A = T\\operatorname{diag}(i\\pi k_j)T^*$, $k_j$ odd. In $SU(2m)$, $m \\ge 1$: $\\rho(I, -I) = \\pi\\sqrt{2m}$, and for $A \\in \\mathfrak{su}(2m)$ with $\\exp A = -I$ the geodesic $t \\mapsto \\exp(tA)$ is minimal iff $A^2 = -\\pi^2I$, iff all $k_j = \\pm1$.",
+    "decls": [
+     "Chapter12/SUMinimal · Morse.pathLength_exp_smul",
+     "Chapter12/SUMinimal · Morse.norm_conj_suDiag_sq",
+     "Chapter12/SUMinimal · Morse.pi_sqrt_card_le_norm",
+     "Chapter12/SUMinimal · Morse.riemDist_one_neg_one",
+     "Chapter12/SUMinimal · Morse.sq_conj_suDiag_iff",
+     "Chapter12/SUMinimal · Morse.isMinimalGeodesic_exp_iff"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "$SU(2m)$ only, not $U(n)$",
+    "Hopf–Rinow, said"
+   ],
+   "diff": [
+    "That a geodesic of length $\\pi\\sqrt n$ is minimal needs a shortest geodesic to exist (Hopf–Rinow, in the compact group) and every geodesic from $I$ to be an $\\exp(tA)$ (V12.15). Only $SU(2m)$, the case used, is treated."
+   ]
+  },
+  {
+   "id": "V14.16",
+   "title": "Lemma 23.1: the velocities of the minimal geodesics form $G_m(\\mathbb C^{2m})$",
+   "milnor": {
+    "label": "§23, Lemma 23.1",
+    "page": 128,
+    "statement": "The space of minimal geodesics from $I$ to $-I$ in $SU(2m)$ is homeomorphic to the complex Grassmann manifold $G_m(\\mathbb C^{2m})$."
+   },
+   "lean": {
+    "statement": "Let $|\\iota| = 2m$ and $\\operatorname{minVel} = \\{A \\in \\mathfrak{su}(2m) : A^2 = -\\pi^2I\\}$. Then $A \\in \\operatorname{minVel}$ iff $\\exp A = -I$ and $t \\mapsto \\exp(tA)$ is a minimal geodesic; and $A \\mapsto \\frac12(I - \\frac i\\pi A)$ is a homeomorphism of $\\operatorname{minVel}$ onto $G_m(\\mathbb C^{2m})$, the Hermitian projections of trace $m$, with inverse $P \\mapsto i\\pi(2P - I)$.",
+    "decls": [
+     "Chapter12/SUMinimal · Morse.minVel",
+     "Chapter12/SUMinimal · Morse.grassmannian",
+     "Chapter12/SUMinimal · Morse.exp_eq_neg_one_of_sq",
+     "Chapter12/SUMinimal · Morse.mem_minVel_iff",
+     "Chapter12/SUMinimal · Morse.lemma_23_1"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "minimal geodesics as initial velocities",
+    "$G_m$ as projections of trace $m$"
+   ],
+   "diff": [
+    "Milnor matches the two spaces only as sets (`Exposition/Findings.md`); here the topology is that of matrices. The space of paths is V14.17."
+   ]
+  },
+  {
+   "id": "V14.17",
+   "title": "Lemma 23.1 in the path space",
+   "milnor": {
+    "label": "§23, Lemma 23.1",
+    "page": 128,
+    "statement": "The space of minimal geodesics from $I$ to $-I$ in $SU(2m)$ (as a subspace of $\\Omega$) is homeomorphic to $G_m(\\mathbb C^{2m})$."
+   },
+   "lean": {
+    "statement": "Let $|\\iota| = 2m$. Every path from $I$ to $-I$ in $SU(2m)$ has energy $\\ge 2m\\pi^2$; for $A \\in \\operatorname{minVel}$, $t \\mapsto \\exp(tA)$ lies in $\\Omega^d$, and every $\\gamma \\in \\Omega^d$ agrees on $[0, 1]$ with one of these, $A = \\pi\\gamma(\\frac12)$. $A \\mapsto (t \\mapsto \\exp tA)$ is continuous for Milnor's metric and is a homotopy equivalence $\\operatorname{minVel} \\simeq \\Omega^d$ (inverse $\\gamma \\mapsto \\pi\\gamma(\\frac12)$), and a homeomorphism onto the separation quotient of $\\Omega^d$.",
+    "decls": [
+     "Chapter14/MinimalPaths · Morse.exp_half_smul_of_mem_minVel",
+     "Chapter14/MinimalPaths · Morse.pi_sq_le_energy",
+     "Chapter14/MinimalPaths · Morse.expPath_mem_minPaths",
+     "Chapter14/MinimalPaths · Morse.exists_minVel_of_mem_minPaths",
+     "Chapter14/MinimalPaths · Morse.continuous_expPath",
+     "Chapter14/MinimalPaths · Morse.minPathsHomotopyEquiv",
+     "Chapter14/MinimalPaths · Morse.minVelHomeomorph"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "homeomorphic only after separation quotient",
+    "a homotopy equivalence on the nose"
+   ],
+   "diff": [
+    "Paths are functions on $\\mathbb R$, so $\\Omega^d$ is homeomorphic to $G_m(\\mathbb C^{2m})$ only after identifying paths agreeing on $[0, 1]$; the homotopy equivalence is what Theorem 23.3 uses.",
+    "Continuity for Milnor's metric: all minimal geodesics have speed $\\pi\\sqrt{2m}$, so the $L^2$ part vanishes, and $\\exp(A/2) = A/\\pi$ recovers the velocity from the midpoint."
+   ]
+  },
+  {
+   "id": "V14.18",
+   "title": "Theorem 20.5 for $SU(n)$",
+   "milnor": {
+    "label": "§20, Theorem 20.5, p. 110; §23, pp. 130–131",
+    "page": 130,
+    "statement": "By Theorem 20.5 the conjugate points along $t \\mapsto \\exp tA$ are determined by the eigenvalues of $K_A(W) = \\frac14[[A, W], A]$: an eigenvalue $e > 0$ gives conjugate points at the multiples of $\\pi/\\sqrt e$, the multiplicity counting the eigenvalues; \"adding over all $j, l$\"."
+   },
+   "lean": {
+    "statement": "For $A = T\\operatorname{diag}(ia_j)T^* \\in \\mathfrak{su}(n)$, $T$ unitary, and $C \\in \\mathfrak{su}(n)$, $J_C(t) = e^{tA/2}T(S(t) \\odot T^*CT)T^*e^{tA/2}$, with $S(t) \\odot W$ the matrix of $\\frac{\\sin(b_{jl}t)}{b_{jl}}w_{jl}$, $b_{jl} = (a_j - a_l)/2$, is a Jacobi field along $\\exp(tA)$ with $J_C(0) = 0$, $DJ_C/dt(0) = C$. The multiplicity of $t_0 \\in [0, 1]$ as a parameter conjugate to $0$ is $\\dim\\{W \\in \\mathfrak{su}(n) : S(t_0) \\odot W = 0\\}$, which for $a = \\pi k$ and $0 < t_0 < 1$ equals the multiplicity computed from Milnor's spectrum (V14.8–V14.9).",
+    "decls": [
+     "Chapter12/SUJacobi · Morse.jacSin",
+     "Chapter12/SUJacobi · Morse.hadSin",
+     "Chapter12/SUJacobi · Morse.suSol",
+     "Chapter12/SUJacobi · Morse.suSol_ode",
+     "Chapter12/SUJacobi · Morse.suJac",
+     "Chapter12/SUJacobi · Morse.isJacobiField_suJac",
+     "Chapter12/SUJacobi · Morse.covAlong_suJac_zero",
+     "Chapter12/SUIndex · Morse.hadKer",
+     "Chapter12/SUIndex · Morse.conjMultiplicity_su",
+     "Chapter12/SUIndex · Morse.finrank_hadKer"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "$SU(n)$ only",
+    "no eigenbasis",
+    "$T$ carried through, no reduction"
+   ],
+   "diff": [
+    "The multiplicity is the dimension of a space of Jacobi fields, so all Jacobi fields vanishing at $0$ must be described: here explicitly, entry by entry, in the frame of V12.18, and by uniqueness.",
+    "Milnor's reduction to diagonal $A$ by an isometry fixing $\\pm I$ (p. 130) is replaced by carrying $T$ through the computation."
+   ]
+  },
+  {
+   "id": "V14.19",
+   "title": "The index of a geodesic from $I$ to $-I$ in $SU(n)$",
+   "milnor": {
+    "label": "§23, p. 131",
+    "page": 131,
+    "statement": "By the Index Theorem, the index of $t \\mapsto \\exp tA$, $0 \\le t \\le 1$, is $\\lambda = \\sum_{k_j > k_l}(k_j - k_l - 2)$."
+   },
+   "lean": {
+    "statement": "For integers $k_j$ with $\\sum k_j = 0$, $T$ unitary and $A = T\\operatorname{diag}(i\\pi k_j)T^*$ with $t \\mapsto \\exp(tA)$ a path from $I$ to $-I$, the index of $E_{**}$ at this geodesic is the index of Milnor's spectrum; hence every geodesic $t \\mapsto \\exp(tA)$ from $I$ to $-I$ in $SU(n)$ has index $\\sum_{k_i > k_j}(k_i - k_j - 2)$ for its odd $k_j$ (V14.14).",
+    "decls": [
+     "Chapter12/SUIndex · Morse.formIndex_su_geodesic",
+     "Chapter12/SUIndex · Morse.index_su_eq_bottIndex"
+    ]
+   },
+   "verdict": "same",
+   "chips": [
+    "by the Index Theorem (V9.24)"
+   ],
+   "diff": []
+  },
+  {
+   "id": "V14.20",
+   "title": "Lemma 23.2 for geodesics",
+   "milnor": {
+    "label": "§23, Lemma 23.2",
+    "page": 128,
+    "statement": "Every non-minimal geodesic from $I$ to $-I$ in $SU(2m)$ has index $\\ge 2m + 2$."
+   },
+   "lean": {
+    "statement": "Let $|\\iota| = 2m$. A geodesic $t \\mapsto \\exp(tA)$ from $I$ to $-I$ in $SU(2m)$ has index $0$ if all $k_j = \\pm1$ and $\\ge 2m + 2$ otherwise; every geodesic of $\\Omega(SU(2m); I, -I)$ not of least energy has index $\\ge 2m + 2$.",
+    "decls": [
+     "Chapter12/SUIndex · Morse.lemma_23_2_index",
+     "Chapter13/SUInstance · Morse.energy_exp_smul",
+     "Chapter13/SUInstance · Morse.le_formIndex_of_not_minimal_su"
+    ]
+   },
+   "verdict": "same",
+   "chips": [
+    "\"non-minimal\" as \"not of least energy\""
+   ],
+   "diff": [
+    "The last clause is the index hypothesis of Theorem 22.1 (V13.2) with $\\lambda_0 = 2m + 2$."
+   ]
+  },
+  {
+   "id": "V14.21",
+   "title": "The neighbourhood retraction for $SU(2m)$, and Corollary 22.2 for it",
+   "milnor": {
+    "label": "§23, p. 128",
+    "page": 128,
+    "statement": "By Lemma 23.1, $\\Omega^d$ is a manifold, and by Lemma 23.2 every non-minimal geodesic has index $\\ge 2m + 2$; with Theorem 22.1 this gives the result. No retraction is written down."
+   },
+   "lean": {
+    "statement": "Let $|\\iota| = 2m$. With $Q(H)$ the spectral projection of a Hermitian $H$ onto the eigenvalues $> \\frac12$ (continuous where $\\frac12$ is not an eigenvalue), the paths $\\omega$ for which $\\frac12$ is not an eigenvalue of $H(\\omega)$, the Hermitian part of $\\frac12(I - i\\omega(\\frac12))$, and $|\\operatorname{tr}Q(H(\\omega)) - m| < \\frac12$ form an open set $O \\supseteq \\Omega^d$, and $\\omega \\mapsto (t \\mapsto \\exp(t\\,i\\pi(2Q - I)))$, changed to the identity on $\\Omega^d$, retracts $O$ onto $\\Omega^d$. Hence $\\pi_i(\\Omega^d, \\gamma) \\cong \\pi_{i+1}(SU(2m), I)$ for $i \\le 2m$, as groups for $1 \\le i \\le 2m$.",
+    "decls": [
+     "Chapter14/MinimalRetract · Morse.specProj",
+     "Chapter14/MinimalRetract · Morse.continuousOn_specProj",
+     "Chapter14/MinimalRetract · Morse.hermOf",
+     "Chapter14/MinimalRetract · Morse.minNbhd",
+     "Chapter14/MinimalRetract · Morse.retrPath",
+     "Chapter14/MinimalRetract · Morse.exists_retraction_minPaths_su",
+     "Chapter14/MinimalRetract · Morse.corollary_22_2_su'",
+     "Chapter14/PeriodicityGroups · Morse.corollary_22_2_su_mulEquiv"
+    ]
+   },
+   "verdict": "extra",
+   "chips": [
+    "Hanner replaced by a spectral projection"
+   ],
+   "diff": [
+    "This proves the hypothesis of V13.2 for $SU(2m)$, so Theorem 23.3 is unconditional. The trace is locally constant on projections, which keeps the rank $m$."
+   ]
+  },
+  {
+   "id": "V14.22",
+   "title": "Theorem 23.3 (Bott)",
+   "milnor": {
+    "label": "§23, Theorem 23.3",
+    "page": 128,
+    "statement": "The inclusion $G_m(\\mathbb C^{2m}) \\to \\Omega(SU(2m); I, -I)$ induces isomorphisms of homotopy groups in dimensions $\\le 2m$. Hence $\\pi_iG_m(\\mathbb C^{2m}) \\cong \\pi_{i+1}SU(2m)$ for $0 \\le i \\le 2m$."
+   },
+   "lean": {
+    "statement": "Let $|\\iota| = 2m$. For every $P \\in G_m(\\mathbb C^{2m})$ and $i \\le 2m$ there is a bijection $\\pi_i(G_m(\\mathbb C^{2m}), P) \\cong \\pi_{i+1}(SU(2m), I)$, and a group isomorphism for $1 \\le i \\le 2m$.",
+    "decls": [
+     "Chapter14/Periodicity · Morse.theorem_23_3",
+     "Chapter14/PeriodicityGroups · Morse.theorem_23_3_mulEquiv"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "groups for $i \\ge 1$, a bijection at $0$",
+    "the inclusion statement is V13.3"
+   ],
+   "diff": [
+    "The isomorphism is the composite of Lemma 23.1 (V14.16), the homotopy equivalence of V14.17 and Corollary 22.2 for $SU(2m)$ (V14.21). The statement about the inclusion is V13.3 for $\\Omega^d$ with $\\lambda_0 = 2m + 2$, $\\Omega^d$ being identified with $G_m$ by V14.16–V14.17.",
+    "Theorem 22.1 is proved as a compression, which gives bijections; group isomorphisms in the degrees where both sides are groups need change of basepoint to be a homomorphism (V13.5)."
+   ]
+  },
+  {
+   "id": "V14.23",
+   "title": "Coset bundles: local sections, Stiefel manifolds, $U(m + 1) \\to S^{2m+1}$",
+   "milnor": {
+    "label": "§23, pp. 128–129",
+    "page": 128,
+    "statement": "$U(m + 1)/U(m) \\cong S^{2m+1}$; the complex Stiefel manifold $U(2m)/U(m)$; the fibrations $U(m) \\to U(m + 1) \\to S^{2m+1}$ and $U(m) \\to U(2m) \\to U(2m)/U(m)$, from Steenrod (a coset map with local cross-sections is a bundle)."
+   },
+   "lean": {
+    "statement": "An equivariant map onto a space with a transitive group action is locally trivial with fibre the fibre over $b_0$ if the orbit map at $b_0$ has a continuous local section. $U(n)$ acts transitively on the Stiefel manifold $V_k(\\mathbb K^n) = \\{F : F^*F = I\\}$, with an explicit continuous local section near the base frame. Restricting frames to their last vectors is locally trivial with fibre a Stiefel manifold, $g \\mapsto gF_0$, $U(n) \\to V_k(\\mathbb K^n)$, is locally trivial with fibre $U(n - k)$, and $V_1(\\mathbb K^n)$ is the unit sphere, so $U(m + 1) \\to S^{2m+1}$ is locally trivial with fibre $U(m)$.",
+    "decls": [
+     "Homotopy/Homogeneous · Morse.Homotopy.exists_triv_of_orbitSection",
+     "Homotopy/Stiefel · Morse.Homotopy.Stiefel",
+     "Homotopy/Stiefel · Morse.Homotopy.secMat_mem_unitaryGroup",
+     "Homotopy/Stiefel · Morse.Homotopy.secMat_mul_baseFrame",
+     "Homotopy/Stiefel · Morse.Homotopy.exists_unitary_smul_baseFrame",
+     "Homotopy/Stiefel · Morse.Homotopy.stiefelRestrict_locallyTrivial",
+     "Homotopy/Stiefel · Morse.Homotopy.unitaryOrbit_locallyTrivial",
+     "Homotopy/BundlesUnitary · Morse.Homotopy.stiefelSphere",
+     "Homotopy/BundlesUnitary · Morse.Homotopy.isLocallyTrivial_sphereOrbit"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "concrete matrices, not coset spaces",
+    "Steenrod's argument proved"
+   ],
+   "diff": [
+    "No coset space appears: the bundles are orbit maps between spaces of matrices, with the local section written down. Locally trivial maps are Serre fibrations with an exact homotopy sequence (Part XII)."
+   ]
+  },
+  {
+   "id": "V14.24",
+   "title": "The Grassmannian bundle $U(m) \\to V_m \\to G_m$",
+   "milnor": {
+    "label": "§23, p. 129",
+    "page": 129,
+    "statement": "$G_m(\\mathbb C^{2m})$ can be identified with $U(2m)/U(m) \\times U(m)$, and there is a fibration $U(m) \\to U(2m)/U(m) \\to G_m(\\mathbb C^{2m})$."
+   },
+   "lean": {
+    "statement": "Every $P \\in G_m(\\mathbb K^n)$ (Hermitian projections of trace $m$) is $FF^*$ for an orthonormal $m$-frame; $F \\mapsto FF^*$, $V_m(\\mathbb K^n) \\to G_m(\\mathbb K^n)$, is continuous, equivariant for the transitive action $P \\mapsto gPg^*$, and locally trivial with fibre $U(m)$, the local section being Gram–Schmidt. The Grassmannian of Lemma 23.1 is this one.",
+    "decls": [
+     "Homotopy/Grassmannian · Morse.Homotopy.Grassmannian",
+     "Homotopy/Grassmannian · Morse.Homotopy.eq_of_mul_eq_of_trace_eq",
+     "Homotopy/Grassmannian · Morse.Homotopy.frameSpan",
+     "Homotopy/Grassmannian · Morse.Homotopy.exists_frame_of_mem_grassmannian",
+     "Homotopy/Grassmannian · Morse.Homotopy.continuousAt_gsFrame",
+     "Homotopy/Grassmannian · Morse.Homotopy.exists_unitary_smul_grassBase",
+     "Homotopy/Grassmannian · Morse.Homotopy.frameSpan_locallyTrivial",
+     "Homotopy/BundlesUnitary · Morse.Homotopy.grassmannian_eq_Grassmannian"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "projections, frame-to-span map"
+   ],
+   "diff": []
+  },
+  {
+   "id": "V14.25",
+   "title": "Lemma 23.4: stability, and the connectivity of Stiefel manifolds",
+   "milnor": {
+    "label": "§23, Lemma 23.4, pp. 128–129",
+    "page": 128,
+    "statement": "$\\pi_{i-1}U(m) \\cong \\pi_{i-1}U(m + 1) \\cong \\pi_{i-1}U(m + 2) \\cong \\cdots$ for $i \\le 2m$, induced by the inclusions; $\\pi_{2m}U(m) \\to \\pi_{2m}U(m + 1)$ is onto; and $\\pi_i(U(2m)/U(m)) = 0$ for $i \\le 2m$."
+   },
+   "lean": {
+    "statement": "$\\pi_iS^{2n-1} = 0$ for $i < 2n - 1$. $\\pi_iV_k(\\mathbb C^n) = 0$ for $k \\le n$, $i \\le 2(n - k)$. The inclusion $U(m) \\to U(m + k)$, $S \\mapsto \\operatorname{diag}(S, I_k)$, induces bijections on $\\pi_i$ for $i < 2m$ and surjections for $i \\le 2m$, at every base point.",
+    "decls": [
+     "Homotopy/BundleHomotopy · Morse.Homotopy.SphereConnected",
+     "Homotopy/BundleHomotopy · Morse.Homotopy.subsingleton_pi_stiefel",
+     "Homotopy/BundleHomotopy · Morse.Homotopy.unitaryInclC",
+     "Homotopy/BundleHomotopy · Morse.Homotopy.bijective_homotopyGroupMap_unitaryIncl",
+     "Homotopy/BundlesUnitary · Morse.Homotopy.sphereConnected_complex",
+     "Homotopy/BundlesUnitary · Morse.Homotopy.subsingleton_pi_stiefel_complex",
+     "Homotopy/BundlesUnitary · Morse.Homotopy.bijective_homotopyGroupMap_unitaryIncl_complex",
+     "Homotopy/BundlesUnitary · Morse.Homotopy.surjective_homotopyGroupMap_unitaryIncl_complex"
+    ]
+   },
+   "verdict": "stronger",
+   "chips": [
+    "every $V_k(\\mathbb C^n)$",
+    "all base points"
+   ],
+   "diff": [
+    "The connectivity of every Stiefel manifold, by induction on $k$ through the restriction bundles, instead of Milnor's exact-sequence argument for $U(2m)/U(m)$ alone."
+   ]
+  },
+  {
+   "id": "V14.26",
+   "title": "Lemma 23.4: $\\pi_iG_m(\\mathbb C^{2m}) \\cong \\pi_{i-1}U(m)$",
+   "milnor": {
+    "label": "§23, Lemma 23.4",
+    "page": 129,
+    "statement": "For $1 \\le i \\le 2m$, $\\pi_iG_m(\\mathbb C^{2m}) \\cong \\pi_{i-1}U(m)$ (from the exact sequence of $U(m) \\to U(2m)/U(m) \\to G_m(\\mathbb C^{2m})$)."
+   },
+   "lean": {
+    "statement": "For $1 \\le i \\le 2m$ and every $P \\in G_m(\\mathbb C^{2m})$ there is a bijection $\\pi_i(G_m(\\mathbb C^{2m}), P) \\cong \\pi_{i-1}(U(m), I)$, a group isomorphism for $2 \\le i \\le 2m$; the same for the space $\\operatorname{minVel}$ of V14.16.",
+    "decls": [
+     "Homotopy/BundleHomotopy · Morse.Homotopy.grassmannianEquiv",
+     "Homotopy/BundlesUnitary · Morse.Homotopy.grassmannianEquiv_complex",
+     "Homotopy/BundlesUnitary · Morse.Homotopy.nonempty_mulEquiv_grassmannian_complex",
+     "Homotopy/BundlesUnitary · Morse.Homotopy.grassmannianPiEquiv",
+     "Homotopy/BundlesUnitary · Morse.Homotopy.nonempty_mulEquiv_grassmannianPi",
+     "Homotopy/BundlesUnitary · Morse.Homotopy.minVelPiEquiv"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "groups for $i \\ge 2$, a bijection at $1$",
+    "every base point"
+   ],
+   "diff": [
+    "For $i = 1$ both sides are trivial, which is not stated separately; the isomorphism is the boundary map of the bundle, whose total space is $2m$-connected (V14.25), moved to any $P$ by a unitary motion."
+   ]
+  },
+  {
+   "id": "V14.27",
+   "title": "Lemma 23.4: $\\pi_jSU(m) \\cong \\pi_jU(m)$",
+   "milnor": {
+    "label": "§23, Lemma 23.4",
+    "page": 129,
+    "statement": "$\\pi_jU(m) \\cong \\pi_jSU(m)$ for $j \\neq 1$, from $SU(m) \\to U(m) \\to S^1$."
+   },
+   "lean": {
+    "statement": "$U(n) \\cong S^1 \\times SU(n)$ by $g \\mapsto (\\det g, gD(\\det g)^{-1})$; $\\pi_jS^1 = 0$ for $j \\ge 2$; and for $n \\ge 1$ the inclusion $SU(n) \\to U(n)$ induces bijections on $\\pi_j$, $j \\ge 2$, at every point.",
+    "decls": [
+     "Homotopy/BundlesUnitary · Morse.Homotopy.unitaryProd",
+     "Homotopy/BundlesUnitary · Morse.Homotopy.isLocallyTrivial_detCircle",
+     "Homotopy/BundlesUnitary · Morse.Homotopy.subsingleton_pi_circle",
+     "Homotopy/BundlesUnitary · Morse.Homotopy.suInclC",
+     "Homotopy/BundlesUnitary · Morse.Homotopy.bijective_homotopyGroupMap_suInclC"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "$j \\ge 2$; $j = 0$ not formalized"
+   ],
+   "diff": [
+    "$j = 0$ (both groups connected) is not formalized and is not used."
+   ]
+  },
+  {
+   "id": "V14.28",
+   "title": "The periodicity theorem",
+   "milnor": {
+    "label": "§23, p. 129",
+    "page": 129,
+    "statement": "Periodicity theorem: $\\pi_{i-1}U \\cong \\pi_{i+1}U$, the stable groups $\\pi_jU = \\pi_jU(m)$, $j \\le 2m - 1$; proof: $\\pi_{i-1}U(m) \\cong \\pi_iG_m(\\mathbb C^{2m}) \\cong \\pi_{i+1}SU(2m) \\cong \\pi_{i+1}U(2m)$ for $i \\le 2m$ (Lemma 23.4, Theorem 23.3, Lemma 23.4)."
+   },
+   "lean": {
+    "statement": "For $1 \\le i \\le 2m$, $\\pi_{i-1}(U(m), I) \\cong \\pi_{i+1}(U(2m), I)$, as groups for $2 \\le i \\le 2m$. For $1 \\le i \\le 2m - 2$, $\\pi_{i-1}(U(m), I) \\cong \\pi_{i+1}(U(m), I)$, as groups for $2 \\le i \\le 2m - 2$.",
+    "decls": [
+     "Chapter14/Periodicity · Morse.nonempty_equiv_pi_unitary_two_mul",
+     "Chapter14/Periodicity · Morse.periodicity_theorem",
+     "Chapter14/PeriodicityGroups · Morse.nonempty_mulEquiv_pi_unitary_two_mul",
+     "Chapter14/PeriodicityGroups · Morse.periodicity_theorem_mulEquiv"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "range $1 \\le i \\le 2m - 2$",
+    "no stable group $\\pi_iU$ defined",
+    "groups for $i \\ge 2$"
+   ],
+   "diff": [
+    "The stable group $\\pi_jU$ is not defined as a limit; periodicity is stated inside one $U(m)$. Landing back in $U(m)$ from $U(2m)$ needs stability in degree $i + 1 < 2m$, hence $i \\le 2m - 2$; every stable degree is reached for $m$ large.",
+    "For $i = 1$, $\\pi_0$ is a pointed set and the isomorphism a bijection."
+   ]
+  },
+  {
+   "id": "V14.29",
+   "title": "Theorem 23.5 (Bott), as sets",
+   "milnor": {
+    "label": "§23, Theorem 23.5, p. 130",
+    "page": 130,
+    "statement": "The stable homotopy groups of the unitary group are $\\pi_0U \\cong \\pi_2U \\cong \\pi_4U \\cong \\cdots \\cong 0$ and $\\pi_1U \\cong \\pi_3U \\cong \\pi_5U \\cong \\cdots \\cong \\mathbb Z$. Proof: $U(1) = S^1$ and periodicity."
+   },
+   "lean": {
+    "statement": "For $j \\le 2m - 1$: $\\pi_j(U(m), I)$ is trivial for even $j$ and in bijection with $\\mathbb Z$ for odd $j$. On the way: $\\pi_1(S^1) \\cong \\mathbb Z$ as sets, by the boundary map of the covering $\\mathbb Z \\to \\mathbb R \\to S^1$; $\\det : U(1) \\to S^1$ is a homeomorphism.",
+    "decls": [
+     "Chapter14/Periodicity · Morse.Homotopy.nonempty_pi_one_circle_equiv_int",
+     "Chapter14/Periodicity · Morse.Homotopy.unitaryOneHomeomorph",
+     "Chapter14/Periodicity · Morse.Homotopy.nonempty_pi_unitary_equiv_circle",
+     "Chapter14/Periodicity · Morse.theorem_23_5"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "in the stable range of $U(m)$",
+    "bijection with $\\mathbb Z$"
+   ],
+   "diff": [
+    "Statements about $\\pi_jU(m)$ for $j \\le 2m - 1$ rather than a limit group; the odd groups as groups are V14.30."
+   ]
+  },
+  {
+   "id": "V14.30",
+   "title": "Theorem 23.5 as groups",
+   "milnor": {
+    "label": "§23, Theorem 23.5, p. 130",
+    "page": 130,
+    "statement": "$\\pi_1U \\cong \\pi_3U \\cong \\pi_5U \\cong \\cdots$ are infinite cyclic; $\\pi_1S^1 \\cong \\mathbb Z$ is quoted."
+   },
+   "lean": {
+    "statement": "$\\pi_1(S^1, 1) \\cong \\mathbb Z$ as groups. For $2k + 2 \\le 2m$, $\\pi_{2k+1}(U(m), I) \\cong \\mathbb Z$ as groups; in the stable range $\\pi_jU(m) \\cong \\pi_1U(m)$ for odd $j$ and $\\cong \\pi_2U(m)$ for even $j \\ge 2$, as groups.",
+    "decls": [
+     "Chapter14/CircleGroup · Morse.Homotopy.piOneCircleMulEquiv",
+     "Chapter14/CircleGroup · Morse.Homotopy.nonempty_mulEquiv_pi_one_unitary_circle",
+     "Chapter14/CircleGroup · Morse.theorem_23_5_mulEquiv",
+     "Chapter14/PeriodicityGroups · Morse.nonempty_mulEquiv_pi_unitary_odd",
+     "Chapter14/PeriodicityGroups · Morse.nonempty_mulEquiv_pi_unitary_even"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "$\\pi_1S^1 \\cong \\mathbb Z$ proved",
+    "in the stable range of $U(m)$"
+   ],
+   "diff": [
+    "$\\pi_1S^1 \\cong \\mathbb Z$ comes from Mathlib's covering-space theory: the monodromy of $t \\mapsto e^{it}$, whose deck group $2\\pi\\mathbb Z$ is abelian."
+   ]
+  },
+  {
+   "id": "V15.1",
+   "title": "Complex structures",
+   "milnor": {
+    "label": "§24, p. 133",
+    "page": 133,
+    "statement": "For $n$ even, a complex structure on $\\mathbb R^n$ is a $J \\in O(n)$ with $J^2 = -I$; the space of all of them is $\\Omega_1(n)$. Since $JJ^* = I$ and $JJ = -I$, $J^* = -J$ (p. 135)."
+   },
+   "lean": {
+    "statement": "A complex structure on $\\mathbb R^n$ is a matrix $J \\in O(n)$ with $J^2 = -I$. Equivalently, $J^{\\mathsf T} = -J$ and $J^2 = -I$. A complex structure exists only if $n$ is even, and every complex structure has $\\operatorname{tr}(J^{\\mathsf T}J) = n$.",
+    "decls": [
+     "Chapter15/ComplexStructure · Morse.IsComplexStructure",
+     "Chapter15/ComplexStructure · Morse.isComplexStructure_iff",
+     "Chapter15/ComplexStructure · Morse.IsComplexStructure.even_card",
+     "Chapter15/ComplexStructure · Morse.IsComplexStructure.trace_transpose_mul_self"
+    ]
+   },
+   "verdict": "stronger",
+   "chips": [
+    "$n$ even is derived"
+   ],
+   "diff": [
+    "Equivalently $J^{\\mathsf T} = -J$ and $J^2 = -I$. The parity of $n$ is a conclusion."
+   ]
+  },
+  {
+   "id": "V15.2",
+   "title": "$\\exp(\\theta J) = \\cos\\theta\\,I + \\sin\\theta\\,J$",
+   "milnor": {
+    "label": "§24, proof of Lemma 24.1, pp. 134–135",
+    "page": 134,
+    "statement": "In a suitable basis $\\exp(\\pi A)$ is block diagonal with rotation blocks; for a complex structure $J$, $\\exp\\pi J = -I$."
+   },
+   "lean": {
+    "statement": "If $J^2 = -I$, then $\\exp(\\theta J) = \\cos\\theta\\,I + \\sin\\theta\\,J$ for every real $\\theta$; in particular $\\exp(\\pi J) = -I$.",
+    "decls": [
+     "Chapter15/ComplexStructure · Morse.exp_smul_of_mul_self_eq_neg_one",
+     "Chapter15/ComplexStructure · Morse.exp_pi_smul"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "the matrix identity only"
+   ],
+   "diff": [
+    "Only the identity, for every real $\\theta$. That $t \\mapsto \\exp(\\pi tJ)$ is a minimal geodesic, and Lemma 24.1 itself, are V15.24–V15.26."
+   ]
+  },
+  {
+   "id": "V15.3",
+   "title": "Lemma 24.2, from Milnor's spectrum",
+   "milnor": {
+    "label": "§24, Lemma 24.2",
+    "page": 135,
+    "statement": "Any non-minimal geodesic from $I$ to $-I$ in $O(2m)$ has index $\\ge 2m - 2$. For $A$ with blocks $a_j\\bigl(\\begin{smallmatrix}0 & 1\\\\ -1 & 0\\end{smallmatrix}\\bigr)$, $a_1 \\ge \\dots \\ge a_m > 0$ odd, the non-zero eigenvalues of $K_A$ are $(a_i + a_j)^2/4$ for $i < j$ and $(a_i - a_j)^2/4$ for $i < j$ with $a_i \\neq a_j$, each counted twice; so $\\lambda = \\sum_{i<j}(a_i + a_j - 2) + \\sum_{a_i > a_j}(a_i - a_j - 2)$."
+   },
+   "lean": {
+    "statement": "For integers $a_1, \\dots, a_m$ put $\\lambda(a) = \\sum_{i < j}(a_i + a_j - 2) + \\sum_{a_i > a_j}(a_i - a_j - 2)$, the second sum over ordered pairs. Let all $a_j$ be odd and positive. (i) The index, in the sense of Chapter 14 (V14.8), of the spectrum consisting of $\\tfrac{\\pi^2}{4}(a_i + a_j)^2$ for $i < j$ and $\\tfrac{\\pi^2}{4}(a_i - a_j)^2$ for $a_i > a_j$, each counted twice, is $\\lambda(a)$. (ii) If all $a_j = 1$, $\\lambda(a) = 0$. (iii) If not all $a_j = 1$, $\\lambda(a) \\ge 2m - 2$.",
+    "decls": [
+     "Chapter14/IndexCount · Morse.bottIndexO",
+     "Chapter14/IndexCount · Morse.oSpectrum",
+     "Chapter14/IndexCount · Morse.spectralIndex_oSpectrum",
+     "Chapter14/IndexCount · Morse.bottIndexO_eq_zero",
+     "Chapter14/IndexCount · Morse.bottIndexO_ge"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "the spectrum is the input",
+    "geodesics: V15.30"
+   ],
+   "diff": [
+    "Milnor's spectrum is taken as given: its computation, and Theorem 20.5 for $O(n)$, are not formalized. The index is the count of conjugate parameters of V14.8, for the velocity $\\pi A$.",
+    "The bound for the geodesics themselves is V15.30, proved without the spectrum."
+   ]
+  },
+  {
+   "id": "V15.4",
+   "title": "The spaces $\\Omega_k(n)$",
+   "milnor": {
+    "label": "§24, p. 136",
+    "page": 136,
+    "statement": "With fixed anticommuting complex structures $J_1, \\dots, J_{k-1}$, $\\Omega_k(n)$ is the set of all complex structures which anticommute with them. $\\Omega_k(n) \\subset \\Omega_{k-1}(n) \\subset \\dots \\subset \\Omega_1(n) \\subset O(n)$; \"clearly each $\\Omega_k(n)$ is a compact set\"; $\\Omega_0(n) = O(n)$."
+   },
+   "lean": {
+    "statement": "$\\Omega_0(n) = O(n)$, and for $k \\ge 1$, $\\Omega_k(n)$ is the set of complex structures $J$ with $J_\\alpha J = -JJ_\\alpha$ for $1 \\le \\alpha \\le k - 1$. For any fixed matrices $J_\\alpha$, $\\Omega_{k+1}(n) \\subseteq \\Omega_k(n)$, and every $\\Omega_k(n)$ is closed and compact. $J_1, \\dots, J_k$ form an anticommuting family if each is a complex structure and $J_\\alpha J_\\beta = -J_\\beta J_\\alpha$ for $\\alpha \\neq \\beta$; then $J_k \\in \\Omega_k(n)$ for $k \\ge 1$.",
+    "decls": [
+     "Chapter15/ComplexStructure · Morse.Omega",
+     "Chapter15/ComplexStructure · Morse.omega_succ_subset",
+     "Chapter15/ComplexStructure · Morse.isClosed_omega",
+     "Chapter15/ComplexStructure · Morse.isCompact_omega",
+     "Chapter15/ComplexStructure · Morse.IsAnticommFamily",
+     "Chapter15/ComplexStructure · Morse.IsAnticommFamily.mem_omega"
+    ]
+   },
+   "verdict": "stronger",
+   "chips": [
+    "for any fixed matrices $J_\\alpha$"
+   ],
+   "diff": [
+    "The inclusions and the compactness hold for any fixed matrices $J_\\alpha$. An anticommuting family $J_1, \\dots, J_k$ includes the base point $J_k \\in \\Omega_k(n)$."
+   ]
+  },
+  {
+   "id": "V15.5",
+   "title": "Lemma 24.4: the reflection preserves $\\Omega_k(n)$",
+   "milnor": {
+    "label": "§24, p. 136",
+    "page": 136,
+    "statement": "Each component of $\\Omega_k(n)$ is a symmetric space: the isometric reflection of $O(n)$ in a point of $\\Omega_k(n)$ automatically carries $\\Omega_k(n)$ to itself."
+   },
+   "lean": {
+    "statement": "For $k \\ge 1$ and $P, J' \\in \\Omega_k(n)$, $-PJ'P \\in \\Omega_k(n)$. Since $J'^{-1} = -J'$ for a complex structure, $-PJ'P = PJ'^{-1}P$ is the image of $J'$ under $\\sigma \\mapsto P\\sigma^{-1}P$, the reflection of $O(n)$ in $P$ (Lemma 21.1).",
+    "decls": [
+     "Chapter15/ComplexStructure · Morse.reflection_mem_omega"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "the algebraic invariance only"
+   ],
+   "diff": [
+    "Only $-PJ'P \\in \\Omega_k(n)$. That the reflection is an isometry and that the components are symmetric spaces are not formalized."
+   ]
+  },
+  {
+   "id": "V15.6",
+   "title": "Assertions 1 and 2, the \"if\" halves",
+   "milnor": {
+    "label": "§24, Assertions 1 and 2, p. 137",
+    "page": 137,
+    "statement": "For small skew $A$: $J\\exp A$ is a complex structure if and only if $A$ anticommutes with $J$ (Assertion 1); $J\\exp A$ anticommutes with $J_1, \\dots, J_{k-1}$ if and only if $A$ commutes with them (Assertion 2)."
+   },
+   "lean": {
+    "statement": "If $J$ is a complex structure and $A$ is skew with $AJ = -JA$, then $J\\exp A$ is a complex structure. If $J_\\alpha J = -JJ_\\alpha$ and $A$ commutes with $J_\\alpha$, then $J_\\alpha$ anticommutes with $J\\exp A$.",
+    "decls": [
+     "Chapter15/ComplexStructure · Morse.isComplexStructure_mul_exp",
+     "Chapter15/ComplexStructure · Morse.anticomm_mul_exp"
+    ]
+   },
+   "verdict": "stronger",
+   "chips": [
+    "\"if\" for every skew $A$",
+    "\"only if\": V15.22"
+   ],
+   "diff": [
+    "The \"if\" halves need no smallness. The \"only if\" halves are V15.22."
+   ]
+  },
+  {
+   "id": "V15.7",
+   "title": "From $\\Omega_k(n)$ to $\\Omega_{k+1}(n)$, algebraically; the Remark",
+   "milnor": {
+    "label": "§24, proof of Lemma 24.4 and Remark, pp. 137–138",
+    "page": 137,
+    "statement": "For $J_k \\in \\Omega_k(n)$ and a complex structure $J = J_kA$ anticommuting with $J_1, \\dots, J_k$, $A$ is a complex structure which anticommutes with $J_k$ and commutes with $J_1, \\dots, J_{k-1}$; so $t \\mapsto J_k\\exp(\\pi tA)$ is a geodesic from $J_k$ to $-J_k$ in $\\Omega_k(n)$; and conversely. Remark: $J_kA$ is the midpoint $\\gamma(\\tfrac12)$."
+   },
+   "lean": {
+    "statement": "Let $J_1, \\dots, J_k$ ($k \\ge 1$) be an anticommuting family. (i) If $J' \\in \\Omega_{k+1}(n)$, then $A = -J_kJ'$ ($= J_k^{-1}J'$) is a complex structure that anticommutes with $J_k$ and commutes with $J_1, \\dots, J_{k-1}$, and $J' = J_kA$. (ii) Conversely, for every such $A$, $J_kA \\in \\Omega_{k+1}(n)$. (iii) For $J' \\in \\Omega_{k+1}(n)$ and every real $t$, $\\cos t\\,J_k + \\sin t\\,J' \\in \\Omega_k(n)$, and $J_k\\exp(tA) = \\cos t\\,J_k + \\sin t\\,J'$ for $A = -J_kJ'$: the curve $t \\mapsto J_k\\exp(tA)$ stays in $\\Omega_k(n)$, passes through $J'$ at $t = \\pi/2$ and reaches $-J_k$ at $t = \\pi$. (iv) A complex structure $J'$ anticommuting with a matrix $J$ satisfies $\\operatorname{tr}(J'^{\\mathsf T}J) = 0$.",
+    "decls": [
+     "Chapter15/ComplexStructure · Morse.omega_succ_decomp",
+     "Chapter15/ComplexStructure · Morse.mul_mem_omega_succ",
+     "Chapter15/ComplexStructure · Morse.semicircle_mem_omega",
+     "Chapter15/ComplexStructure · Morse.mul_exp_eq_semicircle",
+     "Chapter15/ComplexStructure · Morse.trace_transpose_mul_eq_zero"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "the curve; geodesics: V15.25–V15.26"
+   ],
+   "diff": [
+    "(iii) is about the curve $\\cos t\\,J_k + \\sin t\\,J'$ staying in $\\Omega_k(n)$; that it is a minimal geodesic, and that all minimal geodesics arise so, are V15.25–V15.26.",
+    "(iv), the orthogonality of $J'$ and $J$ for the trace form, is not in the book."
+   ]
+  },
+  {
+   "id": "V15.8",
+   "title": "Milnor's imbedding $\\Omega_k(n) \\to \\Omega_k(n + n')$",
+   "milnor": {
+    "label": "§24, p. 138",
+    "page": 138,
+    "statement": "Choose fixed anticommuting complex structures $J'_1, \\dots, J'_k$ on $\\mathbb R^{n'}$. Then each $J \\in \\Omega_k(n)$ determines a complex structure $J \\oplus J'_k$ on $\\mathbb R^n \\oplus \\mathbb R^{n'}$ which anticommutes with $J_\\alpha \\oplus J'_\\alpha$ for $\\alpha = 1, \\dots, k - 1$."
+   },
+   "lean": {
+    "statement": "If $J_1, \\dots, J_k$ and $J'_1, \\dots, J'_k$ are anticommuting families on $\\mathbb R^n$ and $\\mathbb R^{n'}$, the block matrices $J_\\alpha \\oplus J'_\\alpha$ form an anticommuting family on $\\mathbb R^n \\oplus \\mathbb R^{n'}$. For any fixed matrices and every $k$: if $P \\in \\Omega_k(n)$ for the $J_\\alpha$ and $P' \\in \\Omega_k(n')$ for the $J'_\\alpha$, then $P \\oplus P' \\in \\Omega_k(n + n')$ for the $J_\\alpha \\oplus J'_\\alpha$. With $P' = J'_k$ (V15.4) this is Milnor's map $J \\mapsto J \\oplus J'_k$.",
+    "decls": [
+     "Chapter15/Clifford · Morse.IsAnticommFamily.fromBlocks",
+     "Chapter15/Clifford · Morse.fromBlocks_mem_omega"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "no direct limit $\\Omega_k$"
+   ],
+   "diff": [
+    "$\\mathbb R^{n'}$ must carry $k$ anticommuting complex structures (V15.9 supplies them for $n' = 16r'$). The direct limit $\\Omega_k$ is not formed; the compatibility with $\\varphi$ is V15.41."
+   ]
+  },
+  {
+   "id": "V15.9",
+   "title": "Explicit anticommuting complex structures",
+   "milnor": {
+    "label": "§24, pp. 136, 139",
+    "page": 136,
+    "statement": "\"Assume that $n$ is divisible by a high power of $2$\", and let $J_1, \\dots, J_{k-1}$ be fixed complex structures which anticommute; later, $n = 16r$. The structures are never written down."
+   },
+   "lean": {
+    "statement": "With $\\sigma = \\begin{pmatrix}0 & -1\\\\ 1 & 0\\end{pmatrix}$, $\\tau = \\begin{pmatrix}1 & 0\\\\ 0 & -1\\end{pmatrix}$, $\\kappa = \\begin{pmatrix}0 & 1\\\\ 1 & 0\\end{pmatrix}$, explicit Kronecker products give one complex structure on $\\mathbb R^2$ ($\\sigma$), three anticommuting ones on $\\mathbb R^4$ ($1 \\otimes \\sigma$, $\\sigma \\otimes \\tau$, $\\sigma \\otimes \\kappa$), seven on $\\mathbb R^8$, and eight on $\\mathbb R^{16}$ (the seven tensored with $\\tau$, and $1 \\otimes 1 \\otimes 1 \\otimes \\sigma$). Renaming the coordinates and repeating block-diagonally ($J_\\alpha \\oplus \\dots \\oplus J_\\alpha$) preserve anticommuting families; so $\\mathbb R^{16r}$ carries eight anticommuting complex structures for every $r$.",
+    "decls": [
+     "Chapter15/Clifford · Morse.bott4",
+     "Chapter15/Clifford · Morse.bott8",
+     "Chapter15/Clifford · Morse.bott16",
+     "Chapter15/Clifford · Morse.isAnticommFamily_bott2",
+     "Chapter15/Clifford · Morse.isAnticommFamily_bott4",
+     "Chapter15/Clifford · Morse.isAnticommFamily_bott8",
+     "Chapter15/Clifford · Morse.isAnticommFamily_bott16",
+     "Chapter15/Clifford · Morse.IsAnticommFamily.blockDiagonal",
+     "Chapter15/Clifford · Morse.IsAnticommFamily.reindex",
+     "Chapter15/Clifford · Morse.isAnticommFamily_bott16r"
+    ]
+   },
+   "verdict": "extra",
+   "chips": [
+    "eight on every $\\mathbb R^{16r}$"
+   ],
+   "diff": [
+    "Explicit Kronecker products make the standing assumptions of §24 non-vacuous for $n = 16r$ and $k \\le 8$."
+   ]
+  },
+  {
+   "id": "V15.10",
+   "title": "Products of anticommuting complex structures",
+   "milnor": {
+    "label": "§24, pp. 139–143",
+    "page": 139,
+    "statement": "$J_1J_2J_3$ has square $+I$ and commutes with $J_1$ and $J_2$; $J_3J_4$ anticommutes with it; the corresponding statements for $J_1J_4J_5$, $J_2J_4J_6$, $J_1J_6J_7$ and $J_7J_8$; for $k = 7$, $J_7 = \\pm J_1J_2J_3J_4J_5J_6$. Stated without computation."
+   },
+   "lean": {
+    "statement": "In any ring, call $J_1, \\dots, J_k$ Clifford if $J_\\alpha^2 = -1$ and $J_\\alpha J_\\beta = -J_\\beta J_\\alpha$ for $\\alpha \\neq \\beta$ ($1 \\le \\alpha, \\beta \\le k$); an anticommuting family of matrices is Clifford. Put $\\theta_3 = J_1J_2J_3$, $\\theta_5 = J_1J_4J_5$, $\\theta_6 = J_2J_4J_6$, $\\theta_7 = J_1J_6J_7$ and $\\omega_7 = J_1J_2\\cdots J_7$. Then, whenever $k$ is large enough for the indices involved: $\\theta_3^2 = 1$, $\\theta_3$ commutes with $J_1, J_2, J_3$ and anticommutes with $J_\\alpha$ for $4 \\le \\alpha \\le k$; $J_3J_4$ anticommutes with $\\theta_3$ and commutes with $J_1, J_2$; $\\theta_5^2 = 1$, $\\theta_5$ commutes with $J_1, J_4, J_5, \\theta_3$ and anticommutes with $J_2, J_3$; $\\theta_6^2 = 1$, $\\theta_6$ commutes with $J_2, J_4, J_6, \\theta_3, \\theta_5$ and anticommutes with $J_1, J_3, J_5$; $\\theta_7^2 = 1$, $\\theta_7$ commutes with $J_1, J_6, J_7, \\theta_3, \\theta_5, \\theta_6$ and anticommutes with $J_2, \\dots, J_5$; $J_7J_8$ commutes with $\\theta_3, \\theta_5, \\theta_6$ and anticommutes with $\\theta_7$; $\\omega_7 = -\\theta_3\\theta_5\\theta_7$, and it commutes with $J_1, \\dots, J_7$.",
+    "decls": [
+     "Chapter15/Relations · Morse.IsClifford",
+     "Chapter15/Clifford · Morse.IsAnticommFamily.isClifford",
+     "Chapter15/Relations · Morse.θ₃_spec",
+     "Chapter15/Relations · Morse.θ₃_anticommute",
+     "Chapter15/Relations · Morse.θ₅_spec",
+     "Chapter15/Relations · Morse.θ₆_spec",
+     "Chapter15/Relations · Morse.θ₇_spec",
+     "Chapter15/Relations · Morse.J₃J₄_spec",
+     "Chapter15/Relations · Morse.J₇J₈_spec",
+     "Chapter15/Relations · Morse.ω₇_spec"
+    ]
+   },
+   "verdict": "stronger",
+   "chips": [
+    "the full commutation table, in any ring"
+   ],
+   "diff": [
+    "Every sign Milnor uses on pp. 139–143, proved once in an arbitrary ring."
+   ]
+  },
+  {
+   "id": "V15.11",
+   "title": "Lemma 24.6, the odd steps (3), (5), (6), (7)",
+   "milnor": {
+    "label": "§24, Lemma 24.6 (3), (5), (6), (7), pp. 139–141",
+    "page": 139,
+    "statement": "$\\Omega_3(16r)$ is the quaternionic Grassmann manifold of $\\mathbb H^{4r}$, through the $+1$-eigenspace $V_1$ of $J_1J_2J_3$; $\\Omega_5(16r)$ the subspaces $W \\subset V_1$ closed under $J_1$ with $V_1 = W \\oplus J_2W$; $\\Omega_6(16r)$ the real subspaces $X \\subset W$ with $W = X \\oplus J_1X$; $\\Omega_7(16r)$ the real Grassmann manifold of $X \\cong \\mathbb R^{2r}$."
+   },
+   "lean": {
+    "statement": "Let $J_1, \\dots, J_k$ be an anticommuting family and $1 \\le a < b \\le k$. For $J' \\in \\Omega_{k+1}(n)$, $\\theta = J_aJ_bJ'$ is symmetric with $\\theta^2 = I$, commutes with $J_a$ and $J_b$, and anticommutes with every other $J_c$, $c \\le k$. Conversely, for every such $\\theta$, $J' = J_bJ_a\\theta$ lies in $\\Omega_{k+1}(n)$ and $J_aJ_bJ' = \\theta$; and $J_bJ_a(J_aJ_bJ') = J'$ for every $J'$. So $J' \\mapsto J_aJ_bJ'$ is a bijection of $\\Omega_{k+1}(n)$ onto the symmetric involutions with this commutation pattern. With $(a, b, k) = (1, 2, 2), (1, 4, 4), (2, 4, 5), (1, 6, 6)$ it is the passage $J_3 \\mapsto \\theta_3$, $J_5 \\mapsto \\theta_5$, $J_6 \\mapsto \\theta_6$, $J_7 \\mapsto \\theta_7$ of 24.6 (3), (5), (6), (7).",
+    "decls": [
+     "Chapter15/ComplexStructure · Morse.theta_of_mem_omega",
+     "Chapter15/ComplexStructure · Morse.mem_omega_of_theta",
+     "Chapter15/ComplexStructure · Morse.mul_theta_mul"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "bijections with involutions"
+   ],
+   "diff": [
+    "$J' \\mapsto J_aJ_bJ'$ is a bijection of $\\Omega_{k+1}(n)$ onto the symmetric involutions with the right commutation pattern. The passage from involutions to Milnor's subspaces, and the Grassmannians as spaces, are not formalized.",
+    "Of the even steps, (8) is V15.42; (4) is covered only algebraically (V15.7)."
+   ]
+  },
+  {
+   "id": "V15.12",
+   "title": "Lemma 24.6, the dimensions",
+   "milnor": {
+    "label": "§24, pp. 139–141",
+    "page": 139,
+    "statement": "The splittings $V_1 \\oplus V_2$, $W \\oplus J_2W$, $X \\oplus J_1X$, $X_1 \\oplus X_2$. Milnor restricts attention to the components with $\\dim_{\\mathbb H}V_1 = \\dim_{\\mathbb H}V_2 = 2r$ and with $\\dim X_1 = \\dim X_2 = r$."
+   },
+   "lean": {
+    "statement": "On a finite-dimensional real vector space $V$, if $\\theta^2 = 1$ and an injective $P$ anticommutes with $\\theta$, then $\\dim V = 2\\dim\\{\\theta = 1\\}$ ($P$ exchanges the $\\pm1$-eigenspaces of $\\theta$). Hence, for Clifford $J_1, \\dots, J_8$ on $V$, with $V_1 = \\{\\theta_3 = 1\\}$, $W = V_1 \\cap \\{\\theta_5 = 1\\}$, $X = W \\cap \\{\\theta_6 = 1\\}$ and $X_1 = X \\cap \\{\\theta_7 = 1\\}$: $\\dim V = 2\\dim V_1 = 4\\dim W = 8\\dim X = 16\\dim X_1$, the halvings being effected by $J_4$, $J_2$, $J_1$ and $J_7J_8$. For $\\mathbb R^{16r}$ with the structures of V15.9, $\\dim V_1 = 8r$, $\\dim W = 4r$, $\\dim X = 2r$ and $\\dim X_1 = r$.",
+    "decls": [
+     "Chapter15/CliffordModules · Morse.eigV₁",
+     "Chapter15/CliffordModules · Morse.eigW",
+     "Chapter15/CliffordModules · Morse.eigX",
+     "Chapter15/CliffordModules · Morse.jointEigen",
+     "Chapter15/CliffordModules · Morse.finrank_eq_two_mul_of_anticomm",
+     "Chapter15/CliffordModules · Morse.finrank_chain",
+     "Chapter15/CliffordModules · Morse.finrank_eq_sixteen_mul",
+     "Chapter15/CliffordModules · Morse.finrank_jointEigen_bott16r"
+    ]
+   },
+   "verdict": "stronger",
+   "chips": [
+    "equal halves are forced"
+   ],
+   "diff": [
+    "An invertible map anticommuting with an involution exchanges its eigenspaces. So once the later structures exist the halves are equal, and the restriction to components is automatic: the dimensions are $8r$, $4r$, $2r$, $r$."
+   ]
+  },
+  {
+   "id": "V15.13",
+   "title": "Minimal spaces and the numbers $m_k$",
+   "milnor": {
+    "label": "§24, p. 143",
+    "page": 143,
+    "statement": "$V$ is a minimal $(J_1, \\dots, J_k)$-space if no proper, non-trivial subspace is closed under the action of $J_1, \\dots, J_k$. $m_k$ is the dimension of a minimal space: $m_0, \\dots, m_8 = 1, 2, 4, 4, 8, 8, 8, 8, 16$, and for $k > 8$ \"it can be shown that $m_k = 16m_{k-8}$\"."
+   },
+   "lean": {
+    "statement": "A real vector space $V$ with linear maps $J_1, J_2, \\dots$ is minimal for $J_1, \\dots, J_k$ if $V \\neq 0$ and every subspace closed under $J_1, \\dots, J_k$ is $0$ or $V$. The numbers $m_k$ are defined by the table $m_0, \\dots, m_8 = 1, 2, 4, 4, 8, 8, 8, 8, 16$ and $m_{k+8} = 16m_k$.",
+    "decls": [
+     "Chapter15/CliffordModules · Morse.IsMinimalCliffordModule",
+     "Chapter15/Clifford · Morse.milnorM"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "$m_k$ defined by the table"
+   ],
+   "diff": [
+    "$m_k$ is defined by the table and the recursion; that it is the dimension of every minimal space is V15.16, for $k \\le 8$."
+   ]
+  },
+  {
+   "id": "V15.14",
+   "title": "$m_k$ divides the dimension, and is the least one",
+   "milnor": {
+    "label": "§24, p. 143",
+    "page": 143,
+    "statement": "The values $m_0, \\dots, m_8$ are read off from the description of the minimal spaces: lines over $\\mathbb R$, $\\mathbb C$, $\\mathbb H$, then $H \\oplus H'$, $L$, $L \\oplus L'$. For $k > 8$ \"it can be shown that $m_k = 16 m_{k-8}$\", and the Remark that follows (pp. 143–144) takes a space of dimension $r m_k$, for any $k$."
+   },
+   "lean": {
+    "statement": "On a real vector space: one $J$ with $J^2 = -1$ makes the dimension even ($V$ is a $\\mathbb C$-module); two anticommuting ones make it divisible by $4$ ($V$ is an $\\mathbb H$-module, through Mathlib's quaternion algebra); four Clifford maps on a finite-dimensional $V$ make it divisible by $8$; and for $k \\le 8$, Clifford $J_1, \\dots, J_k$ on a finite-dimensional $V$ force $m_k \\mid \\dim V$. For matrices: if $\\mathbb R^n$ carries $k \\le 8$ anticommuting complex structures then $m_k \\mid n$, and $\\mathbb R^{m_k}$ carries $k$ of them; so $m_k$ is the least positive $n$ for which $\\mathbb R^n$ carries $k$ anticommuting complex structures.",
+    "decls": [
+     "Chapter15/CliffordModules · Morse.two_dvd_finrank_of_sq",
+     "Chapter15/CliffordModules · Morse.four_dvd_finrank_of_anticomm",
+     "Chapter15/CliffordModules · Morse.eight_dvd_finrank",
+     "Chapter15/CliffordModules · Morse.milnorM_dvd_finrank",
+     "Chapter15/CliffordModules · Morse.milnorM_dvd_card",
+     "Chapter15/Clifford · Morse.exists_isAnticommFamily_fin",
+     "Chapter15/CliffordModules · Morse.isLeast_milnorM"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "$k \\le 8$",
+    "every space, not only minimal ones"
+   ],
+   "diff": [
+    "For $k \\le 8$, $m_k$ divides the dimension of every space with $k$ Clifford maps, and $\\mathbb R^{m_k}$ carries $k$ anticommuting complex structures.",
+    "Milnor's claim is for every $k$. In the formal results $m_{k+8} = 16 m_k$ is the definition of `milnorM`, not a theorem: Clifford periodicity is not formalized, so nothing is proved for $k > 8$. The cases $k \\le 8$ are all that §24 uses, as Milnor says (p. 143). Relabelled from *stronger* on 2026-11-04, as the round-trip audit found."
+   ]
+  },
+  {
+   "id": "V15.15",
+   "title": "The Clifford algebra",
+   "milnor": {
+    "label": "§24, footnote, p. 136",
+    "page": 136,
+    "statement": "These structures make $\\mathbb R^n$ into a module over a suitable Clifford algebra; \"the Clifford algebras will be suppressed in the following presentation\"."
+   },
+   "lean": {
+    "statement": "Let $C_k$ be Mathlib's Clifford algebra of the quadratic form $Q(x) = -\\sum x_i^2$ on $\\mathbb R^k$. Clifford elements $J_1, \\dots, J_k$ of a real algebra $A$ determine an algebra homomorphism $C_k \\to A$ sending the $i$-th basis vector to $J_i$; $\\dim C_k = 2^k$; and a minimal $(J_1, \\dots, J_k)$-space has dimension at most $2^k$, being the image of $C_k$ under $c \\mapsto c\\cdot u$ for any $u \\neq 0$.",
+    "decls": [
+     "Chapter15/CliffordModules · Morse.cliffQ",
+     "Chapter15/CliffordModules · Morse.cliffordLift",
+     "Chapter15/CliffordModules · Morse.cliffordLift_ι",
+     "Chapter15/CliffordModules · Morse.finrank_cliffordAlgebra",
+     "Chapter15/CliffordModules · Morse.finrank_le_two_pow"
+    ]
+   },
+   "verdict": "extra",
+   "chips": [
+    "Mathlib's Clifford algebra, $\\dim = 2^k$"
+   ],
+   "diff": [
+    "Clifford maps give a module over $C_k$, of dimension $2^k$; so a minimal space has dimension $\\le 2^k$, the tool of V15.16."
+   ]
+  },
+  {
+   "id": "V15.16",
+   "title": "Lemma 24.8: minimal spaces have dimension $m_k$",
+   "milnor": {
+    "label": "§24, p. 143",
+    "page": 143,
+    "statement": "A minimal space is a line over $\\mathbb R$, $\\mathbb C$, $\\mathbb H$ for $k = 0, 1, 2$; a quaternionic line with $J_3 = \\pm J_1J_2$ for $k = 3$; $H \\oplus H'$ for $k = 4, 5, 6$; for $k = 7$, $J_7 = \\pm J_1J_2J_3J_4J_5J_6$; $L \\oplus L'$ for $k = 8$. The proof \"follows that of 24.6\"."
+   },
+   "lean": {
+    "statement": "Let $k \\le 8$ and let $J_1, \\dots, J_k$ be Clifford on a finite-dimensional real $V$. If $V$ is minimal, $\\dim V = m_k$; conversely, if $\\dim V = m_k$, $V$ is minimal; a minimal $V$ has $m_k \\le \\dim V \\le 2^k$. An involution commuting with all $J_\\alpha$ acts on a minimal space as $1$ or as $-1$; hence a minimal space for $k = 3$ (resp. $7$) is minimal for $J_1, J_2$ (resp. $J_1, \\dots, J_6$), the involution being $J_1J_2J_3$ (resp. $J_1\\cdots J_7$).",
+    "decls": [
+     "Chapter15/MinimalModules · Morse.finrank_eq_milnorM_of_isMinimal",
+     "Chapter15/CliffordModules · Morse.isMinimal_of_finrank_eq_milnorM",
+     "Chapter15/CliffordModules · Morse.milnorM_le_finrank_le",
+     "Chapter15/CliffordModules · Morse.finrank_eq_milnorM_of_le_two",
+     "Chapter15/MinimalModules · Morse.central_involution",
+     "Chapter15/MinimalModules · Morse.minimal_three",
+     "Chapter15/MinimalModules · Morse.minimal_seven"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "$k \\le 8$",
+    "no inner product needed"
+   ],
+   "diff": [
+    "For $k \\le 8$, a space with $k$ Clifford maps is minimal iff its dimension is $m_k$. The proof is a cyclic-vector argument in $C_k$, not Milnor's list of cases.",
+    "$J_1J_2J_3$ and $J_1\\cdots J_7$ act as $\\pm1$ on a minimal space because they are central involutions."
+   ]
+  },
+  {
+   "id": "V15.17",
+   "title": "Lemma 24.8 (Bott and Shapiro): uniqueness",
+   "milnor": {
+    "label": "§24, Lemma 24.8",
+    "page": 143,
+    "statement": "For $k \\not\\equiv 3 \\pmod 4$, any two minimal $(J_1, \\dots, J_k)$ vector spaces are isomorphic: there is an isometry between them which commutes with the action of $J_1, \\dots, J_k$."
+   },
+   "lean": {
+    "statement": "Let $k \\le 8$ with $k \\not\\equiv 3 \\pmod 4$, and let $V$, $V'$ be finite-dimensional real spaces with Clifford $J_1, \\dots, J_k$ and $J'_1, \\dots, J'_k$, both minimal. Then there is a linear isomorphism $T : V \\to V'$ with $T(J_\\alpha v) = J'_\\alpha(Tv)$ for all $\\alpha \\le k$ and $v \\in V$.",
+    "decls": [
+     "Chapter15/MinimalModules · Morse.exists_iso_of_isMinimal",
+     "Chapter15/MinimalModules · Morse.cyclicMap",
+     "Chapter15/MinimalModules · Morse.range_cyclicMap_eq_top",
+     "Chapter15/MinimalModules · Morse.minimal_of_fixed",
+     "Chapter15/MinimalModules · Morse.exists_iso_of_equiv"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "a linear isomorphism, not an isometry",
+    "$k \\le 8$"
+   ],
+   "diff": [
+    "A linear isomorphism commuting with the $J_\\alpha$, for $k \\le 8$; no inner product is used. The isometric form would follow by polar decomposition, which is not formalized."
+   ]
+  },
+  {
+   "id": "V15.18",
+   "title": "Vector fields on spheres",
+   "milnor": {
+    "label": "§24, Remark, pp. 143–144",
+    "page": 143,
+    "statement": "For anticommuting $J_1, \\dots, J_k$ on a space of dimension $rm_k$ and each unit vector $u$, the $k$ vectors $J_1u, \\dots, J_ku$ are perpendicular to each other and to $u$: $k$ linearly independent vector fields on an $(rm_k - 1)$-sphere; $3$ on a $(4r - 1)$-sphere, $7$ on an $(8r - 1)$-sphere, $8$ on a $(16r - 1)$-sphere (Hurwitz and Radon; Adams: best possible)."
+   },
+   "lean": {
+    "statement": "If $J_1, \\dots, J_k$ are anticommuting complex structures on $\\mathbb R^n$, then for every $u$, $\\langle J_\\alpha u, J_\\beta u\\rangle = \\delta_{\\alpha\\beta}|u|^2$ and $\\langle J_\\alpha u, u\\rangle = 0$; so for $|u| = 1$ the $J_\\alpha u$ are $k$ orthonormal vectors tangent to the unit sphere at $u$. This is written out for the eight structures of V15.9 on $\\mathbb R^{16r}$ (eight fields on $S^{16r-1}$), and the general statement applies to the block-diagonal families on $\\mathbb R^{4r}$ and $\\mathbb R^{8r}$ built from V15.9 (three and seven fields).",
+    "decls": [
+     "Chapter15/Clifford · Morse.IsAnticommFamily.dotProduct_mulVec",
+     "Chapter15/Clifford · Morse.IsComplexStructure.dotProduct_mulVec_self",
+     "Chapter15/Clifford · Morse.bott16r_vectorFields"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "the identities; no Hurwitz–Radon count"
+   ],
+   "diff": [
+    "The orthonormality identities, written out for the eight structures on $\\mathbb R^{16r}$. The general count and Adams's theorem are not formalized."
+   ]
+  },
+  {
+   "id": "V15.19",
+   "title": "The index count for $k \\not\\equiv 2 \\pmod 4$, from the spectrum",
+   "milnor": {
+    "label": "§24, Assertions, pp. 145–146",
+    "page": 145,
+    "statement": "$K_A$ has at least $s - 1$ eigenvalues which are $\\ge (3 + 1)^2/4 = 4$. Each eigenvalue $e^2$ of $K_A$ gives rise to conjugate points for $t = e^{-1}, 2e^{-1}, 3e^{-1}, \\dots$; hence the index of a non-minimal geodesic from $J$ to $-J$ in $\\Omega_k(n)$ is $\\ge n/m_{k+1} - 1$."
+   },
+   "lean": {
+    "statement": "The index of a spectrum (in the sense of Chapter 14, V14.8) is at least the number of its eigenvalues greater than $\\pi^2$. Hence, for integers $a_1, \\dots, a_s \\ge 1$ with some $a_{h_0} \\ge 3$, the $s - 1$ eigenvalues $\\tfrac{\\pi^2}{4}(a_{h_0} + a_j)^2$, $j \\neq h_0$, already have index at least $s - 1$.",
+    "decls": [
+     "Chapter14/IndexCount · Morse.card_lt_le_spectralIndex",
+     "Chapter14/IndexCount · Morse.card_sub_one_le_spectralIndex"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "the eigenvalues are the input",
+    "geodesics: V15.30"
+   ],
+   "diff": [
+    "A count: each eigenvalue greater than $\\pi^2$ (for the velocity $\\pi A$) contributes at least one to the index. The eigenvalues are input; the bound for geodesics is V15.30.",
+    "Oddness of the $a_j$ is not needed."
+   ]
+  },
+  {
+   "id": "V15.20",
+   "title": "The index count for $k \\equiv 2 \\pmod 4$, from the spectrum",
+   "milnor": {
+    "label": "§24, pp. 147–148",
+    "page": 148,
+    "statement": "On a fixed component, $a_1, \\dots, a_r$ are odd with sum $c$ and $\\max|a_h| \\ge 3$, and $2\\lambda \\ge \\sum_{a_h > a_j}(a_h - a_j - 2)$. \"Suppose for example that some $a_h$ is equal to $-3$\": then $4\\lambda \\ge 2p \\ge r + c$, where $r = n/m_k$."
+   },
+   "lean": {
+    "statement": "Let $a_1, \\dots, a_r$ be odd integers, some $|a_h| \\ge 3$, and $c = \\sum_h a_h$. Then $\\sum_{a_h > a_j}(a_h - a_j - 2) \\ge (r - |c|)/2$; equivalently, the index (V14.8) of the spectrum with one eigenvalue $\\tfrac{\\pi^2}{4}(a_h - a_j)^2$ for each pair $a_h > a_j$ is at least $(r - |c|)/4$.",
+    "decls": [
+     "Chapter14/IndexCount · Morse.card_sub_abs_sum_le_two_mul_bottIndex",
+     "Chapter14/IndexCount · Morse.card_sub_abs_sum_le_four_mul_spectralIndex"
+    ]
+   },
+   "verdict": "sign",
+   "chips": [
+    "$4\\lambda \\ge r - |c|$, both signs",
+    "geodesics: V15.38"
+   ],
+   "diff": [
+    "Milnor treats only the example of an $a_h$ equal to $-3$, and his strict inequality fails when no $a_h$ is positive (e.g. $a = (-1, -3)$). The formal bound $4\\lambda \\ge r - |c|$ covers both signs of the large $|a_h|$.",
+    "The eigenvalues are input; the bound for geodesics is V15.38."
+   ]
+  },
+  {
+   "id": "V15.21",
+   "title": "Totally geodesic sets of orthogonal matrices",
+   "milnor": {
+    "label": "§24, footnote, p. 136; p. 137",
+    "page": 136,
+    "statement": "A submanifold of a Riemannian manifold is called totally geodesic if each geodesic in the submanifold is also a geodesic in the larger manifold. The description of $\\Omega_k(n)$ near $J$ as the points $J\\exp A$, $A$ in a linear subspace, \"clearly implies\" that $\\Omega_k(n)$ is a totally geodesic submanifold of $O(n)$."
+   },
+   "lean": {
+    "statement": "Let $N \\subseteq M_n(\\mathbb R)$ be a slice submanifold consisting of orthogonal matrices, and for each $x \\in N$ let $T_x$ be a space of skew matrices with $\\dim T_x = \\dim N$, such that $x\\exp A \\in N$ and $A \\in T_{x\\exp A}$ whenever $A \\in T_x$. Then: (i) the tangent space of $N$ at $x$ is $x\\,T_x$; (ii) for $A \\in T_x$ the curve $t \\mapsto x\\exp(tA)$ is a geodesic of $N$ on all of $\\mathbb R$; (iii) every unbroken geodesic $\\gamma \\in \\Omega(N; p, q)$ agrees on $[0, 1]$ with $s \\mapsto p\\exp(sV)$ for some $V \\in T_p$; (iv) the Riemannian exponential of $N$ is $\\exp_x(xA) = x\\exp A$ for $A \\in T_x$, and $N$ is geodesically complete. Also, as a tool for V15.23: let $S$ be a subset of a real normed space $V$ such that near each $x \\in S$ there is a smooth $\\Phi : Z \\times W \\to V$ ($Z$, $W$ finite-dimensional) with $\\Phi(0) = x$ and invertible derivative at $0$, for which, near $0$, the points $\\Phi(z, 0)$ lie in $S$ and every point $\\Phi(q) \\in S$ equals $\\Phi(g(q), 0)$ with $g(q) \\to 0$ as $q \\to 0$; then $S$ is a slice submanifold modelled on $Z$.",
+    "decls": [
+     "Chapter15/TotallyGeodesic · Morse.isSliceSubmanifold_of_param",
+     "Chapter15/TotallyGeodesic · Morse.IsTotGeo",
+     "Chapter15/TotallyGeodesic · Morse.IsTotGeo.tangentSubspace_eq",
+     "Chapter15/TotallyGeodesic · Morse.IsTotGeo.isGeodesicOn_mul_exp_smul",
+     "Chapter15/TotallyGeodesic · Morse.IsTotGeo.eqOn_of_isUnbrokenGeodesic",
+     "Chapter15/TotallyGeodesic · Morse.IsTotGeo.exp_eq",
+     "Chapter15/TotallyGeodesic · Morse.IsTotGeo.isGeodesicallyComplete"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "the geodesics are listed directly",
+    "no comparison with $O(n)$"
+   ],
+   "diff": [
+    "What Milnor uses of \"totally geodesic\" is the list of geodesics: they are the curves $x\\exp(tA)$, $A \\in T_x$. This is proved from the normality of the acceleration $x\\exp(tA)A^2$, without comparing the geodesics of $N$ with those of $O(n)$.",
+    "The exponential map of $N$ is $xA \\mapsto x\\exp A$, so $N$ is complete."
+   ]
+  },
+  {
+   "id": "V15.22",
+   "title": "Assertions 1 and 2 in both directions; $\\Omega_k(n)$ near a point",
+   "milnor": {
+    "label": "§24, Assertions 1 and 2, p. 137",
+    "page": 137,
+    "statement": "For small skew $A$: $J\\exp A$ is a complex structure if and only if $A$ anticommutes with $J$; $J\\exp A$ anticommutes with $J_1, \\dots, J_{k-1}$ if and only if $A$ commutes with them. Thus a neighborhood of $J$ in $\\Omega_k(n)$ consists of all points $J\\exp A$ where $A$ ranges over all small matrices in a linear subspace of the Lie algebra."
+   },
+   "lean": {
+    "statement": "For a matrix $x$ let $\\mathcal T_x$ be the space of skew matrices $A$ with $Ax = -xA$ and $AJ_\\alpha = J_\\alpha A$ for $1 \\le \\alpha \\le k - 1$; for $k = 0$ the first condition is dropped, so that $\\mathcal T_x$ is the space $\\mathfrak o(n)$ of all skew matrices, the same for every $x$. (i) For any fixed matrices $J_\\alpha$: if $x \\in \\Omega_k(n)$ and $A \\in \\mathcal T_x$, then $x\\exp A \\in \\Omega_k(n)$ and $A \\in \\mathcal T_{x\\exp A}$. (ii) There is $\\varepsilon > 0$ such that $\\exp$ is injective on the matrices of norm $< \\varepsilon$. For every such $\\varepsilon$, every anticommuting family $J_1, \\dots, J_k$, every $x \\in \\Omega_k(n)$ and every matrix $C$ with $\\|C\\| < \\varepsilon$: if $x\\exp C \\in \\Omega_k(n)$, then $C \\in \\mathcal T_x$. (iii) Hence, for an anticommuting family and $x \\in \\Omega_k(n)$, there is a map $L$ with $L(y) \\to 0$ as $y \\to x$, such that every $y \\in \\Omega_k(n)$ near $x$ satisfies $L(y) \\in \\mathcal T_x$ and $y = x\\exp(L(y))$.",
+    "decls": [
+     "Chapter15/OmegaManifold · Morse.tanAlg",
+     "Chapter15/OmegaManifold · Morse.mem_tanAlg",
+     "Chapter15/OmegaManifold · Morse.tanAlg_zero",
+     "Chapter15/OmegaManifold · Morse.mul_exp_mem_omega",
+     "Chapter15/OmegaManifold · Morse.mem_tanAlg_mul_exp",
+     "Chapter15/OmegaManifold · Morse.exists_exp_injective",
+     "Chapter15/OmegaManifold · Morse.mem_tanAlg_of_mul_exp_mem",
+     "Chapter15/OmegaManifold · Morse.exists_local_log"
+    ]
+   },
+   "verdict": "explicit",
+   "chips": [
+    "\"small\": the Frobenius norm",
+    "$C$ need not be assumed skew"
+   ],
+   "diff": [
+    "\"Since $A$ is small\" is the injectivity of $\\exp$ on a ball, applied to $C^{\\mathsf T}$, $x^{\\mathsf T}Cx$ and $J_\\alpha CJ_\\alpha^{\\mathsf T}$; the ball must be invariant under transposition and orthogonal conjugation, as the Frobenius ball is.",
+    "In the converse $C$ is any small matrix with $x\\exp C \\in \\Omega_k(n)$; that it is skew is a conclusion."
+   ]
+  },
+  {
+   "id": "V15.23",
+   "title": "Lemma 24.4, first half: a smooth, totally geodesic submanifold",
+   "milnor": {
+    "label": "§24, Lemma 24.4",
+    "page": 136,
+    "statement": "Each $\\Omega_k(n)$ is a smooth, totally geodesic submanifold of $O(n)$.",
+    "note": "p. 139: $\\Omega_3(16r)$ \"contains components of varying dimension\"; p. 141: so does $\\Omega_7(16r)$."
+   },
+   "lean": {
+    "statement": "The *stratum* of $\\Omega_k(n)$ through a matrix $p$ is the set of $x \\in \\Omega_k(n)$ with $\\dim\\mathcal T_x = \\dim\\mathcal T_p$. (i) $\\dim\\mathcal T_{x\\exp A} = \\dim\\mathcal T_x$ for $A \\in \\mathcal T_x$. Let $J_1, \\dots, J_k$ be an anticommuting family. (ii) The stratum is open in $\\Omega_k(n)$ (each of its points has a neighbourhood in $M_n(\\mathbb R)$ whose points in $\\Omega_k(n)$ belong to it), closed in $M_n(\\mathbb R)$, and compact. (iii) It is a slice submanifold of $M_n(\\mathbb R)$ modelled on $\\mathcal T_p$, and it satisfies the hypotheses of V15.21 with $T_x = \\mathcal T_x$. Consequently its tangent space at $x$ is $x\\mathcal T_x$, its geodesics are the curves $t \\mapsto x\\exp(tA)$ with $A \\in \\mathcal T_x$, and it is geodesically complete. For $k = 0$ the stratum through any $p$ is $O(n)$.",
+    "decls": [
+     "Chapter15/OmegaManifold · Morse.omegaStratum",
+     "Chapter15/OmegaManifold · Morse.finrank_tanAlg_mul_exp",
+     "Chapter15/OmegaManifold · Morse.eventually_mem_omegaStratum",
+     "Chapter15/OmegaManifold · Morse.isClosed_omegaStratum",
+     "Chapter15/OmegaManifold · Morse.isCompact_omegaStratum",
+     "Chapter15/OmegaManifold · Morse.isSliceSubmanifold_omegaStratum",
+     "Chapter15/OmegaManifold · Morse.isTotGeo_omegaStratum",
+     "Chapter15/FiniteStage · Morse.omegaStratum_zero"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "stratum by stratum",
+    "in $M_n(\\mathbb R)$, not in $O(n)$"
+   ],
+   "diff": [
+    "$\\Omega_k(n)$ is not a manifold of one dimension. The statement is for the stratum through $p$, the set where $\\dim\\mathcal T_x = \\dim\\mathcal T_p$, which is open and closed in $\\Omega_k(n)$ and compact.",
+    "It is a submanifold of the space of matrices, with tangent spaces $x\\mathcal T_x$ and geodesics $x\\exp(tA)$, $A \\in \\mathcal T_x$ (V15.21)."
+   ]
+  },
+  {
+   "id": "V15.24",
+   "title": "Lemma 24.1: the length of a geodesic from $I$ to $-I$",
+   "milnor": {
+    "label": "§24, proof of Lemma 24.1, p. 134",
+    "page": 134,
+    "statement": "In the block normal form with $a_1, \\dots, a_m \\ge 0$: $\\exp(\\pi A) = -I$ if and only if $a_1, \\dots, a_m$ are odd integers; $\\langle A, A\\rangle = 2(a_1^2 + \\dots + a_m^2)$; therefore the geodesic $\\exp(\\pi tA)$ from $I$ to $-I$ is minimal if and only if $a_1 = \\dots = a_m = 1$, and then $A^2 = -I$."
+   },
+   "lean": {
+    "statement": "Let $V$ be a skew matrix with $\\exp V = -I$. If $E \\neq 0$ is a matrix and $V^2E = -\\lambda E$ for a real $\\lambda$, then $\\lambda \\ge \\pi^2$. Hence $\\|V\\|^2 \\ge \\pi^2n$, and if $\\|V\\|^2 \\le \\pi^2n$ then $V^2 = -\\pi^2I$.",
+    "decls": [
+     "Chapter15/OmegaMinimal · Morse.pi_sq_le_of_sq_mul",
+     "Chapter15/OmegaMinimal · Morse.pi_sq_mul_card_le_norm_sq",
+     "Chapter15/OmegaMinimal · Morse.mul_self_eq_of_norm_sq_le"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "no normal form",
+    "$V = \\pi A$"
+   ],
+   "diff": [
+    "For skew $V$ with $\\exp V = -I$, every eigenvalue of $V^{\\mathsf T}V$ is $\\ge \\pi^2$; so $\\|V\\|^2 \\ge \\pi^2n$, with equality only if $V^2 = -\\pi^2I$. Proved by the spectral theorem and an argument with $c' = Vc$ for each eigenvalue, not by the normal form."
+   ]
+  },
+  {
+   "id": "V15.25",
+   "title": "The distance from $J_k$ to $-J_k$, and the minimal geodesics",
+   "milnor": {
+    "label": "§24, proof of Lemma 24.4, pp. 137–138",
+    "page": 137,
+    "statement": "$t \\mapsto J_k\\exp(\\pi tA)$ defines a geodesic from $J_k$ to $-J_k$ in $\\Omega_k(n)$; \"since this geodesic is minimal in $O(n)$, it is certainly minimal in $\\Omega_k(n)$\". Conversely, a minimal geodesic from $J_k$ to $-J_k$ in $\\Omega_k(n)$ is $J_k\\exp(\\pi tA)$ with $A$ a complex structure (by 24.1) which commutes with $J_1, \\dots, J_{k-1}$ and anticommutes with $J_k$. Remark: $J_kA$ is the midpoint $\\gamma(\\tfrac12)$."
+   },
+   "lean": {
+    "statement": "Let $J_1, \\dots, J_k$ be an anticommuting family, $p \\in \\Omega_k(n)$, $N$ the stratum through $p$, and $\\mathcal C_p = \\{A \\in \\mathcal T_p : A^2 = -I\\}$; suppose $\\mathcal C_p \\neq \\emptyset$. For $A \\in \\mathcal C_p$ put $\\gamma_A(t) = p\\exp(\\pi tA)$. Then: (i) $-p \\in N$; (ii) the Riemannian distance in $N$ is $\\rho(p, -p) = \\pi\\sqrt n$, and every path in $\\Omega(N; p, -p)$ has energy $\\ge \\pi^2n$; (iii) every $\\gamma_A$, $A \\in \\mathcal C_p$, is a path of least energy in $\\Omega(N; p, -p)$, and its midpoint is $\\gamma_A(\\tfrac12) = pA$; (iv) every path of least energy agrees on $[0, 1]$ with $\\gamma_A$ for some $A \\in \\mathcal C_p$.",
+    "decls": [
+     "Chapter15/OmegaMinimal · Morse.minVelO",
+     "Chapter15/OmegaMinimal · Morse.omegaGeo",
+     "Chapter15/OmegaMinimal · Morse.neg_mem_omegaStratum",
+     "Chapter15/OmegaMinimal · Morse.riemDist_omegaStratum",
+     "Chapter15/OmegaMinimal · Morse.pi_sq_card_le_energy",
+     "Chapter15/OmegaMinimal · Morse.omegaPath_mem_minPaths",
+     "Chapter15/OmegaMinimal · Morse.exists_minVelO_of_mem_minPaths",
+     "Chapter15/OmegaMinimal · Morse.omegaGeo_half"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "Hopf–Rinow in the stratum",
+    "any $p$, not only $J_k$"
+   ],
+   "diff": [
+    "Distances in $\\Omega_k(n)$ and in $O(n)$ are not compared: the stratum is complete, so a shortest geodesic exists (Hopf–Rinow, V7.26); it is $p\\exp(tV)$ with $\\exp V = -I$, and $\\|V\\| \\ge \\pi\\sqrt n$ (V15.24).",
+    "\"Minimal\" is \"of least energy\". The statement holds at every $p \\in \\Omega_k(n)$ for which some $A \\in \\mathcal T_p$ has $A^2 = -I$."
+   ]
+  },
+  {
+   "id": "V15.26",
+   "title": "Lemma 24.1, and Lemma 24.4, second half: minimal geodesics and $\\Omega_{k+1}(n)$",
+   "milnor": {
+    "label": "§24, Lemma 24.1, p. 133; Lemma 24.4, p. 136",
+    "page": 136,
+    "statement": "The space of minimal geodesics from $I$ to $-I$ in $O(n)$ is homeomorphic to the space $\\Omega_1(n)$ of complex structures on $\\mathbb R^n$ (24.1). The space of minimal geodesics from $J_\\ell$ to $-J_\\ell$ in $\\Omega_\\ell(n)$ is homeomorphic to $\\Omega_{\\ell+1}(n)$, for $0 \\le \\ell < k$ (24.4)."
+   },
+   "lean": {
+    "statement": "Let $J_1, \\dots, J_k$ be an anticommuting family, with base point $J_k$ ($J_0 = I$). (i) $A \\in \\mathcal C_{J_k}$ if and only if $J_kA \\in \\Omega_{k+1}(n)$; $A \\mapsto J_kA$ is a homeomorphism of $\\mathcal C_{J_k}$ onto $\\Omega_{k+1}(n)$, with inverse $J' \\mapsto J_k^{\\mathsf T}J'$; and for $J' \\in \\Omega_{k+1}(n)$ and $A = J_k^{\\mathsf T}J'$, $\\gamma_A(t) = \\cos(\\pi t)\\,J_k + \\sin(\\pi t)\\,J'$ for all $t$. (ii) In the setting of V15.25, $A \\mapsto \\gamma_A$ is a homotopy equivalence of $\\mathcal C_p$ with $\\Omega^d(N; p, -p)$, and a homeomorphism of $\\mathcal C_p$ onto the quotient of $\\Omega^d$ in which paths at distance $0$ are identified. (iii) If $J_1, \\dots, J_{k+1}$ is an anticommuting family and $N$ is the stratum of $\\Omega_k(n)$ through $J_k$, the map $\\varphi : \\Omega_{k+1}(n) \\to \\Omega(N; J_k, -J_k)$, $\\varphi(J')(t) = \\cos(\\pi t)\\,J_k + \\sin(\\pi t)\\,J'$, is continuous, and it is the inclusion $\\Omega^d \\to \\Omega$ composed with a homotopy equivalence $\\Omega_{k+1}(n) \\to \\Omega^d$. For $k = 0$, $N = O(n)$ and $\\Omega_1(n)$ is the set of all complex structures: this is Lemma 24.1.",
+    "decls": [
+     "Chapter15/OmegaMinimal · Morse.basePt",
+     "Chapter15/OmegaMinimal · Morse.mem_minVelO_iff",
+     "Chapter15/OmegaMinimal · Morse.minVelOHomeomorph",
+     "Chapter15/OmegaMinimal · Morse.omegaGeo_eq_semicircle",
+     "Chapter15/OmegaMinimal · Morse.omegaMinPathsHomotopyEquiv",
+     "Chapter15/OmegaMinimal · Morse.omegaMinPathsHomeomorph",
+     "Chapter15/FiniteStage · Morse.omegaPhi",
+     "Chapter15/FiniteStage · Morse.omegaPhi_apply",
+     "Chapter15/FiniteStage · Morse.isHomotopyEquiv_omegaPhi_minPaths"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "homeomorphic after a quotient",
+    "a homotopy equivalence on the nose",
+    "needs $J_{k+1}$"
+   ],
+   "diff": [
+    "The minimal directions $A$ correspond homeomorphically to the points $J' = J_kA$ of $\\Omega_{k+1}(n)$, and the geodesic of $J'$ is the semicircle $\\cos(\\pi t)J_k + \\sin(\\pi t)J'$.",
+    "Paths are functions on $\\mathbb R$, so the space $\\Omega^d$ of minimal paths is homotopy equivalent to $\\Omega_{k+1}(n)$, and homeomorphic to it only after identifying paths that agree on $[0, 1]$. Milnor's \"$0 \\le \\ell < k$\" tacitly needs $\\Omega_{\\ell+1}(n) \\neq \\emptyset$."
+   ]
+  },
+  {
+   "id": "V15.27",
+   "title": "The neighbourhood retraction for $\\Omega_k(n)$",
+   "milnor": {
+    "label": "§24, pp. 135–136",
+    "page": 135,
+    "statement": "Theorem 22.1 is applied with \"the statement that $\\Omega_1(n)$ is a manifold\" (and likewise for $\\Omega_{k+1}(n)$). No retraction is written down."
+   },
+   "lean": {
+    "statement": "In the setting of V15.25, $\\Omega^d(N; p, -p)$ is a retract of an open neighbourhood: there are an open $O \\supseteq \\Omega^d$ in $\\Omega(N; p, -p)$ and a map $\\rho : O \\to \\Omega^d$, continuous on $O$ and equal to the identity on $\\Omega^d$. Here, for a matrix $Y$, let $Y_1$ be the orthogonal projection of $p^{\\mathsf T}Y$ onto $\\mathcal T_p$; if $\\det(Y_1^{\\mathsf T}Y_1) \\neq 0$, then $Y_1(Y_1^{\\mathsf T}Y_1)^{-1/2} \\in \\mathcal C_p$. $O$ is the set of paths $\\omega$ whose midpoint $Y = \\omega(\\tfrac12)$ has $\\det(Y_1^{\\mathsf T}Y_1) \\neq 0$, an open set, and off $\\Omega^d$ the retraction is $\\rho(\\omega) = \\gamma_A$ with $A = Y_1(Y_1^{\\mathsf T}Y_1)^{-1/2}$.",
+    "decls": [
+     "Chapter15/OmegaRetract · Morse.midDir",
+     "Chapter15/OmegaRetract · Morse.polarDir",
+     "Chapter15/OmegaRetract · Morse.polarDir_mem",
+     "Chapter15/OmegaRetract · Morse.omegaNbhd",
+     "Chapter15/OmegaRetract · Morse.isOpen_omegaNbhd",
+     "Chapter15/OmegaRetract · Morse.exists_retraction_minPaths_omega"
+    ]
+   },
+   "verdict": "extra",
+   "chips": [
+    "Hanner replaced by polar decomposition"
+   ],
+   "diff": [
+    "This proves the hypothesis of V13.2 for every stratum: project $p^{\\mathsf T}\\omega(\\tfrac12)$ onto $\\mathcal T_p$ and take the polar part, the nearest complex structure in $\\mathcal T_p$."
+   ]
+  },
+  {
+   "id": "V15.28",
+   "title": "Killing fields are Jacobi fields; a lower bound for the index",
+   "milnor": {
+    "label": "§24, pp. 144, 146",
+    "page": 144,
+    "statement": "Since $\\Omega_k(n)$ is a totally geodesic submanifold of $O(n)$, $K_A$ can be computed by $K_AB = -\\tfrac14[A, [A, B]]$ on $T$. Each eigenvalue $e^2$ of $K_A$ gives rise to conjugate points for $t = e^{-1}, 2e^{-1}, 3e^{-1}, \\dots$ by 20.5; then apply the index theorem."
+   },
+   "lean": {
+    "statement": "Let $J_1, \\dots, J_k$ be an anticommuting family, $p \\in \\Omega_k(n)$, $N$ the stratum through $p$, and $V \\in \\mathcal T_p$. The *isotropy algebra* of $p$ is the space of skew matrices commuting with $p$ and with $J_1, \\dots, J_{k-1}$. (i) For $X$ in the isotropy algebra, $K(t) = X\\gamma(t) - \\gamma(t)X$ is a Jacobi field along $\\gamma(t) = p\\exp(tV)$ in $N$. (ii) Let $\\gamma \\in \\Omega(N; p, q)$ be an unbroken geodesic equal to $t \\mapsto p\\exp(tV)$ on $[0, 1]$, let $\\tau \\in [0, 1]$, and let $\\mathcal X$ be a subspace of the isotropy algebra whose elements commute with $\\exp(\\tau V)$ and none of whose non-zero elements commutes with $V$. Then $\\gamma(\\tau)$ is conjugate to $\\gamma(0)$ along $\\gamma$ with multiplicity (V9.4) at least $\\dim\\mathcal X$. (iii) For a finite set $T \\subset (0, 1)$ and such subspaces $\\mathcal X_\\tau$, $\\tau \\in T$, the index of $\\gamma$ is at least $\\sum_{\\tau \\in T}\\dim\\mathcal X_\\tau$.",
+    "decls": [
+     "Chapter15/OmegaKilling · Morse.isoAlg",
+     "Chapter15/OmegaKilling · Morse.killing",
+     "Chapter15/OmegaKilling · Morse.isJacobiField_killing",
+     "Chapter15/OmegaKilling · Morse.finrank_le_conjMultiplicity",
+     "Chapter15/OmegaKilling · Morse.sum_finrank_le_formIndex"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "no curvature of $\\Omega_k(n)$",
+    "isometries give the Jacobi fields"
+   ],
+   "diff": [
+    "Neither the curvature of the totally geodesic $\\Omega_k(n)$ nor Theorem 20.5 for it is formalized. For a lower bound, Jacobi fields vanishing at $0$ and $\\tau$ suffice; they are the variation fields of the isometries $y \\mapsto gyg^{-1}$, $g = \\exp(uX)$, for $X$ commuting with $\\exp(\\tau V)$.",
+    "The index bound is then the Index Theorem (V9.24)."
+   ]
+  },
+  {
+   "id": "V15.29",
+   "title": "The splitting into minimal pieces; Lemma 24.8 between two pieces",
+   "milnor": {
+    "label": "§24, pp. 144–145",
+    "page": 144,
+    "statement": "$\\mathbb R^n = M_1 \\oplus \\dots \\oplus M_s$, mutually orthogonal subspaces closed and minimal under the action of $J_1, \\dots, J_{k-1}$, $J$ and $A$. The eigenvalues of $A$ on $M_h$ \"must be all equal, except for sign\": $\\pm ia_h$, with $a_h$ odd and positive. $J' = a_h^{-1}JA|M_h$ makes $M_h$ a minimal $(J_1, \\dots, J_{k-1}, J, J')$-space, so $\\dim M_h = m_{k+1}$ and $s = n/m_{k+1}$. For $h \\neq j$ an isometry from $M_h$ to $\\bar M_j$ \"exists by 24.8\"."
+   },
+   "lean": {
+    "statement": "Let $E$ be a finite-dimensional real inner product space and $\\mathcal G$ a set of operators on $E$, each self-adjoint or skew-adjoint. A subspace is *minimal invariant* if it is non-zero, invariant under $\\mathcal G$, and contains no invariant subspace other than $0$ and itself. (i) Every invariant subspace $U$ is spanned by a list of pairwise orthogonal minimal invariant subspaces of $U$ whose dimensions add up to $\\dim U$; and a self-adjoint operator that commutes with $\\mathcal G$ and preserves a minimal invariant $M$ is a scalar on $M$. (ii) Let $A$ be skew-adjoint, let $J, J_1, \\dots, J_{k-1}$ be skew-adjoint operators with square $-1$, anticommuting with one another, and let $A$ anticommute with $J$ and commute with the $J_\\alpha$ (for $k = 0$: $J = 1$ and there are no $J_\\alpha$); put $\\mathcal G = \\{A, J, J_1, \\dots, J_{k-1}\\}$. On each minimal invariant $M$, $A^2 = -c$ for a real $c$; and for real $s$ with $s^2c = 1$ the restrictions of $J_1, \\dots, J_{k-1}, J, sJA$ to $M$ satisfy the Clifford relations (V15.10) and make $M$ a minimal space for $k + 1$ structures (V15.13). For matrices: if $A$ is skew, $\\exp(\\pi A) = -I$, and $A^2 = -c$ on a non-zero subspace of $\\mathbb R^n$, then $c \\ge 1$. (iii) If $k \\le 7$, $k \\not\\equiv 2 \\pmod 4$, and $M_0$, $M_1$ are minimal invariant with $A^2 = -a_0^2$ on $M_0$ and $A^2 = -b^2$ on $M_1$, $a_0, b > 0$, there is a linear isomorphism $T : M_0 \\to M_1$ that commutes with $J$ and the $J_\\alpha$ and carries $a_0^{-1}JA$ to $-b^{-1}JA$. (iv) If moreover $c \\ge 1$ on every minimal invariant subspace and $A^2 \\neq -1$, then in a splitting (i) of $E$ some piece $M_0$ has $c > 1$; and there are an integer $s$ with $(s + 1)m_{k+1} = \\dim E$, reals $a_0 > 1$ and $b_1, \\dots, b_s \\ge 1$, and operators $D_1, \\dots, D_s$ on $E$ (each the projection onto $M_0$ followed by an isomorphism (iii) onto another piece) which commute with $J$ and the $J_\\alpha$, satisfy $b_jD_jA = -a_0AD_j$, $A^2D_j = -b_j^2D_j$ and $D_jA^2 = -a_0^2D_j$, and for which the $AD_j$ are separated by projections (for $k = 0$ there are two for each $j$, $D_j$ and $D_jA$).",
+    "decls": [
+     "Chapter15/InvariantSplitting · Morse.IsInvar",
+     "Chapter15/InvariantSplitting · Morse.IsMinInvar",
+     "Chapter15/InvariantSplitting · Morse.IsStarSigned",
+     "Chapter15/InvariantSplitting · Morse.exists_minInvar_decomp",
+     "Chapter15/InvariantSplitting · Morse.IsMinInvar.exists_scalar",
+     "Chapter15/SplittingClifford · Morse.IsOmegaOps",
+     "Chapter15/SplittingClifford · Morse.omegaGens",
+     "Chapter15/SplittingClifford · Morse.IsOmegaOps.exists_sq_eq",
+     "Chapter15/IndexBound · Morse.one_le_of_minInvar",
+     "Chapter15/SplittingClifford · Morse.IsOmegaOps.isClifford_cliffFam",
+     "Chapter15/SplittingClifford · Morse.IsOmegaOps.isMinimal_cliffFam",
+     "Chapter15/SplittingData · Morse.IsOmegaOps.exists_inter",
+     "Chapter15/SplittingData · Morse.IsOmegaOps.exists_piece_gt",
+     "Chapter15/SplittingData · Morse.IsOmegaOps.exists_omegaPieceData"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "$k \\le 7$",
+    "only $c \\ge 1$ is used",
+    "a linear isomorphism"
+   ],
+   "diff": [
+    "$a_h = \\sqrt c$, where $A^2 = -c$ on the piece; that $a_h$ is an odd integer is not used, only $c \\ge 1$. Complements of invariant subspaces are invariant because the operators are skew.",
+    "Milnor changes the sign of $J$ on $M_j$; changing the sign of the last structure instead is equivalent and keeps $T$ commuting with $J$. $T$ is linear, not isometric, which suffices."
+   ]
+  },
+  {
+   "id": "V15.30",
+   "title": "Lemma 24.2, and the index of a non-minimal geodesic for $k \\not\\equiv 2 \\pmod 4$",
+   "milnor": {
+    "label": "§24, Lemma 24.2, p. 135; Assertion, p. 146",
+    "page": 146,
+    "statement": "Any non-minimal geodesic from $I$ to $-I$ in $O(2m)$ has index $\\ge 2m - 2$ (Lemma 24.2). For $k \\not\\equiv 2 \\pmod 4$, the index of a non-minimal geodesic from $J$ to $-J$ in $\\Omega_k(n)$ is $\\ge n/m_{k+1} - 1$ (Assertion)."
+   },
+   "lean": {
+    "statement": "Let $J_1, \\dots, J_k$ be an anticommuting family on $\\mathbb R^n$ with $\\mathcal C_{J_k} \\neq \\emptyset$ (equivalently $\\Omega_{k+1}(n) \\neq \\emptyset$, V15.26), let $k \\le 7$ and $k \\not\\equiv 2 \\pmod 4$, and let $N$ be the stratum through $J_k$. If $\\gamma \\in \\Omega(N; J_k, -J_k)$ is an unbroken geodesic which is not of least energy, then $m_{k+1}$ divides $n$ and the index of $\\gamma$ is at least $n/m_{k+1} - 1$; for $k = 0$ it is at least $2(n/2 - 1) = n - 2$.",
+    "decls": [
+     "Chapter15/OmegaIntertwiners · Morse.IsInterRel",
+     "Chapter15/OmegaIntertwiners · Morse.IsInterRel.commute_exp",
+     "Chapter15/OmegaIntertwiners · Morse.exists_killing_spaces",
+     "Chapter15/IndexBound · Morse.exists_killing_spaces_omega",
+     "Chapter15/IndexBound · Morse.le_formIndex_of_not_minimal_omega",
+     "Chapter15/FiniteStage · Morse.omega_hidx"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "$k \\le 7$",
+    "by Killing fields",
+    "the bound, not the formula"
+   ],
+   "diff": [
+    "For $k = 0$ this is Lemma 24.2 as stated; for $1 \\le k \\le 7$, Milnor's Assertion. The Jacobi fields come from $X_j = D_j - D_j^{\\mathsf T}$, with $D_j$ the intertwiners of V15.29, which commute with $\\exp(\\tau_j\\pi A)$ at $\\tau_j = 2/(a_0 + b_j)$; their independence, which Milnor does not discuss, is proved.",
+    "The exact formula of Lemma 24.2 is not proved for geodesics (V15.3). \"Non-minimal\" is \"not of least energy\"."
+   ]
+  },
+  {
+   "id": "V15.31",
+   "title": "Theorem 24.5 for each $n$, $k \\not\\equiv 2 \\pmod 4$",
+   "milnor": {
+    "label": "§24, p. 146; Theorem 24.5, p. 138",
+    "page": 146,
+    "statement": "The inclusion map $\\Omega_{k+1}(n) \\to \\Omega\\Omega_k(n)$ induces isomorphisms of homotopy groups in dimensions $\\le n/m_{k+1} - 3$. (Theorem 24.5: $\\pi_hO \\cong \\pi_{h-1}\\Omega_1 \\cong \\pi_{h-2}\\Omega_2 \\cong \\dots \\cong \\pi_1\\Omega_{h-1}$.)"
+   },
+   "lean": {
+    "statement": "Let $J_1, \\dots, J_{k+1}$ be an anticommuting family on $\\mathbb R^n$, $k \\le 7$, $k \\not\\equiv 2 \\pmod 4$, let $N$ be the stratum of $\\Omega_k(n)$ through $J_k$, and let $i + 2 \\le n/m_{k+1} - 1$ (for $k = 0$: $i + 2 \\le n - 2$). Then: (i) the inclusion $\\Omega^d \\to \\Omega(N; J_k, -J_k)$ induces a bijection on $\\pi_i$ at every minimal path; (ii) for every $J' \\in \\Omega_{k+1}(n)$, the map $\\varphi$ of V15.26 induces a bijection $\\pi_i(\\Omega_{k+1}(n), J') \\to \\pi_i(\\Omega(N; J_k, -J_k), \\varphi(J'))$; (iii) for every $J' \\in \\Omega_{k+1}(n)$ there is a bijection $\\pi_i(\\Omega_{k+1}(n), J') \\cong \\pi_{i+1}(\\Omega_k(n), J_k)$. On the way: $N$ is open and closed in $\\Omega_k(n)$, and $\\pi_{j+1}(N, x) \\cong \\pi_{j+1}(\\Omega_k(n), x)$ for $x \\in N$ and $j \\ge 0$.",
+    "decls": [
+     "Chapter15/FiniteStage · Morse.omega_theorem_22_1_bijective",
+     "Chapter15/FiniteStage · Morse.omegaPhi_bijective",
+     "Chapter15/FiniteStage · Morse.stratumIn",
+     "Chapter15/FiniteStage · Morse.isClopen_stratumIn",
+     "Chapter15/FiniteStage · Morse.nonempty_pi_stratum_equiv",
+     "Chapter15/FiniteStage · Morse.omega_pi_equiv"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "$k \\le 7$",
+    "bijections of pointed sets",
+    "every base point"
+   ],
+   "diff": [
+    "Theorem 22.1 and Corollary 22.2 (V13.2–V13.4) for the stratum of $J_k$, with the retraction of V15.27 and the index bound of V15.30. The path space is that of piecewise smooth paths with Milnor's metric.",
+    "Also $\\pi_i\\Omega_{k+1}(n) \\cong \\pi_{i+1}\\Omega_k(n)$, as sets; the stratum is open and closed in $\\Omega_k(n)$ and carries its higher homotopy groups."
+   ]
+  },
+  {
+   "id": "V15.32",
+   "title": "Theorem 24.3 (Bott)",
+   "milnor": {
+    "label": "§24, Theorem 24.3",
+    "page": 136,
+    "statement": "The inclusion map $\\Omega_1(n) \\to \\Omega O(n)$ induces isomorphisms of homotopy groups in dimensions $\\le n - 4$. Hence $\\pi_i\\Omega_1(n) \\cong \\pi_{i+1}O(n)$ for $i \\le n - 4$."
+   },
+   "lean": {
+    "statement": "Suppose $\\mathbb R^n$ carries a complex structure (so $n$ is even), and let $i + 4 \\le n$. For every complex structure $J'$ on $\\mathbb R^n$, the map $\\varphi : \\Omega_1(n) \\to \\Omega(O(n); I, -I)$, $\\varphi(J)(t) = \\cos(\\pi t)\\,I + \\sin(\\pi t)\\,J$, induces a bijection on $\\pi_i$ at $J'$, and there is a bijection $\\pi_i(\\Omega_1(n), J') \\cong \\pi_{i+1}(O(n), I)$.",
+    "decls": [
+     "Chapter15/FiniteStage · Morse.theorem_24_3"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "bijections of pointed sets",
+    "every base point"
+   ],
+   "diff": [
+    "The case $k = 0$ of V15.31: the stratum is $O(n)$ itself, and the range is $i + 2 \\le n - 2$. The second isomorphism is a bijection of sets, not shown to be a homomorphism."
+   ]
+  },
+  {
+   "id": "V15.33",
+   "title": "Angles, and the paths with a given end angle",
+   "milnor": {
+    "label": "§24, pp. 147–148",
+    "page": 147,
+    "statement": "$f$ maps the geodesic into a closed loop on $S^1$ \"which is completely determined by the trace of $A$. It follows that this trace is invariant under homotopy of the geodesic within the path space\". Then: \"restrict attention to some fixed component of $\\Omega\\Omega_k(n)$\"."
+   },
+   "lean": {
+    "statement": "Let $F$ be a complex-valued function on a finite-dimensional real inner product space $V$ and $\\omega : \\mathbb R \\to V$. An *angle* of $F \\circ \\omega$ is a continuous $\\theta : [0, 1] \\to \\mathbb R$ with $\\theta(0) = 0$ and $F(\\omega(t)) = e^{i\\theta(t)}$ for $t \\in [0, 1]$. An angle is unique, and it exists whenever $t \\mapsto F(\\omega(t))$ is continuous on $[0, 1]$, of modulus $1$, with $F(\\omega(0)) = 1$. For $N \\subseteq V$, points $p$, $q$ and a real $w$, let $\\Omega_w \\subseteq \\Omega(N; p, q)$ be the set of paths $\\omega$ for which $F \\circ \\omega$ has an angle with $\\theta(1) = w$. If $F$ is continuous and $|F| = 1$ on a compact set containing $N$, every $\\Omega_w$ is open and closed in $\\Omega(N; p, q)$; and $\\Omega_w$, $\\Omega_{w'}$ are disjoint for $w \\neq w'$.",
+    "decls": [
+     "Chapter15/Winding · Morse.IsAngleLift",
+     "Chapter15/Winding · Morse.IsAngleLift.unique",
+     "Chapter15/OmegaComponents · Morse.exists_isAngleLift",
+     "Chapter15/Winding · Morse.IsAngleLift.perturb",
+     "Chapter15/Winding · Morse.windSet",
+     "Chapter15/Winding · Morse.isClopen_windSet",
+     "Chapter15/OmegaComponents · Morse.disjoint_windSet"
+    ]
+   },
+   "verdict": "extra",
+   "chips": [
+    "classes open and closed"
+   ],
+   "diff": [
+    "Theorem 22.1 is applied to one class of paths, which must be open and closed in the path space (V13.16). The classes are defined by the end value of the continuous angle of $F \\circ \\omega$, and are open and closed for every continuous $F$ of modulus $1$."
+   ]
+  },
+  {
+   "id": "V15.34",
+   "title": "The complex determinant of a real matrix",
+   "milnor": {
+    "label": "§24, pp. 146–147",
+    "page": 146,
+    "statement": "Make $\\mathbb R^n$ into an $(n/2)$-dimensional complex vector space by $iv = J_1J_2\\cdots J_{k-1}v$. A unitary complex linear transformation \"has a well defined complex determinant\", and $f(J\\exp(\\pi tA)) = \\det(\\exp(\\pi tA)) = e^{\\pi t\\operatorname{trace}A}$."
+   },
+   "lean": {
+    "statement": "For real $n \\times n$ matrices $\\mathbf i$ and $M$ put $\\det_{\\mathbb C}M = \\det(M_{\\mathbb C}P_+ + P_-)$, a complex number, where $M_{\\mathbb C}$ is $M$ read as a complex matrix and $P_\\pm = \\tfrac12(1 \\mp \\sqrt{-1}\\,\\mathbf i_{\\mathbb C})$. Then $\\det_{\\mathbb C}I = 1$, and, if $\\mathbf i^2 = -I$: $\\det_{\\mathbb C}(MN) = \\det_{\\mathbb C}M\\,\\det_{\\mathbb C}N$ whenever $N$ commutes with $\\mathbf i$; $|\\det_{\\mathbb C}M| = 1$ when $\\mathbf i$ is skew and $M$ is orthogonal and commutes with $\\mathbf i$; and $\\det_{\\mathbb C}\\exp(tV) = e^{-\\sqrt{-1}\\,t\\operatorname{tr}(V\\mathbf i)/2}$ for every real $t$, when $V$ commutes with $\\mathbf i$ and $\\operatorname{tr}V = 0$.",
+    "decls": [
+     "Chapter15/Winding · Morse.cplx",
+     "Chapter15/Winding · Morse.projP",
+     "Chapter15/Winding · Morse.projM",
+     "Chapter15/Winding · Morse.cdet",
+     "Chapter15/Winding · Morse.cdet_mul",
+     "Chapter15/Winding · Morse.cdet_one",
+     "Chapter15/Winding · Morse.norm_cdet",
+     "Chapter15/Winding · Morse.cdet_exp"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "no complex basis"
+   ],
+   "diff": [
+    "$\\det_{\\mathbb C}M = \\det(M_{\\mathbb C}P_+ + P_-)$, with $P_\\pm$ the projections onto the $\\pm\\sqrt{-1}$-eigenspaces of $\\mathbf i$ in $\\mathbb C^n$. The complex trace of $V$ is $\\tfrac12(\\operatorname{tr}V - \\sqrt{-1}\\operatorname{tr}(V\\mathbf i))$, so Milnor's $e^{\\pi t\\operatorname{trace}A}$ is $e^{-\\sqrt{-1}\\,\\pi t\\operatorname{tr}(A\\mathbf i)/2}$."
+   ]
+  },
+  {
+   "id": "V15.35",
+   "title": "Milnor's $i$ and $f$, and the classes $\\Omega^{(c)}$",
+   "milnor": {
+    "label": "§24, pp. 146–148",
+    "page": 147,
+    "statement": "$iv = J_1J_2\\cdots J_{k-1}v$; \"the condition $k \\equiv 2 \\pmod 4$ guarantees that $i^2 = -1$, and that $J_1, J_2, \\dots, J_{k-1}$ commute with $i$\". For $J' \\in \\Omega_k(n)$ the composition $J^{-1}J'$ commutes with $i$, and $f(J') = \\det_{\\mathbb C}(J^{-1}J') \\in S^1$. A component of $\\Omega\\Omega_k(n)$ is fixed by $\\operatorname{trace}A = icm_k/2$."
+   },
+   "lean": {
+    "statement": "Call a matrix $\\mathbf i$ *central for $k$* if $\\mathbf i^2 = -I$, $\\mathbf i^{\\mathsf T} = -\\mathbf i$, $\\mathbf i$ commutes with $J_1, \\dots, J_{k-1}$ and with every matrix that commutes with all of them, and $\\mathbf i$ anticommutes with every matrix that anticommutes with all of them. The product $\\mathbf i = J_1J_2\\cdots J_{k-1}$ is central for $k = 2$ when $J_1$ is a complex structure, and for $k = 6$ when $J_1, \\dots, J_5$ is an anticommuting family. Let $\\mathbf i$ be central for $k \\ge 1$, $p \\in \\Omega_k(n)$, and $f(X) = \\det_{\\mathbb C}(p^{\\mathsf T}X)$ (V15.34 with this $\\mathbf i$). Then $|f| = 1$ on $\\Omega_k(n)$, $f(p) = 1$, and $f(p\\exp(tV)) = e^{-\\sqrt{-1}\\,t\\operatorname{tr}(V\\mathbf i)/2}$ for $V \\in \\mathcal T_p$. Now let $J_1, \\dots, J_k$ be an anticommuting family, $k \\ge 1$, $p = J_k$, $N$ the stratum through $J_k$, and let $\\Omega_w \\subseteq \\Omega(N; J_k, -J_k)$ be the set of paths whose $f$-angle ends at $w$ (V15.33). Each $\\Omega_w$ is open and closed, different $w$ give disjoint sets, and a path that agrees on $[0, 1]$ with $t \\mapsto J_k\\exp(tV)$, $V \\in \\mathcal T_{J_k}$, lies in $\\Omega_w$ if and only if $w = -\\operatorname{tr}(V\\mathbf i)/2$. For an integer $c$, $\\Omega^{(c)}$ denotes $\\Omega_w$ with $w = \\pi m_{k+1}c/2$.",
+    "decls": [
+     "Chapter15/OmegaWinding · Morse.IsCentralI",
+     "Chapter15/OmegaWinding · Morse.iWordM",
+     "Chapter15/OmegaWinding · Morse.isCentralI_two",
+     "Chapter15/OmegaWinding · Morse.isCentralI_six",
+     "Chapter15/OmegaWinding · Morse.omegaF",
+     "Chapter15/OmegaWinding · Morse.norm_omegaF",
+     "Chapter15/OmegaWinding · Morse.omegaF_self",
+     "Chapter15/OmegaWinding · Morse.omegaF_geo",
+     "Chapter15/OmegaWinding · Morse.omegaComp",
+     "Chapter15/OmegaWinding · Morse.isClopen_omegaComp",
+     "Chapter15/OmegaComponents · Morse.disjoint_omegaComp",
+     "Chapter15/OmegaWinding · Morse.mem_omegaComp_geo_iff"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "$i$ axiomatized; proved for $k = 2, 6$",
+    "$m_{k+1} = m_k$ for $k = 2, 6$"
+   ],
+   "diff": [
+    "The properties of $i$ that are used (it commutes with everything commuting with $J_1, \\dots, J_{k-1}$, and anticommutes with everything anticommuting with them) are proved for $k = 2$ and $k = 6$.",
+    "$\\Omega^{(c)}$ is the set of paths whose $f$-angle ends at $\\pi m_{k+1}c/2$. It is open and closed, and contains the geodesic $J_k\\exp(\\pi tA)$ exactly when $-\\operatorname{tr}(A\\mathbf i) = m_kc$, which is Milnor's $\\operatorname{trace}A = icm_k/2$."
+   ]
+  },
+  {
+   "id": "V15.36",
+   "title": "Every path lies in exactly one $\\Omega^{(c)}$",
+   "milnor": {
+    "label": "§24, p. 148",
+    "page": 148,
+    "statement": "\"Let us look only at matrices $A$ such that $\\operatorname{trace}A = icm_k/2$ where $c$ is some constant integer.\""
+   },
+   "lean": {
+    "statement": "Let $k = 2$ or $k = 6$, let $J_1, \\dots, J_k$ be an anticommuting family, $\\mathbf i = J_1\\cdots J_{k-1}$ and $N$ the stratum through $J_k$. Every path in $\\Omega(N; J_k, -J_k)$ lies in $\\Omega^{(c)}$ for exactly one integer $c$. For $k = 6$ the proof uses that $f = G^4$ on $\\Omega_6(n)$, where $G(X) = \\det\\bigl((J_6^{\\mathsf T}X)_{\\mathbb C}Q + 1 - Q\\bigr)$ and $Q$ is the product of the projections $P_+$ of V15.34 for $\\mathbf i$, $J_1J_2$ and $J_3J_4$.",
+    "decls": [
+     "Chapter15/OmegaComponents · Morse.existsUnique_mem_omegaComp",
+     "Chapter15/OmegaComponents · Morse.exists_mem_omegaComp_two",
+     "Chapter15/OmegaComponents · Morse.exists_mem_omegaComp_six",
+     "Chapter15/OmegaComponents · Morse.pdet",
+     "Chapter15/OmegaComponents · Morse.pdet_split",
+     "Chapter15/OmegaComponents · Morse.omegaF_eq_pow_four"
+    ]
+   },
+   "verdict": "extra",
+   "chips": [
+    "$c$ is an integer for every path",
+    "$k = 6$: $f$ is a fourth power"
+   ],
+   "diff": [
+    "For an arbitrary path the end angle is a multiple of $2\\pi$ because $f(-J_k) = 1$ (as $4 \\mid n$): Milnor's \"closed loop\". For $k = 6$ the normalization needs multiples of $4\\pi$, which holds because $f$ is the fourth power of a continuous function on $\\Omega_6(n)$."
+   ]
+  },
+  {
+   "id": "V15.37",
+   "title": "The pieces for $k \\equiv 2 \\pmod 4$",
+   "milnor": {
+    "label": "§24, p. 147",
+    "page": 147,
+    "statement": "On each $M_h$ the complex linear transformation $A|M_h$ \"can have only one eigenvalue, say $ia_h$\", so $A|M_h$ coincides with $a_hJ_1J_2\\cdots J_{k-1}|M_h$. $M_h$ is minimal under $J_1, \\dots, J_{k-1}, J$, of complex dimension $m_k/2$; therefore $\\operatorname{trace}A = i(a_1 + \\dots + a_r)m_k/2$. By 24.8 there is an isometry $M_h \\to M_j$ which commutes with $J_1, \\dots, J_{k-1}$ and anticommutes with $J$."
+   },
+   "lean": {
+    "statement": "In the setting of V15.29 (ii) with $k \\ge 1$, let $\\mathbf i = J_1\\cdots J_{k-1}$ and suppose that $\\mathbf i$ is skew-adjoint with $\\mathbf i^2 = -1$, commutes with $A$ and the $J_\\alpha$, and anticommutes with $J$. (i) On each minimal invariant $M$, $A = c\\,\\mathbf i$ for a real $c$. (ii) For matrices: if $\\mathbf i$ is skew with $\\mathbf i^2 = -I$ and commutes with $A$, $\\exp(\\pi A) = -I$, and $Aw = c\\,\\mathbf iw$ for a vector $w \\neq 0$, then $c$ is an odd integer. (iii) If $k \\le 7$ and the scalars $c$ of (i) are odd integers, then there are pairwise orthogonal minimal invariant subspaces $M_1, \\dots, M_\\nu$ of $E$ with $A = a_h\\mathbf i$ on $M_h$, $a_h$ an odd integer, $\\nu m_{k+1} = \\dim E$, $\\operatorname{tr}(A\\mathbf i) = -m_{k+1}\\sum_h a_h$, and $A^2 = -1$ if every $a_h = \\pm1$. (iv) If $k \\le 8$, $k \\not\\equiv 3 \\pmod 4$, and $M_0$, $M_1$ are minimal invariant with $A = c_0\\mathbf i$ on $M_0$ and $A = c_1\\mathbf i$ on $M_1$, $c_0, c_1 \\neq 0$, there is a linear isomorphism $M_0 \\to M_1$ that commutes with the $J_\\alpha$ and anticommutes with $J$.",
+    "decls": [
+     "Chapter15/SplittingTwo · Morse.iWord",
+     "Chapter15/SplittingTwo · Morse.IsIOps",
+     "Chapter15/SplittingTwo · Morse.IsOmegaOps.exists_eq_smul_iWord",
+     "Chapter15/IndexBoundTwo · Morse.exists_odd_of_mulVec",
+     "Chapter15/SplittingTwoData · Morse.exists_decomp_two",
+     "Chapter15/SplittingTwo · Morse.exists_inter_two"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "no complex eigenspaces",
+    "a linear isomorphism"
+   ],
+   "diff": [
+    "$A\\mathbf i$ is self-adjoint and commutes with all the operators, hence is a scalar on a minimal piece: $A = a_h\\mathbf i$. With $\\exp(\\pi A) = -I$, $a_h$ is an odd integer; and $\\operatorname{tr}(A\\mathbf i) = -m_{k+1}\\sum a_h$."
+   ]
+  },
+  {
+   "id": "V15.38",
+   "title": "The index bound on $\\Omega^{(c)}$",
+   "milnor": {
+    "label": "§24, pp. 147–148",
+    "page": 148,
+    "statement": "$2\\lambda \\ge \\sum_{a_h > a_j}(a_h - a_j - 2)$. \"Suppose for example that some $a_h$ is equal to $-3$\": then $4\\lambda \\ge 2p \\ge r + c$, where $r = n/m_k$ tends to infinity with $n$."
+   },
+   "lean": {
+    "statement": "Let $J_1, \\dots, J_k$ be an anticommuting family on $\\mathbb R^n$ with $1 \\le k \\le 7$, $k \\not\\equiv 3 \\pmod 4$, such that $\\mathbf i = J_1\\cdots J_{k-1}$ is central for $k$ and $\\mathcal C_{J_k} \\neq \\emptyset$, and let $c$ be an integer. If $\\gamma \\in \\Omega^{(c)}$ is an unbroken geodesic which is not of least energy, then $n = \\nu m_{k+1}$ for an integer $\\nu$, and the index of $\\gamma$ is at least $\\lfloor(\\nu - |c|)/4\\rfloor$ (at least $0$ if $|c| > \\nu$).",
+    "decls": [
+     "Chapter15/KillingTwo · Morse.IsInterRelI",
+     "Chapter15/KillingTwo · Morse.IsInterRelI.commute_exp",
+     "Chapter15/KillingTwo · Morse.exists_killing_spaces_two",
+     "Chapter15/IndexBoundTwo · Morse.le_formIndex_of_not_minimal_omega_two",
+     "Chapter15/FiniteStageTwo · Morse.omega_hidx_two"
+    ]
+   },
+   "verdict": "sign",
+   "chips": [
+    "$4\\lambda \\ge \\nu - |c|$, both signs",
+    "by Killing fields"
+   ],
+   "diff": [
+    "A geodesic in $\\Omega^{(c)}$ which is not of least energy has index $\\ge \\lfloor(\\nu - |c|)/4\\rfloor$, $\\nu = n/m_{k+1}$, whichever sign the large $|a_h|$ has; the case $a_h \\le -3$ is reduced to the other by passing to $-A$.",
+    "The Jacobi fields come from $X_j = D_j\\mathbf i - (D_j\\mathbf i)^{\\mathsf T}$, which commute with $\\exp(\\tau\\pi A)$ at $\\tau = 2s/(a_{h_0} - a_j)$. Only pairs with $a_j$ of the opposite sign are used."
+   ]
+  },
+  {
+   "id": "V15.39",
+   "title": "Theorem 24.5 for each $n$, $k = 2, 6$",
+   "milnor": {
+    "label": "§24, p. 148",
+    "page": 148,
+    "statement": "\"The component of $\\Omega\\Omega_k(n)$ is approximated up to higher and higher dimensions by the corresponding component of $\\Omega_{k+1}(n)$, as $n \\to \\infty$.\""
+   },
+   "lean": {
+    "statement": "Let $k = 2$ or $k = 6$, let $J_1, \\dots, J_{k+1}$ be an anticommuting family on $\\mathbb R^n$, $\\nu = n/m_{k+1}$, and $c$ an integer. (i) For $J' \\in \\Omega_{k+1}(n)$, $\\varphi(J')$ lies in $\\Omega_w$ with $w = -\\pi\\operatorname{tr}(J_k^{\\mathsf T}J'\\mathbf i)/2$; so $\\varphi(J') \\in \\Omega^{(c)}$ exactly when $-\\operatorname{tr}(J_k^{\\mathsf T}J'\\mathbf i) = m_{k+1}c$. (ii) For $j + 2 \\le \\lfloor(\\nu - |c|)/4\\rfloor$, the inclusion $\\Omega^d \\cap \\Omega^{(c)} \\to \\Omega^{(c)}$ induces a bijection on $\\pi_j$ at every point. (iii) For $j + 3 \\le \\lfloor(\\nu - |c|)/4\\rfloor$ and $J' \\in \\Omega_{k+1}(n)$ with $\\varphi(J') \\in \\Omega^{(c)}$, $\\varphi$ induces a bijection on $\\pi_{j+1}$ at $J'$, and there is a bijection $\\pi_{j+1}(\\Omega_{k+1}(n), J') \\cong \\pi_{j+2}(\\Omega_k(n), J_k)$.",
+    "decls": [
+     "Chapter15/FiniteStageTwo · Morse.isCentralI_iWordM",
+     "Chapter15/FiniteStageTwo · Morse.omegaPhi_mem_omegaComp",
+     "Chapter15/FiniteStageTwo · Morse.omega_minPaths_bijective_two",
+     "Chapter15/FiniteStageTwo · Morse.omegaPhi_bijective_two",
+     "Chapter15/FiniteStageTwo · Morse.theorem_24_5_two_six",
+     "Chapter15/FiniteStageTwo · Morse.omega_pi_equiv_two"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "explicit ranges",
+    "class by class",
+    "bijections of pointed sets"
+   ],
+   "diff": [
+    "Theorem 22.1 for an open and closed set of paths (V13.16), with V15.27 and V15.38. At a point $J'$ whose semicircle lies in $\\Omega^{(c)}$, $\\varphi$ is bijective on $\\pi_{j+1}$ for $j + 3 \\le \\lfloor(\\nu - |c|)/4\\rfloor$, and $\\pi_{j+1}\\Omega_{k+1}(n) \\cong \\pi_{j+2}\\Omega_k(n)$.",
+    "$\\varphi(J') \\in \\Omega^{(c)}$ exactly when $-\\operatorname{tr}(J_k^{\\mathsf T}J'\\mathbf i) = m_{k+1}c$."
+   ]
+  },
+  {
+   "id": "V15.40",
+   "title": "Theorem 24.5 for each $n$, $k = 2, 6$: path components",
+   "milnor": {
+    "label": "§24, pp. 146, 148",
+    "page": 146,
+    "statement": "$\\Omega\\Omega_k(n)$ has infinitely many components, while the approximating subspace $\\Omega_{k+1}(n)$ has only finitely many. Passing to the direct limit, one obtains a homotopy equivalence on each component."
+   },
+   "lean": {
+    "statement": "In the setting of V15.39, let $\\lfloor(\\nu - |c|)/4\\rfloor \\ge 2$. (i) Every path in $\\Omega^{(c)}$ can be joined, by a path in $\\Omega(N; J_k, -J_k)$, to $\\varphi(J')$ for some $J' \\in \\Omega_{k+1}(n)$. (ii) If $\\varphi(J') \\in \\Omega^{(c)}$, then for every $J'' \\in \\Omega_{k+1}(n)$: $J'$ and $J''$ can be joined in $\\Omega_{k+1}(n)$ if and only if $\\varphi(J')$ and $\\varphi(J'')$ can be joined in $\\Omega(N; J_k, -J_k)$.",
+    "decls": [
+     "Chapter15/OmegaComponents · Morse.theorem_24_5_pi0_two_six"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "only $|c| \\le n/m_{k+1} - 8$ at a fixed $n$"
+   ],
+   "diff": [
+    "For the classes with $|c| \\le \\nu - 8$: every path of $\\Omega^{(c)}$ can be joined to a semicircle, and two points of $\\Omega_{k+1}(n)$ can be joined iff their semicircles can. The other classes are controlled only in the limit, which is not formed."
+   ]
+  },
+  {
+   "id": "V15.41",
+   "title": "The structures on $\\mathbb R^{16r}$, and stabilization",
+   "milnor": {
+    "label": "§24, pp. 138–139",
+    "page": 138,
+    "statement": "$\\Omega_k(n)$ can be imbedded in $\\Omega_k(n + n')$ by $J \\mapsto J \\oplus J'_k$. \"It is not difficult to see that the inclusions $\\Omega_{k+1}(n) \\to \\Omega\\Omega_k(n)$ give rise, in the limit, to inclusions $\\Omega_{k+1} \\to \\Omega\\Omega_k$.\" Later it is convenient to set $n = 16r$."
+   },
+   "lean": {
+    "statement": "On $\\mathbb R^{16r} = \\mathbb R^{16} \\otimes \\mathbb R^r$ let $J_\\alpha = J'_\\alpha \\oplus \\dots \\oplus J'_\\alpha$ ($r$ summands), where $J'_1, \\dots, J'_8$ are the structures of V15.9 on $\\mathbb R^{16}$; $J_1, \\dots, J_8$ is an anticommuting family. Identify $\\mathbb R^{16r} \\oplus \\mathbb R^{16}$ with $\\mathbb R^{16(r+1)}$, the new block last, and put $s(X) = X \\oplus J'_k$ (for $k = 0$: $X \\oplus I_{16}$). Then: (i) for $k \\le 8$, $s$ maps $\\Omega_k(16r)$ into $\\Omega_k(16r + 16)$ and carries $J_k$ to $J_k$; (ii) for $k \\le 7$ and $J' \\in \\Omega_{k+1}(16r)$, $\\varphi(J' \\oplus J'_{k+1})(t) = \\varphi(J')(t) \\oplus \\bigl(\\cos(\\pi t)\\,J'_k + \\sin(\\pi t)\\,J'_{k+1}\\bigr)$ for all $t$; (iii) for $k = 2, 6$ and every matrix $X$ on $\\mathbb R^{16r}$, $\\operatorname{tr}\\bigl(J_k^{\\mathsf T}(X \\oplus J'_{k+1})\\,\\mathbf i\\bigr) = \\operatorname{tr}(J_k^{\\mathsf T}X\\mathbf i)$, the left side computed on $\\mathbb R^{16(r+1)}$, so that by V15.39 (i) the class $c$ of $\\varphi(J')$ does not change under stabilization; (iv) for $k = 2, 6$, $\\varphi(J_{k+1}) \\in \\Omega^{(0)}$.",
+    "decls": [
+     "Chapter15/BottChain · Morse.bottJ",
+     "Chapter15/BottChain · Morse.isAnticommFamily_bottJ",
+     "Chapter15/Stabilization · Morse.stabEquiv",
+     "Chapter15/Stabilization · Morse.stab",
+     "Chapter15/Stabilization · Morse.stab_mem_omega",
+     "Chapter15/Stabilization · Morse.stab_basePt",
+     "Chapter15/Stabilization · Morse.omegaPhi_stab",
+     "Chapter15/Stabilization · Morse.omegaLabel_stab",
+     "Chapter15/BottChain · Morse.omegaPhi_bottJ_mem_omegaComp"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "no limit map",
+    "the class $c$ is stable"
+   ],
+   "diff": [
+    "With the explicit structures on $\\mathbb R^{16r}$: $\\varphi(J' \\oplus J'_{k+1}) = \\varphi(J') \\oplus \\delta_k$, where $\\delta_k(t) = \\cos(\\pi t)J'_k + \\sin(\\pi t)J'_{k+1}$; and for $k = 2, 6$ the class $c$ does not change, the base point having $c = 0$.",
+    "The limits $\\Omega_k$, the limit map and the naturality of the bijections of V15.31 and V15.39 are not formalized."
+   ]
+  },
+  {
+   "id": "V15.42",
+   "title": "Lemma 24.6 (8): $\\Omega_8(16r) \\cong O(r)$",
+   "milnor": {
+    "label": "§24, Lemma 24.6 (8), pp. 141–142",
+    "page": 141,
+    "statement": "$\\Omega_8(16r)$ can be identified with the set of all real isometries from $X_1$ to $X_2$: $J_7J_8$ maps $X_1$ isomorphically onto $X_2$, and \"clearly this isomorphism determines $J_8$ uniquely\". Thus $\\Omega_8(16r)$ is diffeomorphic to the orthogonal group $O(r)$."
+   },
+   "lean": {
+    "statement": "(i) A $16 \\times 16$ matrix that commutes with $J'_1, \\dots, J'_7$ is $b\\,I + c\\,W$ for real $b$, $c$, where $W = 1 \\otimes 1 \\otimes 1 \\otimes \\tau$ in the notation of V15.9. (ii) With $P_\\pm = \\tfrac12(1 \\pm W)$ and $q(U, V) = P_+ \\otimes U + P_- \\otimes V$ for $r \\times r$ matrices $U$, $V$: every matrix on $\\mathbb R^{16r}$ that commutes with $J_1, \\dots, J_7$ (V15.41) is $q(U, V)$ for some $U$, $V$. (iii) $\\Omega_8(16r)$, for the structures of V15.41, is homeomorphic to $O(r)$: $J$ corresponds to the $U$ with $-J_8J = q(U, U^{\\mathsf T})$, and $U$ to $J_8\\,q(U, U^{\\mathsf T})$; the base point $J_8$ corresponds to $I$.",
+    "decls": [
+     "Chapter15/EightCommutant · Morse.W16",
+     "Chapter15/EightCommutant · Morse.eq_of_commute_bott16",
+     "Chapter15/OmegaEight · Morse.qOf",
+     "Chapter15/OmegaEight · Morse.eq_qOf_of_commute",
+     "Chapter15/OmegaEight · Morse.omegaEightHomeomorph",
+     "Chapter15/OmegaEight · Morse.omegaEightHomeomorph_basePt"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "by the commutant of $J_1, \\dots, J_7$",
+    "a homeomorphism"
+   ],
+   "diff": [
+    "For the explicit structures: a matrix commuting with $J_1, \\dots, J_7$ is $P_+ \\otimes U + P_- \\otimes V$, and $J \\in \\Omega_8(16r)$ iff $-J_8J$ has this form with $U$ orthogonal and $V = U^{\\mathsf T}$. The commutant on $\\mathbb R^{16}$ is found by a finite check on the $256$ Kronecker words.",
+    "A homeomorphism with $J_8 \\mapsto I$, not a diffeomorphism."
+   ]
+  },
+  {
+   "id": "V15.43",
+   "title": "Bott's chain at $n = 16r$",
+   "milnor": {
+    "label": "§24, Theorem 24.5, p. 138; p. 142",
+    "page": 138,
+    "statement": "$\\pi_hO \\cong \\pi_{h-1}\\Omega_1 \\cong \\pi_{h-2}\\Omega_2 \\cong \\dots \\cong \\pi_1\\Omega_{h-1}$; and $\\Omega_8$ is homeomorphic to the infinite orthogonal group $O$, \"combining this fact with Theorem 24.5\"."
+   },
+   "lean": {
+    "statement": "For the structures of V15.41, every $i \\ge 0$ and every $r \\ge 2i + 7$, there are bijections $\\pi_i(\\Omega_8(16r), J_8) \\cong \\pi_{i+8}(O(16r), I)$ and $\\pi_i(O(r), I) \\cong \\pi_{i+8}(O(16r), I)$.",
+    "decls": [
+     "Chapter15/BottChain · Morse.bott_chain",
+     "Chapter15/StablePeriodicity · Morse.bott_chain_of_le",
+     "Chapter15/OmegaEight · Morse.bott_periodicity_finite",
+     "Chapter15/StablePeriodicity · Morse.bott_periodicity_finite_of_le"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "finite stage: $r \\ge 2i + 7$",
+    "bijections of sets"
+   ],
+   "diff": [
+    "Eight steps at $n = 16r$, base point to base point: V15.31 for $k = 7, 5, 4, 3, 1$; V15.39 with $c = 0$ for $k = 6, 2$; V15.32 for $k = 0$; then V15.42. The steps through $\\Omega_6$ and $\\Omega_2$ decide the range."
+   ]
+  },
+  {
+   "id": "V15.44",
+   "title": "Stability of $\\pi_iO(n)$ and $\\pi_iU(n)$",
+   "milnor": {
+    "label": "§23, proof of Lemma 23.4, pp. 128–129",
+    "page": 128,
+    "statement": "$\\pi_{i-1}U(m) \\cong \\pi_{i-1}U(m + 1)$ for $i \\le 2m$, from the fibration $U(m) \\to U(m + 1) \\to S^{2m+1}$. For $O$ no such statement is made: $\\pi_iO$ is the homotopy group of the direct limit."
+   },
+   "lean": {
+    "statement": "Let $\\mathbb K = \\mathbb R$ with $d = 1$, or $\\mathbb K = \\mathbb C$ with $d = 2$, and let $U_{\\mathbb K}(m)$ be $O(m)$, resp. $U(m)$. If $i + 2 \\le dm + d - 1$ and $i + 2 \\le dm' + d - 1$, there is a bijection $\\pi_i(U_{\\mathbb K}(m), I) \\cong \\pi_i(U_{\\mathbb K}(m'), I)$. So $\\pi_iO(n) \\cong \\pi_iO(n')$ whenever $i + 2 \\le n$ and $i + 2 \\le n'$, and $\\pi_iU(n) \\cong \\pi_iU(n')$ whenever $i < 2n$ and $i < 2n'$.",
+    "decls": [
+     "Homotopy/BundlesOrthogonal · Morse.Homotopy.sphereConnected_real",
+     "Chapter15/StablePeriodicity · Morse.Homotopy.nonempty_pi_unitary_equiv_of_le",
+     "Chapter15/StablePeriodicity · Morse.Homotopy.nonempty_pi_unitary_equiv_stable"
+    ]
+   },
+   "verdict": "extra",
+   "chips": [
+    "for $O(n)$: $i + 2 \\le n$"
+   ],
+   "diff": [
+    "$\\pi_iO(n)$ is independent of $n \\ge i + 2$, and $\\pi_iU(n)$ of $n > i/2$, up to bijection. For $O$ this is what lets Theorem 24.7 be stated without the limit (V15.45)."
+   ]
+  },
+  {
+   "id": "V15.45",
+   "title": "Theorem 24.7 (Bott), in the stable range",
+   "milnor": {
+    "label": "§24, Theorem 24.7",
+    "page": 142,
+    "statement": "The infinite orthogonal group $O$ has the same homotopy type as its own 8-th loop space. Hence the homotopy group $\\pi_iO$ is isomorphic to $\\pi_{i+8}O$ for $i \\ge 0$."
+   },
+   "lean": {
+    "statement": "For every $i \\ge 0$, $n \\ge i + 2$ and $n' \\ge i + 10$ there is a bijection $\\pi_i(O(n), I) \\cong \\pi_{i+8}(O(n'), I)$.",
+    "decls": [
+     "Chapter15/StablePeriodicity · Morse.theorem_24_7"
+    ]
+   },
+   "verdict": "narrower",
+   "chips": [
+    "finite groups in the stable range",
+    "a bijection of sets",
+    "no $O \\simeq \\Omega^8O$"
+   ],
+   "diff": [
+    "$\\pi_i(O(n), I) \\cong \\pi_{i+8}(O(n'), I)$ for $n \\ge i + 2$ and $n' \\ge i + 10$, where both sides are Milnor's stable groups (V15.44). The limit group $O$, the homotopy equivalence with $\\Omega^8O$, the group structure of the isomorphism and the table of $\\pi_iO$ are not formalized."
+   ]
+  },
+  {
+   "id": "V15.46",
+   "title": "The periodicity theorem for $U$ in the stable range",
+   "milnor": {
+    "label": "§23, Periodicity Theorem, p. 129",
+    "page": 129,
+    "statement": "$\\pi_{i-1}U \\cong \\pi_{i+1}U$ for $i \\ge 1$, where $\\pi_{i-1}U = \\pi_{i-1}U(m)$ for $i \\le 2m$."
+   },
+   "lean": {
+    "statement": "For $i < 2n$ and $i + 2 < 2n'$ there is a bijection $\\pi_i(U(n), I) \\cong \\pi_{i+2}(U(n'), I)$.",
+    "decls": [
+     "Chapter15/StablePeriodicity · Morse.periodicity_theorem_stable"
+    ]
+   },
+   "verdict": "restated",
+   "chips": [
+    "between any two stable groups",
+    "a bijection of sets"
+   ],
+   "diff": [
+    "V14.28 with stability (V15.44) on both sides: $\\pi_i(U(n), I) \\cong \\pi_{i+2}(U(n'), I)$ for $i < 2n$ and $i + 2 < 2n'$, so the statement no longer refers to one $m$. As groups: V14.28 and V14.30."
+   ]
+  }
+ ],
+ "notFormalized": [
+  {
+   "title": "Symmetric spaces: Lemma 20.1 and Corollaries 20.2–20.4",
+   "label": "§20, pp. 109–110",
+   "page": 109,
+   "book": "A symmetric space is a connected Riemannian manifold with, for each $p$, an isometry $I_p$ fixing $p$ and reversing geodesics through $p$. Lemma 20.1: $I_qI_p$ translates a geodesic through $p = \\gamma(0)$ and $q = \\gamma(c)$ along itself, $\\gamma(t) \\mapsto \\gamma(t + 2c)$, and parallel fields likewise. Corollaries: 20.2, a symmetric space is complete; 20.3, $I_p$ is unique; 20.4, $R(U, V)W$ is parallel along $\\gamma$ when $U, V, W$ are. Locally symmetric spaces; Cartan's theorem relating them.",
+   "instead": "Not formalized: isometries of an abstract Riemannian manifold and symmetric spaces are not defined. For matrix groups, completeness and the reflection are V12.15–V12.16, and the conclusion of 20.4 is used through the explicit frame of V12.18."
+  },
+  {
+   "title": "Theorem 20.5 for a general locally symmetric space",
+   "label": "§20, Theorem 20.5, p. 110",
+   "page": 110,
+   "book": "In a locally symmetric manifold the conjugate points along a geodesic and their multiplicities are given by the positive eigenvalues of $K_V$.",
+   "instead": "Proved only along one-parameter subgroups of matrix groups (the Jacobi equation, V12.18) and, with the multiplicities, for $SU(n)$ (V14.18)."
+  },
+  {
+   "title": "The bi-invariant metric of a compact Lie group",
+   "label": "§21, p. 112",
+   "page": 112,
+   "book": "A compact Lie group has a bi-invariant metric, obtained by averaging any metric with the Haar measure; a left-invariant metric is bi-invariant iff it is invariant under $\\operatorname{Ad}$.",
+   "instead": "Not formalized; the groups of §§23–24 are matrix groups with the induced metric, which is bi-invariant (V12.14)."
+  },
+  {
+   "title": "Corollaries 21.5 and 21.6: the topology",
+   "label": "§21, pp. 115–116",
+   "page": 115,
+   "book": "21.5: trivial centre makes $G$ compact with finite $\\pi_1$ (Myers). 21.6: a simply connected $G$ with a bi-invariant metric is $G' \\times \\mathbb R^k$ with $G'$ compact; conversely such products have bi-invariant metrics.",
+   "instead": "Only the Lie-algebra steps (V12.9, V12.10). Myers' theorem itself is V11.12–V11.13, but it is not applied to a Lie group; integrating an ideal decomposition to a product of groups is not formalized."
+  },
+  {
+   "title": "Theorem 21.7 (Bott): only even cells",
+   "label": "§21, Theorem 21.7, p. 116",
+   "page": 116,
+   "book": "If $G$ is compact and simply connected, $\\Omega(G)$ has the homotopy type of a CW-complex with no odd-dimensional cells and only finitely many $\\lambda$-cells for each even $\\lambda$; so $H_\\lambda(\\Omega G; \\mathbb Z)$ is $0$ for odd $\\lambda$ and free of finite rank for even $\\lambda$. Remarks: the complex is infinite-dimensional; the theorem extends to non-compact $G$ (Iwasawa).",
+   "instead": "Not formalized: only the algebra behind the evenness of the index (V12.11–V12.13). Theorem 17.3 (V10.22) and the Index Theorem (V9.24) are available, but Theorem 20.5 for a general compact group, the finiteness of §19.4 for it, and the passage to the loop space are not assembled."
+  },
+  {
+   "title": "Hanner's theorem, and Theorem 22.1 for a manifold $\\Omega^d$",
+   "label": "§22, pp. 118, 121",
+   "page": 121,
+   "book": "Theorem 22.1 and Lemma 22.5 assume that $\\Omega^d$ (resp. $M^0$) is a topological manifold; the proof uses Hanner's theorem: a manifold is a retract of a neighbourhood.",
+   "instead": "Not formalized. The formal Theorem 22.1 assumes the neighbourhood retraction (V13.2); for the sphere and for $SU(2m)$ it is constructed (V13.8, V14.21), so Corollary 22.3 and Theorem 23.3 are unconditional."
+  },
+  {
+   "title": "The homological form of Theorem 22.1",
+   "label": "§22, p. 118",
+   "page": 118,
+   "book": "By the relative Hurewicz theorem, $H_i(\\Omega, \\Omega^d) = 0$ for $i < \\lambda_0$, so $H_i\\Omega^d \\cong H_i\\Omega$ for $i \\le \\lambda_0 - 2$.",
+   "instead": "Not formalized (relative Hurewicz is not available)."
+  },
+  {
+   "title": "$U(n)$: the distance from $I$ to $-I$ and the space of all subspaces",
+   "label": "§23, p. 127",
+   "page": 127,
+   "book": "In $U(n)$ the minimal geodesics from $I$ to $-I$ have length $\\pi\\sqrt n$ and correspond to all subspaces of $\\mathbb C^n$, a space with components of varying dimensions; $\\exp$ is onto.",
+   "instead": "Only $SU(2m)$ is treated (V14.15–V14.17); V14.12 records why $U(n)$ cannot be used."
+  },
+  {
+   "title": "$\\pi_0$ in Lemma 23.4",
+   "label": "§23, Lemma 23.4, pp. 128–129",
+   "page": 128,
+   "book": "$\\pi_0U(m) \\cong \\pi_0SU(m)$ (both groups are connected), and the case $i = 1$ of $\\pi_iG_m(\\mathbb C^{2m}) \\cong \\pi_{i-1}U(m)$ as groups.",
+   "instead": "For $i = 1$ the formal statement is a bijection of pointed sets (V14.26); the connectedness of $U(m)$ and $SU(m)$ is not formalized."
+  },
+  {
+   "title": "The limit spaces, and Theorem 24.5 as a homotopy equivalence",
+   "label": "§24, Theorem 24.5, p. 138; pp. 146, 148",
+   "page": 138,
+   "book": "$\\Omega_k$ is the direct limit of the $\\Omega_k(n)$ with the direct limit topology, and $O = \\Omega_0$ the infinite orthogonal group. For each $k \\ge 0$ the limit map $\\Omega_{k+1} \\to \\Omega\\Omega_k$ is a homotopy equivalence: it induces isomorphisms of homotopy groups in all dimensions, both spaces have the homotopy type of a CW-complex (\"it can be shown\"), and Whitehead's theorem applies.",
+   "instead": "Not formalized: no direct limits, no CW homotopy types, no Whitehead theorem. Theorem 24.5 is proved for each $n$, as bijections of homotopy groups in a range growing with $n$ (V15.31, V15.39, V15.40), for $k \\le 7$; the compatibility with stabilization is V15.41, but the bijections are not shown natural."
+  },
+  {
+   "title": "Theorem 24.7 as $O \\simeq \\Omega^8O$, and the group structure",
+   "label": "§24, Theorem 24.7, p. 142",
+   "page": 142,
+   "book": "The infinite orthogonal group $O$ has the same homotopy type as its own 8-th loop space; $O$ has the homotopy type of $\\Omega\\Omega\\Omega\\Omega Sp$, and $Sp$ that of $\\Omega\\Omega\\Omega\\Omega O$.",
+   "instead": "Only $\\pi_iO(n) \\cong \\pi_{i+8}O(n')$ in the stable range, as a bijection of sets (V15.45). The bijections along the chain are not shown to be homomorphisms, and nothing is proved about $Sp$."
+  },
+  {
+   "title": "The table of $\\pi_iO$ and $\\pi_iSp$",
+   "label": "§24, p. 142",
+   "page": 142,
+   "book": "$\\pi_iO = \\mathbb Z_2, \\mathbb Z_2, 0, \\mathbb Z, 0, 0, 0, \\mathbb Z$ and $\\pi_iSp = 0, 0, 0, \\mathbb Z, \\mathbb Z_2, \\mathbb Z_2, 0, \\mathbb Z$ for $i \\equiv 0, \\dots, 7 \\pmod 8$; \"the verification that these groups are correct will be left to the reader\".",
+   "instead": "Not formalized."
+  },
+  {
+   "title": "Symmetric spaces, and $\\Omega_1(n) \\cong O(n)/U(n/2)$",
+   "label": "§24, pp. 133, 136",
+   "page": 136,
+   "book": "Each component of $\\Omega_k(n)$ is a symmetric space. Remark: $\\Omega_1(n)$ can be identified with the quotient space $O(n)/U(n/2)$.",
+   "instead": "Only the algebraic invariance of $\\Omega_k(n)$ under the reflections (V15.5); the manifold structure is V15.23. The isotropy algebra of a point enters V15.28, but no quotient space is formed."
+  },
+  {
+   "title": "Lemma 24.6 (2)–(7): the spaces $\\Omega_2, \\dots, \\Omega_7$",
+   "label": "§24, pp. 138–141",
+   "page": 139,
+   "book": "$\\Omega_2(n) \\cong U(n/2)/Sp(n/4)$; $\\Omega_3(16r)$ the quaternionic Grassmann manifold; $\\Omega_4(16r)$ diffeomorphic to $Sp(2r)$; $\\Omega_5(16r) \\cong Sp(2r)/U(2r)$; $\\Omega_6(16r) \\cong U(2r)/O(2r)$; the largest component of $\\Omega_7(16r)$ diffeomorphic to the Grassmann manifold of $r$-dimensional subspaces of $\\mathbb R^{2r}$; and, for $k > 8$, $\\Omega_k(16r)$ diffeomorphic to $\\Omega_{k-8}(r)$ (footnote, p. 142).",
+   "instead": "Only the bijections with involutions and the dimensions (V15.11, V15.12), and step (8) as a homeomorphism (V15.42). The periodicity theorem does not need the other identifications."
+  },
+  {
+   "title": "The curvature of $\\Omega_k(n)$, and the exact index of a geodesic",
+   "label": "§24, pp. 135, 144–146",
+   "page": 144,
+   "book": "The index of a geodesic is computed from the eigenvalues of $K_A = -\\tfrac14(\\operatorname{Ad}A)^2$, by Theorem 20.5 and the index theorem; on $\\Omega_k(n)$, $K_A$ is given by the same formula because $\\Omega_k(n)$ is totally geodesic. For $O(2m)$: $\\lambda = \\sum_{i<j}(a_i + a_j - 2) + \\sum_{a_i > a_j}(a_i - a_j - 2)$.",
+   "instead": "The lower bounds that Theorem 22.1 needs are proved for geodesics through Killing fields (V15.28, V15.30, V15.38). The exact formulas are obtained only as counts from Milnor's spectra (V15.3, V15.19, V15.20); the curvature of a totally geodesic submanifold and Theorem 20.5 for $\\Omega_k(n)$ are not formalized."
+  },
+  {
+   "title": "Lemma 24.8 for $k = 3, 7$ and $k > 8$; isometries",
+   "label": "§24, p. 143",
+   "page": 143,
+   "book": "For $k = 3$ and $k = 7$ there are two non-isomorphic minimal spaces; for $k > 8$ \"the situation repeats more or less periodically\", and $m_k = 16m_{k-8}$; the isomorphisms of Lemma 24.8 are isometries.",
+   "instead": "For $k \\le 8$: the dimension $m_k$ (V15.16) and, for $k \\not\\equiv 3 \\pmod 4$, uniqueness up to a linear isomorphism (V15.17). For $k = 3, 7$ only that the central involution acts as $\\pm1$; nothing for $k > 8$."
+  },
+  {
+   "title": "Hurwitz–Radon and Adams",
+   "label": "§24, Remark, p. 144",
+   "page": 144,
+   "book": "The vector fields obtained from Clifford modules are those of Hurwitz and Radon, and \"J. F. Adams has recently proved that these estimates are best possible\".",
+   "instead": "Only the $k$ orthonormal fields from $k$ anticommuting complex structures (V15.18); no count for general $n$, and no upper bound."
+  }
+ ]
+}

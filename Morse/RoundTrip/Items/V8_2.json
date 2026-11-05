@@ -1,0 +1,17 @@
+{
+ "id": "V8_2",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): for slice submanifolds N ⊆ V, variations IsVariation N U α B with parameters in an open U ∋ 0 of any normed space P (fixed end points, smooth on strips avoiding a finite break set): each α u ∈ Ω(N; α 0 0, α 0 1); reparametrization by smooth φ with φ 0 ∈ U; and for P = ℝ ONLY (varField is defined for 1-parameter variations) the variation field ∂α/∂u(0,·) lies in pathTangent hN (α 0). B: for every abstract Riemannian ℝⁿ-manifold and every m-parameter variation (U ⊆ ℝᵐ), each partial variation field ∂α/∂u_i(0,·) (mfderiv) lies in TΩ_{α 0} (continuous in TM, piecewise smooth along α 0, zero at the ends). B ⇒ A is proved only by re-proving A outright from project lemmas outside the item (IsVariation.isPiecewiseSmooth, IsVariation.prj_varDeriv, contDiffOn_pdU, deriv_eq_pdU, continuousOn_of_piecewise) — vacuous. A ⇒ B fails genuinely: abstract manifolds vs N ⊆ V (no dictionary for variations and fields on abstract M). On embedded manifolds A covers B's m-parameter case through comp with φ(s) = s·e_i, modulo a Bridge dictionary for 2-variable maps into ↥N, mfderiv vs deriv, and TΩ vs pathTangent, which does not exist.",
+ "B_issue": null,
+ "overlap": "B_to_A: 68 shared — the building blocks of the project's own proof (IsVariation.prj_varDeriv, hasDerivAt_param, contDiffOn_pdU, deriv_eq_pdU, uniqueDiffOn_strip, exists_piece_*, continuousOn_of_piecewise, tanProj_eq_self_iff, hasDerivAt_mem_tangentSubspace) and slice-chart lemmas; the B_to_A proof re-runs the project's proofs of mem_pathSpace, comp and varField_mem.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_attempted",
+ "embedded_special_case_note": "Needs a Bridge dictionary for maps ℝᵐ × ℝ → ↥N (IsVar ↔ IsVariation N (incl ∘ α)), mfderiv of u ↦ α u t ↔ deriv of s ↦ α(s e_i) t, and InTOmega ↔ pathTangent (see V8_1)."
+}

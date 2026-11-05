@@ -1,0 +1,17 @@
+{
+ "id": "V6_20",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; IsCurvatureTensor is a definition): the algebraic equivalence (∀Z W, ⟨TZ,W⟩+⟨TW,Z⟩=0) ↔ ∀Z, ⟨TZ,Z⟩=0 on any real inner product space, and Lemma 9.3 (1)–(3) for the induced metric of a slice submanifold N ⊆ V (for curvTensor, and for curvature of smooth tangent fields; (1) for all fields), proved via R = II∘II (symmetry/self-adjointness of II), not via Milnor's bracket-free extensions. B: (1)–(3) for the Levi-Civita connection (symmetric, compatible in Milnor's parallel-transport sense) of an abstract ℝⁿ-manifold, at the level of smooth vector fields. A ⇒ B fails genuinely: (1) is trivial (mlieBracket_swap, cf. V6_16), but (2) needs symmetry + Jacobi for mlieBracket on an abstract manifold, and (3) needs the Cor. 8.4 formula from Milnor-compatibility (abstract Lemma 8.3, absent, cf. V6_11) — A has neither abstractly. B ⇒ A fails: B does not specialize to N ⊆ V (no Mathlib packaging of the induced connection). Note V6_21/V6_22 show that B (this item) is exactly the missing input there.",
+ "B_issue": null,
+ "overlap": "no B_to_A proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V6_20.lean, section 'The embedded special case': B_emb := B's conclusion (1)–(3) for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric) and cov = Bridge.conn (B_to_B_emb via Bridge.conn_isLC). Proved B_emb ↔ Afields, where Afields = A's field-level clauses for model Z = ℝⁿ (finite-dimensional W): (1) for smooth tangent fields (A's curvature_add_swap holds for all fields), curvature_bianchi, inner_curvature_add_inner; and Afields → Atensor (A's isCurvatureTensor_curvTensor for ℝⁿ), via the project's Lemma 9.1 for N (curvature_eq_curvTensor, not one of this item's theorems) and the extensions projField. Hence A_to_B_emb (uses A's curvature_add_swap, curvature_bianchi, inner_curvature_add_inner) and B_to_Afields_Atensor (uses B), both #rt_check OK. Dictionary lemmas (namespace Emb, same as V6_21): D_curv (blind curv of smooth fields for Bridge.conn, read in V, = Morse.curvature of the ambient fields, without Morse.curvature_eq), inner_curv, D_tneg, liftF / amb_liftF / isSmoothVF_liftF. Not covered by B_emb: A's purely algebraic inner_add_inner_eq_zero_iff, and (1) for non-smooth fields. Overlap: B_to_Afields 94 project theorems (slice-chart/tanProj infrastructure from the Bridge only); B_to_Afields_Atensor 174, the extra ones being Lemma 9.1 for N (curvature_eq and its second-fundamental-form lemmas incl. secondFundForm_comm, reached through curvature_eq_curvTensor/bracket_mem). Limitation: only the induced connection, not every IsLC connection on ↥N."
+}

@@ -1,0 +1,11 @@
+{
+ "id": "Morse_covD",
+ "name": "Morse.covD",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are P_{c(t)}(deriv X t). At c t in N, Morse.prj is the star projection onto Morse.tangentSubspace, which equals the blind span of velocities (tangentSpace_eq), so the projections coincide; at c t not in N, Morse.prj is 0 and the blind tangent space is bot (no curve in N passes through c t), so its projection is 0. Equal for all arguments, including the junk values (break points, c t outside N)."
+}

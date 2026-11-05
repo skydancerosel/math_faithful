@@ -1,0 +1,11 @@
+{
+ "id": "V3_5",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "Same theorem, two presentations. A (Hausdorff X) takes two maps h₁, h₂ : ℝⁿ → X, continuous and injective on the closed ball, whose images cover X, meet exactly in h₁(Sⁿ⁻¹), and have the same boundary sphere. B takes two closed subsets with homeomorphisms to the ball, a point of one lying in the other iff it maps to the unit sphere. Neither assumes more than the other. A ⇒ B: B does not assume X Hausdorff, but a space covered by two closed Hausdorff subspaces is Hausdorff (proved). Each homeomorphism is then extended to a map ℝⁿ → X. B ⇒ A: compact images in a Hausdorff space are closed, and an injective map continuous on the compact ball is a homeomorphism onto its image. The boundary conditions translate using injectivity. alexanderConeHomeomorph is a definition (vocabulary).",
+ "B_issue": null,
+ "overlap": "0 shared project theorems"
+}

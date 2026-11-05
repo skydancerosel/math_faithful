@@ -1,0 +1,17 @@
+{
+ "id": "V10_3",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: on every abstract connected Hausdorff ℝⁿ-manifold with a smooth metric and a Levi-Civita connection, for c > 0 with Ω^c ≠ ∅: (a) paths of Ω^c stay in S = {ρ(p,·) ≤ √c}; (b) MetricComplete ⇒ S compact; (c) MetricComplete ⇒ ∃ ε > 0 with ShortGood on S (unique blind geodesic of length < ε between points of S at distance < ε, initial velocity smooth within {ρ < ε} ⊆ S×S) and arcLen < ε on every step of a subdivision with steps < ε²/c; (d) Int Ω(t)^c = Int Ω^c ∩ Ω(t) (a definitional set identity). A (universes 0): for slice N ⊆ V with the induced metric: (a) for ANY set N; compactness of S only for N CLOSED in V (stronger than completeness of (N, ρ): an infinitely long spiral accumulating on a circle is complete but not closed); Corollary 10.8' for EVERY compact K ⊆ N (IsShortJoin: unique joining vector of norm < δ, ρ = ‖v‖, local smooth dependence, plus a normal radius ≥ δ on K); exists_brokenSetup (Milnor's choices packaged as BrokenSetup for every subdivision of mesh < η, given S compact). A ⇒ B fails genuinely (abstract vs embedded) and B ⇒ A fails genuinely (setting; B has no normal radii, no 10.8 for arbitrary compact K, no BrokenSetup, no ρ = ‖v‖). On ↥N, A ⇒ B_emb is proved, with (b) taken from the project's Hopf–Rinow lemma isCompact_closedRiemBall_of_isRiemComplete (outside the item) since A's closed-N version does not give it.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. A_to_B_emb: 429 shared project theorems — slice-chart and geodesic-ODE infrastructure (exists_localFlow, IsGeodesicOn.eqOn, IsGeodesicFrom.exp_eq, exp_eq_of_mem_expDom), lemma_10_3 (reached through corollary_10_8' and Hopf–Rinow), the Schwarz inequality pathLength_sq_le_energy (also used by the project's proof of mem_closedRiemBall_of_energy_le), riemDist lemmas.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "Items/V10_3.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric, ConnectedSpace), cov = Bridge.conn (B_to_B_emb). A_to_B_emb (#rt_check OK): (a) from A's mem_closedRiemBall_of_energy_le and Emb.image_ball_eq (blind S = closedRiemBall, via ρ = riemDist on connected N); (b) from MetricComplete ⇔ IsRiemComplete (Emb.metricComplete_iff, copied from V7_29) and the project's isCompact_closedRiemBall_of_isRiemComplete — NOT from A, whose compactness lemma assumes N closed in V; (c) Emb.shortGood_of (A's IsShortJoin on K = S gives B's ShortGood; adapted from V7_20's A_to_Bemb: LocalFlow/extend_closed/joinsShort_data copied) with A's corollary_10_8', and the step bound from Schwarz (pathLength_sq_le_energy) and E_[t_i,t_{i+1}] ≤ E ≤ c; (d) a set identity. B_emb ⇒ A not attempted: A's corollary_10_8' (arbitrary compact K, normal radii, ρ = ‖v‖) and exists_brokenSetup (the BrokenSetup data) are not consequences of B_emb. Only the induced connection."
+}

@@ -1,0 +1,17 @@
+{
+ "id": "VA_10",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": false,
+ "why": "A = case1Map_zero ∧ case1Map_one ∧ theoremA_case1 (universes 0), all with every X_n CLOSED; B (blind) uses the CORRECTED last piece h^{n+1}_{(4t−3)u} (so the misprint (4−3t)u is not copied; no not_B) and has NO closedness: (a) f_Σ is a homotopy equivalence, (b) Milnor's formula h_u is a continuous homotopy K: k₀ ≃ k₁, (c) k₀ ≃ f_Σ, (d) k₁ has the VA.9 properties. B ⇒ A: theoremA_case1 is B(a) on closed sets (glue tel ≃ₜ telescope; resC and restrictTo are defeq); case1Map_zero (the EQUALITY h₀ = f_Σ ∘ R₂) and case1Map_one concern the project's own map case1Map and are re-proved outright. A ⇒ B: B is TRUE without closedness. (a) uses A: theoremA_case1 applied to the space X_Σ and its (always closed) truncations, f_Σ|X^m_Σ ≃ id via (T2), then Lemma 2.2 + of_telescopeMap. (b)–(d) are proved directly, not from A (A's case1Map needs closed sets for (T3) pasting): h_u is continuous for ANY increasing S because near an integer level m every point lies over X_m and h_u only involves h^m there (last piece of strip m−1 and first piece of strip m paste along τ = m), while inside a strip the project's continuous_case1Fun applies. So B is strictly more general than A (Case 1 and Milnor's homotopy h_u without closedness, contrary to the project's remark that Case 1 'as he states it' needs closed X_i — only the inverse g of VA.9 does); A's extra content is the exact identity h₀ = f_Σ ∘ R₂.",
+ "B_issue": null,
+ "overlap": "B_to_A: 55 shared project theorems — strip/telescopeLift/case1Fun infrastructure (case1Map_stripMap, case1Fun_compat, continuous_case1Fun, scaleMap_stripMap, telescope_ext', clampI lemmas), from the outright copies of case1Map_zero/one. A_to_B: 47 shared — continuous_case1Fun and case1Fun_compat (the strip-wise continuity of h_u, part of the formal Case-1 proof; reused for the interior of the strips), strip and clampI lemmas, IsHomotopyEquiv.of_homotopic (via of_telescopeMap), telescope/truncation basics; the pasting across levels (where closedness is used in the project) is new.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "General topology (telescopes, Case 1 of Theorem A); no Riemannian manifold."
+}

@@ -1,0 +1,17 @@
+{
+ "id": "V14_18",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; jacSin/hadSin/suSol/suJac/hadKer vocabulary) lives on the project's embedded SU(n) ⊆ Mₙ(ℂ): for A = T·diag(ia)·Tᴴ it gives the explicit solutions U_C of U'' + K_A U = 0 and Jacobi fields J_C = exp(tA/2)U_C exp(tA/2) with DJ_C/dt(0) = C, the multiplicity of t₀ ∈ [0,1] as conjugate to 0 along exp tA|[0,1] as dim{W ∈ 𝔰𝔲 | S(t₀) ⊙ W = 0} (any real a), and, for a = πk and 0 < t < 1, that dimension = the eigenvalue count conjMult (suSpectrum k) t. B: on every abstract M isometric to SU(n) via ψ and every Levi-Civita connection, for every A ∈ 𝔰𝔲(n) and geodesic γ on ℝ with ψγ = exp tA: (i) dψ(γ'(0)) = A and dψ(R(V,W)V) = ¼[[A,dψW],A]; (ii) Theorem 20.5 for ANY eigenbasis of K_A on 𝔰𝔲(n): for every t > 0, γ(t) is conjugate iff t is a positive multiple of π/√e_i, with multiplicity specMult e t; (iii) for Milnor's A, conjMultAt γ t = specMult (milnorSpec k) t for every t > 0. A ⇒ B fails genuinely: abstract setting, and even on the embedded SU(n) A has no curvature statement (i), no eigenbasis-independent count (ii), nothing for t ≥ 1 (A's multiplicities live on γ|[0,1]); B's conjMultAt (Jacobi fields on [0,t]) vs the project's conjMultiplicity (Jacobi fields on [0,1] vanishing at 0, t) needs an extension/restriction dictionary not in the project. B ⇒ A fails genuinely: B has no explicit Jacobi fields (suSol_ode, isJacobiField_suJac, covAlong_suJac_zero) and nothing for non-integer a or general index types.",
+ "B_issue": null,
+ "overlap": "No direction proved, no overlap computed.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Not attempted beyond diagnosis. B_emb would be B at M = Bridge.Sub (isSliceRn isSliceSubmanifold_specialUnitaryGroup), ψ = inclusion, cov = Bridge.conn (isSUModel_ψ as in Items/V14_14.lean; connectedness of SU(n) must be a hypothesis). Even there A ⇒ B_emb needs new mathematics/dictionary: (i) the curvature of SU(n) (Bridge.isCurvVal_iff plus the Gauss formula for the second fundamental form of SU(n), which the project does not state as R(V,W)V = ¼[[A,W],A]); (ii) an eigenbasis-independent count (eigenspace dimensions of K_A vs hadKer); conjugate points at t ≥ 1 (A works on γ|[0,1]); and a dictionary blind conjMultAt (Jacobi fields on [0,t]) ↔ project conjMultiplicity (V9_4's conjMult_eq covers only Jacobi fields on [0,1]); plus conjMult (suSpectrum k) t = specMult (milnorSpec k) t (zero eigenvalues and equal pairs never contribute: elementary)."
+}

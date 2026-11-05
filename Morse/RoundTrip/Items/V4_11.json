@@ -1,0 +1,12 @@
+{
+ "id": "V4_11",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "Both are Lemma 6.5: q is a degenerate critical point of L_p iff p is focal for (M,q), and the nullity of L_p at q is the focal multiplicity. A: any slice M ⊆ ℝⁿ (k + w = n, k = 0 allowed), nullity of dE in the project's canonical structure on N (endpointNullity), plus nullityM = endpointNullity at every critical point (nullity 0 included). B: dim M ≥ 1, nullity of dE in an ARBITRARY slice structure hNN on N. New Glue.endpointNullity_eq_of_slice proves the nullity of d(E|N) is structure-independent (tangentSubspace equals range d(sliceParam σ) for any slice chart, then rank–nullity), so B's IsFocalOfMult is the project's IsFocalPointMult; A ⇒ B is then A's 2nd and 3rd clauses. B ⇒ A: apply B with the canonical structure (complement changed to ℝⁿ); the nullity-0 case of clause 1 uses B's degenerate⇔focal; k = 0 is separate (all points critical, forms on ℝ⁰). Outside theorems used in B_to_A: isCriticalPointM_normSq_sub_iff_mem_normalBundleSet (V4_10: critical ⇔ (q,p−q) ∈ N), endpointNullity_eq_nullity (V4_8, only for k = 0), slice_dim_add_eq_of_nonempty, isSliceSubmanifold_normalBundle.",
+ "B_issue": null,
+ "overlap": "B_to_A: 167 shared: canonical normal-bundle structure (NormalAux), slice-chart/Tub infrastructure, isCriticalPointM_normSq_sub_iff_mem_normalBundleSet and its chart lemmas, and endpointNullity_eq_nullity (k = 0 only); not the project's own Lemma 6.5 argument (nullityM_normSq_sub_eq / hessian computation route is not used for k ≥ 1)",
+ "uses_hypothesis": {"A_to_B": true, "B_to_A": true}
+}

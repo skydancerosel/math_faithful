@@ -1,0 +1,12 @@
+{
+ "id": "V5_11",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0) is only the chart-level index bound: for w : V → F complex-C² at q, index of the Hessian of z ↦ ‖w z − p‖² at q is ≤ dim_ℂ V. B is Milnor's proof of Theorem 7.2: for a closed slice submanifold of real dimension 2k with J-invariant tangent spaces there is p with L_p Morse, compact sublevels, all indices ≤ k, and M homotopy equivalent to a Mathlib CWComplex with no cells above dimension k. A ⇒ B fails genuinely: A says nothing about M (no link from J-invariant tangent spaces to holomorphic charts, no existence of p, no cell structure). Clauses (1)–(3) of B are proved (B_clauses_123) from project theorems outside A (exists_isMorseFunction_normSq_sub, isCompact_sublevel_normSq_sub, indexM_normSq_sub_le); clause (4) is the gap: the project's theorem_7_2 gives its own IsCountableCellComplexType (homotopy equivalent to a mapping telescope of iterated adjunction spaces with arbitrary attaching maps), and turning that into a Mathlib CWComplex needs cellular approximation, absent from Mathlib and the project (as in V2_11/V2_12). B ⇒ A holds only vacuously: A is re-proved from hessian_normSq_sub_holomorphic and index_le_finrank_complex; B (global, about L_p on a submanifold) does not imply a statement about arbitrary holomorphic maps.",
+ "B_issue": null,
+ "overlap": "B_to_A: 27 shared — the project's own proof re-done (hessian_normSq_sub_holomorphic, index_le_finrank_complex, two_mul_index_le_finrank, reInner lemmas, index/negDef infrastructure)",
+ "uses_hypothesis": {"A_to_B": false, "B_to_A": false}
+}

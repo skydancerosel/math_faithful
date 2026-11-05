@@ -1,0 +1,11 @@
+{
+ "id": "Morse_hessNullSpace",
+ "name": "Morse.hessNullSpace",
+ "agreement": "differ",
+ "hypotheses": "Agreement after normalising values off [0,1]: for every γ ∈ Ω, Morse.hessNullSpace = (T).map Morse.restrictIcc (`agree_restrict`), and the two have the same restrictions to [0,1] (`agree_on_Icc`).",
+ "difference": "Junk values off [0,1] (an encoding convention): the project takes the image of ker E_** under X ↦ X ∘ projIcc (fields constant off [0,1]); the blind takes ker E_** itself inside ℝ → V, which also contains every field of TΩ_γ vanishing on [0,1] with arbitrary values elsewhere (infinite-dimensional). As subspaces of ℝ → V they differ whenever V ≠ 0 (`differ`, for every hN and γ ∈ Ω).",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "The blind TΩ_γ (IsPWS, span-of-velocities tangency) equals the project's pathTangent for every γ, and the blind E_** equals the project's energyHessian transported along that equality (dictionary + secondVariation_eq_hessForm, as for Morse_energyHessian), so the kernels coincide as sets of functions. The only difference is the project's normalisation restrictIcc; the field equal to v at t = 2 and 0 elsewhere is in the blind null space but not the project's. Both describe the same fields along γ|[0,1]."
+}

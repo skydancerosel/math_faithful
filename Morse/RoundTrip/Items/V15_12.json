@@ -1,0 +1,16 @@
+{
+ "id": "V15_12",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; eigV₁/eigW/eigX/jointEigen are vocabulary, shown equal to B's V1/Wsp/Xsp/X1 under toLinAlgEquiv') states only DIMENSIONS: the halving lemma for an abstract finite-dimensional real space (θ² = 1, P injective anticommuting ⇒ dim V = 2 dim{θ = 1}), the chain dim V = 2 dim V₁ = 4 dim W = 8 dim X = 16 dim X₁ for 8 abstract endomorphisms with the Clifford relations (no inner product, any dimension), and dim X₁, X, W, V₁ = r, 2r, 4r, 8r for Milnor's explicit structures on ℝ^{16r}. B (any anticommuting complex structures on ℝ^{16r}, each claim under the least number of J's it needs) has the SPLITTINGS: V₁ ⊥ V₂, V₁ ⊔ V₂ = ⊤, quaternionic invariance, W ⊥ J₂W, W ⊔ J₂W = V₁, X ⊥ J₁X, X ⊔ J₁X = W, X₁ ⊥ X₂, X₁ ⊔ X₂ = X, plus all the dimensions (8r, 4r, 2r with only J₁…J₄/J₅/J₆ present; r with J₈). A ⇒ B: every dimension from A's halving lemma (applied via restriction to V₁, W, X with J₄, J₂, J₁, J₇J₈) plus dim of a direct sum; the splittings are not in A and are proved outright (± eigenspaces of the symmetric involutions θ, J₂W = V₁ ∩ {θ₅ = -1}, …). B ⇒ A: A's fourth conjunct comes from B (B's dimensions for the family bott16 ⊕ ⋯ ⊕ bott16, transported along I16 × Fin r ≃ Fin 16r); the halving lemma and the chain for abstract spaces are not consequences of B (orthogonal structures on ℝ^{16r} only) and are re-proved outright (project's proofs copied).",
+ "B_issue": null,
+ "overlap": "B_to_A: ~40 shared project theorems apart from auxiliary _proof_ terms — the relation tables θ₃_spec, θ₃_anticommute, θ₅_spec, θ₆_spec, θ₇_spec, J₇J₈_spec (item V15_10's theorems, outside this item), small helpers (mapsTo_ker_of_commute, mapsTo_inf, injective_of_mul_self_eq_neg_one, anticomm_symm, mem_ker_sub_one_iff), and the construction of Milnor's ℝ^{16r} structures (isAnticommFamily_bott16r, isAnticommFamily_bott16, σ₂/τ₂/κ₂ lemmas, kronecker lemmas). No item theorem; the halving lemma and chain were re-proved in the file. A_to_B uses only A's halving conjunct (plus IsComplexStructure.transpose and clifford_simp).",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable"
+}

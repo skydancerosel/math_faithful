@@ -1,0 +1,17 @@
+{
+ "id": "V11_24",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: every compact abstract connected Riemannian ℝⁿ-manifold with any Levi-Civita connection and positive definite (blind) Ricci tensor has, for ALL p, q, Ω(M;p,q) (blind Om, d-topology) homotopy equivalent to a Mathlib CWComplex with finitely many cells in each dimension. A (universes 0; the def pathSpHomotopyEquiv read as Nonempty of its type): for slice submanifolds N ⊆ V with dim ≥ 2, compact, Ricci positive definite, all p, q ∈ N: Ω(N;p,q) has the project's countable cell complex type (cell tower + mapping telescope) with finitely many cells per dimension, and finite-dimensional homology over any field; plus three auxiliary results (a non-conjugate q' joined to q, Ω(N;p,q) ≃ₕ Ω(N;p,q') along a path, homotopy invariance of the cell type). A ⇒ B fails genuinely: abstract manifolds, and the CW-model gap (project tower with non-cellular attaching maps vs Mathlib CWComplex: cellular approximation and CW structure of telescopes missing). B ⇒ A fails genuinely: setting; a Mathlib CW complex does not give the project's tower; homology finiteness would need cellular homology; the auxiliary results are not in B.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. A_to_B_cell_emb: 230 shared project theorems — second-fundamental-form/curvature-operator infrastructure (curvOp_* linearity, curvOp_mem, secondFundForm_*, dN_*, tanProj_*, curvR_of_mem, proof fields of Morse.curvTensor) used by the new Ricci dictionary and by A's Morse.ricci, slice-chart lemmas, and the path-space metric infrastructure of the Ω ≃ₕ PathSp dictionary; nothing of the proofs of Theorems 19.6/17.3, Corollary 18.2 or 17.D.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V11_24.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric, ConnectedSpace), cov = Bridge.conn (B_to_B_emb via conn_isLC). Neither A ⇒ B_emb nor B_emb ⇒ A (CW-model gap). Proved instead (#rt_check OK, uses A's theorem_19_6_all): A_to_B_cell_emb — for n ≥ 2, CompactSpace ↥N and blind Ricci positive definite, every blind Ω(↥N;p,q) has the project's cell type with finitely many cells per dimension. New dictionary lemmas (namespace Emb): eT (the coordinate isomorphism ℝⁿ ≃ₗ T_xN, z ↦ D_x z), curvR_eq (blind choice-function R(a,b)c for Bridge.conn = L_x(curvOp(Da, Db, Dc)), from Bridge.isCurvVal_iff), ricci_eq (blind K(U,U) = Morse.ricci at D_x U: the blind linear map W ↦ R(U,W)U is eT⁻¹ ∘ (curvTensor U).flip U ∘ eT and LinearMap.trace_conj'), ricci_pos_of (blind positivity ⇒ project positivity); plus the Ω ≃ₕ PathSp dictionary copied from Items/V10_19.lean (heOm) and cellType_of_he (inline re-proof of A's IsCountableCellComplexType.of_homotopyEquiv, which is banned). Only the induced connection; dimension ≤ 1 (vacuous or trivial in B) not covered by A."
+}

@@ -1,0 +1,17 @@
+{
+ "id": "V15_31",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0, k + 1 ≤ 8, k ≢ 2 mod 4, r₀ = 1 or (2, k = 0), i + 2 ≤ r₀(n/m_{k+1} − 1)): φ_r : Ω_{k+1}(n) → PathSp(omegaStratum J k J_k) (project path space, Milnor's d as pseudo-emetric) is bijective on π_i (pointed sets); the inclusion minPaths → PathSp is bijective on π_i; strata are clopen with the π_{j+1} of Ω_k(n); π_i(Ω_{k+1}) ≃ π_{i+1}(Ω_k, J_k) as sets. B (every k ≥ 1, k ≢ 2 mod 4): a continuous j : Ω_{k+1}(n) → OmIn(Ω_k(n); J_k, −J_k) (blind path space: normalized paths, topology of the dOmIn-balls) with j(J)(t) = J_k exp(πtJ_k⁻¹J), bijective on π_i for (i+3)m_{k+1} ≤ n (= A's range with r₀ = 1, proved) and a group isomorphism for i ≥ 1. A ⇒ B fails genuinely for k ≥ 8 (not in the project); for k ≤ 7 it is effort only: the homotopy equivalence PathSp ≃ OmIn (IsPWOn vs IsPiecewiseSmooth, rhoIn vs riemDist, ball topology vs emetric, normalization) is not built (the group part follows from the project's homotopyGroupMap_mul). B ⇒ A fails genuinely for k = 0 (A's r₀ = 2 and r₀ = 1 cases at k = 0 are Theorem 24.3, V15_32, not in this B) and otherwise needs the same glue plus the project's homotopy equivalence Ω_{k+1} ≃ minPaths, Theorem 17.1-type loop iso, and a vacuous re-proof of the general strata lemmas.",
+ "B_issue": null,
+ "overlap": "No direction proved; no #rt_overlap.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete real matrices (Ω_k(n) ⊆ M_n(ℝ) with the induced-metric notions defined by hand on subsets; the geometry is already embedded); it does not quantify over abstract Riemannian manifolds."
+}

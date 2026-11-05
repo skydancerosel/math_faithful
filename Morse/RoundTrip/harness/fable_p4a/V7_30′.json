@@ -1,0 +1,18 @@
+{
+ "id": "V7_30′",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universe 0 for unique_geodesic_of_top; the sphere theorems are stated in a concrete EuclideanSpace): on the round sphere Sⁿ ⊆ ℝⁿ⁺¹ (slice submanifold, induced metric) the great circles cos(Lt)p + sin(Lt)u (u ⊥ p unit) are geodesics on ℝ; for n ≥ 1 every geodesic in Ω(Sⁿ; p, q) agrees on [0, 1] with such a great circle; for q ≠ ±p it agrees with one of the explicit sphGeod p q k, whose energies increase strictly in k; and in a codimension-0 submanifold N ⊆ V (tangentSubspace = ⊤) a segment lying in N is in Ω(N; p, q), is a geodesic, and every geodesic of Ω(N; p, q) agrees with it on [0, 1]. B: for an abstract connected Riemannian manifold with ANY Milnor-Levi-Civita connection and a smooth injective isometric immersion f : M → ℝᵏ: (a) range f = ℝⁿ ⇒ the geodesics are exactly the smooth curves with f ∘ γ affine; (b) range f = Sⁿ ⇒ the geodesics are exactly the great-circle motions cos(ct) a + sin(ct) b, antipodal points (n ≥ 2) are joined by infinitely many minimal geodesics on [0, 1], non-antipodal points by a unique minimal geodesic and infinitely many non-minimal ones; (c) cylinder: the geodesics are exactly the lines, circles and helices, and any two points are joined by infinitely many; (d) surfaces of revolution: constant-speed meridians are geodesics. A ⇒ B fails genuinely: B's M is abstract with an arbitrary IsLC connection, tied to the model only through an isometric immersion (transporting the project's results would need uniqueness of the Levi-Civita connection and that isometries carry geodesics to geodesics, neither in the project); moreover (a), (c), (d) and the minimality statements of (b) are not in A at all (the project's sphere minimality is in Chapter 13, not among A's theorems). B ⇒ A fails: A's explicit sphGeod classification, the strict monotonicity of the energies and the codimension-0 statement for an arbitrary open N ⊆ V (B's (a) covers only M ≅ ℝⁿ as a whole) are not in B; even the common core — (b)'s geodesic characterisation for M = Sph n via the inclusion (IsIsomEmb from Bridge.norm_eq) ⇒ isGeodesicOn_greatCircle / exists_eqOn_greatCircle — would need the Bridge geodesic dictionary specialised to the sphere, and was not attempted since the rest of A is out of reach from B.",
+ "B_issue": null,
+ "harness_note": "B uses ‖·‖ on TangentSpace (Riemannian, in IsIsomEmb and in the constant-speed hypothesis of (d)), arcLen (in IsMinimal) and IsGeodesic; it does not use nrm/tball/IsNormBall/IsUniformNormal, so the chart-norm defect of the prelude does not affect it. Note for the record: in (b) the case n = 0 would be false (no orthonormal pair in ℝ¹ for a constant geodesic), but it is excluded by the ConnectedSpace hypothesis (S⁰ is disconnected and f is a bijection onto it); for n ≥ 1 the clauses hold with the great circle through p and q (constant curves: c = 0).",
+ "overlap": "no direction proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_attempted",
+ "embedded_special_case_note": "B(b) for M = Sub (sphSub n), f = incl would give the great-circle characterisation; it needs IsIsomEmb (incl) (from Bridge.norm_eq, easy) and the Bridge dictionary for IsGeodesic on the sphere, but A's energy and sphGeod content would still be missing, so the special case would not reach A."
+}

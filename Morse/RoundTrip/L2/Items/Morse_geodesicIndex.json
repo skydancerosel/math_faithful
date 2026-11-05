@@ -1,0 +1,11 @@
+{
+ "id": "Morse_geodesicIndex",
+ "name": "Morse.geodesicIndex",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "γ ∈ Ω(N; p, q) (Morse.pathSpace N p q); no geodesic hypothesis needed",
+ "difference": "Junk value outside the textbook domain: for γ ∉ Ω(N; p, q) the project returns 0, while the blind (which ignores p, q) evaluates the index of its E_** at γ anyway (e.g. for a path in Ω(N; p', q') with other endpoints it gives that path's index). Both send an infinite index to 0 via ENat.toNat. Not formalized as a counterexample (it needs a path with positive finite index).",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "For γ ∈ Ω the blind TΩ_γ is the project's pathTangent and the blind E_** is energyHessian transported along that equality (dictionary + secondVariation_eq_hessForm); the blind index (sup over all negative definite subspaces of rank.toENat) equals Morse.formIndex (as for Morse_formIndex), and formIndex is invariant under the isometric linear equivalence (formIndex_le_of_map both ways); then both take toNat."
+}

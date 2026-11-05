@@ -1,0 +1,16 @@
+{
+ "id": "V15_10",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A (universes 0; Morse.IsClifford is vocabulary): matrix anticommuting families satisfy the Clifford relations, and in an ARBITRARY ring with Clifford relations, the commute/anticommute tables of θ₃, θ₅, θ₆, θ₇, J₃J₄, J₇J₈ (more entries than B: θ₃ commutes with J₃, θ's anticommute with the higher J's, J₃J₄ commutes with J₁, J₂), plus ω₇ = J₁⋯J₇ = -θ₃θ₅θ₇ commutes with J₁…J₇. B: the tables Milnor uses, for real matrices on ℝⁿ with 8 anticommuting complex structures, and (blind reading of 'J₇ = ±J₁⋯J₆') on a MINIMAL (J₁…J₇)-space J₇ = ±J₁⋯J₆. A ⇒ B: part 1 is A specialized to the matrix ring; part 2 uses A's ω₇_spec and θ tables (ω₇² = 1) plus a short eigenspace argument (a central involution of a minimal space is ±1), not in A but elementary. B ⇒ A only vacuously: A is re-proved outright with the project's clifford_simp; A's arbitrary-ring generality and extra table entries are not derivable from B.",
+ "B_issue": null,
+ "overlap": "B_to_A: 8 shared project theorems, all basic API of the IsClifford/IsAnticommFamily structures used by clifford_simp (IsClifford.swap, swap_assoc, sq', sq_assoc, sq, anti; IsAnticommFamily.cs, anti); no item theorem.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable"
+}

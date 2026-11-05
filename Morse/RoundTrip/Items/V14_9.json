@@ -1,0 +1,17 @@
+{
+ "id": "V14_9",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "A (ι : Type): for odd b < a, 2·#conjParams(π²(a−b)²/4) = a − b − 2; for any finite ι and odd k (no Σk = 0 needed), spectralIndex(suSpectrum k) = bottIndex k, where suSpectrum lists π²(k_i − k_j)²/4 twice for each ORDERED pair k_i > k_j. B (Fin n, odd k, Σk = 0): (i) the same pair count; (ii) specIndex(milnorSpec k) = Σ_{k_j>k_l}(k_j − k_l − 2), milnorSpec listing for each j < l two copies of π²(k_j−k_l)²/4 plus n−1 zeros; (iii) the same value for the eigenvalue family of ANY real basis of 𝔰𝔲(n) of K_A-eigenvectors. A ⇒ B: (i) from A1; (ii) from A2 after a bijection {j<l, k_j≠k_l} ≃ {k_j>k_l} (swap) and dropping zero eigenvalues; (iii) from A2 plus linear algebra: for 0<t<1 the eigenvectors whose eigenvalue has t as conjugate parameter form a basis of the project's hadKer(πk)t (entrywise: a nonzero (j,l) entry forces eigenvalue π²(k_j−k_l)²/4), whose dimension is conjMult(suSpectrum k) t by the project's Morse.finrank_hadKer (Chapter12/SUIndex, outside the item). B ⇒ A: A1 from B (i) with k = (a, b, 1, −(a+b)−1); A2 for any ι from A1 via spectralIndex_eq and bottIndex_eq_sum_subtype. A lacks B's basis-independence (iii) by itself (the project notes the eigenbasis bookkeeping is not formalized in IndexCount) but it follows with finrank_hadKer; B's Σk = 0 and Fin n restrictions are harmless.",
+ "B_issue": null,
+ "overlap": "Both directions share Morse.spectralIndex_eq (V14_8's theorem, with its auxiliary _simp lemmas), Morse.conjParams_finite, Morse.conjParams_subset, Morse.spectralIndex.eq_1, Morse.pairSpectrum._proof_1; B_to_A also Morse.bottIndex_eq_sum_subtype. A_to_B additionally uses Morse.finrank_hadKer, Morse.jacSin_eq_zero_iff_mem_conjParams, Morse.jacobiMat_suDiag_apply (not used by the item's proofs).",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about the §23 matrix-group setting / spectra of K_A (concrete matrices and real numbers); it does not quantify over abstract Riemannian manifolds."
+}

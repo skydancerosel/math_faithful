@@ -1,0 +1,15 @@
+{
+ "id": "V14_24",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A (universes 0; Grassmannian = Hermitian projections of trace m, frameSpan F ↦ FFᴴ, vocabulary): (1) Hermitian projections with PQ = Q and equal traces are equal; (2) every projection of trace m is FFᴴ for an orthonormal m-frame; (3) continuity of the Gram–Schmidt frame; (4) U(ι₁ ⊕ Fin m) is transitive on G_m(𝕜^{ι₁⊕m}); (5) frameSpan : V_m → G_m is locally trivial with fibre U(m); (6) grassmannian = Grassmannian (rfl) — any RCLike 𝕜, any ι₁, concrete spaces (no coset spaces), project-style local triviality. B (ℂ, ι₁ = Fin m): (a) U(2m)/(U(m)×U(m)) ≃ₜ G_m(ℂ^{2m}) by g ↦ g P₀ g*, P₀ the projection on the FIRST m coordinates, G_m as rank-m Hermitian idempotents; (b) gU(m) ↦ g P₀ g* is a Mathlib-Trivialization bundle U(2m)/U(m) → G_m with fibre U(m). A ⇒ B (uses (4), (5)): rank = trace for idempotents; G_m(ℂ^{Fin m ⊕ Fin m}) ≃ₜ G_m(ℂ^{2m}) by reindexing followed by the complement P ↦ 1 − P (the project's base point projects on the LAST m coordinates); U(2m)/U(m) ≃ₜ V_m by the last m columns (compactness; also the project's exists_unitary_smul_baseFrame, V14_23's item, not banned here); (a) by compactness with transitivity (4) and stabilizer blockSub (gP₀g* = g'P₀g'* ⇔ g⁻¹g' commutes with P₀); (b) from (5) transported along homeomorphisms and converted to Mathlib trivializations. B ⇒ A fails genuinely: B has no counterpart of the algebraic lemmas (1)–(3), of the real case or of other codimensions ι₁. On the common special case B gives A back: B ⇒ A's (4), (5) for ℂ, ι₁ = Fin m is proved (B_to_A45C: transitivity from the surjectivity of B's homeomorphism, local triviality of frameSpan from B's bundle via the project's isLocallyTrivial_of_trivializations, U(2m)/U(m) ≃ₜ V_m and the complement/reindexing Θ).",
+ "B_issue": null,
+ "overlap": "A_to_B: 22 shared project theorems — Stiefel/Grassmannian basics (mem_stiefel, mul_mem_stiefel, orthonormal_cols, conj_mem_grassmannian, mul_conjTranspose_mem_grassmannian, frameSpan_smul, continuous_frameSpan, instance proofs) and exists_unitary_smul_baseFrame (used for transitivity on frames; it is also used in the proof of A's exists_unitary_smul_grassBase). None of the Gram–Schmidt section construction is shared (only a proof field of the definition gsFrame, which A's statement mentions). B_to_A45C: 19 shared (the same basics; transitivity on frames from exists_unitary_smul_baseFrame, needed to identify U(2m)/U(m) with V_m).",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "id": "V5_3",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "A (universes at 0), for any complex inner product space V and complex bilinear B: Re B − e⟨·,·⟩_ℝ and Re B + e⟨·,·⟩_ℝ have equal nullity; the eigenspace of an operator A with Re⟨Au, w⟩ = L(u, w) is the null space of L − e Re⟨·,·⟩; hence dim eigenspace(A, e) = dim eigenspace(A, −e) when L = Re B. B, in coordinates: the symmetric (polar) matrix qmat of Q' = Re Q on ℝ^{2k} has dim ker(qmat − e) = dim ker(qmat + e), and e, −e have the same multiplicity as roots of its characteristic polynomial. A ⇒ B uses A: V = ℂᵏ, B = symmetrized form of b, A = qmat transported by x + iy (Re⟨Au, w⟩ = Re B(u, w) is the polar identity qmat_ab = Re B(Φe_a, Φe_b) plus bilinearity); A's finrank_eigenspace_neg_eq gives the kernel clause. The characteristic-polynomial clause is not in A; it follows from Mathlib's spectral theorem (root multiplicity = eigenspace dimension for a symmetric matrix). B ⇒ A is proved outright (A is about arbitrary, possibly infinite-dimensional V; B only about ℂᵏ in coordinates), re-using the project's nullity_sub_smul_eq_nullity_add_smul' and reInner_I_smul (outside the item); so that direction is vacuous.",
+ "B_issue": null,
+ "overlap": "B_to_A: 45 shared: nullity_sub_smul_eq_nullity_add_smul', realMulI lemmas, reInner/reBilin definitional lemmas — i.e. the project's own proof of A",
+ "uses_hypothesis": {"A_to_B": true, "B_to_A": false}
+}

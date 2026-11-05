@@ -1,0 +1,17 @@
+{
+ "id": "V14_6",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; eReal/eImag/suDiag/jacobiMat are vocabulary, definitionally the blind eReal/eImag/milnorA and Kop up to the scalar ¼ ∈ ℝ vs ℂ): for any finite index type and ANY integers k_j and any j, l: K_A E_jl = π²(k_j−k_l)²/4·E_jl, likewise E'_jl, K_A(diag d) = 0 for every complex diagonal, and every skew-Hermitian W (any trace, any LinearOrder) equals diag(w_jj) + Σ_{j<l}(Re w_jl E_jl + Im w_jl E'_jl) — spanning only. B: for odd k_j with Σk_j = 0, j < l: E_jl, E'_jl ∈ 𝔰𝔲(n) with that eigenvalue, K_A kills the diagonal matrices of 𝔰𝔲(n), and every W ∈ 𝔰𝔲(n) is UNIQUELY Σ_{j<l}(x_jl E_jl + y_jl E'_jl) + D with D ∈ diagSU — a basis. A ⇒ B uses all four conjuncts of A (plus the project's eReal_conjTranspose/trace_eReal/eImag_* outside the item for membership in 𝔰𝔲(n), and D ∈ 𝔰𝔲(n) from tr W = 0), but the uniqueness (linear independence, part of Milnor's 'basis') is proved outright by reading off the (j,l) entries — A lacks it (the project's docstring says the independence count is not formalized). B ⇒ A is vacuous (A re-proved outright): B's odd k_j make k_j − k_l even, and B covers only j < l, 𝔰𝔲-diagonals and trace-0 W, so A's generality is not derivable from B. Both sides are elementary; each has content the other lacks.",
+ "B_issue": null,
+ "overlap": "1 shared project item, Morse.jacobiMat._proof_1 (auxiliary term of the definition jacobiMat, vocabulary); no theorem shared. A_to_B also uses Morse.eReal_conjTranspose, Morse.trace_eReal, Morse.eImag_conjTranspose, Morse.trace_eImag (outside the item, not used by the item's proofs).",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete matrix groups U(n), SU(n) ⊆ M_n(ℂ) (Mathlib unitaryGroup / specialUnitaryGroup as subsets, lengths as Euclidean lengths of curves in M_n(ℂ)); it does not quantify over abstract Riemannian manifolds."
+}

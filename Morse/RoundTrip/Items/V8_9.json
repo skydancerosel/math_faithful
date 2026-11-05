@@ -1,0 +1,17 @@
+{
+ "id": "V8_9",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): for slice submanifolds N ⊆ V with the induced metric and project variations IsVariation N U α B (U ⊆ ℝ, finite break set B): formula (12.2′) at every u₀ ∈ U, and Theorem 12.2 at u = 0 with the jump sum as a finsum over (0,1), A = P(ω'') and any ω equal to α 0 on [0,1]. B: on abstract connected Riemannian ℝⁿ-manifolds with an abstract Levi-Civita connection, for ℝ¹-parameter variations with a strip subdivision and any family of piecewise accelerations (HasCovDeriv on closed pieces): E∘α differentiable at 0 and ½dE = −Σ_{i=1}^{k−1}⟨W_{t_i}, Δ_{t_i}V⟩ − Σ_i ∫_{t_i}^{t_{i+1}} ⟨W, A_i⟩. A ⇒ B fails genuinely (abstract manifolds: Lemma 8.3/8.7 and differentiation under the integral for an abstract connection are not formalized); B ⇒ A fails genuinely (setting; A also gives the formula at every u₀). On embedded manifolds modelled on ℝⁿ they are equivalent (both directions proved, see embedded note).",
+ "B_issue": null,
+ "overlap": "B_to_A_emb: 75 shared — variation infrastructure (IsVariation.* fields, hasDerivAt_param, prj_varDeriv, contDiffOn_pdU/deriv_eq_pdU/hasDerivAt_pdU via varField_mem for the continuity of W), piecewise lemmas (exists_piece_*, intervalIntegrable_of_piecewise, piecewise_induction), finsum_jump_eq_sum (item V8_7), jump_eq_zero, slice-chart lemmas. The core of the project's proof (hasDerivAt_integral_of_piecewise, pdU_pdT, integral_eq_of_piecewise) is not shared.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "B_emb := B for M = Bridge.Sub hN, cov = Bridge.conn (B_to_B_emb). A_to_B_emb (uses A's first_variation; rt_check OK) and B_to_A_emb (uses B; rt_check OK), where A_emb = both conjuncts of A for connected slice submanifolds modelled on ℝⁿ (12.2′ at u₀ by shifting the parameter). Dictionary for §12 built in the file (a shared one would need the same): ℝ ≃L ℝ¹; blind IsVarSub ⇒ IsVariation (isVariation_of_isVarSub) and back (isVarSub_liftVar with exists_subdivision, contMDiffWithinAt_iff' for maps from a normed space into ↥N); Efun ∘ α = E ∘ α' ∘ e1.symm; D(varField α 0 s) = Morse.varField α' s (D_varField); D(Vjump) = Morse.jump (D_Vjump); D(A_i) = Morse.accel on interior points (D_accel via hasCovDeriv_iff'); existence of accelerations (exists_acc, covA); reindexing Σᶠ_{(0,1)} = Σ_{i∈[1,k)} (finsum_jump_eq_sum + sum_filter_image); ∫₀¹ = Σ_i ∫_{t_i}^{t_{i+1}} (integrability via intervalIntegrable_of_piecewise); firstVariation depends on ω only on [0,1] (fv_congr_path). Limitation: only the induced connection; model Z = ℝⁿ."
+}

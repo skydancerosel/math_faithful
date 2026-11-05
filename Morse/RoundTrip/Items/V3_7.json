@@ -1,0 +1,11 @@
+{
+ "id": "V3_7",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "The listed declarations (IsSubadditive, IsAdditive) are definitions, so A = True. B (additive ⇒ subadditive) holds outright, so the equivalence is vacuous. Vocabulary check: on ι = Set α ordered by ⊆, with the arguments swapped (project S a c = Milnor S(X_c, X_a)) and B's domain predicate taken to be everything, B's Subadditive/Additive are exactly the project's IsSubadditive/IsAdditive (subadditive_iff, additive_iff). The project's notion is stated on an arbitrary preorder and for S defined on all pairs. B's lets S be defined only on a domain of pairs (Milnor's 'certain pairs'), and then requires the inequality only for triples whose three pairs lie in the domain.",
+ "B_issue": null,
+ "overlap": "0 shared project theorems (B_to_A is trivial)"
+}

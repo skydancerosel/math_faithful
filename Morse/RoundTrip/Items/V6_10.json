@@ -1,0 +1,18 @@
+{
+ "id": "V6_10",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): for N a slice submanifold of a Euclidean V with the induced Levi-Civita connection, DX/dt := P_{c(t)} X'(t), any curve c and fields X, Y along c (tangent at every t) differentiable at t: d/dt⟨X, Y⟩ = ⟨DX/dt, Y⟩ + ⟨X, DY/dt⟩. B: Lemma 8.3 on an abstract manifold with a smooth Riemannian metric (Mathlib RiemannianBundle) and ANY Mathlib connection compatible in Milnor's sense (parallel fields have constant inner products), for any operation D satisfying Milnor's axioms (a)-(c) and smooth fields V, W. A ⇒ B fails genuinely: A concerns only the induced connection of an embedded submanifold, where the lemma is the product rule in V plus ⟨P X', Y⟩ = ⟨X', Y⟩; B needs, for an arbitrary compatible connection, Lemma 8.2 on an abstract manifold (parallel orthonormal frames), uniqueness of D (Lemma 8.1), and smoothness of the frame coefficients — none in the project or Mathlib (the project's parallel transport is only for embedded N). Even via Whitney embedding, B's connection is not the induced one. B ⇒ A holds only vacuously (A re-proved in 4 lines from inner_tanProj_of_mem, inner_tanProj_left, tanProj_eq_self); B also does not cover A's merely-differentiable-at-t fields or non-smooth c.",
+ "B_issue": null,
+ "overlap": "B_to_A: 22 shared — inner_tanProj_of_mem, inner_tanProj_left, tanProj_eq_self and slice-chart/tangentSubspace definitional proofs (the project's own proof re-done)",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V6_10.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric) and cov = Bridge.conn; B_to_B_emb is a genuine instance of B (IsGlobalConn = Bridge.conn_contMDiff; B's IsCompatibleMetric for conn derived from Bridge.conn_isCompat on s = univ, Emb.isCompatibleMetric_conn). Dictionary (namespace Emb, toProj/toMath glue copied from Items/V6_6.lean): every D/dt of B for Bridge.conn is the project's covDeriv read in V (Emb.D_eq_covDeriv, via the project's Lemma 8.1 IsCovDerivAlong.eq_covDeriv), and covDeriv transported back satisfies B's axioms (isCovDerivAlong_toMath_covDeriv); the Riemannian inner product is the ambient one (Bridge.inner_eq, rfl). Proved B_emb ⇔ A83 (A for model ℝⁿ, smooth curves and smooth tangent fields), hence A_to_B_emb (uses A) and B_to_A83 (uses B), both #rt_check OK. What A has beyond B_emb: arbitrary model Z, arbitrary (non-smooth) curves and fields merely differentiable at t. Limitation: only the induced connection, not every compatible connection on ↥N.",
+ "overlap_embedded": "B_to_A83: 21 shared — tanProj_eq_self, inner_tanProj_left (through Bridge.conn_isCompat, needed for B's compatibility hypothesis) and slice-chart infrastructure; the project's product-rule proof itself is not reused."
+}

@@ -1,0 +1,11 @@
+{
+ "id": "Morse_grassmannian",
+ "name": "Morse.grassmannian",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "The project uses Hermitian idempotents with trace m, the blind Hermitian idempotents of rank m; for an idempotent, rank = trace (trace of a projection is the dimension of its range, Mathlib's IsProj.trace), so the two sets are equal (layer-1 glue V14_26 generalised from Fin k to any ι)."
+}

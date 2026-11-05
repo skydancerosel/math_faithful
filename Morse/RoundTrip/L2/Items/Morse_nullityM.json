@@ -1,0 +1,11 @@
+{
+ "id": "Morse_nullityM",
+ "name": "Morse.nullityM",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Same Hessian (extended chart of 𝓘(ℝ, E) = preferred chart) and the same null-space submodule, hence the same finrank, at every point and in every dimension."
+}

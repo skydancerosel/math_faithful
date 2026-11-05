@@ -1,0 +1,11 @@
+{
+ "id": "V4_2",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "Both sides are the rank–nullity unpacking of 'focal point = critical value of E': for a square Jacobian, nullity > 0 ⟺ not surjective, and e = q + (e − q). A states it (endpointNullity_pos_iff, isFocalPoint_iff, focalSet_eq_image_critPoints) for the project's canonical slice structure isSliceSubmanifold_normalBundle hM hkw on N, any M ⊆ ℝⁿ. B states it for an ARBITRARY slice structure hNN on N (complement ℝ^{K+1}, dim M ≥ 1), with nullE := 0 off N. Neither direction transfers anything: B holds outright (B_holds, same linear algebra for hNN) and A is re-proved outright in B_to_A (the project's short proofs, using isSliceSubmanifold_normalBundle only). Transferring between the structures would need uniqueness of the smooth structure on an embedded submanifold, not in the project. The definitions agree in content: focal point of (M,q) with multiplicity = positive nullity of dE at (q, e−q).",
+ "B_issue": null,
+ "overlap": "B_to_A: 84 shared, all reached through the statement's vocabulary (the canonical normal-bundle structure: NormalAux, of_locally_preimage, Tub.* slice-chart lemmas); none of the three listed proofs"
+}

@@ -1,0 +1,11 @@
+{
+ "id": "V4_8",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A is frame-free and works on the manifold N: T_{(q,v)}N = {(dx ξ, h) : ⟪h, ∂x/∂η⟫ + ⟪v, ∂²x/∂ξ∂η⟫ = 0}, the mfderiv of (q,v) ↦ Γq + v on N, and dim ker dE = nullity(g − v·ℓ) in the project's parametrization (endpointNullity_eq_nullity). B is pure multivariable calculus with no N: for a parametrization x and an orthonormal normal frame w_α on an open U, Milnor's matrix P of inner products of the partials of Ẽ(u,t) = x(u) + Σ t^α w_α(u) with ∂x/∂u^j, w_β has blocks (g − Σ t^α w_α·ℓ, *; 0, I), rank P = rank dẼ = rank A + m, and dim ker dẼ = k − rank A. B is true (block-triangular rank count; the upper-left block by differentiating ⟪w_α, ∂x/∂u^j⟫ = 0), but A cannot reach it: A never introduces frames or Milnor's (u,t) coordinates, and B does not assert that (u,t) ↦ (x(u), Σ t^α w_α(u)) is a chart of N, so dẼ and dE are never linked. B ⇒ A fails for the same reason (no tangent space of N, no mfderiv, no Γ). It was not attempted to prove B outright from Mathlib (a self-contained calculus/matrix-rank exercise).",
+ "B_issue": "B reads Milnor's 'rank equals the rank of the upper-left block' correctly as rank P = rank A + m and nullity equality (the project records the same slip).",
+ "overlap": "n/a (neither direction proved)"
+}

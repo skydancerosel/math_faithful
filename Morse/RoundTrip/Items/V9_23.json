@@ -1,0 +1,22 @@
+{
+ "id": "V9_23",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: on every abstract connected Riemannian ℝⁿ-manifold with any Levi-Civita connection, for a geodesic γ and 0<τ<1, λ(τ+ε) = λ(τ) + ν for small ε>0, λ(τ) the index of Milnor's VARIATIONAL (E_0^τ)_** on TΩ(γ|[0,τ]) and ν its nullity. A (universes 0): for slice submanifolds and ANY smooth curve, with λ(τ) = indexUpTo (energyHessian restricted to fields vanishing outside [0,τ]) and ν = conjMultiplicity 0 τ: the eventual equality (assertion_4), assertion_4_le, assertion_4_ge for EVERY τ' > τ, energyHessian_cut and exists_dual. A ⇒ B and B ⇒ A fail genuinely, now only because of the setting (abstract vs embedded) and, for B ⇒ A, A's extra content (non-geodesic curves, global ≥, cut-off formula, dual family): on embedded manifolds λ and ν are identified with A's (second attempt: B_emb ⇔ assertion_4 for geodesics of ↥N proved).",
+ "B_issue": null,
+ "overlap": "Main directions: none proved. Embedded: A_to_B_emb and B_to_A_geo share 416 project theorems with A's proofs — Lemma 15.3/15.4 machinery (exists_isFine, fineMesh, finiteDimensional_brokenSpace, isCompl_broken_nodeZero, energyHessian_broken_nodeZero, energyHessian_nodeZero_pos, finrank_ker_broken — used by the nullity dictionary as by A's proof), formIndex_le/le_formIndex, energyHessian proof fields, Jacobi-space lemmas.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "B_emb := B at M = Bridge.Sub hN, cov = Bridge.conn (B_to_B_emb). A_geo := A's assertion_4 for the geodesics of connected slice submanifolds modelled on ℝⁿ, written as incl ∘ γ with γ a blind geodesic of ↥N (A_to_A_geo; every unbroken geodesic of N is one on [0,1]). Proved A_to_B_emb (uses A's assertion_4; #rt_check OK) and B_emb_to_A_geo / B_to_A_geo (#rt_check OK). New dictionary (namespace Emb): E_0^τ for 0<τ≤1 — a blind variation of γ|[0,τ] (IsVarSubT τ) extended by γ on [τ,1] is a Morse.IsVariation on [0,1] (isVariation_extA) whose E_0^1 is the blind E_0^τ plus a constant (energy_extA), so EnergyC2 and Theorem 13.1 give hessT_data; existence via Lemma 11.A restricted to a subdivision of [0,τ] (exists_isHessT); hence HessT τ = 2·secondVariation on TOm τ (hessT_eq_T); TOm τ ⇔ Morse.fieldsUpTo τ (mem_pathTangent_of_inTOmegaT, inTOmegaT_toFA_T); generic index/nullity transport (bIndex_eq_formIndex_of, setDim_bNullSet_eq_rank) along the injective map toFA : fieldsUpTo τ → FA onto TOm τ; so lam τ γ = indexUpTo τ (lam_eq_indexUpTo; packaged as Emb.lamEq = the LamEq hypothesis of Items/V9_20.lean/V9_22.lean, and Emb.lamEqOne = the LamEq hypothesis of Items/V13_3.lean, V10_23, V13_4, V13_5, V13_7 up to specialization; #rt_check against those items' theorems OK) and B's ν(τ) = conjMultiplicity 0 τ (setDim_bNullSet_T + rank_ker_fieldsUpTo via Morse.lemma_15_4_ker and Morse.finrank_ker_broken, item V9_19). Limitations: induced connection only, model ℝⁿ, connected ↥N.",
+ "uses_hypothesis_emb": {
+  "A_to_B_emb": true,
+  "B_emb_to_A_geo": true
+ },
+ "second_attempt": "EnergyC2 + Hessian dictionary extended to E_0^τ (extension of variations of γ|[0,τ] by γ) + index/nullity transport: the embedded special case is now proved both ways (A_to_B_emb, B_to_A_geo; #rt_check OK); was 'failed'. Also proves the coordinator's LamEq (Emb.lamEq, Emb.lamEqOne). A ⇔ B still blocked by the abstract setting."
+}

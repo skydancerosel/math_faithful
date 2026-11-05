@@ -1,0 +1,19 @@
+{
+ "id": "V10_5",
+ "reblind": true,
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B (re-blinded, normalized Ω): on every abstract connected complete Riemannian ℝⁿ-manifold, for Milnor's data Setup16 (ε with the conclusion ShortGood of Lemma 10.8 on S, t_{i+1} − t_i < ε²/c) and Ω^c ≠ ∅, w ↦ (w(t_1),…,w(t_{k−1})) is an open embedding of B = Int Ω(t)^c (d-topology) into M^{k−1}. A (universes 0; homotopyEquivNodes, a def, read as Nonempty of its type): for slice N ⊆ V and any Morse.BrokenSetup, B.pathP (broken geodesic of break points y ∈ B.nodes) is continuous into Morse.PathSp (Milnor's pseudo-metric), γ ↦ B.nodeVal γ is continuous on all of PathSp, and B^a ⊆ Ω ≃ₕ B^a ⊆ N^m. A ⇒ B fails genuinely: setting, and A only covers subdivisions carrying a BrokenSetup, which B's Setup16 need not provide (the known §16 gap). B ⇒ A fails genuinely: continuity of nodeVal off B, the homotopy equivalence on the unnormalized PathSp, and BrokenSetup subdivisions not satisfying B's hypotheses (completeness, Setup16) are not in B.",
+ "B_issue": null,
+ "overlap": "A_to_B_emb_BS and A_to_B_emb_of_gap checked (#rt_check OK). #rt_overlap of A_to_B_emb_BS: 557 shared project theorems — lemma_16_1 and its proof (nodeVal_mem_nodes, path_nodeVal, nodeVal_path, exists_segVec, isBroken_path, energy_path, the construction of B.path: segPath, joinVec, …) and the PathSp metric lemmas (edist_def, edist_eq_zero_of_eqOn, continuous_of_edist_eq_zero, supDist/l2Dist congruence and triangle lemmas), which the item's homotopyEquivNodes also uses; the item's two continuity theorems enter only through the hypothesis A.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false,
+  "A_to_B_emb_BS": true
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V10_5.lean: B_emb := B at M = Bridge.Sub hN, cov = Bridge.conn (B_to_B_emb). A ⇒ B_emb is NOT proved, but reduced exactly to the known §16 gap: A_to_B_emb_BS (#rt_check OK) proves B's conclusion on ↥N for every subdivision carrying a Morse.BrokenSetup (no completeness/connectedness/Setup16 needed), from A's continuity of B.pathP and nodeVal plus the project's lemma_16_1 and exists_isOpen_nodes; A_to_B_emb_of_gap : A → Gap16 → B_emb (#rt_check OK), where Gap16 = 'on complete connected ↥N, B's Setup16 data carry a Morse.BrokenSetup with the same subdivision' — not expected to follow from ShortGood (BrokenSetup also needs normal radii ≥ δ on S, IsShortJoin on an open set of V×V, c·len < δ²); proving B_emb directly from ShortGood would need continuity of short geodesics in their end points, i.e. new geometry. Dictionary (namespace Emb, shared with V10_4/V10_6): edist_eq (from V10_19), tau/isInducing_tau for the normalized Om, nlift, om_ext, isGeodesic_Icc_of, subdiv, mem_brokenPaths_of_mem_Bset, mem_Bset_of, iota_evalPts, isOpenEmbedding_evalPts. B_emb ⇒ A not attempted (needs Setup16 from a BrokenSetup — ShortGood from IsShortJoin, Items/V10_3.lean's shortGood_of — and completeness, which a BrokenSetup does not give; nodeVal off B and the homotopy equivalence are not in B)."
+}

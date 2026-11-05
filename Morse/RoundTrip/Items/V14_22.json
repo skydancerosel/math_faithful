@@ -1,0 +1,17 @@
+{
+ "id": "V14_22",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": false,
+ "why": "A (theorem_23_3, theorem_23_3_mulEquiv; universes 0) only asserts, for |ι| = 2m with ι nonempty and every P ∈ G_m(ℂ^ι) (Hermitian projections of trace m), SOME bijection π_i(G_m, P) ≃ π_{i+1}(SU(ι), I) for i ≤ 2m and SOME group isomorphism for 1 ≤ i ≤ 2m: Milnor's 'hence' clause only. B also states Theorem 23.3's main assertion on every abstract Riemannian model M of SU(2m) (smooth isometric embedding ψ onto SU(2m) for Re tr(AB*)): the inclusion Ω^d → Ω(M; I, −I) induces bijections on π_i (group isomorphisms with ⇑e = the induced map) for i ≤ 2m at every base point, and a continuous j : G_m → Ω with ψ(j P t) = exp(t·iπ(2P − I)) induces bijections/isomorphisms. B ⇒ A (proved, uses B): instantiate B at the project's own SU(2m) — the slice submanifold of M_{2m}(ℂ) (isSliceSubmanifold_specialUnitaryGroup, model changed to ℝⁿ as in Items/V7_28), packaged by RoundTrip.Bridge, ψ = inclusion; connectedness from π_0 U(2m) ≅ π_0 S¹ (project's nonempty_pi_unitary_equiv_circle) and U ≅ S¹ × SU (unitaryProd); isometry Re tr(AᴴB) = Re tr(AB*); then B's last two conjuncts + rank = trace for projections + reindexing ι ≃ Fin 2m. A ⇒ B fails genuinely: A says nothing about the inclusion Ω^d → Ω or any specific map inducing the isomorphisms (an abstract isomorphism does not give that), and the project has those ingredients only outside the item (theorem_22_1_bijective, minPathsHomotopyEquiv, lemma_23_1) and only for its embedded SU(2m); for an abstract M one would also need a transport along ψ (ψ a diffeomorphism onto the slice submanifold, Milnor's d-topology vs the project's PathSp). A ⇒ B's last two conjuncts (the model-free 'hence' part, all m incl. m = 0 and all base points) is proved (A_to_B34).",
+ "B_issue": null,
+ "overlap": "B_to_A: 283 shared project theorems — the SU(2m) slice-submanifold infrastructure (isSliceSubmanifold_specialUnitaryGroup, suMap/hermPart/regular value, MatrixInner, slice charts), homotopy-group functoriality and change of base (piEquivOfHomeomorph, homotopyGroupMap_comp, changeBase*), and homotopy-lifting/cell lemmas reached through the stability lemma nonempty_pi_unitary_equiv_circle (used only for connectedness of U(2m)); none of theorem_23_3's substance (lemma_23_1, minPathsHomotopyEquiv, corollary_22_2_su', theorem_22_1) is shared. A_to_B34: 44 shared (homotopy-group transport along homeomorphisms).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": true
+ },
+ "embedded_special_case": "Bemb_to_A_only",
+ "embedded_special_case_note": "Items/V14_22.lean: B_emb := B at M = Bridge.Sub (hSU (2m)) (the project's SU(2m) ⊆ M_{2m}(ℂ), model ℝⁿ with n = dim 𝔰𝔲(2m) via V7_28's isSliceRn, induced Frobenius metric), ψ = inclusion (Model.isSUModel_ψ: ContMDiff via the identity CLM Frobenius → sup-norm matrices, embedding, range, isometry), p = I, q = −I. B_to_A goes through exactly this B_emb. A ⇒ B_emb fails: B_emb's first two conjuncts would need the project's theorem_22_1_bijective for SU(2m) transported along V13_3's τ dictionary (blind Ω ⊆ Ω vs PathSp) and an identification of B's j with the project's minVelToPaths ∘ lemma_23_1⁻¹ (minPathsHomotopyEquiv); none of this is in A. No connection is involved (B is metric-only)."
+}

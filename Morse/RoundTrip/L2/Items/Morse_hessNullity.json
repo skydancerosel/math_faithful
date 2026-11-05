@@ -1,0 +1,11 @@
+{
+ "id": "Morse_hessNullity",
+ "name": "Morse.hessNullity",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Project: finrank of the null space of energyHessian normalised by X ↦ X ∘ projIcc. Blind: finrank of the restrictions to [0,1] of the null space of its E_** (on its TΩ_γ). Equal for every γ ∈ Ω (the signature's hypothesis): the blind TΩ_γ/E_** are the project's pathTangent/energyHessian (dictionary as for Morse_energyHessian and Morse_hessNullSpace), restriction to [0,1] kills the normalisation (funLeft val ∘ restrictIcc = funLeft val), and it is injective on the project's normalised null space, so the finranks agree (finite or not)."
+}

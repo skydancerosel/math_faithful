@@ -1,0 +1,11 @@
+{
+ "id": "Morse_Homology_TopTriple__",
+ "name": "Morse.Homology.TopTriple.δ",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "The literal equalities in the blind T hold by rfl: the project's relHomology objects are definitionally the blind H_n(C(X)/C(A)), and pairXY.snd = pairYZ.fst = Y. So T is not the junk 0 but deltaTB, the pair boundary of (X, Y) followed by H_n(Y) → H_n(Y, Z). The project's own TopTriple.δ_eq gives exactly this factorisation of δ (the connecting map of 0 → C(Y,Z) → C(X,Z) → C(X,Y) → 0), and the relevant ShortExact.δ maps and homologyMaps agree by rfl. Equal outright, with no sign difference."
+}

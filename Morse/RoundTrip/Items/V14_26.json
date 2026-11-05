@@ -1,0 +1,15 @@
+{
+ "id": "V14_26",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A (universes 0; the defs grassmannianEquiv, grassmannianEquiv_complex, grassmannianPiEquiv, minVelPiEquiv read as Nonempty of their types): (1) for ANY RCLike 𝕜 with SphereConnected 𝕜 d and any m', π_{j+1}(G_m(𝕜^{m'+m}), P₀) ≃ π_j(U(m), 1) for j + 2 ≤ dm' + d − 1; (2)–(5) the complex G_m(ℂ^{2m}): at P₀ in Fin m ⊕ Fin m coordinates and at every P of Morse.grassmannian ι m (|ι| = 2m), π_{j+1} ≃ π_j(U(m), 1) for j + 1 ≤ 2m, ≃* for j + 2 ≤ 2m; (6) the same for minVel ι. B: for every P ∈ G_m(ℂ^{2m}) (rank-m Hermitian idempotents) and every g ∈ U(m), π_{k+1}(G_m, P) ≃ π_k(U(m), g) for k + 1 ≤ 2m and ≃* for k + 2 ≤ 2m (abstract isomorphisms in both). A ⇒ B (uses (4), (5)): rank = trace for idempotents, change of base point g by left translation. B ⇒ A fails only through (1), genuinely: B says nothing about other fields 𝕜 or codimensions m' ≠ m. B ⇒ A minus (1) is proved (B_to_A_core: reindexing, rank = trace, and the project's lemma_23_1 homeomorphism minVel ι ≃ₜ G_m(ℂ^ι) for (6)), so on the complex G_m(ℂ^{2m}) A and B are equivalent.",
+ "B_issue": null,
+ "overlap": "A_to_B: 56 shared project theorems — homotopy-group transport along homeomorphisms (piEquivOfHomeomorph's ingredients: homotopyGroupMap_comp, bijective_homotopyGroupMap_homeomorph, changeBase*, cube/frame lemmas, nonempty_mulEquiv_of_homeomorph) and vocabulary-induced proof fields (mul_conjTranspose_mem_grassmannian, baseFrame_mem, specialSkewHermitian proofs, via grassBase and minVel in A's statement). B_to_A_core: 78, the same plus grassCongr and the proof of lemma_23_1 (outside the item, used for conjunct (6)). None of the exact-sequence/boundary-map argument (boundaryEquivPi, isSerreFibration_frameSpanC, subsingleton_pi_stiefel_sum) is shared.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ }
+}

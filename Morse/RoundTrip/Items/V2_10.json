@@ -1,0 +1,11 @@
+{
+ "id": "V2_10",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": true,
+ "why": "A = remark_3_4 for f : E → ℝ (E a finite-dimensional inner-product space): M^c is an SDR of M^{c+ε}, and M^{c-ε} ∪ χ(e^λ) is an SDR of M^c for an embedded cell χ. Plus of_retract (A ⊆ B ⊆ C with A, B SDRs of C ⇒ A an SDR of B). B: the same two claims on an abstract, possibly non-compact manifold, with e^λ the cell of a Morse chart. A ⇒ B fails genuinely: the manifold case is absent. B ⇒ A is believed true but not done. of_retract is elementary topology that would have to be proved from scratch. remark_3_4 follows from B at M = ℝⁿ only after heavy glue: a linear isometry E ≃ ℝⁿ (with transport of critical point, non-degeneracy and index), shrinking ε so the disk ξ ≤ ε lies in the chart's target, and parametrising eCell by the ball of ℝ^λ.",
+ "B_issue": null,
+ "overlap": "n/a (neither direction proved)"
+}

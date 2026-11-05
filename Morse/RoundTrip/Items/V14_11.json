@@ -1,0 +1,17 @@
+{
+ "id": "V14_11",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "A (ι : Type): Lemma 23.2 for bottIndex (any finite type of cardinality 2m, odd k, Σk = 0, not all ±1 ⇒ ≥ 2m+2), plus two bookkeeping lemmas for ARBITRARY odd k (no Σk = 0): the (positive, negative)-pair sum is ≤ bottIndex, and the data P, N, S_p, S_n with N·S_p + P·S_n − 2PN ≤ bottIndex. B (Fin (2m)): Case 1 (≥ m+1 negative, or ≥ m+1 positive), Case 2 (m of each sign, not all ±1), and Lemma 23.2, each giving ≥ 2m+2. A ⇒ B: all four from A's bottIndex_ge (Case 1 forces non-minimality: with Σk = 0, all ±1 would give m of each sign, project lemma card_eq_of_minimal). B ⇒ A: bottIndex_ge from B's Lemma 23.2 after reindexing by Fin (2m); the two bookkeeping lemmas are not in B (they are Milnor's proof, not his statement) and are re-proved outright. B's case split is a consequence of the lemma, not separate content.",
+ "B_issue": null,
+ "overlap": "A_to_B: 0. B_to_A: Morse.bottIndex_term_nonneg, Morse.sum_pos_neg_eq, Morse.two_le_sub_of_odd (+ aux) — helper lemmas of the item's proofs, reused in the outright re-proof of the bookkeeping lemmas.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about the §23 matrix-group setting / spectra of K_A (concrete matrices and real numbers); it does not quantify over abstract Riemannian manifolds."
+}

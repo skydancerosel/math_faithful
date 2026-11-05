@@ -1,0 +1,15 @@
+{
+ "id": "V14_25",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A (universes 0; SphereConnected, unitaryInclC vocabulary): (1) for any RCLike 𝕜 with SphereConnected 𝕜 d, π_i V_k(𝕜ⁿ) = 0 for i + 1 ≤ d(n−k) + d − 1; (2) stability of U(m) → U(m+k) (S ↦ diag(S, I_k), index Fin m ⊕ Fin k) bijective for i + 2 ≤ dm + d − 1, at every base point; (3) SphereConnected ℂ 2 (π_i S^{2n−1} = 0, i < 2n − 1); (4) π_i V_k(ℂⁿ) = 0 for i ≤ 2(n−k); (5) π_i U(m) → π_i U(m+k) bijective for i < 2m; (6) onto for i ≤ 2m — bijections of sets. B (ℂ): for every r, the inclusion U(m+r) → U(m+r+1) is bijective on π_j for j < 2m (as a group isomorphism whose underlying map is the induced map for 1 ≤ j), onto on π_{2m} for r = 0, and π_i(U(2m)/U(m)) = 0 for i ≤ 2m on the coset space. A ⇒ B (uses (4), (5), (6)): reindex Fin n ⊕ Fin 1 ≃ Fin (n+1) (diag(S,1) = blockIncl), apply (5)/(6) at m + r, multiplicativity from the project's homotopyGroupHom (MulEquiv.ofBijective, coe = induced map), and U(2m)/U(m) ≃ₜ V_m(ℂ^{2m}) (last m columns, compactness; transitivity from the project's exists_unitary_smul_baseFrame, V14_23's item, not banned here) with (4) at n = 2m, k = m. B ⇒ A fails genuinely: B has no sphere connectivity (3), no V_k(ℂⁿ) for general n, k (4), nothing for 𝕜 = ℝ or a general SphereConnected parameter ((1), (2)); B ⇒ A's (5), (6) IS proved (B_to_A56: chain B's one-step inclusions U(m+k) → U(m+k+1), taken from B at m + k with r = 0, then reindex Fin m ⊕ Fin k ≃ Fin (m+k)), so on complex stability A and B agree; (1)–(4) do not follow from B.",
+ "B_issue": null,
+ "overlap": "A_to_B: 74 shared project theorems — homotopy-group functoriality and change of base (homotopyGroupMap_comp, bijective_homotopyGroupMap_homeomorph, subsingleton_homotopyGroup_of_homeomorph, changeBase*, cube/frame lemmas), Stiefel basics (reindex_mem_stiefel, mem_stiefel, fromBlocks_mem_unitaryGroup, continuous_unitaryIncl, coe_unitaryOrbit) and exists_unitary_smul_baseFrame. None of the fibration/exact-sequence arguments (subsingleton_pi_total, bijective_homotopyGroupMap_fiberIncl_of_le, isSerreFibration) is shared. B_to_A56: 50 shared (homotopy-group functoriality, homotopyGroupMap_id/comp, bijective_homotopyGroupMap_homeomorph, Stiefel/unitaryIncl basics).",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ }
+}

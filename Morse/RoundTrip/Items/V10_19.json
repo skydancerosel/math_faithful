@@ -1,0 +1,17 @@
+{
+ "id": "V10_19",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B = (Lemma 17.C as in V10_18: continuous A and continuous broken-geodesic h with h∘i ≃ id, i∘h ≃ id) ∧ (Theorem 17.1: every natural i : Ω → Ω* is a homotopy equivalence), on abstract Riemannian M (not necessarily complete). The first conjunct is believed false (see V10_18.json: h cannot be d-continuous), so A ⇒ B fails; the second conjunct is exactly the project's theorem_17_1 on embedded manifolds. A (universes 0): Example 1 of the Appendix pulled back along a continuous map, Theorem A of the Appendix for homotopy direct limits, Theorem 17.1 for any JoinSystem, and Theorem 17.1 for slice submanifolds with ANY model Z. B ⇒ A fails genuinely: setting, and A's two Appendix lemmas (pure topology) are not consequences of B.",
+ "B_issue": "B's first conjunct packages Milnor's proof sketch ('Clearly h is continuous') into the theorem; that part is believed false (V10_18). Milnor's Theorem 17.1 itself is the second conjunct and is fine.",
+ "overlap": "A_to_B2_emb and B2_emb_to_A_emb: 109 shared project theorems each — slice-chart infrastructure (Milnor.SliceChart.*, IsSliceSubmanifold.chartedSpace/isManifold), the PathSp pseudo-emetric instance fields, riemDist lemmas, PathSp.edist_eq_zero_of_eqOn, continuous_toPathC/edist_toPathC_le (continuity of pathIncl) and the IsHomotopyEquiv API (comp, of_homotopic, of_inverse, of_homotopyEquiv); none of the proof of Theorem 17.1 (no JoinSystem/YSet/brokenΩ/telescope/theoremA lemmas).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "Bemb_to_A_only",
+ "embedded_special_case_note": "Items/V10_19.lean: B_emb := B at M = Bridge.Sub hN, cov = Bridge.conn (B_to_B_emb); B2_emb := its Theorem-17.1 conjunct (B_emb_to_B2_emb). Proved (#rt_check OK both): A_to_B2_emb (from A's theorem_17_1) and B2_emb_to_A_emb, where A_emb = theorem_17_1's conclusion (also that of JoinSystem.isHomotopyEquiv_toPathC) for model ℝⁿ, connected ↥N, end points in N. So on embedded manifolds the Theorem-17.1 parts are EQUIVALENT; A ⇒ B_emb fails only through the (believed false) Lemma-17.C conjunct, and B_emb ⇒ A covers only A_emb. New dictionary (namespace Emb): tau/isInducing_tau (blind Ω topology induced from PathSp, via Emb.edist_eq), sigma (Homeomorph blind Ω* ≃ PathC), homotopic_of_inseparable (pointwise inseparable maps are homotopic), lam (lifting PathSp → Ω via Bridge.lift), isHomotopyEquiv_tau / isHomotopyEquiv_lam (the two composites are pointwise at d-distance 0), i_eq (every natural i is σ⁻¹ ∘ pathIncl ∘ τ), isHomotopyEquiv_i, isHomotopyEquiv_pathIncl. Not covered: general model Z (change-of-model glue as in Items/V7_28.lean), disconnected N, the Appendix lemmas."
+}

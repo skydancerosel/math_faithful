@@ -1,0 +1,17 @@
+{
+ "id": "V14_7",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "Vocabulary: the project's Morse.conjParams e = {t ∈ (0,1) | e > 0, t = πs/√e} is the blind conjParams e (all positive parameters t = s·π/√e) intersected with (0,1) (conjParams_inter). A (no universes): Morse.conjParams e is finite for every e; for e = (πd)², d ≥ 1, it is {s/d : 0 < s < d} with ncard d − 1. B: (i) for e > 0 the positive conjugate parameters are {sπ/√e : s ≥ 1}; (ii) for odd k_j > k_l (Σk = 0) they are {2s/(k_j − k_l)}; (iii) ncard of those in (0,1) is (k_j − k_l)/2 − 1. A ⇒ B: (iii) from A's ncard_conjParams_sq with d = (k_j − k_l)/2; (i), (ii) concern parameters ≥ 1 that the project's definition discards and are proved outright (elementary). B ⇒ A: finiteness and conjParams_sq from B (i); the count for every d ≥ 1 from B (iii) applied to k = (1, 1 − 2d, 1, 2d − 3) (odd, sum 0, difference 2d). Same mathematics; the only difference is that the project only keeps parameters in (0,1).",
+ "B_issue": null,
+ "overlap": "0 shared project theorems in both directions.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about the §23 matrix-group setting / spectra of K_A (concrete matrices and real numbers); it does not quantify over abstract Riemannian manifolds."
+}

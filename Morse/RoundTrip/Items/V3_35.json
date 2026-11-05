@@ -1,0 +1,11 @@
+{
+ "id": "V3_35",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "A: for a compact slice submanifold N ⊆ V and f = F|N with non-degenerate critical points (homology read in any T ≃ₜ N), b_λ ≤ C_λ, Σ_{λ≤dim}(-1)^λ b_λ = Σ(-1)^λ C_λ, b_i = 0 and H_i = 0 (Subsingleton) for i > dim N; primed versions for T = N. B: the same (2) and (3) for an abstract compact Hausdorff manifold M and a smooth f with non-degenerate critical points. Rabs = bettiNumber (finrank_subsetHomology_eq_bettiNumber), Cnum = critCount (rfl). A ⇒ B: transport M to a Whitney copy (new Glue.exists_ambient_any_dim: exists_ambient_of_isMorseFunction in dim ≥ 1, L_p on exists_whitney_normSq in dim 0) and apply A with e = Φ. B ⇒ A: N with F|N is such an M; b(T) = b(N) by bettiNumber_eq_of_homeomorph; vanishing from b_i ≤ C_i = 0. B, stated with finrank, says nothing about finite-dimensionality, so the Subsingleton clause uses the project's finiteDimensional_spaceHomology_of_isCompact (Morse filtration of L_p, outside the item): that finiteness is content A has and B lacks.",
+ "B_issue": "R_λ is finrank, which is 0 for infinite-dimensional homology; B therefore does not assert that H_λ(M;F) is finite-dimensional, which Milnor presupposes.",
+ "overlap": "B_to_A: 1066 shared, all through the finiteness clause (finiteDimensional_spaceHomology_of_isCompact → finiteDimensional_spaceHomology → exists_cells_filtration, sublevel steps, cell homology, excision); the inequality clauses themselves share only slice-chart/homology infrastructure"
+}

@@ -1,0 +1,17 @@
+{
+ "id": "V8_5",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universe 0): for any path c : ℝ → E into a real normed space (any norm, not only Euclidean), piecewise smooth on [a, b] with a ≤ b arbitrary: L² ≤ (b−a)E; L² = (b−a)E iff ‖c'‖ is constant at the points of (a,b) where c is differentiable; and (A3) an admissible path of constant speed k has E = k²(b−a). B: for abstract connected Riemannian ℝⁿ-manifolds, IsPW paths on [0,1] and 0 ≤ a < b ≤ 1: the inequality, equality iff the speed is a.e. constant on (a,b), and equality iff L_a^t = (t−a)/(b−a)·L_a^b on [a,b]. A ⇒ B fails genuinely: the Riemannian speed ‖mfderiv‖ of an abstract path is not the derivative norm of a piecewise smooth path in a normed space (that would need an isometric embedding; the arc-length path ∫‖v‖ is only piecewise C⁰-derivative, not piecewise smooth), so one would have to rerun Schwarz for the abstract speed. B ⇒ A fails genuinely: B says nothing about non-Euclidean norms, non-embedded paths or A3. On embedded manifolds the two coincide (see embedded note).",
+ "B_issue": null,
+ "overlap": "B_to_A_emb: 8 shared, auxiliary only (exists_piece_left, derivWithin_piece, derivWithin_eq_deriv_of_piece, IsPiecewiseSmooth.isAdmissible, IsAdmissible.countable, intervalIntegrable_of_contDiffOn); none of the Schwarz argument (integral_norm_deriv_sub_sq etc.) is shared.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "B_emb := B for M = Bridge.Sub hN (induced metric; no connection involved), B_to_B_emb. A_to_B_emb (uses A1, A2; rt_check OK): via Bridge.arcLen_eq/energy_eq/norm_mfderiv_curve and isPiecewiseSmooth_of_isPW, B's claims become Emb.Bv (incl ∘ pw); 'a.e. constant speed' ⇔ A's 'constant at differentiability points' (Emb.ae_const_iff, continuity on closed pieces), and the arc-length clause via FTC (integral_hasDerivAt_right at continuity points of the speed). B_to_A_emb (uses B; rt_check OK): A1 ∧ A2 for paths c in a connected slice submanifold modelled on ℝⁿ, piecewise smooth on [0,1], on subintervals 0 ≤ a < b ≤ 1 (lift via Bridge.lift/isPW_lift; congruence lemmas for L, E, c' on [a,b]). Not covered by B_emb: A3 (energy of constant-speed admissible paths) and A for paths in arbitrary normed spaces."
+}

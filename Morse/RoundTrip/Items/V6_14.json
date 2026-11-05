@@ -1,0 +1,17 @@
+{
+ "id": "V6_14",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): embedded N ⊆ V — existence (the induced P(dY(X)) is symmetric and compatible), Koszul formula and uniqueness among operations on maps N → V; abstract Mathlib connections — Koszul formula and uniqueness (on fields differentiable at the point) for connections symmetric and compatible in the Cor. 8.4 sense (also torsion-free + IsMetricCompatible). No abstract existence. B: on every abstract smooth Riemannian ℝⁿ-manifold there is a smooth connection that is symmetric (smooth fields) and compatible in Milnor's parallel-transport sense, and any two agree on smooth Y. A ⇒ B fails genuinely: existence of the Levi-Civita connection on an abstract manifold is absent (needs Christoffel symbols in charts + patching, or Koszul + tensoriality in Z); for uniqueness A's abstract theorem needs the Cor. 8.4 formula (from Milnor-compatibility = abstract Lemma 8.3, absent, cf. V6_11) and symmetry on all fields differentiable at p (from symmetry on smooth fields = locality, absent). B ⇒ A fails: B's objects are abstract; the induced connection is not packaged as a Mathlib CovariantDerivative on N with a RiemannianBundle, and A's abstract uniqueness has weaker hypotheses (no smoothness, Cor. 8.4-compatibility) than B's IsLC.",
+ "B_issue": null,
+ "overlap": "no B_to_A proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V6_14.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric): (∃ cov, IsLC cov) ∧ any two IsLC connections on ↥N agree on smooth fields (B_to_B_emb). Existence holds outright (B_emb_exists = Bridge.conn_isLC, A not needed). Uniqueness: proved only CONDITIONALLY, A_to_B_emb_of_lemma83 : A → Lemma83Emb → B_emb (#rt_check OK), where Lemma83Emb := every IsLC connection on ↥N satisfies Corollary 8.4 (Emb.Cor84). Glue: an arbitrary connection cov on ↥N is transported to an operation on maps N → V (Emb.opOf); IsSymm cov transfers via Bridge.D_mlieBracket, Cor84 cov gives the compat field, so A's IsSymmCompat.eq_leviCivita (tested with smooth extensions Bridge.ext of tangent vectors) yields cov Y = Bridge.conn Y. Missing (genuine, not glue): Lemma83Emb = Milnor's Lemma 8.3 for an ARBITRARY Milnor-compatible connection on ↥N — needs parallel transport for that connection (a non-skew linear ODE along the curve; the project only has the skew-adjoint one for the induced connection, cf. V6_7/V6_8) and parallel orthonormal frames; Items/V6_11.lean proves Cor84 only for Bridge.conn. B_emb ⇒ A fails genuinely: B_emb speaks only of Mathlib CovariantDerivatives with Milnor-compatibility, whereas A's embedded uniqueness is for arbitrary operations D on maps N → V (no linearity/Leibniz) compatible in the Cor. 8.4 sense, A's existence clause is the Cor. 8.4 formula for the induced connection, and A's Koszul formulas and abstract (any-model, Cor. 8.4-compatibility) uniqueness are not consequences of B_emb."
+}

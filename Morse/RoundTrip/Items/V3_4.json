@@ -1,0 +1,11 @@
+{
+ "id": "V3_4",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A is Theorem 3.1 with the level set carried along: a diffeomorphism Φ of a slice submanifold N with Φ(N^a) = N^b and Φ(F⁻¹a) = F⁻¹b, for any smooth F on the ambient space with compact critical-point-free slab. It also has the abstract IsSlabFlow.image_level. B is the specific Reeb situation on an abstract compact manifold: M^ε ≃ M^{1-ε}, and M^{1-ε} and f⁻¹[1-ε,1] are closed n-cells whose boundary spheres are the level 1-ε. A ⇒ B: for n = d+1, embed M as a slice submanifold (Whitney), extend f∘Φ⁻¹ to ℝᴷ⁺¹ (exists_contDiff_comp_val_eq), and apply A on [ε, 1-ε] to get M^ε ≃ M^{1-ε} matching the levels. The cells come from the project's Morse-chart lemmas at the extrema (V3_2's declarations, not this item's), the level-matching homeomorphism carrying the cell structure from M^ε to M^{1-ε}. n = 0 is trivial (M = {p, q}). B ⇒ A fails: B says nothing about general F, slabs or flows.",
+ "B_issue": null,
+ "overlap": "n/a (B_to_A not proved)"
+}

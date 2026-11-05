@@ -1,0 +1,17 @@
+{
+ "id": "V12_6",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universe 0) is Morse.curv_inner: for ANY real Lie algebra L and ad-invariant bilinear B, B (curv (halfLie L) X Y Z) W = ¼ B ⁅X,Y⁆ ⁅Z,W⁆ — pure algebra. B: on a Lie group with a bi-invariant metric and Levi-Civita connection, ⟨curvF X_u X_v X_w, X_z⟩ = ¼⟨[X_u,X_v],[X_w,X_z]⟩ at every point. B ⇒ A only vacuously. A ⇒ B fails: B needs (d) X ⊢ Y = ½[X,Y] and 21.3(a) on the group (V12_2, V12_3), geometric facts the project does not formalize for Lie groups. Bridge B_of_inputs (uses A, #rt_check OK): (d) + ad-invariance of the metric at 1 (B of V12_1 (6)) ⇒ B, via curvF on left-invariant fields = liv (curv (halfLie 𝔤) u v w), ⟨X_a,X_b⟩ ≡ ⟨a,b⟩ and A for 𝔤 with ipForm. A carries exactly the algebraic step of (c).",
+ "B_issue": null,
+ "overlap": "B_to_A and B_of_inputs: 7 shared [Morse.halfLie_apply, Morse.halfLie._proof_1..5, Morse.IsAdInvariant._proof_1] (definitions' auxiliaries; curv_inner/curv_halfLie avoided).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "Not applicable: the item's declarations live in Morse/Chapter12/BiInvariant.lean and concern an abstract real Lie algebra L with a bilinear form and an abstract bilinear 'connection' D : L →ₗ L →ₗ L; they are not about a matrix group as a slice submanifold. (The project's embedded matrix-group version of 21.1–21.3, Morse/Chapter12/GroupGeodesics.lean, e.g. IsMatrixGroup.curvOp_eq_curv_halfLie, is not part of this item.) B quantifies over abstract Lie groups with a Mathlib RiemannianBundle, not over Bridge.Sub."
+}

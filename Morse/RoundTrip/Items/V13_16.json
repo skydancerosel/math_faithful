@@ -1,0 +1,17 @@
+{
+ "id": "V13_16",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "Same situation as Theorem 22.1 (V13_2), relativized to a clopen Ω'. B: abstract connected complete Riemannian ℝⁿ-manifold, any Levi-Civita connection, Ω' clopen in the blind Ω; if (i) Ω' ∩ Ω^d (Ω^d = E⁻¹[0, ρ²], separation quotient) is a topological manifold and (ii) every non-minimal geodesic in Ω' has blind index lam 1 γ ≥ λ₀, then π_i(Ω', Ω' ∩ Ω^d) = 0 for i < λ₀ (RelPiTrivial on the subspace Ω'). A (universes 0): slice submanifold N ⊆ V (any model Z), compact closed balls, (i') minPaths (least energy, all of Ω) a retract of an open neighbourhood in Ω, (ii') unbroken geodesics in Ω' not of least energy with formIndex(energyHessian) ≥ λ₀ ⇒ every map from a compact P ⊆ ℝ^{<λ₀} into Ω' is homotopic rel the preimage of minPaths ∩ Ω' into minPaths ∩ Ω'; plus compression, the π_i-bijectivity corollaries, saturation of open sets and the clopen π_i lemma. A ⇒ B fails genuinely: abstract M; (i) ⇒ (i') is Hanner's theorem (and A's retraction is of all of Ω^d); (ii) ⇒ (ii') needs the unbuilt blind-lam ↔ formIndex(energyHessian) dictionary. B ⇒ A fails genuinely: A's hypothesis (i') is weaker than 'manifold', A's conclusion covers arbitrary compact P rel h⁻¹(Ω^d ∩ Ω'), A has the bijectivity corollaries and general lemmas; setting.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. A_to_B_emb' (#rt_check OK): 590 shared project theorems — as for V13_2: slice-chart, geodesic-flow/exp, normal-coordinate and path-space metric infrastructure, proof fields of statement vocabulary (energyHessian, clopenIncl, genLoopMap), plus Morse.mem_of_isClopen_of_continuous / Homotopy.range_subset_of_isClopen (a path starting in a clopen set stays there; also used by A's compresses_clopenIncl); none of 22.1's own argument (lemma_22_5_sublevel, exists_pushesInto_nodes, BrokenSetup deformation).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V13_16.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric, ConnectedSpace), cov = Bridge.conn (B_to_B_emb). A ⇒ B_emb is NOT glue (Hanner; index dictionary), exactly as for V13_2. Proved instead (#rt_check OK, uses A's theorem_22_1_clopen): A_to_B_emb' — B_emb with (i), (ii) replaced by A's hypotheses ((i') minPaths retract of an open set of PathSp; (ii') formIndex ≥ λ₀ for unbroken non-least-energy geodesics agreeing on [0,1] with a path of Ω') gives B's conclusion RelPiTrivial Ω' (Ω' ∩ Ω^d) i on the blind clopen Ω'. Glue: the whole Emb dictionary of Items/V13_2.lean copied verbatim (Ω ≃ₕ PathSp via tau/lam, omTopology_eq, Hopf–Rinow energy bound, isRiemComplete_of); new: lam_tau_mem_iff (open sets of the blind Ω are saturated) and relPiTrivial_clopen_of_pushes — A is applied to the clopen lam⁻¹(Ω') ⊆ PathSp and P = Iⁱ, the lifted homotopy G (corrected on inseparable points as in V13_2) stays in Ω' because Ω' is clopen and t ↦ G(t,x) starts in Ω' (Morse.mem_of_isClopen_of_continuous). So on ↥N the conclusions match exactly; the gaps are only in the hypotheses (Hanner, index dictionary)."
+}

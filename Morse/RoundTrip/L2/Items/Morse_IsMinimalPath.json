@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsMinimalPath",
+ "name": "Morse.IsMinimalPath",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both: c in Omega(N; p, q) and L(c) <= L(c') for all c' in Omega(N; p, q), with L = integral over [0,1] of ||deriv||. The length formulas are identical and the two path spaces are equal (piecewise smoothness via break set vs subdivision, isPiecewiseSmooth_iff). Equal for all N, c, p, q."
+}

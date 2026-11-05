@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsCountableCellComplexType",
+ "name": "Morse.IsCountableCellComplexType",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "The standard but unformalized comparison: for every tower of cell attachments, the mapping telescope is homotopy equivalent to the colimit in TopCat, i.e. the union with the weak topology (Milnor Appendix, Example 2 / J. H. C. Whitehead; true because each Kₙ → Kₙ₊₁ is a closed cofibration). This is a missing theorem, not a restriction on X or cells (agree_of, hypothesis hW).",
+ "difference": "The model of the union ⋃ Kₙ: the project uses the mapping telescope of the tower, the blind definition uses the colimit. Everything else agrees: proved P ⟺ (T with colimit replaced by the mapping telescope), P_iff_Ttele.",
+ "harmless": true,
+ "proved": "partial",
+ "T_issue": null,
+ "why": "The towers agree up to isomorphism (as in the CellTower item), and mapping telescopes of isomorphic sequences are homeomorphic (teleHomeo), giving P_iff_Ttele. The project's docstring says the telescope stands in for the weak-topology union and that the comparison is not formalized. Closing the gap needs the homotopy extension property for cell attachments, which is substantial new mathematics. Mathematically the two notions are equivalent."
+}

@@ -1,0 +1,11 @@
+{
+ "id": "Morse_Homology_relChains",
+ "name": "Morse.Homology.relChains",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "The project defines relShortComplex R ⋙ ShortComplex.π₃, where the third object of its cokernelSequence is (coker _).map on the arrow C(A) → C(X). The blind version is Arrow.forget ⋙ (chains R).mapArrow ⋙ coker. These are the same functor on objects and on maps of pairs, and the equality of functors is rfl."
+}

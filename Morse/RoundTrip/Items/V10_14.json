@@ -1,0 +1,17 @@
+{
+ "id": "V10_14",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; BrokenSetup on a slice N ⊆ V): nodeVal_mem_nodes_of_energy_lt (a path with E < c has its break points in U = B.nodes with E' ≤ E) and exists_energy_minimizing (given some path with E < c, some y ∈ U has B.path y an unbroken geodesic minimizing E over ALL of Ω(N;p,q)). B (abstract complete Riemannian ℝⁿ-manifolds, Setup16, a < c, Ω^a ≠ ∅): B^a non-empty and COMPACT (Milnor's d-topology), E attains its minimum on B^a at γ, and γ is a minimal geodesic (length ≤ that of every piecewise smooth path on any interval) from p to q. Beyond the setting: A has no compactness of B^a in Ω (the project's isCompact_sublevel is node-side, outside the item, and only for BrokenSetup subdivisions, which Setup16 subdivisions need not be); A's minimizer minimizes energy, B asks length minimality (bridged by Hopf–Rinow, outside A); A's nodeVal lemma is not in B; A covers non-complete N with S compact and any model Z.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. A_to_B_emb_nc (#rt_check OK): 496 shared project theorems — Morse.BrokenSetup.path_mem_pathSpace and its segPath/joinVec lemmas, the corollary_10_8' machinery (Flow, NormalCoord, LocalSpray, lemma_10_2/10_3) reached through exists_brokenSetup_uniform and isCompact_closedRiemBall_of_isRiemComplete, slice-chart lemmas; none of the proof of exists_energy_minimizing itself (isCompact_sublevel, continuousOn_energy', corollary_12_3, energy_path, nodeVal lemmas are not shared).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V10_14.lean: B_emb (M = Bridge.Sub hN, cov = Bridge.conn, ConnectedSpace, MetricComplete) with B_to_B_emb, and B_emb_nc = B_emb minus 'IsCompact B^a'. Proved (#rt_check OK): A_to_B_emb_nc — a BrokenSetup for a uniform fine subdivision (exists_brokenSetup_uniform, S compact by isCompact_closedRiemBall_of_isRiemComplete + Emb.metricComplete_iff), A's exists_energy_minimizing gives σ = Bs.path y; its lift is a blind geodesic on [0,1] (Emb.isGeodesic_lift), hence on every [t_i,t_{i+1}] (new Emb.isGeodesic_mono), so it lies in B^a for B's own subdivision with E ≤ E(w₀) ≤ a; it minimizes E over B^a; and it is minimal: L(γ)² = E(γ) ≤ E(σ') = L(σ')² ≤ L(pw)² for the Hopf–Rinow minimal geodesic σ' (project, outside A). Also proved: B_emb_nc_outright — B_emb_nc holds WITHOUT A (Hopf–Rinow's σ' minimizes energy by Morse.energy_le_of_isMinimalPath); so on ↥N A's contribution is only a second route to the minimizer, and the one claim of the Remark not already given by Hopf–Rinow — compactness of B^a for Milnor's Setup16 subdivision — is not in A (needs continuity of broken geodesics in Milnor's d from ShortGood data; the project's continuous_pathP/isCompact_sublevel are for BrokenSetup subdivisions only). New Emb glue: isGeodesic_mono, isPW_of_isGeodesic, isUnbrokenGeodesic_of_isGeodesic, conclusion_of_minimizer; copied: metricComplete_iff, rho lemmas, mem_pathSpace (V10_4), isGeodesic_lift and helpers (V9_10). Only the induced connection."
+}

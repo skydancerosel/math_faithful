@@ -1,0 +1,17 @@
+{
+ "id": "V8_11",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0), for slice submanifolds N ⊆ V with the induced metric: Corollary 12.3 (c ∈ Ω(N;p,q) is a critical path of E iff it is an unbroken geodesic) plus the three steps of its proof — accel_eq_zero_of_critical and jump_eq_zero_of_critical (from vanishing of the first-variation functional on TΩ), isGeodesicOn_of_glue (two geodesic pieces with a common velocity glue to a geodesic) — and exists_isGeodesicOn_through (a geodesic through any point with any tangent velocity). B: Corollary 12.3 only, for every abstract connected Hausdorff ℝⁿ-manifold with any smooth metric and any Levi-Civita connection (critical path for all 1-parameter variations U ⊆ ℝ¹ ⇔ IsGeodesic on [0,1]). A ⇒ B fails genuinely: abstract manifolds (first variation formula, Lemma 11.A and ODE uniqueness are only formalized for N ⊆ V). B ⇒ A fails genuinely: A's auxiliary lemmas (local existence of geodesics with arbitrary initial data, gluing, the first-variation-functional steps) are not consequences of B's equivalence.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. Embedded theorem B_to_A_cor: 110 shared project theorems, all infrastructure (slice charts, IsVariation/IsGeodesicOn structure fields and IsGeodesicOn.congr, tanProj/tanCoord/tangentSubspace lemmas, piecewise_induction, continuousOn_of_piecewise, projRep via Bridge); none of the proof of Corollary 12.3 (first_variation, exists_variation_one, accel/jump steps, gluing, lemma_10_2 are not shared).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V8_11.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric, ConnectedSpace), cov = Bridge.conn (B_to_B_emb via conn_isLC). A_cor := A's corollary_12_3 for ℝⁿ-modelled N. Proved B_emb ⇔ A_cor (A_to_B_emb uses A's corollary_12_3; B_to_A_cor uses B; both #rt_check OK). Same dictionary as V8_10 (copied): blind IsCriticalPath Efun ⇔ Morse.IsCriticalPath N (both directions of the 1-parameter variation translation), blind IsGeodesic on [0,1] ⇔ Morse.IsUnbrokenGeodesic, plus congruence on [0,1] (isCriticalPath_congr, isUnbrokenGeodesic_congr) and components (exists_component, isGeodesicOn_inter / isGeodesicOn_of_inter, isCriticalPath_of_component / isCriticalPath_inter_of) so that non-connected N is covered. Limitation: only the induced connection (uniqueness of the Levi-Civita connection is not in the Bridge), only model ℝⁿ; A's auxiliary lemmas are not covered."
+}

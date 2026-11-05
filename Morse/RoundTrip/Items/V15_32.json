@@ -1,0 +1,20 @@
+{
+ "id": "V15_32",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": true,
+ "why": "A (universe 0, any finite ι, J_1 a complex structure, i + 4 ≤ n): φ_r : Ω_1 → PathSp(O(ι); I, −I) (project path space, J' ↦ cos(πt)I + sin(πt)J') is bijective on π_i at every J', and π_i(Ω_1, J') ≃ π_{i+1}(O(ι), I) as sets. B (Fin n, all n): a continuous j : CS(n) → OmIn(O(n); I, −I) (blind path space) with j(J)(t) = exp(πtJ), (a) bijective on π_i, (b) a group iso for i ≥ 1, (c) π_iΩ_1 ≃ π_{i+1}O(n) and (d) π_{i+1}Ω_1 ≃* π_{i+2}O(n) at every base point X. Proved partial bridges (rt_check OK): A ⇒ (c) (A_to_B4: left translation of O(n)); A ⇒ (d) (A_to_B5: A's bijectivity + the project's homotopyGroupHom and group loop-space iso nonempty_mulEquiv_pathSp, outside A); B ⇒ A's second conjunct (B_to_A2: reindexing ι ≃ Fin (card ι)). What remains in both directions is A's (1) vs B's (a)/(b): the same statement for two formalizations of Milnor's Ω(O(n); I, −I) — j = normalize ∘ φ_r since exp(πtJ) = cos(πt)I + sin(πt)J — and transferring bijectivity needs the homotopy equivalence between the project's PathSp and the blind OmIn (IsPWOn vs IsPiecewiseSmooth, rhoIn vs riemDist, entrywise vs Frobenius derivatives, ball topology vs emetric, normalization), plus reindexing for B ⇒ A; believed true, not built (several hundred lines).",
+ "B_issue": null,
+ "overlap": "No full B_to_A. Partial B_to_A2: 39 shared project theorems, all homotopy-group transport infrastructure (piEquivOfHomeomorph, change of base point, homotopyGroupMap_comp/id, bijective_homotopyGroupMap_of_homotopyEquiv); theorem_24_3 avoided.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false,
+  "A_to_B4": true,
+  "A_to_B5": true,
+  "B_to_A2": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete real matrices (Ω_k(n) ⊆ M_n(ℝ) with the induced-metric notions defined by hand on subsets; the geometry is already embedded); it does not quantify over abstract Riemannian manifolds."
+}

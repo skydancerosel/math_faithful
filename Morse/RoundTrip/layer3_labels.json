@@ -1,0 +1,3131 @@
+{
+ "V1_1": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "range"
+  ],
+  "primary": "setting",
+  "evidence": "A is embedded torus in R^3; B is S1xS1 with extra stage homeomorphisms and cell attachments"
+ },
+ "V1_2": {
+  "codes": [
+   "vacuous"
+  ],
+  "primary": "vacuous",
+  "evidence": "Both listed declarations are definitions, A is True; B provable outright"
+ },
+ "V1_3": {
+  "codes": [
+   "general_A",
+   "extra_A"
+  ],
+  "primary": "general_A",
+  "evidence": "A holds for arbitrary normed space E, B only R^n; index_isGreatest has no counterpart"
+ },
+ "V1_4": {
+  "codes": [
+   "effort",
+   "vacuous"
+  ],
+  "primary": "effort",
+  "evidence": "clause (a) believed true but not proved; B_to_A re-proved without using B"
+ },
+ "V1_5": {
+  "codes": [
+   "general_A",
+   "structure_choice"
+  ],
+  "primary": "general_A",
+  "evidence": "A covers arbitrary coordinate systems and model spaces; B only the preferred chart"
+ },
+ "V1_7": {
+  "codes": [
+   "general_A",
+   "extra_A"
+  ],
+  "primary": "general_A",
+  "evidence": "A: Banach-valued Hadamard on star-convex sets of any normed space, plus second-order version"
+ },
+ "V1_8": {
+  "codes": [
+   "general_A",
+   "extra_A"
+  ],
+  "primary": "general_A",
+  "evidence": "arbitrary finite-dim model space, f smooth only on U; extra exists_sqrt_family, Sylvester"
+ },
+ "V1_9": {
+  "codes": [
+   "general_A",
+   "effort"
+  ],
+  "primary": "general_A",
+  "evidence": "arbitrary model space, f not assumed smooth; B⇒A believed true pure glue, heavy"
+ },
+ "V1_10": {
+  "codes": [
+   "general_A"
+  ],
+  "primary": "general_A",
+  "evidence": "A needs only C^2 at p, no Hausdorff, any universe; B assumes C^infty globally"
+ },
+ "V1_12": {
+  "codes": [
+   "B_false_milnor",
+   "extra_A",
+   "range"
+  ],
+  "primary": "B_false_milnor",
+  "evidence": "critical set of x^2 is {x=0}, not the 'x axis'; B false"
+ },
+ "V1_13": {
+  "codes": [
+   "setting",
+   "general_A",
+   "vacuous"
+  ],
+  "primary": "setting",
+  "evidence": "A normed space E; B abstract manifold; B_to_A re-proved directly without B"
+ },
+ "V1_14": {
+  "codes": [
+   "setting",
+   "general_A",
+   "hyp_A"
+  ],
+  "primary": "setting",
+  "evidence": "A flow of bounded Lipschitz field on Banach E; B abstract manifold needs charts, patching"
+ },
+ "V1_15": {
+  "codes": [
+   "setting",
+   "general_A"
+  ],
+  "primary": "setting",
+  "evidence": "A only M=E complete normed space; B abstract manifold needs patching local flows"
+ },
+ "V2_1": {
+  "codes": [
+   "match"
+  ],
+  "primary": "match",
+  "evidence": "DefRetract is exactly IsStrongDeformationRetract; both directions proved by transport"
+ },
+ "V2_2": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "reading"
+  ],
+  "primary": "setting",
+  "evidence": "A for M=E inner product space; ambient diffeo vs B maps between sublevel sets"
+ },
+ "V2_3": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "reading"
+  ],
+  "primary": "setting",
+  "evidence": "A slice submanifold N in V with F|N; B abstract ChartedSpace; ambient diffeo vs maps"
+ },
+ "V2_4": {
+  "codes": [
+   "hyp_A",
+   "extra_A",
+   "reading"
+  ],
+  "primary": "hyp_A",
+  "evidence": "A needs CompactSpace M; B only f^{-1}[a,b] compact; embedding lemma extra"
+ },
+ "V2_5": {
+  "codes": [
+   "extra_A",
+   "setting"
+  ],
+  "primary": "extra_A",
+  "evidence": "A specific example plus extra claims (not homotopy equivalent); B bare existence statement"
+ },
+ "V2_6": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "structure_choice"
+  ],
+  "primary": "setting",
+  "evidence": "A only f:E→ℝ; also milnorMu and handle lemma for every split chart and μ"
+ },
+ "V2_7": {
+  "codes": [
+   "extra_A",
+   "range",
+   "vacuous"
+  ],
+  "primary": "extra_A",
+  "evidence": "A is pushout part B omits; A⇒B holds only because B is true"
+ },
+ "V2_8": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "taken_as_hyp"
+  ],
+  "primary": "setting",
+  "evidence": "A slice submanifold; patch_theorem_3_2 takes Assertion 3 as hypothesis; abstract-manifold Thm 3.1 absent"
+ },
+ "V2_9": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A slice submanifold with explicit-cell SDR; B abstract; lacks embedding theorem and Lemma D"
+ },
+ "V2_10": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "effort"
+  ],
+  "primary": "setting",
+  "evidence": "A only f:E→ℝ; manifold case absent; B⇒A believed true but heavy glue; of_retract extra"
+ },
+ "V2_11": {
+  "codes": [
+   "cw_model",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "cw_model",
+  "evidence": "A=True (definitions); B is cellular approximation into Mathlib CWComplex, not available"
+ },
+ "V2_12": {
+  "codes": [
+   "cw_model",
+   "setting",
+   "extra_A",
+   "hyp_A",
+   "missing_math"
+  ],
+  "primary": "cw_model",
+  "evidence": "A compact slice submanifold, ordered iterated adjunction space; B Mathlib CWComplex needs cellular approximation"
+ },
+ "V2_13": {
+  "codes": [
+   "match"
+  ],
+  "primary": "match",
+  "evidence": "Same statement; only adjunction model differs (Quot vs pushout); both directions transport along homeomorphism"
+ },
+ "V2_14": {
+  "codes": [
+   "match"
+  ],
+  "primary": "match",
+  "evidence": "Lemma 3.7 same content transported along Quot ≃ pushout; B's extra clauses follow from A in lines"
+ },
+ "V2_15": {
+  "codes": [
+   "cw_model",
+   "setting",
+   "hyp_A",
+   "missing_math"
+  ],
+  "primary": "cw_model",
+  "evidence": "A regular values only, compact slice N; B every a with CWComplex; needs cellular approximation"
+ },
+ "V3_2": {
+  "codes": [
+   "extra_A",
+   "general_A"
+  ],
+  "primary": "extra_A",
+  "evidence": "A is general lemmas over any manifold and finite-dim E (indices, Morse charts); B only homeomorphism type"
+ },
+ "V3_3": {
+  "codes": [
+   "extra_A",
+   "general_A",
+   "hyp_A"
+  ],
+  "primary": "extra_A",
+  "evidence": "A gives strict extrema and indices 0,n beyond B; A excludes dim 0, drops T2"
+ },
+ "V3_4": {
+  "codes": [
+   "extra_A",
+   "setting",
+   "general_A"
+  ],
+  "primary": "extra_A",
+  "evidence": "A is Thm 3.1 with level set for slice N and any F; B specific Reeb situation on abstract M"
+ },
+ "V3_5": {
+  "codes": [
+   "match"
+  ],
+  "primary": "match",
+  "evidence": "Same theorem in two presentations; both directions proved; neither assumes more"
+ },
+ "V3_6": {
+  "codes": [
+   "setting"
+  ],
+  "primary": "setting",
+  "evidence": "A compact slice submanifolds; B abstract compact manifold; equivalent via Whitney embedding"
+ },
+ "V3_7": {
+  "codes": [
+   "vacuous",
+   "general_A"
+  ],
+  "primary": "vacuous",
+  "evidence": "Declarations are definitions so A=True; B holds outright; project notion on arbitrary preorder"
+ },
+ "V3_8": {
+  "codes": [
+   "B_false_milnor"
+  ],
+  "primary": "B_false_milnor",
+  "evidence": "B allows n=0 where S(X0,X0)≤0 fails; Milnor's chain implicitly has n≥1"
+ },
+ "V3_9": {
+  "codes": [
+   "vacuous",
+   "general_A"
+  ],
+  "primary": "vacuous",
+  "evidence": "All listed declarations are definitions, A=True; B holds outright; FiltrationHomology abstracts"
+ },
+ "V3_10": {
+  "codes": [
+   "general_A",
+   "algebraic_only"
+  ],
+  "primary": "general_A",
+  "evidence": "A linear algebra on abstract exact sequences; B only topological triples"
+ },
+ "V3_11": {
+  "codes": [
+   "general_A",
+   "algebraic_only"
+  ],
+  "primary": "general_A",
+  "evidence": "A for abstract FiltrationHomology; B manifolds only; topological input from outside project lemmas"
+ },
+ "V3_12": {
+  "codes": [
+   "general_A",
+   "algebraic_only"
+  ],
+  "primary": "general_A",
+  "evidence": "A pure linear algebra on abstract exact sequences; B only singular homology of triples"
+ },
+ "V3_13": {
+  "codes": [
+   "general_A",
+   "algebraic_only"
+  ],
+  "primary": "general_A",
+  "evidence": "A for any abstract filtration homology; B only cell-like chains of subsets"
+ },
+ "V3_14": {
+  "codes": [
+   "general_A",
+   "extra_A"
+  ],
+  "primary": "general_A",
+  "evidence": "A's arithmetic lemmas hold for Z-sequences, need only R≥0 and C_{N+1}=0; plus filtration statements"
+ },
+ "V3_15": {
+  "codes": [
+   "general_A",
+   "extra_A"
+  ],
+  "primary": "general_A",
+  "evidence": "A for integer sequences and abstract filtrations plus lacunary principle; B manifolds only, omits lacunary"
+ },
+ "V3_16": {
+  "codes": [
+   "extra_A",
+   "general_A",
+   "vacuous"
+  ],
+  "primary": "extra_A",
+  "evidence": "A is regrouping identity for arbitrary spaces; A⇒B proved only because B holds outright; A contributes nothing"
+ },
+ "V3_17": {
+  "codes": [
+   "match"
+  ],
+  "primary": "match",
+  "evidence": "A⇒B and B⇒A both proved; K=0 vacuous; formally equivalent given project Morse inequalities"
+ },
+ "V3_19": {
+  "codes": [
+   "extra_A",
+   "harness"
+  ],
+  "primary": "extra_A",
+  "evidence": "A also proves smoothness of grad f, zeros, signs; statement has banned proof term so rt_check on A'"
+ },
+ "V3_20": {
+  "codes": [
+   "extra_A"
+  ],
+  "primary": "extra_A",
+  "evidence": "A's extension lemma has no counterpart in B; B adds homological identification; K=0 vacuous"
+ },
+ "V3_22": {
+  "codes": [
+   "extra_A",
+   "harness"
+  ],
+  "primary": "extra_A",
+  "evidence": "A gives algebraic presentation of torus and dim T_qT; statement contains proof term, rt_check on A'"
+ },
+ "V3_23": {
+  "codes": [
+   "extra_A",
+   "harness"
+  ],
+  "primary": "extra_A",
+  "evidence": "A has Lagrange-rule Hessian lemma absent in B; rt_check run on A' generalizing proof term"
+ },
+ "V3_24": {
+  "codes": [
+   "range",
+   "extra_A"
+  ],
+  "primary": "range",
+  "evidence": "B asserts homeomorphism types of intermediate sublevel sets, A lacks; A has theorem_3_1_torus"
+ },
+ "V3_31": {
+  "codes": [
+   "setting",
+   "general_A"
+  ],
+  "primary": "setting",
+  "evidence": "A embedded cells in E (injective on ball); B abstract adjunction space along arbitrary g"
+ },
+ "V3_32": {
+  "codes": [
+   "general_A",
+   "extra_A"
+  ],
+  "primary": "general_A",
+  "evidence": "A any monotone N-filtration with arbitrary dimensions plus finiteness; B is Fin-indexed special case"
+ },
+ "V3_33": {
+  "codes": [
+   "setting",
+   "extra_A"
+  ],
+  "primary": "setting",
+  "evidence": "A embedded cells and abstract slab lemma; B homology of quotient adjunction space, absent in project"
+ },
+ "V3_34": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "hyp_A",
+   "reading"
+  ],
+  "primary": "setting",
+  "evidence": "A slice submanifold with regular ends; B abstract M allows critical ends; project proves only on vector space"
+ },
+ "V3_35": {
+  "codes": [
+   "finrank",
+   "setting",
+   "extra_A"
+  ],
+  "primary": "finrank",
+  "evidence": "B's R_λ is finrank, does not assert finite-dimensional homology, which A has; compact slice vs abstract"
+ },
+ "V3_36": {
+  "codes": [
+   "setting"
+  ],
+  "primary": "setting",
+  "evidence": "A compact slice submanifold with F|N; B abstract compact manifold; equivalent via Whitney copy"
+ },
+ "V3_37": {
+  "codes": [
+   "setting"
+  ],
+  "primary": "setting",
+  "evidence": "A compact slice submanifold; B abstract compact manifold; lacunary clause follows from B arithmetically"
+ },
+ "V3_38": {
+  "codes": [
+   "general_A"
+  ],
+  "primary": "general_A",
+  "evidence": "A covers every compact manifold incl. dim 0 and empty; B only nonempty embedded dim≥1"
+ },
+ "V3_39": {
+  "codes": [
+   "finrank",
+   "extra_A"
+  ],
+  "primary": "finrank",
+  "evidence": "Finiteness clauses of A have no counterpart in B since R_λ is finrank, 0 for infinite-dimensional"
+ },
+ "V3_41": {
+  "codes": [
+   "setting",
+   "extra_A"
+  ],
+  "primary": "setting",
+  "evidence": "A matrix model CP^n in M_{n+1}(C) with slice charts and compactness; B quotient S^{2n+1}/S^1"
+ },
+ "V3_42": {
+  "codes": [
+   "setting",
+   "structure_choice"
+  ],
+  "primary": "setting",
+  "evidence": "A matrix model with slice structure; B for every smooth structure with Milnor coordinates diffeomorphic"
+ },
+ "V3_43": {
+  "codes": [
+   "cw_model",
+   "setting",
+   "coefficients",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "cw_model",
+  "evidence": "adjunction space to Mathlib CW needs cellular approximation; field Betti vs integral homology needs UCT; B⇒A vacuous"
+ },
+ "V4_1": {
+  "codes": [
+   "general_A",
+   "extra_A",
+   "structure_choice"
+  ],
+  "primary": "general_A",
+  "evidence": "A normal bundle of any slice submanifold incl. dim count; B only d<K, fixed complement"
+ },
+ "V4_2": {
+  "codes": [
+   "structure_choice",
+   "vacuous"
+  ],
+  "primary": "structure_choice",
+  "evidence": "A canonical slice structure, B arbitrary hNN; neither direction transfers, each proved outright"
+ },
+ "V4_3": {
+  "codes": [
+   "hyp_A",
+   "general_A",
+   "missing_math"
+  ],
+  "primary": "hyp_A",
+  "evidence": "A smooth maps only, any dimensions; B C^1 equal dimension Sard, absent from project"
+ },
+ "V4_4": {
+  "codes": [
+   "structure_choice",
+   "vacuous"
+  ],
+  "primary": "structure_choice",
+  "evidence": "A canonical slice structure, B arbitrary hNN; neither transfers, each proved outright from Sard"
+ },
+ "V4_5": {
+  "codes": [
+   "vacuous"
+  ],
+  "primary": "vacuous",
+  "evidence": "All listed declarations are definitions, A=True; B holds outright from Mathlib"
+ },
+ "V4_6": {
+  "codes": [
+   "vacuous",
+   "structure_choice",
+   "harness"
+  ],
+  "primary": "vacuous",
+  "evidence": "Neither direction transfers, B holds outright; parametrization-independence of ℓ unproved; proof term in A"
+ },
+ "V4_7": {
+  "codes": [
+   "structure_choice",
+   "general_A"
+  ],
+  "primary": "structure_choice",
+  "evidence": "A in project's parametrization and canonical structure; B arbitrary coordinate patch and slice structure"
+ },
+ "V4_8": {
+  "codes": [
+   "structure_choice"
+  ],
+  "primary": "structure_choice",
+  "evidence": "A frame-free on N; B calculus with frames and (u,t) coordinates, never linked to dE"
+ },
+ "V4_9": {
+  "codes": [
+   "structure_choice",
+   "general_A"
+  ],
+  "primary": "structure_choice",
+  "evidence": "A project parametrization, canonical structure, any v; B arbitrary patch/slice structure; independence lemmas needed"
+ },
+ "V4_10": {
+  "codes": [
+   "structure_choice",
+   "general_A"
+  ],
+  "primary": "structure_choice",
+  "evidence": "Clause 2: A Hessian in project's xParam at every point; B arbitrary C^2 map x"
+ },
+ "V4_11": {
+  "codes": [
+   "structure_choice",
+   "general_A"
+  ],
+  "primary": "structure_choice",
+  "evidence": "A canonical structure on N, k=0 allowed; B arbitrary slice structure hNN, dim≥1"
+ },
+ "V4_12": {
+  "codes": [
+   "extra_A",
+   "general_A"
+  ],
+  "primary": "extra_A",
+  "evidence": "A's mem_focalSet_of_not_isMorseFunction is Milnor's proof step absent from B; any Haar measure"
+ },
+ "V4_13": {
+  "codes": [
+   "extra_A"
+  ],
+  "primary": "extra_A",
+  "evidence": "A contains a.e.-p construction and finiteness of critical points per sublevel; proof, not Milnor's statement"
+ },
+ "V4_16": {
+  "codes": [
+   "hyp_A",
+   "range",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "hyp_A",
+  "evidence": "A compact Whitney into some R^N; B non-compact into exactly R^{2n+1}; B⇒A vacuous"
+ },
+ "V4_17": {
+  "codes": [
+   "general_A",
+   "extra_A"
+  ],
+  "primary": "general_A",
+  "evidence": "A any finite-dim model, no second countability; plus finitely many critical points"
+ },
+ "V4_18": {
+  "codes": [
+   "vacuous"
+  ],
+  "primary": "vacuous",
+  "evidence": "Only definition eulerNumberM listed so A=True; both directions vacuous"
+ },
+ "V4_19": {
+  "codes": [
+   "general_A",
+   "extra_A",
+   "finrank"
+  ],
+  "primary": "general_A",
+  "evidence": "A abstract manifolds, dim 0, diffeo invariance; B homology with finrank, gradient index"
+ },
+ "V4_21": {
+  "codes": [
+   "extra_A",
+   "general_A",
+   "harness"
+  ],
+  "primary": "extra_A",
+  "evidence": "A drops boundedness and contains proof tools as theorems; proof term in statement, checked on A'"
+ },
+ "V4_22": {
+  "codes": [
+   "extra_A",
+   "general_A"
+  ],
+  "primary": "extra_A",
+  "evidence": "A's ae_isMorseFunction_add_inner_comp is engine of Milnor's proof; any model, non-compact M"
+ },
+ "V4_23": {
+  "codes": [
+   "extra_A",
+   "general_A",
+   "structure_choice"
+  ],
+  "primary": "extra_A",
+  "evidence": "A also has index(g−ℓ_v)=#{principal curvatures>1}, degenerate points, dim 0; B arbitrary slice structure"
+ },
+ "V4_24": {
+  "codes": [
+   "general_A"
+  ],
+  "primary": "general_A",
+  "evidence": "A allows any finite-dim model E, B uses R^n; no mathematical difference; B⇒A via Whitney"
+ },
+ "V5_2": {
+  "codes": [
+   "vacuous",
+   "general_A"
+  ],
+  "primary": "vacuous",
+  "evidence": "A proved outright for every V incl. infinite-dim; B⇒A does not use B; elementary identities"
+ },
+ "V5_3": {
+  "codes": [
+   "vacuous",
+   "general_A"
+  ],
+  "primary": "vacuous",
+  "evidence": "B⇒A proved outright, A about arbitrary possibly infinite-dim V; B only C^k coordinates"
+ },
+ "V5_5": {
+  "codes": [
+   "general_A"
+  ],
+  "primary": "general_A",
+  "evidence": "A in any complex inner product space; B adds Taylor expansion clause, pure Mathlib analysis"
+ },
+ "V5_6": {
+  "codes": [
+   "effort",
+   "general_A",
+   "vacuous"
+  ],
+  "primary": "effort",
+  "evidence": "B believed true, needs realification/Taylor glue; B⇒A vacuous; A arbitrary complex C^2 maps"
+ },
+ "V5_7": {
+  "codes": [
+   "vacuous",
+   "general_A"
+  ],
+  "primary": "vacuous",
+  "evidence": "Both directions vacuous: each conclusion proved outright; A arbitrary holomorphic maps, B J-invariant submanifolds"
+ },
+ "V5_10": {
+  "codes": [
+   "vacuous",
+   "general_A",
+   "algebraic_only"
+  ],
+  "primary": "vacuous",
+  "evidence": "Both directions vacuous; A pure linear algebra of Hessian shape; B geometric, assumes non-degeneracy"
+ },
+ "V5_11": {
+  "codes": [
+   "cw_model",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "cw_model",
+  "evidence": "clause (4) needs cellular approximation for Mathlib CWComplex; B⇒A vacuous; A only chart-level bound"
+ },
+ "V5_13": {
+  "codes": [
+   "general_A",
+   "vacuous"
+  ],
+  "primary": "general_A",
+  "evidence": "A covers degenerate critical points, arbitrary V and odd dimensions; B⇒A only vacuously"
+ },
+ "V5_15": {
+  "codes": [
+   "cw_model",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "cw_model",
+  "evidence": "project cell tower to Mathlib CWComplex needs cellular approximation; B⇒A vacuous"
+ },
+ "V5_16": {
+  "codes": [
+   "coefficients",
+   "general_A",
+   "missing_math"
+  ],
+  "primary": "coefficients",
+  "evidence": "A over every field; B over Z needs universal coefficient theorem; A covers non-algebraic submanifolds"
+ },
+ "V5_17": {
+  "codes": [
+   "extra_A",
+   "general_A",
+   "hyp_A"
+  ],
+  "primary": "extra_A",
+  "evidence": "A has index bound (i) and drops Hausdorff; B conditional on duality isomorphism, homotopy via Hurewicz"
+ },
+ "V5_18": {
+  "codes": [
+   "taken_as_hyp",
+   "setting",
+   "general_A",
+   "coefficients",
+   "missing_math"
+  ],
+  "primary": "taken_as_hyp",
+  "evidence": "A needs Hypothesis (N) (triangulability not formalized), field vs Z coefficients, CP^n model"
+ },
+ "V5_19": {
+  "codes": [
+   "taken_as_hyp",
+   "setting",
+   "general_A",
+   "missing_math"
+  ],
+  "primary": "taken_as_hyp",
+  "evidence": "A_to_B fails only on Hypothesis (N), which Milnor gets from triangulability of varieties"
+ },
+ "V6_1": {
+  "codes": [
+   "setting",
+   "extra_A"
+  ],
+  "primary": "setting",
+  "evidence": "A embedded N with tanProj, dN; B abstract R^n-manifold Mathlib sections; little overlap"
+ },
+ "V6_3": {
+  "codes": [
+   "effort",
+   "general_A",
+   "vacuous"
+  ],
+  "primary": "effort",
+  "evidence": "part (iii) rules define a connection needs Christoffel construction; B⇒A vacuous; A any model"
+ },
+ "V6_4": {
+  "codes": [
+   "setting",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A induced connection on slice N; B every Mathlib CovariantDerivative needs Christoffel symbols; B⇒A vacuous"
+ },
+ "V6_5": {
+  "codes": [
+   "setting",
+   "extra_A"
+  ],
+  "primary": "setting",
+  "evidence": "A curves in slice N ⊆ V with project covDeriv; B Mathlib sections along curves on abstract manifold"
+ },
+ "V6_6": {
+  "codes": [
+   "setting",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A induced connection of slice N; B arbitrary Mathlib connection needs Christoffel symbols along curves"
+ },
+ "V6_7": {
+  "codes": [
+   "range",
+   "general_A",
+   "effort"
+  ],
+  "primary": "range",
+  "evidence": "A existence only for skew-adjoint coefficients; B arbitrary smooth Γ needs Picard-Lindelöf plus Grönwall, believed true"
+ },
+ "V6_8": {
+  "codes": [
+   "setting",
+   "general_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A induced connection on slice N via skew ODE; B arbitrary Mathlib connection needs Christoffel, general linear ODE existence"
+ },
+ "V6_9": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "missing_math",
+   "harness"
+  ],
+  "primary": "setting",
+  "evidence": "A induced connection proved compatible on slice N; B abstract assumed-compatible connection; parallelTransport uses banned proof"
+ },
+ "V6_10": {
+  "codes": [
+   "setting",
+   "general_A",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A induced connection of slice N, merely differentiable fields; B any compatible connection on abstract manifold; B⇒A vacuous"
+ },
+ "V6_11": {
+  "codes": [
+   "setting",
+   "reading",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A takes Cor 8.4 formula as definition of compatibility; B Milnor-compatible needs abstract Lemma 8.3; B⇒A vacuous"
+ },
+ "V6_13": {
+  "codes": [
+   "setting",
+   "general_A",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A bracket facts only for embedded N or Mathlib torsion; B chart Christoffel symmetry needs Christoffel symbols; B⇒A vacuous"
+ },
+ "V6_14": {
+  "codes": [
+   "missing_math",
+   "setting",
+   "general_A",
+   "reading"
+  ],
+  "primary": "missing_math",
+  "evidence": "Existence of Levi-Civita on abstract manifold absent; A existence only for embedded N; compatibility read differently"
+ },
+ "V6_15": {
+  "codes": [
+   "setting",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A slice N surface lemma via P∘∂; B arbitrary symmetric connection needs abstract Lemma 8.1 and Christoffel symbols"
+ },
+ "V6_16": {
+  "codes": [
+   "vacuous",
+   "general_A"
+  ],
+  "primary": "vacuous",
+  "evidence": "B_to_A re-proves A without B; A_to_B uses A only for part (i); A arbitrary models, non-smooth fields"
+ },
+ "V6_17": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A explicit Gauss-type formula for induced connection of N; B abstract tensoriality needs bump functions, absent"
+ },
+ "V6_19": {
+  "codes": [
+   "setting",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A surface lemma for slice N with P∘∂; B Levi-Civita on abstract manifold needs Lemma 8.1, 9.1, Christoffel"
+ },
+ "V6_20": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A Lemma 9.3 via II for slice N; B abstract needs Jacobi for mlieBracket and abstract Lemma 8.3"
+ },
+ "V6_21": {
+  "codes": [
+   "setting",
+   "general_A",
+   "algebraic_only",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A octahedron pure algebra and (4) for slice N; gap is Lemma 9.3 (2),(3) on abstract manifolds"
+ },
+ "V6_22": {
+  "codes": [
+   "algebraic_only",
+   "setting",
+   "general_A",
+   "missing_math"
+  ],
+  "primary": "algebraic_only",
+  "evidence": "A pure algebra on any trilinear R; B abstract Levi-Civita needs tensoriality and (1)-(3) on abstract manifolds"
+ },
+ "V7_1": {
+  "codes": [
+   "vacuous",
+   "setting"
+  ],
+  "primary": "vacuous",
+  "evidence": "Both directions vacuous: B tautology of its definitions; A on open time sets of embedded N, B abstract intervals"
+ },
+ "V7_2": {
+  "codes": [
+   "setting",
+   "general_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A geodesics of slice N on open sets; B abstract manifold needs abstract Lemma 8.3 and chain rule for D/dt"
+ },
+ "V7_3": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A spray and γ''=II(γ',γ') for slice N; B chart Christoffel form needs abstract Christoffel symbols"
+ },
+ "V7_4": {
+  "codes": [
+   "general_A",
+   "extra_A"
+  ],
+  "primary": "general_A",
+  "evidence": "A uniqueness for C^1 fields on arbitrary normed spaces and open preconnected sets, plus flows; B only C^∞ on R^n"
+ },
+ "V7_5": {
+  "codes": [
+   "setting",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A geodesic uniqueness for slice N; B abstract Hausdorff manifold needs Christoffel geodesic equation in charts"
+ },
+ "V7_6": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A local sprays in slice charts with smooth dependence; B abstract Levi-Civita; no abstract geodesic theory"
+ },
+ "V7_7": {
+  "codes": [
+   "setting",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A exp for slice N on open intervals; B abstract manifold with any Levi-Civita connection; no Nash embedding"
+ },
+ "V7_8": {
+  "codes": [
+   "setting",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A TN ⊆ V×V as slice submanifold; B Mathlib TangentBundle with arbitrary Levi-Civita connection"
+ },
+ "V7_9": {
+  "codes": [
+   "setting",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A=True (definitions only); B abstract Lemma 10.3(3) needs abstract geodesic theory the project lacks"
+ },
+ "V7_10": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A slice submanifolds with chart Jacobian step; B abstract manifolds and arbitrary Levi-Civita connections"
+ },
+ "V7_10′": {
+  "codes": [
+   "setting",
+   "extra_A"
+  ],
+  "primary": "setting",
+  "evidence": "A good balls, Lebesgue numbers, minimality for slice N; B abstract convex neighbourhood"
+ },
+ "V7_11": {
+  "codes": [
+   "vacuous",
+   "setting",
+   "extra_A"
+  ],
+  "primary": "vacuous",
+  "evidence": "Both directions vacuous, each conclusion proved outright; A elementary analysis in V, B Riemannian arc length"
+ },
+ "V7_12": {
+  "codes": [
+   "setting",
+   "extra_A"
+  ],
+  "primary": "setting",
+  "evidence": "A Gauss lemma for slice N with technical F lemmas; B abstract manifold any Levi-Civita connection"
+ },
+ "V7_13": {
+  "codes": [
+   "setting",
+   "general_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A pointwise form and admissible paths for slice N; B abstract manifolds, piecewise smooth paths, connected"
+ },
+ "V7_14": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A crossing segment with compactness for slice N; B abstract piecewise smooth paths, existential segment"
+ },
+ "V7_15": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A radial lemmas and norm_le_pathLength for any normal radius on slice N; B abstract uniformly normal W"
+ },
+ "V7_16": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A monotone reparametrization sharp form for slice N; B abstract equal-length remark"
+ },
+ "V7_17": {
+  "codes": [
+   "setting",
+   "reading",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A geodesic on open (0,ℓ) plus extension; B closed [0,ℓ] on abstract manifold; B⇒A proved via bridge"
+ },
+ "V7_18": {
+  "codes": [
+   "setting",
+   "general_A"
+  ],
+  "primary": "setting",
+  "evidence": "A riemDist for any subset N⊆V, disconnected allowed; B connected abstract Riemannian manifold, real metric"
+ },
+ "V7_19": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "general_A"
+  ],
+  "primary": "setting",
+  "evidence": "A exp/normal-ball statements for slice N, disconnected; B abstract metric topology, provable outright"
+ },
+ "V7_20": {
+  "codes": [
+   "setting",
+   "general_A",
+   "reading",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A local form on open V×V pairs; B abstract; B's 'differentiable dependence' only within non-open set"
+ },
+ "V7_21": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "general_A",
+   "harness"
+  ],
+  "primary": "setting",
+  "evidence": "A chord bound for any subset N⊆V, disconnected; B abstract connected metric; rt_check blocked by banned proof in riemMetricSpace"
+ },
+ "V7_22": {
+  "codes": [
+   "setting",
+   "general_A",
+   "reading",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A open-interval geodesics on slice N, pointwise (i); B closed segments on abstract manifold"
+ },
+ "V7_23": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A uniform local flow, openness of dom exp for slice N; B abstract manifold statements"
+ },
+ "V7_24": {
+  "codes": [
+   "vacuous",
+   "setting",
+   "reading"
+  ],
+  "primary": "vacuous",
+  "evidence": "Both directions vacuous: B tautology about sInf, A re-proved outright; open vs closed-interval geodesic vocabulary"
+ },
+ "V7_25": {
+  "codes": [
+   "setting",
+   "general_A",
+   "structure_choice",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A every δ below any normal radius, B only some δ₀; abstract setting, no abstract geodesic theory"
+ },
+ "V7_26": {
+  "codes": [
+   "setting",
+   "general_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A needs exp defined at one point, disconnected N; B abstract complete manifold; B⇒A only milnor conjunct"
+ },
+ "V7_27": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "general_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A one-point completeness and completeness implication; B abstract geodesically complete manifold"
+ },
+ "V7_28": {
+  "codes": [
+   "setting",
+   "general_A",
+   "reading",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A any slice N, any model, disconnected, open-interval geodesics; B abstract connected, closed [0,1]; B⇒A proved via bridge"
+ },
+ "V7_29": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A slice N only, plus Theorem 10.9, Heine-Borel, one-point criterion; B abstract: no Nash embedding"
+ },
+ "V7_30′": {
+  "codes": [
+   "range",
+   "setting",
+   "extra_A",
+   "missing_math"
+  ],
+  "primary": "range",
+  "evidence": "B covers ℝⁿ, Sⁿ, cylinder, revolution surfaces on abstract M; A only concrete Sⁿ and codim-0 slice"
+ },
+ "V8_1": {
+  "codes": [
+   "setting",
+   "range",
+   "vacuous"
+  ],
+  "primary": "setting",
+  "evidence": "A only unfolds definition pathTangent; B abstract path-connectedness and vector space TΩ; B⇒A vacuous"
+ },
+ "V8_2": {
+  "codes": [
+   "setting",
+   "general_A",
+   "vacuous"
+  ],
+  "primary": "setting",
+  "evidence": "A variations of slice N with parameters in any normed space; B abstract m-parameter; B⇒A re-proves A outright"
+ },
+ "V8_3": {
+  "codes": [
+   "setting",
+   "general_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A Lemma 11.A for slice N, arbitrary normed parameter space P; B abstract exp ODE in charts absent"
+ },
+ "V8_4": {
+  "codes": [
+   "vacuous",
+   "setting"
+  ],
+  "primary": "vacuous",
+  "evidence": "Only definition IsCriticalPath listed so A=True; both directions vacuous; B proved outright by transport"
+ },
+ "V8_5": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "general_A"
+  ],
+  "primary": "setting",
+  "evidence": "A paths in any normed space with constant-speed energy A3; B abstract Riemannian speed, no isometric embedding"
+ },
+ "V8_6": {
+  "codes": [
+   "setting",
+   "general_A",
+   "range"
+  ],
+  "primary": "setting",
+  "evidence": "A only inequality half of Lemma 12.1 for slice N, no completeness; B abstract complete with minimizer existence"
+ },
+ "V8_7": {
+  "codes": [
+   "setting",
+   "general_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A jump sum identity for V-valued c; B needs existence of D/dt along curves for abstract connection"
+ },
+ "V8_9": {
+  "codes": [
+   "setting",
+   "general_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A first variation for slice N at every u₀; B abstract: Lemma 8.3/8.7 and differentiation under integral not formalized"
+ },
+ "V8_10": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A characterizes criticality by first-variation functional for slice N; B abstract geodesics are critical"
+ },
+ "V8_11": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A Corollary 12.3 plus auxiliary lemmas (gluing, local geodesics) for slice N; B abstract manifolds"
+ },
+ "V8_12": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "general_A"
+  ],
+  "primary": "setting",
+  "evidence": "A curvature identity for arbitrary surfaces in slice N and ambient normal component; B abstract 2-parameter variations"
+ },
+ "V8_13": {
+  "codes": [
+   "setting",
+   "reading"
+  ],
+  "primary": "setting",
+  "evidence": "Fails only due to setting (abstract vs slice N); B uses Fréchet differentiability in other order, A line derivative"
+ },
+ "V8_14": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "harness"
+  ],
+  "primary": "setting",
+  "evidence": "Abstract setting; B never identifies E_** with Milnor's formula, A does; proof term forces rt_check on A'"
+ },
+ "V8_16": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "general_A",
+   "vacuous",
+   "harness"
+  ],
+  "primary": "setting",
+  "evidence": "A symmetries hold for every γ not only geodesics, pointwise curvature symmetry; B⇒A vacuous; banned definition"
+ },
+ "V8_17": {
+  "codes": [
+   "setting",
+   "vacuous"
+  ],
+  "primary": "setting",
+  "evidence": "Fails only due to abstract setting; B_to_A proved only by proving A outright"
+ },
+ "V8_18": {
+  "codes": [
+   "setting",
+   "vacuous"
+  ],
+  "primary": "setting",
+  "evidence": "Fails only due to abstract setting; B⇒A proved only by proving A outright"
+ },
+ "V9_1": {
+  "codes": [
+   "general_A",
+   "setting",
+   "vacuous",
+   "harness"
+  ],
+  "primary": "general_A",
+  "evidence": "A pure ODE theory on Banach space, no Jacobi fields; B abstract Jacobi count 2n; B⇒A vacuous"
+ },
+ "V9_2": {
+  "codes": [
+   "structure_choice",
+   "setting",
+   "general_A"
+  ],
+  "primary": "structure_choice",
+  "evidence": "A frame-free first-order Jacobi system for any curve; B parallel orthonormal frames; even on N A lacks frames"
+ },
+ "V9_3": {
+  "codes": [
+   "setting",
+   "general_A"
+  ],
+  "primary": "setting",
+  "evidence": "A any smooth curve, all s, exact finrank 2dim Z; B geodesics, s=0, ℕ∞ lower bound on abstract manifolds"
+ },
+ "V9_4": {
+  "codes": [
+   "vacuous",
+   "setting",
+   "general_A",
+   "finrank"
+  ],
+  "primary": "vacuous",
+  "evidence": "Both provable outright; A any smooth curve with ℕ-valued finrank multiplicity, B geodesics with ℕ∞ dimension"
+ },
+ "V9_5": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "reading"
+  ],
+  "primary": "setting",
+  "evidence": "Abstract setting; A formula-defined E_** and step lemmas, B variational E_**"
+ },
+ "V9_6": {
+  "codes": [
+   "setting",
+   "reading",
+   "finrank",
+   "vacuous"
+  ],
+  "primary": "setting",
+  "evidence": "Abstract setting; B⇒A vacuous; formula-defined vs variational E_**; ℕ vs ℕ∞ nullity"
+ },
+ "V9_7": {
+  "codes": [
+   "setting",
+   "general_A"
+  ],
+  "primary": "setting",
+  "evidence": "A dimension count for any smooth curve and constant geodesics; B excludes constant geodesics; abstract vs embedded"
+ },
+ "V9_7′": {
+  "codes": [
+   "range",
+   "setting",
+   "general_A"
+  ],
+  "primary": "range",
+  "evidence": "A only codimension-0 slice submanifolds; B all flat abstract manifolds (cylinders, tori)"
+ },
+ "V9_7″": {
+  "codes": [
+   "missing_math",
+   "setting",
+   "extra_A",
+   "range"
+  ],
+  "primary": "missing_math",
+  "evidence": "A only embedded sphere Sph n; transport to abstract M needs naturality/uniqueness of Levi-Civita under isometries"
+ },
+ "V9_8": {
+  "codes": [
+   "setting",
+   "general_A"
+  ],
+  "primary": "setting",
+  "evidence": "A slice N any model, not nec. connected, ambient statement; B abstract connected R^n-manifolds, no Nash embedding"
+ },
+ "V9_9": {
+  "codes": [
+   "setting",
+   "extra_A"
+  ],
+  "primary": "setting",
+  "evidence": "A slice N plus three auxiliary flow results (exists_smooth_ray etc.) absent from B; B abstract"
+ },
+ "V9_10": {
+  "codes": [
+   "setting",
+   "general_A"
+  ],
+  "primary": "setting",
+  "evidence": "A any smooth curve and surjectivity of J↦(J(a),J(b)) for slice N; B abstract geodesics, injectivity only"
+ },
+ "V9_11": {
+  "codes": [
+   "reading",
+   "setting",
+   "extra_A",
+   "missing_math"
+  ],
+  "primary": "reading",
+  "evidence": "B reads 'any geodesic segment in any GoodNbhd', A short normal-radius rays; non-conjugacy needs new geometry"
+ },
+ "V9_12": {
+  "codes": [
+   "setting",
+   "general_A",
+   "range"
+  ],
+  "primary": "setting",
+  "evidence": "A clause (i) only for any smooth curve in slice N; clause (ii) absent from A; B abstract geodesics"
+ },
+ "V9_13": {
+  "codes": [
+   "B_false_blind",
+   "extra_A",
+   "range"
+  ],
+  "primary": "B_false_blind",
+  "evidence": "Clause (2) quantifies over arbitrary sets A⊆V; false for A=∅; Milnor's TΩ is a subspace"
+ },
+ "V9_15": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "general_A",
+   "vacuous"
+  ],
+  "primary": "setting",
+  "evidence": "A non-geodesic paths and locality lemmas; B_emb provable outright so A_to_B_emb does not use A"
+ },
+ "V9_16": {
+  "codes": [
+   "reading",
+   "setting",
+   "extra_A",
+   "general_A",
+   "hyp_A"
+  ],
+  "primary": "reading",
+  "evidence": "A analytic h₀-mesh fineness with Hessian estimate vs B Milnor's geometric FineSub (minimal pieces in GoodNbhds)"
+ },
+ "V9_17": {
+  "codes": [
+   "reading",
+   "setting",
+   "general_A",
+   "hyp_A"
+  ],
+  "primary": "reading",
+  "evidence": "A IsFine (pieces ≤ h₀) for any curve vs B Milnor FineSub of minimal pieces; unrelated fineness notions"
+ },
+ "V9_18": {
+  "codes": [
+   "reading",
+   "setting",
+   "extra_A",
+   "general_A",
+   "hyp_A"
+  ],
+  "primary": "reading",
+  "evidence": "Blocked by fineness: IsFine (pieces ≤ h₀) vs Milnor's FineSub; A has jump formula, formula-defined Hessian"
+ },
+ "V9_19": {
+  "codes": [
+   "reading",
+   "setting",
+   "extra_A",
+   "general_A",
+   "hyp_A"
+  ],
+  "primary": "reading",
+  "evidence": "Remaining blocker is fineness (IsFine vs FineSub) for BrokenSet; A has extra conjuncts (jumps, nullity=multiplicity)"
+ },
+ "V9_20": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "general_A",
+   "reading"
+  ],
+  "primary": "setting",
+  "evidence": "Abstract setting; meaning of λ (variational vs formula-defined index); A explicit h₀, τ outside (0,1], non-geodesic"
+ },
+ "V9_21": {
+  "codes": [
+   "reading",
+   "setting",
+   "extra_A",
+   "hyp_A"
+  ],
+  "primary": "reading",
+  "evidence": "A validFor/IsFine subdivisions with formula Hessian vs B Milnor FineSub and variational E_**; unrelated fineness"
+ },
+ "V9_22": {
+  "codes": [
+   "setting",
+   "general_A",
+   "reading"
+  ],
+  "primary": "setting",
+  "evidence": "Logical shapes agree; abstract setting, meaning of λ, A also covers non-geodesic curves"
+ },
+ "V9_23": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "general_A",
+   "reading"
+  ],
+  "primary": "setting",
+  "evidence": "Abstract setting; variational vs formula λ; A non-geodesic curves, global ≥, cut-off formula, dual family"
+ },
+ "V9_24": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "general_A",
+   "reading",
+   "finrank"
+  ],
+  "primary": "setting",
+  "evidence": "Abstract setting; variational vs formula-defined index; A any curve, counting lemma, N-valued finsum vs B's ℕ∞ λ≠⊤"
+ },
+ "V9_25": {
+  "codes": [
+   "setting",
+   "general_A"
+  ],
+  "primary": "setting",
+  "evidence": "Only difference is setting; A covers non-connected N and any model Z; B abstract connected"
+ },
+ "V10_1": {
+  "codes": [
+   "setting",
+   "range",
+   "vacuous"
+  ],
+  "primary": "setting",
+  "evidence": "A only d=0 clause for any set N; B abstract metric on Ω; B⇒A provable outright"
+ },
+ "V10_2": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "general_A"
+  ],
+  "primary": "setting",
+  "evidence": "A any set N⊆V, quantitative Lemma 16.A, subintervals, Lemma 16.B; B abstract ε-δ continuity"
+ },
+ "V10_3": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "general_A",
+   "hyp_A"
+  ],
+  "primary": "setting",
+  "evidence": "A needs N closed in V for compactness and packages BrokenSetup; B abstract complete manifold"
+ },
+ "V10_4": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "hyp_A"
+  ],
+  "primary": "setting",
+  "evidence": "A for any BrokenSetup with formula (∗) and explicit bijection; B existential δ on abstract complete manifold"
+ },
+ "V10_5": {
+  "codes": [
+   "hyp_A",
+   "setting",
+   "extra_A",
+   "missing_math"
+  ],
+  "primary": "hyp_A",
+  "evidence": "A covers only subdivisions carrying a BrokenSetup; B's Milnor Setup16 need not provide one: known §16 gap"
+ },
+ "V10_6": {
+  "codes": [
+   "hyp_A",
+   "setting",
+   "extra_A",
+   "missing_math"
+  ],
+  "primary": "hyp_A",
+  "evidence": "A only BrokenSetup subdivisions (the §16 gap); B Setup16 data on abstract complete manifold"
+ },
+ "V10_7": {
+  "codes": [
+   "hyp_A",
+   "setting",
+   "structure_choice",
+   "missing_math"
+  ],
+  "primary": "hyp_A",
+  "evidence": "B's Setup16 does not yield BrokenSetup (normal radius, IsShortJoin); A's specific retr/deform vs B existential"
+ },
+ "V10_8": {
+  "codes": [
+   "hyp_A",
+   "setting",
+   "structure_choice",
+   "missing_math"
+  ],
+  "primary": "hyp_A",
+  "evidence": "A's deform needs BrokenSetup not implied by Setup16; B existential homotopy; new geometry needed"
+ },
+ "V10_9": {
+  "codes": [
+   "hyp_A",
+   "setting",
+   "extra_A",
+   "range"
+  ],
+  "primary": "hyp_A",
+  "evidence": "B's Setup16 gives no BrokenSetup; B clause (1) is Corollary 12.3, absent from A; A's variation lemmas"
+ },
+ "V10_10": {
+  "codes": [
+   "hyp_A",
+   "setting",
+   "extra_A",
+   "reading",
+   "missing_math"
+  ],
+  "primary": "hyp_A",
+  "evidence": "Setup16 (ShortGood) does not provide project's BrokenSetup; variational vs formula Hessian; A's extra lemmas"
+ },
+ "V10_11": {
+  "codes": [
+   "hyp_A",
+   "setting",
+   "extra_A",
+   "reading",
+   "missing_math"
+  ],
+  "primary": "hyp_A",
+  "evidence": "Setup16 vs BrokenSetup subdivisions; HessPi vs ambient Hessian; B's broken-Jacobi conjunct absent from A"
+ },
+ "V10_12": {
+  "codes": [
+   "cw_model",
+   "setting",
+   "extra_A",
+   "hyp_A",
+   "range",
+   "missing_math"
+  ],
+  "primary": "cw_model",
+  "evidence": "iterated adjunction spaces vs Mathlib CWComplex need cellular approximation; A regular value, compact slice N; no infinite case"
+ },
+ "V10_13": {
+  "codes": [
+   "cw_model",
+   "setting",
+   "hyp_A",
+   "reading",
+   "missing_math"
+  ],
+  "primary": "cw_model",
+  "evidence": "A assumes a not a critical value and BrokenSetup; adjunction vs CW; variational lam vs formIndex"
+ },
+ "V10_14": {
+  "codes": [
+   "hyp_A",
+   "setting",
+   "extra_A",
+   "general_A"
+  ],
+  "primary": "hyp_A",
+  "evidence": "A needs BrokenSetup (not Setup16), no compactness of B^a; energy vs length minimality; abstract B"
+ },
+ "V10_15": {
+  "codes": [
+   "setting",
+   "range",
+   "reading",
+   "vacuous"
+  ],
+  "primary": "setting",
+  "evidence": "A only extrinsic norm-distance bound edist_toPathC_le, provable outright; B topology equality with intrinsic d*"
+ },
+ "V10_18": {
+  "codes": [
+   "B_false_milnor",
+   "setting",
+   "hyp_A"
+  ],
+  "primary": "B_false_milnor",
+  "evidence": "B believed false: Milnor's 'Clearly h is continuous' fails for metric d; A is project's dyadic JoinSystem repair"
+ },
+ "V10_19": {
+  "codes": [
+   "B_false_milnor",
+   "setting",
+   "extra_A",
+   "general_A"
+  ],
+  "primary": "B_false_milnor",
+  "evidence": "First conjunct (Lemma 17.C continuity of h) believed false; A has Appendix lemmas and JoinSystem Theorem 17.1"
+ },
+ "V10_20": {
+  "codes": [
+   "cw_model",
+   "setting",
+   "extra_A",
+   "reading",
+   "missing_math"
+  ],
+  "primary": "cw_model",
+  "evidence": "A assembly machinery only, project adjunction spaces with homotopy-commutative squares vs Mathlib CW strict; ∃! literal"
+ },
+ "V10_21": {
+  "codes": [
+   "cw_model",
+   "setting",
+   "extra_A",
+   "hyp_A",
+   "missing_math"
+  ],
+  "primary": "cw_model",
+  "evidence": "B Mathlib relative CW with strict compatibility; A BrokenSetup, N closed in V, homotopy-compatible cells"
+ },
+ "V10_22": {
+  "codes": [
+   "cw_model",
+   "setting",
+   "hyp_A",
+   "reading",
+   "missing_math"
+  ],
+  "primary": "cw_model",
+  "evidence": "Project cell complex to Mathlib CWComplex needs cellular approximation; A needs N closed in V; variational lam"
+ },
+ "V10_23": {
+  "codes": [
+   "B_false_milnor",
+   "setting",
+   "extra_A"
+  ],
+  "primary": "B_false_milnor",
+  "evidence": "B quantifies n≥1 but for n=1 no conjugate points; Milnor's sphere example meant n≥2"
+ },
+ "V10_24": {
+  "codes": [
+   "cw_model",
+   "setting",
+   "extra_A",
+   "range",
+   "missing_math"
+  ],
+  "primary": "cw_model",
+  "evidence": "Project telescope vs Mathlib CWComplex needs cellular approximation; A only n≥2, Ω only, embedded sphere"
+ },
+ "V10_25": {
+  "codes": [
+   "coefficients",
+   "setting",
+   "extra_A",
+   "range",
+   "missing_math"
+  ],
+  "primary": "coefficients",
+  "evidence": "A field Betti numbers vs B integral homology; universal coefficient theorem absent; A has no sphere content"
+ },
+ "V10_26": {
+  "codes": [
+   "coefficients",
+   "setting",
+   "range",
+   "missing_math"
+  ],
+  "primary": "coefficients",
+  "evidence": "B integral homology of Ω and Ω* needs UCT and finite generation; A field Betti numbers, Ω only, embedded"
+ },
+ "V10_29": {
+  "codes": [
+   "cw_model",
+   "setting",
+   "hyp_A",
+   "missing_math"
+  ],
+  "primary": "cw_model",
+  "evidence": "Cell tower with non-cellular maps vs Mathlib CWComplex needs cellular approximation; A needs N closed"
+ },
+ "V10_30": {
+  "codes": [
+   "cw_model",
+   "setting",
+   "range",
+   "missing_math"
+  ],
+  "primary": "cw_model",
+  "evidence": "Project cell tower vs Mathlib CWComplex needs cellular approximation; A n≥2, Ω only, embedded sphere; n=1 and Ω* absent"
+ },
+ "V11_1": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "general_A"
+  ],
+  "primary": "setting",
+  "evidence": "A slice N without completeness, joint smoothness in (p,v), openness lemmas; B abstract complete, per base point"
+ },
+ "V11_2": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "general_A"
+  ],
+  "primary": "setting",
+  "evidence": "A slice N no completeness, openness and smoothness of exp domain; B abstract complete definitions-only item"
+ },
+ "V11_3": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "general_A"
+  ],
+  "primary": "setting",
+  "evidence": "A slice N without completeness, v in open domain, multiplicity statement; B abstract complete manifold"
+ },
+ "V11_5": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "general_A"
+  ],
+  "primary": "setting",
+  "evidence": "A slice N, all slice charts and Haar measures, no completeness, plus Sard's theorem; B abstract complete"
+ },
+ "V11_6": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "general_A",
+   "reading"
+  ],
+  "primary": "setting",
+  "evidence": "A adds non-degeneracy (hessNullity=0) and drops completeness; B omits title's non-degenerate claim; abstract"
+ },
+ "V11_7": {
+  "codes": [
+   "setting",
+   "extra_A"
+  ],
+  "primary": "setting",
+  "evidence": "A slice N: sectional-curvature equivalence, derivative formula, key step; B abstract Levi-Civita"
+ },
+ "V11_8": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "reading"
+  ],
+  "primary": "setting",
+  "evidence": "A formula-defined energyHessian: nullity 0, positive definiteness; B variational Hessian HessT on abstract manifolds"
+ },
+ "V11_9": {
+  "codes": [
+   "setting",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A embedded Ricci trace formula; B⇒A re-proved outright; abstract tensoriality of R for arbitrary Levi-Civita unavailable"
+ },
+ "V11_10": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "range",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A smooth ℝ-extension and Ricci-sum bound, no orthonormal frame; B parallel orthonormal frames; no abstract parallel transport"
+ },
+ "V11_11": {
+  "codes": [
+   "B_false_milnor",
+   "setting",
+   "range",
+   "reading"
+  ],
+  "primary": "B_false_milnor",
+  "evidence": "B allows n=1 where 'E**(W_i,W_i)<0 for some i≠n' is empty; Milnor needs n≥2; counter-model S^1"
+ },
+ "V11_12": {
+  "codes": [
+   "B_false_milnor",
+   "setting",
+   "range"
+  ],
+  "primary": "B_false_milnor",
+  "evidence": "B allows n=1 (Myers fails on circle: no conjugate points); A dim≥2; B adds index clause"
+ },
+ "V11_13": {
+  "codes": [
+   "setting",
+   "general_A",
+   "range",
+   "effort"
+  ],
+  "primary": "setting",
+  "evidence": "A slice N, no explicit minimal-geodesic clause, any model Z; B abstract; general-model glue missing"
+ },
+ "V11_14": {
+  "codes": [
+   "B_false_milnor",
+   "setting",
+   "extra_A",
+   "range",
+   "reading"
+  ],
+  "primary": "B_false_milnor",
+  "evidence": "B allows n=1 where circle has no conjugate points; A only unit Sⁿ; clauses (d),(e) formalizer's reading"
+ },
+ "V11_15": {
+  "codes": [
+   "B_false_milnor",
+   "setting",
+   "extra_A",
+   "harness"
+  ],
+  "primary": "B_false_milnor",
+  "evidence": "B false for n=1 (flat line has long geodesics but E**≥0); Milnor presupposes n≥2; A uses explicit sin-bump fields"
+ },
+ "V11_16": {
+  "codes": [
+   "B_false_milnor",
+   "setting",
+   "general_A",
+   "hyp_A"
+  ],
+  "primary": "B_false_milnor",
+  "evidence": "B false at n=0 (attained unit vector needed); Milnor's (n−1)/r²>0 presupposes n≥2; A dim≥2, index estimate for any N"
+ },
+ "V11_17": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A slice N only: closed⇒complete, covering exp_p injective; B abstract Cartan-Hadamard, no abstract exp/covering theory"
+ },
+ "V11_18": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "hyp_A",
+   "cw_model"
+  ],
+  "primary": "setting",
+  "evidence": "A closed slice N, project cell type, exp-fibres; B abstract Mathlib CW complex with variational index"
+ },
+ "V11_20": {
+  "codes": [
+   "setting",
+   "general_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A slice N without connected/not-simply-connected hypotheses; B abstract; Levi-Civita uniqueness not formalized"
+ },
+ "V11_21": {
+  "codes": [
+   "missing_math",
+   "setting",
+   "extra_A",
+   "range"
+  ],
+  "primary": "missing_math",
+  "evidence": "A has only πi=0 half; π1 torsion-free half needs group cohomology, Hu's theorem or Cartan fixed-point; abstract manifolds"
+ },
+ "V11_22": {
+  "codes": [
+   "cw_model",
+   "setting",
+   "extra_A",
+   "hyp_A",
+   "missing_math"
+  ],
+  "primary": "cw_model",
+  "evidence": "Project tower vs Mathlib CWComplex needs cellular approximation; A only non-conjugate q, compact N dim≥2"
+ },
+ "V11_24": {
+  "codes": [
+   "cw_model",
+   "setting",
+   "extra_A",
+   "missing_math",
+   "harness"
+  ],
+  "primary": "cw_model",
+  "evidence": "Project tower with non-cellular attaching maps vs Mathlib CWComplex; A has auxiliary results; def read as Nonempty"
+ },
+ "V12_1": {
+  "codes": [
+   "algebraic_only",
+   "general_A",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "algebraic_only",
+  "evidence": "A pure algebra for any Lie algebra (ad-invariance); B Lie group geometry: left-invariance of ∇, 21.3(a) absent"
+ },
+ "V12_2": {
+  "codes": [
+   "algebraic_only",
+   "general_A",
+   "taken_as_hyp",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "algebraic_only",
+  "evidence": "A pure algebra with X⊢X=0 as hypothesis; (i)-(iii) Lie-group geometry absent from project"
+ },
+ "V12_3": {
+  "codes": [
+   "algebraic_only",
+   "general_A",
+   "taken_as_hyp",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "algebraic_only",
+  "evidence": "A pure algebra assuming D X X=0; derivative form of compatibility needs parallel frames, absent"
+ },
+ "V12_5": {
+  "codes": [
+   "algebraic_only",
+   "general_A",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "algebraic_only",
+  "evidence": "A Jacobi computation with D=½[,] built in; B needs X⊢Y=½[X,Y] on the group (geodesics), absent"
+ },
+ "V12_6": {
+  "codes": [
+   "algebraic_only",
+   "general_A",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "algebraic_only",
+  "evidence": "A pure algebra for ad-invariant B; B needs X⊢Y=½[X,Y] and 21.3(a) on Lie group, not formalized"
+ },
+ "V12_7": {
+  "codes": [
+   "missing_math",
+   "general_A",
+   "algebraic_only",
+   "vacuous"
+  ],
+  "primary": "missing_math",
+  "evidence": "B includes Cartan H3(G;R)≠0 needing cohomology of Lie groups, absent; A only Lie algebra sign swaps"
+ },
+ "V12_8": {
+  "codes": [
+   "algebraic_only",
+   "general_A",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "algebraic_only",
+  "evidence": "A pure algebra for any Lie algebra; passage from Lie group to algebra and geometric inputs not formalized"
+ },
+ "V12_9": {
+  "codes": [
+   "algebraic_only",
+   "general_A",
+   "reading",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "algebraic_only",
+  "evidence": "A pointwise positivity of tr K_V; B uniform Ricci bound and compact with finite π1 (Myers, covering theory absent)"
+ },
+ "V12_10": {
+  "codes": [
+   "algebraic_only",
+   "general_A",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "algebraic_only",
+  "evidence": "A pure algebra (centre complement); B (iv) G≅G'×R^k is Lie theory absent from project"
+ },
+ "V12_11": {
+  "codes": [
+   "algebraic_only",
+   "extra_A",
+   "general_A",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "algebraic_only",
+  "evidence": "A pure algebra jacobiOp facts; B needs Core and tensoriality of field formula on the group"
+ },
+ "V12_12": {
+  "codes": [
+   "algebraic_only",
+   "general_A",
+   "vacuous",
+   "missing_math",
+   "effort"
+  ],
+  "primary": "algebraic_only",
+  "evidence": "A complex structure on eigenspaces for any Lie algebra; B geometry Core/Tens; orthonormal block normal form linear-algebra effort"
+ },
+ "V12_13": {
+  "codes": [
+   "algebraic_only",
+   "general_A",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "algebraic_only",
+  "evidence": "A combinatorics on spectra; B needs Theorem 20.5 and Index Theorem 15.1 for Mathlib manifolds, absent"
+ },
+ "V12_14": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "range",
+   "missing_math",
+   "harness"
+  ],
+  "primary": "setting",
+  "evidence": "A matrix groups with Frobenius metric; B every compact abstract Lie group has bi-invariant metric (Haar averaging absent)"
+ },
+ "V12_15": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "general_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A matrix groups with induced metric, completeness, exp_g; B abstract Lie group needs Milnor's Lemma 21.1 argument"
+ },
+ "V12_16": {
+  "codes": [
+   "setting",
+   "range",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A reversal only for curves τexp(tX), ambient isometry; B abstract Lie group symmetric space argument absent"
+ },
+ "V12_17": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A matrix-group computation with II and Gauss identity; B abstract Lie group needs X⊢X=0 for abstract groups"
+ },
+ "V12_18": {
+  "codes": [
+   "range",
+   "setting",
+   "missing_math"
+  ],
+  "primary": "range",
+  "evidence": "A only along exp(tA), 'if' half of frame ODE, no conjugate points; B Theorem 20.5 on abstract locally symmetric manifold"
+ },
+ "V13_1": {
+  "codes": [
+   "setting",
+   "general_A",
+   "range",
+   "reading"
+  ],
+  "primary": "setting",
+  "evidence": "A one inclusion only, any slice N without completeness, least-energy Ω^d; B abstract complete with Ω^d=E⁻¹[0,ρ²]"
+ },
+ "V13_2": {
+  "codes": [
+   "taken_as_hyp",
+   "setting",
+   "general_A",
+   "hyp_A",
+   "reading"
+  ],
+  "primary": "taken_as_hyp",
+  "evidence": "A assumes Ω^d is retract of open neighbourhood (Hanner consequence); B topological manifold; variational vs formula index"
+ },
+ "V13_3": {
+  "codes": [
+   "taken_as_hyp",
+   "setting",
+   "general_A",
+   "hyp_A",
+   "reading"
+  ],
+  "primary": "taken_as_hyp",
+  "evidence": "A retract-of-neighbourhood hypothesis replaces Milnor's manifold via Hanner's theorem, not formalized; B abstract complete"
+ },
+ "V13_4": {
+  "codes": [
+   "taken_as_hyp",
+   "setting",
+   "general_A",
+   "hyp_A",
+   "structure_choice",
+   "reading"
+  ],
+  "primary": "taken_as_hyp",
+  "evidence": "A assumes Ω^d neighbourhood retract (Hanner) and gives some bijection at base point p; B manifold, every x0 and y"
+ },
+ "V13_5": {
+  "codes": [
+   "taken_as_hyp",
+   "setting",
+   "extra_A",
+   "hyp_A",
+   "reading"
+  ],
+  "primary": "taken_as_hyp",
+  "evidence": "A retract hypothesis stands for Hanner's theorem; A has unconditional π_{j+1}Ω≃π_{j+2}N and basepoint lemma"
+ },
+ "V13_6": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "missing_math",
+   "harness"
+  ],
+  "primary": "setting",
+  "evidence": "A embedded sphere list of geodesics and semicircle map; B abstract M isometric via ψ needs LC naturality and uniqueness"
+ },
+ "V13_7": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "reading",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A exact formIndex 2mn on embedded sphere; B abstract M, variational index lam, conjugate-point clauses"
+ },
+ "V13_9": {
+  "codes": [
+   "extra_A"
+  ],
+  "primary": "extra_A",
+  "evidence": "A also has second half of Freudenthal (surjection), Riemannian index estimate, compact balls; B concrete Euclidean spheres"
+ },
+ "V13_10": {
+  "codes": [
+   "general_A",
+   "extra_A"
+  ],
+  "primary": "general_A",
+  "evidence": "A any finite-dim normed space, f only C^2, g arbitrary; B needs C^∞; A's linear-algebra lemmas"
+ },
+ "V13_11": {
+  "codes": [
+   "range",
+   "setting",
+   "general_A"
+  ],
+  "primary": "range",
+  "evidence": "A controls only linear perturbations (F+a)|N of slice N; B all g with close first and second chart partials"
+ },
+ "V13_13": {
+  "codes": [
+   "cw_model",
+   "setting",
+   "hyp_A",
+   "missing_math"
+  ],
+  "primary": "cw_model",
+  "evidence": "B relative CW complex without low cells; A compression of maps from compact P; bridging is cellular approximation"
+ },
+ "V13_14": {
+  "codes": [
+   "taken_as_hyp",
+   "setting",
+   "extra_A",
+   "hyp_A"
+  ],
+  "primary": "taken_as_hyp",
+  "evidence": "A takes Hanner's step (neighbourhood pushing) as hypothesis instead of M^0 manifold; ambient F, minimum not attained"
+ },
+ "V13_15": {
+  "codes": [
+   "taken_as_hyp",
+   "setting",
+   "extra_A",
+   "hyp_A",
+   "range"
+  ],
+  "primary": "taken_as_hyp",
+  "evidence": "A gives retraction hypothesis in broken-geodesic model (BrokenSetup) instead of Hanner; no unique minimal geodesic retraction"
+ },
+ "V13_16": {
+  "codes": [
+   "taken_as_hyp",
+   "setting",
+   "extra_A",
+   "general_A",
+   "hyp_A",
+   "reading"
+  ],
+  "primary": "taken_as_hyp",
+  "evidence": "A assumes minPaths neighbourhood retract (Hanner) and compact balls; variational index vs formIndex; B abstract"
+ },
+ "V14_1": {
+  "codes": [
+   "general_A",
+   "range"
+  ],
+  "primary": "general_A",
+  "evidence": "A diagonal exp criterion for any Fintype index type; B adds unitary diagonalization proved outright"
+ },
+ "V14_2": {
+  "codes": [
+   "range",
+   "general_A",
+   "vacuous"
+  ],
+  "primary": "range",
+  "evidence": "A only diagonal trace computations for any integers k_j; B geodesic length claim absent from A; B⇒A vacuous"
+ },
+ "V14_3": {
+  "codes": [
+   "algebraic_only",
+   "range",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "algebraic_only",
+  "evidence": "A only arithmetic step; minimality for all paths in U(n) needs lower bound π√n, project proves only SU(2m)"
+ },
+ "V14_4": {
+  "codes": [
+   "algebraic_only",
+   "general_A",
+   "range",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "algebraic_only",
+  "evidence": "A matrix algebra A²=-π²I; B minVelIn needs length lower bound π√n for every path in U(n)/SU(2m); B⇒A vacuous"
+ },
+ "V14_5": {
+  "codes": [
+   "general_A",
+   "vacuous"
+  ],
+  "primary": "general_A",
+  "evidence": "A any integers k_j, any complex W, any index type; B only odd k_j, Σk_j=0, W in su(n); B⇒A vacuous"
+ },
+ "V14_6": {
+  "codes": [
+   "general_A",
+   "range",
+   "vacuous"
+  ],
+  "primary": "general_A",
+  "evidence": "A spanning for any k_j, any trace; B adds uniqueness (basis) lacking in A; B⇒A vacuous"
+ },
+ "V14_7": {
+  "codes": [
+   "range"
+  ],
+  "primary": "range",
+  "evidence": "Project's conjParams keeps only parameters in (0,1); B's clauses (i),(ii) for parameters ≥1 proved outright"
+ },
+ "V14_8": {
+  "codes": [
+   "match"
+  ],
+  "primary": "match",
+  "evidence": "Blind specIndex equals project spectralIndex; same statement, both directions proved"
+ },
+ "V14_9": {
+  "codes": [
+   "general_A",
+   "range"
+  ],
+  "primary": "general_A",
+  "evidence": "A any finite type, odd k without Σk=0; B Fin n with basis-independence clause (iii) lacking in A"
+ },
+ "V14_10": {
+  "codes": [
+   "general_A"
+  ],
+  "primary": "general_A",
+  "evidence": "A arbitrary finite types for bottIndex invariances; B Fin n; extra pieces on each side elementary"
+ },
+ "V14_11": {
+  "codes": [
+   "extra_A",
+   "general_A"
+  ],
+  "primary": "extra_A",
+  "evidence": "A over arbitrary finite types plus two bookkeeping lemmas of Milnor's proof, not his statement"
+ },
+ "V14_13": {
+  "codes": [
+   "structure_choice",
+   "general_A",
+   "range",
+   "harness"
+  ],
+  "primary": "structure_choice",
+  "evidence": "A level-set slice charts, any 𝕜, O(n); B exp charts g·exp A, Lie bracket and metric; banned proof in statement"
+ },
+ "V14_14": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "taken_as_hyp",
+   "range",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A embedded SU(n); B abstract M isometric via ψ; connectedness of SU(n) a hypothesis; B only end point -I"
+ },
+ "V14_15": {
+  "codes": [
+   "missing_math",
+   "general_A",
+   "range"
+  ],
+  "primary": "missing_math",
+  "evidence": "A only SU(2m); B's U(n) minimality needs lower bound π√n for all paths, absent from project"
+ },
+ "V14_16": {
+  "codes": [
+   "extra_A",
+   "general_A"
+  ],
+  "primary": "extra_A",
+  "evidence": "A identifies minimal velocities, explicit map, any index type; B only abstract homeomorphism to Grassmannian"
+ },
+ "V14_17": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "taken_as_hyp",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A embedded SU(2m); B abstract M via ψ; ConnectedSpace SU(2m) as hypothesis; transport of ρ,Ω needs LC naturality"
+ },
+ "V14_18": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "range",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A embedded SU(n) explicit Jacobi fields on γ|[0,1]; B abstract M via ψ: curvature, eigenbasis count, t≥1"
+ },
+ "V14_19": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "taken_as_hyp",
+   "reading",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A embedded SU(n) formIndex; B abstract M via ψ with variational index; ConnectedSpace SU(n) a hypothesis"
+ },
+ "V14_20": {
+  "codes": [
+   "setting",
+   "extra_A",
+   "taken_as_hyp",
+   "reading",
+   "missing_math"
+  ],
+  "primary": "setting",
+  "evidence": "A embedded SU(2m) formIndex and E=‖A‖²; B abstract M via ψ, variational lam; ConnectedSpace SU(2m) hypothesis"
+ },
+ "V14_22": {
+  "codes": [
+   "setting",
+   "range",
+   "structure_choice"
+  ],
+  "primary": "setting",
+  "evidence": "A only 'hence' clause: SOME bijection on embedded SU(2m); B abstract M, inclusion Ω^d→Ω and specific map j"
+ },
+ "V14_23": {
+  "codes": [
+   "general_A",
+   "extra_A"
+  ],
+  "primary": "general_A",
+  "evidence": "A Steenrod machinery for any G-spaces, any RCLike 𝕜, index types, explicit section; B complex coset spaces only"
+ },
+ "V14_24": {
+  "codes": [
+   "general_A",
+   "extra_A"
+  ],
+  "primary": "general_A",
+  "evidence": "A any RCLike 𝕜, any ι₁, algebraic lemmas (1)-(3) on Stiefel/Grassmannian; B complex coset spaces ι₁=Fin m"
+ },
+ "V14_25": {
+  "codes": [
+   "general_A",
+   "extra_A"
+  ],
+  "primary": "general_A",
+  "evidence": "A any 𝕜 with SphereConnected, V_k(𝕜^n) connectivity; B complex stability only"
+ },
+ "V14_26": {
+  "codes": [
+   "general_A"
+  ],
+  "primary": "general_A",
+  "evidence": "A any RCLike 𝕜 and codimension m'; B only complex G_m(ℂ^{2m})"
+ },
+ "V14_27": {
+  "codes": [
+   "extra_A",
+   "general_A",
+   "range"
+  ],
+  "primary": "extra_A",
+  "evidence": "A inclusion-induced bijection with fibration data for any ι; B abstract π_j U(m)≅π_j SU(m); π_0 not in A"
+ },
+ "V14_28": {
+  "codes": [
+   "range"
+  ],
+  "primary": "range",
+  "evidence": "A states only composite and same-m periodicity; B individual links and any m,m'; links from other project theorems"
+ },
+ "V14_29": {
+  "codes": [
+   "match"
+  ],
+  "primary": "match",
+  "evidence": "Same content; U(1)≃S¹ by det vs entry; both directions proved"
+ },
+ "V14_30": {
+  "codes": [
+   "extra_A"
+  ],
+  "primary": "extra_A",
+  "evidence": "A has extra even-degree group statement not in B; otherwise identical"
+ },
+ "V15_1": {
+  "codes": [
+   "general_A",
+   "extra_A"
+  ],
+  "primary": "general_A",
+  "evidence": "A any finite index type, converse half, evenness, trace; B Fin n even; all elementary"
+ },
+ "V15_2": {
+  "codes": [
+   "missing_math",
+   "general_A",
+   "range"
+  ],
+  "primary": "missing_math",
+  "evidence": "Normal form of skew-symmetric matrices absent from project and Mathlib; A non-orthogonal J with J²=-1"
+ },
+ "V15_3": {
+  "codes": [
+   "algebraic_only",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "algebraic_only",
+  "evidence": "A pure arithmetic on integers; B needs K_A eigen-decomposition, Theorem 20.5, Index Theorem for O(2m); B⇒A vacuous"
+ },
+ "V15_4": {
+  "codes": [
+   "general_A"
+  ],
+  "primary": "general_A",
+  "evidence": "A any finite index type, arbitrary sequence J without anticommutation hypothesis; extra generality trivial"
+ },
+ "V15_5": {
+  "codes": [
+   "algebraic_only",
+   "general_A",
+   "range"
+  ],
+  "primary": "algebraic_only",
+  "evidence": "A only algebraic invariance −(PJ'P)∈Ω; B symmetric-space claim needs geodesic reversal not in A"
+ },
+ "V15_6": {
+  "codes": [
+   "general_A",
+   "vacuous"
+  ],
+  "primary": "general_A",
+  "evidence": "A drops Milnor's smallness hypothesis and all structure hypotheses; B⇒A re-proved outright"
+ },
+ "V15_7": {
+  "codes": [
+   "algebraic_only",
+   "general_A",
+   "reading"
+  ],
+  "primary": "algebraic_only",
+  "evidence": "A purely algebraic any finite index type; B adds geodesic claim; Remark read differently (midpoint vs orthogonality)"
+ },
+ "V15_8": {
+  "codes": [
+   "general_A",
+   "range"
+  ],
+  "primary": "general_A",
+  "evidence": "A arbitrary sequences and k=0; B adds topological embedding clause lacking in A"
+ },
+ "V15_10": {
+  "codes": [
+   "general_A",
+   "extra_A",
+   "reading",
+   "vacuous"
+  ],
+  "primary": "general_A",
+  "evidence": "A Clifford tables in arbitrary ring with extra entries; B⇒A vacuous; blind reading of 'J7=±J1⋯J6'"
+ },
+ "V15_11": {
+  "codes": [
+   "effort",
+   "general_A",
+   "algebraic_only",
+   "vacuous"
+  ],
+  "primary": "effort",
+  "evidence": "A algebraic bijection J↦θ; B four homeomorphisms need inverse maps J5/J7 uniquely determined; substantial but true; B⇒A vacuous"
+ },
+ "V15_12": {
+  "codes": [
+   "range",
+   "general_A"
+  ],
+  "primary": "range",
+  "evidence": "A states only dimensions for abstract spaces; B has splittings V1⊥V2 etc. proved outright"
+ },
+ "V15_13": {
+  "codes": [
+   "missing_math",
+   "range",
+   "vacuous"
+  ],
+  "primary": "missing_math",
+  "evidence": "A=True (definitions); k>8 needs Clifford periodicity C_{k+8}≅C_k⊗R(16), absent; project defines milnorM(k+8)=16 milnorM k"
+ },
+ "V15_14": {
+  "codes": [
+   "missing_math",
+   "general_A",
+   "range"
+  ],
+  "primary": "missing_math",
+  "evidence": "A only k≤8, abstract spaces; B for every k needs same dimension of minimal spaces, Clifford periodicity absent"
+ },
+ "V15_16": {
+  "codes": [
+   "general_A"
+  ],
+  "primary": "general_A",
+  "evidence": "Same content modulo inner product (A abstract space needs none) and a general central-involution lemma"
+ },
+ "V15_17": {
+  "codes": [
+   "missing_math",
+   "general_A",
+   "range"
+  ],
+  "primary": "missing_math",
+  "evidence": "A only k≤8 and abstract spaces with linear isomorphism; B every k with isometry needs periodicity"
+ },
+ "V15_18": {
+  "codes": [
+   "range",
+   "general_A"
+  ],
+  "primary": "range",
+  "evidence": "A only identities; B existence of k vector fields on spheres S^{r m_k -1}, S^{4r-1}; elementary content each side"
+ },
+ "V15_19": {
+  "codes": [
+   "algebraic_only",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "algebraic_only",
+  "evidence": "A arithmetic on lists of reals; B geometric index on Ω_k(n) needs normal form of geodesics, Theorem 20.5; B⇒A vacuous"
+ },
+ "V15_20": {
+  "codes": [
+   "general_A",
+   "range"
+  ],
+  "primary": "general_A",
+  "evidence": "A general |a_h|≥3 case, any index type; B sharper r+c≤4λ only for a_h=-3; each has content other lacks"
+ },
+ "V15_21": {
+  "codes": [
+   "general_A",
+   "range",
+   "vacuous"
+  ],
+  "primary": "general_A",
+  "evidence": "A generic IsTotGeo theory and slice criterion, never mentions Ω_k(n); B⇒A re-proved outright"
+ },
+ "V15_22": {
+  "codes": [
+   "general_A",
+   "extra_A",
+   "vacuous"
+  ],
+  "primary": "general_A",
+  "evidence": "A explicit radii, 'if' halves for every A, arbitrary sequence J; B only J-dependent neighbourhood; B⇒A vacuous"
+ },
+ "V15_23": {
+  "codes": [
+   "extra_A",
+   "general_A",
+   "vacuous",
+   "harness"
+  ],
+  "primary": "extra_A",
+  "evidence": "A strata, compactness, dim 𝒯 constant, IsTotGeo; B⇒A vacuous; proof term in statement, checked on A'"
+ },
+ "V15_24": {
+  "codes": [
+   "general_A",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "general_A",
+  "evidence": "A any index type, eigenvalues of −V² without normal form; B normal form theorem absent from project and Mathlib"
+ },
+ "V15_25": {
+  "codes": [
+   "extra_A",
+   "general_A",
+   "hyp_A",
+   "vacuous"
+  ],
+  "primary": "extra_A",
+  "evidence": "A at every p incl. k=0 with distance/energy bounds, assumes minVelO nonempty; B⇒A vacuous"
+ },
+ "V15_26": {
+  "codes": [
+   "range",
+   "structure_choice",
+   "vacuous"
+  ],
+  "primary": "range",
+  "evidence": "A homotopy equivalence on project's PathSp, not homeomorphism; B Milnor's normalized path spaces; B⇒A vacuous"
+ },
+ "V15_28": {
+  "codes": [
+   "effort",
+   "extra_A",
+   "general_A"
+  ],
+  "primary": "effort",
+  "evidence": "A project vocabulary (conjMultiplicity, formIndex), any Killing space; B blind subsets; dictionary conjMultiplicity≤conjDim not built"
+ },
+ "V15_29": {
+  "codes": [
+   "range",
+   "general_A",
+   "missing_math"
+  ],
+  "primary": "range",
+  "evidence": "A only k+1≤8 with linear intertwiner and c≥1; B oddness of a, isometry, all k need periodicity"
+ },
+ "V15_30": {
+  "codes": [
+   "range",
+   "hyp_A",
+   "missing_math",
+   "effort"
+  ],
+  "primary": "range",
+  "evidence": "A only k+1≤8, assumes Ω_{k+1}(n)≠∅, formIndex not blind idxIn; B all k needs periodicity"
+ },
+ "V15_31": {
+  "codes": [
+   "range",
+   "structure_choice",
+   "missing_math",
+   "effort"
+  ],
+  "primary": "range",
+  "evidence": "A only k+1≤8 in project's PathSp; B every k in blind normalized path space; homotopy-equivalence glue not built"
+ },
+ "V15_32": {
+  "codes": [
+   "effort",
+   "structure_choice"
+  ],
+  "primary": "effort",
+  "evidence": "Same statement for two path-space formalizations (PathSp vs OmIn); transfer of bijectivity believed true, not built"
+ },
+ "V15_34": {
+  "codes": [
+   "general_A",
+   "range",
+   "vacuous"
+  ],
+  "primary": "general_A",
+  "evidence": "A arbitrary ii, any index type, multiplicativity; B i=J_1⋯J_{k-1} complex structure and f(J exp)=det; B⇒A vacuous"
+ },
+ "V15_35": {
+  "codes": [
+   "general_A",
+   "range",
+   "structure_choice",
+   "vacuous"
+  ],
+  "primary": "general_A",
+  "evidence": "A abstract ii, all k≠0, clopen in project path space; B all k≡2 mod 4, arbitrary base point, own OmIn"
+ },
+ "V15_37": {
+  "codes": [
+   "general_A",
+   "range",
+   "reading",
+   "vacuous"
+  ],
+  "primary": "general_A",
+  "evidence": "A abstract inner product space, exp-free, linear intertwiner; B arbitrary splitting and isometric intertwiner; B⇒A vacuous"
+ },
+ "V15_38": {
+  "codes": [
+   "range",
+   "structure_choice",
+   "vacuous"
+  ],
+  "primary": "range",
+  "evidence": "A coarser bound (ν−|c|)/4 for non-minimal geodesics via Killing fields; B Milnor's full pair count in normal form J exp(πtA)"
+ },
+ "V15_39": {
+  "codes": [
+   "effort",
+   "general_A",
+   "structure_choice",
+   "vacuous"
+  ],
+  "primary": "effort",
+  "evidence": "A explicit threshold at every n; B ∃N; A⇒B believed true, only transport glue between OmIn and PathSp missing"
+ },
+ "V15_40": {
+  "codes": [
+   "range",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "range",
+  "evidence": "A single finite-stage π_0 correspondence; B infinitely many components and direct-limit homotopy equivalences, apparatus absent"
+ },
+ "V15_41": {
+  "codes": [
+   "range",
+   "effort",
+   "harness"
+  ],
+  "primary": "range",
+  "evidence": "A finite-stage algebra for explicit bott16; B every family, embedding, direct-limit continuity needs colimit construction"
+ },
+ "V15_42": {
+  "codes": [
+   "structure_choice",
+   "range",
+   "missing_math",
+   "harness"
+  ],
+  "primary": "structure_choice",
+  "evidence": "A explicit bottJ structures only; B every family needs isometric uniqueness of Cl_8-module, absent"
+ },
+ "V15_43": {
+  "codes": [
+   "structure_choice",
+   "range",
+   "missing_math"
+  ],
+  "primary": "structure_choice",
+  "evidence": "A explicit bottJ, set-level composite chain; B each link as group iso for every family; isometric Cl_8 uniqueness absent"
+ },
+ "V15_45": {
+  "codes": [
+   "range"
+  ],
+  "primary": "range",
+  "evidence": "A set-level bijection at base point I only; B group isomorphisms at all base points and loop-space form"
+ },
+ "V15_46": {
+  "codes": [
+   "range"
+  ],
+  "primary": "range",
+  "evidence": "A set-level periodicity at base point I only; B every base point and group isomorphisms in positive degrees"
+ },
+ "VA_2": {
+  "codes": [
+   "vacuous",
+   "general_A"
+  ],
+  "primary": "vacuous",
+  "evidence": "Both directions proved without the hypothesis; project's IsHomotopyDirectLimit for arbitrary sequences, blind builds in monotonicity"
+ },
+ "VA_4": {
+  "codes": [
+   "general_A",
+   "vacuous"
+  ],
+  "primary": "general_A",
+  "evidence": "A of_telescopeMap for arbitrary non-monotone sequences; B includes monotonicity; general case proved outright"
+ },
+ "VA_5": {
+  "codes": [
+   "general_A",
+   "extra_A"
+  ],
+  "primary": "general_A",
+  "evidence": "A closedness and general level lemma; B set shape and strong deformation retract; extra content elementary"
+ },
+ "VA_6": {
+  "codes": [
+   "range"
+  ],
+  "primary": "range",
+  "evidence": "A states only homotopy-direct-limit conclusion; B adds strong deformation retraction and embedding of graph"
+ },
+ "VA_7": {
+  "codes": [
+   "general_A",
+   "range"
+  ],
+  "primary": "general_A",
+  "evidence": "A sublevel version for non-paracompact spaces; B existence of level function f not stated in A"
+ },
+ "VA_8": {
+  "codes": [
+   "match"
+  ],
+  "primary": "match",
+  "evidence": "Clause-by-clause transports; only extra clause monotonicity is a trivial project lemma"
+ },
+ "VA_9": {
+  "codes": [
+   "B_false_milnor",
+   "hyp_A"
+  ],
+  "primary": "B_false_milnor",
+  "evidence": "Milnor's lemma has no closedness hypothesis but is false for non-closed X_0; A adds 'all X_n closed'"
+ },
+ "VA_10": {
+  "codes": [
+   "hyp_A",
+   "extra_A"
+  ],
+  "primary": "hyp_A",
+  "evidence": "A requires every X_n closed; B true without closedness; A has exact identity h0=f_Σ∘R2"
+ },
+ "VA_11": {
+  "codes": [
+   "B_false_milnor",
+   "hyp_A"
+  ],
+  "primary": "B_false_milnor",
+  "evidence": "Milnor never states closedness of Y_i; G not continuous for non-closed Y_i; project adds closedness"
+ },
+ "VA_12": {
+  "codes": [
+   "hyp_A"
+  ],
+  "primary": "hyp_A",
+  "evidence": "A Theorem A assumes Y_i closed; removable by formal argument, statements equivalent"
+ },
+ "VA_15": {
+  "codes": [
+   "extra_A"
+  ],
+  "primary": "extra_A",
+  "evidence": "A has extra trivial clause (mapsTo_mappingTelescopeMap); equivalent on the substance"
+ },
+ "VA_16": {
+  "codes": [
+   "cw_model",
+   "range",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "cw_model",
+  "evidence": "A replaces union K by telescope K_Σ to avoid Whitehead/Example 2 for Mathlib CW complexes; B⇒A vacuous"
+ },
+ "VA_17": {
+  "codes": [
+   "cw_model",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "cw_model",
+  "evidence": "Mapping telescope of CW complexes having CW type needs cellular approximation, absent; B⇒A vacuous"
+ },
+ "VA_18": {
+  "codes": [
+   "cw_model",
+   "range",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "cw_model",
+  "evidence": "A homotopy invariance of project cell type; B needs telescope of non-cellular adjunction spaces to Mathlib CWComplex"
+ },
+ "VA_19": {
+  "codes": [
+   "cw_model",
+   "general_A",
+   "hyp_A",
+   "vacuous",
+   "missing_math"
+  ],
+  "primary": "cw_model",
+  "evidence": "A assumes the ladder of homotopy equivalences; B existence with Mathlib CW union; Example 2 for CW complexes absent"
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "id": "V9_6",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): for slice submanifolds N ⊆ V and γ ∈ Ω(N;p,q) an unbroken geodesic: hessNullSpace (image under X ↦ X∘projIcc of the kernel of the formula-defined energyHessian on TΩ_γ) = conjSpace 0 1; hessNullity (ℕ) = conjMultiplicity 0 1; 0 < hessNullity ⇔ IsConjugate 0 1. B: on abstract manifolds with the VARIATIONAL E_** (choice function HessT 1), nullity = setDim(bNullSet (TOm 1 γ)) ∈ ℕ∞: nullity > 0 ⇔ IsConj 0 1, nullity = conjMult 0 1, nullity ≠ ⊤. B ⇒ A only vacuously (A re-proved outright from theorem_14_1 (V9_5) and isConjugate_iff (V9_4)). A ⇒ B fails genuinely, now only because of the setting: on embedded manifolds B_emb ⇔ A_emb is proved (second attempt).",
+ "B_issue": null,
+ "overlap": "B_to_A: 369 shared (Theorem 14.1 and its steps, isConjugate_iff, energyHessian proof fields, Jacobi ODE theory). Embedded: A_to_B_emb 340 and B_to_A_emb 344 shared — energyHessian proof fields, Jacobi-field/jacobiSpace lemmas (jacobiSpace_eq_zero, jacEval_bijective), isConjugate_iff, IsJacobiField.secondVariation_eq_zero/mem_pathTangent; B_to_A_emb does not use theorem_14_1.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "B_emb := B at M = Bridge.Sub hN, cov = Bridge.conn (B_to_B_emb); A_emb := A's three conjuncts for connected slice submanifolds modelled on ℝⁿ (A_to_A_emb). Proved A_to_B_emb (uses all three conjuncts of A; #rt_check OK) and B_emb_to_A_emb / B_to_A_emb (#rt_check OK). Key new glue (namespace Emb, besides the V9_5 dictionary and V9_4's isConj_iff/conjMult_eq): bNullSet_eq_image (B's null set of HessT 1 on TOm 1 γ' = toFA '' hessNullSpace, for any project path γ agreeing with incl ∘ γ' on [0,1]) and setDim_bNullSet (B's nullity = rank of hessNullSpace, toFA injective on it), conjSpace_congr, mem_pathTangent_of_eqOn. B_emb ⇒ A_emb: B_emb gives rank hessNullSpace = conjMultiplicity (finite); the easy half of Theorem 14.1 (IsJacobiField.secondVariation_eq_zero, not a theorem of this item) gives conjSpace ≤ hessNullSpace; equal finite dimension ⇒ equality; the rest via isConjugate_iff (V9_4). Limitations: induced connection only, model ℝⁿ, connected ↥N.",
+ "uses_hypothesis_emb": {
+  "A_to_B_emb": true,
+  "B_emb_to_A_emb": true
+ },
+ "second_attempt": "EnergyC2 + Hessian dictionary (V8_13) + new TΩ/null-space transport: embedded special case proved both ways (A_to_B_emb, B_to_A_emb; #rt_check OK); was 'failed'. A ⇒ B still blocked by the abstract setting; B ⇒ A stays vacuous."
+}

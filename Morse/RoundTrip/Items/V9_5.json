@@ -1,0 +1,22 @@
+{
+ "id": "V9_5",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): for slice submanifolds N ⊆ V and γ ∈ Ω(N;p,q) an unbroken geodesic: Theorem 14.1 for energyHessian := 2·secondVariation (bilinear form on TΩ_γ DEFINED by the second variation formula), together with the easy half and the three step lemmas of the converse (Jacobi equation off the breaks, no jumps of W₁', smoothness across them). B: on abstract connected Riemannian ℝⁿ-manifolds with a Levi-Civita connection, W₁ ∈ TΩ_γ is null for Milnor's VARIATIONAL E_** (IsHessT 1) iff W₁ is a Jacobi field. A ⇒ B and B ⇒ A fail genuinely, now only because of the setting (abstract manifolds, any Levi-Civita connection vs slice submanifolds with the induced one) and, for B ⇒ A, A's extra step lemmas: on embedded manifolds the variational and the formula-defined E_** agree and B_emb ⇔ theorem_14_1 is proved (second attempt).",
+ "B_issue": null,
+ "overlap": "Main directions: none proved. Embedded: A_to_B_emb 231 and B_to_A_emb 232 shared project theorems — energyHessian's proof fields (secondVariation_eq_hessForm, hessForm_comm, …), IsJacobiField fields, jump/covD/curvR/curvOp lemmas, piecewise lemmas, slice-chart internals; B_to_A_emb does not reuse theorem_14_1's argument (jacobiExpr_eq_zero_of_null etc. are not used).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "B_emb := B at M = Bridge.Sub hN, cov = Bridge.conn (B_to_B_emb). A_emb := A's theorem_14_1 for connected slice submanifolds modelled on ℝⁿ (A_to_A_emb). Proved A_to_B_emb (uses A's theorem_14_1; #rt_check OK) and B_emb_to_A_emb, hence B_to_A_emb (#rt_check OK). Dictionary in the file (namespace Emb): the shared §§13–15 Hessian dictionary of Items/V8_13.lean (blind 2-parameter variations ⇔ Morse.IsVariation, D_varField, hess_data from EnergyC2, hess_eq, exists_isHess), with Theorem 13.1 discharged by Morse.second_variation (sv_holds; not a theorem of this item); the Jacobi dictionary and toFA of Items/V9_4.lean; NEW: isHessT_one_iff (IsHessT 1 = IsHess), inTOmegaT_toFA (TΩ project ⇒ blind: X ∈ pathTangent ⇒ toFA X ∈ InTOmegaT 1, subdivision avoiding the break set, continuity from the pieces), isHessT_iff / hessT_eq (IsHessT 1 γ W₁ W₂ r ⇔ r = 2·secondVariation of the ambient fields; HessT 1 = 2·secondVariation on TΩ). For B_emb ⇒ A_emb, γ is lifted (Bridge.lift) to a blind geodesic agreeing with γ on [0,1] (isUnbrokenGeodesic_congr, sv_congr_path, mem_pathTangent_congr). Limitations: only the induced connection, model ℝⁿ, connected ↥N.",
+ "uses_hypothesis_emb": {
+  "A_to_B_emb": true,
+  "B_emb_to_A_emb": true
+ },
+ "second_attempt": "EnergyC2 + the V8_13 Hessian dictionary closed the analytic gap; with a new TΩ (project ⇒ blind) dictionary and IsHessT 1 = IsHess, the embedded special case is now proved in both directions (A_to_B_emb, B_to_A_emb; #rt_check OK); was 'failed'. A ⇔ B remain blocked by the abstract setting (and A's step lemmas for B ⇒ A)."
+}

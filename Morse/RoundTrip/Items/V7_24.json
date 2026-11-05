@@ -1,0 +1,17 @@
+{
+ "id": "V7_24",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "Both directions are vacuous. B (abstract Riemannian manifold, any Levi-Civita cov; IsMinimal = geodesic on [a,b] whose arcLen is ≤ that of every piecewise smooth path with the same end points) says, for a < b, IsMinimal ↔ (geodesic on [a,b] with arcLen = ρ(γ a, γ b)): a tautology about sInf (the geodesic is one of the competing paths, lengths are ≥ 0), proved outright (B_holds) with no geometry; A is not used. A (universes 0; slice submanifold N ⊆ V; Morse.IsMinimalGeodesic is vocabulary): exp maps expDom into N, and a geodesic t ↦ exp_p(tv) on ℝ with ρ(p, exp_p v) = ‖v‖ is a minimal geodesic on [0,1] of length ‖v‖; re-proved outright by replaying the project's proofs (B not used). Content: A's minimality/length computation for the exp geodesic is not in B; B's abstract setting is not in A but B carries no content. Vocabulary: the project's IsMinimalGeodesic requires a ≤ b and a geodesic on an OPEN set ⊇ [a,b] (B: closed-interval geodesic) and competes with pathLength of IsPiecewiseSmooth paths in N (B: arcLen of IsPW paths); on embedded N, RoundTrip.Bridge identifies the lengths and path classes (arcLen_eq, isPW_lift, isPiecewiseSmooth_of_isPW), so IsMinimalGeodesic ⇒ IsMinimal, while the converse needs extending a closed-interval geodesic past its end points (true by local existence, not formalized).",
+ "B_issue": null,
+ "overlap": "A_to_B: none (B proved from the blind definitions alone). B_to_A: 330 shared project theorems — the proofs of A's two theorems replayed (exp_eq_of_mem_expDom, IsGeodesicOn.pathLength_eq, hasDerivAt_exp_smul_zero, riemDist_le_pathLength, exp_zero and the exp/ODE machinery below them); vacuous.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_attempted",
+ "embedded_special_case_note": "B is a tautology, so its embedded case is too. The informative comparison is the vocabulary one (IsMinimalGeodesic vs IsMinimal on Bridge.Sub hN): one direction is direct with Bridge; the other needs closed-to-open geodesic extension (the trick used in V7_28's mem_expDom_of_expDefined needs completeness; without it, local existence at the end points plus endpoint uniqueness from the right)."
+}

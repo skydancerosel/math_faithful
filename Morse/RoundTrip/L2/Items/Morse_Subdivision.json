@@ -1,0 +1,11 @@
+{
+ "id": "Morse_Subdivision",
+ "name": "Morse.Subdivision",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": "not blind: the formalizer saw the project's Subdivision fields through the permitted #print Morse.BrokenSetup and chose k = m + 1 after seeing the project's indexing",
+ "why": "Project: a structure with t : Fin (m+2) -> R, strictly increasing, t 0 = 0, t (last) = 1; blind: the subtype of such t. They are equivalent types (Morse.Subdivision m equiv T m) by repackaging the fields, both directions rfl. The indexing m = number of interior points is a parametrisation with no textbook meaning; it agrees here because the blind choice was not blind."
+}

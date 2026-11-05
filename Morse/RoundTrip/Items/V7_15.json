@@ -1,0 +1,18 @@
+{
+ "id": "V7_15",
+ "reblind": true,
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B (Thm 10.4): for W, ε as in Lemma 10.3 (blind IsUniformNormal: unique short geodesics, smooth dependence into TM, Riemannian normal balls of radius ε containing W) on an abstract connected Riemannian ℝⁿ-manifold with any Levi-Civita connection, the geodesic γ of length < ε joining q₁, q₂ ∈ W has L(γ) ≤ L(ω) for every piecewise smooth ω on [0,1] (equality ⇒ ω([0,1]) = γ([0,1])) and on any [a, b]. A (universes 0): for N ⊆ V with the induced metric, radial (t ↦ exp_q(tv) is a geodesic with velocity v), pathLength_exp_smul (its length is ‖v‖), norm_le_pathLength (for any normal radius ε, ‖v‖ < ε, every admissible path from q to exp_q(v) has length ≥ ‖v‖) and theorem_10_4 (Milnor's statement for O, ε from the project's lemma_10_3, paths on any [a, b], equality clause on [a, b]). A ⇒ B fails genuinely (abstract manifolds/metrics; no abstract geodesic theory in the project). B ⇒ A fails genuinely: B's hypothesis is a uniformly normal W, so B says nothing about an arbitrary normal radius (radial, pathLength_exp_smul, norm_le_pathLength), and it assumes M connected. On embedded manifolds A ⇒ B_emb and B_emb ⇒ A_10_4 (theorem_10_4 for connected N, model ℝⁿ), both #rt_check OK.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. For B_emb_to_A_10_4: 354 shared project theorems (249 without _proof_ constants) — lemma_10_3 with its LocalSpray/inverse-function machinery, IsGeodesicOn.pathLength_eq, NormalCoord projections, geodesic ODE/exp and slice-chart infrastructure; none of the shortest-path argument (norm_le_pathLength, exists_crossing, radius_sub_le_pathLength, the Gauss lemma are not shared).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V7_15.lean: B_emb := B for M = Bridge.Sub hN with the induced metric and Bridge.conn (B_to_B_emb). A_to_B_emb (uses A's norm_le_pathLength): geodesic_data reads a blind geodesic on [0,1] as t ↦ exp_q(tv), v = D(γ'(0)) ∈ T_qN, with length ‖v‖ (exists_initial_ray, IsGeodesicOn.pathLength_eq); a project normal radius ε' ∈ (‖v‖, ε) comes from W's normal ball (normalCoord_of_isNormBall); the equality clause is Emb.image_eq_of_eq, the project's own proof of image_eq_of_pathLength_eq/eq_exp_of_pathLength_eq (V7_16) re-run with A's norm_le_pathLength, because citing the project lemma would fail #rt_check (it depends on norm_le_pathLength). B_emb_to_A_10_4 (uses B): isUniformNormal_of turns lemma_10_3's three conclusions into blind IsUniformNormal for W = N ∩ O (short_of_mem_expDom for (1); the smooth TM-valued map (x, y) ↦ (x, L_x G(x, y)) via Bridge.contMDiffWithinAt_tangent_iff for (2); isNormBall_of_normalCoord for (3)); then B gives the inequality on [a, b] and, after an affine reparametrization to [0,1], the equality clause. So on embedded manifolds A ⇒ B_emb ⇒ theorem_10_4. Not covered by B_emb: radial, pathLength_exp_smul, norm_le_pathLength for an arbitrary normal radius; disconnected N."
+}

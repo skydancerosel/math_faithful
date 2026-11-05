@@ -1,0 +1,17 @@
+{
+ "id": "V11_3",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: on every abstract connected Hausdorff ℝⁿ-manifold with any smooth Mathlib RiemannianBundle metric and any Levi-Civita connection, Milnor-complete (ρ-Cauchy sequences converge), for every p and v ∈ T_pM ≅ ℝⁿ (v = 0 included): exp_p(v) is conjugate to p along γ_v(t) = exp_p(tv) (blind IsConj: nonzero Jacobi field on [0,1] vanishing at 0 and 1) iff exp_p : ℝⁿ → M is critical at v (non-injective mfderiv). A (universes 0): for slice submanifolds N ⊆ V with the induced metric only, and v in the open domain expDomAt of exp_q (no completeness): the fields W_X are Jacobi fields, X ↦ W_X is injective, the conjugate space is the image of ker d(exp_q)_v, multiplicity = dim ker d(exp_q)_v, and Theorem 18.1. A ⇒ B fails genuinely (abstract manifolds are not given embedded; no abstract exp/Jacobi theory in the project); B ⇒ A fails genuinely (setting; A drops completeness and adds the multiplicity statement). On embedded manifolds A ⇒ B_emb and B_emb ⇒ Theorem 18.1 for complete connected N are proved.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. For the embedded theorem B_emb_to_A_cplt: 403 shared project theorems — the exp/geodesic-flow ODE infrastructure (Flow.*, LocalSpray.*, IsBddLipschitz.*, raysGoodE_of_isGeodesicOn, exists_contDiffOn_exp, contDiffOn_expAt, isSmoothCurveIn_ray: smoothness of exp_p, needed to translate B's mfderiv into dExpAt), Hopf–Rinow (hopf_rinow, riemDist_ne_top) for the completeness dictionary, slice-chart/tangent-projection lemmas and Jacobi-field basics from the Bridge and the Jacobi dictionary. None of the Theorem 18.1 argument (expJacobi, isJacobiField_expJacobi, covAlong_expJacobi_zero, eq_expJacobi, conjSpace_eq_map_ker, jacEval_bijective for W_X) is shared.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V11_3.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric), cov = Bridge.conn (B_to_B_emb via conn_isLC). New dictionary lemmas (namespace Emb): metricComplete_iff / complete_of_metricComplete / metricComplete_of_complete (Milnor completeness of (↥N, ρ) ⇔ Morse.IsGeodesicallyComplete via Hopf–Rinow, adapted from Items/V7_29.lean), incl_expMap (blind exp = project exp on complete N, Bridge.expMap_eq), Dt (D_q as a linear bijection ℝⁿ ≅ T_qN) and injective_comp_Dt_iff, contMDiffAt_map_iff / contMDiff_map_iff (a map E → ↥N is smooth iff it is smooth in V, generalizing Bridge.contMDiffWithinAt_curve_iff), D_mfderiv_map / injective_mfderiv_iff (blind criticality IsCritMap ⇔ non-injective derivative in V), conj_crit_iff (both sides of B_emb ⇔ IsConjugate along t ↦ exp_p(t D_p v) and ¬Injective (dExpAt p (Dt p v))); Jacobi dictionary copied from Items/V9_10.lean. Proved A_to_B_emb (uses A's theorem_18_1) and B_emb_to_A_cplt (A_cplt = A's theorem_18_1 for complete, connected N with model ℝⁿ), both #rt_check OK. Not covered by B_emb: incomplete N (A works on the open domain of exp_q), the multiplicity/conjugate-space statements, non-connected N; only the induced connection."
+}

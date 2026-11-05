@@ -1,0 +1,17 @@
+{
+ "id": "V7_4",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A (universes 0): local flows of C^∞ first-order systems x' = G(x) on finite-dimensional E with smooth dependence on the initial point; Theorem 10.1 for u'' = F(u,u') on finite-dimensional E (neighbourhood W, ε, solutions jointly C^∞ on W × (−ε,ε)); uniqueness on open preconnected time sets for C¹ right-hand sides on ARBITRARY normed spaces. B: Theorem 10.1 on ℝⁿ for C^∞ F: W, ε, a family of solutions, jointly C^∞, unique on (−ε,ε). A ⇒ B proved with the hypothesis: theorem_10_1 (E = ℝⁿ) gives existence/smoothness, differentiability of each solution in t from joint smoothness, uniqueness from theorem_10_1_unique with v = u' at t₀ = 0. B ⇒ A fails genuinely: B is for C^∞ coefficients on ℝⁿ only, while A's uniqueness is for C¹ fields on arbitrary (possibly infinite-dimensional) normed spaces and arbitrary open preconnected time sets, and A's first-order flow is a separate statement (it would follow from B on ℝⁿ via F(u,v) = DG(u)v plus a transport E ≅ ℝⁿ, but the C¹/infinite-dimensional uniqueness does not).",
+ "B_issue": null,
+ "overlap": "no B_to_A proved",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is a pure ODE statement on ℝⁿ (Theorem 10.1), it does not quantify over Riemannian manifolds."
+}

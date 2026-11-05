@@ -1,0 +1,11 @@
+{
+ "id": "V2_11",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": false,
+ "why": "The listed declarations (IsCellAttachment, IsFiniteCellComplexType) are definitions, so A = True and B ⇒ A is trivial. B is cellular approximation for an attaching map into a Mathlib CWComplex, plus 'attaching along a cellular map gives a CW-complex'. Neither is in Mathlib or the project, so B is not proved. This is exactly the step the project replaces: IsFiniteCellComplexType means 'homotopy equivalent to an iterated adjunction space with arbitrary (non-cellular) attaching maps', not 'homotopy equivalent to a finite CW-complex'. The two notions agree only via cellular approximation (B) and Lemmas 3.6/3.7. Neither comparison between the project's notion and Mathlib's CWComplex is provable here without that missing theory.",
+ "B_issue": null,
+ "overlap": "0 shared project theorems (B_to_A is trivial)"
+}

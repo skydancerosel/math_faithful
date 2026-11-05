@@ -1,0 +1,17 @@
+{
+ "id": "V7_23",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0), for a slice submanifold N ⊆ V with the induced metric: a geodesic on an open preconnected s ∋ 0 is t ↦ exp_{γ(0)}(tγ'(0)); the uniform local geodesic flow near each x₀ (speeds < R, uniform time τ, position/velocity continuous in (y, w, t)); continuation of geodesics by gluing; the domain of exp is open in TN and exp is continuous on it; exp_p continuous on T_pN when defined there (one p). B: for every abstract connected Riemannian manifold and Levi-Civita connection: (1) a geodesic on any interval s ∋ 0 is t ↦ exp_q(tv) (and exp_q(tv) is defined), (2) geodesic segments [a,b] extend to [a−ε, b+ε], (3) on a geodesically complete M, exp_p is continuous on TM_p. A ⇒ B fails genuinely: B needs abstract geodesic theory (ODE in charts, uniqueness, continuation), absent from the project; A cannot be applied to an abstract manifold. B ⇒ A fails on content: the uniform local flow, the openness of dom exp with joint continuity, and the gluing statement have no counterpart in B, and A's continuity of exp_p needs exp defined at one p only, B's needs completeness of all of M. On embedded manifolds A implies all of B, and B gives A's last conjunct for complete N.",
+ "B_issue": null,
+ "overlap": "No main direction proved. B_continuousOn_exp_embedded: 134 shared project theorems, all geodesic/slice-chart infrastructure used by Bridge.expMap_eq (uniqueness of geodesics, IsGeodesicFrom.exp_eq); the global dependence on initial data (the content of continuousOn_exp) comes from B.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "Bemb hN := B's conclusion on Bridge.Sub hN with Bridge.conn. Proved: A_to_Bemb (A ⇒ Bemb, every N, Z = ℝⁿ; uses exp_smul_eq for (1), exists_localFlow_exp through a new continuation lemma extend_closed for (2) and for the GeodComplete dictionary, continuousOn_exp for (3); also a restriction lemma for blind geodesics), #rt_check OK. Converse only partly: B_continuousOn_exp_embedded (B ⇒ continuousOn_exp for connected, geodesically complete N), #rt_check OK. Limitation: only the induced connection Bridge.conn, not every IsLC connection on ↥N; Z = ℝⁿ only. The partial converse (B ⇒ continuousOn_exp for complete N) is a weakened form of one conjunct, hence A_to_Bemb_only."
+}

@@ -1,0 +1,11 @@
+{
+ "id": "Morse_nullSpace",
+ "name": "Morse.nullSpace",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Project: kernel of H viewed as a linear map E → (E →L ℝ); blind: {v | ∀ w, H v w = 0} (first-argument null space, as the project). Equal as submodules for every continuous bilinear H, via the project's `Morse.mem_nullSpace`."
+}

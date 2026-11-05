@@ -1,0 +1,22 @@
+{
+ "id": "V11_12",
+ "A_to_B": "false",
+ "B_to_A": "proved",
+ "not_B": true,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B is false (not_B): it allows n = 1; on S¹ the Ricci tensor is 0 ≥ (n−1)/r² = 0, the great circle of speed 4 is a geodesic of length 4 > π·1, but S¹ has no conjugate points at all (curvature 0), contradicting B's clause 'γ(a), γ(b) conjugate for some a, b ∈ [0,1]'. Hence ¬(A → B) and B ⇒ A only ex falso. Corrected Bcorr (n ≥ 2) vs A: A (theorem_19_4; dim N ≥ 2, any model Z, γ ∈ Ω(N;p,q) an unbroken geodesic, L > πr): γ(0) is conjugate to some γ(t), 0 < t < 1, and γ is not a minimal path. Bcorr (abstract M): some pair a, b ∈ [0,1] conjugate (weaker than A's), γ not minimal (IsMinimal, competitors on any [a',b']), and the index λ(γ) = lam 1 γ > 0 — not in A's statement. On ↥N, A ⇒ Bcorr's first two clauses (A_to_Bcorr_emb_noLam, proved); the index clause needs the LamEq bridge (blind variational index = project formIndex energyHessian), missing. [Third attempt: the λ-identification (LamEq: blind variational lam = the project's indexUpTo / formIndex energyHessian) is now PROVED on ↥N with the induced connection (copy of Items/V9_23.lean's proof); the abstract verdict is unchanged — see embedded_special_case.]",
+ "B_issue": "As formalized B is false for n = 1 (flagged by the formalizer): Myers' theorem needs n ≥ 2. Counter-model S¹ in Items/V11_12.lean (not_B).",
+ "overlap": "B_to_A (ex falso via not_B): 263 shared project theorems — the Jacobi-field ODE infrastructure (IsJacobiField.eq/eqOn_zero/eqOn_jacSol, exists_linearODE) reached through Lemma 19.1's IsJacobiField.eqOn_zero_of_nonpos (no conjugate points on S¹), which theorem_19_4's proof also reaches through the index theorem; curvature/Ricci infrastructure (ricci_eq_sum via ricci_sph); slice charts. A_to_Bcorr_emb_noLam: 199 shared — Jacobi-field and curvature infrastructure through the dictionary (isConj_iff, ricci_eq); not exists_energyHessian_neg, theorem_15_1 or lemma_13_6.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": true
+ },
+ "uses_hypothesis_emb": {
+  "A_to_Bcorr_emb_noLam": true,
+  "A_to_Bcorr_emb": true
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "B on ↥N is itself false (the S¹ counter-model is embedded), so A ⇒ B_emb is false; the verdict A_to_Bemb_only refers to the corrected reading Bcorr (2 ≤ n) on M = Bridge.Sub hN (model ℝⁿ, connected), cov = Bridge.conn: Bcorr_emb (all three clauses, Bcorr_to_Bcorr_emb). Proved under #rt_check (third attempt): A_to_Bcorr_emb : A → Bcorr_emb, uses A's theorem_19_4; the index clause 0 < lam 1 γ: lam 1 γ = indexUpTo 1 = formIndex energyHessian by the proof of Emb.lamEq/lamEqOne of Items/V9_23.lean copied into namespace LamPf (blind vocabulary textually identical; Lemma 11.A and Theorem 13.1 = Morse.second_variation for E_0^τ on ↥N, EnergyC2's C² regularity of u ↦ E(α(u)), the TΩ(γ|[0,τ]) ⇔ fieldsUpTo τ dictionary toFA/φT, index transport bIndex_eq_formIndex_of, then Morse.indexUpTo_one), and A's interior conjugate point gives a positive term in Morse.theorem_15_1's Σᶠ conjMultiplicity (Morse.isConjugate_iff; theorem_15_1 is not a theorem of this item). Kept: A_to_Bcorr_emb_noLam. Dictionary otherwise as before (ricciLowerBound_of, isMinimalPath_of_isMinimal, isConj_iff, mem_pathSpace_of_isGeodesic, ricci_eq). Bcorr_emb ⇒ A not attempted (A: γ(0) conjugate to an interior γ(t), any model Z). Only the induced connection.",
+ "third_attempt": "Index clause closed: new Bcorr_emb, Bcorr_to_Bcorr_emb and A_to_Bcorr_emb (#rt_check OK; 785 shared project theorems: the LamPf/second-variation and Theorem 15.1 machinery, which theorem_19_4's proof also reaches). Embedded (corrected n ≥ 2 reading): failed → A_to_Bemb_only. B itself still false (n = 1)."
+}

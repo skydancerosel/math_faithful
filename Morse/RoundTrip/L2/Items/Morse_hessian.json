@@ -1,0 +1,11 @@
+{
+ "id": "Morse_hessian",
+ "name": "Morse.hessian",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are `fderiv ℝ (fderiv ℝ f) p` at every point; `agree` is `rfl`."
+}

@@ -1,0 +1,17 @@
+{
+ "id": "V10_9",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: on every abstract connected complete Riemannian ℝⁿ-manifold, for Milnor's data (Setup16): (1) the critical paths of E (blind IsCriticalPath via variations) in Int Ω^c are exactly the geodesics on [0,1] of length < √c; (2) they lie in B; (3) for any F smooth (product structure ModelWithCorners.pi on M^{k−1}) on the image V of B with F(ω(t₁),…) = E(ω), the critical points of F (mfderiv = 0) are exactly the unbroken geodesics. A (universe 0), for slice submanifolds N ⊆ V and a Morse.BrokenSetup: tangent vectors of slice submanifolds are velocities of curves; curves of break points give variations through broken geodesics; the first variation formula dF(w) = −2Σ⟨wⱼ, Δγ'⟩ on B; Theorem 16.2's criterion (critical points of F|(N^m ∩ O), F smooth on all of V^m and = energy' there, ⇔ B.path y unbroken geodesic); and every unbroken geodesic of energy < c is the broken geodesic of its break points. A ⇒ B fails genuinely (abstract manifolds; B's (1) is Corollary 12.3, not in A). B ⇒ A fails genuinely: A's curve, variation and first-variation lemmas have no counterpart in B; only A's (4) ≈ B's (3) and A's (5) ≈ B's (2).",
+ "B_issue": null,
+ "overlap": "No direction proved; no #rt_check.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V10_9.lean: B_emb := B for M = Bridge.Sub hN, cov = Bridge.conn (B_to_B_emb). On ↥N, B's clauses (1)–(2) follow from project lemmas outside A (Items/V8_10.lean: blind IsCriticalPath Efun ⇔ Morse.IsCriticalPath, blind geodesic on [0,1] ⇔ IsUnbrokenGeodesic; then Morse.corollary_12_3 and L² ≤ E), so they are not a comparison with A. Clause (3) vs A's isCriticalPointM_iff is not dictionary-only: B's Setup16 does not give a Morse.BrokenSetup (normal-radius condition, IsShortJoin, compact S); B's E' is any F smooth for the product manifold structure (ModelWithCorners.pi) on (↥N)^{k−1} on the image of B, A's is any F smooth on all of V^m agreeing with energy' on a slice submanifold N^m ∩ O ⊆ U, with criticality IsCriticalPointM for the slice-chart structure — a dictionary between the two manifold structures on N^m (and an extension argument for B's F) does not exist in the Bridge."
+}

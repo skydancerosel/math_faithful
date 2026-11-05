@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsNegDefOn",
+ "name": "Morse.IsNegDefOn",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are literally `∀ x ∈ S, x ≠ 0 → B x x < 0`; `agree` is `Iff.rfl`."
+}

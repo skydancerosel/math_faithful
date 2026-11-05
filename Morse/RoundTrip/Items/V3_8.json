@@ -1,0 +1,11 @@
+{
+ "id": "V3_8",
+ "A_to_B": "false",
+ "B_to_A": "proved",
+ "not_B": true,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "B as written is false: it allows n = 0, where its first conjunct says S(X₀,X₀) ≤ 0 (empty sum) for every subadditive S, refuted by S ≡ 1 (not_B). So A ⇒ B is false and B ⇒ A holds only vacuously. The project's lemmas assume 0 < n. With that hypothesis added (Bpos), the two are equivalent, and both directions are proved. A ⇒ Bpos: apply le_sum_of_chain to S' a b = S b a; the additive case uses it for S and for -S. Bpos ⇒ A: encode a chain as the sets Iic i ⊆ ℕ. For le_sum_of_chain, whose hypothesis (subadditivity only on X₀ ⊆ X_m ⊆ X_{m+1}) is weaker, the missing values are set to S(X₀,X_c) - S(X₀,X_a) so that subadditivity holds on the whole chain. relation 'equivalent' refers to A vs the corrected Bpos.",
+ "B_issue": "B includes the case n = 0, where S(X₀,X₀) ≤ 0 is not implied by subadditivity (which only gives S(X,X) ≥ 0); Milnor's chain implicitly has n ≥ 1. With 0 < n added, B is correct.",
+ "overlap": "B_to_A: 0 shared (vacuous). Bpos_to_A: 3 shared, Morse.chain_le and its two auxiliary proofs (the trivial fact that a chain is monotone); none carries the induction of Lemma 5.1"
+}

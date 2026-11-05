@@ -1,0 +1,12 @@
+{
+ "id": "V4_21",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "B is Corollary 6.8 for a slice submanifold M ⊆ ℝ^{K+1} (dim ≥ 1, not necessarily closed or compact): a BOUNDED smooth f is a uniform ε-limit of smooth g without degenerate critical points, with derivatives of order ≤ k ε-close in finitely many maximal-atlas charts on compact pieces. A ⇒ B: A's exists_isMorseFunction_approx_uniform (no boundedness needed) with y_j = φ_j, K_j = φ_j(C_j); A bounds derivatives of (g − f)∘y⁻¹, B their difference (Glue.iteratedFDeriv_sub_comp_symm). Checked on A' (the proof isSliceSubmanifold_ballImage hM inside the statement of isMorseFunction_of_ballImage replaced by a bound variable; A ↔ A' by proof irrelevance). B ⇒ A fails genuinely: A drops Milnor's boundedness hypothesis and contains the proof's tools as theorems (ballDiffeo preserves slice submanifolds and pulls back Morse functions; f + ⟪a, ballDiffeo⟫ is Morse for a.e. a), none of which follows from an existence statement for bounded f.",
+ "B_issue": null,
+ "overlap": "n/a (B_to_A not proved)",
+ "uses_hypothesis": {"A_to_B": true, "B_to_A": false}
+}

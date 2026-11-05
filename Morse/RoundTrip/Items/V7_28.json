@@ -1,0 +1,17 @@
+{
+ "id": "V7_28",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": false,
+ "why": "A (universes 0): for ANY slice submanifold N ⊆ V (model Z arbitrary, N not assumed connected), IsRiemComplete N ⇒ IsGeodesicallyComplete hN (exp_q v defined by a geodesic on an open interval ⊇ [0,1]). B: abstract connected Riemannian manifold, Levi-Civita cov, MetricComplete ⇒ GeodComplete (blind geodesics on the closed [0,1]). B ⇒ A is PROVED (uses B): for q ∈ N take its connected component, an open part N ∩ O (N is locally connected), re-modelled on ℝᵐ; paths in N from it stay in it, so its ρ equals the project's riemDist of N and (N, ρ) complete makes it MetricComplete (Bridge.rho_eq, riemDist_ne_top); B makes it GeodComplete for RoundTrip.Bridge's induced Levi-Civita connection; mem_expDom_of_expDefined turns closed-interval blind geodesics into the project's open-interval ones (start a blind geodesic at exp_q(-τ/2·v) with large speed, identify it with t ↦ exp_q(tv) by uniqueness from its initial point, reparametrize), and tangent spaces/geodesics transfer from the component to N. A ⇒ B fails genuinely: A only covers submanifolds of a Euclidean space with the induced metric; B's abstract manifold with an arbitrary smooth RiemannianBundle is not of that form (no Nash embedding; no abstract geodesic theory in the project).",
+ "B_issue": null,
+ "overlap": "B_to_A: 414 shared project theorems — local existence/uniqueness of geodesics (exists_isGeodesicOn_exp_smul, exists_localFlow_exp, IsGeodesicOn.eqOn/eventuallyEq/comp_mul_add, the ODE flow lemmas), riemDist_ne_top (normal coordinates, exists_crossing), riemDist_le_pathLength, pathLength_eq_of_norm_deriv, tangentSubspace_eq_range_fderiv_sliceParam. Not the project's continuation argument (isGeodesicOn_exp_smul_union, the Cauchy sequence at the supremum): global existence comes from B.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": true
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "B_to_A itself is the embedded special case (Items/V7_28.lean, built on RoundTrip.Bridge). Reusable glue there (namespace RoundTrip.V7_28.Aux): isGeodesic_Icc_mono, isGeodesic_lift_Icc, mem_expDom_of_expDefined (blind geodesic completeness ⇒ project expDom, i.e. the closed-to-open extension under completeness), eZ/chartRn/isSliceRn/tangentSubspace_rn (model change Z → ℝᵐ), tangentSubspace_inter, isGeodesicOn_mono/mem_expDom_mono, exists_component, riemDist_eq_of_closed, mem_of_riemDist_ne_top."
+}

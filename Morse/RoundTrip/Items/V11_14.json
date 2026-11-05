@@ -1,0 +1,20 @@
+{
+ "id": "V11_14",
+ "A_to_B": "false",
+ "B_to_A": "proved",
+ "not_B": true,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B is false (not_B): it allows n = 1 (the circle), where clause (d) ('best possible': a geodesic of length πR whose end points are conjugate) fails — S¹ has no conjugate points. Counter-model: S¹ ⊆ ℝ², ψ = inclusion (IsRoundSphereR 1), induced connection. Hence ¬(A → B) and B ⇒ A only ex falso. Corrected Bcorr (n ≥ 2), for abstract M isometric via ψ to the radius-R sphere: (a) sectional curvature 1/R², (b) K(U,U) = (n−1)/R² for unit U, (c) every geodesic of length > πR has a conjugate pair, (d) a geodesic of length πR with conjugate end points, (e) for every ℓ < πR a geodesic of length ℓ without conjugate pairs. A (unit sphere Sⁿ ⊆ ℝⁿ⁺¹ only): K(U,U) = (n−1)‖U‖² for all U, the Myers hypothesis with r = 1, and for n ≥ 2 Myers (γ(0) conjugate to an interior γ(t), not minimal) plus diameter ≤ π. On the embedded unit sphere A ⇒ (b), (c) (proved); (a), (d) hold by project lemmas OUTSIDE A (curvOp_sph, conjMultiplicity_greatCircle; proved); (e), radius R ≠ 1 and abstract M via ψ are not covered. A has the diameter bound, non-minimality and the non-unit Ricci formula, absent from B.",
+ "B_issue": "As formalized B is false for n = 1 (flagged by the formalizer): on the circle clauses (c) and (d) fail. Counter-model S¹ in Items/V11_14.lean (not_B). Clauses (d), (e) are the formalizer's reading of 'a best possible result'.",
+ "overlap": "B_to_A (ex falso via not_B): 286 shared project theorems — sphere slice-structure lemmas (sphSub, isRegularValue_sphG, preimage_eq_sphere), the Jacobi-field ODE infrastructure reached through Lemma 19.1's eqOn_zero_of_nonpos, curvature infrastructure; none of A's three theorems. A_to_BcorrEmb1_bc: 225 shared — the same sphere and Jacobi/curvature infrastructure through the dictionary.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": true
+ },
+ "uses_hypothesis_emb": {
+  "A_to_BcorrEmb1_bc": true
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "B on the embedded sphere (M = Bridge.Sub (sphSub n), ψ = inclusion, cov = Bridge.conn) is itself false at n = 1 (not_B's counter-model is embedded), so A ⇒ B_emb is false. Corrected, R = 1: BcorrEmb1_abcd := clauses (a)–(d) of Bcorr on the embedded unit Sⁿ, n ≥ 2 (Bcorr_to_BcorrEmb1_abcd). A_to_BcorrEmb1_bc proved (#rt_check OK; uses A's ricci_sph via Emb.ricci_eq and sphere_myers via mem_pathSpace_of_isGeodesic / arcLen_eq / isConj_iff); BcorrEmb1_ad proved from project lemmas outside A (curvR_eq + Morse.curvOp_sph for (a); a half great circle and Morse.conjMultiplicity_greatCircle for (d)). New glue: SphN (great circles G of any speed on Sⁿ as blind geodesics, arcLen_G, connectedSpace, isRoundSphereR_incl), S1.nonposCurvature / S1.not_isConj (no conjugate points on S¹). Not done: (e) (conjugacy of arbitrary pairs a < b along a great circle — the project computes multiplicities only from t = 0; an affine-reparametrization transport via Morse.IsJacobiField.comp_affine would do), radius R ≠ 1 (no radius-R sphere submanifold) and abstract M via ψ (needs transport along a Riemannian isometry). Only the induced connection."
+}

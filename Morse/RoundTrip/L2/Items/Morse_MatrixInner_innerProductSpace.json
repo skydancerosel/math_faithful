@@ -1,0 +1,11 @@
+{
+ "id": "Morse_MatrixInner_innerProductSpace",
+ "name": "Morse.MatrixInner.innerProductSpace",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "The project's inner product is Re tr(Aᴴ B), Milnor's (and the blind) Re tr(A Bᴴ): different order of factors but equal, Re tr(Aᴴ B) = Re tr(B Aᴴ) = Re conj tr(A Bᴴ). The normed-space parts are the same (Frobenius norm, Mathlib's ℝ-module), so the two InnerProductSpace structures are equal (proved by congr on the structure)."
+}

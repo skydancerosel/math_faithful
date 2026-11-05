@@ -1,0 +1,17 @@
+{
+ "id": "V9_11",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: on every abstract connected Riemannian ℝⁿ-manifold with a Levi-Civita connection, for EVERY open U with unique minimal geodesics depending smoothly on the end points (GoodNbhd) and EVERY geodesic segment γ : [a,b] → U (no length bound, not required minimal), Jacobi fields agreeing at a and b agree on [a,b]. A (universes 0, slice submanifolds): only the short rays t ↦ exp_q(tv) with ‖v‖ below a normal radius at q — a Jacobi field vanishing at both ends vanishes, J ↦ (J(0),J(1)) is bijective (values also prescribable), the ray is a smooth curve — and, existentially, every point has a Lemma 10.3 neighbourhood O and ε such that any two points of O are joined by such a ray. The difference is genuine beyond the setting: B's hypothesis (any segment in any GoodNbhd) is not A's (normal-radius rays), and neither implies the other without new geometry: segments in a GoodNbhd need not be short rays (their end points' non-conjugacy is exactly what is missing), and normal-radius rays need not lie in a GoodNbhd. A also has prescribability (remark_14_5_bijective), absent from B.",
+ "B_issue": "B reads Milnor's 'in any such neighbourhood U … a geodesic segment in U' as any GoodNbhd U (unique minimal geodesics, smooth dependence) and ANY geodesic segment lying in U. Milnor's argument (Lemma 14.4: Jacobi fields as variation fields of the family of minimal geodesics of U) only covers the minimal segment joining two points of U — the project's reading (rays exp_q(tv), ‖v‖ < normal radius). For a non-minimal geodesic segment inside U the claim requires its end points to be non-conjugate, which GoodNbhd (a condition on minimal geodesics only) does not obviously give; B may be stronger than Milnor's claim (neither proved nor refuted here).",
+ "overlap": "no direction proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "B_emb (B for M = Bridge.Sub hN, cov = Bridge.conn) is stated in Items/V9_11.lean with B_to_B_emb; no direction proved. A ⇒ B_emb would need that the end points of a geodesic segment lying in a GoodNbhd of ↥N are not conjugate (new Riemannian geometry, possibly false for non-minimal segments); given that, V9_10's dictionary plus Morse.jacEvalEnds_bijective_of_not_isConjugate would finish. B_emb ⇒ A would need every normal-radius ray to lie in some GoodNbhd (false in general for large normal radii); even for A's existential remark_14_5 it needs a GoodNbhd version of Lemma 10.3/Theorem 10.4 on ↥N and a Bridge dictionary for blind IsMinimal (arc length against pw paths on arbitrary parameter intervals) and for the smooth map G : M × M → TM, none of which exists; A's isSmoothCurveIn_ray and remark_14_5_bijective have no counterpart in B."
+}

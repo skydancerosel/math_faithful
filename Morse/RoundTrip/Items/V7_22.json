@@ -1,0 +1,17 @@
+{
+ "id": "V7_22",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; IsRiemComplete, IsRiemBounded, IsGeodesicallyComplete are definitions): for a slice submanifold N ⊆ V with the induced metric, (i) if exp_q is defined on all of T_qN at ONE point q, then t ↦ exp_q(tv) is a geodesic on ℝ; (ii) N is geodesically complete iff every geodesic on a nonempty open preconnected s ⊆ ℝ is the restriction of a geodesic on ℝ. B: for every abstract connected Riemannian manifold and Levi-Civita connection (Mathlib CovariantDerivative, Milnor's axioms): exp defined on all of TM iff every geodesic segment [a, b] → M (a < b) extends to a geodesic ℝ → M. A ⇒ B fails genuinely: B needs abstract geodesic theory (local existence and uniqueness of geodesics in charts), absent from the project, and A cannot be applied to an abstract manifold. B ⇒ A fails on content: (i) is pointwise (one q) while B only speaks of completeness of the whole manifold; A also covers disconnected N and arbitrary slice models Z. Up to the setting and closed vs open intervals, B and (ii) say the same thing: on embedded manifolds (Z = ℝⁿ, N connected) they are proved equivalent here.",
+ "B_issue": null,
+ "overlap": "No main direction proved. B_isGeodesicallyComplete_iff_embedded: 131 shared project theorems, all geodesic infrastructure used by the Bridge (IsGeodesicOn API, uniqueness IsGeodesicOn.eqOn / ode_eventuallyEq, slice charts, tangent projections, projRep); not the gluing or local existence behind isGeodesicallyComplete_iff (B supplies the extension).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Bemb hN := B's conclusion on Bridge.Sub hN with the induced Levi-Civita connection Bridge.conn. Proved: B_isGeodesicallyComplete_iff_embedded (B, N connected ⇒ A's (ii) for N; uses B twice: once to identify blind GeodComplete with IsGeodesicallyComplete, since a blind geodesic on [0,1] must be continued past its end points, then B itself through the dictionary closed [a,b] ↔ open intervals) and A_to_Bemb (A ⇒ Bemb for every N; the GeodComplete dictionary from extend_closed, a new lemma continuing a geodesic smooth on [a,b] past both ends with the uniform local flow Morse.exists_localFlow_exp, outside the item). Both #rt_check OK. Not covered: A's (i). Limitation: only the induced connection Bridge.conn, not every IsLC connection on ↥N (uniqueness of the Levi-Civita connection is not formalized); Z = ℝⁿ only."
+}

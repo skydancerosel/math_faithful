@@ -1,0 +1,11 @@
+{
+ "id": "Morse_pathCSet",
+ "name": "Morse.pathCSet",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are {ω : C([0,1], V) | (∀ t, ω t ∈ N) ∧ ω 0 = p ∧ ω 1 = q}; `agree` is `rfl`."
+}

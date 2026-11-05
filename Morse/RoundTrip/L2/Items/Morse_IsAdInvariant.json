@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsAdInvariant",
+ "name": "Morse.IsAdInvariant",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are ∀ X Y Z, B ⁅X, Y⁆ Z = B X ⁅Y, Z⁆ for an arbitrary real bilinear form on a real Lie algebra (Milnor 21.3(a)); neither adds symmetry or positivity. agree is Iff.rfl."
+}

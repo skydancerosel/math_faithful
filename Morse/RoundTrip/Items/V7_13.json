@@ -1,0 +1,18 @@
+{
+ "id": "V7_13",
+ "reblind": true,
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B (Lemma 10.6, Riemannian norms): for every abstract connected Hausdorff ℝⁿ-manifold with any smooth Mathlib RiemannianBundle metric and any Levi-Civita CovariantDerivative (Milnor's axioms), any blind normal ball (exp_q a diffeomorphism of the Riemannian ε-ball of T_qM onto an open U) and any piecewise smooth ω = exp_q(r·v) in U − {q}, 0 < r < ε, ‖v‖ = 1: |r(b) − r(a)| ≤ L(ω), and equality forces r monotone and v constant. A (universes 0): for slice submanifolds N ⊆ V with the induced metric and a project normal radius (NormalCoord): the pointwise form |ρ'| ≤ ‖c'‖ with vanishing derivative of the direction at equality (hasDerivAt_radius), ρ(b) − ρ(a) ≤ L(c) for admissible paths, and constancy of the direction G(c)/ρ when L(c) = ρ(b) − ρ(a). A ⇒ B fails genuinely: abstract Riemannian manifolds are not given as isometrically embedded submanifolds and the project has no abstract geodesic/exp theory. B ⇒ A fails genuinely: B has no pointwise statement, covers only piecewise smooth (not admissible) paths, and assumes M connected. On embedded manifolds the two coincide exactly: B_emb ⇔ A_pw (A's integrated Lemma 10.6 for piecewise smooth paths on connected N, model ℝⁿ), both directions #rt_check OK.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. For B_emb_to_A_pw: 156 shared project theorems (119 without auxiliary _proof_ constants) — NormalCoord field projections and G_ne_zero, the geodesic ODE/exp infrastructure (IsGeodesicOn.*, IsGeodesicFrom.*, ode_eventuallyEq), slice-chart and tanProj lemmas, reached through RoundTrip/Bridge.lean; none of the Gauss lemma or Lemma 10.6 argument (inner_fderiv_F, hasDerivAt_radius, radius_sub_le_pathLength, direction_eq_of_pathLength_eq are not shared).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V7_13.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric) and cov = Bridge.conn (B_to_B_emb, via conn_isLC). Proved B_emb_iff_A_pw: A_pw_to_B_emb (uses the hypothesis), A_to_B_emb := A_pw_to_B_emb ∘ A_to_A_pw, B_emb_to_A_pw (uses B with r = ‖G∘c‖, v = L_q(G(c)/r)). New dictionary lemmas (namespace Emb, copied into V7_14–16): nrm_eq (B's nrm q w = ‖D_q w‖), mem_expDom_of_expDefined (blind exp via a geodesic on the closed [0,1] ⇒ project expDom, through exists_initial_ray), incl_expMap, isNormBall_of_normalCoord (NormalCoord ⇒ blind IsNormBall of the same radius), normalCoord_of_isNormBall (blind IsNormBall of radius ε ⇒ NormalCoord of every radius ε' < ε: the inverse g : U → ℝⁿ is extended to a smooth map on an open set of V by slice-chart local extensions (exists_local_extension) glued with a smooth partition of unity near the compact set exp_q(closedBall ε''), via a vector-valued copy of Morse.exists_contDiff_eq_of_locally; the radius is shrunk because the gluing lemma needs a compact set, harmless since a compact path has radii ≤ ε₁ < ε). A ⇒ B_emb also derives the monotonicity of r at equality from additivity of length (A only states constancy of the direction) and treats a decreasing radius with the reversed path. Limitations: only the induced connection (uniqueness of the Levi-Civita connection is not formalized), connected N (B assumes M connected; V7_28's component reduction was not repeated), piecewise smooth paths; hasDerivAt_radius has no counterpart in B."
+}

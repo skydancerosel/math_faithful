@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsConjugate",
+ "name": "Morse.IsConjugate",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "γ is a smooth curve in N on [0,1] (Morse.IsSmoothCurveIn hN γ), e.g. a geodesic as in Milnor",
+ "difference": "Both require a ≠ b in [0,1] and a Jacobi field on [0,1] vanishing at a and b and nonzero somewhere on [0,1]; the only difference is inherited from Morse.IsJacobiField: the project imposes the Jacobi equation on (0,1), the blind on [0,1] with one-sided derivatives, which can differ only when γ is not smooth up to the ends (outside Milnor's hypothesis that γ is a geodesic).",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Same dictionary as for Morse.IsJacobiField (blind T_xN/P/II/R = project tangentSubspace/prj/dN P/curvR; blind covD within [0,1] = covAlong), giving IsJacobiField hN γ J ↔ IsJacobiOn N γ [0,1] J for γ smooth in N; the rest of the two definitions is the same conjunction up to order (`tauto`)."
+}

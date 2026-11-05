@@ -1,0 +1,16 @@
+{
+ "id": "V15_43",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (no universes): for Milnor's EXPLICIT structures bottJ r, the eight-fold COMPOSITE chain as bijections of SETS at the base points: π_{j+1}Ω_8(16r) ≃ π_{j+9}O(16r) (2j+12 ≤ r), π_iΩ_8(16r) ≃ π_{i+8}O(16r) including i = 0 (2i+7 ≤ r), and the same with O(r) via Ω_8(16r) ≅ O(r). B: (1) each LINK π_{i+2}(Ω_j(16r), J_j) ≅ π_{i+1}(Ω_{j+1}(16r), J_{j+1}) (0 ≤ j ≤ 7) as a GROUP isomorphism for EVERY family of 8 anticommuting complex structures on Fin(16r), for r ≥ some unspecified R(i, j); (2) Ω_8(16r) ≃ₜ O(r) for every family. A ⇒ B fails: A has neither the individual links, nor groups, nor arbitrary families; the links (as set bijections, for arbitrary families: omega_pi_equiv, omega_pi_equiv_two, theorem_24_3) and their group versions are proof effort from other project lemmas (done generically in Items/V15_45.lean, linkM/linkM_two; for k = 2, 6 the base point has label c = 0 for every 8-family since J_{k+2} anticommutes with the k+1 factors of the label), but B(2) for an arbitrary family needs the isometric uniqueness of the Cl_8-module ℝ^{16r}, absent from the project. B ⇒ A fails: B's range is only 'eventually in r' (A's explicit bounds cannot be recovered) and B never reaches π_0 (A's i = 0 cases).",
+ "B_issue": null,
+ "overlap": "n/a (neither direction proved)",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable"
+}

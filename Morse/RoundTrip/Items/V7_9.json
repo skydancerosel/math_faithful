@@ -1,0 +1,18 @@
+{
+ "id": "V7_9",
+ "reblind": true,
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": false,
+ "why": "The listed declarations (Morse.NormalCoord, Morse.IsNormalRadius, Morse.expToN, Morse.NormalCoord.expDiffeo) are all definitions, so A = True and B ⇒ A is trivial (vacuous). B is Lemma 10.3 (3) without the clause U_q ⊇ W: every p of an abstract connected Hausdorff ℝⁿ-manifold with a smooth Mathlib Riemannian metric and any Levi-Civita connection has an open W ∋ p and ε > 0 that is a normal radius (exp_q a diffeomorphism of the Riemannian ε-ball of T_qM onto an open set) at every q ∈ W. Proving B outright needs abstract geodesic theory, which the project lacks (it only has slice submanifolds N ⊆ V), so A ⇒ B fails for the setting. Vocabulary check (the real content of a definition item): on embedded manifolds B's IsNormRad is exactly the project's IsNormalRadius for ε > 0 (isNormRad_iff_isNormalRadius, both directions proved) and exactly the PartialDiffeomorph form of NormalCoord.expDiffeo (isNormRad_iff_partialDiffeomorph, expDiffeo_spec). The one difference is the degenerate case: NormalCoord requires 0 < ε, while IsNormRad holds trivially for ε ≤ 0 (empty ball).",
+ "B_issue": null,
+ "overlap": "B_to_A is trivial: 0 shared project theorems.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "B_emb := B's conclusion at M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric), cov = Bridge.conn, [ConnectedSpace ↥N]; B_to_B_emb shows it is a special case of B (conn_isLC). B_emb holds outright (B_emb_holds, from the project's Lemma 10.3, which is item V7_10's theorem, through isNormRad_of_isNormalRadius), so A ⇒ B_emb is vacuous because A = True. Main result: isNormRad_iff_isNormalRadius (for ε > 0) and isNormRad_iff_partialDiffeomorph. New dictionary lemmas in Items/V7_9.lean, namespace Emb: nrm_eq (blind Riemannian norm of w ∈ T_qN = ambient ‖D_q w‖), mem_expDom_of_expDefined (a blind geodesic on [0,1] gives the project's expDom, via Morse.exists_initial_ray), isNormBall_of_normalCoord, exists_partialDiffeomorph_of_isNormBall, isNormBall_of_partialDiffeomorph (exp is defined on the whole ball because of injectivity: exp's junk value is q = exp_q 0), exists_ambient_ext (a function smooth on an open U ⊆ N is the restriction of a function smooth on an open U' ⊆ V with N ∩ U' = U; proved from local retractions Morse.exists_retraction glued with Mathlib's exists_contMDiffMap_forall_mem_convex_of_local on the open manifold U'), isNormalRadius_of_isNormBall. Limitations: only the induced connection (not every Levi-Civita connection on ↥N; uniqueness of the Levi-Civita connection is not formalized); model ℝⁿ."
+}

@@ -1,0 +1,17 @@
+{
+ "id": "V9_13",
+ "A_to_B": "false",
+ "B_to_A": "proved",
+ "not_B": true,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B is false (not_B): its clause (2) 'if the index is finite it is attained' quantifies over arbitrary SETS A ⊆ V; for A = ∅ the index (empty supremum) is 0 but no subspace lies in ∅. Hence A ⇒ B is false and B ⇒ A holds vacuously (ex falso). With A a subspace (B_sub) the statement holds outright (B_sub_holds: the zero subspace is admissible, a bounded nonempty family in ℕ∞ attains its sup; the nullity clause is span ≠ ⊥). The notions agree: Morse.IsNegDefOn = IsNegDefSub (Iff.rfl) and bIndex univ H = Morse.formIndex H for bilinear H (bIndex_univ_eq_formIndex), so A's le_formIndex ⇔ B_sub's first clause on univ (both proved, #rt_check OK). Corrected, the two are incomparable: A has monotonicity under form-preserving maps and formIndex = sigNeg in finite dimension; B has attainment and the nullity clause (no nullity notion in this item of the project) and allows non-bilinear H on subspaces.",
+ "B_issue": "Clause (2) (finite index attained) is stated for every set A ⊆ V and is false when 0 ∉ A (e.g. A = ∅). Milnor's A = TΩ_γ is a vector space; with A a subspace (indeed whenever 0 ∈ A) the clause holds.",
+ "overlap": "B_to_A is vacuous (ex falso from not_B): 1 shared auxiliary declaration (Morse.IsNegDefOn._proof_1). A_to_B_sub_univ_first and B_sub_to_A_first pass #rt_check (unfolding Morse.formIndex only).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is pure linear algebra (no Riemannian manifold)."
+}

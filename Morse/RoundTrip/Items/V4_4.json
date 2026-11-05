@@ -1,0 +1,11 @@
+{
+ "id": "V4_4",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "Both are Corollary 6.2: the focal set is Lebesgue/Haar null. A: for the canonical slice structure on N (isSliceSubmanifold_normalBundle hM hkw), any M ⊆ ℝⁿ with k + w = n, any Haar measure. B: ∀ᵐ e (volume), not focal, for any slice structure hNN on N with complement ℝ^{K+1}, dim M ≥ 1. Neither direction transfers anything. B holds outright (B_holds): focal points are critical values of E|N for hNN (rank–nullity), null by the project's Sard theorem measure_image_critPoints_eq_zero (outside the item). A is re-proved outright in B_to_A from the same Sard theorem and the project's focalSet_eq_image_critPoints (V4_2, outside the item). Moving between the two structures on N would need uniqueness of the smooth structure of an embedded submanifold. The substantive content (Sard) is the same on both sides.",
+ "B_issue": null,
+ "overlap": "B_to_A: 138 shared: Sard (Milnor.sard and its steps, measure_image_eq_zero_of_locally), the canonical normal-bundle structure and slice-chart lemmas; i.e. B_to_A is the project's own proof (Sard + focal = critical values)"
+}

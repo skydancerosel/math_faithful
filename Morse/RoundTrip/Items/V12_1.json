@@ -1,0 +1,17 @@
+{
+ "id": "V12_1",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universe 0) is Morse.isAdInvariant_iff_lieInvariant: for ANY real Lie algebra L and bilinear form B, the project's IsAdInvariant B (⟨[X,Y],Z⟩ = ⟨X,[Y,Z]⟩) ↔ Mathlib's B.lieInvariant; IsAdInvariant and IsLeviCivita (torsion D X Y − D Y X = ⁅X,Y⁆ and B (D X Y) Z + B Y (D X Z) = 0 for an abstract bilinear D on L) are vocabulary — the project never passes from a Lie group to its algebra. B: for a Lie group G (Mathlib LieGroup, ℝⁿ model) with a bi-invariant metric and a Levi-Civita connection, six facts on 𝔤 = GroupLieAlgebra: (1) [X_u,X_v] = X_⁅u,v⁆, (2) ⟨X_u,X_v⟩ ≡ ⟨u,v⟩, (3) X_u ⊢ X_v is left-invariant, (4) torsion, (5) metric compatibility on 𝔤, (6) 21.3(a). B ⇒ A only vacuously (A re-proved in 4 lines). A ⇒ B fails: A has no group. Dictionary proved (#rt_check OK): (1), (2), (4) hold outright (Mathlib mulInvariantVector_mlieBracket; left invariance; IsSymm at 1 with C^∞ of left-invariant fields, isSmoothVF_liv, re-done for ∞ since Mathlib only gives C²); (4)∧(5) ↔ Morse.IsLeviCivita ipForm (connAt cov 1 id) exactly (ipForm = metric at 1 as a BilinForm, connAt = (u,v) ↦ (X_u ⊢ X_v)(1), bilinear via Mathlib's CovariantDerivative additivity); (6) ↔ IsAdInvariant ipForm ↔ (by A) ipForm.lieInvariant. So B ↔ (3)∧(5)∧(6) (B_iff_geometric_core): the remaining content is genuine geometry absent from the project — left-invariance of ∇ on 𝔤, the derivative form of compatibility from the blind parallel-transport definition, and 21.3(a) itself (needs X ⊢ X = 0).",
+ "B_issue": null,
+ "overlap": "B_to_A: 1 shared [Morse.IsAdInvariant._proof_1] (auxiliary proof inside the definition; the re-proof is Lie skew-symmetry). Bridges B6_iff_lieInvariant and B_iff_geometric_core also pass #rt_check.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "Not applicable: the item's declarations live in Morse/Chapter12/BiInvariant.lean and concern an abstract real Lie algebra L with a bilinear form and an abstract bilinear 'connection' D : L →ₗ L →ₗ L; they are not about a matrix group as a slice submanifold. (The project's embedded matrix-group version of 21.1–21.3, Morse/Chapter12/GroupGeodesics.lean, e.g. IsMatrixGroup.curvOp_eq_curv_halfLie, is not part of this item.) B quantifies over abstract Lie groups with a Mathlib RiemannianBundle, not over Bridge.Sub."
+}

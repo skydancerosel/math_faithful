@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsCompatible",
+ "name": "Morse.IsCompatible",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "model space E finite-dimensional, M Hausdorff (T2Space), metric C¹ (IsContMDiffRiemannianBundle I 1 E (TangentSpace I)) — the textbook's smooth setting. The direction project → blind (`imp`) needs no hypothesis.",
+ "difference": "The blind T asks the identity only for globally C^∞ fields Y, Y' (and every tangent vector v); the project asks it pointwise for all fields X, Y, Y' differentiable at x. Outside the hypotheses (no smooth bump functions, or no tensoriality of the compatibility tensor without a C¹ metric) globally smooth fields need not realize every value at x, so the blind condition may be weaker; no counterexample was attempted.",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "`imp`: a smooth field is differentiable at x and v extends to a field differentiable at x (FiberBundle.extend). `agree_of`: under the hypotheses both are Mathlib's CovariantDerivative.IsMetricCompatible (Morse.isCompatible_iff_isMetricCompatible), the vanishing of the tensorial derivMetricTensor; every tangent vector is the value of a globally smooth field (smooth bump function • FiberBundle.extend, ContMDiffOn.smul_section_of_tsupport), so the blind condition already kills the tensor."
+}

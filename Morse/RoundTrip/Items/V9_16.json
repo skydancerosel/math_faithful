@@ -1,0 +1,17 @@
+{
+ "id": "V9_16",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; slice submanifolds N ⊆ V, ANY smooth curve γ, no geodesic hypothesis) is the project's ANALYTIC substitute for fine subdivisions: a mesh h₀ = fineMesh built from curvature bounds; hessForm_ge (positivity near zeros: ∫‖X‖² ≤ hessForm X X, the formula-defined ½E_**, when every t has a zero of X within h₀ to its left); eq_zero_of_short and jacEvalEnds_bijective (for a < b in [0,1] with b − a ≤ h₀, Jacobi fields along γ are determined by their values at a and b, which can be prescribed); exists_isFine (h₀-fine subdivisions of [0,τ] exist). B (abstract connected Riemannian ℝⁿ-manifolds, Levi-Civita connection, geodesic γ) is Milnor's GEOMETRIC notion: subdivisions whose pieces are minimal and lie in neighbourhoods with unique, smoothly varying minimal geodesics (FineSub/GoodNbhd) exist; on each piece Jacobi fields are determined by and can take any end values; each piece has energy ≤ that of any piecewise smooth path with the same ends. The difference is genuine beyond the setting: the two fineness notions are unrelated (a blind-fine piece can be far longer than h₀, an h₀-short piece need not be minimal or in a GoodNbhd), A's Hessian estimate has no counterpart in B (or in Milnor's text), and B's existence of GoodNbhd subdivisions and energy minimality have none in A. (The item title's 'positivity near zeros' is the project's device hessForm_ge, not a statement of Milnor's text; B rightly formalized only the text.)",
+ "B_issue": null,
+ "overlap": "no direction proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V9_16.lean states B_emb (B for M = Bridge.Sub hN, cov = Bridge.conn) with B_to_B_emb; no direction proved. A ⇒ B_emb would need new Riemannian geometry in the blind vocabulary on ↥N: (i) existence of GoodNbhds (Lemma 10.3/Theorem 10.4 plus a Bridge dictionary for blind IsMinimal — arc length against IsPW paths on arbitrary parameter intervals — and for the smooth map G : M × M → TM; none exists); (ii) non-conjugacy of the end points of a minimal segment inside a GoodNbhd (Milnor's Lemma 14.4/Remark 14.5 via the smooth inverse G of exp; A only has it for h₀-short pieces); (iii) the energy inequality for minimal segments (constant speed + Schwarz); plus a dictionary for blind Jacobi fields on sub-intervals [t_i, t_{i+1}] (Items/V9_10.lean covers [0,1] only). B_emb ⇒ A fails: B says nothing about hessForm/energyHessian or about h₀-short pieces, and A also covers non-geodesic curves and models Z ≠ ℝⁿ."
+}

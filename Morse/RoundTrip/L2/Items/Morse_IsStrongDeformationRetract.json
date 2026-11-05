@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsStrongDeformationRetract",
+ "name": "Morse.IsStrongDeformationRetract",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "The project asks for r : X → X with values in A and a HomotopyRel from id to r rel A. The blind T asks for a homotopy r : I × X → X with r₀ = id, r₁(X) ⊆ A, and r_t fixing A. The project's homotopy is the blind r, and conversely r := r₁, so agree is an iff."
+}

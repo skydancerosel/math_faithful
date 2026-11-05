@@ -1,0 +1,11 @@
+{
+ "id": "Morse_CellTower",
+ "name": "Morse.CellTower",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": "Equal up to isomorphism of towers, which is how data-valued notions are compared. The project's model is rigid: a functor ℕ ⥤ TopCat whose stages are literal iterated pushouts, built from PEmpty. The blind model has stages and maps, with each attachment only up to a homeomorphism compatible with ιₙ (Quot adjunction spaces, starting from Empty). Both attach cells in the listed order, head first, along arbitrary continuous maps.",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "toT sends every project tower to a blind tower with the same stages and maps (base and step via the shared glue: P ⇒ T for absolute and relative cell attachments). Conversely, every blind tower is isomorphic (stagewise homeomorphic, compatibly with the inclusions) to toT of a project tower. That tower is rebuilt stage by stage with the project's pushouts (choice plus CellTower.ofSequence)."
+}

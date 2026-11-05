@@ -1,0 +1,17 @@
+{
+ "id": "V6_21",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): the octahedron as pure algebra for any T : α⁴ → ℝ satisfying (1),(2),(3) (any index type α); (4) for trilinear maps satisfying (1)–(3); (4) for the curvature of smooth tangent fields of a slice submanifold N ⊆ V. B: (4) at the level of smooth vector fields for the Levi-Civita connection of an abstract ℝⁿ-manifold. Proved here: A_and_B20_to_B — A ∧ (blind B of V6_20, i.e. (1)–(3) on abstract manifolds) ⇒ B, applying A's octahedron with α = smooth vector fields and T = ⟨R(X,Y)Z, W⟩_p (no tensoriality needed). So the whole gap A ⇒ B is Lemma 9.3 (2),(3) on abstract manifolds (Jacobi/symmetry and abstract Cor. 8.4), which A has only for N ⊆ V. B ⇒ A fails: B does not specialize to N ⊆ V, and A's algebraic clauses are outright provable (a vacuous re-proof would be possible from isCurvatureTensor_curvTensor and curvature_eq_curvTensor, not attempted).",
+ "B_issue": null,
+ "overlap": "no B_to_A proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V6_21.lean, section 'The embedded special case': B_emb := B's conclusion for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric) and cov = Bridge.conn (B_to_B_emb via Bridge.conn_isLC). Proved B_emb ↔ A4n, where A4n = A's third clause inner_curvature_comm_pairs for model Z = ℝⁿ (finite-dimensional W); hence A_to_B_emb (uses A's inner_curvature_comm_pairs) and B_to_A4n (uses B), both #rt_check OK. Dictionary lemmas added in namespace Emb: D_curv (blind curv of smooth fields for Bridge.conn, read in V, = Morse.curvature of the ambient fields — the first half of Bridge.D_curvExpr, without Morse.curvature_eq), inner_curv, D_tneg, liftF / amb_liftF / isSmoothVF_liftF (ambient smooth tangent field Y : N → V as a smooth blind vector field on ↥N). B_emb covers only A's field-level clause (4); A's octahedron (pure algebra for any T : α⁴ → ℝ) and IsCurvatureTensor.inner_comm_pairs (trilinear maps) are not consequences of B_emb. Overlap of B_to_A4n: 94 project theorems, all slice-chart / tanProj / tangentSubspace infrastructure reached through RoundTrip/Bridge.lean (none of the octahedron or curvTensor argument). Limitation: only the induced connection, not every IsLC connection on ↥N."
+}

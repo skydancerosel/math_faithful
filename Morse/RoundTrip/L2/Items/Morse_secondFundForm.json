@@ -1,0 +1,11 @@
+{
+ "id": "Morse_secondFundForm",
+ "name": "Morse.secondFundForm",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "v, w ∈ T_qN (the textbook's domain)",
+ "difference": "Outside T_qN × T_qN. (a) Normal second argument ν: the project's II(v, ν) = D_v ν = (dP_q v)ν is the tangent shape-operator term (a deliberate extension, used by Morse.curvOp R(x,y)z = II(y, II(x,z)) − II(x, II(y,z))), while the blind value is the normal part of D_{P v}(p ↦ P_p ν), which is 0. Proved (`differ`) on S¹ ⊆ ℝ² at q = e₀ with v = e₁, w = e₀: ⟪project, e₁⟫ = −1, ⟪blind, e₁⟫ = 0. (b) Non-tangent first argument: blind uses P_q v, the project the chart coordinates of the choice-made slice chart (choice-dependent, not decidable).",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "`agree_of`: for tangent v, w, P_q v = v, fderivWithin (p ↦ P_p w) N q v = dN (p ↦ P_p w) q v = (dN P q v) w = secondFundForm hN q v w, and P_q of it is 0 (Morse.tanProj_secondFundForm), so the blind (1 − P_q)(…) is the project's value. `differ` uses Morse.secondFundForm_sph and self-adjointness of D_v, plus the fact that the blind value lies in the orthogonal complement of the tangent space."
+}

@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsSplitMorseChart",
+ "name": "Morse.IsSplitMorseChart",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Same five conditions (C^infty chart with C^infty inverse on source/target, p in source, phi p = 0, f = f(p) - ||x||^2 + ||y||^2 on the source); Morse.morseQuad c v = c - ||v.1||^2 + ||v.2||^2 by definition. Equal for all arguments; only the order of the fields differs."
+}

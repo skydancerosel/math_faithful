@@ -1,0 +1,18 @@
+{
+ "id": "V12_16",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): for a matrix group G (slice submanifold of Mₙ(𝕜), induced metric) and τ ∈ G, the ambient linear isometry symmIso τ : A ↦ τAᴴτ (vocabulary) maps G into G, fixes τ, and maps τexp(tX) to τexp(−tX) (X ∈ 𝔤). B: for every abstract Lie group with a bi-invariant metric and every LC connection, I_τ(σ) = τσ⁻¹τ is a C^∞ diffeomorphism preserving the metric, fixes τ, reverses every geodesic through τ on any interval; G is a symmetric space. Incomparable for the setting; A states reversal only for the curves τexp(tX) (that these are all geodesics is V12_15's eqOn_mul_exp_smul) and isometry only of the ambient space. A ⇒ B for abstract groups would need Milnor's proof (dI_τ at τ = −id, bi-invariance), absent from the project.",
+ "B_issue": null,
+ "overlap": "A_to_B_emb: 39 shared, all auxiliary: MatrixInner instance proofs, IsMatrixGroup projections, symmIso's own proof field (symmIso._proof_1, via inner_conjTranspose / inner_mul_*_of_unitary).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false,
+  "A_to_B_emb": true
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "B_emb := B for a matrix group G ⊆ Mₖ(𝕜) (model ℝᵐ) as Bridge.Sub hG with G's group structure, induced metric, Bridge.conn. B → B_emb and A → B_emb proved (#rt_check OK): I_τ is the corestriction of symmIso τ (A's symmIso_mem), smooth with inverse itself; its differential read in Mₙ(𝕜) is symmIso τ (D_mfderiv_lift), a linear isometry; I_τ τ = τ (A's symmIso_self); every blind geodesic through τ on an interval is τexp(tX) (geod_eq_exp, from the project's eqOn_mul_exp_smul — a V12_15 theorem, allowed here — on the interior and by continuity at the ends), reversed by A's symmIso_mul_exp_smul. B_emb ⇒ A not attempted (A's three facts are algebraic identities about symmIso on Mₙ(𝕜); B_emb would only return them on ↥G). Shared dictionary built in each file's namespace Emb (no Bridge edits): grp (the group structure of G on Bridge.Sub hG), lieGroup (Mathlib LieGroup: products and ᴴ are smooth ambient maps, corestricted with Milnor.IsSliceSubmanifold.contMDiff_codRestrict), D_mfderiv_lift (the differential of a map induced by an ambient map F, read in V, is dF), biInv (the induced metric is bi-invariant)."
+}

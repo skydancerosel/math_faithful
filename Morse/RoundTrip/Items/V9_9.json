@@ -1,0 +1,17 @@
+{
+ "id": "V9_9",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B (Lemma 14.4): for every abstract connected Hausdorff ℝⁿ-manifold with any smooth metric and any Levi-Civita connection, every Jacobi field J along a geodesic γ : [0,1] → M (Jacobi equation on [0,1]) is the variation field of some α : ℝ¹ × ℝ → M, C^∞ on ball(0,ε) ×ˢ [0,1], each α(u,·) a geodesic on [0,1], α(0,·) = γ on [0,1]. A (universes 0): Lemma 14.4 for slice submanifolds N ⊆ V with the induced metric (any model Z), stated ambiently (α smooth on (−ε,ε) ×ˢ [0,1] into V with values in N, geodesics on (0,1)), plus three auxiliary results (uniform local geodesic flow exists_smooth_ray, exists_initial_ray: a geodesic segment extends past [0,1] as a radial geodesic, raysGood_of_isGeodesicOn: smooth dependence over a compact interval) that B does not state. A ⇒ B fails genuinely (setting: abstract vs embedded manifolds, no Nash embedding). B ⇒ A fails genuinely: B does not contain A's three auxiliary flow results, and covers only connected ℝⁿ-modelled manifolds. On embedded manifolds Lemma 14.4 itself coincides: A ⇒ B_emb and B ⇒ (A's lemma_14_4 for connected N, model ℝⁿ) are proved.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. For the embedded-case theorem B_to_A_emb: 154 shared project theorems — slice-chart/tanProj/curvature infrastructure reached through RoundTrip/Bridge.lean and the Jacobi/variation dictionary (continuousWithinAt_curvR, curvOp_mem, IsGeodesicOn.tanProj_deriv_deriv, definitional unfoldings of covD/jacobiExpr/IsJacobiField); none of the proof of Lemma 14.4 (exp, geodesic flow, rays, jacSol uniqueness) is shared.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V9_9.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, connected, induced metric) and cov = Bridge.conn (B_to_B_emb); A_emb := A's lemma_14_4 for connected N with model ℝⁿ. A_to_B_emb (uses hA.lemma_14_4; the lifted variation liftVar α (γ 0)) and B_to_A_emb (uses B; the blind variation read in V along s ↦ s e₁) both pass #rt_check and use their hypotheses. Dictionary lemmas copied from Items/V9_8.lean (namespace Emb): Jacobi fields both ways, contMDiffWithinAt_iff_incl, D_varField, ambient_of_isGeodVar, isGeodesic_lift_of, isGeodVar_of_ambient, congr_curve'. A's exists_smooth_ray / exists_initial_ray / raysGood_of_isGeodesicOn are not compared (B has no counterpart). Limitations: only the induced connection; A_emb only for connected N and model ℝⁿ."
+}

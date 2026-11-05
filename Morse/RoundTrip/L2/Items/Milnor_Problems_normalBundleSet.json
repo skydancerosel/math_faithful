@@ -1,0 +1,11 @@
+{
+ "id": "Milnor_Problems_normalBundleSet",
+ "name": "Milnor.Problems.normalBundleSet",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are {(x, v) | x in M, v orthogonal to T_xM}; the project's T_xM is the range of the derivative of the inclusion (= Morse.tangentSubspace), the blind one the span of velocities of smooth curves in M. These tangent spaces are equal for every slice submanifold (the Morse_tangentSubspace argument, re-proved in the file), so the sets are equal for every hM."
+}

@@ -1,0 +1,18 @@
+{
+ "id": "V8_2",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; IsVariation N U α B and varField are definitions): for a slice submanifold N ⊆ V and a variation with parameters in an open U ∋ 0 of ANY normed space P, smooth on the strips U × [s, t] avoiding a finite set B of break points: each α u ∈ Ω(N; α 0 0, α 0 1) (mem_pathSpace); the reparametrisation u ↦ α (φ u) by a smooth φ : P' → P with φ 0 ∈ U is a variation with the same break points (comp); and for P = ℝ the variation field W = ∂α/∂u(0, ·) (deriv in V) lies in TΩ_{α 0} (varField_mem). B: for an abstract Riemannian manifold, every m-parameter variation IsVar U α (U ⊆ ℝᵐ open ∋ 0, an ordered subdivision 0 = t₀ < … < t_k = 1 with α ContMDiff on each U × [t_{i-1}, t_i], each α u in Ω with fixed end points) has all its variation fields ∂α/∂u_i(0, ·) (mfderiv into TM) in TΩ_{α 0} (InTOmega: continuous on [0, 1] into TM, smooth along on the pieces of some subdivision, zero at 0 and 1). A ⇒ B fails genuinely: B is about abstract manifolds (the metric and connection are not even used), A about slice submanifolds of a Euclidean space. B ⇒ A fails: A's mem_pathSpace and comp (general parameter space, reparametrisation) are not in B (they are provable outright), and deriving varField_mem from B needs a dictionary IsVariation ↔ IsVar (finite break set vs ordered subdivision; ContDiffOn in V on strips vs ContMDiffOn into M), varField (deriv in V) ↔ mfderiv into TM, and pathTangent ↔ InTOmega (piecewise smooth V-valued field with tangency vs a section of TM continuous on [0, 1] and smooth along on pieces); none of this is in RoundTrip/Bridge.lean, whose dictionary stops at geodesics, exp, distance, curvature and energy — that direction is effort only. Milnor's and B's statement are purely differential-topological; the project's differs only by the ambient encoding.",
+ "B_issue": null,
+ "harness_note": "B uses no norm at all (IsVar, varField, InTOmega only), so the chart-norm defect of the prelude does not affect it.",
+ "overlap": "no direction proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_attempted",
+ "embedded_special_case_note": "Needs the variation / field-along-a-path dictionary (IsVar ↔ IsVariation, varField ↔ mfderiv, InTOmega ↔ pathTangent) that Bridge.lean does not have; Bridge.contMDiffOn_along_iff (smooth along ↔ ambient smooth) and isPW_lift are the natural starting points."
+}

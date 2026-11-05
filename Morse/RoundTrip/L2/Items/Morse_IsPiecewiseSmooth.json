@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsPiecewiseSmooth",
+ "name": "Morse.IsPiecewiseSmooth",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Project: a <= b, continuous on [a,b], and a finite break set B with c C^infty on every closed [s,t] in [a,b] whose interior misses B. Blind: continuous on [a,b] and a strictly increasing subdivision a = t0 < ... < tk = b with c C^infty on each closed piece. Equal for all c, a, b (both true for a = b, both false for a > b): B gives the sorted subdivision {a,b} u (B n (a,b)) via Finset.orderEmbOfFin; a subdivision gives B = its range, and a break-free [s,s'] lies in the piece starting at the last t_j <= s (general lemma pieces_iff)."
+}

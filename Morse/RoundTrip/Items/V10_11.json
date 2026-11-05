@@ -1,0 +1,17 @@
+{
+ "id": "V10_11",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; chartBrokenEquiv is vocabulary): hasDerivAt_deriv_line (second derivative along a line = hessian z z), hessian_eq_energyHessian (for a BrokenSetup, open O ⊆ V^m with N^m ∩ O ⊆ nodes, F smooth on ALL of V^m with F = E' on N^m ∩ O: the slice-chart Hessian of F at a geodesic y is energyHessian on the broken Jacobi fields) and theorem_16_2_index (indexM / nullityM of F ∘ val on the slice submanifold N^m ∩ O = formIndex energyHessian / hessNullity). B (abstract complete Riemannian ℝⁿ-manifolds, Setup16): for any F smooth on e(B) ⊆ M^{k−1} (product manifold) representing E', the index (bIndex univ) and nullity of Milnor's 2-parameter Hessian HessPi at e(γ) equal lam 1 γ and the nullity of the VARIATIONAL HessT 1 γ on TΩ; and the variation field of a variation through broken geodesics is a broken Jacobi field (p. 92, 14.3). Genuine differences beyond the setting: the subdivisions (Setup16 vs BrokenSetup, as in V10_10), the Hessians on both sides (HessPi on the abstract product vs Morse.hessianM of an ambient F on N^m ∩ O; HessT vs energyHessian — analysis now in EnergyC2, dictionaries missing), B's second conjunct (absent from A), A's calculus lemma and chart formula (absent from B).",
+ "B_issue": null,
+ "overlap": "no direction proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V10_11.lean states B_emb (M = Bridge.Sub hN, cov = Bridge.conn) with B_to_B_emb; no direction proved. On ↥N one would need: (i) a BrokenSetup for B's Setup16 subdivision — not available (genuine, see V10_10); (ii) the product manifold (↥N)^{k−1} with model Fin (k−1) → ℝⁿ ⇔ the slice submanifold N^m ∩ O of V^m (model Fin m → Z), extension of the blind F (smooth on e(B) only) to a smooth F on V^m (Morse.exists_contDiff_eq_of_locally, item V10_12), and HessPi's bIndex/nullity ⇔ indexM/nullityM (chart independence at a critical point); (iii) lam 1 γ ⇔ formIndex energyHessian (EnergyC2 + the 2-parameter variation / TΩ dictionaries listed in V10_10); (iv) for the second conjunct, blind variations through broken geodesics ⇒ project variations whose field is Jacobi on each piece (a 1-parameter version of 14.3 on subintervals; not among A's theorems). Stopped at (i), which is a genuine hypothesis gap."
+}

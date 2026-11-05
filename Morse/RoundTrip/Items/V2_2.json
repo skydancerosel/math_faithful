@@ -1,0 +1,11 @@
+{
+ "id": "V2_2",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A proves Theorem 3.1 only for M = E, a finite-dimensional inner-product space with f : E → ℝ. It also has the cut-off lemma and abstract IsSlabFlow lemmas. B states Theorem 3.1 for an arbitrary smooth Hausdorff manifold, so A ⇒ B fails (the manifold case is genuinely missing). B ⇒ A fails because A concludes an ambient diffeomorphism Φ : E ≃ E with Φ '' E^a = E^b, while B only gives mutually inverse maps between the sublevel sets that are smooth on them. The auxiliary lemmas of A have no counterpart in B either.",
+ "B_issue": null,
+ "overlap": "n/a (neither direction proved)"
+}

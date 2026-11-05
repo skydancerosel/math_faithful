@@ -1,0 +1,18 @@
+{
+ "id": "V15_2",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": false,
+ "why": "A (universes 0): for EVERY J with J² = −1 (not necessarily orthogonal, any finite index type) exp(θJ) = cos θ·I + sin θ·J and exp(πJ) = −I. B: (1) the real normal form of a skew A on ℝ^{2m} (orthogonal P with PᵀAP = blocks a_jσ) together with Pᵀexp(πA)P = rotation blocks; (2) A's formulas for orthogonal complex structures on Fin n. A ⇒ B fails genuinely: the normal form of skew-symmetric matrices is in neither A nor the project (nor Mathlib); B_of_A_normalForm (rt_check OK, uses A) shows it is the only missing piece: given P and a_j, Pᵀexp(πA)P = exp(blockDiag(πa_jσ)) = blockDiag(exp(πa_jσ)) and A at σ (σ² = −1 on ℝ²) gives the rotation blocks; Claim 2 is A directly. B ⇒ A: a non-orthogonal J with J² = −1 is conjugate to a complex structure: G = 1 + JᵀJ is positive definite and JᵀGJ = G; writing G = SᵀS (spectral theorem), J₀ = SJS⁻¹ is orthogonal with J₀² = −1; B (after reindexing ι to Fin (card ι)) gives exp(θJ₀), and exp(θJ) = S⁻¹exp(θJ₀)S; exp(πJ) = −I from θ = π. So A's extra generality (non-orthogonal J) is not real content, while B's normal form is.",
+ "B_issue": null,
+ "overlap": "B_to_A: 0 shared project theorems. (B_of_A_normalForm also passes #rt_check.)",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": true,
+  "B_of_A_normalForm": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete real matrices (Mathlib orthogonalGroup as a subset of M_n(ℝ), complex structures, Ω_k(n) as subsets; the induced-metric notions are already embedded); it does not quantify over abstract Riemannian manifolds."
+}

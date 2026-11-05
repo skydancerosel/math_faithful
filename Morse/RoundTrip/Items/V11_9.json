@@ -1,0 +1,20 @@
+{
+ "id": "V11_9",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": false,
+ "why": "B: for every abstract connected Hausdorff ℝⁿ-manifold, any Levi-Civita connection and every p: (a) W ↦ R(U₁,W)U₂ is linear (R = choice function over IsCurvVal), (b) the blind Ricci tensor (trace of that map, junk 0 otherwise) is bilinear, (c) it is symmetric, (d) for an orthonormal U : Fin n → T_pM the diagonal term ⟨R(Uₙ,Uₙ)Uₙ,Uₙ⟩ vanishes and K(Uₙ,Uₙ) = Σ_{i≠n}⟨R(Uₙ,Uᵢ)Uₙ,Uᵢ⟩. A (universes 0; Morse.ricci is vocabulary): for slice submanifolds N ⊆ V (any model Z) the trace formula in any orthonormal basis (ricci_eq_sum), symmetry (ricci_comm), curvOp q x x = 0 (curvOp_self) and the Assertion (ricci_eq_sum_erase). B ⇒ A holds only vacuously: A is short linear algebra on the project's curvature tensor and is re-proved outright (namespace Outright, B unused). A ⇒ B fails only through the setting: on an abstract manifold even the existence of curvature values (tensoriality of R for an arbitrary Levi-Civita CovariantDerivative) is unavailable; on embedded manifolds A ⇒ B_emb is proved, so A is the embedded special case of B.",
+ "B_issue": null,
+ "overlap": "B_to_A (A proved outright, B unused): 178 shared project theorems — the project's own proof re-run (trace_eq_sum_inner step, pair symmetry isCurvatureTensor_curvTensor) plus the curvature-tensor infrastructure it rests on (curvOp/secondFundForm/dN/tanProj lemmas, slice-chart lemmas). A_to_B_emb: 162 shared — the same curvature-tensor infrastructure, reached through Bridge.isCurvVal_iff and Morse.ricci/curvTensor; none of A's four theorems (used only through the hypothesis).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "uses_hypothesis_emb": {
+  "A_to_B_emb": true
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "Items/V11_9.lean: B_emb := B at M = Bridge.Sub hN (model ℝⁿ, induced metric, connected), cov = Bridge.conn (B_to_B_emb via conn_isLC). A_to_B_emb proved (#rt_check OK; uses A's ricci_comm, curvOp_self, ricci_eq_sum_erase; bilinearity from the trace definition). New dictionary (namespace Emb): curvMap (the blind linear map W ↦ R(U₁,W)U₂ as eT⁻¹ ∘ (curvTensor U₁').flip U₂' ∘ eT) with curvMap_apply, ricci_eq2 (blind K(U₁,U₂) = Morse.ricci at eT U₁, eT U₂ — off-diagonal version of V11_24's ricci_eq, via LinearMap.trace_conj'), D_of_isCurvVal, finrank_tangent; a blind orthonormal U : Fin n → T_pN becomes a project OrthonormalBasis (OrthonormalBasis.mk + span_eq_top_of_card_eq_finrank'). Copied: eT, curvR_eq (Items/V11_24.lean). B_emb ⇒ A not stated separately: A is provable outright (and is about any model Z). Only the induced connection."
+}

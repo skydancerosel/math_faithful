@@ -1,0 +1,22 @@
+{
+ "id": "V8_14",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0), for slice submanifolds N ⊆ V: energyHessian is a DEFINITION (the bilinear form 2·secondVariation γ on TΩ_γ = pathTangent, Milnor's formula); A = energyHessian_apply (rfl unfolding), IsVariation.partial₁_mem (∂α/∂u₁ ∈ TΩ_γ) and hasDerivAt_energyHessian (Theorem 13.1: the iterated line derivative ∂/∂u₁(∂E/∂u₂(u₁,0)) at 0 equals E_**(W₁,W₂)). B, for abstract connected ℝⁿ-manifolds with any Levi-Civita connection: for a geodesic γ and W₁, W₂ ∈ TΩ_γ there is exactly one r with IsHess γ W₁ W₂ r (Fréchet mixedD of E∘α for some 2-parameter variation with fields W₁, W₂ on all of ℝ). A ⇒ B fails genuinely only because of the abstract setting: on embedded manifolds A ⇒ B_emb is now proved (second attempt). B ⇒ A fails genuinely: B only says E_** is well defined and never identifies its value with Milnor's formula; A's other two theorems are provable outright.",
+ "B_issue": null,
+ "overlap": "Main directions: none proved. Embedded: A'_to_B_emb 243 shared project theorems — mostly reached through the statement of A' (energyHessian's bilinearity proof fields: secondVariation_eq_hessForm, hessForm_*, PieceData, curvature/second-fundamental-form lemmas) and the Lemma 11.A / IsVariation infrastructure (exists_variation is not banned; IsVariation.comp/varField_mem/smooth, piecewise lemmas, slice-chart internals); none of hasDerivAt_energyHessian's argument (second_variation) is used.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "B_emb := B at M = Bridge.Sub hN, cov = Bridge.conn (B_to_B_emb). Proved A_to_B_emb = A'_to_B_emb ∘ A_to_A' (#rt_check on A'_to_B_emb, OK): existence by Emb.exists_isHess — Lemma 11.A on ↥N (project's exists_variation with P = ℝ², not part of A), α(u,t) = exp_{γ t}(u₀W₁(t) + u₁W₂(t)) lifted to ↥N for ALL t ∈ ℝ, whose fields are W₁, W₂ at every t (B's HEq is on all of ℝ) because exp is smooth near the zero section with d(exp_q)₀ = id (exp_local, from exists_isOpen_exp/hasFDerivAt_exp_zero); B's DifferentiableAt clause from EnergyC2. Uniqueness by Emb.hess_eq: every IsHess value is 2·secondVariation of the ambient fields (EnergyC2 + A's Theorem 13.1, unfolded energyHessian). New dictionary: InTOmega ⇒ pathTangent (mem_pathTangent_of_inTOmega), blind 2-parameter variations (isVariation_of_isVarSub, D_varField, hess_data), exp_local/liftE. B_emb ⇒ A fails genuinely (no formula in B; A's first two theorems are outright). Limitations: induced connection only, model ℝⁿ.",
+ "uses_hypothesis_emb": {
+  "A_to_B_emb": true
+ },
+ "rt_check_note": "A's statement contains Morse.IsVariation.partial₁_mem (a banned item theorem) as a proof term inside the type of hasDerivAt_energyHessian, so no proof from A can pass #rt_check; it is run on A'_to_B_emb, A' = A's third conjunct with those membership proofs generalized (A → A' by proof irrelevance, A_to_A'). The proof never uses energyHessian_apply (the unfolding is by defeq) nor partial₁_mem (memberships re-proved from varField_mem).",
+ "second_attempt": "EnergyC2 closed the analytic gap; A ⇒ B_emb is now proved (#rt_check OK on A'_to_B_emb): existence via Lemma 11.A on ↥N with fields matched on all of ℝ, uniqueness via Theorem 13.1 in Fréchet form. Was 'failed', now A_to_Bemb_only. B_emb ⇒ A still fails genuinely (B has no formula); A ⇔ B still blocked by the abstract setting."
+}

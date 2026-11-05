@@ -1,0 +1,17 @@
+{
+ "id": "V15_1",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "Vocabulary: B's IsCplxStr is literally the project's IsComplexStructure (J ∈ O(n) ∧ J² = −1), and B's OmegaK = the project's Omega (anticommutation written in the other order; omegaK_eq_omega). A (universes 0, any finite index type): IsComplexStructure J ↔ (Jᵀ = −J ∧ J² = −1), complex structures force card even, tr(JᵀJ) = n. B (Fin n, n even): complex structure ⇒ Jᵀ = −J, plus the definitional Ω_1(n) = {complex structures}. A ⇒ B: forward half of A's iff; Ω_1 is unfolded (outright, definitional). B ⇒ A: the forward half of the iff is B's claim transported from Fin (card ι) to ι by reindexing; B demands n even, so A's even_card (det(J)² = (−1)ⁿ) is re-proved outright and used; the converse half (skew with J² = −1 ⇒ orthogonal) and tr(JᵀJ) = n are not in B and are one-line outright proofs. So A has slightly more (converse, evenness, trace), all elementary.",
+ "B_issue": null,
+ "overlap": "B_to_A: 0 shared project theorems.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete real matrices (Mathlib orthogonalGroup as a subset of M_n(ℝ), complex structures, Ω_k(n) as subsets; the induced-metric notions are already embedded); it does not quantify over abstract Riemannian manifolds."
+}

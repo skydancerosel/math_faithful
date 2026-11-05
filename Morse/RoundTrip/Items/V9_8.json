@@ -1,0 +1,17 @@
+{
+ "id": "V9_8",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B (Lemma 14.3): for every abstract connected Hausdorff ℝⁿ-manifold with any smooth RiemannianBundle metric and any Levi-Civita CovariantDerivative (Milnor's axioms), if α : ℝ¹ × ℝ → M is C^∞ on ball(0,ε) ×ˢ [0,1] and every α(u,·) is a geodesic on [0,1] with α(0,·) = γ on [0,1], then the variation field (mfderiv of u ↦ α(u,t) along e₁) is a Jacobi field on [0,1] (Jacobi equation on the closed interval). A (universes 0): the same lemma for slice submanifolds N ⊆ V with the induced metric (any model Z, N not necessarily connected), stated ambiently (α smooth on (−ε,ε) ×ˢ [0,1] into V, geodesics on (0,1), Jacobi equation on (0,1)), plus 'Jacobi fields only depend on γ|[0,1]'. A ⇒ B fails genuinely (abstract Riemannian manifolds are not given embedded: no Nash embedding, no abstract Jacobi-field theory in the project). B ⇒ A fails for the known setting reasons (B covers only connected manifolds modelled on ℝⁿ; components/model change would be glue). On embedded manifolds the two statements coincide: A ⇒ B_emb and B ⇒ A_emb are proved.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. For the embedded-case theorem B_to_A_emb: 151 shared project theorems — slice-chart/tanProj/curvature infrastructure reached through RoundTrip/Bridge.lean and the dictionary (continuousWithinAt_curvR, curvOp_mem, IsGeodesicOn.tanProj_deriv_deriv, prj_of_mem, definitional unfoldings of covD/jacobiExpr/IsJacobiField); none of the proof of Lemma 14.3 itself (curvature_identity, pdU/partialX machinery) is shared.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V9_8.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, connected, induced metric) and cov = Bridge.conn (B_to_B_emb, via conn_isLC); A_emb := A's lemma_14_3 for connected N with model ℝⁿ. A_to_B_emb (uses hA.lemma_14_3 and hA.congr_curve) and B_to_A_emb (uses B) both pass #rt_check and use their hypotheses. New dictionary lemmas (namespace Emb, not in the Bridge): isJacobiField_of_isJacobi / isJacobi_of_isJacobiField (blind IsJacobi on [0,1] for Bridge.conn ⇔ Morse.IsJacobiField of the ambient field ambA; the converse direction extends the Jacobi equation from (0,1) to [0,1] by continuity, Morse.continuousWithinAt_curvR), contMDiffWithinAt_iff_incl (maps from a normed space into ↥N), mdiff_slice, D_varField (varField read in V = derivative along s ↦ s e₁), ambient_of_isGeodVar, isGeodesic_lift_of (project geodesic on (0,1), smooth on [0,1] ⇒ blind geodesic on [0,1]), isGeodVar_of_ambient (liftVar), congr_curve' (a copy of congr_curve, which is an item theorem). Limitations: only the induced connection, not every IsLC connection on ↥N (uniqueness of the Levi-Civita connection is not in the Bridge); A_emb only for connected N and model ℝⁿ."
+}

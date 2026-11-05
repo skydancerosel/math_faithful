@@ -1,0 +1,11 @@
+{
+ "id": "Morse_AttachCell",
+ "name": "Morse.AttachCell",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": "Equal up to homeomorphism, which is how data-valued notions are compared. The project's space is the pushout of X ← ∂Dⁿ → Dⁿ in TopCat; the blind one is the literal Quot of X ⊔ Dⁿ.",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "agree : T φ ≅ Morse.AttachCell φ in TopCat, built by Quot.lift of (cellInl, cellInr) one way and Morse.cellDesc the other, checked by Quot.ind and attachCell_hom_ext. It carries the blind inclusion of X and the characteristic map of the cell to the project's cellInl and cellInr (inl_agree, inr_agree). Both use Mathlib's disk, diskBoundary and diskBoundaryInclusion."
+}

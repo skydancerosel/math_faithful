@@ -1,0 +1,11 @@
+{
+ "id": "Morse_milnorM",
+ "name": "Morse.milnorM",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": "Definitions differ in form (project: Milnor's table for k ≤ 7 plus the recursion m_{k+8} = 16 m_k; blind: least n > 0 with k anticommuting complex structures on ℝⁿ). Proved equal for k ≤ 8 and T k ≤ milnorM k for all k; the reverse inequality for k > 8 is Clifford periodicity of minimal module dimensions, true but in neither Mathlib nor the project.",
+ "harmless": true,
+ "proved": "partial",
+ "T_issue": null,
+ "why": "agree_of: milnorM k = T k for k ≤ 8, from the project's isLeast_milnorM; T_table gives the blind values 1,2,4,4,8,8,8,8,16. Beyond 8: T_le proves T k ≤ milnorM k for every k (explicit k+8 structures J_α ⊗ 1, ω ⊗ J'_{α−8} on ℝ¹⁶ ⊗ ℝⁿ with the grading ω = 1 ⊗ κ₂). milnorM k ≤ T k for k > 8 needs Clifford periodicity (not attempted); the project itself only uses k ≤ 8."
+}

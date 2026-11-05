@@ -1,0 +1,11 @@
+{
+ "id": "Morse_ricci",
+ "name": "Morse.ricci",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "`agree`: both are LinearMap.trace of W ↦ R(U₁, W)U₂ on Morse.tangentSubspace hN q; the blind R (Gauss equation, Milnor's sign, LinearMap.adjoint) equals Morse.curvTensor (`curv_eq`, the Morse_curvTensor argument), so the traces coincide, outright."
+}

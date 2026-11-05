@@ -1,0 +1,17 @@
+{
+ "id": "V13_14",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: abstract smooth ℝᵐ-manifold M, f ≥ 0 smooth with min 0 attained, all {f ≤ c} compact, M⁰ = f⁻¹(0) a topological manifold, critical points off M⁰ of (blind, possibly degenerate) index ≥ λ₀ ⇒ π_r(M, M⁰) = 0 for r < λ₀ (compression of (Iʳ, ∂Iʳ)). A (universes 0): f = F|N on a slice submanifold, F smooth on V, minimum d (not assumed attained), compact sublevels, index ≥ λ₀ off M⁰, and — instead of 'M⁰ is a manifold' — M⁰ has an open neighbourhood U from which it pushes maps (Hanner's step is a hypothesis); conclusion: M⁰ pushes maps from any compact P ⊆ ℝ^{<λ₀} out of N (rel h⁻¹(M⁰)); plus a sublevel version, pushesInto_of_deformation and the germ lemma criticalPoint_hessianM_congr. A ⇒ B fails genuinely: Hanner's theorem (manifold ⇒ neighbourhood retract) and the deformation of U (item V13_15) are not formalized; abstract M; not every smooth f on a non-closed slice submanifold extends to V. B ⇒ A fails genuinely: A's pushing-neighbourhood hypothesis does not make M⁰ a manifold, A's conclusion covers arbitrary compact P rel arbitrary closed preimages, and A has a sublevel version. On ↥N the conclusions match (A_to_B_emb' below).",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. A_to_B_emb' (#rt_check OK): 31 shared — only slice-chart proof fields (chartedSpace, SliceChart.toChart), Morse.Homotopy.homotopyRelMono and the index lemmas index_isGreatest / finrank_le_index_of_negDef / exists_negDef_finrank_eq_index; none of Lemma 22.5's argument.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "B is about smooth manifolds; B_emb := B at M = Bridge.Sub hN (B_to_B_emb). A ⇒ B_emb is not glue (Hanner; ambient extension of f). Proved instead (#rt_check OK, uses A's pushesInto_of_deformation and lemma_22_5): A_to_B_emb' — B_emb for f = F|N (F smooth on V) with 'M⁰ is a topological manifold' replaced by the conclusion of Milnor's Hanner step (V13_15's claim): an open U ⊇ M⁰ with a deformation D : I × U → ↥N, D₀ = id, D₁(U) ⊆ M⁰, fixing M⁰. Glue: d = 0, P = Iʳ ⊆ ℝʳ, rel h⁻¹(M⁰) ⊇ ∂Iʳ (homotopyRelMono), {F ≤ 0} = {F = 0}; blind IsCritM = IsCriticalPointM definitionally and idxM = indexM via bIndex_univ_eq_index (new). So on ↥N the conclusions match exactly; the gaps are Hanner/V13_15 and the ambient extension of f."
+}

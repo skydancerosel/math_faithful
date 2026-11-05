@@ -1,0 +1,12 @@
+{
+ "id": "V5_10",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "Both directions are vacuous: each conclusion is proved outright. A (universe 0) is pure linear algebra: on a finite-dimensional complex vector space a real form H with H(v,v) = G(v,v) − Re B(v,v) (G ≥ 0, G(iv,iv) = G(v,v), B complex bilinear) has index ≤ dim_ℂ; also for G = ‖·‖², and for H the Hessian of a function f : V → ℝ at q. B is geometric: on a slice submanifold M ⊆ ℝ^{K+1} with J-invariant tangent spaces (J orthogonal, J² = −1) of real dimension 2k, every non-degenerate critical point of L_p|M has indexM ≤ k. A ⇒ B: B follows from the project's own Morse.indexM_normSq_sub_le / two_mul_indexM_normSq_sub_le (ComplexIndex.lean, outside the item; its 'shorter route' derives the J-anti-invariance of the second fundamental form from J-invariance of nearby tangent spaces and uses two_mul_index_le_finrank, not A's lemmas), after converting the isometry J to a CLM and fixing the model dimension. A is never used: A is only the algebraic shape-of-the-Hessian bound and says nothing about M, charts or L_p. B ⇒ A: B speaks only of Hessians of L_p, so A is re-proved from index_le_finrank_complex and apply_J_apply_J_eq. Content: B (Milnor's p.41 claim) needs the geometric step 'Hessian of L_p in coordinates has the shape G − Re B', which is not in A but is in the project elsewhere; A covers arbitrary forms of that shape (and degenerate critical points), which B does not.",
+ "B_issue": "B assumes the critical point is non-degenerate; the bound holds without it (the project's indexM_normSq_sub_le does not assume it).",
+ "overlap": "B_to_A: 54 shared — the algebraic core (index_le_finrank_complex, two_mul_index_le_finrank, apply_J_apply_J_eq, reBilin/reInner lemmas, index_isGreatest, negDef lemmas), i.e. the project's own proof re-done",
+ "uses_hypothesis": {"A_to_B": false, "B_to_A": false}
+}

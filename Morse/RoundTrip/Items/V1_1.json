@@ -1,0 +1,11 @@
+{
+ "id": "V1_1",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A is about the embedded torus Morse.torus R r ⊆ ℝ³ (modelled on ℝ²). It gives the four critical points, their non-degeneracy and indices 0,1,1,2, M^a = ∅ for a < 0 and M^a = M for a ≥ 2R+2r, and Theorem 3.1 between critical values (ambient diffeomorphism, strong deformation retraction, homotopy equivalence). B is about S¹×S¹ with an explicit height function. It also asserts the stage homeomorphisms M^a ≃ₜ D² (0<a<2r) and M^a ≃ₜ S¹×[0,1] (2r<a<2R), and the four cell attachments M^{c+ε} ≃ₕ M^{c-ε} ∪ e^λ, none of which is in A. Conversely B has no analogue of theorem_3_1_torus. Even the shared parts would need a diffeomorphism S¹×S¹ ≃ Morse.torus intertwining the two height functions.",
+ "B_issue": null,
+ "overlap": "n/a (neither direction proved)"
+}

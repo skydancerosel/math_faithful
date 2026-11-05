@@ -1,0 +1,17 @@
+{
+ "id": "V14_1",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "A (exp_diagonal_eq_neg_one_iff at universe 0, plus the scalar exp_ofReal_mul_I_eq_neg_one_iff) is exactly B's diagonal claim (ii), for any Fintype index type: exp diag(ia_j) = −I iff each a_j = k_jπ with k_j odd. A ⇒ B: (ii) is A's second conjunct for ι = Fin n plus choice; (iv) follows from (ii) and (iii) via Mathlib's Matrix.exp_conj; but B's (i) exp diag(ia_j) = diag(e^{ia_j}) (Matrix.exp_diagonal) and (iii) unitary diagonalization of every skew-Hermitian matrix (Mathlib's spectral theorem for the Hermitian iA) are proved outright — A has no counterpart for them (the project's reduction to diagonal form is the separate exists_unitary_suDiag, only for 𝔰𝔲(n) with exp A = −I). B ⇒ A: the scalar criterion is B (i)+(ii) at n = 1; the general-ι diagonal statement then follows entrywise via Matrix.exp_diagonal.",
+ "B_issue": null,
+ "overlap": "0 shared project theorems in both directions (A_to_B and B_to_A use only Mathlib besides the hypothesis).",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete matrix groups U(n), SU(n) ⊆ M_n(ℂ) (Mathlib unitaryGroup / specialUnitaryGroup as subsets, lengths as Euclidean lengths of curves in M_n(ℂ)); it does not quantify over abstract Riemannian manifolds."
+}

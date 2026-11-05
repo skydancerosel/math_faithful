@@ -1,0 +1,17 @@
+{
+ "id": "V9_17",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; slice submanifolds, ANY smooth curve γ, 0 < τ ≤ 1, division points B with IsFine = pieces of parameter length ≤ h₀ = fineMesh): exists_isBrokenJacobi (a broken Jacobi field takes any prescribed tangent values at {0, τ} ∪ B, end values not required to vanish) and nodeEval_bijective (brokenSpace B τ ≅ Σ = ⊕_{b∈B} T_{γ(b)}N by evaluation). B (abstract connected Riemannian ℝⁿ-manifolds, geodesic γ, Milnor's FineSub of [0,τ]: minimal pieces inside GoodNbhds): for values x_i with x_0 = x_k = 0 there is a unique broken Jacobi field in TΩ with W(t_i) = x_i, and setDim(BrokenSet) = (k−1)n. Same shape (existence/uniqueness/≅ Σ), but for different, unrelated notions of fineness: what each piece needs is that its end points are not conjugate, which A proves for h₀-short pieces (eq_zero_of_short) and B's hypothesis gives for minimal pieces in a GoodNbhd (Milnor's Lemma 14.4/Remark 14.5); neither kind of piece is the other. Genuine difference beyond the setting; A also allows non-zero end values and non-geodesic γ, B states the dimension count explicitly.",
+ "B_issue": null,
+ "overlap": "no direction proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V9_17.lean states B_emb (M = Bridge.Sub hN, cov = Bridge.conn) with B_to_B_emb; no direction proved. A ⇒ B_emb needs non-conjugacy of the end points of the blind-fine pieces (minimal segments in a GoodNbhd of ↥N), which A does not give (only for pieces ≤ h₀) and the project does not prove in this form (Morse.remark_14_5 is about normal-radius rays exp_q(tv)); plus dictionaries absent from the Bridge: blind piecewise smooth fields (IsPWFieldT/InTOmegaT: continuity in TM, IsSmoothAlong on pieces, zero off [0,τ]) ⇔ Morse.pathTangent ∩ fieldsUpTo τ, and blind Jacobi fields on sub-intervals [t_i, t_{i+1}] ⇔ restrictions of Morse.jacobiSpace elements (needs extension of a Jacobi field from [a,b] by the Jacobi ODE; Items/V9_10.lean covers [0,1] only), and setDim ⇔ finrank of Morse.nodeSpace. B_emb ⇒ A fails: B_emb is about blind-fine subdivisions only, A about h₀-fine ones (and non-geodesic curves, any model Z)."
+}

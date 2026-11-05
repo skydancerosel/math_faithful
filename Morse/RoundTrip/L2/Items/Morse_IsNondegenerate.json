@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsNondegenerate",
+ "name": "Morse.IsNondegenerate",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "The project's `nullSpace H = ⊥` (null space = kernel of v ↦ H v) is equivalent to the blind `∀ v, (∀ w, H v w = 0) → v = 0` by the project lemma `Morse.isNondegenerate_iff`, with no hypotheses (any dimension, no symmetry)."
+}

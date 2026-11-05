@@ -1,0 +1,17 @@
+{
+ "id": "V11_16",
+ "A_to_B": "false",
+ "B_to_A": "proved",
+ "not_B": true,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B is false (not_B, #rt_check OK) at n = 0: M = ℝ⁰ (the open slice submanifold univ ⊆ ℝ⁰ via RoundTrip.Bridge) is compact and connected, the positivity hypothesis K(U,U) > 0 for U ≠ 0 is vacuous, but B also demands that the minimum (n−1)/r² be attained at a unit vector U₀ (‖U₀‖ = 1 in the Riemannian norm), and T_pM = 0 has none. So ¬(A → B), and B → A holds ex falso. For n = 1 B is vacuous (K ≡ 0); Milnor means n ≥ 2. A (universes 0) holds for slice submanifolds N ⊆ V with dim ≥ 2: continuity of (q,u) ↦ tr(W ↦ R(u,W)u), the existence of r > 0 with K ≥ (n−1)/r² (compact N, positive Ricci; not that it is attained), and the index estimate index ≥ k for length > kπr under K ≥ (n−1)/r² for ANY N (no compactness), with two corollaries. On the repaired, embedded B (n ≥ 2) A implies B (A_to_B_emb2 below); the converse would need the reverse Hessian dictionary and only covers compact N.",
+ "B_issue": "False for n = 0: the clause 'with equality for some unit U₀' (Milnor's 'takes on a minimum') needs a unit tangent vector, which a 0-dimensional M lacks, while the positivity hypothesis is vacuous there. Fix: assume 2 ≤ n (Milnor's (n−1)/r² > 0 presupposes it; for n = 1 B is vacuous anyway).",
+ "overlap": "A_to_B_emb2: 534 shared project theorems — slice-chart/manifold infrastructure, the curvature operator and Ricci map (ricci_eq_trace_ricciMap, ricciMap_apply: the minimum argument of exists_ricciLowerBound is re-run, with A's continuous_trace_ricciMap as the hypothesis), and the second-variation / formIndex machinery of the Hessian dictionary (energyHessian_apply, secondVariation_congr, secondVariation_eq_hessForm, formIndex_le, hasDerivAt_energyHessian); A's theorem_19_6_index is used as the hypothesis. B_to_A is ex falso (its 337-theorem closure comes from not_B's Bridge instances).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": true
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "Items/V11_16.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric, connected), cov = Bridge.conn (B_to_B_emb). B_emb is false too (not_B_emb: the counter-model is embedded). Repaired B_emb2 := B_emb with 2 ≤ n (B_emb_to_B_emb2). Proved (#rt_check OK): A_to_B_emb2 — A ⇒ B_emb2: the attained minimum m of K on the compact unit tangent bundle from A's continuous_trace_ricciMap, r = √((n−1)/m); RicciGE and attainment through Emb.ricci_eq (Items/V11_24.lean) and Bridge.norm_eq (Riemannian unit vectors of ↥N are D-unit vectors); the index estimate from A's theorem_19_6_index via Bridge.arcLen_eq and Emb.formIndex_le_lam (the converse Hessian dictionary of Items/V11_8.lean: project index ≤ blind λ(1)). Not done: B_emb2 ⇒ A. It could only reach compact connected N (B is about compact M), would need the reverse comparison λ(1) ≤ formIndex (blind TΩ fields → pathTangent via ambA, HessT = energyHessian on them via hessT_toW; glue, about 80 lines), plus r' ≥ r for any other lower bound r' (from the attained minimum); A's continuity lemma and its index estimate for non-compact N are not consequences of B."
+}

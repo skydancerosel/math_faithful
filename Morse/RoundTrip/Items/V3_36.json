@@ -1,0 +1,11 @@
+{
+ "id": "V3_36",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "A: the inequalities (4_λ) b_λ - b_{λ-1} + … ± b_0 ≤ C_λ - … ± C_0 for f = F|N on a compact slice submanifold N (homology in any T ≃ₜ N; primed: T = N). B: (4_λ) for every smooth f with non-degenerate critical points on an abstract compact manifold, any field. alt = altSum and Cnum = critCount by rfl, Rabs = bettiNumber. A ⇒ B: Whitney copy via Glue.exists_ambient_any_dim (project's exists_ambient_of_isMorseFunction / exists_whitney_normSq), A with e = Φ. B ⇒ A: N is a compact manifold and F|N a Morse function; transport along e by bettiNumber_eq_of_homeomorph.",
+ "B_issue": null,
+ "overlap": "B_to_A: 60 shared, infrastructure only (slice-chart/charted-space proofs, contMDiff_comp_val, H(E,∅) = H(E) lemmas); none of the Morse filtration"
+}

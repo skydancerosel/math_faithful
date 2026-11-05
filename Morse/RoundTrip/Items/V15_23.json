@@ -1,0 +1,17 @@
+{
+ "id": "V15_23",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A (universes 0, any finite index type, arbitrary sequence J; omegaStratum J k p = points of Ω_k(n) where dim 𝒯 = dim 𝒯_p): dim 𝒯 is constant along x exp(tA); for J_1..J_k anticommuting the stratum is open in Ω_k(n), closed, compact, a slice submanifold of Mₙ(ℝ) modelled on 𝒯_p × 𝒯_p^⊥ (Lemma 24.4 (i)), and an IsTotGeo set with T = 𝒯 (its geodesics are the x exp(tA)); Ω_0's stratum is O(n). B (Fin n, J_1..J_{k−1} anticommuting): Ω_k(n) ⊆ O(n), Ω_k(n) is a smooth submanifold (blind charts, varying dimension), and every blind induced-metric geodesic of Ω_k(n) is one of O(n). A ⇒ B: at p ∈ Ω_k(n), with the family J_1..J_{k−1}, p (B has no J_k), A's slice structure of the stratum of p plus A's openness give a blind chart of Ω_k(n) near p (slice chart followed by (z,w) ↦ z + w); Milnor's total geodesy (comparison with O(n)) is not what A's IsTotGeo states and is proved directly (X = γᵀγ', X' ∈ 𝒯_γ, the Ω_k-geodesic equation against γX' gives X' = 0). B ⇒ A only vacuously (outright): B does not mention strata, dim 𝒯, compactness or the model space 𝒯_p. #rt_check workaround: A's conjunct isTotGeo_omegaStratum has the proof isSliceSubmanifold_omegaStratum hJ p inside its statement, so no term mentioning A passes #rt_check; checked instead: A2_to_B (A2 = the two conjuncts used) and B_to_Aabs (Aabs = A with that proof abstracted, ↔ A by proof irrelevance).",
+ "B_issue": null,
+ "overlap": "B_to_Aabs (vacuous, outright copies): 122 shared project theorems — the OmegaManifold infrastructure not in A's list (exists_local_log, mem_tanAlg_of_mul_exp_mem, exists_exp_injective, mul_exp_mem_omega, mem_tanAlg_mul_exp, finrank_tanAlg_conj, conj_mem_tanAlg, isSliceSubmanifold_of_param, Milnor.ContMDiff.isLocalDiffeomorphAt_of_isInvertible_mfderiv, isClosed_omega/isCompact_omega, exp/orthogonal helpers); no item theorem.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete real matrices (Mathlib orthogonalGroup as a subset of M_n(ℝ), Ω_k(n) as subsets; the induced-metric notions TanSet/IsGeodOn are already embedded); it does not quantify over abstract Riemannian manifolds."
+}

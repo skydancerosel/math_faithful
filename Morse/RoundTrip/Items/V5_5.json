@@ -1,0 +1,12 @@
+{
+ "id": "V5_5",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "A (universe 0): in any complex inner product space, if Re⟨a, v⟩ = 0 for all a in a complex subspace T, then ⟨a, v⟩ = 0 on T. B: for holomorphic w : ℂᵏ → ℂⁿ with injective dw(0) and v real-orthogonal to range dw(0), (1) ⟨v, dw(0)z⟩ = 0 and (2) ⟨v, w(z)⟩ = const + Σ b_hj z^h z^j + o(‖z‖²). A ⇒ B: (1) is A with T = range dw(0); (2) is a second-order Taylor expansion proved outright from Mathlib's power series (isBigO_sub_partialSum_pow, coefficients p₂(e_h, e_j)), its linear term killed by (1). B ⇒ A: B for w = id on ℂ¹ and v' = conj⟨a,v⟩·e₀ gives ⟨a, v⟩ = 0, the hypothesis holding because conj(z)·a ∈ T. Clause (2) of B (the Taylor expansion Milnor writes) is content A does not state, but it is pure Mathlib analysis; the mathematical content Milnor's parenthesis asserts (linear terms vanish) is exactly A.",
+ "B_issue": null,
+ "overlap": "B_to_A: 0 shared project theorems",
+ "uses_hypothesis": {"A_to_B": true, "B_to_A": true}
+}

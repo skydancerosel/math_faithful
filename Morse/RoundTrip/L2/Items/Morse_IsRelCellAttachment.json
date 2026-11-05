@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsRelCellAttachment",
+ "name": "Morse.IsRelCellAttachment",
+ "agreement": "differ",
+ "hypotheses": null,
+ "difference": "The project's predicate is literal: K must be the iterated pushout and j the composite of the cellInl's. The blind one is only up to a homeomorphism of K compatible with the map. Example with no cells: not : Bool → Bool satisfies the blind notion (it is a homeomorphism) but not the project's, which forces j = 𝟙. Exactly: T L K f ds ⟺ ∃ K' j (e : K' ≅ K), P L K' j ds ∧ j ≫ e.hom = f.",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "P ⇒ T outright (P_imp_T), and T is exactly the closure of P under homeomorphisms of the target compatible with the maps (agree). The proof uses blind Quot adjunction space ≅ project pushout, invariance of the pushout under homeomorphism of the base, and snoc/unsnoc lemmas converting head-first recursion into the project's tail-first induction. The rigidity is a modelling convention (\"obtained from\" read as the literal pushout). The project uses the predicate only in conclusions and inside existentials (CellTower), so it is harmless."
+}

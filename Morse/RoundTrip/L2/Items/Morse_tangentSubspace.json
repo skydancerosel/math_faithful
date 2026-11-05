@@ -1,0 +1,11 @@
+{
+ "id": "Morse_tangentSubspace",
+ "name": "Morse.tangentSubspace",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Project: range of mfderiv of the inclusion N -> V for the slice-submanifold manifold structure. Blind: span of velocities gamma'(0) of curves C^infty on some (-eps, eps), valued in N, gamma(0) = q. Equal for every slice submanifold and q, with no extra hypothesis: via Morse.tangentSubspace_eq_range_fderiv_sliceParam, x'(z0) a is the velocity of t -> x(z0 + t a), and conversely a curve in N equals x o c near 0 with c = (phi o gamma).1 (slice condition), so gamma'(0) = x'(z0)(c'(0)). The blind span is thus superfluous (the velocities already form the subspace)."
+}

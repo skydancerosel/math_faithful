@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsRiemComplete",
+ "name": "Morse.IsRiemComplete",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Identical shape (ρ-Cauchy sequences in N converge for ρ to a point of N); the only ingredient is ρ, and the project's riemDist equals the blind ρ for every N (riemDist_eq, the Morse_riemDist glue)."
+}

@@ -1,0 +1,17 @@
+{
+ "id": "V11_20",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: on every abstract connected Hausdorff Riemannian ℝⁿ-manifold with any Levi-Civita connection, Milnor-complete, ⟨R(A,B)A,B⟩ ≤ 0 and NOT simply connected, every Path p q is homotopic rel end points to a geodesic [0,1] → M, unique on [0,1] among geodesics in its class. A (homotopy_class_unique_geodesic, universes 0; pathOfMem is vocabulary): the same statement for slice submanifolds N ⊆ V with the induced metric only, but without the hypotheses 'connected' and 'not simply connected' (A also covers simply connected N, where it is the uniqueness part of Theorem 19.2). A ⇒ B fails genuinely (abstract manifolds are not given embedded; Levi-Civita uniqueness not formalized); B ⇒ A fails for the setting and, on embedded manifolds, for connected-or-simply-connected N, which B excludes. On the common ground they are equivalent (embedded case below).",
+ "B_issue": null,
+ "overlap": "B_emb_to_A_nsc: 402 shared project theorems, all generic geodesic/exp/slice-chart infrastructure (LocalSpray, NormalCoord, Flow, exp_zero, IsGeodesicOn.*, pathOfMem proof fields) entering through the Hopf–Rinow completeness dictionary and the geodesic lift; nothing of the covering-map / path-lifting proof of homotopy_class_unique_geodesic. A_to_B_emb uses A (hypothesis).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V11_20.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric, connected), cov = Bridge.conn (B_to_B_emb via conn_isLC). Glue copied from Items/V11_17.lean (completeness via Hopf–Rinow, Emb.nonPosCurv_iff, geodesic dictionary unbroken_of_geodPQ / geodPQ_of_unbroken with isGeodesic_lift); new: Emb.inClass_iff (blind InClass g c ⇔ (Morse.pathOfMem (incl∘g)).Homotopic c) and pathOfMem_congr. Proved (#rt_check OK): A_to_B_emb (A ⇒ B_emb; the hypothesis ¬SimplyConnectedSpace is not needed) and B_emb_to_A_nsc (B_emb ⇒ A for connected, non-simply-connected N with model ℝⁿ). A's extra content on embedded manifolds: simply connected N (B excludes them by Milnor's hypothesis; that case is Theorem 19.2, item V11_17) and non-connected N."
+}

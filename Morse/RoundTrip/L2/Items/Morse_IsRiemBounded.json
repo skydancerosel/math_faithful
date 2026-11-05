@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsRiemBounded",
+ "name": "Morse.IsRiemBounded",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Project: ∃ d : ℝ, ρ(x,y) ≤ ofReal d on X; blind: ⨆_{x,y ∈ X} ρ(x,y) < ⊤. Equivalent (bound by ofReal d < ⊤; conversely d = toReal of the finite sup), with ρ identified by riemDist_eq. Equal for all N, X."
+}

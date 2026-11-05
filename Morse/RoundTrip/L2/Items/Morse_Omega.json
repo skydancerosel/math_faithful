@@ -1,0 +1,11 @@
+{
+ "id": "Morse_Omega",
+ "name": "Morse.Omega",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both define Ω₀ = O(n) and Ω_{k+1} = complex structures anticommuting with J 1, …, J k (indexing from 1, as Milnor, in both: no shift), with no standing hypothesis on the sequence J. The only difference is the written form of anticommutation (J α J' = −J' J α vs J' J α = −J α J'), the same equation; proved by ext."
+}

@@ -1,0 +1,17 @@
+{
+ "id": "V14_27",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A (universes 0; suInclC vocabulary; the def unitaryProd read as ∃ U(ι) ≃ₜ S¹ × SU(ι) with first component det): for every nonempty finite ι, U(ι) ≅ S¹ × SU(ι) over det, det is locally trivial with fibre SU(ι), π_{j+2}(S¹, z) = 0, and the map INDUCED BY THE INCLUSION π_{j+2}(SU(ι), A) → π_{j+2}(U(ι), A) is bijective (j ≥ 0, i.e. degrees ≥ 2). B: for Fin m, m ≥ 0, every j ≠ 1 and all base points, π_j U(m) ≅ π_j SU(m) abstractly (≃ as sets, ≃* for j ≥ 2). A ⇒ B: (4) as a MulEquiv plus left translation of base points; m = 0 trivially; for j = 0 A says nothing about π_0 — SU(m) is path-connected as the image of U(m) under the projection of (1), but U(m)'s path-connectedness comes from outside the item (Morse.Homotopy.nonempty_pi_unitary_equiv_circle, V14_29). B ⇒ A uses B only for (3) (m = 1: SU(1) is a point and U(1) ≅ S¹); (1), (2), (4) are re-proved outright (copy of the trivialization; the project's exact-sequence argument for that Serre fibration): an abstract isomorphism cannot give bijectivity of the specific inclusion-induced map, nor general ι. So A is stronger (the 'induced by inclusion' form and the fibration data); its only gap relative to B/Milnor is the j = 0 case (π_0), which is true and supplied by another project theorem.",
+ "B_issue": null,
+ "overlap": "B_to_A: 154 shared project theorems — the exact-sequence/Serre-fibration infrastructure (bijective_homotopyGroupMap_of_fiber, bijective_homotopyGroupMap_fiberIncl, injective/surjective_homotopyGroupMap_fiberIncl, IsLocallyTrivial.isSerreFibration, isLocallyTrivial_of_homeomorph, subsingleton_homotopyGroup_option, lifting/cube lemmas) and the detCircle/diagCircle lemmas, since B_to_A re-runs the project's argument for (4). A_to_B: 148, the same infrastructure reached through the stability lemma behind nonempty_pi_unitary_equiv_circle (used for π_0 U(m)), plus generic base-point transport. No banned theorem is used.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about the concrete matrix groups U(m), SU(m) ⊆ M_m(ℂ) (Mathlib unitaryGroup / specialUnitaryGroup), the circle and the Grassmannian of projections; it does not quantify over abstract Riemannian manifolds."
+}

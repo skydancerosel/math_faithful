@@ -1,0 +1,17 @@
+{
+ "id": "V8_3",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): Lemma 11.A for slice submanifolds N ⊆ V (completeness not assumed): for ω ∈ Ω(N;p,q) and any piecewise smooth family Λ(t) : P →L V of tangent maps vanishing at 0, 1, the formula exp_{ω(t)}(Λ(t)u) is a variation on some ball(0, ε) ⊆ P with ∂α/∂u(0,t) = Λ(t) on [0,1]; the one- and two-field cases. B: for abstract connected Riemannian ℝⁿ-manifolds with a Levi-Civita connection, every W ∈ TΩ_ω is the field of some variation, of the variation exp_{ω(t)}(uW_t) on a ball (all exp defined), and two fields W₁, W₂ come from one 2-parameter variation. A ⇒ B fails genuinely: abstract manifolds and their exp (geodesic ODE in charts, smooth dependence, uniform radius on the compact ω([0,1])) are not in the project, which has these only for N ⊆ V. B ⇒ A fails genuinely: A is stated for arbitrary normed parameter spaces P and arbitrary families Λ (and gives the explicit derivative HasFDerivAt), and B does not specialize to N ⊆ V without an IsVar/varField/TΩ dictionary on ↥N. Minor: B asks varField α = W at EVERY t ∈ ℝ (W is unconstrained off [0,1]), A only on [0,1]; satisfiable by redefining α off [0,1] via a chart, so not a B bug.",
+ "B_issue": null,
+ "overlap": "no direction proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_attempted",
+ "embedded_special_case_note": "Needs the V8_2 dictionary (variations, variation fields, TΩ vs pathTangent on ↥N) plus Bridge.expMap_eq / exists_initial_ray (ExpDefined ⇔ expDom, as in V7_29) and a chart-based redefinition of α off [0,1]."
+}

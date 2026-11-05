@@ -1,0 +1,17 @@
+{
+ "id": "V10_25",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: for every abstract Riemannian ℝⁿ-manifold M isometric to Sⁿ via ψ (n > 2), q ≠ p, p': the INTEGRAL singular homology of Ω(M; p, q) (blind Om) and of Ω* is ℤ in degrees k(n−1), zero otherwise. A (universes 0): general tools over FIELDS for slice submanifolds — bettiNumber_eq_of_steps (Betti numbers of an exhausted space from a filtration), sublevel_step_of_isCompact (p. 29 slab homology), finrank_subsetHomology_Omega (slab homology of Ω over a field), bettiNumber_omega_of_unique (closed N, one non-degenerate geodesic per energy window with index k·r, r ≥ 2 ⇒ dim_𝕜 H_i(Ω; 𝕜) = 1 iff r ∣ i); nothing about the sphere itself. A ⇒ B fails genuinely: coefficients (field Betti numbers do not determine ℤ-homology without finite generation, and the universal coefficient theorem is absent), A has no sphere content (the geodesics/indices of Sⁿ are other project results, item V10_23), abstract M via ψ. B ⇒ A fails genuinely: B says nothing about general N, filtrations or slab homology, and is over ℤ.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. For A_to_A_emb (#rt_check OK): 969 shared project theorems — the index theorem / formIndex / conjMultiplicity / indexUpTo infrastructure (theorem_15_1 behind formIndex_eq_of_eqOn_sphGeod), hessNullity lemmas, slice-chart / riemDist / path-metric infrastructure and the Appendix telescope machinery (theorem_17_1); A's four theorems are used only through the hypothesis.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V10_25.lean: B_emb := B at M = Sⁿ ⊆ ℝⁿ⁺¹ (Bridge.Sub (sphSub n)), ψ = inclusion (Sph.isRoundSphere, Sph.connectedSpace), cov = Bridge.conn (B_to_B_emb). Proved (#rt_check OK) A_to_A_emb: the field-coefficient version of B_emb — for every field 𝕜 : Type, n ≥ 3, q ≠ ±p, bettiNumber 𝕜 of the BLIND Ω(Sⁿ; p, q) and Ω*(Sⁿ; p, q) is 1 iff n−1 ∣ i, else 0 — from A's bettiNumber_omega_of_unique (via the hypothesis) fed with the project's sphere results outside A (sphGeod_mem_pathSpace, isUnbrokenGeodesic_sphGeod, exists_eqOn_sphGeod, strictMono/tendsto_energy_sphGeod, formIndex_eq_of_eqOn_sphGeod, notMem_conjLocus_sph, hessNullity_eq_zero_of_notMem_conjLocus), transported along Ω ≃ₕ PathSp and Ω* ≃ₕ PathSp (glue copied from Items/V10_19.lean + project theorem_17_1) and Morse.Homology.bettiNumber_eq_of_homotopyEquiv. Remaining gap to B_emb: ℤ coefficients (genuine; see V10_26)."
+}

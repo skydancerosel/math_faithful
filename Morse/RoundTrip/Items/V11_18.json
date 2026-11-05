@@ -1,0 +1,17 @@
+{
+ "id": "V11_18",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: on every abstract connected Hausdorff ℝⁿ-manifold with any smooth Mathlib RiemannianBundle metric and any Levi-Civita connection, Milnor-complete, simply connected, ⟨R(A,B)A,B⟩ ≤ 0, for all p, q: the blind Ω(M; p, q) (d-ball topology) is connected; it is homotopy equivalent to a Hausdorff Mathlib CWComplex with no cells of positive dimension whose l-cells correspond to the geodesics (in Ω*) of blind index l (GeodIdx, index = bIndex of the variational HessT); and every connected Hausdorff CW complex with only 0-cells is a point. A (universes 0): for slice submanifolds N ⊆ V with the induced metric only: Theorem 17.3 with all indices 0 for closed N (the project's IsCountableCellComplexType, not a Mathlib CWComplex), geodesics = points of the fibre exp_p⁻¹(q), Ω* ≃ₕ fibre, fibre discrete and countable with Ω ≃ₕ fibre, contractibility of Ω for complete simply connected N, and a one-cell structure for closed simply connected N. A ⇒ B fails genuinely (abstract manifolds are not given embedded); B ⇒ A fails genuinely (setting; B has nothing on exp-fibres or the project's cell-complex notion, and covers only the simply connected case). On embedded manifolds A ⇒ B_emb and B_emb ⇒ A's contractibility statement are both proved.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. For the embedded theorem B_emb_to_A_cplt: 525 shared project theorems — Hopf–Rinow (theorem_10_9, riemDist lemmas) and the geodesic-flow infrastructure for the completeness dictionary, PathSp.edist lemmas (edist_def, edist_eq_zero_of_eqOn) for the Ω ≃ₕ PathSp dictionary, slice-chart/tangent-projection and curvature lemmas. Not shared: theorem_17_1, the covering map exp_p (isCoveringMap_expToN, path lifting), contractibleSpace_pathC, expDiffeomorph, theorem_17_3.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V11_18.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric), cov = Bridge.conn (B_to_B_emb via conn_isLC). Glue: the Ω dictionary of Items/V10_19.lean (omTopology_eq, τ, lifting, Ω ≃ₕ PathSp as Emb.omHE; `lam` renamed lamP), the Hessian dictionary of Items/V11_8.lean (isVariation_of_isVarSubT, isHessT_eq, lam_eq_zero ⇒ Emb.lam_geod_eq_zero: every blind geodesic of ↥N has blind index 0, via Morse.energyHessian_pos_of_nonpos), the geodesic/curvature/completeness dictionaries (Items/V11_17.lean, V11_7, V7_29), Emb.unique_geod (Theorem 19.2), and pure topology in namespace CW0: ptCW (a Mathlib CWComplex structure on Unit with one 0-cell), subsingleton_of_cw0 (a connected Hausdorff CW complex with no positive-dimensional cells is a point: every subset is closed by the weak topology), connectedSpace_of_hequiv. Proved A_to_B_emb (uses A's contractibleSpace_pathSp; Y = Unit; cell 0 ↔ the unique geodesic in Ω*) and B_emb_to_A_cplt (A_cplt = A's contractibleSpace_pathSp for model ℝⁿ: Ω connected ⇒ Y connected ⇒ Y a point ⇒ Ω, hence PathSp, contractible), both #rt_check OK. Not covered by B_emb: the exp-fibre statements and the project's IsCountableCellComplexType structures (omega_cells_of_nonpos, omega_single_cell), non-simply-connected N. Only the induced connection."
+}

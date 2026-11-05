@@ -1,0 +1,17 @@
+{
+ "id": "VA_9",
+ "A_to_B": "false",
+ "B_to_A": "proved",
+ "not_B": true,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A = reparam_homotopic ∧ isHomotopyEquiv_of_milnorMap (universes 0), both for CLOSED X_n. B, faithful to Milnor, assumes only S increasing and asks for a CONTINUOUS g given by Milnor's formulas (g(x,n+t) = (x,n+2t) for t ≤ ½, h₁(x,n+3/2−t) for t ≥ ½) with h₁g ≃ id ≃ gh₁. B is false (not_B): X = ℝ, X₀ = (0,∞) (not closed), X_n = ℝ (n ≥ 1); h₁(x,τ) = (x + E(x,τ), τ + dist(τ,ℤ)) with E = clamp(2−2τ)·clamp((τ−½)/x) is continuous on X_Σ (squeeze at points x ≤ 0, which lie at levels ≥ 1) and has Milnor's two properties, but the formulas force g(x,1−x) = h₁(x,½+x) = (1−x,1) → (1,1) as x → 0⁺ while g(0,1) = (0,1): g on the strip X₀×[½,1] reads h₁ near level ½, and (0,½) ∉ X_Σ. So A ⇒ B is false and B ⇒ A holds only ex falso. With Milnor's missing hypothesis added (Bfix: all X_n closed) the two are EQUIVALENT: A ⇒ Bfix (A_to_Bfix) uses A's reparam_homotopic for R₄ ≃ id plus the project's definitions milnorInv/milnorH/milnorK (A's isHomotopyEquiv_of_milnorMap only says ∃ inverse, while B names Milnor's g as the inverse and also states h₁(x,n+½) = h₁(x,n+1) = (x,n+1)); Bfix ⇒ A (Bfix_to_A) gets isHomotopyEquiv_of_milnorMap from Bfix by transporting a project Milnor map to the blind telescope, and re-proves reparam_homotopic outright (it is not a statement about h₁, absent from B). Note: Milnor's Case 1 CONCLUSION does not need closedness (see VA_10); only this lemma about arbitrary h₁ and its inverse g does.",
+ "B_issue": "Not a formalization bug: B faithfully states Milnor's claim without a closedness hypothesis (Milnor never states one), and that claim is false (not_B). The project's statement adds 'all X_n closed', which is necessary for this lemma.",
+ "overlap": "B_to_A (ex falso): 24 shared project theorems, all telescope/reparam vocabulary appearing in A's statement (the counterexample itself uses none). A_to_Bfix: 81 shared — essentially the whole proof of isHomotopyEquiv_of_milnorMap minus its last line: milnorInv_low/high, milnorInv_isMilnorMap, loopFun/continuous_loopFun/loopFun_one, muH/muK lemmas, IsMilnorMap.fix/fix_high/apply_one/apply_half_or_one, scaleMap_stripMap, telescopeDesc/telescopeLift lemmas (reached through the project definitions milnorH, milnorK used to exhibit Milnor's homotopies). Bfix_to_A: 40 shared (telescopeHomotopy, reparam_stripMap, clampI lemmas, IsMilnorMap.fix, mem_of_mem_telescope; reparam_homotopic' is a copy of the project proof).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "General topology (telescopes of subspaces); no Riemannian manifold. Corrected statement Bfix (closed X_n): A_to_Bfix and Bfix_to_A both proved (#rt_check OK)."
+}

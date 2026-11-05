@@ -1,0 +1,9 @@
+{
+ "id": "V1_10",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "relation": "A_stronger",
+ "why": "A = Euclidean version plus manifold version, each assuming only that f is C² at p (not smooth everywhere), with no Hausdorff hypothesis, any universe, and an iff conclusion. B assumes f is C^∞ on all of M, M Hausdorff, in Type. So A ⇒ B directly (specialize the manifold conjunct). B ⇒ A would need the C²-at-p, non-T2 case and the Euclidean conjunct for functions that are not globally smooth. That is a genuine difference in hypotheses, not a gap in proof effort.",
+ "B_issue": null,
+ "overlap": "n/a (B_to_A not proved)"
+}

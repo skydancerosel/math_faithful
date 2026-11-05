@@ -1,0 +1,20 @@
+{
+ "id": "V7_3",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; geodesicSpray, chartSpray definitions): for a slice submanifold N ⊆ V, the geodesic equation γ'' = II(γ',γ') (both directions), its first-order form as integral curves of the spray (x,v) ↦ (v, II_x(v,v)) on TN ⊆ V × V, smoothness of the slice-chart spray (u,w) ↦ (w, −Γ(u)(w,w)), and that its integral curves map to geodesics (one direction only). B: on an abstract ℝⁿ-manifold with a Levi-Civita connection, a smooth curve on an interval is a geodesic iff in every chart extChartAt p the coordinates satisfy d²uᵏ/dt² + Σ Γᵏᵢⱼ u̇ⁱu̇ʲ = 0, Γ the chart Christoffel symbols of the connection. A ⇒ B fails genuinely: needs Christoffel symbols of an abstract connection, abstract Lemma 8.1 in coordinates (D/dt via Γ), locality — absent ('no Christoffel symbols'). A's Γ(u)(w,w) is the Christoffel form of the induced metric in slice-chart coordinates, only for N ⊆ V and only the 'solutions are geodesics' direction. B ⇒ A fails: no bridge from abstract to embedded objects; A's ambient form γ'' = II(γ',γ') is not a chart statement.",
+ "B_issue": null,
+ "overlap": "no B_to_A proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "Vacuous direction only. Items/V7_3.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric, ConnectedSpace) and cov = Bridge.conn (B_to_B_emb). B_emb holds outright (B_emb_holds, #rt_check OK; A not used), so A_to_B_emb is vacuous. The substantive output is a Christoffel dictionary: Emb.sum_gam_eq_chartAcc — the blind Christoffel symbols Gam conn p x of the induced connection in the chart at p (coordinate fields ∂_i = (d chart)⁻¹ e_i), contracted as Σᵢⱼ Γᵏᵢⱼ wⁱwʲ, equal (Morse.chartAcc (sliceAt hN p) u w)ₖ, which is A's Christoffel term Γ(u)(w,w) = dx_u⁺ d²x_u(w,w). Supporting lemmas: D_coordField (∂_i read in V is dx_u e_i), D_conn_coordField (D(∇_{∂i}∂j) = P d²x_u(e_i,e_j)), chartAcc_eq, coord_eq / coord_expr (the blind coordinate expression along a curve smooth on an interval, derivatives within s, is the k-th coordinate of A(Pγ'')). So on ↥N Milnor's coordinate equation is exactly the integral-curve equation of A's chartSpray in the manifold's own charts. B_emb ⇒ A not proved and not expected: A's ambient equation γ'' = II(γ',γ') and the spray on TN, smoothness of chartSpray, and isGeodesicOn_chart for an ARBITRARY slice chart σ (B_emb only sees the charts sliceAt hN p of the manifold structure) do not follow from B_emb. The old 'why' phrase 'no bridge from abstract to embedded objects' is superseded by this, but the A/B verdicts are unchanged. Limitation: only the induced connection.",
+ "embedded_uses_hypothesis": {
+  "A_to_B_emb": false
+ }
+}

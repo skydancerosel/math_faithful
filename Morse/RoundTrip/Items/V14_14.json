@@ -1,0 +1,17 @@
+{
+ "id": "V14_14",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0) lives on the project's embedded SU(n) ⊆ Mₙ(ℂ) (slice submanifold modelled on 𝔰𝔲(n), induced metric; geodesics = IsUnbrokenGeodesic) for any nonempty finite index type: every unbroken geodesic from I to ANY q is exp tA on [0,1] with A ∈ 𝔰𝔲(n); every A ∈ 𝔰𝔲(n) with exp A = −I is T suDiag(k) Tᴴ (T unitary, k odd, Σk = 0); and the converse facts (T suDiag(k) Tᴴ ∈ 𝔰𝔲 if Σk = 0, its exp is −I if k odd, t ↦ exp tA is a path I → −I and an unbroken geodesic). B: on every abstract Riemannian M with a smooth isometric embedding ψ onto SU(n) and every Levi-Civita connection, every geodesic from I to −I is ψ⁻¹(exp tA) with A = T·diag(iπk_j)·Tᴴ, k odd, Σk = 0 (only this direction, only end point −I). A ⇒ B fails genuinely: the abstract setting (transport along ψ needs naturality of the Levi-Civita connection under isometries and its uniqueness, not formalized); on the embedded SU(n) it holds (A_to_B_emb). B ⇒ A fails genuinely: B says nothing about geodesics from I to q ≠ −I, nor the converse (that every exp tA with exp A = −I is a geodesic, and the membership/exp facts for T suDiag(k) Tᴴ), which B explicitly leaves out.",
+ "B_issue": null,
+ "overlap": "No A_to_B / B_to_A. A_to_B_emb: 205 shared project theorems — slice-chart / tangent-projection infrastructure (tanProj, sliceAt, gramL), the Frobenius MatrixInner instances, isSliceSubmanifold_specialUnitaryGroup's proof terms, IsGeodesicOn accessors used by the Bridge dictionary; none of the substance of eqOn_exp_smul_of_isUnbrokenGeodesic_su (IsMatrixGroup.eqOn_mul_exp_smul) or exists_unitary_suDiag (spectral theorem) is re-used outside the hypothesis.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "Items/V14_14.lean, namespace Emb: SU(n) (n ≥ 1) as Bridge.Sub (isSliceRn isSliceSubmanifold_specialUnitaryGroup) (model ℝᵈ, d = dim 𝔰𝔲(n), via V7_28's eZ/chartRn/isSliceRn/tangentSubspace_rn, copied), ψ = inclusion, cov = Bridge.conn. B_emb := B's conclusion for this M with ConnectedSpace SU(n) as an explicit hypothesis (connectedness of SU(n) is formalized neither in Mathlib nor in the project, and B has it as an instance argument). B_to_B_emb (#rt_check OK) via new isSUModel_ψ: ContMDiff into the sup-normed Fin n → Fin n → ℂ by composing with id as a CLM (Frobenius → sup norm), embedding = Subtype.val, range = SU(n), isometry from dMat ψ = D (mfderiv_comp + ContinuousLinearMap.mfderiv_eq) and Re tr(XᴴY) = Re tr(XYᴴ). A_to_B_emb (#rt_check OK, uses A's eqOn_exp_smul_of_isUnbrokenGeodesic_su and exists_unitary_suDiag): blind geodesic on [0,1] → IsUnbrokenGeodesic (Bridge.isSmoothCurve_iff, Bridge.isGeodesicOn_Ioo, new isGeodesicOn_rn_iff), membership in Ω(SU(n); I, −I), T ∈ U(n) from TᴴT = 1, milnorA k = suDiag k. B_emb → A not attempted: it would need connectedness of SU(n) to discharge B_emb's hypothesis, and B_emb still lacks geodesics to q ≠ −I and the converse. Only the induced connection."
+}

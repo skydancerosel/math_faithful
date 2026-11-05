@@ -1,0 +1,11 @@
+{
+ "id": "Morse_BrokenSetup_IsBroken",
+ "name": "Morse.BrokenSetup.IsBroken",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "gamma in Morse.pathSpace N p q (Milnor: Omega(t0,...,tk) is a subset of Omega), with V and Z finite-dimensional; exactly: IsBroken gamma and gamma in Omega(N; p, q) iff T B gamma",
+ "difference": "The project predicate only asks gamma to be a geodesic on each open segment (t_i, t_{i+1}); it says nothing at the break points or the ends, nor gamma 0 = p, gamma 1 = q, continuity. The blind set is Milnor's Omega(t0,...,tk), a subset of Omega. For every setup B (V nontrivial) the path equal to p except gamma 0 = p + v is IsBroken but not in the blind set. The project uses IsBroken together with gamma in Omega.",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Blind => project and gamma in Omega: the segment conditions restrict to the open segments (tangentSpace_eq, second derivative within = deriv deriv inside), and the subdivision makes gamma piecewise smooth. Project and gamma in Omega => blind: at the ends of a segment a piece of the piecewise smooth gamma gives one-sided smoothness, so gamma is C^infty on the closed segment; normality at its ends follows by continuity of t -> P_{gamma(t)}(gamma''(t)) on the closed segment."
+}

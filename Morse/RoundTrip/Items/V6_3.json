@@ -1,0 +1,17 @@
+{
+ "id": "V6_3",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": true,
+ "why": "A (universes 0): for any Mathlib CovariantDerivative on the tangent bundle of any manifold (any model I), Milnor's rules (3) (cov Y x (f x • X x) = f x • cov Y x (X x)), additivity in Y and the Leibniz rule (4) at points where Y, f are differentiable. B: for manifolds modelled on ℝⁿ, (i) the pointwise rules, (ii) the global rules (1)-(4) for a smooth connection, and (iii) the converse: every operation D on smooth fields obeying (1)-(4) is the ⊢ of some smooth Mathlib connection. A_to_B_rules (in the .lean) proves (i)+(ii) from A (smoothness (1) from IsGlobalConn via Mathlib's ContMDiff.clm_bundle_apply). The missing part is (iii), 'rules (1)-(4) may serve as the definition': it needs locality of D (bump functions), extraction of Christoffel symbols in charts and patching them into a Mathlib CovariantDerivative defined on all sections — a construction the project does not have (Connection.lean says Christoffel symbols are not formalized). B ⇒ A holds only because A is provable outright from Mathlib's CovariantDerivative axioms (A is about arbitrary models I, which B does not cover); that direction is vacuous.",
+ "B_issue": "B assumes neither Hausdorffness nor second countability; clause (iii) (locality of D via smooth bump functions) is standardly proved for Hausdorff manifolds, so its truth in B's generality is plausible but not certain.",
+ "overlap": "B_to_A: 0 shared project theorems (A re-proved from Mathlib's IsCovariantDerivativeOn.add/leibniz)",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "Items/V6_3.lean. B_emb := B at M = Bridge.Sub hN (model ℝⁿ): parts (i)+(ii) at cov = Bridge.conn (B_emb_rules) and part (iii) on ↥N; B_to_B_emb. Proved A_to_B_emb_rules (A ⇒ (i)+(ii) for the induced connection, = A_to_B_rules at Bridge.conn; #rt_check OK). Not proved: part (iii) on ↥N (an operation obeying rules (1)-(4) is ⊢ of a smooth Mathlib connection). It is not in A; on ↥N it could be proved outright (D − ∇^conn is tensorial by (2)-(4), the global frame Eᵢ = P eᵢ (Bridge.frame) makes it pointwise, conn + that tensor is a smooth Mathlib CovariantDerivative), but the construction is in neither the project nor the Bridge and would not use A — not attempted. No B_emb ⇒ A direction is meaningful: A is not an embedded statement (it concerns arbitrary Mathlib connections on manifolds with any model I), so the embedded case does not change the verdict; the gap remains clause (iii)."
+}

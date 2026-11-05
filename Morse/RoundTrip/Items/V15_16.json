@@ -1,0 +1,17 @@
+{
+ "id": "V15_16",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "A (universes 0): for an ABSTRACT real vector space with anticommuting square roots of -1 (IsClifford, no inner product) and k <= 8: minimal => dim = milnorM k; dim = milnorM k => minimal; minimal => milnorM k <= dim <= 2^k; k <= 2 case; a central involution acts by +-1 on a minimal space (any k); minimal for k = 3 (resp. 7) => minimal for k = 2 (resp. 6). B (orthogonal structures on Fin n -> R, k <= 8): minimal => n = 1,2,4,4,8,8,8,8,16; k = 3: J_3 = +-J_1J_2; k = 4,5,6: R^8 = ker(J_3 - J_1J_2) + ker(J_3 + J_1J_2), both 4-dim and J_1,J_2-stable; k = 7: J_7 = +-J_1...J_6; k = 8: R^16 = L + L', both 8-dim, J_1..J_7-stable. A => B: dimensions from A; J_3 = +-J_1J_2 and J_7 = +-J_1..J_6 from A's central_involution applied to theta_3 = J_1J_2J_3 and omega_7 = J_1..J_7; the H + H', L + L' descriptions are the -+1 eigenspaces of theta_3 / omega_7, halved by J_4 / J_8 (project halving lemma). B => A: needs orthogonalization glue (average the inner product over J_1..J_k, conjugate by a square root: ortho_glue), then dimensions from B; 'dim m_k => minimal' via 'every nonzero (J)-space has dim >= m_k' (induction, contains a minimal one); minimal_three/seven from B's J_3 = +-J_1J_2, J_7 = +-J_1..J_6 pulled back (a minimal space is finite-dimensional, as image of C_k). Only central_involution for general k is not in B (B has its k = 3, 7 instances) and was re-proved outright (5 lines). Same content, modulo inner product (A needs none) and that elementary general lemma.",
+ "B_issue": null,
+ "overlap": "B_to_A: 36 shared project theorems, all infrastructure outside the item: IsClifford.{sq,anti,exists_restrict}, restrict_mul_self, restrict_anticomm, milnorM_pos, range_cyclicMap_eq_top, cyclicMap_{apply,mul}, cliffordLift_*, cliffE, cliffQ_apply, the Module.Finite instance of C_k, mapsTo_ker_of_commute, mem_ker_sub_one_iff; the item's seven theorems avoided.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "Linear algebra on R^n with matrix structures (B) vs abstract finite-dimensional real vector spaces (A); no manifolds."
+}

@@ -1,0 +1,17 @@
+{
+ "id": "VA_6",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "A = isHomotopyDirectLimit_of_level ∧ isHomotopyDirectLimit_truncation (universes 0): Lemma 2.1 (a level function f ≥ 0, f ≥ i+1 off X_i, makes the increasing sequence a homotopy direct limit) and Lemma 2.2 (X_Σ is the homotopy direct limit of its truncations, for ANY sequence). B = (1) for increasing S and such a continuous f, the graph lies in X_Σ, x ↦ (x, f x) is an embedding into X × ℝ and its image is a strong deformation retract of X_Σ; (2) for increasing S, X_Σ is the homotopy direct limit of {X_Σ^n}. A ⇒ B: (2) is A's Lemma 2.1 applied to the space X_Σ, the truncations and f = τ + 1; (1) is proved outright (straight-line homotopy in τ + upward closure; Mathlib isEmbedding_graph) — A states only the conclusion 'homotopy direct limit', not the strong deformation retraction or the embedding, which are B's extra (elementary) content. B ⇒ A: both clauses from B(1): the strong deformation retraction H onto the graph makes σ(x) = (x, f x) a homotopy equivalence (p σ = id, σ(p H₁) = H₁ ≃ id; Morse.IsHomotopyEquiv.of_leftInv_rightInv), hence p; Lemma 2.2 is B(1) for the truncations of an arbitrary sequence (always increasing) with f = τ + 1, so A's extra generality (no monotonicity in Lemma 2.2) is covered by B. Equivalent up to the elementary graph/retraction facts of B(1).",
+ "B_issue": null,
+ "overlap": "A_to_B: 7 shared project theorems (mem_telescope and its simp lemmas, mem_telescope_iff, mem_telescope_of_le (upward closure, used for B(1)), telescopeProj._proof_1). B_to_A: 6 shared (mem_telescope and simp lemmas, nonneg_of_mem_telescope, telescopeProj._proof_1); the deformation-retraction homotopy of Lemma 2.1's proof comes from the hypothesis.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "General topology (telescopes of subspaces); no Riemannian manifold."
+}

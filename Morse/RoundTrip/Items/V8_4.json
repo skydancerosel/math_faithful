@@ -1,0 +1,17 @@
+{
+ "id": "V8_4",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "The only listed declaration, Morse.IsCriticalPath, is a definition, so A = True and both directions are vacuous: B is proved outright (B_holds), since it only says that the blind definition (Fréchet derivative 0 at 0 of u ↦ F(α u) on ℝ¹, for every variation α with α 0 = pw) equals Milnor's wording (HasDerivAt along x ↦ x e₀), which is transport along the linear iso ℝ ≃L ℝ¹. As a vocabulary check (not part of A) the file proves, for a slice submanifold N ⊆ V modelled on ℝⁿ and any pw : ℝ → ↥N, that the blind IsCriticalPath Efun pw is exactly Morse.IsCriticalPath N (incl ∘ pw) (Vocab.isCriticalPath_iff). Differences in the definitions themselves: the project's notion is only for F = E (energy on [0,1]); the blind one is for any F : (ℝ → M) → ℝ; ℝ¹- vs ℝ-parameters, subdivision vs finite break set, α 0 = pw everywhere vs on [0,1] — all shown immaterial for E.",
+ "B_issue": null,
+ "overlap": "0 shared project theorems (B_to_A is trivial).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "B holds outright on every M, so B_emb is trivial; the meaningful embedded check is the vocabulary theorem Vocab.isCriticalPath_iff: on M = Bridge.Sub hN (induced metric), blind IsCriticalPath Efun pw ↔ Morse.IsCriticalPath N (incl ∘ pw). Dictionary built in the file (copied from Items/V8_9.lean): blind IsVarSub ⇒ project IsVariation (isVariation_of_isVarSub, x ↦ α(x e₀)), project IsVariation ⇒ blind IsVarSub (isVarSub_liftVar, lift along a subdivision avoiding the break set; exists_subdivision), smoothness of maps from a normed space into ↥N read in V (contMDiffWithinAt_iff', the Bridge's curve lemma with general source), Efun ∘ α = energy ∘ α' ∘ e1.symm (efun_comp)."
+}

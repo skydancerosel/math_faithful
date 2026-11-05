@@ -1,0 +1,21 @@
+{
+ "id": "V11_13",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": true,
+ "why": "B (abstract connected Hausdorff ℝⁿ-manifold, any Levi-Civita cov): (M, ρ) Cauchy-complete, r > 0, (n−1)/r² > 0 and K(U,U) ≥ (n−1)/r² ⇒ M compact, ρ(p,q) ≤ πr, and any p, q are joined by a minimal geodesic (IsMinimal) of length ≤ πr. A (universes 0): IsMinimalGeodesic.isMinimalPath (vocabulary glue) and corollary_19_5 for slice submanifolds N ⊆ V (any model Z, IsPreconnected, IsRiemComplete): riemDist ≤ πr and IsCompact N. A ⇒ B fails genuinely (abstract setting); on ↥N, A ⇒ B_emb is proved (B's minimal-geodesic clause comes from the project's Hopf–Rinow, outside A). B ⇒ A is proved for the model Z = ℝⁿ (B_to_A_Rn, through B_emb; empty N separately; A's first clause re-proved outright); for a general model Z only glue is missing (transport of Morse.RicciLowerBound along the model change isSliceRn of Items/V7_28.lean needs chart-independence of Morse.dN / curvOp). So A is the embedded special case of B without the explicit minimal-geodesic clause.",
+ "B_issue": null,
+ "overlap": "A_to_B_emb: 538 shared project theorems — the Hopf–Rinow / exp / geodesic-flow infrastructure (theorem_10_9, hopf_rinow_of_isRiemComplete, isGeodesicallyComplete_of_isRiemComplete, corollary_10_7, lemma_10_2/10_3, exists_localFlow, riemDist_ne_top): corollary_19_5's proof uses Hopf–Rinow for minimal geodesics, and A_to_B_emb uses it directly for B's third clause; plus the curvature/Ricci infrastructure. B_to_A_Rn: 470 shared — riemDist_ne_top / lemma_10_3 / local-flow infrastructure (through Emb.metricComplete_iff and Bridge.rho_eq), curvature infrastructure (Ricci dictionary), Bridge connection infrastructure; not theorem_19_4, Hopf–Rinow or corollary_10_10.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "uses_hypothesis_emb": {
+  "A_to_B_emb": true,
+  "B_emb_to_A_Rn": true
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V11_13.lean: B_emb := B at M = Bridge.Sub hN (model ℝⁿ, induced metric, connected), cov = Bridge.conn (B_to_B_emb). A_Rn_to_B_emb / A_to_B_emb (#rt_check OK; uses A's corollary_19_5 at Z = ℝⁿ and IsMinimalGeodesic.isMinimalPath; the minimal geodesic of length ρ(p,q) from Morse.hopf_rinow_of_isRiemComplete, lifted with isGeodesic_lift) and B_emb_to_A_Rn (#rt_check OK; A for model ℝⁿ: corollary from B_emb, isMinimalPath outright), hence B_emb ⇔ A_Rn (B_emb_iff_A_Rn). Dictionary: new Emb.ricciGE_of (project RicciLowerBound ⇒ blind RicciGE), Emb.ricciLowerBound_of; copied: metricComplete_iff, riemDist_eq_ofReal_rho, rho_lt_iff, rho_nonneg (Items/V7_29.lean), isGeodesic_lift, eT, curvR_eq, ricci_eq, mem_pathSpace_of_isGeodesic, isMinimalPath_of_isMinimal. Missing for general Z: chart-independence of dN/curvOp under the model change (then RicciLowerBound transports). Only the induced connection."
+}

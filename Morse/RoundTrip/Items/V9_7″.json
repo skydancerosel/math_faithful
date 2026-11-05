@@ -1,0 +1,17 @@
+{
+ "id": "V9_7″",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B (Example 2): for n ≥ 2, every abstract connected Hausdorff ℝⁿ-manifold M with any smooth metric, any Levi-Civita connection, and a diffeomorphism φ onto Mathlib's sphere S^n ⊆ ℝⁿ⁺¹ that is an isometry for the round (induced) metric, and every geodesic γ : [0,1] → M with φ(γ 1) = −φ(γ 0): 0 and 1 are conjugate, with multiplicity n − 1, and the nullity of the blind E_** is n − 1. A (no universes): on the project's embedded sphere Sph n (slice structure sphSub n, induced metric) only: great circles cos(Lt)p + sin(Lt)u are geodesics; sin(Lt)e is a Jacobi field; for L > 0, t ∈ (0,1] the multiplicity of (0,t) is n − 1 if Lt ∈ πℕ, else 0 (n ≥ 1). A ⇒ B fails genuinely: transporting A to an abstract M along the isometry φ needs naturality and uniqueness of the Levi-Civita connection and of Jacobi fields under isometries, which the project does not have, and B's nullity clause needs a dictionary for the blind HessT. B ⇒ A fails genuinely: A's geodesic and Jacobi-field facts, its formula for non-antipodal parameters t and its n = 1 case are not in B. On the embedded sphere, B's clauses (1),(2) and A's formula at t = 1 for antipodal great circles are proved equivalent.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. For the embedded-case theorem B_to_A_emb: 301 shared project theorems — slice-chart/tanProj/curvature infrastructure via RoundTrip/Bridge.lean, the sphere's slice structure and the great-circle computations (greatCircle lemmas, secondFundForm_sph, mem_tangentSubspace_sph_iff: used by the copy isGeodesicOn_greatCircle'), and the proof fields of Morse.jacobiSpace (jacSol: vocabulary of A); the substance of conjMultiplicity_greatCircle (the Jacobi fields sin(Lt)e and t c'(t), the dimension count) is not shared.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "PARTIAL (clauses (1),(2) of B; nullity not covered). Items/V9_7″.lean: B_emb12 := for M = Bridge.Sub (sphSub n) (model ℝⁿ, induced metric, cov = Bridge.conn), n ≥ 2, every blind geodesic γ with incl(γ 1) = −incl(γ 0): IsConj 0 1 ∧ conjMult 0 1 = n − 1. B_to_B_emb12 is a genuine instance of B: sphDiffeo n (the identity Sph n → Metric.sphere 0 1 is a Diffeomorph between the slice structure and Mathlib's structure, via ContMDiff.codRestrict_sphere and a new lemma contMDiff_of_incl), the isometry condition holds by rfl, ConnectedSpace from Milnor.Sphere.preconnectedSpace. A_to_B_emb12 (uses hA.isGeodesicOn_greatCircle and hA.conjMultiplicity_greatCircle; γ is identified with a great circle by Bridge.eqOn_Icc_of_isGeodesic; antipodality gives cos L = −1, sin L = 0, L ∈ πℕ). A_emb := A's formula at t = 1 for great circles with L > 0, cos L = −1, n ≥ 2; B_to_A_emb uses B (great circles are geodesics by a copy of the project's computation, isGeodesicOn_greatCircle'). Both pass #rt_check and use their hypotheses. Dictionary: V9_8's Jacobi dictionary, isGeodesic_lift_of, congr_curve', the linear isomorphism Ψ between the blind {J ∈ JacOn | J 0 = 0 = J 1} and Morse.conjSpace (conjMult_eq_rank / conjMult_eq / isConj_of_pos), conjSpace_congr. Not covered: clause (3) (nullity; needs a HessT ↔ energyHessian dictionary), A's isJacobiField_sin_smul and the formula for t < 1 or non-antipodal L. Only the induced connection."
+}

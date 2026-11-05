@@ -1,0 +1,17 @@
+{
+ "id": "V7_26",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; slice submanifold N ⊆ V, induced metric): theorem_10_9 (exp_p defined on all of T_pN for ONE p and ρ(p,q) < ∞, N not assumed connected ⇒ q = exp_p v, ‖v‖ = ρ(p,q), t ↦ exp_p(tv) minimal on [0,1]) and theorem_10_9' (N preconnected, geodesically complete ⇒ minimal geodesic on [0,1] of length ρ). B: abstract connected Riemannian manifold, Levi-Civita cov, GeodComplete ⇒ any two points joined by IsMinimal γ on [0,1]. B ⇒ A fails genuinely: theorem_10_9 is a strengthening (completeness at one point only, disconnected N) that B cannot reach; but B DOES give the other conjunct: B_to_A_milnor : B → theorem_10_9' is proved (rt_check OK), by applying B to N re-modelled on ℝᵐ with RoundTrip.Bridge's induced metric and Levi-Civita connection, identifying the blind minimal geodesic with t ↦ exp_p(tv) by uniqueness from the initial point and translating lengths/paths through the Bridge dictionary. A ⇒ B fails genuinely: B is about abstract manifolds with an arbitrary smooth RiemannianBundle (no Nash embedding; the project has no abstract geodesic theory).",
+ "B_issue": null,
+ "overlap": "B_to_A_milnor (partial, B → theorem_10_9'): 319 shared project theorems — exp/geodesic infrastructure (isGeodesicOn_univ_exp_smul, hasDerivAt_exp_smul_zero, exists_isGeodesicOn_exp_smul, IsGeodesicOn.eqOn/comp_mul_add, riemDist_le_pathLength, exp_zero, tangentSubspace_eq_range_fderiv_sliceParam); none of theorem_10_9, isMinimalGeodesic_exp_smul, broken_geodesic_eq or exists_riemDist_eq_add (the Hopf–Rinow argument comes from B). No full direction proved.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved_partial",
+ "embedded_special_case_note": "B → theorem_10_9' (Milnor's statement on preconnected, geodesically complete slice submanifolds, any model Z) proved in Items/V7_26.lean (B_to_A_milnor), uses B. Glue: model change Z → ℝᵐ (chartRn/isSliceRn, same tangent spaces), Bridge.expDefined_of_mem_expDom, isGeodesic_lift_Icc, eqOn_Icc_of_isGeodesic, arcLen_eq, isPW_lift, pathLength_congr."
+}

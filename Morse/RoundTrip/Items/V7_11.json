@@ -1,0 +1,18 @@
+{
+ "id": "V7_11",
+ "reblind": true,
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "Both directions are vacuous: each conclusion is proved outright, without the hypothesis. B (what Milnor's use of lengths presupposes) holds on every abstract Riemannian manifold. Part (i), B_part_i: the Riemannian speed of a piecewise smooth path is interval integrable and the length is ≥ 0. On each closed piece the speed agrees, off the end points, with the norm of the one-sided velocity, which is continuous by smoothness of tangentMapWithin and ContMDiffOn.inner_bundle; the pieces are glued with IntervalIntegrable.trans_iterate. Part (ii), B_part_ii: IsPW and arcLen are invariant under s ↦ a + s(b−a), via mfderiv of the composition and a change of variables. A (universes 0) is elementary real analysis in a normed space V and is re-proved outright, without A's theorems (A_outright). Content: A has ‖c b − c a‖ ≤ L(c), additivity, length 0 ⇒ constant, concatenation and reversal, none of which is in B. B has the well-definedness of Riemannian arc length on abstract manifolds and affine reparametrization invariance, neither of which is in A.",
+ "B_issue": null,
+ "overlap": "B_to_A (vacuous): 9 shared project theorems, all IsAdmissible API (mono, integral_deriv, pathLength_nonneg, integrable, intervalIntegrable_deriv, …). A_to_B: no project theorems besides the blind vocabulary.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Vacuous. B_emb := B at M = Bridge.Sub hN (↥N with the induced metric; no connection involved) holds outright (B_emb_holds), and so does A, so A ⇒ B_emb and B_emb ⇒ A carry no information. The vocabulary on ↥N agrees, proved in Items/V7_11.lean, namespace Emb. Emb.isPW_iff: blind IsPW ⇔ project IsPiecewiseSmooth of incl ∘ pth (Bridge.isPiecewiseSmooth_of_isPW, Bridge.isPW_lift). Emb.speed_eq and Emb.arcLen_eq': blind speed and arc length = ‖(incl ∘ pth)'‖ and Morse.pathLength. Emb.B_part_i: integrability from Morse.IsPiecewiseSmooth.isAdmissible. A is about paths in V and has no further content to compare with B_emb."
+}

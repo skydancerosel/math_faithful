@@ -1,0 +1,12 @@
+{
+ "id": "V4_9",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "Both are Assertion 6.4: q + tv is focal of multiplicity μ iff (g_ij − t v·ℓ_ij) has nullity μ > 0. A: in the project's parametrization xParam, any v ⊥ T_qM (not necessarily unit), canonical structure on N, any dims; plus q is never focal for itself. B: in an ARBITRARY coordinate patch x (immersion, injective, open image), unit normal v, ARBITRARY slice structure hNN on N, dim ≥ 1. A ⇒ B needed two independence facts, both proved here: (1) nullity of d(E|N) is structure-independent (new Glue.endpointNullity_eq_of_slice); (2) the nullity of (g − t v·ℓ) does not depend on the patch (matNullity_eq: both are half the Hessian of L_{q+tv} at a critical point; the transition ψ = (σ.φ ∘ x).1 has invertible derivative and the Hessian transforms by congruence via the project's hessian_comp/nullity_bilinearComp; tangency of ∂x/∂uⁱ comes from x = xParam ∘ ψ). B ⇒ A: xParam on Ω is a patch (isPatch_xParam), rescale v to unit length; v = 0, dim 0 and not_isFocalPoint_self handled separately (B has no unit normal in codimension 0) via endpointNullity_eq_nullity and nullity_firstFF_sub_zero_smul_secondFF (outside the item). Outside theorems used in A_to_B: hessian_normSq_sub_xParam (V4_10), hessian_comp, hessian_normSq_sub_comp, nullity_bilinearComp, tangentSubspace_eq_range_fderiv_sliceParam.",
+ "B_issue": null,
+ "overlap": "B_to_A: 139 shared: canonical normal-bundle structure and Tub/slice-chart infrastructure, endpointNullity_eq_nullity (V4_8, for dim 0 and q itself) with its normal-bundle tangent computations, nullity_firstFF_sub_zero_smul_secondFF; the k ≥ 1, v ≠ 0 case uses only B plus vocabulary glue",
+ "uses_hypothesis": {"A_to_B": true, "B_to_A": true}
+}

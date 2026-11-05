@@ -1,0 +1,17 @@
+{
+ "id": "V9_3",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): for slice submanifolds N ⊆ V (model Z) and ANY smooth curve γ in N on [0,1], J ↦ (J(s), DJ/dt(s)) is a bijection from the space jacobiSpace of Jacobi fields (normalized constant off [0,1]) onto T_{γ(s)}N × T_{γ(s)}N for EVERY s ∈ [0,1], and finrank jacobiSpace = 2·dim Z. B: on abstract connected Riemannian ℝⁿ-manifolds with a Levi-Civita connection, for a geodesic γ on [0,1]: the Jacobi fields (normalized to 0 off [0,1]) span a space of dimension ≥ 2n (ℕ∞-valued), and Jacobi fields with the same J(0), DJ/dt(0) agree on [0,1]. A ⇒ B fails genuinely (abstract manifolds are not embedded; the project has no abstract Jacobi theory). B ⇒ A fails genuinely: setting, and B says nothing about s ≠ 0 (surjectivity there needs existence of Jacobi fields), non-geodesic curves or general Z. On embedded manifolds the core claims coincide: A ⇒ B_emb and B_emb ⇒ A0 (A at s = 0 for geodesics), both proved.",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. For the embedded B_to_A0: 248 shared — the Jacobi-system ODE theory (jacSol, linSol, isJacobiField_jacSol, IsJacobiField.eqOn_jacSol, isJacobiField_iff, jacSol_mem_tanAt, exists_linearODE) reached ONLY through the proof fields of the definitions jacobiSpace (closure under +, ·) and jacEval, plus finrank_tanAt, comp_projIcc_mem, the curvature-smoothness lemmas used by Emb.isJacobi_iff, and slice-chart lemmas; the arguments of jacEval_bijective / finrank_jacobiSpace (IsJacobiField.eqOn_zero, exists_jacobi, jacEquiv) are not used.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V9_3.lean: B_emb := B at M = ↥N (Bridge.Sub hN, model ℝⁿ, induced metric), cov = Bridge.conn (B_to_B_emb). Dictionary (new, in Emb): isJacobi_iff (B's IsJacobi ⇔ Morse.IsJacobiField read in V), toFA/toFAₗ (ambient field ↦ field along γ in ↥N, injective on jacobiSpace, maps Jacobi fields into B's JacOn), JacOn_subset_range. A_to_B_emb (uses A: 2n ≤ setDim JacOn from finrank = 2n and the injective map jacobiSpace → span JacOn, FiniteDimensional from A's bijectivity rather than the project's instance; uniqueness from injectivity of jacEval at 0). B_emb_to_A0 and B_to_A0 (uses B): A0 = A's two conclusions at s = 0 for curves incl∘γ with γ a blind geodesic of connected ↥N: dim ≥ 2n from B, injectivity of jacEval at 0 from B's uniqueness, hence dim ≤ 2n, and bijectivity by counting dimensions. All rt_check OK. Not covered by B_emb: s ≠ 0, non-geodesic curves, general model Z, disconnected N; only the induced connection (uniqueness of Levi-Civita not formalized)."
+}

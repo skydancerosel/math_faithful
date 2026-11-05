@@ -1,0 +1,11 @@
+{
+ "id": "Morse_IsCriticalPoint",
+ "name": "Morse.IsCriticalPoint",
+ "agreement": "equal_under_hypotheses",
+ "hypotheses": "f differentiable at p (in particular f smooth, as in the textbook); exactly: P ↔ T iff (T → DifferentiableAt ℝ f p)",
+ "difference": "Junk values: the project requires HasFDerivAt f 0 p, the blind definition only fderiv ℝ f p = 0, which also holds (as Mathlib's junk) at points where f is not differentiable. P ⇒ T always; |x| at 0 satisfies T but not P.",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Proved P → T, agreement under DifferentiableAt (project lemma isCriticalPoint_iff), the exact characterisation of agreement, and the counterexample |x| at 0. The difference lies only outside the textbook's smoothness hypothesis. Note the project is itself inconsistent here: its manifold version IsCriticalPointM uses the junk-tolerant mfderiv = 0."
+}

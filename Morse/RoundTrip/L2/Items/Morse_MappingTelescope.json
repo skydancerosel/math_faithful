@@ -1,0 +1,11 @@
+{
+ "id": "Morse_MappingTelescope",
+ "name": "Morse.MappingTelescope",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are the Quot of Σ n, Fₙ × [0,1] by (n,k,1) ∼ (n+1, cₙ k, 0) with the quotient topology; the project's gluing relation is an inductive predicate, the blind one an existential, and the homOfLE proofs agree by proof irrelevance. The relations are equal (rel_eq), so the carriers are equal types (carrier_eq) and the identity on representatives is a homeomorphism (agree : MappingTelescope F ≃ₜ T F)."
+}

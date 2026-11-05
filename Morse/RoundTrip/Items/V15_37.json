@@ -1,0 +1,16 @@
+{
+ "id": "V15_37",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0) is operator algebra on an abstract inner product space E (IsOmegaOps, abstract IsIOps for i = iWord): A = c·i on every minimal (A, J, J_α)-invariant subspace (no exp(πA) = −I needed); for matrices, Av = c·iv, v ≠ 0, exp(πA) = −I force c odd (any ii); SOME splitting with odd a_h, ν·m_{k+1} = dim E, tr(A·i) = −m_{k+1} Σa_h, A² = −1 if all a_h² = 1; Lemma 24.8 between two pieces as a LINEAR isomorphism commuting with the J_α and anticommuting with J. B (k = 2, 6, ℝⁿ, a geodesic J exp(πtA)) is about an ARBITRARY given orthogonal splitting into minimal (J_1..J_{k−1}, J, A)-spaces: A = a_h i on M_h with tr_ℂ A = √−1(Σa_h)m_k/2; each M_h minimal under J_1..J_{k−1}, J alone, of dimension m_k; for all h, j an ISOMETRY M_h → M_j commuting with the J_α and anticommuting with J. A ⇒ B (uses A's exists_eq_smul_iWord, exists_odd_of_mulVec, exists_inter_two; transport ℝⁿ ↔ EuclideanSpace via matE and comap along WithLp): the a_h from A; a_h ≠ 0 from A's oddness; dim M_h = m_k by the non-item finrank_eq_milnorM_of_isMinimal; minimality for (J_α, J) since A = a_h·(J_1⋯J_{k−1}) on M_h; the trace for B's splitting by re-running the project's direct-sum trace argument (A's exists_decomp_two is about its own splitting and is not used); the isometry by a Schur argument not in A: TᵀT (T from exists_inter_two, extended by orthogonal projection) is self-adjoint and commutes with the generators, hence a positive scalar μ on the minimal piece (non-item IsMinInvar.exists_scalar), and μ^{−1/2}T is isometric. B ⇒ A only vacuously: three of A's four theorems have no exp(πA) = −I hypothesis, A is about abstract E and abstract ii, and its splitting is an existence statement; A is re-proved outright by copying the project's proofs (non-item lemmas only). So each side has content the other lacks: A the abstract/exp-free statements, oddness, the existence of a splitting with ν·m = n and A² = −1; B the statements for every splitting and the isometric intertwiner (Milnor's 'isometry', which A weakens to a linear isomorphism).",
+ "B_issue": null,
+ "overlap": "B_to_A: 485 shared project theorems — the Clifford-module machinery behind finrank_eq_milnorM_of_isMinimal and exists_iso_of_isMinimal (θ-, cliffQ-, minimal_k lemmas), exists_minInvar_decomp, IsMinInvar.exists_scalar, isMinimal_cliffFam_k, eq_exp_smul_mul_of_hasDerivAt, inner_self_mul_skew, colRep; no item theorem (the vacuous re-proof re-runs the item proofs).",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable"
+}

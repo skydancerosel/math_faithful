@@ -1,0 +1,11 @@
+{
+ "id": "V4_5",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "All listed declarations (xParam, uParam, dParam, d2Param, firstFF, secondFF, normalForm) are definitions, so A = True. B (for any C² immersion x on an open U: (g_ij) symmetric positive definite, ℓ_ij = ℓ_ji, ℓ_ij normal, (v·ℓ_ij) symmetric) holds outright from Mathlib (Gram matrix of independent vectors, symmetry of second derivatives, orthogonal projection), so the equivalence is vacuous. Vocabulary check (not part of A): in the project's parametrization xParam hM q, B's g_ij is firstFF(e_i, e_j) by rfl, B's tangent span is range dParam, and for v normal B's v·ℓ_ij (normal projection of ∂²x) equals the project's secondFF(e_i, e_j) = ⟪v, ∂²x⟫ (no projection, fine because v is normal). So the definitions agree; the project's secondFF is also defined for non-normal v, where it is not Milnor's.",
+ "B_issue": null,
+ "overlap": "0 shared project theorems"
+}

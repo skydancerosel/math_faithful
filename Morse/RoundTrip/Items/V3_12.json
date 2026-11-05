@@ -1,0 +1,9 @@
+{
+ "id": "V3_12",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "relation": "A_stronger",
+ "why": "A is pure linear algebra: rank of the last map of a finite exact sequence equals the alternating sum, and subadditivity of S_λ for any abstract LongExactSeq / FiltrationHomology of finite-dimensional spaces. B is subadditivity for actual singular homology of triples of subsets. A ⇒ B: apply LongExactSeq.altSum_le to the project's subsetTripleLongExactSeq (the topological input comes from the project, not from A). B ⇒ A is impossible in general: B speaks only about topological triples and cannot give the abstract statements about arbitrary exact sequences.",
+ "B_issue": null,
+ "overlap": "n/a (B_to_A not proved)"
+}

@@ -1,0 +1,21 @@
+{
+ "id": "V8_18",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0), for slice submanifolds N ⊆ V only: if γ is a minimal path of Ω(N;p,q) and an unbroken geodesic, then 0 ≤ energyHessian(X, X) for every X ∈ TΩ_γ (formula-defined E_**; 'index 0' not stated). B: for every abstract Riemannian ℝⁿ-manifold and Levi-Civita connection, for a minimal geodesic (arc length ≤ that of any piecewise smooth path on any [a',b']): every variation-defined IsHess γ W W r is ≥ 0, and every submodule of TΩ_γ on which all IsHess values are negative is ⊥ (index 0). A ⇒ B fails genuinely only because of the abstract setting: on embedded manifolds A ⇒ B_emb is now proved (second attempt; uses the project's Theorem 13.1 and Lemma 11.A, not part of A). B ⇒ A is proved only by proving A outright (vacuous); B_emb ⇒ A not proved (missing reparametrization and TΩ glue, see the embedded note).",
+ "B_issue": null,
+ "overlap": "B_to_A (A proved outright, B unused): 511 shared — the project's own proof re-run. Embedded A_to_B_emb: 480 shared — the project's proof of lemma_13_6 also uses Lemma 11.A (exists_variation_one → exists_variation, exp/geodesic-flow infrastructure) and Theorem 13.1 (hasDerivAt_deriv_energy → remark_13_5 → second_variation); A_to_B_emb uses exists_variation and second_variation directly (not banned) plus IsVariation/piecewise/slice internals; lemma_13_6's own argument (local minimum, second-derivative test, energy_le_of_isMinimalPath) is not used.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "B_emb := B at M = Bridge.Sub hN, cov = Bridge.conn (B_to_B_emb). A_to_B_emb proved (#rt_check OK): blind IsMinimal ⇒ Morse.IsMinimalPath (Emb.isMinimalPath_of_isMinimal: lift competitors with Bridge.lift/isPW_lift, compare lengths via Bridge.arcLen_eq and pathLength_congr); PSD clause: every IsHess γ W W r equals 2·secondVariation = energyHessian(W,W) of the ambient field (Emb.hess_eq: EnergyC2 + project's second_variation), ≥ 0 by A; index-0 clause: every W ∈ TΩ_γ (even nonzero only off [0,1]) has an IsHess value (Emb.exists_isHess, Lemma 11.A on ↥N with fields matched on all of ℝ), so a submodule on which all values are negative is ⊥. B_emb ⇒ A (on connected ℝⁿ-modelled N) not proved; missing glue, no new mathematics: (i) Morse.IsMinimalPath ⇒ blind IsMinimal needs the affine reparametrization of blind piecewise smooth competitors on [a',b'] to [0,1] with arc-length invariance (the project has only pathLength_translate/reverse) and the degenerate a' = b' case; (ii) pathTangent ⇒ InTOmega (W = L∘X; continuity of t ↦ (γ t, W t) in TM on [0,1] from the pieces). With these, B_emb's PSD clause + Emb.exists_isHess + Emb.hess_eq give A_emb. Limitations: induced connection only, model ℝⁿ.",
+ "uses_hypothesis_emb": {
+  "A_to_B_emb": true
+ },
+ "second_attempt": "EnergyC2 closed the analytic gap (identification of an ARBITRARY IsHess witness with E_**(W,W)); A ⇒ B_emb now proved (#rt_check OK), including B's index-0 clause via existence of IsHess values. Was 'failed', now A_to_Bemb_only. B_emb ⇒ A blocked by missing reparametrization/TΩ glue (see note); A ⇔ B still blocked by the abstract setting."
+}

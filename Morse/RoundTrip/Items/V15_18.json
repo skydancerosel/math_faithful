@@ -1,0 +1,17 @@
+{
+ "id": "V15_18",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "Vocabulary: B's IsACFam is the project's IsAnticommFamily (isACFam_iff). A (universes 0, any finite index type, any vector u): <J_a u, J_b u> = delta_ab |u|^2 for an anticommuting family, Ju perp u for a complex structure, and the same two identities for the explicit blockDiagonal bott16 on R^{16r}. B (Fin n, unit u): J_a u perp u, J_a u perp J_b u, J_1u..J_ku linearly independent; and k independent continuous tangent fields on S^{r m_k - 1} for all r, k, and 3/7/8 fields on S^{4r-1}/S^{8r-1}/S^{16r-1}. A => B: the perpendicularity and (orthonormal => independent) from A's identities; the families on R^{r m_k} (r copies of a minimal space of dimension m_k, which exists because m_k is an attained sInf, or m_k = 0 and the sphere is empty) and on R^{4r}, R^{8r}, R^{16r} (r copies of the project's bott4/bott8/bott16) are not in A and are built outright -- A states only the identities, not existence of structures on R^{4r}, R^{8r}. B => A: perpendicularity from B(1), transported from unit vectors of Fin n -> R to any vector on any index type by reindexing and homogeneity; |J_a u|^2 = |u|^2 (orthogonality) is not in B and is one line outright; the R^{16r} statement is the general one applied to isAnticommFamily_bott16r. The extra content on each side (existence of the families; norm preservation) is elementary.",
+ "B_issue": null,
+ "overlap": "B_to_A: shared project theorems are infrastructure only: dotProduct_mulVec_eq, IsAnticommFamily.{cs,anti,blockDiagonal,of_ringHom}, isAnticommFamily_bott16(r), isComplexStructure_iff, kronecker sign lemmas; the item's three theorems avoided.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "Spheres are unit-vector subsets of R^n and the fields are maps R^n -> R^n; no abstract manifolds."
+}

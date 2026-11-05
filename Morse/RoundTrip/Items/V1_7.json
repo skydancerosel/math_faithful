@@ -1,0 +1,11 @@
+{
+ "id": "V1_7",
+ "A_to_B": "proved",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "B is literally A's first conjunct exists_hadamard_coord (open convex V ⊆ ℝⁿ, f C^∞ on V with f(0) = 0, f = Σ xᵢ gᵢ, gᵢ(0) = ∂f/∂xᵢ(0)). A ⇒ B is immediate. A additionally proves the coordinate-free Hadamard lemma for Banach-valued f on a star-convex open subset of an arbitrary normed space (exists_hadamard_on), its second-order version (exists_hadamard_two_on), and smoothness of parameter integrals (contDiffOn_intervalIntegral). These do not follow from the ℝⁿ, real-valued B without re-proving them.",
+ "B_issue": null,
+ "overlap": "n/a (B_to_A not proved)"
+}

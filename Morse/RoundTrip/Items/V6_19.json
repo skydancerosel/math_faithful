@@ -1,0 +1,17 @@
+{
+ "id": "V6_19",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): Lemma 9.2 for a smooth surface s : ℝ² → N in a slice submanifold N ⊆ V and a smooth tangent field W along s: D/∂y D/∂x W − D/∂x D/∂y W = curvOp(∂s/∂x, ∂s/∂y) W, with D/∂x = P∘∂/∂x and curvOp = D_Y D_X − D_X D_Y (identified with R by curvature_eq, another item). B: for a Levi-Civita connection on an abstract ℝⁿ-manifold, covariant derivatives (∃ D obeying Milnor's axioms) A = DV/∂x, B' = DV/∂y, C = D/∂y A, D' = D/∂x B' exist along s and C − D' = R(∂s/∂x, ∂s/∂y)V evaluated through arbitrary smooth extensions. A ⇒ B fails genuinely: needs abstract Lemma 8.1 (existence of D along curves), Lemma 9.1 (tensoriality, so that extensions don't matter) and the local-coordinate computation with Christoffel symbols — none in the project. B ⇒ A fails: B's abstract objects do not specialize to N ⊆ V; A's R is the explicit embedded curvOp.",
+ "B_issue": null,
+ "overlap": "no B_to_A proved",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V6_19.lean, section 'The embedded special case': B_emb := B's conclusion for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric) and cov = Bridge.conn (B_to_B_emb via Bridge.conn_isLC). Proved An_to_B_emb and B_emb_to_An, where An = A (covDerivY_covDerivX_sub) for model Z = ℝⁿ and finite-dimensional W; hence A_to_B_emb (uses A) and B_to_An (uses B), both #rt_check OK — on embedded manifolds B and A say the same thing. New surface dictionary (namespace Emb; candidates for Bridge.lean): contMDiffWithinAt_map_iff / D_mfderiv_map (copied from Items/V8_12.lean), contMDiff_surf_iff (smooth s : ℝ² → ↥N ⇔ smooth in V), ambS + isSmoothSurfField_iff (field along a surface read in V), D_sx / D_sy (blind ∂s/∂x, ∂s/∂y read in V = Morse.velX / velY), hasCovDeriv_x_iff / hasCovDeriv_y_iff and isDx_iff / isDy_iff (B's 'DU/∂x = A' — existence of an operation with Milnor's axioms along every coordinate line — ⇔ ambS s A = P(∂(ambS s U)/∂x), via Bridge.hasCovDeriv_iff'), covDerivX_eq' / covDerivY_eq' (project's covDerivX/Y of smooth ambient fields), contDiff_P_comp, amb_eq_of_eq; curvature: D_curv, D_curv_eq_curvOp (with Morse.curvature_eq, allowed here). B's quantification over all smooth extensions X, Y, Z is handled on one side by tensoriality via curvature_eq and on the other by the extensions Bridge.ext. Overlap of B_to_An: 125 project theorems — slice-chart/tanProj infrastructure plus the partial-derivative and dN/tanProj lemmas (hasDerivAt_partialX/Y, contDiff_partialX/Y, contDiff_comp_map, dN_tanProj_*, tanProj_dN_tanProj) that A's proof also uses; not the Schwarz step partialY_partialX. Limitation: only the induced connection, not every IsLC connection on ↥N."
+}

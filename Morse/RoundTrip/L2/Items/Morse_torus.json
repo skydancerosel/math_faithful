@@ -1,0 +1,11 @@
+{
+ "id": "Morse_torus",
+ "name": "Morse.torus",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both are {x in R^3 | (sqrt(x0^2 + x1^2) - R)^2 + x2^2 = r^2} (rotation about the x3-axis), with no 0 < r < R imposed on either side; definitionally equal (rfl)."
+}

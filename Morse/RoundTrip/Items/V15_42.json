@@ -1,0 +1,17 @@
+{
+ "id": "V15_42",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (no universes; the def omegaEightHomeomorph read, with omegaEightHomeomorph_basePt, as ∃ h : Ω_8(16r) ≃ₜ O(r) with h J_8 = I — a literal type_of% would drag the def's body, which uses eq_qOf_of_commute, into every direction) is for Milnor's EXPLICIT structures bottJ r on I16 × Fin r only: the commutant of J'_1..J'_7 on ℝ¹⁶ is span{1, W}, the commutant of J_1..J_7 on ℝ^{16r} is {P₊⊗U + P₋⊗V}, and Ω_8(16r) ≅ O(r) (J ↦ U where −J_8J = P₊⊗U + P₋⊗Uᵀ; the explicit, polynomial formulas live only in the def body). B is for EVERY family of eight anticommuting complex structures on Fin(16r) and is Milnor's description: J_7J maps X_1 = X ∩ ker(J_1J_6J_7 − I) isomorphically onto X_2 = X_1^⊥ ∩ X, determines J, every isometry X_1 → X_2 arises, and Ω_8(16r) ≅ O(r) by a homeomorphism that is the restriction of C^∞ maps both ways. B ⇒ A: A's homeomorphism comes from B(d) at the reindexed bottJ family (reindexing I16 × Fin r ≃ Fin 16r, then a left translation of O(r) so that J_8 ↦ I); A's two commutant lemmas are not consequences of B and are re-proved outright (project proof copied). A ⇒ B fails genuinely: A says nothing about X_1, X_2 (the project replaces Milnor's X_1/X_2 argument by the P₊⊗U description) nor about smoothness, and it covers only one family; arbitrary families would need the isometric uniqueness of the Cl_8-module ℝ^{16r} (conjugacy to bottJ), which the project does not have (its Lemma 24.8 is linear, for minimal modules).",
+ "B_issue": null,
+ "overlap": "B_to_A: 57 shared project theorems — the word-basis/commutant helpers of the copied proofs (wordBasis_apply, linearIndependent_word, card_word, eq_of_not_wanti(_aux), bott16_eq_word, word_comm, W16_x0/x1, Pp/Pm lemmas, isAnticommFamily_bott16) and the family/reindexing lemmas (isAnticommFamily_bottJ, IsAnticommFamily.of_ringHom, mem_omega_reindex via basePt_mem_omega); no banned theorem, omegaEightHomeomorph not used.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": true
+ },
+ "uses_hypothesis_note": "B_to_A uses B only for the homeomorphism conjunct; the two commutant conjuncts are re-proved outright.",
+ "embedded_special_case": "not_applicable"
+}

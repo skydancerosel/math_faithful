@@ -1,0 +1,11 @@
+{
+ "id": "Milnor_Sphere_Sph",
+ "name": "Milnor.Sphere.Sph",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "The project defines the sphere as the level set {x | <x,x> - 1 = 0} of sphG; the blind T is {x | ||x|| = 1} in EuclideanSpace R (Fin (n+1)). They are equal for every n by the project's own lemma Milnor.Sphere.mem_iff_norm (Set.ext)."
+}

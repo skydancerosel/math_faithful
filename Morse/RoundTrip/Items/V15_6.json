@@ -1,0 +1,17 @@
+{
+ "id": "V15_6",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A (universes 0): Assertion 1 'if' for EVERY skew A (J a complex structure, AJ = −JA ⇒ J exp A a complex structure); Assertion 2 'if' for arbitrary matrices J, J_α, A with J_αJ = −JJ_α and [A, J_α] = 0 (no skewness, no complex-structure hypotheses). B: the same two implications only for J ∈ Ω_k (k ≥ 1, J_1..J_{k−1} anticommuting complex structures), skew A in some neighbourhood of 0 depending on J, and J_α from the family. A ⇒ B: immediately (eventually-of-forall; anticommutation order flipped). B ⇒ A only vacuously: A is re-proved outright (B's conclusion holds only on a J-dependent neighbourhood and only for complex structures/skew A, so it cannot yield A's statement for large A or for general J, J_α). The real content difference: A drops Milnor's smallness hypothesis and all structure hypotheses of Assertion 2 — both harmless, since the 'if' halves are pure algebra; neither side has the 'only if' halves.",
+ "B_issue": null,
+ "overlap": "B_to_A: 2 shared project theorems, Morse.mul_exp_eq_exp_neg_mul and Morse.exp_neg_mul_exp (helper lemmas of the item's proof, reused in the outright re-proof).",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete real matrices (Mathlib orthogonalGroup as a subset of M_n(ℝ), complex structures, Ω_k(n) as subsets; the induced-metric notions are already embedded); it does not quantify over abstract Riemannian manifolds."
+}

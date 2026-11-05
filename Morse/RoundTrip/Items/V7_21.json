@@ -1,0 +1,17 @@
+{
+ "id": "V7_21",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0; riemEMetricSpace, riemMetricSpace definitions): ‖q − p‖ ≤ ρ(p, q) for ANY subset N ⊆ V (chord bound, ambient); ρ = riemDist continuous on N × N (ℝ≥0∞-valued, N possibly disconnected); ρ < ∞ on a preconnected N; and the metric space riemMetricSpace hN hconn has the topology of N (definitionally, by replaceTopology). B: for every abstract connected Hausdorff Riemannian manifold: any two points are joined by a piecewise smooth path, the real ρ is a metric, it induces the topology, and it is continuous on M × M. A ⇒ B fails genuinely: A lives in an ambient inner-product space; abstract Riemannian manifolds are not of that form, so A cannot be applied (B is true and believed provable outright from Mathlib's riemannianEDist theory plus path dictionaries, ~hundreds of lines, not attempted, and it would not use A). B ⇒ A fails on content: B has nothing about the ambient V (chord bound) and only covers connected manifolds (A's continuity also covers disconnected N); arbitrary slice models Z are also beyond the bridge. Embedded special case: on ↥N (Z = ℝⁿ, N connected), A's first three conjuncts imply all of B's conclusion, and B's conclusion implies A's second and third conjuncts.",
+ "B_issue": null,
+ "overlap": "No main direction proved. B_continuous_riemDist_embedded (B on ↥N ⇒ continuous_riemDist for connected N): 36 shared project theorems, all slice-chart/manifold infrastructure and riemDist.eq_1 (via Bridge.rho_eq). B_riemDist_ne_top_embedded: #rt_check OK.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Bemb hN := B's conclusion on Bridge.Sub hN. Proved: A3_to_Bemb (A's first three conjuncts + N connected ⇒ Bemb: paths from finiteness via Bridge.pathLengths_eq, continuity of the real ρ from continuous_riemDist, ρ-balls open by continuity, small ρ-balls inside open sets by the chord bound, metric axioms from project lemmas outside the item: riemDist_comm, riemDist_triangle, eq_of_riemDist_eq_zero); B_riemDist_ne_top_embedded and B_continuous_riemDist_embedded (B ⇒ A's 2nd and 3rd conjuncts for connected N). All #rt_check OK. Harness note: #rt_check fails for ANY proof that mentions A, because A's fourth conjunct mentions the definition riemMetricSpace whose body contains a proof by riemDist_ne_top (banned); hence A3 (A_to_A3 is trivial). Connection-free item; A's part only for Z = ℝⁿ."
+}

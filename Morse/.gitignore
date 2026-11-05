@@ -1,0 +1,9 @@
+/.lake
+Exposition/web/
+__pycache__/
+.DS_Store
+Exposition/pages/
+MorseTheory.pdf
+Morse/**/WIP_*.lean
+Exposition/preview-*.html
+Exposition/shortest/deps.jsonl

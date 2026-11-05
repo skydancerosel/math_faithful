@@ -1,0 +1,17 @@
+{
+ "id": "V9_10",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B: on every abstract connected Hausdorff ℝⁿ-manifold with any smooth Mathlib RiemannianBundle metric and any Levi-Civita connection (Milnor's axioms), along a geodesic γ on [0,1], if a ≠ b in [0,1] are not conjugate then two Jacobi fields with the same values at a and b agree on [0,1] (injectivity only). A (universes 0): for slice submanifolds N ⊆ V with the induced metric and ANY smooth curve γ in N on [0,1] (no geodesic hypothesis), J ↦ (J(a), J(b)) is a bijection 𝒥(γ) ≅ T_{γ(a)}N × T_{γ(b)}N (also: the values can be prescribed). A ⇒ B fails genuinely (abstract manifolds are not given embedded; the project has no abstract Jacobi theory); B ⇒ A fails genuinely (setting; A also covers non-geodesic curves and surjectivity). On embedded manifolds the claims match: A ⇒ B_emb and B_emb ⇒ A_geo are proved (#rt_check OK).",
+ "B_issue": null,
+ "overlap": "No A_to_B/B_to_A. For the embedded theorem B_emb_to_A_geo: 259 shared project theorems — the Jacobi-system ODE infrastructure (jacSol*, linSol*, isJacobiField_jacSol, IsJacobiField.eqOn_jacSol, jacEval_bijective, finrank_jacobiSpace, jacobiSpace submodule obligations, finrank_tanAt), used by the surjectivity dimension count (the same count as the project's proof), plus tangent-projection/curvature/slice-chart lemmas from the dictionary; the conjugacy step of the project's proof (jacobiSpace_eq_zero applied to ¬IsConjugate) is replaced by B.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "Items/V9_10.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric), cov = Bridge.conn (B_to_B_emb via conn_isLC). New dictionary lemmas (namespace Emb, all in the Items file): jacobi_Icc (a project Jacobi field satisfies D²J/dt² + R(V,J)V = 0 with derivatives within [0,1] on the CLOSED interval, by continuity), isJacobiField_of_isJacobi / isJacobi_of_isJacobiField (blind IsJacobi conn γ [0,1] J ⇔ Morse.IsJacobiField hN (incl ∘ γ) (ambA γ J), via Bridge.hasCovDeriv_iff', covA, isCurvVal_iff, D_vel), isConj_iff (blind IsConj ⇔ Morse.IsConjugate for a,b ∈ [0,1]), isGeodesic_lift (a smooth curve in N that is an IsGeodesicOn (0,1) lifts to a blind geodesic on the closed [0,1]; endpoint condition by continuity), isConjugate_congr, derivWithin_eventuallyEq, prj_incl. A_to_B_emb uses A's injectivity; B_emb_to_A_geo: A_geo = A restricted to model ℝⁿ, ConnectedSpace ↥N and γ a geodesic (smooth on [0,1], IsGeodesicOn (0,1)); injectivity from B_emb, surjectivity from the project's dimension count (Morse.finrank_jacobiSpace, finrank_tanAt), which B does not state. Limitations: only the induced connection; non-geodesic curves of A not covered by B."
+}

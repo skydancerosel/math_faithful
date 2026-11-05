@@ -1,0 +1,17 @@
+{
+ "id": "V13_15",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "B (Milnor p. 121, for any Riemannian metric on M and f with min 0, compact sublevels, M⁰ a topological manifold): ∃ open U ⊇ M⁰ and a retraction r : U → M⁰ such that each x ∈ U is joined to r(x) by a unique minimal geodesic, and a homotopy H deforming U into M⁰ along these geodesics. A (universes 0) works only in the project's broken-geodesic model (Morse.BrokenSetup, the break-point manifold Nᵐ ∩ O with E'): two technical lemmas (break points lie in the closed ball ρ(p,·) ≤ √c; the short join of x with itself is 0) and exists_pushesInto_nodes: GIVEN a retraction of {E ≤ d} on an open set of Ω, M⁰ = {E' ≤ d} has an open neighbourhood in Nᵐ ∩ O pushing maps into M⁰. A ⇒ B fails genuinely: Hanner's theorem (manifold ⇒ neighbourhood retract) is a hypothesis in A, not formalized; A concerns one specific manifold/function and states no uniqueness of minimal geodesics or explicit retraction/deformation; abstract M. B ⇒ A fails genuinely: A's hypotheses do not make {E' ≤ d} a manifold and E' on the open Nᵐ ∩ O has compact sublevels only below c, so B does not apply.",
+ "B_issue": null,
+ "overlap": "n/a (neither direction proved).",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "failed",
+ "embedded_special_case_note": "B_emb (M = Bridge.Sub hN, cov = Bridge.conn) would still need Hanner's theorem and uniform normal neighbourhoods of the compact M⁰ to reach B's conclusion from anything in A; and A's manifold is the break-point manifold Nᵐ ∩ O ⊆ Vᵐ (not covered by the Bridge, which has no product slice submanifolds), with a retraction hypothesis instead of B's manifold hypothesis. No glue attempted. Remark: B's conclusion (a deformation of U into M⁰ fixing M⁰) is exactly the hypothesis substituted for Hanner in V13_14's A_to_B_emb'."
+}

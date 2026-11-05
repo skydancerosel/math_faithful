@@ -1,0 +1,11 @@
+{
+ "id": "Milnor_IsSliceSubmanifold",
+ "name": "Milnor.IsSliceSubmanifold",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Project: every p in S lies in the source of a SliceChart (PartialDiffeomorph + base point x0 in S n source + pointwise slice condition p in S <-> (phi p).2 = 0). Blind: every x in S lies in the source of an open partial homeomorphism, ContMDiffOn both ways, with phi(source n S) = target n {x.2 = 0}. A PartialDiffeomorph is exactly such a homeomorphism, the two slice conditions are equivalent (image_eq_iff, using injectivity on the source), and the point itself supplies the base point; equal outright."
+}

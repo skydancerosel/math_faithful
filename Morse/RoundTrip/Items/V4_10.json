@@ -1,0 +1,12 @@
+{
+ "id": "V4_10",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "equivalent",
+ "effort_only": false,
+ "why": "Clause 1 (q critical for L_p|M ⟺ q − p ⊥ T_qM) is the same on both sides and transfers both ways: A states it for every slice M (k = 0 included) as (q, p − q) ∈ N, B for dim ≥ 1 with tanN; B ⇒ A handles k = 0 separately. Clause 2 differs in scope and transfers in neither direction: A gives the Hessian of L_p in the project's own parametrization xParam, 2(g − ℓ_{p−q}), at EVERY point (no critical-point hypothesis); B gives the first and second partials of L_p∘x for an ARBITRARY C² map x on an open set, the second ones only where the first vanish, and the form 2(g − t v·ℓ) for p = x + tv with v normal (ℓ = normal projection of ∂²x). Each side's clause 2 is elementary calculus and is proved outright (A_to_B: B2_holds from the project's hessian_normSq_sub_comp, fderiv_normSq_sub_apply; B_to_A: A's Hessian formula re-proved from hessian_normSq_sub_comp, as in the project), so the 'equivalence' uses the hypothesis only for clause 1.",
+ "B_issue": null,
+ "overlap": "B_to_A: 63 shared: hessian_normSq_sub_comp chain (hessian_comp_apply, hessian_normSq_sub), xParam/firstFF/secondFF definitional lemmas, slice-chart infrastructure; i.e. the project's own proof of hessian_normSq_sub_xParam; clause 1 shares none of the project's critical-point proof",
+ "uses_hypothesis": {"A_to_B": true, "B_to_A": true}
+}

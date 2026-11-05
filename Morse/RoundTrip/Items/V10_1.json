@@ -1,0 +1,17 @@
+{
+ "id": "V10_1",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": false,
+ "why": "A (universe 0) is the item's only theorem, PathSp.edist_eq_zero_of_eqOn: for ANY set N in an inner product space, two paths of Ω(N;p,q) agreeing on [0,1] are at distance 0 for the project's Milnor pseudo-emetric (edist = supDist + ofReal l2Dist; PathSp, speed, supDist, l2Dist and the instance are vocabulary). B: on every abstract connected Hausdorff ℝⁿ-manifold with a smooth metric, Milnor's d = max_t ρ + (∫(ds/dt − ds'/dt)²)^{1/2} (ds/dt = deriv of the arc length) is a metric on Ω(M;p,q) modulo equality on [0,1]: d ≥ 0, d = 0 ⇔ w = w' on [0,1], symmetric, triangle inequality. B ⇒ A holds only vacuously: A is provable outright from the definitions (A_outright, the project's own two congruence lemmas). A ⇒ B fails genuinely: setting (abstract vs N ⊆ V), and A has none of B's metric content (the project keeps symmetry/triangle as proof fields of the instance and positivity in riemDist lemmas, not in this item's theorems). The informative comparison is of the definitions, done on ↥N (see embedded note): they agree exactly.",
+ "B_issue": null,
+ "overlap": "B_to_A (= A_outright, hypothesis unused): 52 shared project theorems — the congruence lemmas supDist_congr/l2Dist_congr/speed_congr, supDist_self, l2Dist_self and the proof fields of the instance (supDist_triangle, l2Dist_triangle, Minkowski integral lemmas), i.e. the project's own proof re-run. A_to_B_emb: 49 shared — the instance's proof fields (edist_comm/edist_triangle come from supDist_comm/triangle, l2Dist_comm/triangle, sqrt_integral_add_sq_le, integral_mul_sq_le), riemDist_le_pathLength/triangle/comm, IsPiecewiseSmooth.exists_deriv_piece/isAdmissible.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "A_to_Bemb_only",
+ "embedded_special_case_note": "Items/V10_1.lean: B_emb := B for M = Bridge.Sub hN (↥N, model ℝⁿ, induced metric, ConnectedSpace), cov = Bridge.conn (B_to_B_emb). New dictionary (namespace Emb): hasDerivAt_pathLength (FTC: s(t) = ∫₀ᵗ‖γ'‖ has derivative ‖γ'(t)‖ off a finite set), dsdt_eq (blind ds/dt = PathSp.speed (incl∘w) off a finite set), integral_dsdt_eq (the L² parts agree), supDist_ne_top (paths of Ω(N;p,q) are at finite uniform distance), iSup_rho_eq (blind real ⨆_t ρ = supDist.toReal, via Bridge.rho_eq and ENNReal.toReal_iSup), mem_pathSpace, pt, and the main edist_eq: edist (incl∘w) (incl∘w') = ENNReal.ofReal (dOm w w') — the two definitions of Milnor's metric agree on embedded manifolds (no connectedness needed). A_to_B_emb (#rt_check OK) uses A for 'w = w' on [0,1] ⇒ d = 0'; the other clauses come from the project's instance (edist_comm, edist_triangle) and Morse.eq_of_riemDist_eq_zero, not from A. B_emb ⇒ A is not stated separately: A is provable outright (and is about arbitrary N ⊆ V)."
+}

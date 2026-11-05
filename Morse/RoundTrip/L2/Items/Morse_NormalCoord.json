@@ -1,0 +1,11 @@
+{
+ "id": "Morse_NormalCoord",
+ "name": "Morse.NormalCoord",
+ "agreement": "differ",
+ "hypotheses": null,
+ "difference": "As types they are not equivalent: the project's structure carries non-canonical witness data (open sets O, U, ambient smooth extensions F, G) and has many elements, the blind NormalChart is a subsingleton (its only data, the chart exp_q⁻¹, is determined); differ: N = ℝ, q = 0, ε = 1, NormalCoord ≃ NormalChart is empty. Their nonemptiness agrees for every N, q, ε (agree_nonempty).",
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "The mathematical notion (exp_q maps B_ε diffeomorphically onto an open neighbourhood of q in N) is the same: agree_nonempty, with the glue of Morse_IsNormalRadius (restriction; partition-of-unity gluing of the local inverse extensions). The type-level difference is an encoding of witnesses, harmless since the project uses NormalCoord only as data to read exp_q⁻¹ and its smoothness from."
+}

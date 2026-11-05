@@ -1,0 +1,17 @@
+{
+ "id": "V8_6",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0): for a slice submanifold N ⊆ V (completeness NOT assumed), a path γ ∈ Ω(N;p,q) of length ≤ every path of Ω(N;p,q) that is an unbroken geodesic satisfies E(γ) ≤ E(ω) for all ω ∈ Ω(N;p,q) — only the inequality half of Lemma 12.1. B: for abstract connected Riemannian ℝⁿ-manifolds with a Levi-Civita connection, geodesically complete: E attains the minimum d² = ρ(p,q)², d² ≤ E on Ω, and E(ω) = d² iff ω is a minimal geodesic (on [0,1], length ≤ any piecewise smooth path on any [a',b']). A ⇒ B fails genuinely: setting (abstract vs embedded), and B contains Hopf–Rinow/Theorem 10.9 (existence of a minimizer) and 'E(ω) = d² ⇒ ω is a geodesic' (a minimizer of E is critical, Corollary 12.3), neither in A. B ⇒ A fails genuinely: setting, and A does not assume completeness while B does.",
+ "B_issue": null,
+ "overlap": "B_to_A_complete: 15 shared Morse theorems, all IsGeodesicOn/slice-chart infrastructure (IsGeodesicOn.normal, contDiffOn_deriv, hasDerivAt_deriv, hasDerivAt_mem_tangentSubspace, mem_sliceAt_source, …) plus Milnor slice-chart lemmas; none of A's proof (pathLength_sq_eq_energy_iff, pathLength_sq_le_energy, norm_deriv_eq) is shared.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "proved",
+ "embedded_special_case_note": "B_emb := B for M = Bridge.Sub hN, cov = Bridge.conn (B_to_B_emb via conn_isLC). A_to_B_emb (rt_check OK) uses A for the lower bound d² ≤ E(ω) and for 'minimal geodesic ⇒ E = d²', but ALSO needs project theorems outside A: Morse.theorem_10_9' (Hopf–Rinow: a minimal geodesic of length ρ exists) and Morse.corollary_12_3 + IsVariation.hasDerivAt_energy (a minimizer of E is an unbroken geodesic), plus glue: geodComplete_iff (copied from V7_29), ρ vs riemDist (Bridge.rho_eq), project minimal geodesics ⇒ IsMinimalPath ∧ IsUnbrokenGeodesic, E = L² for unbroken geodesics, and blind geodesic on the CLOSED [0,1] ⇔ unbroken geodesic (end points by continuity of P(c'')). B_to_A_complete (uses B; rt_check OK): A for complete connected N modelled on ℝⁿ; needs an affine reparametrization lemma (paths on [a',b'] → [0,1], same length) because A's IsMinimalPath compares only with [0,1]-paths while the blind IsMinimal compares with paths on any [a',b']. Limitations: only the induced connection; A's non-complete case is not covered by B."
+}

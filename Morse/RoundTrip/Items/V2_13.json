@@ -1,0 +1,9 @@
+{
+ "id": "V2_13",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "relation": "equivalent",
+ "why": "Both say: homotopic attaching maps give a homotopy equivalence X∪_{φ0}e^λ ≃ X∪_{φ1}e^λ extending id_X. The only difference is the model of the adjunction space (B: Quot of Y ⊕ closed ball; A: TopCat pushout of ∂𝔻 n → 𝔻 n, with ULift) and Type vs TopCat.{u} (A instantiated at u = 0). Both directions transport along an explicit homeomorphism Attach g ≃ₜ AttachCell φ that preserves inl. Neither side expresses Milnor's explicit formulas for k and ℓ (in the project they live in the defs lemma36Map/lemma36Homotopy, not in the theorem).",
+ "B_issue": null,
+ "overlap": "6 shared project theorems, all glue for the pushout API: attachCell_hom_ext, cellInl_apply_eq, cellDesc_inl, cellDesc_inr, plus two auto-generated _proof_1 lemmas; no mathematical content of Lemma 3.6 is reused"
+}

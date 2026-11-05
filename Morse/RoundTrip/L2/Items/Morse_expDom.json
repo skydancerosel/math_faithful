@@ -1,0 +1,11 @@
+{
+ "id": "Morse_expDom",
+ "name": "Morse.expDom",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Both: a geodesic on an open interval containing [0,1] with γ(0)=q, γ'(0)=v. Project interval (-δ,1+δ), blind any (a,b) with a<0, 1<b (shrink to δ = min(-a, b-1)); the blind extra conditions q ∈ N, v ∈ T_qN follow from the geodesic (IsGeodesicOn.deriv_mem + tsp_eq). On open sets blind and project geodesics coincide (derivWithin = deriv, ⟂ ↔ inner = 0)."
+}

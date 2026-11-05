@@ -1,0 +1,11 @@
+{
+ "id": "Morse_riemDist",
+ "name": "Morse.riemDist",
+ "agreement": "equal",
+ "hypotheses": null,
+ "difference": null,
+ "harmless": true,
+ "proved": "full",
+ "T_issue": null,
+ "why": "Project: sInf of ofReal(∫_a^b ‖c'‖) (Bochner) over piecewise smooth paths in N on any [a,b], a ≤ b, break points a finite set; blind: ⨅ of the lower Lebesgue ∫⁻_[0,1] ofReal ‖c'‖ over paths on [0,1] with a strictly increasing subdivision. Equal for every N ⊆ V and p, q (theorem agree = riemDist_eq): break sets and subdivisions give each other (exists_subdiv, isPiecewiseSmooth_of_isPSPath), the two integrals agree on piecewise smooth paths (len_eq), paths on [a,b] are reparametrized affinely to [0,1] without changing length (pathLength_reparam), and degenerate a = b paths are matched by constant paths."
+}

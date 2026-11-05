@@ -1,0 +1,17 @@
+{
+ "id": "V15_29",
+ "A_to_B": "failed",
+ "B_to_A": "failed",
+ "not_B": false,
+ "relation": "incomparable",
+ "effort_only": false,
+ "why": "A (universes 0) is abstract operator theory on a finite-dimensional inner product space: splitting into orthogonal minimal invariant pieces for ANY star-signed family, Schur's lemma for self-adjoint commuting operators, A² = −c (c ≥ 1 from exp(πA) = −I) on minimal pieces, J_1..J_{k−1}, J, s·JA a minimal Clifford module, Lemma 24.8 between two pieces as a LINEAR intertwiner (k + 1 ≤ 8), some piece with c > 1 if A² ≠ −1, and (s+1)·m_{k+1} = n only inside exists_omegaPieceData (k + 1 ≤ 8, A² ≠ −1). B (Fin n → ℝ, dot product, Milnor's family famA, all k ≥ 1): the splitting; on every minimal piece A² = −a² with a ODD, J' = a⁻¹JA a complex structure making M minimal, dim M = m_{k+1}; s·m_{k+1} = n for every splitting; for k ≢ 2 (mod 4) an ISOMETRY M_h → M̄_j. A ⇒ B fails genuinely: oddness of a (A has only c ≥ 1; the project notes oddness is never used), the isometry (A's intertwiner is only linear), and dimensions/Lemma 24.8 for k ≥ 8 (and the dimension for minimal geodesics A² = −1) are not in A. B ⇒ A fails: A's lemmas are general and have no counterpart in B's statement about one specific family; only a vacuous re-proof would be possible (not done). Vocabulary: B's mK = the project's milnorM (mK_eq_milnorM, proved).",
+ "B_issue": null,
+ "overlap": "No direction proved; no #rt_overlap.",
+ "uses_hypothesis": {
+  "A_to_B": false,
+  "B_to_A": false
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete real matrices (Ω_k(n) ⊆ M_n(ℝ) with the induced-metric notions defined by hand on subsets; the geometry is already embedded); it does not quantify over abstract Riemannian manifolds."
+}

@@ -1,0 +1,17 @@
+{
+ "id": "V14_16",
+ "A_to_B": "proved",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_stronger",
+ "effort_only": false,
+ "why": "A (universes 0; minVel = {A ∈ 𝔰𝔲 | A² = −π²I}, grassmannian = Hermitian idempotents of trace m, vocabulary; the def lemma_23_1 read as Nonempty of its type): A² = −π²I ⇒ exp A = −I for skew-Hermitian A; A ∈ minVel ⇔ t ↦ exp tA is a minimal geodesic I → −I of the embedded SU(2m) (mem_minVel_iff); minVel ι ≃ₜ grassmannian ι m for every index type of cardinality 2m (the explicit A ↦ ½(I − (i/π)A)). B: for every m, the velocities A ∈ 𝔰𝔲(2m) with exp A = −I whose curve exp tA is minimal among piecewise smooth paths in SU(2m) (matrix level, entrywise norm, Re tr(AB*)) form a space homeomorphic to G_m(ℂ^{2m}) (Hermitian idempotents of rank m). A ⇒ B: m = 0 both are points; else minVelIn = minVel (Fin 2m) by A's mem_minVel_iff and the dictionary IsMinimalIn ↔ IsMinimalGeodesic (same topology so deriv/ContDiffOn transfer, normM = Frobenius norm, subdivision ↔ finite break set), Grass = grassmannian (rank = trace for idempotents), compose with A's homeomorphism. B ⇒ A: the homeomorphism for any ι comes from B by reindexing ι ≃ Fin (2m) (minVel and grassmannian are reindexing-invariant), using mem_minVel_iff' to identify minVelIn; but A's first two conjuncts are not in B (B only asserts an abstract homeomorphism, not which velocities are minimal nor exp A = −I from A² = −π²I) and are proved outright (the project's spectral argument copied; isMinimalGeodesic_exp_iff of item V14_15). So A has content B lacks (identification of the minimal velocities, the explicit map), and B's content is A's third conjunct.",
+ "B_issue": null,
+ "overlap": "A_to_B: no banned theorem; B_to_A: 655 shared project theorems — essentially the proof of isMinimalGeodesic_exp_iff (item V14_15: riemDist_one_neg_one, Hopf–Rinow theorem_10_9, exists_unitary_suDiag, exp_diagonal_eq_neg_one_iff, the matrix-group geodesic machinery), which mem_minVel_iff's proof also uses; lemma_23_1's explicit map (projOf_mem/velOf_mem) is not shared.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about the concrete matrix group SU(2m) ⊆ M_{2m}(ℂ) (Mathlib specialUnitaryGroup as a subset, lengths as Euclidean lengths of curves in M_{2m}(ℂ)); it does not quantify over abstract Riemannian manifolds. Dictionary lemmas (namespace Dict): contDiffOn_frob_of_elem/elem_of_frob, normM_eq, arcLenM_eq, isPWIn_iff, isMinimalIn_iff, trace_eq_rank, grass_eq, minVelIn_eq; reindexing (namespace Rx): R, mem_minVel_R, mem_grassmannian_R."
+}

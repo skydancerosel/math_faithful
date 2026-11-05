@@ -1,0 +1,17 @@
+{
+ "id": "V14_15",
+ "A_to_B": "failed",
+ "B_to_A": "proved",
+ "not_B": false,
+ "relation": "A_narrower",
+ "effort_only": false,
+ "why": "A (universes 0) is the SU(2m) half of B on the project's embedded SU(n) ⊆ Mₙ(ℂ) (Frobenius norm): length of exp tA = ‖A‖ (any skew-Hermitian A), ‖T suDiag(k) Tᴴ‖² = π²Σk², π√n ≤ ‖A‖ for exp A = −I in 𝔰𝔲(n), riemDist(I, −I) = π√(2m) in SU(2m), (T suDiag(k) Tᴴ)² = −π²I ⇔ all k_j = ±1, and exp tA is a minimal geodesic of SU(2m) ⇔ A² = −π²I (any finite index type). B (matrix level, entrywise norm, lengths ∫|c'| for Re tr(AB*)): for A = T·diag(iπk)·Tᴴ, k odd, (i) length π√Σk², (ii) minimal in U(n) ⇔ all ±1, (iii) minimal in SU(2m) ⇔ all ±1, (iv) dist(I,−I) = π√n in U(n) and π√(2m) in SU(2m). A ⇒ B fails genuinely, and only on U(n): (ii) and the U(n) distance need the lower bound π√n for every path I → −I in U(n) (Hopf–Rinow in U(n), or U(n) ⊆ sphere of radius √n with I, −I antipodal), absent from A and from the project; all the rest of B follows from A (A_to_B_SU, proved). B ⇒ A proved: riemDist from B(iv) (blind lengths = project pathLengths, ofReal ∘ sInf, reindexing ι ≃ Fin (2m) as a linear isometry preserving SU(n) and path lengths), the minimality criterion from that distance by the length computation; A's elementary conjuncts (length of exp tA for every skew-Hermitian A, ‖T suDiag(k) Tᴴ‖², π√n ≤ ‖A‖, (T suDiag Tᴴ)² = −π²I ⇔ ±1) are stated in B only for Milnor's A and are re-proved outright.",
+ "B_issue": null,
+ "overlap": "B_to_A: 258 shared project theorems — matrix-group/slice infrastructure (IsMatrixGroup.isGeodesicOn_exp_smul, pathLength/IsPiecewiseSmooth API, pathLength_eq_of_norm_deriv), exists_unitary_suDiag, norm_suDiag_sq / norm_conj_unitary, card_le_sum_sq / sum_sq_eq_card_iff, kHalf and conj_suDiag_mem / exp_conj_suDiag / mem_pathSpace_exp (one path I → −I); not shared: Hopf–Rinow (theorem_10_9), which riemDist_one_neg_one uses for the lower bound (B_to_A takes the distance from B). A_to_B_SU: uses all six conjuncts of A except pi_sqrt_card_le_norm.",
+ "uses_hypothesis": {
+  "A_to_B": true,
+  "B_to_A": true
+ },
+ "embedded_special_case": "not_applicable",
+ "embedded_special_case_note": "B is about concrete matrix groups U(n), SU(2m) ⊆ Mₙ(ℂ) (Mathlib unitaryGroup / specialUnitaryGroup as subsets, lengths as Euclidean lengths of curves in Mₙ(ℂ)); it does not quantify over abstract Riemannian manifolds. A_to_B is reported as failed; A_to_B_SU : A → B_SU (B without its two U(n) claims, B_to_B_SU shows it is part of B) is proved under #rt_check (uses_hypothesis.A_to_B refers to it). Dictionary (namespace Dict, as in Items/V14_16.lean): entrywise ↔ Frobenius ContDiffOn via id as a CLM (deriv agrees definitionally: same topology), normM_eq, arcLenM_eq, isPWIn_iff, isMinimalIn_iff; new: pathLengths_eq, riemDist_eq_distIn, reindexing (namespace Rx: L, mem_SU, pathLength_L, riemDist_reindex)."
+}
